@@ -1,9 +1,10 @@
-Ósea
-====
+# Ósea
 
-A simple, clean and responsive starter theme for Wordpress.
+A very clean, simple, versatile, responsive,
+mobile first starter theme for Wordpress.
 
-It is originally based on bones 1.7 (https://github.com/eddiemachado/bones) 
+Ósea means _from the nature of the bone_ in spanish,
+from Latin ossĕus, and it is pronounced [ 'o se a ].
 
-Ósea means _from the bone_ in spanish.
+It is originally based on bones v1.7 (https://github.com/eddiemachado/bones) 
 
