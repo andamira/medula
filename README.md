@@ -1,7 +1,6 @@
 # <img src="https://raw.githubusercontent.com/andamira/osea/master/lib/img/apple-icon-touch.png" alt="Icon" title="Ósea" width="32"height="32"/> Ósea
 
-Is a mobile-first, HTML5 starter theme for WordPress.  
-It is focused in clarity, modularity and versatility.
+A mobile-first, HTML5 starter theme for WordPress, focused in clarity, modularity and versatility.
 
 Ósea means _from the nature of the bone_ in spanish, and it is pronounced [ 'o se a ].  
 
@@ -13,4 +12,6 @@ It has been inspired by the following projects and incorporates some of their co
 
 Ósea uses [Sass](http://sass-lang.com/) for styling, and [Susy](http://susy.oddbird.net/) for the grid system.
 
-_Warning: This project is still very young, and it is going to be a mess for a while.
+
+_Warning: This project is still going through pretty big structural changes._
+
