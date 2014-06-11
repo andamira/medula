@@ -1,0 +1,62 @@
+/*
+ * Stylesheet: Variables
+ * Here is where we declare all our variables like colors, fonts,
+ * base values, and defaults. Just variables.
+ *
+ * INDEX:
+ * 		Colors Definitions
+ * 		Functional Variable Names
+ * 		Typography
+ */
+
+
+/*
+ * COLORS DEFINITIONS
+ * (and possibly textures)
+ *
+ * Recommended reading:
+ * http://sachagreif.com/sass-color-variables/
+ *
+ * Useful tools:
+ * http://0to255.com/
+ */ 
+
+$alert-yellow:      #ebe16f;
+$alert-red:         #fbe3e4;
+$alert-green:       #e6efc2;
+$alert-blue:        #d5edf8;
+
+$black:             #000;
+$white:             #fff;
+
+$gray-light:        #ccc;
+$gray:              #777;
+$gray-dark:         #333;
+
+$blue:				#265dc2;
+
+
+
+
+/*
+ *  FUNCTIONAL VARIABLE NAMES
+ *
+ */
+
+$text-color:        $gray-dark;
+
+$link-color:        $blue;
+$link-hover:        darken( $link-color, 9% );
+
+
+
+
+/*
+ * TYPOGRAPHY
+ */
+
+$sans-serif:        "Helvetica Neue", Helvetica, Arial, sans-serif;
+$serif:             "Georgia", Cambria, Times New Roman, Times, serif;
+
+
+
