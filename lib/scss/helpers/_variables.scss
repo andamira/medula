@@ -53,10 +53,14 @@ $link-hover:        darken( $link-color, 9% );
 
 /*
  * TYPOGRAPHY
+ *
+ * Recommended reading:
+ * http://prospects.mhurrell.co.uk/post/updating-the-helvetica-font-stack
  */
 
-$sans-serif:        "Helvetica Neue", Helvetica, Arial, sans-serif;
-$serif:             "Georgia", Cambria, Times New Roman, Times, serif;
+$sans-serif:		Helmet, Freesans, sans-serif;
+$serif:				Cambria, 'Times New Roman', 'Nimbus Roman No9 L', 'Freeserif', Times, serif;
+$mono:				Consolas, 'Lucida Console', 'Bitstream VeraSans Mono', 'DejaVu Sans Mono', monospace, sans-serif;
 
 
 
