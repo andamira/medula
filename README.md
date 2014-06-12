@@ -1,4 +1,4 @@
-# <img src="https://raw.githubusercontent.com/andamira/osea/master/lib/img/apple-icon-touch.png" alt="Icon" title="Ósea" width="32"height="32"/> Ósea
+# <img src="https://raw.githubusercontent.com/andamira/osea/master/lib/img/apple-icon-touch.png" alt="Icon" title="Ósea" width="32"height="32" style="vertical-align: middle;"> Ósea
 
 **A modern & clean mobile-first starter theme for WordPress.**
 
