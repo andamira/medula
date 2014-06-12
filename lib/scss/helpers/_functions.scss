@@ -5,6 +5,14 @@
  * make repeated actions a lot easier. They are really similar to mixins,
  * but can be used for so much more.
  *
+ * INDEX:
+ * 
+ *		Color
+ *		Layout
+ *		Lists
+ *
+ *		Numbers, units, relationships
+ *
  * Documentation
  * http://sass-lang.com/documentation/Sass/Script/Functions.html
  */
@@ -12,9 +20,12 @@
 
 /*
  * COLOR FUNCTIONS
+ * ************************************************************
+ *
  * These are helpful when you're working with shadows and such things.
  * It's essentially a quicker way to write RGBA.
  */
+
 // black
 @function black($opacity) {
     @return rgba(0,0,0,$opacity);
@@ -25,10 +36,46 @@
 }
 
 
+
+/*
+ * LAYOUT FUNCTIONS
+ * ************************************************************
+ */
+
+// To use in conjuntion with /layout/_zindex.scss
+@function z($list, $element) {
+   $z-index: index($list, $element);
+   @if $z-index {
+      @return $z-index;
+   }
+   @warn 'There is no item "#{$element}" in this list; choose one of: #{$list}';
+   @return null;
+}
+
+
+/*
+ * LIST FUNCTIONS
+ * ************************************************************
+ */
+
+// http://hugogiraudel.com/2013/08/08/advanced-sass-list-functions/
+
+
+
+/*
+ * NUMBERS, UNITS AND RELATIONSHIPS
+ * ************************************************************
+ */
+
+/*
+ * Restrict a number between min and max values
+ */
+@function clamp($value, $min, $max) {
+	@return if($value > $max, $max, if($value < $min, $min, $value));
+}
+
 /* 
- * RESPONSIVE HELPER FUNCTION
- *
- * For calculating target / context
+ * Calculate target / context
  *
  * Example:
  *		width: calc-percent(650px, 1000px);
@@ -39,30 +86,14 @@
 	  @return ($target / $container) * 100%;
   }
 
-
 /*
- * Strip unit function
- *
  * Get a number without its unit
  */
 @function strip-unit($value) {
 	@return $value / ($value * 0 + 1);
 }
 
-
-/*
- * Clamp a number
- *
- * Restrict it between min and max values
- */
-@function clamp($value, $min, $max) {
-	@return if($value > $max, $max, if($value < $min, $min, $value));
-}
-
-
 /* 
- * Unit conversion
- *
  * Converts angles into another unit.
  * You could probably do this for anything fixed (px, in, cm, mm)
  */
