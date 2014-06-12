@@ -1,0 +1,22 @@
+/*
+ * Control the order of z-index elements
+ *
+ * Here you define the list of elements to order, from bottom to top
+ * The position in the list will determine the z-index value.
+ * You could have several lists if you have more than one context.
+ *
+ * To use it you just call the z() function (defined in /helpers/_functions.scss)
+ * to assign an index to the element, e.g.:
+ * 
+ *	.input-field {
+ *		z-index: z($elements, user-tooltip);
+ *	}
+ *
+ * Recommended reading:
+ * http://www.smashingmagazine.com/2014/06/12/sassy-z-index-management-for-complex-layouts/
+ */
+
+
+$elements: project-covers, user-tooltip, sorting-bar, modals, navigation;
+
+
