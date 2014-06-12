@@ -1,8 +1,8 @@
 /*
- * Control the order of z-index elements
+ * Stylesheet: Z-index Elements Order
  *
- * Here you define the list of elements to order, from bottom to top
- * The position in the list will determine the z-index value.
+ * Here you define the list(s) of elements to order using z-index.
+ * Their position in the list will determine their z-index value.
  * You could have several lists if you have more than one context.
  *
  * To use it you just call the z() function (defined in /helpers/_functions.scss)
