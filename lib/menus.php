@@ -17,8 +17,8 @@ add_theme_support( 'menus' );
 // registering wp3+ menus
 register_nav_menus(
 	array(
-		'main-nav' => __( 'The Main Menu', 'andamira-osea' ),   // main nav in header
-		'footer-links' => __( 'Footer Links', 'andamira-osea' ) // secondary nav in footer
+		'main-nav' => __( 'The Main Menu', 'osea-theme' ),   // main nav in header
+		'footer-links' => __( 'Footer Links', 'osea-theme' ) // secondary nav in footer
 	)
 );
 

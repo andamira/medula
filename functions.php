@@ -108,7 +108,7 @@ include_once( 'lib/3rd_party/fixes.php' );
 function osea_launch() {
 
   // language support
-  load_theme_textdomain( 'andamira-osea', get_template_directory() . '/lib/translation' );
+  load_theme_textdomain( 'osea-theme', get_template_directory() . '/lib/translation' );
 
   // launching operation cleanup
   add_action( 'init', 'osea_head_cleanup' );

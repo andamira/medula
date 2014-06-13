@@ -34,13 +34,13 @@ function osea_comments_layout( $comment, $args, $depth ) {
         ?>
         <img data-gravatar="http://www.gravatar.com/avatar/<?php echo md5( $bgauthemail ); ?>?s=40" class="load-gravatar avatar avatar-48 photo" height="40" width="40" src="<?php echo get_template_directory_uri(); ?>/lib/img/nothing.gif" />
         <?php // end custom gravatar call ?>
-        <?php printf(__( '<cite class="fn">%1$s</cite> %2$s', 'andamira-osea' ), get_comment_author_link(), edit_comment_link(__( '(Edit)', 'andamira-osea' ),'  ','') ) ?>
-        <time datetime="<?php echo comment_time('Y-m-j'); ?>"><a href="<?php echo htmlspecialchars( get_comment_link( $comment->comment_ID ) ) ?>"><?php comment_time(__( 'F jS, Y', 'andamira-osea' )); ?> </a></time>
+        <?php printf(__( '<cite class="fn">%1$s</cite> %2$s', 'osea-theme' ), get_comment_author_link(), edit_comment_link(__( '(Edit)', 'osea-theme' ),'  ','') ) ?>
+        <time datetime="<?php echo comment_time('Y-m-j'); ?>"><a href="<?php echo htmlspecialchars( get_comment_link( $comment->comment_ID ) ) ?>"><?php comment_time(__( 'F jS, Y', 'osea-theme' )); ?> </a></time>
 
       </header>
       <?php if ($comment->comment_approved == '0') : ?>
         <div class="alert alert-info">
-          <p><?php _e( 'Your comment is awaiting moderation.', 'andamira-osea' ) ?></p>
+          <p><?php _e( 'Your comment is awaiting moderation.', 'osea-theme' ) ?></p>
         </div>
       <?php endif; ?>
       <section class="comment_content cf">

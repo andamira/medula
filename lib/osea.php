@@ -230,7 +230,7 @@ function osea_related_posts() {
 	           	<li class="related_post"><a class="entry-unrelated" href="<?php the_permalink() ?>" title="<?php the_title_attribute(); ?>"><?php the_title(); ?></a></li>
 	        <?php endforeach; }
 	    else { ?>
-            <?php echo '<li class="no_related_post">' . __( 'No Related Posts Yet!', 'andamira-osea' ) . '</li>'; ?>
+            <?php echo '<li class="no_related_post">' . __( 'No Related Posts Yet!', 'osea-theme' ) . '</li>'; ?>
 		<?php }
 	}
 	wp_reset_postdata();
@@ -278,7 +278,7 @@ function osea_filter_ptags_on_images($content){
 function osea_excerpt_more($more) {
 	global $post;
 	// edit here if you like
-return '...  <a class="excerpt-read-more" href="'. get_permalink($post->ID) . '" title="'. __( 'Read', 'andamira-osea' ) . get_the_title($post->ID).'">'. __( 'Read more &raquo;', 'andamira-osea' ) .'</a>';
+return '...  <a class="excerpt-read-more" href="'. get_permalink($post->ID) . '" title="'. __( 'Read', 'osea-theme' ) . get_the_title($post->ID).'">'. __( 'Read more &raquo;', 'osea-theme' ) .'</a>';
 }
 
 
