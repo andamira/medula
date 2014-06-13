@@ -4,8 +4,6 @@
  * 
  * Codex:
  * http://codex.wordpress.org/Function_Reference/get_header
- * http://codex.wordpress.org/Navigation_Menus
- *
  */
 ?>
 <!doctype html>

@@ -1,4 +1,8 @@
 <?php 
+/* 
+ * Sidebars Temlate
+ *
+ */
 
 // Sidebars & Widgetizes Areas
 function osea_register_sidebars() {

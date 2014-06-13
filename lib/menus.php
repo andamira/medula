@@ -2,15 +2,13 @@
 /*
  * This is the Menus Template
  *
- * INDEX
- * 
+ * INDEX:
  * 		Theme Support
- *		
  *		Menus
- *		Menu Fallbacks
- *
  * 		Custom Nav Walker
  *
+ * Codex:
+ * http://codex.wordpress.org/Navigation_Menus
  */
 
 
