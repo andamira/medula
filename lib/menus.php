@@ -1,38 +1,101 @@
 <?php
 /*
+ * This is the Menus Template
  *
+ * INDEX
+ * 
+ * 		Theme Support
+ *		
+ *		Menus
+ *		Menu Fallbacks
  *
- *
- *
+ * 		Custom Nav Walker
  *
  */
 
 
 /*
- * THEME SUPPORT 
-*/
+ * THEME SUPPORT
+ *
+ */
 
 add_theme_support( 'menus' );
 
-// registering wp3+ menus
 register_nav_menus(
 	array(
-		'main-nav' => __( 'The Main Menu', 'osea-theme' ),   // main nav in header
-		'footer-links' => __( 'Footer Links', 'osea-theme' ) // secondary nav in footer
+		'page-main-nav' => __( 'The Main Menu', 'osea-theme' ),   // main nav in header
+		'page-footer-nav' => __( 'The Footer Menu', 'osea-theme' ) // links in the footer
 	)
 );
 
 
+/*
+ * MENUS
+ *
+ * To create a new menu:
+ * 	- add a new key to the register_nav_menus array, above
+ *	- duplicate any of the existing menus below,
+ *	  and modify the values accordingly
+ *	- call the function from the template you want
+ */
+
+// The Main Menu
+function osea_page_main_nav() {
+	wp_nav_menu(array(
+		'theme_location' => 'page-main-nav',			// Must match the registered key above
+		'menu' => __( 'Main Page Menu', 'osea-theme' ),	// Name
+		'container' => false,
+		'container_class' => '',
+		'container_id' => '',
+		'menu_class' => '',
+		'menu_id' => '',
+		'before' => '',
+		'after' => '',
+		'link_before' => '',
+		'link_after' => '',
+		'depth' => 0,
+		'fallback_cb' => '',
+		'walker' => new osea_Walker_Nav_Menu()			// Custom menu code, customizable below
+	));
+}
 
 
-// ///////////////////
-// CUSTOM NAV WALKER (copyed from WP 3.9.1)
-// //////////////////
-//
-// http://codex.wordpress.org/Function_Reference/wp_nav_menu#Using_a_Custom_Walker_Function
-// http://shinraholdings.com/62/custom-nav-menu-walker-function/#example-code
-// http://illuminatikarate.com/blog/how-to-output-custom-html-in-wordpress-menus-using-a-custom-nav-walker/
-// 
+// The Footer Links
+function osea_page_footer_nav() {
+	wp_nav_menu(array(
+		'theme_location' => 'page-footer-nav',			// Must match the registered key above
+		'menu' => __( 'Footer Menu', 'osea-theme' ),	// Name
+		'container' => false,
+		'container_class' => '', 
+		'container_id' => '', 
+		'menu_class' => '', 
+		'menu_id' => '', 
+		'before' => '', 
+		'after' => '', 
+		'link_before' => '', 
+		'link_after' => '', 
+		'depth' => 0,
+		'fallback_cb' => '',
+		'walker' => '',
+	));
+}
+
+
+
+
+
+/*
+ * CUSTOM NAV WALKER
+ *
+ * Code sourced from WordPress 3.9.1
+ * 
+ * Codex
+ * http://codex.wordpress.org/Function_Reference/wp_nav_menu#Using_a_Custom_Walker_Function
+ * 
+ * Recommended reading:
+ * http://shinraholdings.com/62/custom-nav-menu-walker-function/#example-code
+ * http://illuminatikarate.com/blog/how-to-output-custom-html-in-wordpress-menus-using-a-custom-nav-walker/
+ */
 class osea_Walker_Nav_Menu extends Walker {
     /** 
      * What the class handles.
