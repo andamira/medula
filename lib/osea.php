@@ -1,23 +1,21 @@
 <?php
 /*
- * This is the Core Andamira Ósea file, where
+ * This is the Core Ósea library file, where
  * most of the main functions and features reside.
  *
  * If you have any custom functions, it's best
  * to put them in the functions.php file, or in
- * any of the suitable includes there.
+ * any of the suitable files included from there.
  *
  * URL: http://andamira.net/osea/
  *
- *
- *
- *	- head cleanup (remove rsd, uri links, junk css, ect)
- *	- enqueueing scripts & styles
- *	- theme support functions
- *	- custom menu output & fallbacks
- *	- related post function
- *	- page-navi function
- *	- removing <p> from around images
+ * INDEX:
+ *		head cleanup (remove rsd, uri links, junk css, ect)
+ *		enqueueing scripts & styles
+ *		theme support functions
+ *		related post function
+ *		page-navi function
+ *		miscelaneous cleanup
  */
 
 
@@ -159,7 +157,7 @@ function osea_scripts_and_styles() {
  * Codex:
  * http://codex.wordpress.org/Function_Reference/add_theme_support
  *
- * Examples:
+ * Generator:
  * http://generatewp.com/theme-support/
  *********************/
 
@@ -167,6 +165,12 @@ function osea_theme_support() {
 
 	// thumbnails support defined in:
 	// lib/thumbnails.php
+
+	// post format support defined in:
+	// lib/plugin/post-formats.php
+
+	// menus support is defined in:
+	// lib/plugin/menus.php
 
 	// wp custom background (thx to @bransonwerner for update)
 	add_theme_support( 'custom-background',
@@ -179,16 +183,10 @@ function osea_theme_support() {
 	    )
 	);
 
-	// rss thingy
+	// rss support
 	add_theme_support('automatic-feed-links');
 
-	// post format support defined in:
-	// lib/plugin/post-formats.php
-
-	// wp menus support defined in:
-	// lib/plugin/menus.php
-
-	// HTML5
+	// HTML5 SUPPORT
 	// http://codex.wordpress.org/Semantic_Markup
 	add_theme_support( 'html5' );
 		$args = array(
@@ -201,7 +199,7 @@ function osea_theme_support() {
 	add_theme_support( 'html5', $args );
 
 	// Add theme support for custom CSS in the TinyMCE visual editor
-	// 	add_editor_style( '' );	
+	// add_editor_style( '' );	
 
 } /* end osea theme support */
 
@@ -266,7 +264,7 @@ function osea_page_navi() {
 
 
 /*********************
- * RANDOM CLEANUP ITEMS
+ * MISCELANEOUS CLEANUP
  *********************/
 
 // remove the p from around imgs (http://css-tricks.com/snippets/wordpress/remove-paragraph-tags-from-around-images/)

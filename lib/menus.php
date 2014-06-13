@@ -1,6 +1,6 @@
 <?php
 /*
- * This is the Menus Template
+ * Menus template
  *
  * INDEX:
  * 		Theme Support

@@ -1,14 +1,11 @@
 <?php
 /*
- * This is the Icons file 
+ * Icons Template
  *
- *
- * URL: http://andamira.net/osea/
- *
- *
- *	- Favicons
- *	- Admin Area Favicon
- *	- Font Icons Collection
+ * INDEX:
+ *		Favicons
+ *		Admin Area Favicon
+ *		Font Icons Collection
  */
 
 
@@ -43,8 +40,6 @@ add_action('wp_head', 'osea_favicons', 2);
  * ADMIN AREA FAVICON
  *
  * This is the favicon for the WP backend
- *
- * Tip: you can 
  */
 function osea_admin_area_favicon() {
 	$favicon_url = get_template_directory_uri() . '/lib/img/favicon_adm.png?v=0';

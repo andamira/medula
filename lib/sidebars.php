@@ -1,6 +1,6 @@
 <?php 
 /* 
- * Sidebars Temlate
+ * Sidebars template
  *
  */
 

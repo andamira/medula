@@ -1,9 +1,6 @@
 <?php
 /*
- * This is the Comments template
- *
- * Author: andamira
- * URL: htp://andamira.net/osea/
+ * Comments template
  *
  */
 

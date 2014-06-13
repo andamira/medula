@@ -1,6 +1,6 @@
 <?php
 /*
- *
+ * Thumbnails template
  *
  */
 
