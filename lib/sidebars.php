@@ -2,10 +2,29 @@
 /* 
  * Sidebars template
  *
+ * To add more sidebars or widgetized areas, just copy
+ * and edit the register_sidebar function, modifying
+ * the ID, name and description to new values. e.g.:
+ *
+ * 		'id' => 'sidebar2',
+ * 		'name' => __( 'Sidebar 2', 'osea-theme' ),
+ * 		'description' => __( 'The secondary sidebar.', 'osea-theme' ),
+ *
+ * To call the sidebar in your template, you can just copy
+ * the sidebar.php file in the root and rename it adding
+ * your new sidebar's id to the file name. e.g.:
+ *
+ * 		sidebar-sidebar2.php
+ *
+ * And call it in the template like this:
+ *
+ * 		get_sidebar('sidebar2');
+ *
  */
 
-// Sidebars & Widgetizes Areas
 function osea_register_sidebars() {
+
+	// Sidebar 1
 	register_sidebar(array(
 		'id' => 'sidebar1',
 		'name' => __( 'Sidebar 1', 'osea-theme' ),
@@ -18,24 +37,7 @@ function osea_register_sidebars() {
 
 
 
-    /*  
-    to add more sidebars or widgetized areas, just copy
-    and edit the above sidebar code. In order to call
-    your new sidebar just use the following code:
 
-    Just change the name to whatever your new
-    sidebar's id is, for example:
-
-        'id' => 'sidebar2',
-
-    To call the sidebar in your template, you can just copy
-    the sidebar.php file in the root and rename it adding
-	your new sidebar'sid to the file name.
-    So using the above example, it would be:
-
-    sidebar-sidebar2.php
-
-    */
 
 }
 
