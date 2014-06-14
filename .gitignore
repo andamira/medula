@@ -1,6 +1,6 @@
-.swp
-cwatch.pid
+*.swp
 .sass-cache
+cwatch.pid
 
 # temporary
 lib/translation/
