@@ -1,0 +1,22 @@
+/*
+ * Stylesheet: Normalize Overrides
+ *
+ * Some useful overrides of normalized defaults,
+ * like changing box-sizing to border-box
+ *
+ * Recommended reading:
+ * http://css-tricks.com/box-sizing/
+ * https://github.com/necolas/normalize.css/issues/202
+ */
+
+
+hr,
+input[type="search"],
+input[type="checkbox"],
+input[type="radio"] {
+	@include box-sizing( border-box );
+}
+
+
+
+
