@@ -1,0 +1,21 @@
+/*
+ * Base breakpoint
+ *
+ * Intended for mobile and and also as a base
+ * to be enhanced in further breakpoints
+ * 
+ */
+
+
+// the grid layout
+@import "base/grid";
+
+// elements styling
+@import "base/comments";
+@import "base/menus";
+@import "base/sidebars";
+@import "base/widgets";
+
+// WordPress body classes
+@import "base/wp_body";
+

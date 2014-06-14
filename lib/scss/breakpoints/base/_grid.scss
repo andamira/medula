@@ -1,0 +1,39 @@
+/*
+ * BASE GRID LAYOUT
+ *
+ * INDEX:
+ * 		Define grid container
+ * 		Configure grid layout
+ */
+
+
+/*
+ * DEFINE THE GRID CONTAINER
+ *
+ * Here you establish the outer grid-containing element.
+ *
+ * E.g.: choose main if you want to leave the header
+ * and the footer out of the grid. Or you can choose
+ * body if you want the whole page to be affected.
+ */
+
+main {
+	@include container;
+}
+
+
+
+/*
+ * CONFIGURE THE GRID LAYOUT
+ *
+ */
+
+main {
+	@include span( 7 );
+}
+.sidebar {
+	@include span( 3 );
+}
+
+
+
