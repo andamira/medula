@@ -11,7 +11,7 @@
 
 			<nav class="page-footer-nav" role="navigation"><?php osea_page_footer_nav(); ?></nav>
 
-			<p class="source-org copyright">&copy; <?php echo date('Y'); ?> <?php bloginfo( 'name' ); ?>.</p>
+			<p class="page-footer-copyright">&copy; <?php echo date('Y'); ?> <?php bloginfo( 'name' ); ?>.</p>
 
 		</footer>
 
