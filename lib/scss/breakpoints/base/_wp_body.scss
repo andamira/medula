@@ -1,0 +1,97 @@
+/*
+ * WordPress body classes
+ */
+
+
+// for sites that are read right to left (i.e. hebrew)
+.rtl {}
+
+// home page
+.home {}
+
+// blog page
+.blog {}
+
+// archive page
+.archive {}
+
+// date archive page
+.date {}
+	// page number ...
+    .date-paged-1 {}
+    .date-paged-2 {}
+
+// search page
+.search {}
+	// results page
+    .search-results {}
+	// no results page
+    .search-no-results {}
+	// page number ...
+    .search-paged-1 {}
+    .search-paged-2 {}
+
+// 404 page
+.error404 {}
+
+// single post page
+.single {}
+	// individual post page by id (i.e. body.postid-73)
+    .postid-1 {}
+	// page number ...
+    .single-paged-1 {}
+
+// attachment page
+.attachment {}
+	// individual attachment page by ID (i.e. body.attachmentid-763)
+    .attachmentid-1 {}
+	// single mime type pages
+    .attachment-mime-type {}
+
+// author page
+.author {}
+	// user nicename (i.e body.author-samueladams)
+    .author-nicename {}
+	// page number ...
+    .author-paged-1 {}
+    .author-paged-2 {}
+
+// category page
+.category {}
+	// individual category page by ID (i.e. body.category-6)
+    .category-1 {}
+	// page number ...
+    .category-paged-1 {}
+    .category-paged-2 {}
+
+// tag page
+.tag {}
+	// individual tag page by slug (i.e. body.tag-news)
+    .tag-news {}
+	// page number ...
+    .tag-paged-1 {}
+    .tag-paged-2 {}
+
+// custom page template page
+.page-template {}
+	// individual page template by slug (i.e. body.page-template-contact-php)
+    .page-template-contact-php {}
+	// page number ...
+    .page-paged-1 {}
+    .page-paged-2 {}
+	// parent page template
+    .page-parent {}
+	// child page template
+    .page-child {}
+	// page number ...
+    .parent-pageid-1 {}
+
+// if the user is logged in
+.logged-in {}
+
+// paged items like search results or archives
+.paged {}
+	// page number ...
+    .paged-1 {}
+    .paged-2 {}
+
