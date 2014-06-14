@@ -1,10 +1,11 @@
 /*
  * WordPress body classes
+ *
+ * Codex:
+ * http://codex.wordpress.org/Function_Reference/body_class
  */
 
 
-// for sites that are read right to left (i.e. hebrew)
-.rtl {}
 
 // home page
 .home {}
@@ -86,8 +87,6 @@
 	// page number ...
     .parent-pageid-1 {}
 
-// if the user is logged in
-.logged-in {}
 
 // paged items like search results or archives
 .paged {}
@@ -95,3 +94,12 @@
     .paged-1 {}
     .paged-2 {}
 
+// if the user is logged in
+.logged-in {}
+
+// if the admin bar is displayed
+.admin-bar {
+}
+
+// for sites that are read right to left (i.e. hebrew)
+.rtl {}
