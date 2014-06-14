@@ -10,15 +10,19 @@
 /*
  * DEFINE THE GRID CONTAINER
  *
- * Here you establish the outer grid-containing element.
+ * Here you establish the outer grid-containing element(s)
  *
- * E.g.: choose main if you want to leave the header
- * and the footer out of the grid. Or you can choose
- * body if you want the whole page to be affected.
+ *
+ *
+ * If you want a wide header and footer comment the body
+ *
+ * Feel free to experiment modifying the div wrapper
+ * in defined in header.php and footer.php
  */
 
-main {
-	@include container;
+body,
+#content-wrapper {
+	@include container( 50rem );
 }
 
 
@@ -29,10 +33,20 @@ main {
  */
 
 main {
+	background: yellow;
 	@include span( 7 );
+	overflow: hidden;
 }
 .sidebar {
-	@include span( 3 );
+	background: green;
+	@include span( 3 omega );
+}
+.site-header {
+	background: blue;
+}
+.site-footer {
+	background: red;
+	//@include bleed( 1rem );
 }
 
 
