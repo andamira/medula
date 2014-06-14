@@ -1,0 +1,18 @@
+/*
+ * Enhanced breakpoint
+ *
+ * Build over the base layout. Remember less is more
+ * 
+ */
+
+// the grid layout
+@import "enhanced/grid";
+
+// styling elements
+@import "enhanced/comments";
+@import "enhanced/menus";
+@import "enhanced/sidebars";
+@import "enhanced/widgets";
+
+// WordPress body classes
+@import "enhanced/wp_body";

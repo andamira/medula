@@ -1,0 +1,112 @@
+
+.widget {
+}
+
+
+/*
+ * WordPress Default Widgets
+*/
+
+// links widget
+.widget_links {
+	ul {}
+		li {}
+			a{}
+}
+
+// meta widget
+.widget_meta {
+	ul {}
+		li {}
+			a{}
+}
+
+// pages widget
+.widget_pages {
+	ul {}
+		li {}
+			a{}
+}
+
+// recent-posts widget
+
+.widget_recent_entries {}
+.widget_recent_entries ul {}
+.widget_recent_entries ul li {}
+.widget_recent_entries ul li a {}
+
+// archives widget
+
+.widget_archive {}
+.widget_archive ul {}
+.widget_archive ul li {} 
+.widget_archive ul li a {}
+.widget_archive select {}
+.widget_archive option {}
+
+// tag-cloud widget
+
+.widget_links {}
+.widget_links li:after {}
+.widget_links li:before {}
+.widget_tag_cloud {}
+.widget_tag_cloud a {}
+.widget_tag_cloud a:after {}
+.widget_tag_cloud a:before {}
+
+// calendar widget
+
+.widget_calendar {}
+#calendar_wrap {}
+#calendar_wrap th {}
+#calendar_wrap td {}
+#wp-calendar tr td {}
+#wp-calendar caption {}
+#wp-calendar a {}
+#wp-calendar #today {}
+#wp-calendar #prev {}
+#wp-calendar #next {}
+#wp-calendar #next a {}
+#wp-calendar #prev a {}
+
+// category widget
+.widget_categories {
+	ul {
+		ul.children {
+		}
+	}
+		li {}
+
+	a {}
+
+	select{
+		&#cat {}
+
+		&.postform {}
+	}
+	option {}
+
+	.level-0 {}
+	.level-1 {}
+	.level-2 {}
+	.level-3 {}
+}
+
+/* recent-comments widget */
+.recentcomments {
+	li {}
+		a {}
+}
+#recentcomments {}
+.widget_recent_comments {}
+
+// search widget
+#searchform {}
+	.widget_search {}
+	.screen-reader-text {}
+
+// text widget
+.textwidget {
+	p {}
+}
+	.widget_text {}
