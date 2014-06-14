@@ -1,8 +1,8 @@
-# <img src="https://raw.githubusercontent.com/andamira/osea/master/lib/img/apple-icon-touch.png" alt="Icon" title="Ósea" width="32"height="32"> Ósea
+# Ósea <img src="https://raw.githubusercontent.com/andamira/osea/master/lib/img/apple-icon-touch.png" alt="Icon" title="Ósea means 'from the nature of the bone' in spanish" width="24" height="24">
 
 **A modern & clean mobile-first starter theme for WordPress.**
 
-It's key points are:
+Its key points are:
 
 1. Good design decisions, so it is modular and maintainable.
 1. Mobile First, so it is progressively enhanced.
