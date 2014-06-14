@@ -7,11 +7,11 @@
  *
  */
 ?>
-		<footer class="page-footer" role="contentinfo">
+		<footer class="site-footer" role="contentinfo">
 
-			<nav class="page-footer-nav" role="navigation"><?php osea_page_footer_nav(); ?></nav>
+			<nav class="site-footer-nav" role="navigation"><?php osea_site_footer_nav(); ?></nav>
 
-			<p class="page-footer-copyright">&copy; <?php echo date('Y'); ?> <?php bloginfo( 'name' ); ?>.</p>
+			<p class="site-footer-copyright">&copy; <?php echo date('Y'); ?> <?php bloginfo( 'name' ); ?>.</p>
 
 		</footer>
 

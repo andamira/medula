@@ -21,8 +21,8 @@ add_theme_support( 'menus' );
 
 register_nav_menus(
 	array(
-		'page-main-nav' => __( 'The Main Menu', 'osea-theme' ),   // main nav in header
-		'page-footer-nav' => __( 'The Footer Menu', 'osea-theme' ) // links in the footer
+		'site-main-nav' => __( 'The Main Menu', 'osea-theme' ),   // main nav in header
+		'site-footer-nav' => __( 'The Footer Menu', 'osea-theme' ) // links in the footer
 	)
 );
 
@@ -38,10 +38,10 @@ register_nav_menus(
  */
 
 // The Main Menu
-function osea_page_main_nav() {
+function osea_site_main_nav() {
 	wp_nav_menu(array(
-		'theme_location' => 'page-main-nav',			// Must match the registered key above
-		'menu' => __( 'Main Page Menu', 'osea-theme' ),	// Name
+		'theme_location' => 'site-main-nav',			// Must match the registered key above
+		'menu' => __( 'Main Site Menu', 'osea-theme' ),
 		'container' => false,
 		'container_class' => '',
 		'container_id' => '',
@@ -59,10 +59,10 @@ function osea_page_main_nav() {
 
 
 // The Footer Links
-function osea_page_footer_nav() {
+function osea_site_footer_nav() {
 	wp_nav_menu(array(
-		'theme_location' => 'page-footer-nav',			// Must match the registered key above
-		'menu' => __( 'Footer Menu', 'osea-theme' ),	// Name
+		'theme_location' => 'site-footer-nav',			// Must match the registered key above
+		'menu' => __( 'Site Footer Menu', 'osea-theme' ),
 		'container' => false,
 		'container_class' => '', 
 		'container_id' => '', 

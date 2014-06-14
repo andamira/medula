@@ -32,14 +32,14 @@
 
 <body <?php body_class(); ?>>
 
-<header class="page-header" role="banner">
+<header class="site-header" role="banner">
 
 	<?php // to use a image just replace the bloginfo('name') with your img src ?>
-	<div class="page-header-logo"><a href="<?php echo home_url(); ?>" rel="nofollow">
-		<span class="website-name h1"><?php bloginfo('name'); ?></span><br>
-		<span class="website-description h2"><?php bloginfo('description'); ?></span>
+	<div class="site-header-logo"><a href="<?php echo home_url(); ?>" rel="nofollow">
+		<span class="site-name h1"><?php bloginfo('name'); ?></span><br>
+		<span class="site-description h2"><?php bloginfo('description'); ?></span>
 	</a></div>
 
-	<nav class="page-main-nav" role="navigation"><?php osea_page_main_nav(); ?></nav>
+	<nav class="site-main-nav" role="navigation"><?php osea_site_main_nav(); ?></nav>
 
 </header>
