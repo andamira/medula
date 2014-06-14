@@ -1,0 +1,177 @@
+/*
+ * Stylesheet: Main Stylesheet
+ *
+ * INDEX:
+ *
+ * 		Dependencies
+ * 		Configuration
+ * 	
+ * 		Helpers
+ * 		Modules
+ * 		Layout
+ *
+ * 		Breakpoints
+ * 		Retina ()
+ *
+ * 		Pages
+ *
+ * 		Debug Coloring
+ *
+ * Recommended reading:
+ * http://thesassway.com/advanced/modular-css-naming-conventions
+ * http://www.sitepoint.com/architecture-sass-project/
+ */
+
+
+
+/*
+ * DEPENDENCIES
+ *
+ */
+
+// Needs Compass ( v1.0 or greater )
+@import "compass";
+
+
+
+/*
+ * GLOBAL STYLE CONFIGURATION
+ *
+ */
+
+// Enable / disable pixel fallbacks for old browsers
+$print-rem-px-fallbacks: false;
+
+
+
+/*
+ * /HELPERS
+ *
+ * These files are needed at the beginning so that we establish all
+ * our mixins, functions, and variables that we'll be using across
+ * the whole project.
+ */
+
+
+// Sass variables
+@import "helpers/variables";
+
+// Sass functions
+@import "helpers/functions";
+
+// import mixins
+@import "helpers/mixins";
+
+
+
+
+/*
+ * /MODULES
+ *
+ * This directory also contains only partials and is reserved for reusable UI patterns.
+ * As a general rule of thumb, anytime you anticipate needing the same CSS more than once,
+ * you should modularize it. The more your project matures, the more CSS you should be able
+ * to compartmentalize into modules. Preferably, each module contains a mixin at the top
+ * with corresponding declarations at the bottom for including that mixin. Crafting your
+ * modules in this fashion helps you start thinking about CSS in a more modular way.
+ * They are also easier to expand upon and/or extend in the future.
+ */
+
+// typography
+@import "modules/typography";
+
+// alert boxes
+@import "modules/alerts";
+
+// buttons
+@import "modules/buttons";
+
+// forms (inputs & labels)
+@import "modules/forms";
+
+
+
+/*
+ * /LAYOUT
+ *
+ *
+ */
+
+// normalize
+@import "layouts/normalize";
+@import "layouts/normalize_fix";
+
+// grid (Susy)
+@import "layouts/grid";
+
+// print stylesheet
+@media print {
+	@import "layouts/print";
+}
+
+
+
+/*
+ * /BREAKPOINTS
+ *
+ *
+ */
+
+
+/* BASE (MOBILE) SIZE
+ * This are the mobile styles. It's what people see on their phones. If
+ * you set a great foundation, you won't need to add too many styles in
+ * the other stylesheets. Remember, keep it light: Speed is Important.
+ */
+
+@import "breakpoints/base";
+
+
+/* ENHANCED SIZES
+ * This are the enhanced styles. It's for larger devices
+ *
+ * You can create more levels of enhancement, remember to
+ * copy the folder with a new name, e.g. 'enhanced2', and
+ * the _enhanced.scss file, and change the include paths.
+ */
+
+// Enhanced Size
+@media only screen and (min-width: 50rem) {
+	@import "breakpoints/enhanced";
+}
+
+
+/* TODO:
+ * RETINA (2x RESOLUTION DEVICES)
+ * This applies to the retina iPhone (4s) and iPad (2,3) along with
+ * other displays with a 2x resolution. You can also create a media
+ * query for retina AND a certain size if you want. Go Nuts.
+ */
+@media only screen and (-webkit-min-device-pixel-ratio: 1.5),
+		only screen and (min--moz-device-pixel-ratio: 1.5),
+		only screen and (min-device-pixel-ratio: 1.5) {
+
+	//@import "breakpoints/2x";
+}
+
+
+
+/*
+ * /PAGES
+ *
+ * If you have page-specific styles, you can put them in the pages/ folder and in a file
+ * named after the page. For example, if you have very specific styles for the home page,
+ * you’d have a _home.scss file in pages/ dealing with this.
+ *
+ * Or you can use the WordPress body classes under breakpoints/base/_wp_body.scss 
+ */
+
+// home
+@import "pages/home";
+
+
+/*
+ * DEBUG COLORING
+ *
+ * TODO:An idea for debugging the layouts...
+ */
