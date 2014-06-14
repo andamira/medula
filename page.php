@@ -1,15 +1,12 @@
 <?php get_header(); ?>
 
 <main role="main">
-	<header class="page-header">
-		<h1 class="page-title"><?php the_title(); ?></h1>
-	</header>
 
 	<?php if (have_posts()): while (have_posts()) : the_post(); ?>
 
 	<article id="post-<?php the_ID(); ?>" <?php post_class(); ?> role="article" itemscope itemtype="http://schema.org/BlogPosting" >
 		<header class="entry-header">
-
+			<h1 class="entry-title"><?php the_title(); ?></h1>
 		</header>
 
 		<section class="entry-content">
