@@ -1,14 +1,14 @@
 /*
- * BASE GRID LAYOUT
+ * BASE GRID
  *
  * INDEX:
- * 		Define grid container
- * 		Configure grid layout
+ * 		The grid container
+ * 		The grid layout
  */
 
 
 /*
- * DEFINE THE GRID CONTAINER
+ * THE GRID CONTAINER
  *
  * Here you establish the outer grid-containing element(s)
  *
@@ -23,23 +23,30 @@
 body,
 #content-wrapper {
 	@include container( 50rem );
+
+	position: relative;
 }
 
 
 
 /*
- * CONFIGURE THE GRID LAYOUT
+ * THE GRID LAYOUT
  *
  */
 
 main {
 	background: yellow;
-	@include span( 7 );
+	@include span( 7 of 10 last );
 	overflow: hidden;
 }
 .sidebar {
 	background: green;
-	@include span( 3 omega );
+	@include span( 3 of 10 wide );
+
+	// To make .sidebar height = main height
+	position: absolute;
+	//height: 100%;
+	//right: 0; 
 }
 .site-header {
 	background: blue;
