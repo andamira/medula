@@ -3,7 +3,12 @@
  *
  * We put all the form and button styles in here to setup a consistent
  * look. If we need to customize them, we can do this in the main
- * stylesheets and just override them.
+ * stylesheets and just override them.o
+ *
+ * INDEX:
+ * 		Inputs
+ * 		Text Areas
+ * 		Selects
  *
  * If you want to use data-uri check this out:
  * http://css-tricks.com/data-uris/
@@ -11,5 +16,91 @@
  */
 
 
+/*
+ * INPUTS
+ */
+input[type="text"],
+input[type="password"],
+input[type="datetime"],
+input[type="datetime-local"],
+input[type="date"],
+input[type="month"],
+input[type="time"],
+input[type="week"],
+input[type="number"],
+input[type="email"],
+input[type="url"],
+input[type="search"],
+input[type="tel"],
+input[type="color"],
+select,
+textarea,
+.field {
+	height: 2rem;
+	width: 100%;
+	max-width: 400px;
+
+	margin-bottom: 1rem;
+	padding: 0 .5rem;
+
+	border: 0;
+
+	font-family: $sans-serif;
+
+	background-color: $white;
+	@include transition(background-color .2s ease-in-out);
+
+	&:focus,
+    &:active {
+		background-color: darken( $white, 5% );
+    }
+
+	// error notification
+    &.error,
+    &.is-invalid {
+        color: $alert-red;
+        border-color: $alert-red;
+        outline-color: $alert-red;
+    }
+
+    // success notification
+    &.success,
+    &.is-valid {
+        color: $alert-green;
+        border-color: $alert-green;
+        outline-color: $alert-green;
+    }
+
+    // a disabled input
+    &[disabled],
+    &.is-disabled {
+        cursor: not-allowed;
+        border-color: lighten( $gray-light, 3% );
+        @include opacity( .6 );
+
+        &:focus,
+        &:active {
+            background-color: $alert-blue;
+        }
+    }
+
+}
+
+
+/*
+ * TEXT AREAS
+ */
+textarea {
+	max-width: 100%;
+	min-height: 120px;
+	line-height: 1.5rem;
+}
+
+/*
+ * SELECTS
+ */
+select {
+	-webkit-appearance: none;
+}
 
 
