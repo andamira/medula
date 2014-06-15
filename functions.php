@@ -54,8 +54,11 @@ require_once( 'lib/sidebars.php' );
 require_once( 'lib/thumbnails.php' );
 // Titles
 require_once( 'lib/titles.php' );
+
 // Comments layout
 require_once( 'lib/comments.php' ); 
+// Entry Meta layout
+require_once( 'lib/entry-meta.php' ); 
 
 
 /*
@@ -162,4 +165,4 @@ if ( ! isset( $content_width ) ) {
 
 
 
-/* DON'T DELETE THIS CLOSING TAG */ ?>
+?>
