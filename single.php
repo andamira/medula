@@ -19,10 +19,10 @@
 				<?php the_content(); ?>
 			</section>
 
-			<footer class="article-footer">
+			<footer class="entry-footer">
 				<?php edit_post_link(); ?>
 				<?php printf( __( 'Filed under: %1$s', 'osea-theme' ), get_the_category_list(', ') ); ?>
-				<?php the_tags( '<div class="tags"><span class="tags-title">' . __( 'Tags:', 'osea-theme' ) . '</span> ', ', ', '</div>' ); ?>
+				<?php the_tags( '<div class="entry-tags"><span class="entry-tags-title">' . __( 'Tags:', 'osea-theme' ) . '</span> ', ', ', '</div>' ); ?>
 			</footer>
 
 			<?php comments_template(); ?>
@@ -34,7 +34,7 @@
 	<?php else : ?>
 
 		<article id="post-not-found" class="hentry">
-				<header class="article-header">
+				<header class="entry-header">
 					<h1><?php _e( 'Post Not Found!', 'osea-theme' ); ?></h1>
 				</header>
 				<section class="entry-content">
