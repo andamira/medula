@@ -1,15 +1,15 @@
 <aside id="sidebar1" class="sidebar" role="complementary">
+<?php
 
-	<?php if ( is_active_sidebar( 'sidebar1' ) ) : ?>
+	if ( is_active_sidebar( 'sidebar1' ) ) {
 
-		<?php dynamic_sidebar( 'sidebar1' ); ?>
+		dynamic_sidebar( 'sidebar1' );
 
-	<?php else : ?>
+	} else {
 
-		<div class="no-widgets">
-			<p><?php _e( 'Empty widget area', 'osea-theme' ); ?></p>
-		</div>
+		echo '<div class="no-widgets"><p>' . __( 'Empty widget area', 'osea-theme' ) . '</p></div>';
 
-	<?php endif; ?>
+	}
 
+?>
 </aside>
