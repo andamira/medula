@@ -52,6 +52,8 @@ require_once( 'lib/menus.php' );
 require_once( 'lib/sidebars.php' );
 // Thumbnails
 require_once( 'lib/thumbnails.php' );
+// Titles
+require_once( 'lib/titles.php' );
 // Comments layout
 require_once( 'lib/comments.php' ); 
 
@@ -112,8 +114,6 @@ function osea_launch() {
 
   // launching operation cleanup
   add_action( 'init', 'osea_head_cleanup' );
-  // A better title
-  add_filter( 'wp_title', 'rw_title', 10, 3 );
   // remove WP version from RSS
   add_filter( 'the_generator', 'osea_rss_version' );
   // remove pesky injected css for recent comments widget

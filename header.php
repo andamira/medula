@@ -17,7 +17,14 @@
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-	<title><?php wp_title( '|', true, 'right' ); ?></title>
+	<title><?php
+		// use the better title function defined in /lib/titles.php if possible
+		if ( function_exists('wp_title2') ) {
+			wp_title2( '|', true, 'right' );
+		else {
+			wp_title( '|', true, 'right' );
+		}
+	?></title>
 
 	<?php // mobile meta ?>
 	<meta name="HandheldFriendly" content="True">
