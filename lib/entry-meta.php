@@ -123,8 +123,9 @@ function osea_entry_meta_tags( $custom = false) {
 function osea_entry_edit_post( $edit_text = null ) {
 	$edit = '<span class="entry-edit-link"><a href="' . get_edit_post_link() . '">';
 
+	// if no text is provided use an icon
 	if ( ! $edit_text ) {
-		$edit_text = 'Edit This';
+		$edit .= '<i class="dashicons dashicons-edit"></i>';
 	}
 	$edit .= __( $edit_text, 'osea-theme' );
 
