@@ -21,6 +21,7 @@
 		// use the better title function defined in /lib/titles.php if possible
 		if ( function_exists('wp_title2') ) {
 			wp_title2( '|', true, 'right' );
+		}
 		else {
 			wp_title( '|', true, 'right' );
 		}
