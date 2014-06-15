@@ -10,11 +10,11 @@
 		<article id="post-<?php the_ID(); ?>" <?php post_class(); ?> role="article">
 			<header class="entry-header">
 				<h2 class="entry-title"><a href="<?php the_permalink() ?>" rel="bookmark" title="<?php the_title_attribute(); ?>"><?php the_title(); ?></a></h2>
-				<div class="entry-byline vcard">
-					<?php printf( __( 'Posted %1$s by %2$s', 'osea-theme' ),
-						'<time class="entry-time updated" datetime="' . get_the_time('Y-m-d') . '" pubdate>' . get_the_time(get_option('date_format')) . '</time>',
-						'<address class="entry-author">' . get_the_author_link( get_the_author_meta( 'ID' ) ) . '</address>'
-					); ?>
+				<div class="entry-meta">
+				<?php
+					osea_entry_meta_byline();
+					osea_entry_edit_post( 'Edit Post' );
+				?>
 				</div>
 			</header>
 
@@ -23,11 +23,15 @@
 			</section>
 
 			<footer class="entry-footer">
-				<div class="entry-comment-count">
+				<span class="entry-comment-count">
 					<?php comments_number( __( '<span>No</span> Comments', 'osea-theme' ), __( '<span>One</span> Comment', 'osea-theme' ), _n( '<span>%</span> Comments', '<span>%</span> Comments', get_comments_number(), 'osea-theme' ) );?>
+				</span>
+					<div class="entry-meta">
+					<?php
+						osea_entry_meta_tags();
+						osea_entry_meta_categories();
+					?>
 				</div>
-				<?php printf( '<div class="entry-categories">' . __('filed under', 'osea-theme' ) . ': %1$s</div>' , get_the_category_list(', ') ); ?>
-				<?php the_tags( '<div class="entry-tags tags"><span class="entry-tags-title">' . __( 'Tags:', 'osea-theme' ) . '</span> ', ', ', '</div>' ); ?>
 			</footer>
 
 		</article>
