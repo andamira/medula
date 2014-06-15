@@ -12,6 +12,9 @@
  *
  * Source:
  * http://www.deluxeblogtips.com/2012/03/better-title-meta-tag.html
+ *
+ * Codex:
+ * http://codex.wordpress.org/Function_Reference/wp_title
  */
 function wp_title2( $title, $sep, $seplocation ) { 
 	global $page, $paged;
