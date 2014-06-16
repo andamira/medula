@@ -30,4 +30,3 @@ include_once( 'taxonomies.php' );
 include_once( 'metaboxes.php' );
 
 
-?>

@@ -53,4 +53,4 @@ register_taxonomy( 'custom_tag',
 ); 
 
 
-?>
+

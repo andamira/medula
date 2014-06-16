@@ -57,5 +57,3 @@ add_action( 'init', 'custom_post_example');
 
 
 
-
-?>

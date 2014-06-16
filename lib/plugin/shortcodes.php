@@ -45,6 +45,3 @@ add_shortcode( 'osea-shortcode', 'osea_shortcode_example' );
 
 
 
-
-
-?>
