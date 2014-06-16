@@ -1,5 +1,6 @@
 /*
  * Enhanced breakpoint
+ * ************************************************************
  *
  * Build over the base layout. Remember less is more
  * 
@@ -7,6 +8,9 @@
 
 // the grid layout
 @import "enhanced/grid";
+
+// main structure styling
+@import "enhanced/main";
 
 // styling elements
 @import "enhanced/comments";

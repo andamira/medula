@@ -1,14 +1,14 @@
-/*
+/**
  * Stylesheet: Form Styles
+ * ************************************************************
  *
  * We put all the form and button styles in here to setup a consistent
  * look. If we need to customize them, we can do this in the main
  * stylesheets and just override them.o
  *
- * INDEX:
- * 		Inputs
- * 		Text Areas
- * 		Selects
+ * 		1 Inputs
+ * 		2 Text Areas
+ * 		3 Selects
  *
  * If you want to use data-uri check this out:
  * http://css-tricks.com/data-uris/
@@ -16,8 +16,8 @@
  */
 
 
-/*
- * INPUTS
+/**
+ * 1 INPUTS
  */
 input[type="text"],
 input[type="password"],
@@ -87,8 +87,8 @@ textarea,
 }
 
 
-/*
- * TEXT AREAS
+/**
+ * 2 TEXT AREAS
  */
 textarea {
 	max-width: 100%;
@@ -96,8 +96,9 @@ textarea {
 	line-height: 1.5rem;
 }
 
-/*
- * SELECTS
+
+/**
+ * 3 SELECTS
  */
 select {
 	-webkit-appearance: none;

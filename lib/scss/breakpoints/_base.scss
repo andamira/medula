@@ -1,14 +1,17 @@
 /*
  * Base breakpoint
+ * ************************************************************
  *
  * Intended for mobile and and also as a base
  * to be enhanced in further breakpoints
  * 
  */
 
-
 // the grid layout
 @import "base/grid";
+
+// main structure styling
+@import "base/main";
 
 // elements styling
 @import "base/comments";

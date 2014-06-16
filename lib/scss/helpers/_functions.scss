@@ -1,26 +1,24 @@
-/*
+/**
  * Stylesheet: Sass Functions
+ * ************************************************************
  *
  * You can do a lot of really cool things in Sass. Functions help you
  * make repeated actions a lot easier. They are really similar to mixins,
  * but can be used for so much more.
  *
- * INDEX:
- * 
- *		Color
- *		Layout
- *		Lists
+ *		1 Color
+ *		2 Layout
+ *		3 Lists
  *
- *		Numbers, units, relationships
+ *		4 Numbers, units, relationships
  *
  * Documentation
  * http://sass-lang.com/documentation/Sass/Script/Functions.html
  */
 
 
-/*
- * COLOR FUNCTIONS
- * ************************************************************
+/**
+ * 1 COLOR FUNCTIONS
  *
  * These are helpful when you're working with shadows and such things.
  * It's essentially a quicker way to write RGBA.
@@ -36,10 +34,9 @@
 }
 
 
-
-/*
- * LAYOUT FUNCTIONS
- * ************************************************************
+/**
+ * 2 LAYOUT FUNCTIONS
+ *
  */
 
 // To use in conjuntion with /layout/_zindex.scss
@@ -53,18 +50,18 @@
 }
 
 
-/*
- * LIST FUNCTIONS
- * ************************************************************
+/**
+ * 3 LIST FUNCTIONS
+ *
  */
 
 // http://hugogiraudel.com/2013/08/08/advanced-sass-list-functions/
 
 
 
-/*
- * NUMBERS, UNITS AND RELATIONSHIPS
- * ************************************************************
+/**
+ * 4 NUMBERS, UNITS AND RELATIONSHIPS
+ *
  */
 
 /*
@@ -74,7 +71,7 @@
 	@return if($value > $max, $max, if($value < $min, $min, $value));
 }
 
-/* 
+/**
  * Calculate target / context
  *
  * Example:
@@ -86,14 +83,14 @@
 	  @return ($target / $container) * 100%;
   }
 
-/*
+/**
  * Get a number without its unit
  */
 @function strip-unit($value) {
 	@return $value / ($value * 0 + 1);
 }
 
-/* 
+/**
  * Converts angles into another unit.
  * You could probably do this for anything fixed (px, in, cm, mm)
  */

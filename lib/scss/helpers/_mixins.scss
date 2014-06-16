@@ -1,5 +1,6 @@
-/*
+/**
  * Stylesheet: Mixins
+ * ************************************************************
  *
  * A WORD OF WARNING: It's very easy to overdo it here.
  * Be careful and remember less is more.
@@ -11,7 +12,7 @@
  */
 
 
-/*
+/**
  * CSS3 GRADIENTS
  *
  * Be careful with these since they can
@@ -28,13 +29,12 @@
 	background-image: linear-gradient(to bottom, $from, $to);
 }
 
-/*********************
-BOX SIZING
-*********************/
 
-/* @include box-sizing(border-box); */
-/* NOTE: value of "padding-box" is only supported in Gecko. So
-probably best not to use it. I mean, were you going to anyway? */
+/**
+ * BOX SIZING
+ *
+ * USAGE: @include box-sizing(border-box);
+ */
 @mixin box-sizing($type: border-box) {
 	-webkit-box-sizing: $type;
 	-moz-box-sizing:    $type;
@@ -43,7 +43,7 @@ probably best not to use it. I mean, were you going to anyway? */
 }
 
 
-/*
+/**
  * INPUT PLACEHOLDER
  *
  * http://css-tricks.com/snippets/css/style-placeholder-text/
@@ -78,44 +78,6 @@ probably best not to use it. I mean, were you going to anyway? */
 		}   
 	}   
 }
-
-
-/*
- * ANIMATIONS
- *
- * NOTE: Will be included in compass 0.13 alpha
- *
- * USAGE:
- *
- *		@include keyframes(bgcolor) {
- *			0% {
- *				background-color: #ffccf2;
- *			}
- *			50% {
- *				background-color: #ccffcc;
- *			}
- *			100% {
- *				background-color: #ccffff;
- *			} 
- *		}
- */
-@mixin animation($str) {
-  animation: #{$str};
-  -webkit-animation: #{$str};
-}
-
-@mixin keyframes($name) {
-  @-webkit-keyframes #{$name} {
-    @content; 
-  }
-  @-moz-keyframes #{$name} {
-    @content;
-  }
-  @keyframes #{$name} {
-    @content;
-  } 
-}
-
 
 
 

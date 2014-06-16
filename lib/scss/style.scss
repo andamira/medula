@@ -1,21 +1,15 @@
-/*
+/**
  * Stylesheet: Main Stylesheet
+ * ************************************************************
  *
- * INDEX:
- *
- * 		Dependencies
- * 		Configuration
+ * 		1 Dependencies
+ * 		2 Configuration
  * 	
- * 		Helpers
- * 		Modules
- * 		Layout
+ * 		3 Helpers
+ * 		4 Modules
+ * 		5 Layout
  *
- * 		Breakpoints
- * 		Retina ()
- *
- * 		Pages
- *
- * 		Debug Coloring
+ * 		6 Breakpoints
  *
  * Recommended reading:
  * http://thesassway.com/advanced/modular-css-naming-conventions
@@ -23,9 +17,8 @@
  */
 
 
-
-/*
- * DEPENDENCIES
+/**
+ * 1 DEPENDENCIES
  *
  */
 
@@ -33,25 +26,22 @@
 @import "compass";
 
 
-
-/*
- * GLOBAL STYLE CONFIGURATION
+/**
+ * 2 GLOBAL STYLE CONFIGURATION
  *
  */
 
-// Enable / disable pixel fallbacks for old browsers
-$print-rem-px-fallbacks: false;
+$pixelBase: 16px;				// leave the default 16px
+$print-rem-px-fallbacks: false;	// Enable px fallback for old browsers?
 
 
-
-/*
- * /HELPERS
+/**
+ * 3 /HELPERS
  *
  * These files are needed at the beginning so that we establish all
  * our mixins, functions, and variables that we'll be using across
  * the whole project.
  */
-
 
 // Sass variables
 @import "helpers/variables";
@@ -63,10 +53,8 @@ $print-rem-px-fallbacks: false;
 @import "helpers/mixins";
 
 
-
-
-/*
- * /MODULES
+/**
+ * 4 /MODULES
  *
  * This directory also contains only partials and is reserved for reusable UI patterns.
  * As a general rule of thumb, anytime you anticipate needing the same CSS more than once,
@@ -94,7 +82,7 @@ $print-rem-px-fallbacks: false;
 
 
 /*
- * /LAYOUT
+ * 5 /LAYOUT
  *
  *
  */
@@ -112,15 +100,14 @@ $print-rem-px-fallbacks: false;
 }
 
 
-
-/*
- * /BREAKPOINTS
+/**
+ * 6 /BREAKPOINTS
  *
  *
  */
 
-
-/* BASE (MOBILE) SIZE
+/**
+ * BASE (MOBILE) SIZE
  * This are the mobile styles. It's what people see on their phones. If
  * you set a great foundation, you won't need to add too many styles in
  * the other stylesheets. Remember, keep it light: Speed is Important.
@@ -128,8 +115,8 @@ $print-rem-px-fallbacks: false;
 
 @import "breakpoints/base";
 
-
-/* ENHANCED SIZES
+/**
+ * ENHANCED SIZES
  * This are the enhanced styles. It's for larger devices
  *
  * You can create more levels of enhancement, remember to
@@ -138,12 +125,11 @@ $print-rem-px-fallbacks: false;
  */
 
 // Enhanced Size
-@media only screen and (min-width: 50rem) {
+@media only screen and (min-width: 48em) { // 48em = 768px at 16 pixelBase
 	@import "breakpoints/enhanced";
 }
 
-
-/* TODO:
+/**
  * RETINA (2x RESOLUTION DEVICES)
  * This applies to the retina iPhone (4s) and iPad (2,3) along with
  * other displays with a 2x resolution. You can also create a media
@@ -157,23 +143,3 @@ $print-rem-px-fallbacks: false;
 }
 
 
-
-/*
- * /PAGES
- *
- * If you have page-specific styles, you can put them in the pages/ folder and in a file
- * named after the page. For example, if you have very specific styles for the home page,
- * you’d have a _home.scss file in pages/ dealing with this.
- *
- * Or you can use the WordPress body classes under breakpoints/base/_wp_body.scss 
- */
-
-// home
-@import "pages/home";
-
-
-/*
- * DEBUG COLORING
- *
- * TODO:An idea for debugging the layouts...
- */

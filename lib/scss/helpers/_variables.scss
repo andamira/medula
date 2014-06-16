@@ -1,18 +1,18 @@
-/*
+/**
  * Stylesheet: Variables
+ * ************************************************************
+ *
  * Here is where we declare all our variables like colors, fonts,
  * base values, and defaults. Just variables.
  *
- * INDEX:
- * 		Colors Definitions
- * 		Functional Variable Names
- * 		Typography
+ * 		1 Colors Definitions
+ * 		2 Functional Variable Names
+ * 		3 Typography
  */
 
 
-/*
- * COLORS DEFINITIONS
- * (and possibly textures)
+/**
+ * 1 COLORS DEFINITIONS
  *
  * Recommended reading:
  * http://sachagreif.com/sass-color-variables/
@@ -37,9 +37,8 @@ $blue:				#265dc2;
 
 
 
-
-/*
- *  FUNCTIONAL VARIABLE NAMES
+/**
+ * 2 FUNCTIONAL VARIABLE NAMES
  *
  */
 
@@ -51,8 +50,8 @@ $link-hover:        darken( $link-color, 9% );
 
 
 
-/*
- * TYPOGRAPHY
+/**
+ * 3 TYPOGRAPHY
  *
  * Recommended reading:
  * http://prospects.mhurrell.co.uk/post/updating-the-helvetica-font-stack

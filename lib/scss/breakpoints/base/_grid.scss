@@ -1,14 +1,14 @@
-/*
+/**
  * BASE GRID
+ * ************************************************************
  *
- * INDEX:
- * 		The grid container
- * 		The grid layout
+ * 		1 The grid container
+ * 		2 The grid layout
  */
 
 
-/*
- * THE GRID CONTAINER
+/**
+ * 1 THE GRID CONTAINER
  *
  * Here you establish the outer grid-containing element(s)
  *
@@ -28,16 +28,16 @@ body,
 }
 
 
-
-/*
- * THE GRID LAYOUT
+/**
+ * 2 THE GRID LAYOUT
  *
  */
 
 main {
 	background: yellow;
 	@include span( 7 of 10 last );
-	overflow: hidden;
+	min-height: 20rem;
+	//overflow: hidden;
 }
 .sidebar {
 	background: green;
@@ -45,7 +45,7 @@ main {
 
 	// To make .sidebar height = main height
 	position: absolute;
-	//height: 100%;
+	height: 100%;
 	//right: 0; 
 }
 .site-header {
@@ -53,7 +53,6 @@ main {
 }
 .site-footer {
 	background: red;
-	//@include bleed( 1rem );
 }
 
 
