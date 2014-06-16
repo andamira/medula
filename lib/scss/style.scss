@@ -89,7 +89,7 @@ $print-rem-px-fallbacks: false;	// Enable px fallback for old browsers?
 
 // normalize
 @import "layouts/normalize";
-@import "layouts/normalize_fix";
+@import "layouts/normalize_extra";
 
 // grid (Susy)
 @import "layouts/grid";
