@@ -40,7 +40,7 @@
 			</header>
 
 			<section class="entry-content">
-				<?php the_post_thumbnail( ); ?>
+				<?php the_post_thumbnail(); ?>
 				<?php the_excerpt(); ?>
 			</section>
 
@@ -58,13 +58,13 @@
 
 		<article id="post-not-found" class="hentry">
 			<header class="entry-header">
-				<h1><?php _e( 'Oops, Post Not Found!', 'osea-theme' ); ?></h1>
+				<h1><?php _e( 'Post Not Found!', 'osea-theme' ); ?></h1>
 			</header>
 			<section class="entry-content">
-				<p><?php _e( 'Uh Oh. Something is missing. Try double checking things.', 'osea-theme' ); ?></p>
+				<p><?php _e( 'Something is missing. Try double checking things.', 'osea-theme' ); ?></p>
 			</section>
 			<footer class="entry-footer">
-					<p class="alert-error"><?php _e( 'This is the error message in the archive.php template.', 'osea-theme' ); ?></p>
+				<p class="alert-error"><?php _e( 'This is the error message in the archive.php template.', 'osea-theme' ); ?></p>
 			</footer>
 		</article>
 

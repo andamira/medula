@@ -5,8 +5,9 @@
 	<?php if (have_posts()) : while (have_posts()) : the_post(); ?>
 
 		<article id="post-<?php the_ID(); ?>" <?php post_class(); ?> role="article" itemscope itemtype="http://schema.org/BlogPosting">
+
 			<header class="entry-header">
-				<h1 class="entry-title"><?php the_title(); osea_entry_edit_post(); ?></h1>
+				<?php osea_entry_title( 'h1' ); ?>
 			</header>
 
 			<section class="entry-content">
@@ -16,7 +17,9 @@
 
 			<footer class="entry-footer">
 			</footer>
+
 			<?php comments_template( '', true ); ?>
+
 		</article>
 
 	<?php endwhile; ?>
