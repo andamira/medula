@@ -6,15 +6,15 @@
 
 		<article id="post-<?php the_ID(); ?>" <?php post_class(); ?> role="article" itemscope itemtype="http://schema.org/BlogPosting">
 			<header class="entry-header">
-				<h1 class="entry-title"><?php the_title(); ?></h1>
+				<h1 class="entry-title"><?php the_title(); osea_entry_edit_post(); ?></h1>
 			</header>
 
 			<section class="entry-content">
 				<?php the_content(); ?>
+				<?php osea_page_links(); ?>
 			</section>
 
 			<footer class="entry-footer">
-				<?php edit_post_link(); ?>
 			</footer>
 			<?php comments_template( '', true ); ?>
 		</article>

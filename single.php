@@ -4,15 +4,11 @@
 
 	<?php if (have_posts()) : while (have_posts()) : the_post(); ?>
 
-		<article id="post-<?php the_ID(); ?>" <?php post_class(); ?> role="article" itemscope itemtype="http://schema.org/BlogPosting">
+		<article id="post-<?php the_ID(); ?>" <?php post_class(); ?> role="article" itemscope itemtype="http://schema.org/BlogPosting" itemprop="blogPost">
+
 			<header class="entry-header">
-				<h1 class="entry-title single-title" itemprop="headline"><?php the_title(); ?></h1>
-				<div class="byline vcard">
-					<?php printf( __( 'Posted %1$s by %2$s', 'osea-theme' ),
-						'<time class="updated" datetime="' . get_the_time('Y-m-d') . '" pubdate>' . get_the_time(get_option('date_format')) . '</time>',
-						'<span class="author">' . get_the_author_link( get_the_author_meta( 'ID' ) ) . '</span>'
-					); ?>
-				</div>
+				<h1 class="entry-title single-title" itemprop="headline"><?php the_title(); osea_entry_edit_post(); ?></h1>
+				<div class="entry-meta"><?php osea_entry_meta_byline(); ?></div>
 			</header>
 
 			<section class="entry-content cf" itemprop="articleBody">
@@ -20,9 +16,7 @@
 			</section>
 
 			<footer class="entry-footer">
-				<?php edit_post_link(); ?>
-				<?php printf( __( 'Filed under: %1$s', 'osea-theme' ), get_the_category_list(', ') ); ?>
-				<?php the_tags( '<div class="entry-tags"><span class="entry-tags-title">' . __( 'Tags:', 'osea-theme' ) . '</span> ', ', ', '</div>' ); ?>
+				<div class="entry-meta"><?php osea_entry_meta_tags(); osea_entry_meta_categories(); ?></div>
 			</footer>
 
 			<?php comments_template(); ?>
@@ -34,20 +28,24 @@
 	<?php else : ?>
 
 		<article id="post-not-found" class="hentry">
+
 				<header class="entry-header">
 					<h1><?php _e( 'Post Not Found!', 'osea-theme' ); ?></h1>
 				</header>
+
 				<section class="entry-content">
 					<p><?php _e( 'Something is missing. Try double checking things.', 'osea-theme' ); ?></p>
 				</section>
+
 				<footer class="article-footer">
 						<p><?php _e( 'This is the error message in the single.php template.', 'osea-theme' ); ?></p>
 				</footer>
+
 		</article>
 
 	<?php endif; ?>
 
-</div>
+</main>
 
 <?php get_sidebar(); ?>
 

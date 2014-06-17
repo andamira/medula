@@ -11,28 +11,22 @@
 		<article id="post-<?php the_ID(); ?>" <?php post_class(); ?> role="article">
 
 			<header class="entry-header">
-
-				<h2 class="entry-title"><a href="<?php the_permalink() ?>" rel="bookmark" title="<?php the_title_attribute(); ?>"><?php the_title(); ?></a></h2>
-
-				<div class="entry-meta"><?php osea_entry_meta_byline(); osea_entry_edit_post( 'Edit Post' ); ?></div>
-
+				<h2 class="entry-title">
+					<a href="<?php the_permalink() ?>" rel="bookmark" title="<?php the_title_attribute(); ?>"><?php the_title(); ?></a>
+					<?php osea_entry_edit_post(); ?>
+				</h2>
+				<div class="entry-meta"><?php osea_entry_meta_byline(); ?></div>
 			</header>
 
 			<section class="entry-content">
-
 				<?php the_content(); ?>
-
 			</section>
 
 			<footer class="entry-footer">
-
 				<span class="entry-comment-count">
-
 					<?php comments_number( __( '<span>No</span> Comments', 'osea-theme' ), __( '<span>One</span> Comment', 'osea-theme' ), _n( '<span>%</span> Comments', '<span>%</span> Comments', get_comments_number(), 'osea-theme' ) );?>
 				</span>
-
-				<div class="entry-meta"><?php osea_entry_meta_tags();osea_entry_meta_categories(); ?></div>
-
+				<div class="entry-meta"><?php osea_entry_meta_tags(); osea_entry_meta_categories(); ?></div>
 			</footer>
 
 		</article>
