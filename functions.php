@@ -59,6 +59,8 @@ require_once( 'lib/titles.php' );
 require_once( 'lib/comments.php' ); 
 // Entry Meta layout
 require_once( 'lib/entry-meta.php' ); 
+// Page Links
+require_once( 'lib/page-links.php' );
 
 
 /*
