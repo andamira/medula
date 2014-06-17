@@ -15,13 +15,16 @@ if ( post_password_required() ) {
 
 		<section class="comments-list">
 		<?php
+			if ( function_exists('osea_comments_layout') ) {
+				$cb = 'osea_comments_layout';
+			} else {
+				$cb = '';
+			}	
 			wp_list_comments( array(
 			'style'				=> 'div',
 			'short_ping'		=> true,
 			'avatar_size'		=> 40,
-			if ( function_exists('osea_comments_layout') ) {
-				'callback'		=> 'osea_comments_layout',
-			} 
+			'callback'			=> $cb,
 			'type'              => 'all',
 			'reply_text'        => 'Reply',
 			'page'              => '',
