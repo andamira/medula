@@ -15,19 +15,19 @@
  *
  * Arguments: the heading tag, wether to display a link or not
  */
-function osea_entry_title( $htag, $with_link = false ) {
+function osea_entry_title( $htag, $with_link = false, $headline = false ) {
 
 	if ( !in_array( $htag, array( 'h1', 'h2', 'h3', 'h4', 'h5', 'h6' ) ) ) {
 		$htag = 'h1'; // value by default if none provided
 	}
 
-	$title  = "<$htag ". 'class="entry-title">';
+	$title  = "<$htag ". 'class="entry-title"';
 
-	// Prints the Link, if solicited
 	if ( $with_link ) {
-		$title .= '<a href="' . get_the_permalink() . '" rel="bookmark" title="' . the_title_attribute('', '', false) . '">' . get_the_title() . '</a>';
+		$title .= '><a href="' . get_the_permalink() . '" rel="bookmark" title="' . the_title_attribute('', '', false) . '">' . get_the_title() . '</a>';
 	} else {
-		$title .= get_the_title();
+		// NOTE: if no link, assumes it is headline
+		$title .= ' itemprop="headline">' . get_the_title();
 	}
 
 	// Shows Edit Post Link ( defined in /lib/edit-post.php )
