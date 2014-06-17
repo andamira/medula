@@ -43,7 +43,7 @@ function osea_entry_title( $htag, $with_link = false ) {
 /*
  * 2 A BETTER wp_title()
  *
- * Instead of filtering wp_title() we're create a new function,
+ * Instead of filtering wp_title() we create a new function,
  * in order to maintain the default one when needed. e.g.:
  * to retrieve the page-title on index.php.
  *
