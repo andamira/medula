@@ -3,17 +3,28 @@
  * Comments template
  * ************************************************************
  *
- * 		1 Comments Count Function
+ * 		1 Comments Count Display Function
  * 		2 Custom Comment Layout
  */
 
 
 /**
  * 1 COMMENTS COUNT
+ *
+ * Codex
+ * http://codex.wordpress.org/Function_Reference/comments_number
  */
 function osea_comments_count() {
 	$cc  = '<span class="entry-comments-count">';
-	//$cc .= __( '<span>No</span> Comments', 'osea-theme' ), __( '<span>One</span> Comment', 'osea-theme' ), _n( '<span>%</span> Comments', '<span>%</span> Comments', get_comments_number(), 'osea-theme' );
+	$cc .= comments_number(
+			__( '<span>No</span> Comments', 'osea-theme' ),
+			__( '<span>One</span> Comment', 'osea-theme' ),
+			_n( '<span>%</span> Comments',
+				'<span>%</span> Comments',
+				get_comments_number(),
+				'osea-theme'
+			)
+		);
 	$cc .= '</span>';
 
 	echo $cc;
@@ -21,11 +32,16 @@ function osea_comments_count() {
 
 /**
  * 2 CUSTOM COMMENT LAYOUT
+ *
+ * See:
+ * http://www.whatwg.org/specs/web-apps/current-work/multipage/sections.html#the-article-element
+ *
  */
 function osea_comments_layout( $comment, $args, $depth ) {
    $GLOBALS['comment'] = $comment; ?>
   <div id="comment-<?php comment_ID(); ?>" <?php comment_class('cf'); ?>>
-    <article  class="cf">
+	<article>
+
       <header class="comment-author vcard">
         <?php
         /*
@@ -48,16 +64,20 @@ function osea_comments_layout( $comment, $args, $depth ) {
         <?php printf(__( '<cite class="fn">%1$s</cite> %2$s', 'osea-theme' ), get_comment_author_link(), edit_comment_link(__( '(Edit)', 'osea-theme' ),'  ','') ) ?>
         <time datetime="<?php echo comment_time('Y-m-j'); ?>"><a href="<?php echo htmlspecialchars( get_comment_link( $comment->comment_ID ) ) ?>"><?php comment_time(__( 'F jS, Y', 'osea-theme' )); ?> </a></time>
 
-      </header>
+	  </header>
+
       <?php if ($comment->comment_approved == '0') : ?>
         <div class="alert alert-info">
           <p><?php _e( 'Your comment is awaiting moderation.', 'osea-theme' ) ?></p>
         </div>
-      <?php endif; ?>
+	  <?php endif; ?>
+
       <section class="comment_content cf">
         <?php comment_text() ?>
-      </section>
-      <?php comment_reply_link(array_merge( $args, array('depth' => $depth, 'max_depth' => $args['max_depth']))) ?>
+	  </section>
+
+	  <?php comment_reply_link(array_merge( $args, array('depth' => $depth, 'max_depth' => $args['max_depth']))) ?>
+
     </article>
   <?php // </li> is added by WordPress automatically ?>
 <?php
