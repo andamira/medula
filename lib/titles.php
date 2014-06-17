@@ -2,13 +2,50 @@
 /*
  * Titles template
  *
+ *		1 Entry Title
+ *
+ *		2 A Better wp_title()
  */
 
 
 /*
- * A better title
+ * 1 ENTRY TITLE
  *
- * Instead of filtering wp_title() we're gonna call this function directly
+ * Prints entry title
+ *
+ * Arguments: the heading tag, wether to display a link or not
+ */
+function osea_entry_title( $htag, $with_link = false ) {
+
+	if ( !in_array( $htag, array( 'h1', 'h2', 'h3', 'h4', 'h5', 'h6' ) ) ) {
+		$htag = 'h1'; // value by default if none provided
+	}
+
+	$title  = "<$htag ". 'class="entry-title">';
+
+	// Prints the Link, if solicited
+	if ( $with_link ) {
+		$title .= '<a href="' . get_the_permalink() . '" rel="bookmark" title="' . the_title_attribute('', '', false) . '">' . get_the_title() . '</a>';
+	} else {
+		$title .= get_the_title();
+	}
+
+	// Shows Edit Post Link ( defined in /lib/edit-post.php )
+	$title .= osea_entry_edit_post( false ); // echo = false
+
+	$title .= "</$htag>";
+
+	echo $title;
+}
+
+
+
+/*
+ * 2 A BETTER wp_title()
+ *
+ * Instead of filtering wp_title() we're create a new function,
+ * in order to maintain the default one when needed. e.g.:
+ * to retrieve the page-title on index.php.
  *
  * Source:
  * http://www.deluxeblogtips.com/2012/03/better-title-meta-tag.html
