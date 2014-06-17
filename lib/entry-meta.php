@@ -111,15 +111,17 @@ function osea_entry_meta_tags( $custom = false) {
 
 
 /*
- * 6 Prints the Edit Post Link
+ * 6 Returns the Edit Post Link
  */
-function osea_entry_edit_post() {
+function osea_entry_edit_post( $echo = true ) {
 	$edit = '<span class="entry-edit-link"><a href="' . get_edit_post_link() . '">';
 	$edit .= '<i class="dashicons dashicons-edit"></i>';
 	$edit .= '</a></span>';
 
-	echo $edit;
+	if ( $echo ) {
+		echo $edit;
+	} else {
+		return $edit;
+	}
 }
-
-
 
