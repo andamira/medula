@@ -31,7 +31,7 @@
 
 	<?php if (have_posts()) : while (have_posts()) : the_post(); ?>
 
-		<article id="post-<?php the_ID(); ?>" <?php post_class( 'cf' ); ?> role="article">
+		<article id="post-<?php the_ID(); ?>" <?php post_class( '' ); ?> role="article">
 
 			<header class="entry-header">
 				<?php osea_entry_title( 'h2', true ); ?>
@@ -44,7 +44,7 @@
 				<?php the_excerpt(); ?>
 			</section>
 
-			<footer class="article-footer">
+			<footer class="entry-footer">
 				<div class="entry-meta"><?php osea_entry_meta_tags(); osea_entry_meta_categories(); ?></div>
 			</footer>
 
@@ -52,19 +52,19 @@
 
 	<?php endwhile; ?>
 
-		<?php bones_page_navi(); ?>
+		<?php osea_page_navi(); ?>
 
 	<?php else : ?>
 
-		<article id="post-not-found" class="hentry cf">
-			<header class="article-header">
+		<article id="post-not-found" class="hentry">
+			<header class="entry-header">
 				<h1><?php _e( 'Oops, Post Not Found!', 'osea-theme' ); ?></h1>
 			</header>
 			<section class="entry-content">
 				<p><?php _e( 'Uh Oh. Something is missing. Try double checking things.', 'osea-theme' ); ?></p>
 			</section>
-			<footer class="article-footer">
-					<p><?php _e( 'This is the error message in the archive.php template.', 'osea-theme' ); ?></p>
+			<footer class="entry-footer">
+					<p class="alert-error"><?php _e( 'This is the error message in the archive.php template.', 'osea-theme' ); ?></p>
 			</footer>
 		</article>
 
