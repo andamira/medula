@@ -65,5 +65,3 @@ function icons_collections() {
 
 
 
-
-?>

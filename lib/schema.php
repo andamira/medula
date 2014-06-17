@@ -48,5 +48,3 @@ function html_tag_schema()
 
 
 
-
-?>

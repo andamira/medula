@@ -42,8 +42,7 @@ function wp_title2( $title, $sep, $seplocation ) {
 	}
 
 	return $title;
-
 }
 
 
-?>
+

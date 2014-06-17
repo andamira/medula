@@ -16,4 +16,4 @@ function osea_fonts() {
 add_action('wp_print_styles', 'osea_fonts');
 
 
-?>
+

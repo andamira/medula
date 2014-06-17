@@ -250,4 +250,3 @@ return '...  <a class="excerpt-read-more" href="'. get_permalink($post->ID) . '"
 
 
 
-?>

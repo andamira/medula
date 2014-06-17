@@ -1,12 +1,26 @@
 <?php
-/*
+/**
  * Comments template
+ * ************************************************************
  *
+ * 		1 Comments Count Function
+ * 		2 Custom Comment Layout
  */
 
 
-/*
- * CUSTOM COMMENT LAYOUT
+/**
+ * 1 COMMENTS COUNT
+ */
+function osea_comments_count() {
+	$cc  = '<span class="entry-comments-count">';
+	//$cc .= __( '<span>No</span> Comments', 'osea-theme' ), __( '<span>One</span> Comment', 'osea-theme' ), _n( '<span>%</span> Comments', '<span>%</span> Comments', get_comments_number(), 'osea-theme' );
+	$cc .= '</span>';
+
+	echo $cc;
+}
+
+/**
+ * 2 CUSTOM COMMENT LAYOUT
  */
 function osea_comments_layout( $comment, $args, $depth ) {
    $GLOBALS['comment'] = $comment; ?>
@@ -53,6 +67,3 @@ function osea_comments_layout( $comment, $args, $depth ) {
 
 
 
-
-
-?>

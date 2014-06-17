@@ -19,4 +19,5 @@ set_post_thumbnail_size(125, 125, true);
 //add_image_size( 'osea-300', 300, 100, true );
 
 
-?>
+
+

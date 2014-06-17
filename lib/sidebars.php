@@ -37,8 +37,6 @@ function osea_register_sidebars() {
 
 
 
-
-
 }
 
-?>
+
