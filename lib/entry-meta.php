@@ -114,7 +114,8 @@ function osea_entry_meta_tags( $custom = false) {
  * 6 Returns the Edit Post Link
  */
 function osea_entry_edit_post( $echo = true ) {
-	$edit = '<span class="entry-edit-link"><a href="' . get_edit_post_link() . '">';
+	$edit  = '<span class="entry-edit-link"><a href="' . get_edit_post_link() . '"';
+	$edit .= ' title="' . __('Edit This', 'osea-theme') . '">';
 	$edit .= '<i class="dashicons dashicons-edit"></i>';
 	$edit .= '</a></span>';
 
