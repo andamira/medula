@@ -72,25 +72,12 @@ function osea_entry_meta_byline() {
 /*
  * 4 Prints the categories
  */
-function osea_entry_meta_categories( $custom = false ) {
+function osea_entry_meta_categories( $custom = 'category' ) {
+	$categories_title = '<span class="entry-categories-title">' . __('Filed under ', 'osea-theme' ) . '</span>';
 
 	$categories  = '<span class="entry-categories">';
-
-	// title
-	$categories .= '<span class="entry-categories-title">' . __('Filed under ', 'osea-theme' ) . '</span>';
-
-	$categories .= '<span class="categories">';
-
-	if ( $custom ) {
-		// custom categories
-		$categories .= get_the_term_list( $post->ID, $custom, ' ', ', ', '' );
-
-	} else {
-		// normal categories
-		$categories .= get_the_category_list(', ');
-	} 
-
-	$categories .= '</span></span>';
+	$categories .= get_the_term_list( 0, $custom, $categories_title . '<span class="categories">', ', ', '</span>' );
+	$categories .= '</span>';
 
 	echo $categories;
 }
@@ -99,10 +86,11 @@ function osea_entry_meta_categories( $custom = false ) {
 /*
  * 5 Prints the tags
  */
-function osea_entry_meta_tags( $custom = false) {
+function osea_entry_meta_tags( $custom = 'post_tag') {
 	$tags_title = '<span class="entry-tags-title">' . __( 'Tags: ', 'osea-theme' ) . '</span>';
+
 	$tags  = '<span class="entry-tags">';
-	$tags .= '<span class="tags">' . get_the_tag_list( $tags_title, ', ' ) . '</span>';
+	$tags .= get_the_term_list( 0, $custom, $tags_title . '<span class="tags">', ', ', '</span>' );
 	$tags .= '</span>';
 
 	echo $tags;
