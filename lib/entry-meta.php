@@ -1,15 +1,14 @@
 <?php
-/*
+/**
  * Functions outputting ENTRY META fields
  *
  * 		1 DateTime
  * 		2 Author
  *
  * 		3 Byline
- * 		4 Categories + custom
- * 		5 Tags + custom
+ * 		4 Terms: taxonomies, Categories, tags
  *
- * 		6 Entry Edit Post
+ * 		5 Entry Edit Post
  *
  * Feel free to modify them in any way you like. For example:
  * You could add a parameter to the author function to choose
@@ -18,7 +17,7 @@
  */
 
 
-/*
+/**
  * 1 Returns the entry datetime
  */
 function osea_get_entry_meta_date() {
@@ -26,7 +25,7 @@ function osea_get_entry_meta_date() {
 }
 
 
-/*
+/**
  * 2 Returns the entry author
  *
  * Codex:
@@ -56,7 +55,7 @@ function osea_get_entry_meta_author() {
 }
 
 
-/*
+/**
  * 3 Prints the byline
  */
 function osea_entry_meta_byline() {
@@ -69,37 +68,39 @@ function osea_entry_meta_byline() {
 
 
 
-/*
- * 4 Prints the categories
+/**
+ * 4 Prints the terms (taxonomies, categories, tags... )
  */
-function osea_entry_meta_categories( $custom = 'category' ) {
-	$categories_title = '<span class="entry-categories-title">' . __('Filed under ', 'osea-theme' ) . '</span>';
+function osea_entry_meta_terms( $custom, $class, $label) {
 
-	$categories  = '<span class="entry-categories">';
-	$categories .= get_the_term_list( 0, $custom, $categories_title . '<span class="categories">', ', ', '</span>' );
-	$categories .= '</span>';
+	$tags  = '<span class="entry-' . $class . '">';
+	$title = '<span class="entry-' . $class . '-title">' . $label . '</span>';
 
-	echo $categories;
-}
+	// Error catching
+	if ( is_wp_error(
+			$term_list = get_the_term_list( 0, $custom, $title . '<span class="' . $class . '">', ', ', '</span>' ) )
+		) {
+		echo '<span class="alert-error">' . $term_list->get_error_message() . '</span>';
+	} else {
+		$tags.= $term_list;
+	}
 
-
-/*
- * 5 Prints the tags
- */
-function osea_entry_meta_tags( $custom = 'post_tag') {
-	$tags_title = '<span class="entry-tags-title">' . __( 'Tags: ', 'osea-theme' ) . '</span>';
-
-	$tags  = '<span class="entry-tags">';
-	$tags .= get_the_term_list( 0, $custom, $tags_title . '<span class="tags">', ', ', '</span>' );
 	$tags .= '</span>';
 
 	echo $tags;
 }
+// convenience function for categories
+function osea_entry_meta_categories( $custom = 'category' ) {
+	osea_entry_meta_terms( $custom, 'categories', __( 'Filed under', 'osea-theme' ) );
+}
+// convenience function for tags
+function osea_entry_meta_tags( $custom = 'post_tag' ) {
+	osea_entry_meta_terms( $custom, 'tags', __('Tags:', 'osea-theme' ) );
+}
 
 
-
-/*
- * 6 Returns the Edit Post Link
+/**
+ * 5 Returns the Edit Post Link
  */
 function osea_entry_edit_post( $echo = true ) {
 	$edit  = '<span class="entry-edit-link"><a href="' . get_edit_post_link() . '"';
