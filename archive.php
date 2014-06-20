@@ -3,7 +3,9 @@
 <main role="main">
 
 	<header class="page-header">
+
 		<h1 class="page-title">
+
 		<?php if (is_category()) { ?>
 			<span><?php _e( 'Posts Categorized:', 'osea-theme' ); ?></span> <?php single_cat_title(); ?>
 
@@ -25,6 +27,7 @@
 		<?php } elseif (is_year()) { ?>
 			<span><?php _e( 'Yearly Archives:', 'osea-theme' ); ?></span> <?php the_time('Y'); ?>
 		<?php } ?>
+
 		</h1>
 
 	</header>
@@ -36,7 +39,6 @@
 			<header class="entry-header">
 				<?php osea_entry_title( 'h2', true ); ?>
 				<div class="entry-meta"><?php osea_entry_meta_byline(); osea_entry_meta_tags() ?></div>
-
 			</header>
 
 			<section class="entry-content">
@@ -56,17 +58,7 @@
 
 	<?php else : ?>
 
-		<article id="post-not-found" class="hentry">
-			<header class="entry-header">
-				<h1><?php _e( 'Post Not Found!', 'osea-theme' ); ?></h1>
-			</header>
-			<section class="entry-content">
-				<p><?php _e( 'Something is missing. Try double checking things.', 'osea-theme' ); ?></p>
-			</section>
-			<footer class="entry-footer">
-				<p class="alert-error"><?php _e( 'This is the error message in the archive.php template.', 'osea-theme' ); ?></p>
-			</footer>
-		</article>
+		<?php osea_post_not_found( basename( __FILE__ ) ); ?>
 
 	<?php endif; ?>
 
