@@ -22,13 +22,19 @@
 
 		</article>
 
-	<?php endwhile; ?>
+	<?php endwhile; else: ?>
 
-	<?php else: ?>
-
-		<article>
-			<h2><?php _e( 'Sorry, nothing to display.', 'osea-theme' ); ?></h2>
-		</article>
+		<article id="post-not-found" class="hentry">
+			<header class="entry-header">
+				<h1><?php _e( 'Post Not Found!', 'osea-theme' ); ?></h1>
+			</header>
+			<section class="entry-content">
+				<p><?php _e( 'Something is missing. Try double checking things.', 'osea-theme' ); ?></p>
+			</section>
+			<footer class="entry-footer">
+				<p class="alert-error"><?php _e( 'This is the error message in the page.php template.', 'osea-theme' ); ?></p>
+			</footer>
+        </article>
 
 	<?php endif; ?>
 

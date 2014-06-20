@@ -23,9 +23,7 @@
 
 		</article>
 
-	<?php endwhile; ?>
-
-	<?php else : ?>
+	<?php endwhile; else : ?>
 
 		<article id="post-not-found" class="hentry">
 			<header class="entry-header">
@@ -34,7 +32,7 @@
 			<section class="entry-content">
 				<p><?php _e( 'Something is missing. Try double checking things.', 'osea-theme' ); ?></p>
 			</section>
-			<footer class="article-footer">
+			<footer class="entry-footer">
 				<p class="alert-error"><?php _e( 'This is the error message in the single.php template.', 'osea-theme' ); ?></p>
 			</footer>
 		</article>
