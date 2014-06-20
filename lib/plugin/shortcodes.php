@@ -34,7 +34,7 @@
         ), $atts )
     );
 
-    $out = '<div class="bones_shortcode " ' . $class . '">';
+    $out = '<div class="osea_shortcode " ' . $class . '">';
     $out .= $content;
     $out .= '</div>';
     return $out;
