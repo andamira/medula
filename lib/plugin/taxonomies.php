@@ -7,9 +7,7 @@
  * Codex: http://codex.wordpress.org/Function_Reference/register_taxonomy
  */
 
-
-
-function custom_category() {
+function custom_category_example() {
 	$labels = array(
 		'name'                       => _x( 'Custom Categories', 'Taxonomy General Name', 'osea-theme' ),
 		'singular_name'              => _x( 'Custom Category', 'Taxonomy Singular Name', 'osea-theme' ),
@@ -19,8 +17,8 @@ function custom_category() {
 		'parent_item_colon'          => __( 'Parent Custom Category:', 'osea-theme' ),
 		'new_item_name'              => __( 'New Custom Category Name', 'osea-theme' ),
 		'add_new_item'               => __( 'Add New Custom Category', 'osea-theme' ),
-		'edit_item'                  => __( 'Edit Item', 'osea-theme' ),
-		'update_item'                => __( 'Update Item', 'osea-theme' ),
+		'edit_item'                  => __( 'Edit Custom Category', 'osea-theme' ),
+		'update_item'                => __( 'Update Custom Category', 'osea-theme' ),
 		'separate_items_with_commas' => __( 'Separate Custom Categories with commas', 'osea-theme' ),
 		'search_items'               => __( 'Search Custom Categories', 'osea-theme' ),
 		'add_or_remove_items'        => __( 'Add or remove Custom Categories', 'osea-theme' ),
@@ -44,8 +42,45 @@ function custom_category() {
 	);
 	register_taxonomy( 'custom_cat', array( 'custom_type' ), $args );
 }
-add_action( 'init', 'custom_category', 0 );
+add_action( 'init', 'custom_category_example', 0 );
 
+
+function custom_tag_example() {
+	$labels = array(
+		'name'                       => _x( 'Custom Tags', 'Taxonomy General Name', 'osea-theme' ),
+		'singular_name'              => _x( 'Custom Tag', 'Taxonomy Singular Name', 'osea-theme' ),
+		'menu_name'                  => __( 'Custom Tag', 'osea-theme' ),
+		'all_items'                  => __( 'All Custom Tags', 'osea-theme' ),
+		'parent_item'                => __( 'Parent Custom Tag', 'osea-theme' ),
+		'parent_item_colon'          => __( 'Parent Custom Tag:', 'osea-theme' ),
+		'new_item_name'              => __( 'New Custom Category Name', 'osea-theme' ),
+		'add_new_item'               => __( 'Add New Custom Tag', 'osea-theme' ),
+		'edit_item'                  => __( 'Edit Custom Tag', 'osea-theme' ),
+		'update_item'                => __( 'Update Custom Tag', 'osea-theme' ),
+		'separate_items_with_commas' => __( 'Separate Custom Tags with commas', 'osea-theme' ),
+		'search_items'               => __( 'Search Custom Tags', 'osea-theme' ),
+		'add_or_remove_items'        => __( 'Add or remove Custom Tags', 'osea-theme' ),
+		'choose_from_most_used'      => __( 'Choose from the most used Custom Tags', 'osea-theme' ),
+		'not_found'                  => __( 'Not Found', 'osea-theme' ),
+	);
+	$rewrite = array(
+		'slug'                       => 'custom-slug',
+		'with_front'                 => true,
+		'hierarchical'               => false,
+	);
+	$args = array(
+		'labels'                     => $labels,
+		'hierarchical'               => false,	// < this makes it a 'tag'
+		'public'                     => true,
+		'show_ui'                    => true,
+		'show_admin_column'          => true,
+		'show_in_nav_menus'          => true,
+		'show_tagcloud'              => true,
+		'rewrite'                    => $rewrite,
+	);
+	register_taxonomy( 'custom_tag', array( 'custom_type' ), $args );
+}
+add_action( 'init', 'custom_tag_example', 0 );
 
 
 /*
