@@ -43,17 +43,13 @@ function osea_entry_title( $htag, $with_link = false, $headline = false ) {
 /*
  * 2 A BETTER wp_title()
  *
- * Instead of filtering wp_title() we create a new function,
- * in order to maintain the default one when needed. e.g.:
- * to retrieve the page-title on index.php.
- *
  * Source:
  * http://www.deluxeblogtips.com/2012/03/better-title-meta-tag.html
  *
  * Codex:
  * http://codex.wordpress.org/Function_Reference/wp_title
  */
-function wp_title2( $title, $sep, $seplocation ) { 
+function osea_wp_title( $title, $sep, $seplocation ) { 
 	global $page, $paged;
 
 	// Don't affect in feeds.
