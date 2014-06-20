@@ -11,6 +11,8 @@
 
 		<footer class="site-footer" role="contentinfo">
 
+			<?php osea_debug_showfile( __FILE__ ); ?>
+
 			<nav class="site-footer-nav" role="navigation"><?php osea_site_footer_nav(); ?></nav>
 
 			<span class="site-footer-copyright">&copy; <?php echo date('Y'); ?> <?php bloginfo( 'name' ); ?>.</span>

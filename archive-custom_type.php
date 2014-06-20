@@ -17,6 +17,7 @@
 <main role="main">
 
 	<header class="page-header">
+		<?php osea_debug_showfile( __FILE__ ); ?>
 		<h1 class="page-title"> <?php post_type_archive_title(); ?></h1>
 	</header>
 
@@ -34,7 +35,7 @@
 			</section>
 
 			<footer class="entry-footer">
-				<div class="entry-meta"><?php osea_entry_meta_tags(); osea_entry_meta_categories(); ?></div>
+				<div class="entry-meta"><?php osea_entry_meta_tags('custom_tag'); osea_entry_meta_categories('custom_cat'); ?></div>
 			</footer>
 
 		</article>

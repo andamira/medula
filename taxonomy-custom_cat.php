@@ -17,6 +17,7 @@
 <main role="main">
 
 	<header class="page-header">
+		<?php osea_debug_showfile( __FILE__ ); ?>
 		<h1 class="page-title"><span><?php _e( 'Posts Categorized:', 'osea-theme' ); ?></span> <?php single_cat_title(); ?></h1>
 	</header>
 

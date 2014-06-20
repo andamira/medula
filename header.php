@@ -34,6 +34,8 @@
 
 	<header class="site-header" role="banner">
 
+		<?php osea_debug_showfile( __FILE__ ); ?>
+
 		<?php // to use a image just replace the bloginfo('name') with your img src ?>
 		<div class="site-header-logo"><a href="<?php echo home_url(); ?>" rel="nofollow">
 			<span class="site-name h1"><?php bloginfo('name'); ?></span><br>

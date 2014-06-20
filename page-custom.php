@@ -21,6 +21,7 @@
 		<article id="post-<?php the_ID(); ?>" <?php post_class(); ?> role="article" itemscope itemtype="http://schema.org/BlogPosting">
 
 			<header class="entry-header">
+				<?php osea_debug_showfile( __FILE__ ); ?>
 				<?php osea_entry_title( 'h1' ); ?>
 				<div class="entry-meta"><?php osea_entry_meta_byline(); ?></div>
 			</header>

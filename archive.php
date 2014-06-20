@@ -4,6 +4,8 @@
 
 	<header class="page-header">
 
+		<?php osea_debug_showfile( __FILE__ ); ?>
+
 		<h1 class="page-title">
 
 		<?php if (is_category()) { ?>
