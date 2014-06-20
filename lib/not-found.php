@@ -20,5 +20,5 @@ function osea_post_not_found( $template ) {
 			<p class="alert-error"><?php printf( __( 'This is the error message in the %1$s template.', 'osea-theme' ), $template ); ?></p>
 		</footer>
 	</article>
-<?php } ?>
+<?php }
 
