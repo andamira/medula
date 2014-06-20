@@ -7,10 +7,59 @@
  *
  */
 
+
+
 .osea-debug {
 	position: relative;
 	margin: 0;
 	padding: 0.2rem;
 	font-size: 0.8rem;
 }
+
+/**
+ * Show html tag limits and print the name
+ *
+ */
+%outlines {
+	outline-offset: -2px;
+	outline-width: 2px;
+	outline-style: dashed;
+}
+%afters {
+	position: absolute;
+	top: 0;
+	right: 0;
+	font-size: 0.8rem;
+}
+
+
+body.debug {
+
+	header {
+		outline-color: blue;
+		@extend %outlines;
+
+		&:after {
+			@extend %afters;
+		}
+
+	}
+	footer {
+		outline-color: green;
+		@extend %outlines;
+
+		&:after {
+			content: 'footer';
+			@extend %afters;
+		}
+	}
+
+	main:after {
+		content: "main";
+		@extend %afters;
+		right: 50%;
+	}
+
+}
+
 
