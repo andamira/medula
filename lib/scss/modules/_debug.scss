@@ -1,0 +1,15 @@
+/**
+ * Stylesheet: Debug styles
+ * ************************************************************
+ *
+ * This is to style some parts that are only used when constant
+ * OSEA_DEBUG is set to true in functions.php file
+ *
+ */
+
+.debug{
+	position: relative;
+	margin: 0;
+	padding: 0.2rem;
+	font-size: 0.8rem;
+}

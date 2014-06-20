@@ -80,6 +80,9 @@ $print-rem-px-fallbacks: false;	// Enable px fallback for old browsers?
 // icons (fonticons)
 @import "modules/icons";
 
+// DEBUG (you can safely remove this if you don't plan to debug)
+@import "modules/debug";
+
 
 /*
  * 5 /LAYOUT
