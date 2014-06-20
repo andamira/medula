@@ -2,6 +2,16 @@
 /*
  * PAGE LINKS
  *
+ * This is used in case you have posts that are set to break into
+ * multiple pages. You can remove this if you don't plan on doing that.
+ *
+ * Also, breaking content up into multiple pages is a horrible experience,
+ * While there are SOME edge cases where this is useful, it's  mostly used
+ * for people to get more ad views.
+ *
+ * Recommended reading:
+ * http://gizmodo.com/5841121/google-wants-to-help-you-avoid-stupid-annoying-multiple-page-articles
+ *
  * Codex:
  * http://codex.wordpress.org/Function_Reference/wp_link_pages
  */
