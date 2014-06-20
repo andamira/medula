@@ -1,5 +1,5 @@
 <?php
-/*
+/**
  * This is the Core Ósea library file, where
  * most of the main functions and features reside.
  *
@@ -9,20 +9,19 @@
  *
  * URL: http://andamira.net/osea/
  *
- * INDEX:
- *		head cleanup (remove rsd, uri links, junk css, ect)
- *		enqueueing scripts & styles
- *		theme support functions
- *		related post function
- *		page-navi function
- *		miscelaneous cleanup
+ *		1 head cleanup (remove rsd, uri links, junk css, ect)
+ *		2 enqueueing scripts & styles
+ *		3 theme support functions
+ *		4 related post function
+ *		5 page-navi function
+ *		6 miscelaneous cleanup
+ *		7 Debug functions
  */
 
 
-/*********************
- * WP_HEAD CLEANUP
- *********************/
-
+/**
+ * 1 WP_HEAD CLEANUP
+ */
 function osea_head_cleanup() {
 	// category feeds
 	// remove_action( 'wp_head', 'feed_links_extra', 3 );
@@ -47,7 +46,7 @@ function osea_head_cleanup() {
 	// remove Wp version from scripts
 	add_filter( 'script_loader_src', 'osea_remove_wp_ver_css_js', 9999 );
 
-} /* end osea head cleanup */
+}
 
 
 // remove WP version from RSS
@@ -81,9 +80,9 @@ function osea_gallery_style($css) {
 }
 
 
-/*********************
- * SCRIPTS & ENQUEUEING
- *********************/
+/**
+ * 2 SCRIPTS & ENQUEUEING
+ */
 
 // loading modernizr and jquery, and reply script
 function osea_scripts_and_styles() {
@@ -120,15 +119,16 @@ function osea_scripts_and_styles() {
   }
 }
 
-/*********************
- * WP 3+ FUNCTIONS & THEME SUPPORT
+
+/**
+ * 3 WP 3+ FUNCTIONS & THEME SUPPORT
  *
  * Codex:
  * http://codex.wordpress.org/Function_Reference/add_theme_support
  *
  * Generator:
  * http://generatewp.com/theme-support/
- *********************/
+ */
 
 function osea_theme_support() {
 
@@ -170,12 +170,12 @@ function osea_theme_support() {
 	// Add theme support for custom CSS in the TinyMCE visual editor
 	// add_editor_style( '' );	
 
-} /* end osea theme support */
+}
 
 
-/*********************
-* RELATED POSTS FUNCTION
- *********************/
+/**
+ * 4 RELATED POSTS FUNCTION
+ */
 
 // Related Posts Function (call using osea_related_posts(); )
 function osea_related_posts() {
@@ -202,12 +202,12 @@ function osea_related_posts() {
 	}
 	wp_reset_postdata();
 	echo '</ul>';
-} /* end osea related posts function */
+}
 
 
-/*********************
- * PAGE NAVI
- ********************/
+/**
+ * 5 PAGE NAVI
+ */
 
 // Numeric Page Navi (built into the theme by default)
 function osea_page_navi() {
@@ -229,12 +229,12 @@ function osea_page_navi() {
     'mid_size'     => 3
   ) );
   echo '</nav>';
-} /* end page navi */
+}
 
 
-/*********************
- * MISCELANEOUS CLEANUP
- *********************/
+/**
+ * 6 MISCELANEOUS CLEANUP
+ */
 
 // remove the p from around imgs (http://css-tricks.com/snippets/wordpress/remove-paragraph-tags-from-around-images/)
 function osea_filter_ptags_on_images($content){
@@ -249,4 +249,18 @@ return '...  <a class="excerpt-read-more" href="'. get_permalink($post->ID) . '"
 }
 
 
+/**
+ * 7 DEBUG FUNCTIONS
+ */
+
+// This debug function displays the template filename
+// It's Called from all the template files, at the header/top
+function osea_debug_showfile( $file ) { 
+	if ( defined( 'OSEA_DEBUG' ) && OSEA_DEBUG ) { 
+		echo '<p class="debug alert-info">';
+		echo __('File: ', 'osea-theme');
+		echo basename( $file );
+		echo '</p>';
+	}   
+}
 

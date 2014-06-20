@@ -1,38 +1,39 @@
 <?php
-/*
- * This is the
+/**
+ * This is the functions.php file
  *
- *
- * At the end of this file you can write your
- * own custom functions.
  *
  * Don't reinvent the wheel. Take a look to
  * http://codex.wordpress.org/Function_Reference/
  *
  *
- *		Core Library
- *		Theme
- *		Plugin
- *		Third party
+ * 		1 Debug Options
  *
- *		Launch Ósea
+ *		2 Theme Func.
+ *		3 Plugin Func.
+ *		4 Third party
  *
- * 		Misc. Functions
+ *		5 Launch Ósea
+ *
+ * 		6 Custom Func.
+ *
  *
  * Author: andamira
  * URL: htp://andamira.net/osea/
+ */
+
+
+/**
+ * 1 DEBUG OPTIONS
  *
+ * Set to true for displaying debug information,
+ * Debug functions are defined in lib/osea.php
  */
+define( 'OSEA_DEBUG', true );
 
 
-/*
- * ÓSEA CORE LIBRARY 
- */
-require_once( 'lib/osea.php' );
-
-
-/*
- * THEME FUNCTIONALITY
+/**
+ * 2 THEME FUNCTIONALITY
  *
  * Instructions:
  * https://github.com/andamira/osea/wiki/Theme_includes
@@ -42,6 +43,10 @@ require_once( 'lib/osea.php' );
  * for favicons, fonts, sidebars, etc.
  *
  */
+
+// Ósea Core Library
+require_once( 'lib/osea.php' );
+
 // Icons & Favicons
 require_once( 'lib/icons.php' );
 // Fonts
@@ -65,8 +70,8 @@ require_once( 'lib/not-found.php' );
 require_once( 'lib/page-links.php' );
 
 
-/*
- * PLUGIN FUNCTIONALITY
+/**
+ * 3 PLUGIN FUNCTIONALITY
  * 
  * Instructions:
  * https://github.com/andamira/osea/wiki/Plugin
@@ -85,8 +90,8 @@ require_once( 'lib/page-links.php' );
 include_once( 'lib/plugin/plugin-template.php' );
 
 
-/*
- * THIRD PARTY LIBRARIES, FIXES & CLEANUP
+/**
+ * 4 THIRD PARTY LIBRARIES, FIXES & CLEANUP
  *
  * 'lib/3rd_party/libs.php'
  * Here you can load 3rd party libraries.
@@ -108,10 +113,8 @@ include_once( 'lib/3rd_party/fixes.php' );
 //include_once( 'lib/3rd_party/cleanup.php' );
 
 
-
-
-/*
- * LAUNCH ÓSEA
+/**
+ * 5 LAUNCH ÓSEA
  * Gets everything up and running.
  */
 function osea_launch() {
@@ -146,12 +149,24 @@ function osea_launch() {
   // cleaning up excerpt
   add_filter( 'excerpt_more', 'osea_excerpt_more' );
 
-} /* end osea_launch */
-
+}
 add_action( 'after_setup_theme', 'osea_launch' );
 
 
-/*
+/**
+ * 6 CUSTOM FUNCTIONS
+ * 
+ * Here you could put your custom functions, but
+ * it's better to look first if there are more 
+ * appropriate files to put them.
+ *
+ * Take a look at the embedded files above,
+ * specially in the THEME FUNCTIONALITY section
+ * 
+ */
+
+
+/**
  * OEMBED SIZE OPTIONS 
  * TODO: Move to another file
  *
@@ -161,12 +176,5 @@ add_action( 'after_setup_theme', 'osea_launch' );
 if ( ! isset( $content_width ) ) {
 	$content_width = 640;
 }
-
-
-/*
- * MISC. FUNCTIONS
- */
-
-
 
 
