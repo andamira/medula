@@ -55,10 +55,12 @@ require_once( 'lib/thumbnails.php' );
 // Titles
 require_once( 'lib/titles.php' );
 
-// Comments layout
-require_once( 'lib/comments.php' ); 
 // Entry Meta layout
 require_once( 'lib/entry-meta.php' ); 
+// Comments layout
+require_once( 'lib/comments.php' ); 
+// Not Found layout
+require_once( 'lib/not-found.php' );
 // Page Links
 require_once( 'lib/page-links.php' );
 
