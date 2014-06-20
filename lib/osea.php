@@ -264,3 +264,10 @@ function osea_debug_showfile( $file ) {
 	}   
 }
 
+// This debug function adds a debug class to the body
+function osea_debug_body_class() { 
+	if ( defined( 'OSEA_DEBUG' ) && OSEA_DEBUG ) { 
+		return 'debug';
+	}
+}
+

@@ -30,7 +30,7 @@
 
 </head>
 
-<body <?php body_class(); ?>>
+<body <?php body_class( osea_debug_body_class() ); ?>>
 
 	<header class="site-header" role="banner">
 
