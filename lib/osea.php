@@ -257,7 +257,7 @@ return '...  <a class="excerpt-read-more" href="'. get_permalink($post->ID) . '"
 // It's Called from all the template files, at the header/top
 function osea_debug_showfile( $file ) { 
 	if ( defined( 'OSEA_DEBUG' ) && OSEA_DEBUG ) { 
-		echo '<span class="debug alert-info">';
+		echo '<span class="osea-debug alert-info">';
 		echo __('File: ', 'osea-theme');
 		echo basename( $file );
 		echo '</span>';
