@@ -8,16 +8,27 @@
 /**
  * EDIT POST LINK
  */
-.entry-edit-link {
+.edit-link {
 
 	a {
 		display: inline-block;
 		vertical-align: middle;
+		width: 2rem;
 	}
 		i {
-			font-size: 2rem;
 			vertical-align: baseline;
 		}
+}
+
+.entry-title {
+	.edit-link {
+		a {
+			width: 3rem;
+		}
+		i {
+			font-size: 2rem;
+		}
+	}
 }
 
 
