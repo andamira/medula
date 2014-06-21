@@ -7,9 +7,22 @@
  *
  */
 
+/*
+ * Colors
+ *
+ */
+
+$header-color: blue;
+$footer-color: green;
+$main-color: #3895A7;
+$section-color: red;
+$aside-color: yellow;
+$article-color: purple;
+$grid-color: gray;
 
 
-.osea-debug {
+
+.osea-debug-filename {
 	position: relative;
 	margin: 0;
 	padding: 0.2rem;
@@ -20,46 +33,103 @@
  * Show html tag limits and print the name
  *
  */
-%outlines {
-	outline-offset: -2px;
-	outline-width: 2px;
-	outline-style: dashed;
+%debug-box {
+	position: relative;
+	min-height: 3em;
+	//@include box-shadow( inset 0px 0px 10px );
+	outline: 0.3rem solid;
+	outline-offset: -0.3rem;
 }
-%afters {
+%debug-text {
 	position: absolute;
 	top: 0;
-	right: 0;
 	font-size: 0.8rem;
+	background: $white;
 }
+
 
 
 body.debug {
+	@include show-grid( show );
+
+	//	
+	position: relative;
+
+
+	//
+	main {
+		@extend %debug-box;
+		outline: 2rem solid;
+		outline-offset: -2rem;
+		outline-color: rgba( $main-color, 0.5);
+
+		&:after {
+			content: "<main>";
+			@extend %debug-text;
+			left: 25%;
+			color: $main-color;
+		}
+	}
+
+	aside {
+		@extend %debug-box;
+		outline: 2rem solid;
+		outline-offset: -2rem;
+		outline-color: $aside-color;
+
+		&:after {
+			content: "<aside>";
+			@extend %debug-text;
+			left: 25%;
+			color: $aside-color;
+		}
+	}
+
+	article {
+		@extend %debug-box;
+		outline-color: $article-color;
+
+		&:after {
+			content: '<article>';
+			@extend %debug-text;
+			left: 50%;
+		}
+	}
+
+	section {
+		@extend %debug-box;
+		outline-color: $section-color;
+
+		&:after {
+			content: '<section>';
+			@extend %debug-text;
+			left: 75%;
+		}
+	}
 
 	header {
-		outline-color: blue;
-		@extend %outlines;
+		@extend %debug-box;
+		outline-color: $header-color;
 
 		&:after {
-			@extend %afters;
+			content: '<header>';
+			@extend %debug-text;
+			right: 0;
+			color: $header-color;
 		}
-
 	}
+
 	footer {
-		outline-color: green;
-		@extend %outlines;
+		@extend %debug-box;
+		outline-color: $footer-color;
 
 		&:after {
-			content: 'footer';
-			@extend %afters;
+			content: '<footer>';
+			@extend %debug-text;
+			right: 0;
 		}
 	}
 
-	main:after {
-		content: "main";
-		@extend %afters;
-		right: 50%;
-	}
 
 }
-
 
