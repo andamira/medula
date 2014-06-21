@@ -248,6 +248,41 @@ function osea_excerpt_more($more) {
 return '...  <a class="excerpt-read-more" href="'. get_permalink($post->ID) . '" title="'. __( 'Read', 'osea-theme' ) . get_the_title($post->ID).'">'. __( 'Read more &raquo;', 'osea-theme' ) .'</a>';
 }
 
+/*
+ * FILTER HTML OUTPUT
+ *
+ * Source: http://stackoverflow.com/a/17472755
+ *
+ * TODO:
+ * In WordPress 4.0 https://core.trac.wordpress.org/changeset/28708
+ *
+ * It would be better if it could be (de)activated from functions.php
+ */
+function callback($buffer) {
+	// option 1 ( http://wordpress.org/support/topic/how-do-i-strip-out-all-whitespace-via-a-filter )
+	//buffer = str_replace( array( "\n", "\t", '  ' ), '', $buffer );
+
+	// option 2 ( http://stackoverflow.com/a/6225706
+	$search = array(
+		'/\>[^\S ]+/s',  // strip whitespaces after tags, except space
+		'/[^\S ]+\</s',  // strip whitespaces before tags, except space
+		'/(\s)+/s'       // shorten multiple whitespace sequences
+	);  
+	$replace = array(
+		'>',
+		'<',
+		'\\1'
+	);  
+	$buffer = preg_replace($search, $replace, $buffer);
+
+	return $buffer;
+}
+function buffer_start() { ob_start("callback"); }
+function buffer_end() { ob_end_flush(); }
+add_action('wp_head', 'buffer_start');
+add_action('wp_footer', 'buffer_end');
+
+
 
 /**
  * 7 DEBUG FUNCTIONS
@@ -257,7 +292,7 @@ return '...  <a class="excerpt-read-more" href="'. get_permalink($post->ID) . '"
 // It's Called from all the template files, at the header/top
 function osea_debug_showfile( $file ) { 
 	if ( defined( 'OSEA_DEBUG' ) && OSEA_DEBUG ) { 
-		echo '<span class="osea-debug alert-info">';
+		echo '<span class="osea-debug-filename alert-info">';
 		echo __('File: ', 'osea-theme');
 		echo basename( $file );
 		echo '</span>';
