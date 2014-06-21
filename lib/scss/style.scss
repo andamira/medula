@@ -11,6 +11,8 @@
  *
  * 		6 Breakpoints
  *
+ * 		7 Debug
+ *
  * Recommended reading:
  * http://thesassway.com/advanced/modular-css-naming-conventions
  * http://www.sitepoint.com/architecture-sass-project/
@@ -31,8 +33,11 @@
  *
  */
 
-$pixelBase: 16px;				// leave the default 16px
-$print-rem-px-fallbacks: false;	// Enable px fallback for old browsers?
+$base-font-size: 16px;
+$base-line-height: 24px;
+$print-rem-px-fallbacks: true;	// Enable px fallback for old browsers?
+$rhythm-unit: 'rem';
+$rem-with-px-fallback: true;
 
 
 /**
@@ -80,9 +85,6 @@ $print-rem-px-fallbacks: false;	// Enable px fallback for old browsers?
 // icons (fonticons)
 @import "modules/icons";
 
-// DEBUG (you can safely remove this if you don't plan to debug)
-@import "modules/debug";
-
 
 /*
  * 5 /LAYOUT
@@ -128,7 +130,7 @@ $print-rem-px-fallbacks: false;	// Enable px fallback for old browsers?
  */
 
 // Enhanced Size
-@media only screen and (min-width: 48em) { // 48em = 768px at 16 pixelBase
+@media only screen and (min-width: 48em) { // 48em = 768px at default $base-font-size 16px
 	@import "breakpoints/enhanced";
 }
 
@@ -146,3 +148,14 @@ $print-rem-px-fallbacks: false;	// Enable px fallback for old browsers?
 }
 
 
+
+/**
+ * DEBUG
+ *
+ * (You can safely remove this if you don't plan to debug)
+ *
+ *
+ * Loaded the last thing, despite being considered a 'module'
+ *
+ */
+@import "modules/debug";
