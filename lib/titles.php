@@ -48,6 +48,9 @@ function osea_entry_title( $htag, $with_link = false, $headline = false ) {
  *
  * Codex:
  * http://codex.wordpress.org/Function_Reference/wp_title
+ * 
+ * TODO:
+ * In WordPress 4.0 https://core.trac.wordpress.org/changeset/28669
  */
 function osea_wp_title( $title, $sep, $seplocation ) { 
 	global $page, $paged;
