@@ -31,7 +31,7 @@ function osea_entry_title( $htag, $with_link = false, $headline = false ) {
 	}
 
 	// Shows Edit Post Link ( defined in /lib/edit-post.php )
-	$title .= osea_entry_edit_post( false );
+	$title .= osea_edit_post_link( false );
 
 	$title .= "</$htag>";
 
