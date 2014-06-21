@@ -41,9 +41,7 @@ function osea_comments_count() {
 function osea_comments_layout( $comment, $args, $depth ) {
 	$GLOBALS['comment'] = $comment; ?>
 
-	<div id="comment-<?php comment_ID(); ?>" <?php comment_class(); ?>>
-
-		<article>
+	<article id="comment-<?php comment_ID(); ?>" <?php comment_class(); ?>>
 
 		  <header class="comment-author vcard">
 			<?php
@@ -66,24 +64,24 @@ function osea_comments_layout( $comment, $args, $depth ) {
 
 		</header>
 
-      <?php if ($comment->comment_approved == '0') : ?>
-        <div class="alert alert-info">
-          <p><?php _e( 'Your comment is awaiting moderation.', 'osea-theme' ) ?></p>
-        </div>
-	  <?php endif; ?>
+		<?php if ($comment->comment_approved == '0') : ?>
+			<div class="alert alert-info">
+				<p><?php _e( 'Your comment is awaiting moderation.', 'osea-theme' ) ?></p>
+			</div>
+		<?php endif; ?>
 
-      <section class="comment-content">
-        <?php comment_text() ?>
-	  </section>
+		<section class="comment-content">
+			<?php comment_text() ?>
+		</section>
 
-	  <?php comment_reply_link(array_merge( $args, array('depth' => $depth, 'max_depth' => $args['max_depth']))) ?>
-
-    </article>
-  <?php // </li> is added by WordPress automatically ?>
+		<?php comment_reply_link(array_merge( $args, array('depth' => $depth, 'max_depth' => $args['max_depth']))) ?>
 <?php
 
 }
 
+function osea_comments_layout_end( $comment, $args, $depth ) {
+	echo '</article>';
+}
 
 
 

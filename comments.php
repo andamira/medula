@@ -11,26 +11,40 @@ if ( post_password_required() ) {
 
 	if ( have_comments() ) : ?>
 
-		<h3 id="comments-title" class="h2"><?php comments_number( __( '<span>No</span> Comments', 'osea-theme' ), __( '<span>One</span> Comment', 'osea-theme' ), _n( '<span>%</span> Comments', '<span>%</span> Comments', get_comments_number(), 'osea-theme' ) );?></h3>
+		<section class="comments-list">
+
+		<header>
+			<h2 id="comments-title" ><?php comments_number( __( '<span>No</span> Comments', 'osea-theme' ), __( '<span>One</span> Comment', 'osea-theme' ), _n( '<span>%</span> Comments', '<span>%</span> Comments', get_comments_number(), 'osea-theme' ) );?></h2>
+		</header>
 
 		<section class="comments-list">
+
 		<?php
 			if ( function_exists('osea_comments_layout') ) {
 				$cb = 'osea_comments_layout';
+				$cb_end = 'osea_comments_layout_end';
 			} else {
 				$cb = '';
-			}	
+				$cv_end = '';
+			}
+
+			// Codex: http://codex.wordpress.org/Template_Tags/wp_list_comments
 			wp_list_comments( array(
-			'style'				=> 'div',
-			'short_ping'		=> true,
-			'avatar_size'		=> 40,
-			'callback'			=> $cb,
-			'type'              => 'all',
-			'reply_text'        => 'Reply',
-			'page'              => '',
-			'per_page'          => '',
-			'reverse_top_level' => null,
-			'reverse_children'  => ''
+				'walker'			=> null,
+				'max_depth'			=> '',
+				'style'				=> 'div',
+				'callback'			=> $cb,
+				'end-callback'		=> $cb_end,
+				'type'              => 'comment',
+				'reply_text'        => __( 'Reply', 'osea-theme' ),
+				'page'              => '',
+				'per_page'          => '',
+				'avatar_size'		=> 40,
+				'reverse_top_level' => null,
+				'reverse_children'  => '',
+				'format'			=> 'html5',
+				'short_ping'		=> true,
+				'echo'				=> true
 			) );
 		?>
 		</section>
