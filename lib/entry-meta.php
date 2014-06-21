@@ -21,7 +21,7 @@
  * 1 Returns the entry datetime
  */
 function osea_get_entry_meta_date() {
-	return( '<time class="entry-date updated" datetime="' . get_the_time('Y-m-dTH:i:sO') . '" itemprop="datePublished" pubdate>' . get_the_time(get_option('date_format')) . '</time>' );
+	return( '<time class="entry-date updated" datetime="' . get_the_time( 'Y-m-dTH:i:sO' ) . '" itemprop="datePublished" pubdate>' . get_the_time( get_option( 'date_format' ) ) . '</time>' );
 }
 
 
@@ -95,7 +95,7 @@ function osea_entry_meta_categories( $custom = 'category' ) {
 }
 // convenience function for tags
 function osea_entry_meta_tags( $custom = 'post_tag' ) {
-	osea_entry_meta_terms( $custom, 'tags', __('Tags:', 'osea-theme' ) );
+	osea_entry_meta_terms( $custom, 'tags', __( 'Tags:', 'osea-theme' ) );
 }
 
 
@@ -104,7 +104,7 @@ function osea_entry_meta_tags( $custom = 'post_tag' ) {
  */
 function osea_edit_link( $link, $echo = true ) {
 	$edit  = '<span class="edit-link"><a href="' . $link . '"';
-	$edit .= ' title="' . __('Edit This', 'osea-theme') . '">';
+	$edit .= ' title="' . __( 'Edit This', 'osea-theme' ) . '">';
 	$edit .= '<i class="dashicons dashicons-edit"></i>';
 	$edit .= '</a></span>';
 
@@ -115,12 +115,12 @@ function osea_edit_link( $link, $echo = true ) {
 	}
 }
 // convenience function for posts
-function osea_edit_post_link( $echo = true) {
-	osea_edit_link( get_edit_post_link() , $echo );
+function osea_edit_post_link( $echo = true ) {
+	return osea_edit_link( get_edit_post_link(), $echo );
 }
 // convenience function for comments
 function osea_edit_comment_link( $echo = true ) {
-	osea_edit_link( get_edit_comment_link() , $echo );
+	return osea_edit_link( get_edit_comment_link(), $echo );
 }
 
 
