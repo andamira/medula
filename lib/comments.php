@@ -30,6 +30,7 @@ function osea_comments_count() {
 	echo $cc;
 }
 
+
 /**
  * 2 CUSTOM COMMENT LAYOUT
  *
@@ -60,9 +61,8 @@ function osea_comments_layout( $comment, $args, $depth ) {
 			?>
 			<img data-gravatar="http://www.gravatar.com/avatar/<?php echo md5( $bgauthemail ); ?>?s=40" class="load-gravatar avatar avatar-48 photo" height="40" width="40" src="<?php echo get_template_directory_uri(); ?>/lib/img/nothing.gif" />
 
-			<?php //printf(__( '<cite class="fn">%1$s</cite> %2$s', 'osea-theme' ), get_comment_author_link(), edit_comment_link(__( '(Edit)', 'osea-theme' ),'  ','') ) ?>
 			<?php printf(__( '<cite class="fn">%1$s</cite> %2$s', 'osea-theme' ), get_comment_author_link(), osea_edit_comment_link() ) ?>
-			<time datetime="<?php echo comment_time('Y-m-j'); ?>"><a href="<?php echo htmlspecialchars( get_comment_link( $comment->comment_ID ) ) ?>"><?php comment_time(__( 'F jS, Y', 'osea-theme' )); ?> </a></time>
+			<time datetime="<?php echo comment_time('Y-m-dTH:i:sO'); ?>"><a href="<?php echo htmlspecialchars( get_comment_link( $comment->comment_ID ) ) ?>"><?php comment_time( get_option( 'date_format' ) ); ?> </a></time>
 
 		</header>
 
@@ -82,7 +82,7 @@ function osea_comments_layout( $comment, $args, $depth ) {
   <?php // </li> is added by WordPress automatically ?>
 <?php
 
-} /* end of osea_comments_layout */
+}
 
 
 
