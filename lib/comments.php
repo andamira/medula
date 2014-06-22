@@ -16,15 +16,16 @@
  */
 function osea_comments_count() {
 	$cc  = '<span class="entry-comments-count">';
-	$cc .= comments_number(
-			__( '<span>No</span> Comments', 'osea-theme' ),
-			__( '<span>One</span> Comment', 'osea-theme' ),
-			_n( '<span>%</span> Comments',
-				'<span>%</span> Comments',
-				get_comments_number(),
-				'osea-theme'
-			)
-		);
+
+	$com_num = get_comments_number();
+
+	if ( ! $com_num ) {
+		$cc .= __( '<span>No</span> Comments', 'osea-theme' );
+	} else {
+		// Codex: http://codex.wordpress.org/Function_Reference/_n
+		$cc .= sprintf ( _n( '<span>%s</span> Comment', '<span>%s</span> Comments', $com_num, 'osea-theme' ), $com_num );
+	}
+
 	$cc .= '</span>';
 
 	echo $cc;
