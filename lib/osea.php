@@ -9,12 +9,12 @@
  *
  * URL: http://andamira.net/osea/
  *
- *		1 head cleanup (remove rsd, uri links, junk css, ect)
- *		2 enqueueing scripts & styles
- *		3 theme support functions
- *		4 related post function
- *		5 page-navi function
- *		6 miscelaneous cleanup
+ *		1 Head cleanup (remove rsd, uri links, junk css, ect)
+ *		2 Enqueueing scripts & styles
+ *		3 Theme support functions
+ *		4 Related post function
+ *		5 Page-navi function
+ *		6 Miscelaneous cleanup
  *		7 Debug functions
  */
 
@@ -157,8 +157,7 @@ function osea_theme_support() {
 
 	// HTML5 SUPPORT
 	// http://codex.wordpress.org/Semantic_Markup
-	add_theme_support( 'html5' );
-		$args = array(
+	$args = array(
 		'search-form',
 		'comment-form',
 		'comment-list',
@@ -167,10 +166,20 @@ function osea_theme_support() {
 	);
 	add_theme_support( 'html5', $args );
 
-	// Add theme support for custom CSS in the TinyMCE visual editor
+	// Custom CSS in the TinyMCE visual editor
 	// add_editor_style( '' );	
-
 }
+
+/**
+ * This is the maximum width in pixels for your content area
+ *
+ * @see:codex http://codex.wordpress.org/Content_Width
+ */
+if ( ! isset( $content_width ) ) {
+	    $content_width = 640;
+}
+
+
 
 
 /**
