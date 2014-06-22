@@ -35,7 +35,7 @@
  * Set to true in order to display debug information.
  * The functions are defined in lib/osea.php
  */
-//define( 'OSEA_DEBUG', true );
+#define( 'OSEA_DEBUG', true );
 
 /**
  * 1.2 OPTIMIZATION
@@ -43,7 +43,7 @@
  * the HTML in between wp_head and wp_footer.
  * The functions are defined in /lib/osea.php
  */
-//define( 'OSEA_OPTIMIZE_HTML', true );
+#define( 'OSEA_OPTIMIZE_HTML', true );
 
 
 /**
@@ -126,7 +126,7 @@ include_once( 'lib/plugin/plugin-template.php' );
  */
 include_once( 'lib/3rd_party/libs.php' );
 include_once( 'lib/3rd_party/fixes.php' );
-//include_once( 'lib/3rd_party/cleanup.php' );
+include_once( 'lib/3rd_party/cleanup.php' );
 
 
 /**
@@ -173,25 +173,15 @@ add_action( 'after_setup_theme', 'osea_launch' );
  * 6 CUSTOM FUNCTIONS
  * 
  * Here you could put your custom functions, but
- * it's better to look first if there are more 
- * appropriate files to put them.
+ * first better take a look at the included files
+ * above, specially under THEME FUNCTIONALITY because probably there are more appropriate
+ * files to put them.
  *
  * Take a look at the embedded files above,
  * specially in the THEME FUNCTIONALITY section
  * 
  */
 
-
-/**
- * OEMBED SIZE OPTIONS 
- * TODO: Move to another file
- *
- * This is the maximum width in pixels for your content area
- */
-
-if ( ! isset( $content_width ) ) {
-	$content_width = 640;
-}
 
 
 
