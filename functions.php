@@ -2,7 +2,6 @@
 /**
  * This is the functions.php file
  *
- *
  * Don't reinvent the wheel. Take a look to
  * http://codex.wordpress.org/Function_Reference/
  *
@@ -10,15 +9,11 @@
  * 		1 Global Options
  * 			1.1 Debug
  * 			1.2 Optimization
- *
  *		2 Theme Func.
  *		3 Plugin Func.
  *		4 Third party
- *
  *		5 Launch Ósea
- *
  * 		6 Custom Func.
- *
  *
  * Author: andamira
  * URL: htp://andamira.net/osea/
