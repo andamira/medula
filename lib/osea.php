@@ -258,7 +258,9 @@ return '...  <a class="excerpt-read-more" href="'. get_permalink($post->ID) . '"
  *
  * It would be better if it could be (de)activated from functions.php
  */
-function callback($buffer) {
+
+
+function osea_optimize_html_callback( $buffer ) {
 	// option 1 ( http://wordpress.org/support/topic/how-do-i-strip-out-all-whitespace-via-a-filter )
 	//buffer = str_replace( array( "\n", "\t", '  ' ), '', $buffer );
 
@@ -277,10 +279,13 @@ function callback($buffer) {
 
 	return $buffer;
 }
-function buffer_start() { ob_start("callback"); }
-function buffer_end() { ob_end_flush(); }
-add_action('wp_head', 'buffer_start');
-add_action('wp_footer', 'buffer_end');
+function osea_optimize_html_buffer_start() { ob_start("osea_optimize_html_callback"); }
+function osea_optimize_html_buffer_end() { ob_end_flush(); }
+
+if ( defined( 'OSEA_OPTIMIZE_HTML' ) && OSEA_OPTIMIZE_HTML ) {
+	add_action('wp_head', 'osea_optimize_html_buffer_start');
+	add_action('wp_footer', 'osea_optimize_html_buffer_end');
+}
 
 
 
