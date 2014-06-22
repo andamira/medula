@@ -7,7 +7,9 @@
  * http://codex.wordpress.org/Function_Reference/
  *
  *
- * 		1 Debug Options
+ * 		1 Global Options
+ * 			1.1 Debug
+ * 			1.2 Optimization
  *
  *		2 Theme Func.
  *		3 Plugin Func.
@@ -24,12 +26,24 @@
 
 
 /**
- * 1 DEBUG OPTIONS
+ * 1 GLOBAL OPTIONS
  *
- * Set to true for displaying debug information,
- * Debug functions are defined in lib/osea.php
  */
-define( 'OSEA_DEBUG', true );
+
+/**
+ * 1.1 DEBUG
+ * Set to true in order to display debug information.
+ * The functions are defined in lib/osea.php
+ */
+//define( 'OSEA_DEBUG', true );
+
+/**
+ * 1.2 OPTIMIZATION
+ * Set to true in order to remove the whitespace from
+ * the HTML in between wp_head and wp_footer.
+ * The functions are defined in /lib/osea.php
+ */
+//define( 'OSEA_OPTIMIZE_HTML', true );
 
 
 /**
@@ -46,6 +60,8 @@ define( 'OSEA_DEBUG', true );
 
 // Ósea Core Library
 require_once( 'lib/osea.php' );
+// Customize Admin Area
+require_once( 'lib/admin.php' );
 
 // Icons & Favicons
 require_once( 'lib/icons.php' );
@@ -176,5 +192,6 @@ add_action( 'after_setup_theme', 'osea_launch' );
 if ( ! isset( $content_width ) ) {
 	$content_width = 640;
 }
+
 
 
