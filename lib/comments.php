@@ -17,6 +17,7 @@
  * @see:codex http://codex.wordpress.org/Function_Reference/_n
  */
 function osea_comments_count( $link = false ) {
+
 	$cc  = '<span class="entry-comments-count">';
 
 	$com_num = get_comments_number();
