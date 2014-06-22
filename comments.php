@@ -2,6 +2,7 @@
 /* 
  * The comments page
  *
+ * @see:codex http://codex.wordpress.org/Template_Tags/wp_list_comments
 */
 
 // don't load it if you can't comment
@@ -28,7 +29,6 @@ if ( post_password_required() ) {
 				$cv_end = '';
 			}
 
-			// Codex: http://codex.wordpress.org/Template_Tags/wp_list_comments
 			wp_list_comments( array(
 				'walker'			=> null,
 				'max_depth'			=> '',
@@ -59,8 +59,6 @@ if ( post_password_required() ) {
 		<?php if ( ! comments_open() ) : ?>
 			<p class="no-comments"><?php _e( 'Comments are closed.' , 'osea-theme' ); ?></p>
 		<?php endif; ?>
-
-	<?php else: ?>
 
 	<?php endif; ?>
 
