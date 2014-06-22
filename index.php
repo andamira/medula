@@ -21,7 +21,7 @@
 			</section>
 
 			<footer class="entry-footer">
-				<?php osea_comments_count(); ?>
+				<?php osea_comments_count( true ); ?>
 				<div class="entry-meta"><?php osea_entry_meta_tags(); osea_entry_meta_categories(); ?></div>
 			</footer>
 

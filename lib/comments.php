@@ -11,19 +11,28 @@
 /**
  * 1 COMMENTS COUNT
  *
- * Codex
- * http://codex.wordpress.org/Function_Reference/comments_number
+ * @param bool $link 	Include a link to #comments-title if comments != 0
+ *
+ * @see:codex http://codex.wordpress.org/Function_Reference/comments_number
+ * @see:codex http://codex.wordpress.org/Function_Reference/_n
  */
-function osea_comments_count() {
+function osea_comments_count( $link = false ) {
 	$cc  = '<span class="entry-comments-count">';
 
 	$com_num = get_comments_number();
 
+	if ( $link && $com_num ) {
+		$cc .= '<a href="' . get_the_permalink() . '#comments-title" title="' . __( 'Go to comments', 'osea-theme' ) . '">';
+	}
+
 	if ( ! $com_num ) {
 		$cc .= __( '<span>No</span> Comments', 'osea-theme' );
 	} else {
-		// Codex: http://codex.wordpress.org/Function_Reference/_n
 		$cc .= sprintf ( _n( '<span>%s</span> Comment', '<span>%s</span> Comments', $com_num, 'osea-theme' ), $com_num );
+	}
+
+	if ( $link && $com_num ) {
+		$cc .= '</a>';
 	}
 
 	$cc .= '</span>';
@@ -35,8 +44,7 @@ function osea_comments_count() {
 /**
  * 2 CUSTOM COMMENT LAYOUT
  *
- * See:
- * http://www.whatwg.org/specs/web-apps/current-work/multipage/sections.html#the-article-element
+ * @see http://www.whatwg.org/specs/web-apps/current-work/multipage/sections.html#the-article-element
  *
  */
 function osea_comments_layout( $comment, $args, $depth ) {

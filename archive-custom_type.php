@@ -35,6 +35,7 @@
 			</section>
 
 			<footer class="entry-footer">
+				<?php osea_comments_count( true ); ?>
 				<div class="entry-meta"><?php osea_entry_meta_tags('custom_tag'); osea_entry_meta_categories('custom_cat'); ?></div>
 			</footer>
 
