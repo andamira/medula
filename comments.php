@@ -49,17 +49,19 @@ if ( post_password_required() ) {
 		?>
 		</section>
 
-    <?php if ( get_comment_pages_count() > 1 && get_option( 'page_comments' ) ) : ?>
-    	<nav class="comments-nav" role="navigation">
-      	<div class="comments-nav-prev"><?php previous_comments_link( __( '&larr; Previous Comments', 'osea-theme' ) ); ?></div>
-      	<div class="comments-nav-next"><?php next_comments_link( __( 'More Comments &rarr;', 'osea-theme' ) ); ?></div>
-    	</nav>
-    <?php endif; ?>
+		<?php if ( get_comment_pages_count() > 1 && get_option( 'page_comments' ) ) : ?>
+			<nav class="comments-nav" role="navigation">
+			<div class="comments-nav-prev"><?php previous_comments_link( __( '&larr; Previous Comments', 'osea-theme' ) ); ?></div>
+			<div class="comments-nav-next"><?php next_comments_link( __( 'More Comments &rarr;', 'osea-theme' ) ); ?></div>
+			</nav>
+		<?php endif; ?>
 
-    <?php if ( ! comments_open() ) : ?>
-    	<p class="no-comments"><?php _e( 'Comments are closed.' , 'osea-theme' ); ?></p>
-    <?php endif; ?>
+		<?php if ( ! comments_open() ) : ?>
+			<p class="no-comments"><?php _e( 'Comments are closed.' , 'osea-theme' ); ?></p>
+		<?php endif; ?>
 
-  <?php endif; ?>
+	<?php else: ?>
 
-  <?php comment_form(); ?>
+	<?php endif; ?>
+
+	<?php comment_form(); ?>
