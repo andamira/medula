@@ -2,25 +2,21 @@
 /**
  * This is the functions.php file
  *
- * Don't reinvent the wheel. Take a look to
- * http://codex.wordpress.org/Function_Reference/
- *
- *
+ * INDEX:
  * 		1 Global Options
  * 			1.1 Debug
  * 			1.2 Optimization
- *
- *		2 Theme Func.
- *		3 Plugin Func.
- *
- *		4 External Libs
- *
+ *		2 Theme Functionlity
+ *		3 Plugin Functionality
+ *		4 External Libraries
  *		5 Launch Ósea
- *
- * 		6 Custom Func., Actions & Filters
+ * 		6 Custom Functions, Actions & Filters
  *
  * Author: andamira
  * URL: htp://andamira.net/osea/
+ *
+ * Don't reinvent the wheel. Take a look to:
+ * @see:codex http://codex.wordpress.org/Function_Reference/
  */
 
 
@@ -162,6 +158,7 @@ add_action( 'after_setup_theme', 'osea_launch' );
 
 /**
  * 6 CUSTOM FUNCTIONS, ACTIONS & FILTERS
+ * ************************************************************
  * 
  * Here you could put your custom functions, but
  * first better take a look at the included files
