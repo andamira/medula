@@ -7,7 +7,7 @@
  *
  */
 ?>
-		</div> <?php // #content-wrapper ?>
+		</div> <?php // (#content-wrapper) opening tag in header.php ?>
 
 		<footer class="site-footer" role="contentinfo">
 
@@ -21,7 +21,6 @@
 
 		<?php // js scripts that loads in the footer are defined in lib/osea.php ?>
 		<?php wp_footer(); ?>
-
 
 	</body>
 
