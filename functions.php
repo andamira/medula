@@ -9,10 +9,14 @@
  * 		1 Global Options
  * 			1.1 Debug
  * 			1.2 Optimization
+ *
  *		2 Theme Func.
  *		3 Plugin Func.
- *		4 Third party
+ *
+ *		4 External Libs
+ *
  *		5 Launch Ósea
+ *
  * 		6 Custom Func.
  *
  * Author: andamira
@@ -30,7 +34,7 @@
  * Set to true in order to display debug information.
  * The functions are defined in lib/osea.php
  */
-#define( 'OSEA_DEBUG', true );
+#define( 'OSEA_DEBUG', true );				// < disabled by default
 
 /**
  * 1.2 OPTIMIZATION
@@ -38,7 +42,7 @@
  * the HTML in between wp_head and wp_footer.
  * The functions are defined in /lib/osea.php
  */
-#define( 'OSEA_OPTIMIZE_HTML', true );
+#define( 'OSEA_OPTIMIZE_HTML', true );		// < disabled by default
 
 
 /**
@@ -56,7 +60,7 @@
 // Ósea Core Library
 require_once( 'lib/osea.php' );
 // Customize Admin Area
-require_once( 'lib/admin.php' );
+#require_once( 'lib/admin.php' );			// < disabled by default
 
 // Icons & Favicons
 require_once( 'lib/icons.php' );
@@ -102,26 +106,14 @@ include_once( 'lib/plugin/plugin-template.php' );
 
 
 /**
- * 4 THIRD PARTY LIBRARIES, FIXES & CLEANUP
+ * 4 EXTERNAL LIBRARIES & PLUGINS
  *
- * 'lib/3rd_party/libs.php'
- * Here you can load 3rd party libraries.
- * It alredy comes with some libraries.
- *
- * 'lib/3rd_party/fixes.php'
- * Here is where you put the fixes for the problems
- * with 3rd party libraries, plugins, etc.
- * It already comes with some examples
- *
- * 'lib/3rd_party/cleanup.php'
- * Here is where you put the code for cleaning and
- * minifying the output of libraries, plugins, etc.
- * It already comes with some examples
- *
+ * This file controls the inclusion of third party
+ * libraries, fixes & cleanups for external libraries
+ * and plugins. And specific includes for some big
+ * and important plugins like WPML & WooCommerce
  */
-include_once( 'lib/3rd_party/libs.php' );
-include_once( 'lib/3rd_party/fixes.php' );
-include_once( 'lib/3rd_party/cleanup.php' );
+include_once( 'lib/ext.php' );
 
 
 /**
