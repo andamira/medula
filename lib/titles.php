@@ -45,7 +45,7 @@ function osea_entry_title( $htag, $with_link = false, $headline = false ) {
  * 2 A BETTER wp_title()
  * ************************************************************
  *
- * @see:src http://www.deluxeblogtips.com/2012/03/better-title-meta-tag.html
+ * @see:source http://www.deluxeblogtips.com/2012/03/better-title-meta-tag.html
  * @see:codex http://codex.wordpress.org/Function_Reference/wp_title
  * @see:changes https://core.trac.wordpress.org/changeset/28669 Changes in WordPress 4.0 
  */
