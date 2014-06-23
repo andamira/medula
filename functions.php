@@ -17,7 +17,7 @@
  *
  *		5 Launch Ósea
  *
- * 		6 Custom Func.
+ * 		6 Custom Func., Actions & Filters
  *
  * Author: andamira
  * URL: htp://andamira.net/osea/
@@ -26,6 +26,7 @@
 
 /**
  * 1 GLOBAL OPTIONS
+ * ************************************************************
  *
  */
 
@@ -47,6 +48,7 @@
 
 /**
  * 2 THEME FUNCTIONALITY
+ * ************************************************************
  *
  * Instructions:
  * https://github.com/andamira/osea/wiki/Theme_includes
@@ -87,6 +89,7 @@ require_once( 'lib/page-links.php' );
 
 /**
  * 3 PLUGIN FUNCTIONALITY
+ * ************************************************************
  * 
  * Instructions:
  * https://github.com/andamira/osea/wiki/Plugin
@@ -107,6 +110,7 @@ include_once( 'lib/plugin/plugin-template.php' );
 
 /**
  * 4 EXTERNAL LIBRARIES & PLUGINS
+ * ************************************************************
  *
  * This file controls the inclusion of third party
  * libraries, fixes & cleanups for external libraries
@@ -118,7 +122,7 @@ include_once( 'lib/ext.php' );
 
 /**
  * 5 LAUNCH ÓSEA
- * Gets everything up and running.
+ * ************************************************************
  */
 function osea_launch() {
 
@@ -157,7 +161,7 @@ add_action( 'after_setup_theme', 'osea_launch' );
 
 
 /**
- * 6 CUSTOM FUNCTIONS
+ * 6 CUSTOM FUNCTIONS, ACTIONS & FILTERS
  * 
  * Here you could put your custom functions, but
  * first better take a look at the included files
@@ -169,6 +173,7 @@ add_action( 'after_setup_theme', 'osea_launch' );
  * 
  */
 
-
+// Disable the Admin Bar for every user
+#add_filter('show_admin_bar', '__return_false');
 
 
