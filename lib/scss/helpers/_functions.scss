@@ -12,8 +12,7 @@
  *
  *		4 Numbers, units, relationships
  *
- * Documentation
- * http://sass-lang.com/documentation/Sass/Script/Functions.html
+ * @see:docs http://sass-lang.com/documentation/Sass/Script/Functions.html
  */
 
 
@@ -56,6 +55,7 @@
  */
 
 // http://hugogiraudel.com/2013/08/08/advanced-sass-list-functions/
+// probably is better just to use sassy-list
 
 
 
@@ -64,7 +64,39 @@
  *
  */
 
-/*
+// 
+@function parseInt( $n ) {
+	@return $n / ($n * 0 + 1);
+}
+
+/**
+ * Convert rem to pixels
+ *
+ * @see:source http://davidwalsh.name/rem-px-browser-function-sass
+ */
+@function rem2px( $values ){
+
+      $list: ();
+
+      @each $value in $values {
+
+            $unit : unit($value);
+            $val  : parseInt($value);
+
+            @if ($print-rem-px-fallbacks) and ($unit == 'rem') {
+                  $list: append($list, ($val * $base-font-size) );
+            }
+            @else if($unit == 'px') or ($unit == 'rem'){
+                  $list: append($list, $value);
+            }
+            @else {
+                  @warn 'There is no unit conversion for #{$unit}';
+            }
+      }
+      @return $list();
+}
+
+/**
  * Restrict a number between min and max values
  */
 @function clamp($value, $min, $max) {
