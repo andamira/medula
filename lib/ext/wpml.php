@@ -2,13 +2,23 @@
 /**
  * WPML Support Template
  *
- *      1 Custom Language Switcher
+ *      1 Disable WPML CSS & JS
+ *      2 Custom Language Switcher
  */
 
 
+/**
+ * 1 Disable WPML CSS & JS
+ *
+ * @see http://wpml.org/documentation/support/wpml-coding-api
+ */
+define('ICL_DONT_LOAD_LANGUAGE_SELECTOR_CSS', true);
+define('ICL_DONT_LOAD_NAVIGATION_CSS', true);
+define('ICL_DONT_LOAD_LANGUAGES_JS', true);
+
 
 /**
- * 1 Custom Language Switcher
+ * 2 Custom Language Switcher
  *
  * Shows all the languages, diferentiating between active, inactive and missing.
  *
