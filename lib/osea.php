@@ -21,6 +21,7 @@
 
 /**
  * 1 WP_HEAD CLEANUP
+ * ************************************************************
  */
 function osea_head_cleanup() {
 	// category feeds
@@ -82,6 +83,7 @@ function osea_gallery_style($css) {
 
 /**
  * 2 SCRIPTS & ENQUEUEING
+ * ************************************************************
  */
 
 // loading modernizr and jquery, and reply script
@@ -122,6 +124,7 @@ function osea_scripts_and_styles() {
 
 /**
  * 3 WP 3+ FUNCTIONS & THEME SUPPORT
+ * ************************************************************
  *
  * Codex:
  * http://codex.wordpress.org/Function_Reference/add_theme_support
@@ -184,6 +187,7 @@ if ( ! isset( $content_width ) ) {
 
 /**
  * 4 RELATED POSTS FUNCTION
+ * ************************************************************
  */
 
 // Related Posts Function (call using osea_related_posts(); )
@@ -216,6 +220,7 @@ function osea_related_posts() {
 
 /**
  * 5 PAGE NAVI
+ * ************************************************************
  */
 
 // Numeric Page Navi (built into the theme by default)
@@ -243,6 +248,7 @@ function osea_page_navi() {
 
 /**
  * 6 MISCELANEOUS CLEANUP
+ * ************************************************************
  */
 
 // remove the p from around imgs (http://css-tricks.com/snippets/wordpress/remove-paragraph-tags-from-around-images/)
@@ -267,8 +273,6 @@ return '...  <a class="excerpt-read-more" href="'. get_permalink($post->ID) . '"
  *
  * It would be better if it could be (de)activated from functions.php
  */
-
-
 function osea_optimize_html_callback( $buffer ) {
 	// option 1 ( http://wordpress.org/support/topic/how-do-i-strip-out-all-whitespace-via-a-filter )
 	//buffer = str_replace( array( "\n", "\t", '  ' ), '', $buffer );
@@ -297,9 +301,9 @@ if ( defined( 'OSEA_OPTIMIZE_HTML' ) && OSEA_OPTIMIZE_HTML ) {
 }
 
 
-
 /**
  * 7 DEBUG FUNCTIONS
+ * ************************************************************
  */
 
 // This debug function displays the template filename

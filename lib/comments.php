@@ -1,7 +1,7 @@
 <?php
 /**
  * Comments template
- * ************************************************************
+ *
  *
  * 		1 Comments Count Display Function
  * 		2 Custom Comment Layout
@@ -10,6 +10,7 @@
 
 /**
  * 1 COMMENTS COUNT
+ * ************************************************************
  *
  * @param bool $link 	Include a link to #comments-title if comments != 0
  *
@@ -44,6 +45,7 @@ function osea_comments_count( $link = false ) {
 
 /**
  * 2 CUSTOM COMMENT LAYOUT
+ * ************************************************************
  *
  * @see http://www.whatwg.org/specs/web-apps/current-work/multipage/sections.html#the-article-element
  *

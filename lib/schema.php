@@ -1,9 +1,10 @@
 <?php
 /**
  * Schema template
- * ************************************************************
  *
  * Functions for outputting schema.org html tags
+ *
+ * TODO: Still not in use
  * 
  */
 

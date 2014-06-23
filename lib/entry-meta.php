@@ -19,6 +19,7 @@
 
 /**
  * 1 Returns the entry datetime
+ * ************************************************************
  */
 function osea_get_entry_meta_date() {
 	return( '<time class="entry-date updated" datetime="' . get_the_time( 'Y-m-dTH:i:sO' ) . '" itemprop="datePublished" pubdate>' . get_the_time( get_option( 'date_format' ) ) . '</time>' );
@@ -27,6 +28,7 @@ function osea_get_entry_meta_date() {
 
 /**
  * 2 Returns the entry author
+ * ************************************************************
  *
  * Codex:
  * http://codex.wordpress.org/Function_Reference/get_the_author_meta
@@ -57,6 +59,7 @@ function osea_get_entry_meta_author() {
 
 /**
  * 3 Prints the byline
+ * ************************************************************
  */
 function osea_entry_meta_byline() {
 	$byline  = '<span class="entry-byline byline">';
@@ -70,6 +73,7 @@ function osea_entry_meta_byline() {
 
 /**
  * 4 Prints the terms (taxonomies, categories, tags... )
+ * ************************************************************
  */
 function osea_entry_meta_terms( $custom, $class, $label) {
 
@@ -101,6 +105,7 @@ function osea_entry_meta_tags( $custom = 'post_tag' ) {
 
 /**
  * 5 Returns the Edit Link (post, comment, etc.)
+ * ************************************************************
  */
 function osea_edit_link( $link, $echo = true ) {
 	$edit  = '<span class="edit-link"><a href="' . $link . '"';

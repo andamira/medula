@@ -17,6 +17,7 @@
 
 /**
  * 1 REMOVE DEFAULT DASHBOARD WIDGETS
+ * ************************************************************
  *
  * Comment/Uncomment the ones you want to maintain/remove
  */
@@ -44,6 +45,7 @@ add_action( 'admin_menu', 'disable_default_dashboard_widgets' );
 
 /**
  * 2 CUSTOM WIDGETS
+ * ************************************************************
  *
  * Now let's talk about adding your own custom Dashboard widget.
  * Sometimes you want to show clients feeds relative to their
@@ -76,6 +78,7 @@ add_action( 'wp_dashboard_setup', 'osea_custom_dashboard_widgets' );
 
 /**
  * 3 CUSTOM LOGIN PAGE
+ * ************************************************************
  *
  * You can edit the style in /lib/scss/login.scss
  */
@@ -97,6 +100,7 @@ add_filter( 'login_headertitle', 'osea_login_title' );
 
 /**
  * 4 CUSTOMIZE ADMIN
+ * ************************************************************
  *
  * Put
  */

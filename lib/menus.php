@@ -2,10 +2,9 @@
 /*
  * Menus template
  *
- * INDEX:
- * 		Theme Support
- *		Menus
- * 		Custom Nav Walker
+ * 		1 Theme Support
+ *		2 Menus
+ * 		3 Custom Nav Walker
  *
  * Codex:
  * http://codex.wordpress.org/Navigation_Menus
@@ -13,7 +12,8 @@
 
 
 /*
- * THEME SUPPORT
+ * 1 THEME SUPPORT
+ * ************************************************************
  *
  */
 
@@ -28,12 +28,12 @@ register_nav_menus(
 
 
 /*
- * MENUS
+ * 2 MENUS
+ * ************************************************************
  *
  * To create a new menu:
  * 	- add a new key to the register_nav_menus array, above
- *	- duplicate any of the existing menus below,
- *	  and modify the values accordingly
+ *	- duplicate any of the existing menus below, and modify the values
  *	- call the function from the template you want
  */
 
@@ -83,7 +83,8 @@ function osea_site_footer_nav() {
 
 
 /*
- * CUSTOM NAV WALKER
+ * 3 CUSTOM NAV WALKER
+ * ************************************************************
  *
  * Code sourced from WordPress 3.9.1
  * 
@@ -235,8 +236,8 @@ class osea_Walker_Nav_Menu extends Walker {
     function end_el( &$output, $item, $depth = 0, $args = array() ) {
         $output .= "</li>\n";
     }
+}
 
-} /* end osea_Walker_Nav_Menu */
 
 
 

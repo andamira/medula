@@ -3,22 +3,24 @@
  * Titles template
  *
  *		1 Entry Title
- *
  *		2 A Better wp_title()
  */
 
 
 /*
  * 1 ENTRY TITLE
+ * ************************************************************
  *
  * Prints entry title
  *
- * Arguments: the heading tag, wether to display a link or not
+ * @param string $htag		Heading tag: h[1-6]
+ * @param bool   $link		Display a link if true
+ * @param bool   $headline	Add headline microdata if true
  */
 function osea_entry_title( $htag, $with_link = false, $headline = false ) {
 
 	if ( !in_array( $htag, array( 'h1', 'h2', 'h3', 'h4', 'h5', 'h6' ) ) ) {
-		$htag = 'h1'; // value by default if none provided
+		$htag = 'h1'; // value by default if none provided or wrong value
 	}
 
 	$title  = "<$htag ". 'class="entry-title"';
@@ -39,18 +41,13 @@ function osea_entry_title( $htag, $with_link = false, $headline = false ) {
 }
 
 
-
 /*
  * 2 A BETTER wp_title()
+ * ************************************************************
  *
- * Source:
- * http://www.deluxeblogtips.com/2012/03/better-title-meta-tag.html
- *
- * Codex:
- * http://codex.wordpress.org/Function_Reference/wp_title
- * 
- * TODO:
- * In WordPress 4.0 https://core.trac.wordpress.org/changeset/28669
+ * @see:src http://www.deluxeblogtips.com/2012/03/better-title-meta-tag.html
+ * @see:codex http://codex.wordpress.org/Function_Reference/wp_title
+ * @see:changes https://core.trac.wordpress.org/changeset/28669 Changes in WordPress 4.0 
  */
 function osea_wp_title( $title, $sep, $seplocation ) { 
 	global $page, $paged;

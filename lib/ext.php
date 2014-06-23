@@ -2,7 +2,6 @@
 /**
  * EXTERNAL LIBRARIES & PLUGINS TEMPLATES
  *
- *
  *		1 EXT. LIBRARY LOADING
  *		2 EXT. FIXES
  *		3 EXT. CLEANUP
@@ -13,26 +12,29 @@
  */
 
 /**
- *  1 Load external libraries
+ * 1 Load external libraries
+ * ************************************************************
  */
 include_once( 'ext/libs.php' );
 
 
 /**
  * 2 Fix problems with external libraries & plugins
+ * ************************************************************
  */
 include_once( 'ext/fixes.php' );
 
 
 /**
- * 3 Cleans & minifies code of
- * of external libraries, plugins, etc.
+ * 3 Cleans & minifies code of external libraries, plugins, etc.
+ * ************************************************************
  */
 include_once( 'ext/cleanup.php' );
 
 
 /** 
  * 4 SPECIFIC PLUGINS SUPPORT
+ * ************************************************************
  */
 
 /**

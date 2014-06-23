@@ -2,11 +2,13 @@
 /*
  * Fonts template
  *
+ * 		1 Google fonts
  */
 
 
 /*
- * GOOGLE FONTS
+ * 1 GOOGLE FONTS
+ * ************************************************************
  */
 
 function osea_fonts() {
