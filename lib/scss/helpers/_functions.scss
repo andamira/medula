@@ -64,36 +64,40 @@
  *
  */
 
-// 
-@function parseInt( $n ) {
-	@return $n / ($n * 0 + 1);
-}
+/*
+ * Strips the unit of measure and returns it
+ * @see:source https://github.com/zurb/foundation/blob/master/scss/foundation/_functions.scss#L40
+ */
+@function strip-unit( $num ) {
+	@return $num / ($num * 0 + 1);
+ }
 
 /**
  * Convert rem to pixels
  *
  * @see:source http://davidwalsh.name/rem-px-browser-function-sass
  */
-@function rem2px( $values ){
+@function rem2px( $values ) {
 
-      $list: ();
+	$list: ();
 
-      @each $value in $values {
+	@each $value in $values {
 
-            $unit : unit($value);
-            $val  : parseInt($value);
+		$unit : unit( $value );
+		$val  : strip-unit( $value );
 
-            @if ($print-rem-px-fallbacks) and ($unit == 'rem') {
-                  $list: append($list, ($val * $base-font-size) );
-            }
-            @else if($unit == 'px') or ($unit == 'rem'){
-                  $list: append($list, $value);
-            }
-            @else {
-                  @warn 'There is no unit conversion for #{$unit}';
-            }
-      }
-      @return $list();
+		@if ( $rem-with-px-fallbacks ) and ( $unit == 'rem' ) {
+			$list: append( $list, ( $val * $base-font-size ) );
+		}
+		@else if( $unit == 'px' ) or ( $unit == 'rem' ){
+			$list: append( $list, $value );
+		}
+		@else {
+			@warn 'There is no unit conversion for #{$unit}';
+		}
+	}
+
+@return $list();
 }
 
 /**

@@ -35,7 +35,6 @@
 
 $base-font-size: 16px;
 $base-line-height: 24px;
-$print-rem-px-fallbacks: true;	// Enable px fallback for old browsers?
 $rhythm-unit: 'rem';
 $rem-with-px-fallback: true;
 
@@ -148,7 +147,6 @@ $rem-with-px-fallback: true;
 }
 
 
-
 /**
  * DEBUG
  *
@@ -159,3 +157,5 @@ $rem-with-px-fallback: true;
  *
  */
 @import "modules/debug";
+
+

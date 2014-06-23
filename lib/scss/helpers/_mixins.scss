@@ -5,11 +5,58 @@
  * A WORD OF WARNING: It's very easy to overdo it here.
  * Be careful and remember less is more.
  *
- * Recommended reading:
- * http://sachagreif.com/useful-sass-mixins/
- * http://thesassway.com/intermediate/leveraging-sass-mixins-for-cleaner-code
- * http://web-design-weekly.com/blog/2013/05/12/handy-sass-mixins/
+ * 
+ * @see http://sachagreif.com/useful-sass-mixins/
+ * @see http://thesassway.com/intermediate/leveraging-sass-mixins-for-cleaner-code
+ * @see http://web-design-weekly.com/blog/2013/05/12/handy-sass-mixins/
  */
+
+/**
+ * 1 REM MIXIN WITH PX FALLBACK
+ *
+ * @see:source http://hugogiraudel.com/2013/03/18/ultimate-rem-mixin/
+ */
+@mixin rem($property, $values) {
+	$px : ();
+	$rem: ();
+
+	$base-font-val: strip-unit( $base-font-size )
+
+	@each $value in $values {
+
+		$unit: unit( $value );
+		$val: strip-unit( $value );
+
+		@if $value == 0 or type-of($value) != "number" or $val != "rem" or $val != "px" {
+			$px : append( $px, $value );
+			$rem: append( $rem, $value );
+		}
+		@else { 
+			@if $unit == "px" {
+				$px : append( $px,  $value );
+				$rem: append( $rem, ( $val / $base-font-val + rem ) );
+			}
+
+			@if $unit == "rem" {
+				$px : append( $px,  ( $val * $base-font-val + px ) );
+				$rem: append( $rem, $value );
+			}
+		}
+	}
+
+	@if $px == $rem {
+		#{$property}: $rem;
+	} @else {
+		// uses normalize class
+		html.no-cssremunit & {
+			#{$property}: $px;
+		}
+		#{$property}: $rem;
+	}
+}
+
+
+
 
 
 /**
