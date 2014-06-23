@@ -91,7 +91,10 @@ $rem-with-px-fallback: true;
  *
  */
 
-// normalize
+/**
+ *  normalize
+ *  @see:source https://github.com/JohnAlbin/normalize-scss
+ */
 @import "layouts/normalize";
 @import "layouts/normalize_extra";
 
