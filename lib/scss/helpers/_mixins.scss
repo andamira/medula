@@ -20,7 +20,7 @@
 	$px : ();
 	$rem: ();
 
-	$base-font-val: strip-unit( $base-font-size )
+	$base-font-val: strip-unit( $base-font-size );
 
 	@each $value in $values {
 
