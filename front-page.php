@@ -8,7 +8,6 @@
 
 			<header class="entry-header">
 				<?php osea_debug_showfile( __FILE__ ); ?>
-				<?php osea_entry_title( 'h1' ); ?>
 			</header>
 
 			<section class="entry-content">
