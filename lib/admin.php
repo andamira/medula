@@ -62,7 +62,7 @@ add_action( 'admin_menu', 'disable_default_dashboard_widgets' );
 function osea_example_dashboard_widget() {
 	?>
 	<h1> </h1>
-	<p>You can edit this message in /lib/admin.php and add your own widgets</p>
+	<p>You can edit this message in /lib/admin.php and add your own widgets, and restore the disabled defaults.</p>
 	<?php
 }
 
