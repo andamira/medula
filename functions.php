@@ -7,6 +7,18 @@
  * 			1.1 Debug
  * 			1.2 Optimization
  *		2 Theme Functionlity
+ *			2.1  Ósea library
+ *			2.2  Admin
+ *			2.3  Icons
+ *			2.4  Fonts
+ *			2.5  Menus
+ *			2.6  Sidebars
+ *			2.7  Thumbnails
+ *			2.8  Titles
+ *			2.9  Entry Meta
+ *			2.10 Comments
+ *			2.11 Page Links
+ *			2.12 Not Found
  *		3 Plugin Functionality
  *		4 External Libraries
  *		5 Launch Ósea
@@ -58,7 +70,8 @@
 // Ósea Core Library
 require_once( 'lib/osea.php' );
 // Customize Admin Area
-#require_once( 'lib/admin.php' );			// < disabled by default
+
+require_once( 'lib/admin.php' );			// < disabled by default
 
 // Icons & Favicons
 require_once( 'lib/icons.php' );
@@ -77,10 +90,10 @@ require_once( 'lib/titles.php' );
 require_once( 'lib/entry-meta.php' ); 
 // Comments layout
 require_once( 'lib/comments.php' ); 
-// Not Found layout
-require_once( 'lib/not-found.php' );
 // Page Links
 require_once( 'lib/page-links.php' );
+// Not Found layout
+require_once( 'lib/not-found.php' );
 
 
 /**
