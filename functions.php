@@ -20,8 +20,13 @@
  *			2.11 Page Links
  *			2.12 Not Found
  *		3 Plugin Functionality
- *		4 External Libraries
- *		5 Launch Ósea
+ *		4 After Setup Theme Actions
+ *			4.1 Language Support
+ *			4.2 Cleanup
+ *			4.3 Load Base Scripts & Styles
+ *			4.4 Custom Theme Features
+ *			4.5 Register Sidebars
+ *		5 External Libraries
  * 		6 Custom Functions, Actions & Filters
  *
  * Author: andamira
@@ -43,13 +48,13 @@
  * Set to true in order to display debug information.
  * The functions are defined in lib/osea.php
  */
-define( 'OSEA_DEBUG', true );				// < disabled by default
+#define( 'OSEA_DEBUG', true );				// < disabled by default
 
 /**
  * 1.2 OPTIMIZATION
  * Set to true in order to remove the whitespace from
  * the HTML in between wp_head and wp_footer.
- * The functions are defined in /lib/osea.php
+ * @ see osea_after_setup_theme
  */
 #define( 'OSEA_OPTIMIZE_HTML', true );		// < disabled by default
 
@@ -118,7 +123,64 @@ include_once( 'lib/plugin/plugin-template.php' );
 
 
 /**
- * 4 EXTERNAL LIBRARIES & PLUGINS
+ * 4 AFTER SETUP THEME
+ * ************************************************************
+ * 
+ * Functions defined in lib/osea.php
+ */
+function osea_launch() {
+
+	/**
+	* 4.1 language support
+	*/
+	load_theme_textdomain( 'osea-theme', get_template_directory() . '/lib/langs' );
+
+	/**
+	* 4.2 cleanup
+	*/
+	add_action( 'init', 'osea_head_cleanup' );
+	// a better title
+	add_filter( 'wp_title', 'osea_wp_title', 10, 3 );
+	// remove WP version from RSS
+	add_filter( 'the_generator', 'osea_rss_version' );
+	// remove pesky injected css for recent comments widget
+	add_filter( 'wp_head', 'osea_remove_wp_widget_recent_comments_style', 1 );
+	// clean up comment styles in the head
+	add_action( 'wp_head', 'osea_remove_recent_comments_style', 1 );
+	// clean up gallery output in wp
+	add_filter( 'gallery_style', 'osea_gallery_style' );
+
+	// cleaning up random code around images
+	add_filter( 'the_content', 'osea_filter_ptags_on_images' );
+	// cleaning up excerpt
+	add_filter( 'excerpt_more', 'osea_excerpt_more' );
+
+	// filters html output
+	if ( defined( 'OSEA_OPTIMIZE_HTML' ) && OSEA_OPTIMIZE_HTML ) { 
+		add_action('wp_head', 'osea_optimize_html_buffer_start');
+		add_action('wp_footer', 'osea_optimize_html_buffer_end');
+	}
+
+	/**
+	* 4.3 enqueue base scripts and styles, including ie conditional wrapper
+	*/
+	add_action( 'wp_enqueue_scripts', 'osea_scripts_and_styles', 999 );
+
+	/**
+	* 4.4 custom theme features
+	*/
+	osea_theme_support();
+
+	/**
+	* 4.5 register sidebars ( sidebars are defined in lib/sidebars.php )
+	*/
+	add_action( 'widgets_init', 'osea_register_sidebars' );
+}
+add_action( 'after_setup_theme', 'osea_launch' );
+
+
+/**
+ * 5 EXTERNAL LIBRARIES & PLUGINS
  * ************************************************************
  *
  * This file controls the inclusion of third party
@@ -127,46 +189,6 @@ include_once( 'lib/plugin/plugin-template.php' );
  * and important plugins like WPML & WooCommerce
  */
 include_once( 'lib/ext.php' );
-
-
-/**
- * 5 LAUNCH ÓSEA
- * ************************************************************
- */
-function osea_launch() {
-
-  // language support
-  load_theme_textdomain( 'osea-theme', get_template_directory() . '/lib/langs' );
-
-  // launching operation cleanup
-  add_action( 'init', 'osea_head_cleanup' );
-  // a better title
-  add_filter( 'wp_title', 'osea_wp_title', 10, 3 );
-  // remove WP version from RSS
-  add_filter( 'the_generator', 'osea_rss_version' );
-  // remove pesky injected css for recent comments widget
-  add_filter( 'wp_head', 'osea_remove_wp_widget_recent_comments_style', 1 );
-  // clean up comment styles in the head
-  add_action( 'wp_head', 'osea_remove_recent_comments_style', 1 );
-  // clean up gallery output in wp
-  add_filter( 'gallery_style', 'osea_gallery_style' );
-
-  // enqueue base scripts and styles, including ie conditional wrapper
-  add_action( 'wp_enqueue_scripts', 'osea_scripts_and_styles', 999 );
-
-  // custom theme features
-  osea_theme_support();
-
-  // adding sidebars to Wordpress ( defined in lib/sidebars.php )
-  add_action( 'widgets_init', 'osea_register_sidebars' );
-
-  // cleaning up random code around images
-  add_filter( 'the_content', 'osea_filter_ptags_on_images' );
-  // cleaning up excerpt
-  add_filter( 'excerpt_more', 'osea_excerpt_more' );
-
-}
-add_action( 'after_setup_theme', 'osea_launch' );
 
 
 /**

@@ -9,25 +9,25 @@
  *
  * URL: http://andamira.net/osea/
  *
- *		1 Head cleanup (remove rsd, uri links, junk css, ect)
+ *		1 Cleanup (remove rsd, uri links, junk css, etc)
  *		2 Enqueueing scripts & styles
  *		3 Theme support functions
  *		4 Related post function
  *		5 Page-navi function
- *		6 Miscelaneous cleanup
  *		7 Debug functions
  */
 
 
 /**
- * 1 WP_HEAD CLEANUP
+ * 1 CLEANUP
  * ************************************************************
  */
+
 function osea_head_cleanup() {
 	// category feeds
-	// remove_action( 'wp_head', 'feed_links_extra', 3 );
+	remove_action( 'wp_head', 'feed_links_extra', 3 );
 	// post and comment feeds
-	// remove_action( 'wp_head', 'feed_links', 2 );
+	remove_action( 'wp_head', 'feed_links', 2 );
 	// EditURI link
 	remove_action( 'wp_head', 'rsd_link' );
 	// windows live writer
@@ -48,7 +48,6 @@ function osea_head_cleanup() {
 	add_filter( 'script_loader_src', 'osea_remove_wp_ver_css_js', 9999 );
 
 }
-
 
 // remove WP version from RSS
 function osea_rss_version() { return ''; }
@@ -80,45 +79,91 @@ function osea_gallery_style($css) {
   return preg_replace( "!<style type='text/css'>(.*?)</style>!s", '', $css );
 }
 
+// remove the p from around imgs (http://css-tricks.com/snippets/wordpress/remove-paragraph-tags-from-around-images/)
+function osea_filter_ptags_on_images($content){
+   return preg_replace('/<p>\s*(<a .*>)?\s*(<img .* \/>)\s*(<\/a>)?\s*<\/p>/iU', '\1\2\3', $content);
+}
+
+// remove the annoying […] and change it to a Read More link
+function osea_excerpt_more($more) {
+	global $post;
+	return '...  <a class="excerpt-read-more" href="'. get_permalink($post->ID) .
+		'" title="'.__( 'Read', 'osea-theme' ) . get_the_title($post->ID).'">'.
+		__( 'Read more &raquo;', 'osea-theme' ) .'</a>';
+}
+
+/*
+ * FILTER HTML OUTPUT
+ *
+ * Source: http://stackoverflow.com/a/17472755
+ *
+ * TODO:
+ * In WordPress 4.0 https://core.trac.wordpress.org/changeset/28708
+ *
+ * It would be better if it could be (de)activated from functions.php
+ */
+function osea_optimize_html_callback( $buffer ) {
+	// option 1 ( http://wordpress.org/support/topic/how-do-i-strip-out-all-whitespace-via-a-filter )
+	//buffer = str_replace( array( "\n", "\t", '  ' ), '', $buffer );
+
+	// option 2 ( http://stackoverflow.com/a/6225706
+	$search = array(
+		'/\>[^\S ]+/s',  // strip whitespaces after tags, except space
+		'/[^\S ]+\</s',  // strip whitespaces before tags, except space
+		'/(\s)+/s'       // shorten multiple whitespace sequences
+	);  
+	$replace = array(
+		'>',
+		'<',
+		'\\1'
+	);  
+	$buffer = preg_replace($search, $replace, $buffer);
+
+	return $buffer;
+}
+function osea_optimize_html_buffer_start() { ob_start("osea_optimize_html_callback"); }
+function osea_optimize_html_buffer_end() { ob_end_flush(); }
+
 
 /**
  * 2 SCRIPTS & ENQUEUEING
  * ************************************************************
+ * loads moderniz, jquery, and reply script
  */
 
-// loading modernizr and jquery, and reply script
 function osea_scripts_and_styles() {
-  global $wp_styles; // call global $wp_styles variable to add conditional wrapper around ie stylesheet the WordPress way
+	// call global $wp_styles variable to add conditional wrapper around ie stylesheet the WordPress way
+	global $wp_styles; 
 
-  if (!is_admin()) {
+	if (!is_admin()) {
 
-    // modernizr (without media query polyfill)
-    wp_register_script( 'osea-modernizr', get_stylesheet_directory_uri() . '/lib/js/libs/modernizr.custom.min.js', array(), '2.8.2', false );
+		// modernizr (without media query polyfill)
+		wp_register_script( 'osea-modernizr', get_stylesheet_directory_uri() . '/lib/js/libs/modernizr.custom.min.js', array(), '2.8.2', false );
 
-    // register main stylesheet
-    wp_register_style( 'main-stylesheet', get_stylesheet_directory_uri() . '/lib/css/style.css', array(), '', 'all' );
+		// register main stylesheet
+		wp_register_style( 'main-stylesheet', get_stylesheet_directory_uri() . '/lib/css/style.css', array(), '', 'all' );
 
-    // ie-only style sheet
-    wp_register_style( 'styles-ie-only', get_stylesheet_directory_uri() . '/lib/css/ie.css', array(), '' );
+		// ie-only style sheet
+		wp_register_style( 'styles-ie-only', get_stylesheet_directory_uri() . '/lib/css/ie.css', array(), '' );
 
-    // comment reply script for threaded comments
-    if ( is_singular() AND comments_open() AND (get_option('thread_comments') == 1)) {
-		  wp_enqueue_script( 'comment-reply' );
-    }
+		// comment reply script for threaded comments
+		if ( is_singular() AND comments_open() AND (get_option('thread_comments') == 1)) {
+			  wp_enqueue_script( 'comment-reply' );
+		}
 
-    //adding scripts file in the footer
-	wp_register_script( 'osea-js', get_stylesheet_directory_uri() . '/lib/js/scripts.js', array( 'jquery' ), '', true );
+		//adding scripts file in the footer
+		wp_register_script( 'osea-js', get_stylesheet_directory_uri() . '/lib/js/scripts.js', array( 'jquery' ), '', true );
 
-    // enqueue styles and scripts
-    wp_enqueue_script( 'osea-modernizr' );
-    wp_enqueue_style( 'main-stylesheet' );
-    wp_enqueue_style( 'styles-ie-only' );
+		// enqueue styles and scripts
+		wp_enqueue_script( 'osea-modernizr' );
+		wp_enqueue_style( 'main-stylesheet' );
+		wp_enqueue_style( 'styles-ie-only' );
 
-    $wp_styles->add_data( 'styles-ie-only', 'conditional', 'lt IE 9' ); // add conditional wrapper around ie stylesheet
+		$wp_styles->add_data( 'styles-ie-only', 'conditional', 'lt IE 9' ); // add conditional wrapper around ie stylesheet
 
-    wp_enqueue_script( 'jquery' );
-    wp_enqueue_script( 'osea-js' );
-  }
+		wp_enqueue_script( 'jquery' );
+		wp_enqueue_script( 'osea-js' );
+	}
 }
 
 
@@ -251,49 +296,6 @@ function osea_page_navi() {
  * ************************************************************
  */
 
-// remove the p from around imgs (http://css-tricks.com/snippets/wordpress/remove-paragraph-tags-from-around-images/)
-function osea_filter_ptags_on_images($content){
-   return preg_replace('/<p>\s*(<a .*>)?\s*(<img .* \/>)\s*(<\/a>)?\s*<\/p>/iU', '\1\2\3', $content);
-}
-
-// This removes the annoying […] to a Read More link
-function osea_excerpt_more($more) {
-	global $post;
-	// edit here if you like
-return '...  <a class="excerpt-read-more" href="'. get_permalink($post->ID) . '" title="'. __( 'Read', 'osea-theme' ) . get_the_title($post->ID).'">'. __( 'Read more &raquo;', 'osea-theme' ) .'</a>';
-}
-
-/*
- * FILTER HTML OUTPUT
- *
- * Source: http://stackoverflow.com/a/17472755
- *
- * TODO:
- * In WordPress 4.0 https://core.trac.wordpress.org/changeset/28708
- *
- * It would be better if it could be (de)activated from functions.php
- */
-function osea_optimize_html_callback( $buffer ) {
-	// option 1 ( http://wordpress.org/support/topic/how-do-i-strip-out-all-whitespace-via-a-filter )
-	//buffer = str_replace( array( "\n", "\t", '  ' ), '', $buffer );
-
-	// option 2 ( http://stackoverflow.com/a/6225706
-	$search = array(
-		'/\>[^\S ]+/s',  // strip whitespaces after tags, except space
-		'/[^\S ]+\</s',  // strip whitespaces before tags, except space
-		'/(\s)+/s'       // shorten multiple whitespace sequences
-	);  
-	$replace = array(
-		'>',
-		'<',
-		'\\1'
-	);  
-	$buffer = preg_replace($search, $replace, $buffer);
-
-	return $buffer;
-}
-function osea_optimize_html_buffer_start() { ob_start("osea_optimize_html_callback"); }
-function osea_optimize_html_buffer_end() { ob_end_flush(); }
 
 if ( defined( 'OSEA_OPTIMIZE_HTML' ) && OSEA_OPTIMIZE_HTML ) {
 	add_action('wp_head', 'osea_optimize_html_buffer_start');
