@@ -43,7 +43,7 @@
  * Set to true in order to display debug information.
  * The functions are defined in lib/osea.php
  */
-#define( 'OSEA_DEBUG', true );				// < disabled by default
+define( 'OSEA_DEBUG', true );				// < disabled by default
 
 /**
  * 1.2 OPTIMIZATION
@@ -136,7 +136,7 @@ include_once( 'lib/ext.php' );
 function osea_launch() {
 
   // language support
-  load_theme_textdomain( 'osea-theme', get_template_directory() . '/lib/translation' );
+  load_theme_textdomain( 'osea-theme', get_template_directory() . '/lib/langs' );
 
   // launching operation cleanup
   add_action( 'init', 'osea_head_cleanup' );

@@ -3,7 +3,7 @@
 cwatch.pid
 
 # temporary
-lib/translation/
+lib/langs
 lib/css
 List_of_classes.txt
 
