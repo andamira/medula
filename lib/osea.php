@@ -92,21 +92,17 @@ function osea_excerpt_more($more) {
 		__( 'Read more &raquo;', 'osea-theme' ) .'</a>';
 }
 
-/*
- * FILTER HTML OUTPUT
+/**
+ * filter html output
  *
- * Source: http://stackoverflow.com/a/17472755
- *
- * TODO:
- * In WordPress 4.0 https://core.trac.wordpress.org/changeset/28708
- *
- * It would be better if it could be (de)activated from functions.php
+ * @see:source http://stackoverflow.com/a/17472755
+ * @see https://core.trac.wordpress.org/changeset/28708
  */
 function osea_optimize_html_callback( $buffer ) {
 	// option 1 ( http://wordpress.org/support/topic/how-do-i-strip-out-all-whitespace-via-a-filter )
 	//buffer = str_replace( array( "\n", "\t", '  ' ), '', $buffer );
 
-	// option 2 ( http://stackoverflow.com/a/6225706
+	// option 2 ( http://stackoverflow.com/a/6225706 )
 	$search = array(
 		'/\>[^\S ]+/s',  // strip whitespaces after tags, except space
 		'/[^\S ]+\</s',  // strip whitespaces before tags, except space
@@ -292,19 +288,7 @@ function osea_page_navi() {
 
 
 /**
- * 6 MISCELANEOUS CLEANUP
- * ************************************************************
- */
-
-
-if ( defined( 'OSEA_OPTIMIZE_HTML' ) && OSEA_OPTIMIZE_HTML ) {
-	add_action('wp_head', 'osea_optimize_html_buffer_start');
-	add_action('wp_footer', 'osea_optimize_html_buffer_end');
-}
-
-
-/**
- * 7 DEBUG FUNCTIONS
+ * 6 DEBUG FUNCTIONS
  * ************************************************************
  */
 
