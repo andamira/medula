@@ -47,7 +47,7 @@
 
 	<?php else : ?>
 
-		<?php osea_post_not_found( basename( __FILE__ ) ); ?>
+		<?php osea_no_post_found( basename( __FILE__ ) ); ?>
 
 	<?php endif; ?>
 

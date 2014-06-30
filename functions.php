@@ -9,7 +9,7 @@
  *		2 Theme Functionlity
  *			2.1  Ósea library
  *			2.2  Admin
- *			2.3  Icons
+ *			2.3  Icons & Favicons
  *			2.4  Fonts
  *			2.5  Menus
  *			2.6  Sidebars
@@ -18,7 +18,7 @@
  *			2.9  Entry Meta
  *			2.10 Comments
  *			2.11 Page Links
- *			2.12 Not Found
+ *			2.12 No Post Found
  *		3 Plugin Functionality
  *		4 After Setup Theme Actions
  *			4.1 Language Support
@@ -72,33 +72,22 @@
  *
  */
 
-// Ósea Core Library
+// Core Functions & Libraries
 require_once( 'lib/osea.php' );
-// Customize Admin Area
 
-require_once( 'lib/admin.php' );			// < disabled by default
+// Admin Area Customization
+#require_once( 'lib/admin.php' );			// < disabled by default
 
-// Icons & Favicons
 require_once( 'lib/icons.php' );
-// Fonts
 require_once( 'lib/fonts.php' );
-// Menus
 require_once( 'lib/menus.php' );
-// Sidebars
 require_once( 'lib/sidebars.php' );
-// Thumbnails
 require_once( 'lib/thumbnails.php' );
-// Titles
 require_once( 'lib/titles.php' );
-
-// Entry Meta layout
 require_once( 'lib/entry-meta.php' ); 
-// Comments layout
 require_once( 'lib/comments.php' ); 
-// Page Links
 require_once( 'lib/page-links.php' );
-// Not Found layout
-require_once( 'lib/not-found.php' );
+require_once( 'lib/no-post-found.php' );
 
 
 /**
@@ -149,12 +138,10 @@ function osea_launch() {
 	add_action( 'wp_head', 'osea_remove_recent_comments_style', 1 );
 	// clean up gallery output in wp
 	add_filter( 'gallery_style', 'osea_gallery_style' );
-
 	// cleaning up random code around images
 	add_filter( 'the_content', 'osea_filter_ptags_on_images' );
 	// cleaning up excerpt
 	add_filter( 'excerpt_more', 'osea_excerpt_more' );
-
 	// filters html output
 	if ( defined( 'OSEA_OPTIMIZE_HTML' ) && OSEA_OPTIMIZE_HTML ) { 
 		add_action('wp_head', 'osea_optimize_html_buffer_start');

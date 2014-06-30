@@ -7,7 +7,7 @@
  *
  */
 
-function osea_post_not_found( $template ) {
+function osea_no_post_found( $template ) {
 ?>
 	<article id="post-not-found" class="hentry">
 		<header class="entry-header">
