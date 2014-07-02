@@ -7,20 +7,22 @@
  *
  */
 ?>
-		</div> <?php // (#content-wrapper) opening tag in header.php ?>
+			</div> <?php // (#content-wrapper) opening tag in header.php ?>
 
-		<footer class="site-footer" role="contentinfo">
+			<footer class="site-footer" role="contentinfo">
 
-			<?php osea_debug_showfile( __FILE__ ); ?>
+				<?php osea_debug_showfile( __FILE__ ); ?>
 
-			<nav class="site-footer-nav" role="navigation"><?php osea_site_footer_nav(); ?></nav>
+				<nav class="site-footer-nav" role="navigation"><?php osea_site_footer_nav(); ?></nav>
 
-			<span class="site-footer-copyright">&copy; <?php echo date('Y'); ?> <?php bloginfo( 'name' ); ?>.</span>
+				<span class="site-footer-copyright">&copy; <?php echo date('Y'); ?> <?php bloginfo( 'name' ); ?>.</span>
 
-		</footer>
+			</footer>
 
-		<?php // js scripts that loads in the footer are defined in lib/osea.php ?>
-		<?php wp_footer(); ?>
+			<?php // js scripts that loads in the footer are defined in lib/osea.php ?>
+			<?php wp_footer(); ?>
+
+		</div> <?php // (#page-wrapper) opening tag in header.php ?>
 
 	</body>
 
