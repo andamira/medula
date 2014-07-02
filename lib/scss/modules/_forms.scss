@@ -9,6 +9,7 @@
  * 		1 Inputs
  * 		2 Text Areas
  * 		3 Selects
+ * 		4 Search Forms
  *
  * If you want to use data-uri check this out:
  * http://css-tricks.com/data-uris/
@@ -38,7 +39,7 @@ textarea,
 .field {
 	height: 2rem;
 	width: 100%;
-	max-width: 400px;
+	//max-width: 400px;
 
 	margin-bottom: 1rem;
 	padding: 0 .5rem;
@@ -105,3 +106,21 @@ select {
 }
 
 
+/**
+ * 4 SEARCH FORMS
+ */
+.searchform {
+	position: relative;
+	max-width: 90%;
+	margin: 0 auto;
+
+	input {
+		padding-right: 3rem;
+	}
+
+	button[type="submit"] {
+		position: absolute;
+		right: 0;
+		top: 0;
+	}
+}

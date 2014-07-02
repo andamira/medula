@@ -35,7 +35,7 @@ osea_debug_showfile( __FILE__ );
 /**/
 ?>
 
-<form id="searchform" method="get" action="/index.php">
+<form class="searchform" method="get" action="/index.php">
     <input type="text" name="s" id="s" placeholder="<?php _e('Search . . .','osea-theme')?>" />
     <button type="submit" title="<?php _e('Search','osea-theme')?>">
         <i class="dashicons-search dashicons"></i>
