@@ -35,17 +35,19 @@ $gray-dark:         #333;
 
 $blue:				#265dc2;
 
-
+$osea-orange:		#de7e3e;
+$osea-orange-light:	#e6bea4;
+$osea-orange-dark:	#b16c48;
 
 /**
  * 2 FUNCTIONAL VARIABLE NAMES
  *
  */
 
-$text-color:        $gray-dark;
+$text-color:		$gray-dark;
 
-$link-color:        $blue;
-$link-hover:        darken( $link-color, 9% );
+$link-color:		$blue;
+$link-color-hover:	darken( $link-color, 9% );
 
 
 
