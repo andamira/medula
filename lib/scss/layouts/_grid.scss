@@ -13,6 +13,7 @@
 
 @import "susy";
 
+/*
 $total-columns  : 10;
 $column-width   : 4.25rem;
 $gutter-width   : 1rem;
@@ -41,13 +42,13 @@ $susy: (
 		background-image: true,
 		background-options: false,
 		box-sizing: true,
-		clearfix: false,
+		clearfix: true,
 		rem: true,
 	)
 
 );
 
-
+/**/
 
 
 
