@@ -1,9 +1,89 @@
 /**
  * Base Menus
  * ************************************************************
+ *
+ * 		1 Smart Header
+ * 		2 Navigation Elements
  */
 
 
-nav ul {
-	margin: 0;
+/**
+ * 1 SMART HEADER
+ *
+ * Here we can control the behaviour of the header / top menu
+ * with automatic classes added in javascript 
+ *
+ * See osea_smart_header function in /lib/js/scripts.js
+ */
+$smart-header-height: 2rem;		// height of the smart header element
+
+.smart-header {
+	background: $white;
+	width: 100%;
+	height: $smart-header-height;
+	top: 0;
+	@include transition( top 0.2s ease-in-out );
+
+	&.nav-up {
+		// Hide when scrolling up
+		top: -$smart-header-height;
+	}
+
+	&.nav-down {}
+
+	&.hidden-top {}
+
+	&.hidden-bottom {
+		position: fixed;
+	}
 }
+
+.smart-header-above {
+
+	&.hidden-top {}   
+
+	&.hidden-bottom {
+		padding-bottom: $smart-header-height;
+	}
+}
+
+// If there's no element above the smart header,
+// this class gets added to the body element
+.smart-header-no-above {
+
+	&.hidden-top {
+	}
+
+	&.hidden-bottom {
+		padding-top: $smart-header-height;
+	}
+}
+
+
+/**
+ * 2 NAVIGATION ELEMENTS
+ *
+ */
+
+nav {
+	ul {
+		margin: 0;
+		padding: 0;
+	}
+
+		li {
+			display: inline-block;
+		}
+}
+
+
+.site-main-nav {
+	ul {
+	}
+
+		li {
+		}
+}
+
+
+
