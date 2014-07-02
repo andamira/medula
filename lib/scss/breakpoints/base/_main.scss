@@ -2,6 +2,18 @@
  * BASE MAIN
  * ************************************************************
  *
+ *
+ *
+ *
+ *
+ * DEFAULT STYLING DECISIONS
+ *
+ * 		- SETS PAGE TO 100% HEIGHT
+ * 		  __tag_100_page_height
+ *
+ * 		adsasd
+ *
+ *
  */
 
 
@@ -9,19 +21,8 @@
  * GENERAL STYLES
  *
  */
-html {
-	// roots the rem size
-	font-size: 100%;
-}
-
-body {
-    font-family: $sans-serif;
-    line-height: 1.5;
-    color: $text-color;
-}
 
 ::selection, ::-moz-selection {
-
 }
 
 
@@ -29,19 +30,63 @@ body {
  * LINKS & HEADINGS
  *
  */
+
 a {
+	color: $link-color;
+
+	&:hover, &:focus {
+		color: $link-color-hover;
+	}
+	
 	text-decoration: none;
 }
 
 
 /**
- * THEME STRUCTURE
+ * STRUCTURE
  *
  */
 
+
+// BASE
+
+html {
+	font-size: 100%;
+
+	// __tag_100_page_height
+	height: 100%;
+}
+
+body {
+    font-family: $sans-serif;
+    line-height: 1.5;
+    color: $text-color;
+	background: #ddd; // temp
+
+	// __tag_100_page_height
+	height: 100%;
+}
+
+
+// WRAPPERS
+
+#page-wrapper {
+
+	// __tag_100_page_height
+	min-height: 100%;
+	position: relative;
+	padding-bottom: 5rem;
+}
+
+#content-wrapper {
+}
+
+
 // SITE HEADER
 
-.site-header {}
+.site-header {
+	width: 100%;
+}
 
     .site-header-logo {}
 
@@ -54,7 +99,15 @@ a {
 
 // SITE FOOTER
 
-.site-footer {}
+.site-footer {
+	width: 100%;
+
+	// __tag_100_page_height
+	position: absolute;
+	bottom: 0;
+	height: 5rem;
+	
+}
 
     .site-footer-nav {}
 
