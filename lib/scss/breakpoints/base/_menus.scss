@@ -22,6 +22,15 @@ $smart-header-height: 2rem;		// height of the smart header element
 	width: 100%;
 	height: $smart-header-height;
 	top: 0;
+
+	.admin-bar & {
+		// Admin Bar Fix (see /modules/admin_bar.scss)
+		top: 32px; 
+		@media screen and ( max-width: 782px ) { 
+			top: 46px; 
+		}
+	}
+
 	@include transition( top 0.2s ease-in-out );
 
 	&.nav-up {
@@ -58,6 +67,7 @@ $smart-header-height: 2rem;		// height of the smart header element
 		padding-top: $smart-header-height;
 	}
 }
+
 
 
 /**

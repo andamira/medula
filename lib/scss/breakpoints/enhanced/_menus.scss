@@ -20,6 +20,13 @@
 	&.nav-up {
 		// Don't hide when scrolling up
 		top: 0;
+		.admin-bar & {
+			// Admin Bar Fix
+			top: 32px; 
+			@media screen and ( max-width: 782px ) { 
+				top: 46px; 
+			}
+		}
 	}
 
 	&.nav-down {}

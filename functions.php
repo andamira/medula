@@ -19,6 +19,7 @@
  *			2.10 Comments
  *			2.11 Page Links
  *			2.12 No Post Found
+ *			2.13 Admin Bar
  *		3 Plugin Functionality
  *		4 After Setup Theme Actions
  *			4.1 Language Support
@@ -88,6 +89,7 @@ require_once( 'lib/entry-meta.php' );
 require_once( 'lib/comments.php' ); 
 require_once( 'lib/page-links.php' );
 require_once( 'lib/no-post-found.php' );
+require_once( 'lib/admin-bar.php' );
 
 
 /**
@@ -192,7 +194,5 @@ include_once( 'lib/ext.php' );
  * 
  */
 
-// Disable the Admin Bar for every user
-#add_filter('show_admin_bar', '__return_false');
 
 

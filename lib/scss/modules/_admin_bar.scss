@@ -1,0 +1,89 @@
+/**
+ * Stylesheet: Admin Bar Styles
+ * ************************************************************
+ * 
+ *		1 Make Space for Admin Bar
+ *		2 Admin Bar Styling
+ *
+ * @see /lib/admin-bar.php
+ * @see breakpoints/base/_menus.scss
+ */
+
+
+/**
+ * 1 MAKE SPACE FOR ADMIN BAR
+ */
+body.admin-bar {
+	padding-top: 32px;
+	@media screen and ( max-width: 782px ) {
+		padding-top: 46px;
+	}
+}
+
+
+/**
+ * 2 ADMIN BAR STYLING
+ */
+#wpadminbar {
+	// Fixes absolute position on media < 600px
+	// see https://core.trac.wordpress.org/ticket/26609
+	position: fixed;	
+
+	.quicklinks {}
+		ul {}
+			li {}
+
+		a {}
+
+		.ab-label {}
+		.ab-emtpy-item {}
+		.ab-top-menu {}
+		.ab-item {}
+
+		.shortlink-input {}
+
+		.ab-top-secondary {}
+			.menupop {}
+				.ab-sub-wrapper {}
+
+	.rtl & {}
+}
+
+#wp-admin-bar-comments {
+	.ab-icon {}
+}
+
+#wp-admin-bar-wp-logo {
+	.ab-icon {}
+}
+
+#wp-admin-bar-new-content {
+	.ab-icon {}
+}
+
+#wp-admin-bar-updates {
+	.ab-icon {}
+}
+
+#wp-admin-bar-updates {
+	.ab-icon {}
+}
+
+#wp-admin-bar-appearance {
+}
+
+#wp-admin-bar-user-info {
+}
+#wp-admin-bar-my-account.with-avatar {
+	#wp-admin-bar-user-actions {
+		li {}
+	}
+}
+
+#adminbarsearch {
+	.adminbar-input {}
+}
+
+#wp-admin-bar-search {}
+
+
