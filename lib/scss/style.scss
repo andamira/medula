@@ -9,7 +9,7 @@
  * 		4 Modules
  * 		5 Layout
  *
- * 		6 Breakpoints
+ * 		6 Base
  *
  * 		7 Debug
  *
@@ -24,8 +24,10 @@
  *
  */
 
-// Needs Compass ( v1.0 or greater )
-@import "compass";
+
+@import "compass";		// Compass v1.0 or greater
+@import "susy";			// Susy 2.1 or greater
+@import "breakpoint";	
 
 
 /**
@@ -35,8 +37,11 @@
 
 $base-font-size: 16px;
 $base-line-height: 24px;
+
 $rhythm-unit: 'rem';
-$rem-with-px-fallback: true;
+$rem-with-px-fallback: true;	// set to false to disable px fallback
+
+$breakpoint-to-ems: true;
 
 
 /**
@@ -111,50 +116,16 @@ $rem-with-px-fallback: true;
 
 
 /**
- * 6 /BREAKPOINTS
+ * 6 /BASE
  *
  *
  */
 
-/**
- * BASE (MOBILE) SIZE
- * This are the mobile styles. It's what people see on their phones. If
- * you set a great foundation, you won't need to add too many styles in
- * the other stylesheets. Remember, keep it light: Speed is Important.
- */
-
-@import "breakpoints/base";
-
-/**
- * ENHANCED SIZES
- * This are the enhanced styles. It's for larger devices
- *
- * You can create more levels of enhancement, remember to
- * copy the folder with a new name, e.g. 'enhanced2', and
- * the _enhanced.scss file, and change the include paths.
- */
-
-// Enhanced Size
-@media only screen and (min-width: 48em) { // 48em = 768px at default $base-font-size 16px
-	@import "breakpoints/enhanced";
-}
-
-/**
- * RETINA (2x RESOLUTION DEVICES)
- * This applies to the retina iPhone (4s) and iPad (2,3) along with
- * other displays with a 2x resolution. You can also create a media
- * query for retina AND a certain size if you want. Go Nuts.
- */
-@media only screen and (-webkit-min-device-pixel-ratio: 1.5),
-		only screen and (min--moz-device-pixel-ratio: 1.5),
-		only screen and (min-device-pixel-ratio: 1.5) {
-
-	//@import "breakpoints/2x";
-}
+@import "base";
 
 
 /**
- * DEBUG
+ * 7 DEBUG
  *
  * (You can safely remove this if you don't plan to debug)
  *
