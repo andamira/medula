@@ -1,0 +1,125 @@
+/**
+ * WordPress comments classes
+ * ************************************************************
+ *
+ * NOTE: The comments layout has been adpted to HTML5. It doesn't use list
+ * ( ul / ol / li ) but nested articles.
+ *
+ */
+
+.comments-list {
+
+	.bypostauthor {}
+	.byuser {}
+	.comment-author-admin {}
+	.pingback {}
+
+	.alt {}
+	.odd {}
+	.even {}
+
+	.thread-alt {}
+	.thread-odd {
+		background: #fff;
+		.odd {
+			background: #fff;
+		}
+		.even {
+			background: #f6f6f6;
+		}
+	}
+	.thread-even {
+		background: #f6f6f6;
+		.odd {
+			background: #fff;
+		}
+		.even {
+			background: #f6f6f6;
+		}
+	}
+
+
+	// COMMENT
+	.comment {
+		@include rem( font-size, 0.9rem );
+		@include rem( padding, 0.9rem );
+		border-bottom: 1px solid #ddd; 
+
+		.comment-author {
+		}
+
+		// VCARD
+		.vcard {
+			
+			cite.fn {
+				a.url {}
+			}
+			time {
+				@include rem( font-size, 0.8rem );
+			}
+
+			img.avatar {
+			}
+			img.avatar-32 {}
+			img.photo {}
+			span.says {}
+		}
+
+		div.comment-meta {
+
+			a {
+				color: #ccc;
+			}
+		}
+		div.commentmetadata {
+			a {}
+		}
+
+		p {
+		}
+
+		// REPLY
+		.reply {
+
+			a {
+				font-weight: bold;
+			}
+		}
+
+		// NESTED COMMENTS
+		article {
+			@include rem( margin, 0.5rem );
+			border-left: 5px solid #eee;
+
+			li {
+				&.alt {} 
+				&.odd {}
+				&.even {}
+				&.bypostauthor {}
+				&.byuser {}
+				&.comment {}
+				&.comment-author-admin {}
+
+				&.depth-2 {
+					border-left-color: #ccc;
+				}
+				&.depth-3 {
+					border-left-color: #bbb;
+				}
+				&.depth-4 {
+					border-left-color: #aaa;
+				}
+				&.depth-5 {}
+
+			}
+		}
+
+	} // &.comment
+
+} // .commentlist
+
+
+#cancel-comment-reply-link {
+	a {}
+}
+

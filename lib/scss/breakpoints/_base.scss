@@ -13,12 +13,25 @@
 // main structure styling
 @import "base/main";
 
-// elements styling
-@import "base/comments";
-@import "base/menus";
-@import "base/sidebars";
-@import "base/widgets";
 
-// WordPress body classes
+// menus, navs, smart header
+@import "base/menus";
+
+
+// sidebars
+@import "base/sidebars";
+
+
+/**
+ * WordPress CSS Classes
+ */
+
+// body
 @import "base/wp_body";
+
+// widgets
+@import "base/wp_widgets";
+
+// comments
+@import "base/wp_comments";
 
