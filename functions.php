@@ -4,11 +4,12 @@
  *
  * INDEX:
  * 		1 Global Options
- * 			1.1 Debug
- * 			1.2 Optimization
+ * 			1.1 Debug			(#)
+ * 			1.2 IE8 Support
+ * 			1.3 Optimization	(#)
  *		2 Theme Functionlity
  *			2.1  Ósea library
- *			2.2  Admin
+ *			2.2  Admin Área		(#)
  *			2.3  Icons & Favicons
  *			2.4  Fonts
  *			2.5  Menus
@@ -46,6 +47,7 @@
 
 /**
  * 1.1 DEBUG
+ *
  * Set to true in order to display debug information.
  * The functions are defined in lib/osea.php
  */
@@ -53,15 +55,19 @@
 
 /**
  * 1.2 IE 8 SUPPORT
- * Set to true to enable support for Internet Explorer 8 by:
- * 		- Loading js polyfills in header.php
+ *
+ * Set to true to enable support for IE 8 by
+ * conditionally loading the polyfill libraries
+ * nwmatcher, respond & selectivizr, in header.php
  */
 define( 'OSEA_IE8_SUPPORT', true );			// < enabled by default
 
 /**
  * 1.3 OPTIMIZATION
+ *
  * Set to true in order to remove the whitespace from
  * the HTML in between wp_head and wp_footer.
+ *
  * @ see osea_after_setup_theme
  */
 #define( 'OSEA_OPTIMIZE_HTML', true );		// < disabled by default
@@ -158,7 +164,7 @@ function osea_launch() {
 	}
 
 	/**
-	* 4.3 enqueue base scripts and styles, including ie conditional wrapper
+	* 4.3 enqueue base scripts and styles
 	*/
 	add_action( 'wp_enqueue_scripts', 'osea_scripts_and_styles', 999 );
 
