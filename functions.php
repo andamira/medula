@@ -52,7 +52,14 @@
 #define( 'OSEA_DEBUG', true );				// < disabled by default
 
 /**
- * 1.2 OPTIMIZATION
+ * 1.2 IE 8 SUPPORT
+ * Set to true to enable support for Internet Explorer 8 by:
+ * 		- Loading js polyfills in header.php
+ */
+define( 'OSEA_IE8_SUPPORT', true );			// < enabled by default
+
+/**
+ * 1.3 OPTIMIZATION
  * Set to true in order to remove the whitespace from
  * the HTML in between wp_head and wp_footer.
  * @ see osea_after_setup_theme
