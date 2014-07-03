@@ -20,7 +20,7 @@
  * @see http://stackoverflow.com/a/16732064 The source for this solution
  * @see https://core.trac.wordpress.org/ticket/16024 Why this can't be enqueued properly
  */
-if ( defined( 'OSEA_IE8_SUPPORT' ) && OSEA_DEBUG ) { ?>
+if ( defined( 'OSEA_IE8_SUPPORT' ) && OSEA_IE8_SUPPORT ) { ?>
 <!--[if lt IE 9]>
 <script src="<?php echo get_template_directory_uri(); ?>/lib/js/libs/nwmatcher.min.js"></script>
 <script src="<?php echo get_template_directory_uri(); ?>/lib/js/libs/selectivizr.min.js"></script>
