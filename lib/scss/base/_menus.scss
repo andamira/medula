@@ -11,60 +11,127 @@
  * 1 SMART HEADER
  *
  * Here we can control the behaviour of the header / top menu
- * with automatic classes added in javascript 
+ * with the help of automatic classes added in javascript:
  *
- * See osea_smart_header function in /lib/js/scripts.js
+ *	.smart-header-above		= ID Class of the ELEMENT ABOVE the Smart Header
+ *
+ *	.smart-header-no-above	= ID Class added to the BODY when there's
+ *							  no element above the Smart Header
+ *
+ *	.smart-header			= ID Class of the Smart Header
+ *	[Its Associated classes]	
+ *		.nav-up				= scrolling to the FOOTER
+ *		.nav-down			= scrolling to the HEADER
+ *
+ *	[Associated classes in all 3 possible elements]
+ *		.hidden-bottom		= the bottom border of the Smart Header is hidden
+ *		.hidden-top			= the top border of the Smart Header is hidden
+ *
+ *
+ * Take a look to the osea_smart_header function in /lib/js/scripts.js
+ *
+ * XXX TODO http://www.sitepoint.com/cross-media-query-extend-sass/
  */
-$smart-header-height: 2rem;		// height of the smart header element
 
+// height of the smart header element
+$smart-header-height: 2rem;	
+
+// This is the Smart Header element
 .smart-header {
 	background: $white;
 	width: 100%;
 	height: $smart-header-height;
 	top: 0;
-
+	@include transition( top 0.2s ease-in-out );
+	
+	// Admin Bar Positioning Fix (see /modules/admin_bar.scss)
 	.admin-bar & {
-		// Admin Bar Fix (see /modules/admin_bar.scss)
 		top: 32px; 
-		@media screen and ( max-width: 782px ) { 
+		@include breakpoint( max-width 782px ) {
 			top: 46px; 
 		}
 	}
 
-	@include transition( top 0.2s ease-in-out );
-
+	// When scrolling up
 	&.nav-up {
-		// Hide when scrolling up
+
+		// Smart Header Hides
 		top: -$smart-header-height;
+
+		// But Don't hide On Desktop
+		@include breakpoint( $bp-1 ) {
+			top: 0;
+
+			// Admin Bar Positioning Fix
+			.admin-bar & {
+				top: 32px; 
+				@include breakpoint( max-width 782px ) {
+					top: 46px; 
+				}   
+			}
+		}
 	}
 
 	&.nav-down {}
 
-	&.hidden-top {}
+	// FIX ITS POSITION
 
+	// ...when the the bottom border gets hidden
 	&.hidden-bottom {
 		position: fixed;
 	}
+
+	// ...on desktop, when the top border is hidden
+	&.hidden-top {
+		@include breakpoint( $bp-1 ) {
+			position: fixed;
+		}
+	}
+
+	// ...on desktop, if there's no element above,
+	// just fix the position already
+	.smart-header-no-above & {
+		@include breakpoint( $bp-1 ) {
+			position: fixed;
+		}
+	}
 }
 
+// This is the element Above the Smart Header
 .smart-header-above {
 
-	&.hidden-top {}   
+	// ADD SPACE BELOW:
 
+	// ...when the bottom gets hidden
 	&.hidden-bottom {
 		padding-bottom: $smart-header-height;
 	}
+
+	// ...on desktop when the top gets hidden
+	&.hidden-top {
+		@include breakpoint( $bp-1 ) {
+			padding-bottom: $smart-header-height;
+		}
+	}  
 }
 
 // If there's no element above the smart header,
 // this class gets added to the body element
 .smart-header-no-above {
 
-	&.hidden-top {
+	// ADD SPACE ABOVE:
+
+	// ...on desktop always
+	@include breakpoint( $bp-1 ) {
+		padding-bottom: $smart-header-height;
 	}
 
+	// ...when the bottom gets hidden
 	&.hidden-bottom {
 		padding-top: $smart-header-height;
+	}
+
+	&.hidden-top {
 	}
 }
 
