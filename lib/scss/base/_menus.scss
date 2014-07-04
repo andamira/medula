@@ -20,8 +20,8 @@
  *
  *	.smart-header			= ID Class of the Smart Header
  *	[Its Associated classes]	
- *		.nav-up				= scrolling to the FOOTER
- *		.nav-down			= scrolling to the HEADER
+ *		.scroll-up				= scrolling up
+ *		.scroll-down			= scrolling down
  *
  *	[Associated classes in all 3 possible elements]
  *		.hidden-bottom		= the bottom border of the Smart Header is hidden
@@ -52,13 +52,14 @@ $smart-header-height: 2rem;
 		}
 	}
 
-	// When scrolling up
-	&.nav-up {
+	// SCROLLING:
 
-		// Smart Header Hides
+	&.scroll-down {
+
+		// Smart Header Hides Up
 		top: -$smart-header-height;
 
-		// But Don't hide On Desktop
+		// But Don't hide it On Desktop
 		@include breakpoint( $bp-1 ) {
 			top: 0;
 
@@ -72,9 +73,10 @@ $smart-header-height: 2rem;
 		}
 	}
 
-	&.nav-down {}
+	&.scroll-up {}
 
-	// FIX ITS POSITION
+
+	// FIX ITS POSITION:
 
 	// ...when the the bottom border gets hidden
 	&.hidden-bottom {
@@ -88,12 +90,9 @@ $smart-header-height: 2rem;
 		}
 	}
 
-	// ...on desktop, if there's no element above,
-	// just fix the position already
+	// ...always if there's no other element above
 	.smart-header-no-above & {
-		@include breakpoint( $bp-1 ) {
-			position: fixed;
-		}
+		position: fixed;
 	}
 }
 
@@ -121,18 +120,12 @@ $smart-header-height: 2rem;
 
 	// ADD SPACE ABOVE:
 
-	// ...on desktop always
-	@include breakpoint( $bp-1 ) {
-		padding-bottom: $smart-header-height;
-	}
+	// ...always
+	padding-top: $smart-header-height;
 
-	// ...when the bottom gets hidden
-	&.hidden-bottom {
-		padding-top: $smart-header-height;
-	}
+	&.hidden-bottom {}
 
-	&.hidden-top {
-	}
+	&.hidden-top {}
 }
 
 
