@@ -2,9 +2,60 @@
  * BASE GRID
  * ************************************************************
  *
- * 		1 The grid container
- * 		2 The grid layout
+ *		1 Breakpoints
+ * 		2 The grid container
+ * 		3 The grid layout
  */
+
+
+/**
+ * 1 BREAKPOINTS
+ *
+ */
+
+$bp-1: 40em;
+
+
+
+/**
+ * XXXTEMP 
+ *
+ *
+ */
+
+$total-columns  : 4;
+$column-width   : 4;
+$gutter-width   : 1rem;
+$grid-padding   : $gutter-width;
+
+$susy: (
+    flow: ltr,
+    math: fluid,
+    output: float,
+    gutter-position: after,
+    container: auto,
+    container-position: left,
+    columns: $total-columns,        // default: 4
+    gutters: .25,                   // default .25
+    column-width: $column-width,    // default: false
+    global-box-sizing: border-box,  // default: content-box
+    last-flow: to, 
+    debug: (
+        image: hide,
+        color: $osea-orange-light,
+        output: background,
+        toggle: top right,
+    ),  
+    use-custom: (
+        background-image: true,
+        background-options: false,
+        box-sizing: true,
+        clearfix: true,
+        rem: true,
+    )   
+);
+
+
 
 
 /**
@@ -20,11 +71,29 @@
  * in defined in header.php and footer.php
  */
 
-body,
-#content-wrapper {
-	@include container( 50rem );
+html {
+	//@include establish-baseline;
+}
 
-	position: relative;
+
+body {
+	@include container( );
+	overflow: auto;
+
+	&.debug {
+		//@include show-grid( show-columns );
+	}
+}
+
+
+#content-wrapper {
+	//@include container( 50rem hide );
+	//@include span( full nest );
+	@include clearfix;
+
+}
+.debug section {
+	//@include show-grid( show-baseline );
 }
 
 
@@ -34,25 +103,16 @@ body,
  */
 
 main {
-	background: yellow;
-	@include span( 7 of 10 last );
-	min-height: 20rem;
-	//overflow: hidden;
+
+	min-height: 18rem;
 }
 .sidebar {
-	background: green;
-	@include span( 3 of 10 wide );
+	//@include span( 3 of 10 );
 
-	// To make .sidebar height = main height
-	position: absolute;
-	height: 100%;
-	//right: 0; 
 }
 .site-header {
-	background: blue;
 }
 .site-footer {
-	background: red;
 }
 
 
