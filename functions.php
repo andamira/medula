@@ -65,12 +65,18 @@ define( 'OSEA_IE8_SUPPORT', true );			// < enabled by default
 /**
  * 1.3 OPTIMIZATION
  *
- * Set to true in order to remove the whitespace from
- * the HTML in between wp_head and wp_footer.
  *
  * @ see osea_after_setup_theme
  */
+
+// Remove the whitespace from HTML between wp_head and wp_footer.
 #define( 'OSEA_OPTIMIZE_HTML', true );		// < disabled by default
+
+// Concatenate all js libs included in /lib/js/scripts.js
+#define( 'OSEA_CONCATENATE_JS', true );		// < disabled by default
+
+// Minify the js libs, concatenated or not
+#define( 'OSEA_MINIFY_JS', true );			// < disabled by default
 
 
 /**
