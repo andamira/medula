@@ -143,7 +143,7 @@ function osea_scripts_and_styles() {
 		}
 
 		//adding scripts file in the footer
-		wp_register_script( 'osea-js', get_stylesheet_directory_uri() . '/lib/js/scripts.js', array( 'jquery' ), '', true );
+		wp_register_script( 'osea-js', get_stylesheet_directory_uri() . '/lib/js/scripts.php', array( 'jquery' ), '', true );
 
 		// enqueue styles and scripts
 		wp_enqueue_script( 'osea-modernizr' );
