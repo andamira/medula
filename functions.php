@@ -190,7 +190,7 @@ add_action( 'after_setup_theme', 'osea_launch' );
  * and plugins. And specific includes for some big
  * and important plugins like WPML & WooCommerce
  */
-include_once( 'lib/ext.php' );
+include_once( 'lib/vendor.php' );
 
 
 /**

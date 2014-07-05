@@ -132,7 +132,7 @@ function osea_scripts_and_styles() {
 	if (!is_admin()) {
 
 		// modernizr
-		wp_register_script( 'osea-modernizr', get_stylesheet_directory_uri() . '/lib/js/libs/modernizr.custom.min.js', array(), '2.8.3', false );
+		wp_register_script( 'osea-modernizr', get_stylesheet_directory_uri() . '/lib/js/compat/modernizr.custom.min.js', array(), '2.8.3', false );
 
 		// register main stylesheet
 		wp_register_style( 'main-stylesheet', get_stylesheet_directory_uri() . '/lib/css/style.css', array(), '', 'all' );
