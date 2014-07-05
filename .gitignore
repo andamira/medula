@@ -5,5 +5,7 @@ cwatch.pid
 # temporary
 lib/langs
 lib/css
+lib/js/scripts.min.js
+lib/js/includes
 List_of_classes.txt
 

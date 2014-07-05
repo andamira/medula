@@ -2,8 +2,6 @@
 /**
  * Wrapper for minifiying scripts.js
  *
- * TODO: 
- * @see https://github.com/andamira/osea/issues/14
  */
 
 require 'JShrink/Minifier.php';
