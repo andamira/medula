@@ -1,2 +1,2 @@
 Put your fonts here and define them in:
-lib/scss/partials/_typography.scss
+lib/scss/modules/_typography.scss
