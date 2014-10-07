@@ -23,14 +23,14 @@
 function osea_favicons() {
 	$favicon_version="0";
 ?>
-	<link rel="apple-touch-icon" href="<?php echo get_template_directory_uri(); ?>/lib/img/apple-icon-touch.png"<?php ?>>
-	<link rel="icon" href="<?php echo get_template_directory_uri(); ?>/lib/img/favicon.png">
+	<link rel="apple-touch-icon" href="<?php echo get_template_directory_uri(); ?>/lib/img/apple-icon-touch.png?v=<?php echo $favicon_version ?>">
+	<link rel="icon" href="<?php echo get_template_directory_uri(); ?>/lib/img/favicon.png?v=<?php echo $favicon_version ?>">
 	<!--[if IE]>
-		<link rel="shortcut icon" href="<?php echo get_template_directory_uri(); ?>/favicon.ico">
+		<link rel="shortcut icon" href="<?php echo get_template_directory_uri(); ?>/favicon.ico?v=<?php echo $favicon_version ?>">
 	<![endif]-->
 	<?php // or, set /favicon.ico for IE10 win ?>
 	<meta name="msapplication-TileColor" content="#ffffff">
-	<meta name="msapplication-TileImage" content="<?php echo get_template_directory_uri(); ?>/lib/img/win8-tile-icon.png">
+	<meta name="msapplication-TileImage" content="<?php echo get_template_directory_uri(); ?>/lib/img/win8-tile-icon.png?v=<?php echo $favicon_version ?>">
 <?php
 }
 add_action('wp_head', 'osea_favicons', 2);
@@ -44,7 +44,7 @@ add_action('wp_head', 'osea_favicons', 2);
  */
 add_action('admin_head', 'osea_admin_area_favicon');
 function osea_admin_area_favicon() {
-	$favicon_url = get_template_directory_uri() . '/lib/img/favicon_adm.png?v=0';
+	$favicon_url = get_template_directory_uri() . "/lib/img/favicon_adm.png?v=<?php echo $favicon_version ?>";
 	echo '<link rel="shortcut icon" href="' . $favicon_url . '" />';
 }
 
