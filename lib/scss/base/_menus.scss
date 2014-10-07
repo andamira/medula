@@ -40,6 +40,7 @@ $smart-header-height: 2rem;
 .smart-header {
 	background: $white;
 	width: 100%;
+	z-index: 1;
 	height: $smart-header-height;
 	top: 0;
 	@include transition( top 0.2s ease-in-out );

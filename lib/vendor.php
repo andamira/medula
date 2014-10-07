@@ -15,21 +15,21 @@
  * 1 Load external libraries
  * ************************************************************
  */
-include_once( 'ext/libs.php' );
+include_once( 'js/libs.php' );
 
 
 /**
  * 2 Fix problems with external libraries & plugins
  * ************************************************************
  */
-include_once( 'ext/fixes.php' );
+include_once( 'vendor/fixes.php' );
 
 
 /**
  * 3 Cleans & minifies code of external libraries, plugins, etc.
  * ************************************************************
  */
-include_once( 'ext/cleanup.php' );
+include_once( 'vendor/cleanup.php' );
 
 
 /** 
@@ -42,16 +42,14 @@ include_once( 'ext/cleanup.php' );
  *
  * @see http://wpml.org/
  */
-#include_once( 'ext/wpml.php' );			// < disabled by default
+#include_once( 'vendor/wpml.php' );			// < disabled by default
 
 /**
  * 4.2 WOOCOMMERCE
  *
  * @see http://www.woothemes.com/woocommerce/
  */
-#include_once( 'ext/woocommerce.php' );	// < disabled by default
-
-
+#include_once( 'vendor/woocommerce.php' );	// < disabled by default
 
 
 
