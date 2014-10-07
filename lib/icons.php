@@ -44,7 +44,7 @@ add_action('wp_head', 'osea_favicons', 2);
  */
 add_action('admin_head', 'osea_admin_area_favicon');
 function osea_admin_area_favicon() {
-	$favicon_url = get_template_directory_uri() . "/lib/img/favicon_adm.png?v=<?php echo $favicon_version ?>";
+	$favicon_url = get_template_directory_uri() . "/lib/img/favicon_adm.png?v=$favicon_version";
 	echo '<link rel="shortcut icon" href="' . $favicon_url . '" />';
 }
 
