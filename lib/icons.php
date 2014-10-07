@@ -20,8 +20,10 @@
  * http://www.jonathantneal.com/blog/understand-the-favicon/
  *
  */
+$favicon_version="0";
+
 function osea_favicons() {
-	$favicon_version="0";
+	global $favicon_version;
 ?>
 	<link rel="apple-touch-icon" href="<?php echo get_template_directory_uri(); ?>/lib/img/apple-icon-touch.png?v=<?php echo $favicon_version ?>">
 	<link rel="icon" href="<?php echo get_template_directory_uri(); ?>/lib/img/favicon.png?v=<?php echo $favicon_version ?>">
@@ -44,6 +46,7 @@ add_action('wp_head', 'osea_favicons', 2);
  */
 add_action('admin_head', 'osea_admin_area_favicon');
 function osea_admin_area_favicon() {
+	global $favicon_version;
 	$favicon_url = get_template_directory_uri() . "/lib/img/favicon_adm.png?v=$favicon_version";
 	echo '<link rel="shortcut icon" href="' . $favicon_url . '" />';
 }
