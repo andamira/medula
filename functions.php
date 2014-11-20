@@ -101,6 +101,7 @@ require_once( 'lib/osea.php' );
 require_once( 'lib/icons.php' );
 require_once( 'lib/fonts.php' );
 require_once( 'lib/menus.php' );
+require_once( 'lib/theme-customize.php' );
 require_once( 'lib/sidebars.php' );
 require_once( 'lib/thumbnails.php' );
 require_once( 'lib/titles.php' );
