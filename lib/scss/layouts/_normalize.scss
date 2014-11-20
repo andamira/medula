@@ -1,4 +1,4 @@
-/* normalize-scss 3.0.0-alpha.2+normalize.3.0.0 | MIT/GPLv2 License | bit.ly/normalize-scss */
+/* normalize-scss 3.0.2+normalize.3.0.2 | MIT/GPLv2 License | bit.ly/normalize-scss */
 
 
 // Variables and Imports
@@ -18,7 +18,7 @@
 
   // The length unit in which to output vertical rhythm values.
   // Supported values: px, em, rem.
-  $rhythm-unit: 'rem' !default;
+  $rhythm-unit: 'em' !default;
 
 // This variable is a copy of the one used in Compass' support module.
 
@@ -28,7 +28,7 @@
   $browser-minimum-versions: (
     'chrome':  null,
     'firefox': null,
-    'ie':      '8',
+    'ie':      null,
     'safari':  null,
     'opera':   null
   ) !default;
@@ -56,31 +56,6 @@ $indent-amount: 40px !default;
 @import "compass/css3/box-sizing";
 @import "compass/typography/vertical_rhythm";
 
-
-// To work around a bug in compass-core 1.0.0-alpha.17, we override Compass'
-// support-legacy-browser() function with a version of our own.
-// @TODO Remove this monkey patch after it's fixed in Compass.
-// @see https://github.com/chriseppstein/compass/pull/1524
-// @see also https://github.com/chriseppstein/compass/pull/1520
-@function support-legacy-browser($browser, $min-version, $max-version: null, $threshold: $critical-usage-threshold) {
-  @if not index($supported-browsers, $browser) {
-    @return false;
-  }
-  // Check against declared minimums.
-  $min-required-version: map-get($browser-minimum-versions, $browser);
-  @if $min-required-version {
-    @return compare-browser-versions($browser, $max-version or $min-version, $min-required-version) >= 0;
-  } @else {
-    // Check against usage stats.
-    $usage: if($max-version,
-               omitted-usage($browser, $min-version, $max-version),
-               omitted-usage($browser, $min-version));
-    @return $usage > $threshold;
-  }
-}
-
-/* Base
-   ========================================================================== */
 
 @if not $strict-normalize or support-legacy-browser(ie, "7") {
   /**
@@ -118,8 +93,10 @@ body {
    ========================================================================== */
 
 /**
- * Correct `block` display not defined in IE 8/9. Correct `block` display
- * not defined on `summary` and `details` in IE and Firefox and on `main` in IE.
+ * Correct `block` display not defined for any HTML5 element in IE 8/9.
+ * Correct `block` display not defined for `details` or `summary` in IE 10/11
+ * and Firefox.
+ * Correct `block` display not defined for `main` in IE 11.
  */
 
 article,
@@ -131,6 +108,7 @@ footer,
 header,
 hgroup,
 main,
+menu,
 nav,
 section,
 summary {
@@ -177,7 +155,7 @@ audio:not([controls]) {
 }
 
 /**
- * Hide the `template` element in IE, Safari, and Firefox < 22.
+ * Hide the `template` element in IE 8/9/11, Safari, and Firefox < 22.
  */
 
 template {
@@ -193,7 +171,7 @@ template {
    */
 
   a {
-    background: transparent;
+    background-color: transparent;
   }
 }
 
@@ -210,7 +188,7 @@ a:hover {
    ========================================================================== */
 
 /**
- * Address styling not present in IE, Safari 5, and Chrome.
+ * Address styling not present in IE 8/9/10/11, Safari, and Chrome.
  */
 
 abbr[title] {
@@ -218,7 +196,7 @@ abbr[title] {
 }
 
 /**
- * Address style set to `bolder` in Firefox 4+, Safari 5, and Chrome.
+ * Address style set to `bolder` in Firefox 4+, Safari, and Chrome.
  */
 
 b,
@@ -232,27 +210,12 @@ strong {
    */
 
   blockquote {
-    margin: rhythm(1) $indent-amount;
+    @include output-rhythm(margin, rhythm(1) $indent-amount);
   }
 }
 
 /**
- * Address odd `em`-unit font size rendering in all browsers.
- */
-
-code,
-kbd,
-pre,
-samp {
-  font-family: monospace, serif;
-  @if support-legacy-browser(ie, "6") {
-    _font-family: 'courier new', monospace;
-  }
-  font-size: 1em;
-}
-
-/**
- * Address styling not present in Safari 5 and Chrome.
+ * Address styling not present in Safari and Chrome.
  */
 
 dfn {
@@ -261,7 +224,7 @@ dfn {
 
 /**
  * Address variable `h1` font-size and margin within `section` and `article`
- * contexts in Firefox 4+, Safari 5, and Chrome.
+ * contexts in Firefox 4+, Safari, and Chrome.
  */
 
 h1 {
@@ -328,16 +291,8 @@ h1 {
 
   p,
   pre {
-    margin: rhythm(1) 0;
+    @include output-rhythm(margin, rhythm(1) 0);
   }
-}
-
-/**
- * Contain overflow in all browsers.
- */
-
-pre {
-  overflow: auto;
 }
 
 /**
@@ -380,10 +335,14 @@ sub {
   menu,
   ol,
   ul {
-    margin: rhythm(1) 0;
+    @include output-rhythm(margin, rhythm(1) 0);
   }
 
   @if not $strict-normalize {
+    /**
+     * Turn off margins on nested lists.
+     */
+
     ol,
     ul {
       ol,
@@ -438,7 +397,7 @@ sub {
 }
 
 /**
- * Correct overflow displayed in IE.
+ * Correct overflow not hidden in IE 9/10/11.
  */
 
 svg:not(:root) {
@@ -448,13 +407,13 @@ svg:not(:root) {
 /* Grouping content
    ========================================================================== */
 
-@if support-legacy-browser(ie, "9") or support-legacy-browser(safari, "5") {
+@if support-legacy-browser(ie, "9") or support-legacy-browser(safari, "6") {
   /**
-   * Address margin not present in IE 8/9 and Safari 5.
+   * Address margin not present in IE 8/9 and Safari.
    */
 
   figure {
-    margin: rhythm(1) $indent-amount;
+    @include output-rhythm(margin, rhythm(1) $indent-amount);
   }
 }
 
@@ -465,6 +424,29 @@ svg:not(:root) {
 hr {
   @include box-sizing(content-box);
   height: 0;
+}
+
+/**
+ * Contain overflow in all browsers.
+ */
+
+pre {
+  overflow: auto;
+}
+
+/**
+ * Address odd `em`-unit font size rendering in all browsers.
+ */
+
+code,
+kbd,
+pre,
+samp {
+  font-family: monospace, monospace;
+  @if support-legacy-browser(ie, "6") {
+    _font-family: 'courier new', monospace;
+  }
+  font-size: 1em;
 }
 
 /* Forms
@@ -489,7 +471,7 @@ hr {
  * 1. Correct color not being inherited.
  *    Known issue: affects color of disabled elements.
  * 2. Correct font properties not being inherited.
- * 3. Address margins set differently in Firefox 4+, Safari 5, and Chrome.
+ * 3. Address margins set differently in Firefox 4+, Safari, and Chrome.
  * 4. Address `font-family` inconsistency between `textarea` and other form in IE 7
  * 5. Improve appearance and consistency with IE 6/7.
  */
@@ -509,7 +491,7 @@ textarea {
 }
 
 /**
- * Address `overflow` set to `hidden` in IE.
+ * Address `overflow` set to `hidden` in IE 8/9/10/11.
  */
 
 button {
@@ -519,7 +501,7 @@ button {
 /**
  * Address inconsistent `text-transform` inheritance for `button` and `select`.
  * All other form control elements do not inherit `text-transform` values.
- * Correct `button` style inheritance in Firefox, IE, and Opera.
+ * Correct `button` style inheritance in Firefox, IE 8/9/10/11, and Opera.
  * Correct `select` style inheritance in Firefox.
  */
 
@@ -611,8 +593,8 @@ input[type="number"]::-webkit-outer-spin-button {
 }
 
 /**
- * 1. Address `appearance` set to `searchfield` in Safari 5 and Chrome.
- * 2. Address `box-sizing` set to `border-box` in Safari 5 and Chrome
+ * 1. Address `appearance` set to `searchfield` in Safari and Chrome.
+ * 2. Address `box-sizing` set to `border-box` in Safari and Chrome
  *    (include `-moz` to future-proof).
  */
 
@@ -647,13 +629,13 @@ fieldset {
 }
 
 /**
- * 1. Correct `color` not being inherited in IE.
+ * 1. Correct `color` not being inherited in IE 8/9/10/11.
  * 2. Remove padding so people aren't caught out if they zero out fieldsets.
  * 3. Correct alignment displayed oddly in IE 6/7.
  */
 
 legend {
-  @if support-legacy-browser(ie, "9") {
+  @if support-legacy-browser(ie, "11") {
     border: 0; /* 1 */
   }
   padding: 0; /* 2 */
@@ -663,7 +645,7 @@ legend {
 }
 
 /**
- * Remove default vertical scrollbar in IE.
+ * Remove default vertical scrollbar in IE 8/9/10/11.
  */
 
 textarea {
