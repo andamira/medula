@@ -11,6 +11,7 @@
  * @see http://web-design-weekly.com/blog/2013/05/12/handy-sass-mixins/
  */
 
+
 /**
  * 1 REM MIXIN WITH PX FALLBACK
  *
@@ -54,9 +55,6 @@
 		#{$property}: $rem;
 	}
 }
-
-
-
 
 
 /**
