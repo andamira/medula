@@ -21,14 +21,14 @@
  *			2.11 Page Links
  *			2.12 No Post Found
  *			2.13 Admin Bar
- *		3 Plugin Functionality
- *		4 After Setup Theme Actions
+ *		3 After Setup Theme Actions
  *			4.1 Language Support
  *			4.2 Cleanup
  *			4.3 Load Base Scripts & Styles
  *			4.4 Custom Theme Features
  *			4.5 Register Sidebars
- *		5 External Libraries
+ *		4 External Libraries
+ *		5 Plugin Functionality
  * 		6 Custom Functions, Actions & Filters
  *
  * Author: andamira
@@ -112,28 +112,7 @@ require_once( 'lib/admin-bar.php' );
 
 
 /**
- * 3 PLUGIN FUNCTIONALITY
- * ************************************************************
- * 
- * Instructions:
- * https://github.com/andamira/osea/wiki/Plugin
- *
- * This enables functionality that scapes the scope
- * of the theme: Custom post types, shortcodes, etc.
- *
- * You must customize the included file, and the files
- * it itself includes, to your particular needs.
- *
- * Remember:
- * You should make this a standalone plugin ASAP.
- * (see the wiki for instructions)
- */
-
-include_once( 'lib/plugin/plugin-template.php' );
-
-
-/**
- * 4 AFTER SETUP THEME
+ * 3 AFTER SETUP THEME
  * ************************************************************
  * 
  * Functions defined in lib/osea.php
@@ -188,7 +167,7 @@ add_action( 'after_setup_theme', 'osea_launch' );
 
 
 /**
- * 5 EXTERNAL LIBRARIES & PLUGINS
+ * 4 EXTERNAL LIBRARIES & PLUGINS
  * ************************************************************
  *
  * This file controls the inclusion of third party
@@ -197,6 +176,27 @@ add_action( 'after_setup_theme', 'osea_launch' );
  * and important plugins like WPML & WooCommerce
  */
 include_once( 'lib/vendor.php' );
+
+
+/**
+ * 5 PLUGIN FUNCTIONALITY
+ * ************************************************************
+ * 
+ * Instructions:
+ * https://github.com/andamira/osea/wiki/Plugin
+ *
+ * This enables functionality that scapes the scope
+ * of the theme: Custom post types, shortcodes, etc.
+ *
+ * You must customize the included file, and the files
+ * it itself includes, to your particular needs.
+ *
+ * Remember:
+ * You should make this a standalone plugin ASAP.
+ * (see the wiki for instructions)
+ */
+
+include_once( 'lib/plugin/plugin-template.php' );
 
 
 /**
