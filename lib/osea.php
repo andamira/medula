@@ -189,6 +189,12 @@ function osea_theme_support() {
 	// rss support
 	add_theme_support('automatic-feed-links');
 
+	/* TITLE TAG SUPPORT
+	 * @see:codex http://codex.wordpress.org/Function_Reference/add_theme_support#Title_Tag
+	 * @since 4.1.0
+	 */
+	add_theme_support( 'title-tag' );
+
 	// HTML5 SUPPORT
 	// http://codex.wordpress.org/Semantic_Markup
 	$args = array(

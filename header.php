@@ -32,8 +32,6 @@ if ( defined( 'OSEA_IE8_SUPPORT' ) && OSEA_IE8_SUPPORT ) { ?>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-	<title><?php wp_title( '|', true, 'right' ); ?></title>
-
 	<?php // mobile meta ?>
 	<meta name="HandheldFriendly" content="True">
 	<meta name="MobileOptimized" content="320">
