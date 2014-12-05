@@ -55,7 +55,7 @@ if ( defined( 'OSEA_IE8_SUPPORT' ) && OSEA_IE8_SUPPORT ) { ?>
 
 			<?php // to use a image just replace the bloginfo('name') with your img src ?>
 			<div class="site-header-logo"><a href="<?php echo home_url(); ?>" rel="nofollow">
-				<span class="site-name h1"><?php bloginfo('name'); ?></span><br>
+				<span class="site-name h1"><?php bloginfo('name'); ?></span><br />
 				<span class="site-description h2"><?php bloginfo('description'); ?></span>
 			</a></div>
 
