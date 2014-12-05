@@ -22,6 +22,7 @@ function osea_comments_count( $link = false ) {
 	$cc  = '<span class="entry-comments-count">';
 
 	$com_num = get_comments_number();
+	#$com_num = get_comments_number_text(); // (since 4.0)
 
 	if ( $link && $com_num ) {
 		$cc .= '<a href="' . get_the_permalink() . '#comments-title" title="' . __( 'Go to comments', 'osea-theme' ) . '">';
