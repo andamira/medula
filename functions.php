@@ -3,6 +3,7 @@
  * This is the functions.php file
  *
  * INDEX:
+ * 		0 Readme First
  * 		1 Global Options
  * 			1.1 Debug			(#)
  * 			1.2 IE8 Support
@@ -40,6 +41,19 @@
 
 
 /**
+ * 0 README FIRST
+ * ************************************************************
+ *
+ * PHP FILES:
+ * @see: https://make.wordpress.org/core/handbook/coding-standards/php/
+ * @see: http://www.phpdoc.org/docs/latest/index.html
+ *
+ *
+ *
+ */
+
+
+/**
  * 1 GLOBAL OPTIONS
  * ************************************************************
  *
@@ -66,7 +80,7 @@ define( 'OSEA_IE8_SUPPORT', true );			// < enabled by default
  * 1.3 OPTIMIZATION
  *
  *
- * @ see osea_after_setup_theme
+ * @see osea_after_setup_theme
  */
 
 // Remove the whitespace from HTML between wp_head and wp_footer.
@@ -83,8 +97,7 @@ define( 'OSEA_IE8_SUPPORT', true );			// < enabled by default
  * 2 THEME FUNCTIONALITY
  * ************************************************************
  *
- * Instructions:
- * https://github.com/andamira/osea/wiki/Theme_includes
+ * @see:instructions https://github.com/andamira/osea/wiki/Theme_includes
  *
  * You can customize any of these files. You can also
  * comment the includes if you prefer to use your system
@@ -183,8 +196,7 @@ include_once( 'lib/vendor.php' );
  * 5 PLUGIN FUNCTIONALITY
  * ************************************************************
  * 
- * Instructions:
- * https://github.com/andamira/osea/wiki/Plugin
+ * @see:instructions https://github.com/andamira/osea/wiki/Plugin
  *
  * This enables functionality that scapes the scope
  * of the theme: Custom post types, shortcodes, etc.
