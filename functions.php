@@ -142,8 +142,6 @@ function osea_launch() {
 	* 4.2 cleanup
 	*/
 	add_action( 'init', 'osea_head_cleanup' );
-	// a better title
-	add_filter( 'wp_title', 'osea_wp_title', 10, 3 );
 	// remove WP version from RSS
 	add_filter( 'the_generator', 'osea_rss_version' );
 	// remove pesky injected css for recent comments widget
