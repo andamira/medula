@@ -1,19 +1,19 @@
 <?php
-/*
+/**
  * Shortcodes Template File
  *
  * Here you can write your own shortcodes. You can
  * copy the example as a model, or use a generator like:
- * http://generatewp.com/shortcodes/
+ * @see http://generatewp.com/shortcodes/
  *
  * Recommended reading:
- * http://www.webdesignerdepot.com/2013/06/how-to-create-your-own-wordpress-shortcodes/
+ * @see http://www.webdesignerdepot.com/2013/06/how-to-create-your-own-wordpress-shortcodes/
  *
  */
 
 
 
-/*
+/**
  * Osea Example shortcode
  *
  * Creates a div with any number of additional classes
@@ -40,7 +40,6 @@
     return $out;
 }
 add_shortcode( 'osea-shortcode', 'osea_shortcode_example' );
-
 
 
 

@@ -1,16 +1,16 @@
 <?php
-/* Plugin Name: Osea Plugin Example
+/**
+ * Plugin Name: Osea Plugin Example
  * Plugin URI: https://github.com/andamira/osea/wiki/Plugin
  * Description: This contains all the theme independent functionality.
- * Version 0.1
+ * Version 0.01
  * Author: andamira
  * Author URI: http://andamira.net
  *
  * NOTE: You must customize each of the included files
  * for your particular use case
  *
- * Instructions:
- * https://github.com/andamira/osea/wiki/Plugin
+ * @see:instructions https://github.com/andamira/osea/wiki/Plugin
  *
  */
 

@@ -1,5 +1,5 @@
 <?php
-/*
+/**
  * Analytics Tracking Code file
  *
  */

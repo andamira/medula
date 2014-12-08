@@ -1,10 +1,10 @@
 <?php
- /*
+ /**
  * Here you can write your own custom taxonomies. You can
  * copy the example as a model, or use a generator like:
- * Generator: http://generatewp.com/taxonomy/
+ * @see http://generatewp.com/taxonomy/
  *
- * Codex: http://codex.wordpress.org/Function_Reference/register_taxonomy
+ * @see:codex http://codex.wordpress.org/Function_Reference/register_taxonomy
  */
 
 function custom_category_example() {

@@ -1,6 +1,6 @@
 <?php
 /*
- * Shortcodes Template File
+ * Custom Post Types (CPT) Template File
  *
  * Here you can write your own custom post types. You can
  * copy the example as a model, or use a generator like:
