@@ -1,5 +1,5 @@
 <?php
-/*
+/**
  * External Libraries & Plugins Fixes
  *
  *		1 Custom Post Type Tags Fix
