@@ -65,7 +65,7 @@
  * Set to true in order to display debug information.
  * The functions are defined in lib/osea.php
  */
-#define( 'OSEA_DEBUG', true );				// < disabled by default
+#define( 'OSEA_DEBUG', true );				// (#) disabled by default
 
 /**
  * 1.2 IE 8 SUPPORT
@@ -74,7 +74,7 @@
  * conditionally loading the polyfill libraries
  * nwmatcher, respond & selectivizr, in header.php
  */
-define( 'OSEA_IE8_SUPPORT', true );			// < enabled by default
+define( 'OSEA_IE8_SUPPORT', true );			// (·) enabled by default
 
 /**
  * 1.3 OPTIMIZATION
@@ -84,13 +84,13 @@ define( 'OSEA_IE8_SUPPORT', true );			// < enabled by default
  */
 
 // Remove the whitespace from HTML between wp_head and wp_footer.
-#define( 'OSEA_OPTIMIZE_HTML', true );		// < disabled by default
+#define( 'OSEA_OPTIMIZE_HTML', true );		// (#) disabled by default
 
 // Concatenate all js libs included in /lib/js/scripts.js
-#define( 'OSEA_CONCATENATE_JS', true );		// < disabled by default
+#define( 'OSEA_CONCATENATE_JS', true );		// (#) disabled by default
 
 // Minify the js libs, concatenated or not
-#define( 'OSEA_MINIFY_JS', true );			// < disabled by default
+#define( 'OSEA_MINIFY_JS', true );			// (#) disabled by default
 
 
 /**
@@ -109,7 +109,7 @@ define( 'OSEA_IE8_SUPPORT', true );			// < enabled by default
 require_once( 'lib/osea.php' );
 
 // Admin Area Customization
-#require_once( 'lib/admin.php' );			// < disabled by default
+#require_once( 'lib/admin.php' );			// (#) disabled by default
 
 require_once( 'lib/icons.php' );
 require_once( 'lib/fonts.php' );
