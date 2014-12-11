@@ -22,14 +22,14 @@ include_once( 'js/libs.php' );
  * 2 Fix problems with external libraries & plugins
  * ************************************************************
  */
-include_once( 'vendor/fixes.php' );
+#include_once( 'vendor/fixes.php' );
 
 
 /**
  * 3 Cleans & minifies code of external libraries, plugins, etc.
  * ************************************************************
  */
-include_once( 'vendor/cleanup.php' );
+#include_once( 'vendor/cleanup.php' );
 
 
 /** 
