@@ -7,6 +7,8 @@
  *
  *		1 Remove default dashboard wigets
  *		2 Custom dashboard widgets
+ *			2.1 Load
+ *			2.2 Define
  *		3 Customizing the Login Page
  *		4 changing text in footer of admin
  *
@@ -44,7 +46,7 @@ add_action( 'admin_menu', 'disable_default_dashboard_widgets' );
 
 
 /**
- * 2 CUSTOM WIDGETS
+ * 2 CUSTOM DASHBOARD WIDGETS
  * ************************************************************
  *
  * Now let's talk about adding your own custom Dashboard widget.
@@ -53,12 +55,23 @@ add_action( 'admin_menu', 'disable_default_dashboard_widgets' );
  * site. Here is an example Dashboard Widget that displays recent
  * entries from an RSS Feed.
  *
- * Recommended reading:
- * http://digwp.com/2010/10/customize-wordpress-dashboard/
- * 
+ * @see http://digwp.com/2010/10/customize-wordpress-dashboard/
  */
 
-// Example Dashboard Widget
+/**
+ * 2.1 Drop here all the Custom Widgets to load them
+ */
+function osea_custom_dashboard_widgets() {
+	wp_add_dashboard_widget( 'osea_example_dashboard_widget', __( 'Example Dashboard Widget (Ósea)', 'osea-theme' ), 'osea_example_dashboard_widget' );
+
+}
+add_action( 'wp_dashboard_setup', 'osea_custom_dashboard_widgets' );
+
+
+/**
+ * 2.2 Define here all the Custom Widgets
+ */
+
 function osea_example_dashboard_widget() {
 	?>
 	<h1> </h1>
@@ -66,14 +79,6 @@ function osea_example_dashboard_widget() {
 	<?php
 }
 
-/**
- * Drop here all the Custom Widgets to load them
- */
-function osea_custom_dashboard_widgets() {
-	wp_add_dashboard_widget( 'osea_example_dashboard_widget', __( 'Example Dashboard Widget (Ósea)', 'osea-theme' ), 'osea_example_dashboard_widget' );
-
-}
-add_action( 'wp_dashboard_setup', 'osea_custom_dashboard_widgets' );
 
 
 /**
