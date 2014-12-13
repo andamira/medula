@@ -6,11 +6,11 @@
  * 		0 Readme First
  * 		1 Global Options
  * 			1.1 Debug			(#)
- * 			1.2 IE8 Support
+ * 			1.2 IE8 Support		( )
  * 			1.3 Optimization	(#)
  *		2 Theme Functionlity
  *			2.1  Ósea library
- *			2.2  Admin Área		(#)
+ *			2.2  Admin Área		( )
  *			2.3  Icons & Favicons
  *			2.4  Fonts
  *			2.5  Menus
@@ -35,7 +35,7 @@
  * Author: andamira
  * URL: htp://andamira.net/osea/
  *
- * Don't reinvent the wheel. Take a look to:
+ * Don't reinvent the wheel.
  * @see:codex http://codex.wordpress.org/Function_Reference/
  */
 
@@ -74,7 +74,7 @@
  * conditionally loading the polyfill libraries
  * nwmatcher, respond & selectivizr, in header.php
  */
-define( 'OSEA_IE8_SUPPORT', true );			// (·) enabled by default
+define( 'OSEA_IE8_SUPPORT', true );			// ( ) enabled by default
 
 /**
  * 1.3 OPTIMIZATION
@@ -109,7 +109,7 @@ define( 'OSEA_IE8_SUPPORT', true );			// (·) enabled by default
 require_once( 'lib/osea.php' );
 
 // Admin Area Customization
-#require_once( 'lib/admin.php' );			// (#) disabled by default
+require_once( 'lib/admin.php' );			// ( ) enabled by default
 
 require_once( 'lib/icons.php' );
 require_once( 'lib/fonts.php' );
