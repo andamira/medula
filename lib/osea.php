@@ -150,6 +150,9 @@ function osea_scripts_and_styles() {
 		wp_enqueue_script( 'jquery' );
 		wp_enqueue_script( 'osea-js' );
 	}
+	
+	// TinyMCE editor-style is defined in:
+	// lib/admin.php
 }
 
 
@@ -206,8 +209,6 @@ function osea_theme_support() {
 	);
 	add_theme_support( 'html5', $args );
 
-	// Custom CSS in the TinyMCE visual editor
-	// add_editor_style( '' );	
 }
 
 /**

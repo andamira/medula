@@ -10,10 +10,11 @@
  *			2.1 Load
  *			2.2 Define
  *		3 Customizing the Login Page
- *		4 changing text in footer of admin
+ *		4 Customize Admin
+ *			4.1 Customizing the TinyMCE Editor
+ *			4.2 Changing text in footer of admin
  *
- * Recommended Reading:
- * http://digwp.com/2010/10/customize-wordpress-dashboard/
+ * @see http://digwp.com/2010/10/customize-wordpress-dashboard/
  */
 
 
@@ -107,13 +108,20 @@ add_filter( 'login_headertitle', 'osea_login_title' );
  * 4 CUSTOMIZE ADMIN
  * ************************************************************
  *
- * Put
  */
 
-// Custom Backend Footer
+/**
+ * 4.1 Customizing the TinyMCE Editor
+ */
+add_editor_style( get_template_directory_uri() . '/lib/css/admin/editor-style.css' );
+
+/**
+ * 4.2 Changing text in footer of admin
+ */
+
 function osea_custom_admin_footer() {
 	_e( '<span id="footer-thankyou">Developed by <a href="http://yoursite.com" target="_blank">Your Site Name</a></span>. Built using <a href="http://andamira.net/osea" target="_blank">Ósea</a>.', 'osea-theme' );
 }
 add_filter( 'admin_footer_text', 'osea_custom_admin_footer' );
 
-?>
+
