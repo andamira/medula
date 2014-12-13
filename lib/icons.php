@@ -62,11 +62,16 @@ function osea_admin_area_favicon() {
 add_action( 'wp_enqueue_scripts', 'icons_collections' );
 function icons_collections() {
 
-	// DASHICONS
+	/**
+	 * DASHICONS
+	 */
 	wp_enqueue_style( 'dashicons', get_stylesheet_uri(), array('dashicons'), '0.2' );
 
-	// FONT AWESOME
-	#wp_enqueue_style( 'fontawesome', '//netdna.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css', null, '4.1.0' );
+	/**
+	 * FONT AWESOME
+	 * @see http://fortawesome.github.io/Font-Awesome/get-started/
+	 */
+	#wp_enqueue_style( 'fontawesome', '//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css', null, '4.2.0' );
 }
 
 
