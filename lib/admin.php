@@ -11,8 +11,10 @@
  *			2.2 Define
  *		3 Customizing the Login Page
  *		4 Customize Admin
- *			4.1 Customizing the TinyMCE Editor
- *			4.2 Changing text in footer of admin
+ *			4.1 Custom Admin Stylesheets
+ *			4.2 Custom TinyMCE Editor Stylesheet
+ *			4.3 TODO: Custom TinyMCE buttons
+ *			4.4 Changing text in footer of admin
  *
  * @see http://digwp.com/2010/10/customize-wordpress-dashboard/
  */
@@ -24,18 +26,17 @@
  *
  * Comment/Uncomment the ones you want to maintain/remove
  */
-
 function disable_default_dashboard_widgets() {
 
 	remove_meta_box( 'dashboard_right_now', 'dashboard', 'core' );			// Right Now Widget
 	remove_meta_box( 'dashboard_activity', 'dashboard', 'core' );			// Activity widget
 	remove_meta_box( 'dashboard_recent_comments', 'dashboard', 'core' );	// Comments Widget
-	//remove_meta_box( 'dashboard_incoming_links', 'dashboard', 'core' );	// Incoming Links Widget
-	//remove_meta_box( 'dashboard_plugins', 'dashboard', 'core' );			// Plugins Widget
+	#remove_meta_box( 'dashboard_incoming_links', 'dashboard', 'core' );	// Incoming Links Widget
+	#remove_meta_box( 'dashboard_plugins', 'dashboard', 'core' );			// Plugins Widget
 	remove_meta_box( 'dashboard_quick_press', 'dashboard', 'core' );		// Quick Press Widget
 	remove_meta_box( 'dashboard_recent_drafts', 'dashboard', 'core' );		// Recent Drafts Widget
-	remove_meta_box( 'dashboard_primary', 'dashboard', 'core' );	// WordPress News
-	remove_meta_box( 'dashboard_secondary', 'dashboard', 'core' );// 
+	remove_meta_box( 'dashboard_primary', 'dashboard', 'core' );			// WordPress News
+	remove_meta_box( 'dashboard_secondary', 'dashboard', 'core' );			// 
 
 	// Plugins' dashboard boxes
 	remove_meta_box( 'yoast_db_widget', 'dashboard', 'normal' );			// Yoast's SEO
@@ -60,7 +61,7 @@ add_action( 'admin_menu', 'disable_default_dashboard_widgets' );
  */
 
 /**
- * 2.1 Drop here all the Custom Widgets to load them
+ * 2.1 Load the Custom Widgets
  */
 function osea_custom_dashboard_widgets() {
 	wp_add_dashboard_widget( 'osea_example_dashboard_widget', __( 'Example Dashboard Widget (Ósea)', 'osea-theme' ), 'osea_example_dashboard_widget' );
@@ -72,7 +73,6 @@ add_action( 'wp_dashboard_setup', 'osea_custom_dashboard_widgets' );
 /**
  * 2.2 Define here all the Custom Widgets
  */
-
 function osea_example_dashboard_widget() {
 	?>
 	<h1> </h1>
@@ -111,14 +111,27 @@ add_filter( 'login_headertitle', 'osea_login_title' );
  */
 
 /**
- * 4.1 Customizing the TinyMCE Editor
+ * 4.1 Custom Admin Stylesheets
+ */
+function load_admin_styles() {
+	wp_enqueue_style( 'admin_css', get_template_directory_uri() . '/lib/css/admin/style.css' );
+}  
+add_action( 'admin_enqueue_scripts', 'load_admin_styles' );
+
+/**
+ * 4.2 Custom TinyMCE Editor Stylesheet
  */
 add_editor_style( get_template_directory_uri() . '/lib/css/admin/editor-style.css' );
 
 /**
- * 4.2 Changing text in footer of admin
+ * 4.3 TODO: Custom TinyMCE buttons
+ * @see http://codex.wordpress.org/TinyMCE_Custom_Buttons
  */
 
+
+/**
+ * 4.4 Changing text in footer of admin
+ */
 function osea_custom_admin_footer() {
 	_e( '<span id="footer-thankyou">Developed by <a href="http://yoursite.com" target="_blank">Your Site Name</a></span>. Built using <a href="http://andamira.net/osea" target="_blank">Ósea</a>.', 'osea-theme' );
 }

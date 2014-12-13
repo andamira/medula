@@ -151,7 +151,7 @@ function osea_scripts_and_styles() {
 		wp_enqueue_script( 'osea-js' );
 	}
 	
-	// TinyMCE editor-style is defined in:
+	// Admin styles are defined in:
 	// lib/admin.php
 }
 
