@@ -2,6 +2,7 @@
 /**
  * Wrapper for minifiying scripts.js
  *
+ * @see https://github.com/tedious/JShrink
  */
 
 require 'JShrink/Minifier.php';
@@ -17,4 +18,3 @@ if ( filemtime( 'scripts.js') < filemtime( 'scripts.min.js' ) ) {
 	echo $output;
 }
 
-?>
