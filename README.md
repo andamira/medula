@@ -63,5 +63,5 @@ Feel free to [submit bugs & fixes](https://github.com/andamira/osea/issues).
 
 ## License
 
-Will probably GPL2. Still working that out.
+[GPLv2](http://www.gnu.org/licenses/gpl-2.0.html) or later.
 
