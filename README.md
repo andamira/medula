@@ -1,20 +1,20 @@
 # Ósea <img src="https://raw.githubusercontent.com/andamira/osea/master/lib/img/apple-touch-icon.png" alt="Icon" title="Ósea means 'from the nature of the bone' in spanish" width="24" height="24">
 
-**A modern & clean mobile-first starter theme for WordPress.**
+**A Mobile First Starter Theme for WordPress**
 
 Its key points are:
 
-1. Good design decisions, so it is modular and maintainable.
-1. Mobile First, so it is progressively enhanced.
-1. Simplicity, so that its structure can be easily grasped on.
-1. Versatility, so that it can be used for any kind of project.
+1. Simplicity, modularity and maintainability.
+1. Mobile First, light, progressively enhanced.
+1. Versatility, it can be used for any project.
+1. Accesibility, makes use of compatibility standards.
 
-Ósea is commited to semantic HTML5 markup and CSS3. It makes use [Compass](http://compass-style.org) >= 1.0, [Sass](http://sass-lang.com/) >= 3.3, and [Susy](http://susy.oddbird.net/) >= 2.1. Includes [Modernizr](http://modernizr.com/)
+Ósea is commited to semantic HTML5 markup and CSS3. It depends on [Compass](http://compass-style.org), [Sass](http://sass-lang.com/), [Susy](http://susy.oddbird.net/) and [Breakpoint](http://breakpoint-sass.com/). Includes [Modernizr](http://modernizr.com/). Supports all modern browsers and also IE8 (for now).
 
 
-It has been mostly inspired by [Bones](https://github.com/eddiemachado/bones) and in a lesser extent by [HTML5 Reset WordPress Theme](https://github.com/murtaugh/HTML5-Reset-WordPress-Theme), [HTML5 Blank](https://github.com/toddmotto/html5blank) & [SMACSS & Sass WP](https://github.com/websanya/smacss-sass-wp)
-
+It started as a fork of [Bones](https://github.com/eddiemachado/bones) v1.7. It also got some ideas and inspiraton from [HTML5 Reset WordPress Theme](https://github.com/murtaugh/HTML5-Reset-WordPress-Theme), [HTML5 Blank](https://github.com/toddmotto/html5blank), [SMACSS & Sass WP](https://github.com/websanya/smacss-sass-wp) and [WordPress Plugin Boilerplate](https://github.com/tommcfarlin/WordPress-Plugin-Boilerplate).
 
 
 _Warning: This project is still going through pretty big structural changes._
 
+Also, feel free to [submit bugs & fixes](https://github.com/andamira/osea/issues).
