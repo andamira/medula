@@ -24,6 +24,9 @@
 
 		</div> <?php // (#page-wrapper) opening tag in header.php ?>
 
+	<?php // MMenu (Mobile) Menu ?>
+	<nav id="mmenu" class="site-mmenu-nav" role="navigation"><?php osea_site_mmenu_nav(); ?></nav>
+
 	</body>
 
 </html>

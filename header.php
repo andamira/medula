@@ -51,6 +51,10 @@ if ( defined( 'OSEA_IE8_SUPPORT' ) && OSEA_IE8_SUPPORT ) { ?>
 
 			<?php osea_debug_showfile( __FILE__ ); ?>
 
+			<a class="mmenu-button" href="#mmenu" >
+				<i class="dashicons dashicons-menu"></i>
+			</a>
+
 			<?php // to use a image just replace the bloginfo('name') with your img src ?>
 			<div class="site-header-logo"><a href="<?php echo home_url(); ?>" rel="nofollow">
 				<span class="site-name h1"><?php bloginfo('name'); ?></span><br />

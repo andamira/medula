@@ -42,6 +42,9 @@ function extra_libraries_styles () {
 	// Tables
 	$load_dynatable =	false;
 
+	// MMenu (Mobile) Menu
+	$load_mmenu =   true;
+
 	// Typography TODO
 	$load_lettering =	false;	// letteringjs.com
 
@@ -116,6 +119,19 @@ function extra_libraries_styles () {
 		wp_enqueue_script( 'dynatable_js');
 	}
 
+
+	/** 
+	 * MMENU
+	 *
+	 * OFF-CANVAS MENU
+	 * @see http://mmenu.frebsite.nl/
+	 */
+	if ( $load_mmenu ) { 
+		wp_register_script('mmenu_js', $EXT_DIR .'mmenu/jquery.mmenu.min.all.js', 'jquery' );
+		wp_enqueue_script( 'mmenu_js');
+		wp_register_style( 'mmenu_css', $EXT_DIR .'mmenu/jquery.mmenu.all.css' );
+		wp_enqueue_style( 'mmenu_css');
+	}
 
 }
 add_action( 'wp_enqueue_scripts', 'extra_libraries_styles' );

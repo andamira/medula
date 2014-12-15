@@ -29,6 +29,14 @@ body.admin-bar {
 	// see https://core.trac.wordpress.org/ticket/26609
 	position: fixed;	
 
+	// fixes adminbar position when MMenu (Mobile) Menu is open
+    .mm-opening &, .mm-opened & { 
+		top: -32px;
+		@media screen and ( max-width: 782px ) { 
+			top: -46px;
+		}   
+	}
+
 	.quicklinks {}
 		ul {}
 			li {}
