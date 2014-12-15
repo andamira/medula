@@ -29,8 +29,7 @@
   Everything has a purpose and its own place. An big effort has been made in making it simple to be fully understood, as well as remaining very powerful.
 
 * Modularity and Maintainability.
-
-  DRY principles. Clear documentation. Index present in all files. Follows the [WordPress Coding Standards](https://make.wordpress.org/core/handbook/coding-standards/).
+It s  DRY principles. Clear documentation. Index present in all files. Follows the [WordPress Coding Standards](https://make.wordpress.org/core/handbook/coding-standards/).
 
 * Mobile First
 
@@ -50,28 +49,28 @@
 
 ## History
 
-It started as a fork of [Bones](https://github.com/eddiemachado/bones) v1.7. It also got some ideas and inspiration from [HTML5 Reset WordPress Theme](https://github.com/murtaugh/HTML5-Reset-WordPress-Theme), [HTML5 Blank](https://github.com/toddmotto/html5blank), [SMACSS & Sass WP](https://github.com/websanya/smacss-sass-wp) and [WordPress Plugin Boilerplate](https://github.com/tommcfarlin/WordPress-Plugin-Boilerplate).
+It started as a fork of [Bones](https://github.com/eddiemachado/bones), but many things have changed since then. It's also got some inspiration from [HTML5 Reset WordPress Theme](https://github.com/murtaugh/HTML5-Reset-WordPress-Theme), [HTML5 Blank](https://github.com/toddmotto/html5blank), [SMACSS & Sass WP](https://github.com/websanya/smacss-sass-wp) and [WordPress Plugin Boilerplate](https://github.com/tommcfarlin/WordPress-Plugin-Boilerplate).
 
-It depends on [Compass](http://compass-style.org), [Sass](http://sass-lang.com/), [Susy](http://susy.oddbird.net/) and [Breakpoint](http://breakpoint-sass.com/). It also includes [Modernizr](http://modernizr.com/). Supports all modern browsers and also IE8 (for now).
+It depends on [Compass](http://compass-style.org), [Sass](http://sass-lang.com/), [Susy](http://susy.oddbird.net/) and [Breakpoint](http://breakpoint-sass.com/). It also includes [Modernizr](http://modernizr.com/) and several jQuery libraries you can choose to use or not. It supports all modern browsers and also IE8 (for now).
 
 
 ## Contributing
 
-_Warning: This project is still going through pretty big structural changes._
+_Warning: This project is still going through pretty big design & structural changes._
 
-Feel free to [submit bugs & fixes](https://github.com/andamira/osea/issues).
+But feel free to [submit bugs & fixes](https://github.com/andamira/osea/issues).
 
-## License
+## Licenses
 
 Ósea PHP Code is licensed under the [GNU General Public License v2](http://www.gnu.org/licenses/gpl-2.0.html) or later.
 
-Images rights are under [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/).
+Images are licensed under [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/).
 
-Third party javascript/jquery libraries included under `/lib/js/libs/` each one has their own license:
+Each third party js/jquery library included under `/lib/js/libs/` has their own license. See:
 - [jQuery Cycle2](https://github.com/malsup/cycle2#copyright-and-license)
 - [jQuery Dynatable](http://www.dynatable.com/license)
 - [jQuery fragmenScroll](https://github.com/miWebb/jQuery.fragmentScroll/blob/master/LICENSE)
 - [jQuery MMenu](https://github.com/BeSite/jQuery.mmenu#licence)
 
-JShrink javascript minifier included in /lib/js/JShrink/ is under the [BSD License](https://github.com/tedious/JShrink/blob/master/LICENSE).
+JShrink javascript minifier included in `/lib/js/JShrink/` is under the [BSD License](https://github.com/tedious/JShrink/blob/master/LICENSE).
 
