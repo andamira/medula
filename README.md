@@ -63,5 +63,15 @@ Feel free to [submit bugs & fixes](https://github.com/andamira/osea/issues).
 
 ## License
 
-[GPLv2](http://www.gnu.org/licenses/gpl-2.0.html) or later.
+Ósea PHP Code is licensed under the [GNU General Public License v2](http://www.gnu.org/licenses/gpl-2.0.html) or later.
+
+Images rights are under [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/).
+
+Third party javascript/jquery libraries included under `/lib/js/libs/` each one has their own license:
+- [jQuery Cycle2](https://github.com/malsup/cycle2#copyright-and-license)
+- [jQuery Dynatable](http://www.dynatable.com/license)
+- [jQuery fragmenScroll](https://github.com/miWebb/jQuery.fragmentScroll/blob/master/LICENSE)
+- [jQuery MMenu](https://github.com/BeSite/jQuery.mmenu#licence)
+
+JShrink javascript minifier included in /lib/js/JShrink/ is under the [BSD License](https://github.com/tedious/JShrink/blob/master/LICENSE).
 
