@@ -61,7 +61,7 @@ $smart-header-height: 2rem;
 		top: -$smart-header-height;
 
 		// But Don't hide it On Desktop
-		@include breakpoint( $bp-1 ) {
+		@include breakpoint( $bp-mobile2desktop ) {
 			top: 0;
 
 			// Admin Bar Positioning Fix
@@ -86,7 +86,7 @@ $smart-header-height: 2rem;
 
 	// ...on desktop, when the top border is hidden
 	&.hidden-top {
-		@include breakpoint( $bp-1 ) {
+		@include breakpoint( $bp-mobile2desktop ) {
 			position: fixed;
 		}
 	}
@@ -109,7 +109,7 @@ $smart-header-height: 2rem;
 
 	// ...on desktop when the top gets hidden
 	&.hidden-top {
-		@include breakpoint( $bp-1 ) {
+		@include breakpoint( $bp-mobile2desktop ) {
 			padding-bottom: $smart-header-height;
 		}
 	}  
