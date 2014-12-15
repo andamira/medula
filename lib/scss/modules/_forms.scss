@@ -54,6 +54,7 @@ textarea,
 	&:focus,
     &:active {
 		background-color: darken( $white, 5% );
+		outline: none;
     }
 
 	// error notification
