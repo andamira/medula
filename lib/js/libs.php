@@ -19,7 +19,7 @@ function extra_libraries_styles () {
 	 */
 	// Set this to true to use a minified version of the scripts
 	$MINIFY_EXT_LIBS = false;
-	$EXT_DIR = get_stylesheet_directory_uri() . '/lib/ext/libs/';
+	$EXT_DIR = get_stylesheet_directory_uri() . '/lib/js/libs/';
 
 	if ($MINIFY_EXT_LIBS) { $MIN = ".min"; } else { $MIN = ""; }
 
@@ -121,5 +121,3 @@ function extra_libraries_styles () {
 add_action( 'wp_enqueue_scripts', 'extra_libraries_styles' );
 
 
-
-?>

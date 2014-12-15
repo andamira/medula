@@ -86,7 +86,7 @@
 		$unit : unit( $value );
 		$val  : strip-unit( $value );
 
-		@if ( $rem-with-px-fallbacks ) and ( $unit == 'rem' ) {
+		@if ( $rem-with-px-fallback ) and ( $unit == 'rem' ) {
 			$list: append( $list, ( $val * $base-font-size ) );
 		}
 		@else if( $unit == 'px' ) or ( $unit == 'rem' ){
