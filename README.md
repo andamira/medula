@@ -69,7 +69,7 @@ Images are licensed under [CC BY-SA 4.0](https://creativecommons.org/licenses/by
 Each third party js/jquery library included under `/lib/js/libs/` has their own license. See:
 - [jQuery Cycle2](https://github.com/malsup/cycle2#copyright-and-license)
 - [jQuery Dynatable](http://www.dynatable.com/license)
-- [jQuery fragmenScroll](https://github.com/miWebb/jQuery.fragmentScroll/blob/master/LICENSE)
+- [jQuery fragmentScroll](https://github.com/miWebb/jQuery.fragmentScroll/blob/master/LICENSE)
 - [jQuery MMenu](https://github.com/BeSite/jQuery.mmenu#licence)
 
 JShrink javascript minifier included in `/lib/js/JShrink/` is under the [BSD License](https://github.com/tedious/JShrink/blob/master/LICENSE).
