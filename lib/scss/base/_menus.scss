@@ -170,15 +170,17 @@ nav {
 
 	$submenu-width: 10rem;
 
-	position: absolute;
-	bottom: 0;
-
 	// Show on desktop size
 	@include breakpoint( 0 $bp-adminbar-mobile ) { 
 		display: none;
 	}
 
-    // SEPARATE ELEMENTS
+	// center the menu
+	margin: 0 auto;
+	text-align: center;
+	position: relative;
+	bottom: 0.5rem;
+
 	ul  {
 		margin: 0;
 		padding: 0;
@@ -190,9 +192,11 @@ nav {
 				display: inline-block;
 				@include rem( padding, 0.5rem );
 				background: #eee;
+
+				text-align: left;
 			}
 
-	// NESTED ELEMENTS
+	// NESTED MENU ELEMENTS
 	ul {
 
 		>li {}
