@@ -168,6 +168,11 @@ nav {
  */
 .site-main-nav {
 
+	$submenu-width: 10rem;
+
+	position: absolute;
+	bottom: 0;
+
 	// Show on desktop size
 	@include breakpoint( 0 $bp-adminbar-mobile ) { 
 		display: none;
@@ -183,8 +188,8 @@ nav {
 
 			a{
 				display: inline-block;
-				background: #eee;
 				@include rem( padding, 0.5rem );
+				background: #eee;
 			}
 
 	// NESTED ELEMENTS
@@ -205,7 +210,7 @@ nav {
 			&:first-child {}
 			&:last-child {}
 
-			// submenus
+			// SUBMENUS
 			&.sub-menu, &.children {
 				margin: 0;
 				position: absolute;
@@ -215,6 +220,7 @@ nav {
 				li {
 
 					a {
+						@include rem( width, $submenu-width);
 
 						&:hover, &:focus {}
 						&:link {}
