@@ -4,6 +4,10 @@
  *
  * 		1 Smart Header
  * 		2 Navigation Elements
+ *			2.1 Generic Nav elements
+ *			2.2 Main Desktop Menu
+ *			2.3 Mobile Button
+ *			2.4 MMenu (Mobile) Menu
  */
 
 
@@ -136,7 +140,12 @@ $smart-header-height: 2rem;
  *
  */
 
+
+/**
+ * 2.1 GENERIC NAV ELEMENTS
+ */
 nav {
+
 	ul {
 		margin: 0;
 		padding: 0;
@@ -145,16 +154,139 @@ nav {
 		li {
 			display: inline-block;
 		}
+
+			a {
+
+				&:hover, &:focus {
+				}
+			}
 }
 
 
+/**
+ * 2.2 MAIN DESKTOP MENU
+ */
 .site-main-nav {
-	ul {
+
+	// Show on desktop size
+	@include breakpoint( 0 $bp-adminbar-mobile ) { 
+		display: none;
 	}
 
+    // SEPARATE ELEMENTS
+	ul  {
+		margin: 0;
+		padding: 0;
+	}
+
+		li {}
+
+			a{
+				display: inline-block;
+				background: #eee;
+				@include rem( padding, 0.5rem );
+			}
+
+	// NESTED ELEMENTS
+	ul {
+
+		>li {}
+
 		li {
-		}
+			position: relative;
+
+			&:hover, &:focus {}
+
+			a {
+
+				&:hover, &:focus {}
+			}
+
+			&:first-child {}
+			&:last-child {}
+
+			// submenus
+			&.sub-menu, &.children {
+				margin: 0;
+				position: absolute;
+				display: none;
+				z-index: 8999;
+
+				li {
+
+					a {
+
+						&:hover, &:focus {}
+						&:link {}
+					}
+
+					&:first-child {}
+					&:last-child {}
+
+					// deeper submenus
+					ul {}
+				}
+
+				// highlight sub-menu current page
+				li.current-menu-item,
+				li.current-menu-parent,
+				li.current_page_item,
+				li.current_page_ancestor {
+
+					&:hover, &:focus {}
+					a {}
+				}
+
+			}
+
+			// showing sub-menus
+			&:hover ul {
+				top: auto;
+				display: block;
+			}
+
+		} // li
+
+	} // ul
+
+	li.current-menu-item,
+	li.current-menu-parent,
+	li.current_page_item,
+	li.current_page_ancestor {
+
+		&:hover, &:focus {}
+		a {}
+	}
+
+} 
+
+
+/**
+ * 2.3 MOBILE BUTTON
+ */
+.mmenu-button {
+	position: fixed;
+
+	// Hide on desktop size
+	@include breakpoint( $bp-adminbar-mobile ) { 
+		display: none;
+	}   
+
+	i { 
+		@include rem( font-size, 2.5rem );
+	}   
 }
 
+
+/**
+ * 2.4 MMENU (MOBILE) MENU
+ */
+#mmenu {
+
+	a { 
+
+		&:hover, &:focus {}   
+	}   
+}
 
 
