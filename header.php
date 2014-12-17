@@ -61,8 +61,12 @@ if ( defined( 'OSEA_IE8_SUPPORT' ) && OSEA_IE8_SUPPORT ) { ?>
 				<span class="site-description h2"><?php bloginfo('description'); ?></span>
 			</a></div>
 
-			<nav class="site-main-nav" role="navigation"><?php osea_site_main_nav(); ?></nav>
+			<div id="site-header-wrapper" class="site-wrapper">
+
+				<nav class="site-main-nav" role="navigation"><?php osea_site_main_nav(); ?></nav>
+
+			</div>
 
 		</header>
 
-		<div id="content-wrapper">
+		<div id="site-content-wrapper" class="site-wrapper">

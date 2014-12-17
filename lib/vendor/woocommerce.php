@@ -34,7 +34,7 @@ add_action('woocommerce_after_main_content', 'osea_theme_wrapper_end', 10);
 // and the main section opening tag (included)
 function osea_theme_wrapper_start() {
 ?>
-	<div id="content-wrapper"> <?php // in header.php ?>
+	<div id="site-content-wrapper"> <?php // in header.php ?>
             <main role="main">
 <?php
 }
@@ -45,7 +45,7 @@ function osea_theme_wrapper_end() {
 ?>
             </main>
             <?php get_sidebar(); ?> 
-	</div> <?php // (#content-wrapper) in footer.php ?>
+	</div> <?php // (#site-content-wrapper) in footer.php ?>
 <?php
 }
 

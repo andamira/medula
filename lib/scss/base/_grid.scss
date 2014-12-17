@@ -63,20 +63,16 @@ $susy: (
 /**
  * 3 THE GRID CONTAINER
  *
- * Here you establish the outer grid-containing element(s)
- *
- *
+ * Here you establish the outer grid-containing elements
  *
  * If you want a wide header and footer comment the body
  *
  * Feel free to experiment modifying the div wrapper
  * in defined in header.php and footer.php
  */
-
 html {
 	//@include establish-baseline;
 }
-
 
 body {
 	@include container( );
@@ -88,15 +84,19 @@ body {
 }
 
 
-#content-wrapper {
+.site-wrapper {
 	@include clearfix;
 
 	@include breakpoint( $bp-mobile2desktop ) { 
 		max-width: $page-width-desktop1;
 		margin: 0 auto;
 	}
-
 }
+
+#site-header-wrapper {}
+#site-content-wrapper {}
+#site-footer-wrapper {}
+
 .debug section {
 	//@include show-grid( show-baseline );
 }
