@@ -2,28 +2,31 @@
  * BASE GRID
  * ************************************************************
  *
- *		1 Breakpoints
- * 		2 The grid container
- * 		3 The grid layout
+ *		1 Breakpoints Variables
+ *		2 Page Widths Variables
+ *		3 Susy Setup
+ * 		4 The grid container
+ * 		5 The grid layout
  */
 
 
 /**
  * 1 BREAKPOINTS
- *
  */
-
 $bp-adminbar-mobile: 783px; // point where WordPress changes the admin bar to mobile mode
-
 $bp-mobile2desktop: 40em; // width change point from mobile to desktop (specially for menus in smart header)
 
 
 /**
- * XXXTEMP 
- *
+ * 2 PAGE WIDTHS
+ */
+$page-width-desktop1: 60em; // 1st page-width on desktop
+
+
+/**
+ * SUSY
  *
  */
-
 $total-columns  : 4;
 $column-width   : 4;
 $gutter-width   : 1rem;
@@ -57,10 +60,8 @@ $susy: (
 );
 
 
-
-
 /**
- * 1 THE GRID CONTAINER
+ * 3 THE GRID CONTAINER
  *
  * Here you establish the outer grid-containing element(s)
  *
@@ -88,9 +89,12 @@ body {
 
 
 #content-wrapper {
-	//@include container( 50rem hide );
-	//@include span( full nest );
 	@include clearfix;
+
+	@include breakpoint( $bp-mobile2desktop ) { 
+		max-width: $page-width-desktop1;
+		margin: 0 auto;
+	}
 
 }
 .debug section {
@@ -99,22 +103,18 @@ body {
 
 
 /**
- * 2 THE GRID LAYOUT
+ * 5 THE GRID LAYOUT
  *
  */
-
 main {
 
 	min-height: 18rem;
 }
 .sidebar {
-	//@include span( 3 of 10 );
-
 }
 .site-header {
 }
 .site-footer {
 }
-
 
 
