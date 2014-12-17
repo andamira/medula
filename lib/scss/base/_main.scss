@@ -2,22 +2,30 @@
  * BASE MAIN
  * ************************************************************
  *
+ *		1 General Styles
+ *		2 Links & Headings
+ *		3 Structure
+ *			3.1 Base
+ *			3.2 Wrappers
+ *			3.3 Site Header
+ *			3.4 Site Footer
+ *			3.5 Page Header
+ *			3.7 Entry Header
+ *			3.8 Entry Content
+ *			3.9 Entry Footer
+ *		4 Special Cases
  *
  *
  *
  *
- * DEFAULT STYLING DECISIONS
- *
- * 		- SETS PAGE TO 100% HEIGHT
- * 		  __tag_100_page_height
- *
- *
- *
+ * Default Styling Decisions:
+ * 		SETS PAGE TO 100% HEIGHT
+
  */
 
 
 /**
- * GENERAL STYLES
+ * 1 GENERAL STYLES
  *
  */
 
@@ -26,7 +34,7 @@
 
 
 /**
- * LINKS & HEADINGS
+ * 2 LINKS & HEADINGS
  *
  */
 
@@ -42,13 +50,13 @@ a {
 
 
 /**
- * STRUCTURE
+ * 3 STRUCTURE
  *
  */
 
-
-// BASE
-
+/**
+ * 3.1 BASE
+ */
 html {
 	font-size: 100%;
 
@@ -66,9 +74,9 @@ body {
 	height: 100%;
 }
 
-
-// WRAPPERS
-
+/**
+ * 3.2 WRAPPERS
+ */
 #page-wrapper {
 
 	// __tag_100_page_height
@@ -83,9 +91,9 @@ body {
 #site-content-wrapper {}
 #site-footer-wrapper {}
 
-
-// SITE HEADER
-
+/**
+ * 3.3 SITE HEADER
+ */
 .site-header {
 	position: relative;
 	width: 100%;
@@ -100,9 +108,9 @@ body {
 
     .site-main-nav {}
 
-
-// SITE FOOTER
-
+/**
+ * 3.4 SITE FOOTER
+ */
 .site-footer {
 	width: 100%;
 
@@ -110,23 +118,22 @@ body {
 	position: absolute;
 	bottom: 0;
 	height: 5rem;
-	
 }
 
     .site-footer-nav {}
 
     .site-footer-copyright {}
 
-
-// PAGE HEADER
-
+/**
+ * 3.6 PAGE HEADER
+ */
 .page-header {}
 
     .page-title {}
 
-
-// ENTRY HEADER
-
+/**
+ * 3.7 ENTRY HEADER
+ */
 .entry-header {}
 
     .entry-title,
@@ -142,14 +149,14 @@ body {
 
             .entry-author {}
 
-
-// ENTRY CONTENT
-
+/**
+ * 3.8 ENTRY CONTENT
+ */
 .entry-content {}
 
-
-// ENTRY FOOTER
-
+/**
+ * 3.9 ENTRY FOOTER
+ */
 .entry-footer {}
 
     .entry-comment-count
@@ -169,8 +176,9 @@ body {
             .entry-tags-title {}
 
 
-// SPECIAL CASES
-
+/**
+ * 4 SPECIAL CASES
+ */
 #post-not-found {}
 
 
