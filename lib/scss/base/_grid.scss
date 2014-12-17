@@ -85,8 +85,6 @@ body {
 
 
 .site-wrapper {
-	@include clearfix;
-
 	@include breakpoint( $bp-mobile2desktop ) { 
 		max-width: $page-width-desktop1;
 		margin: 0 auto;
@@ -94,7 +92,9 @@ body {
 }
 
 #site-header-wrapper {}
-#site-content-wrapper {}
+#site-content-wrapper {
+	@include clearfix;
+}
 #site-footer-wrapper {}
 
 .debug section {
