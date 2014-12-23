@@ -48,7 +48,7 @@
 
 	<?php endwhile; ?>
 
-		<?php bones_page_navi(); ?>
+		<?php osea_page_navi(); ?>
 
 	<?php else : ?>
 
