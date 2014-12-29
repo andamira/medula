@@ -70,6 +70,9 @@ body {
     color: $text-color;
 	background: #ddd; // temp
 
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+
 	// __tag_100_page_height
 	height: 100%;
 }
