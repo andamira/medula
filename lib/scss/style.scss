@@ -3,21 +3,40 @@
  * ************************************************************
  *
  * 		1 Dependencies
+ *
  * 		2 Configuration
  * 	
  * 		3 Helpers
+ *				Variables
+ *				Functions
+ *				Mixins
+ *
  * 		4 Modules
+ *				Typography
+ *				Alerts
+ *				Buttons
+ *				Forms
+ *				Icons
+ *				Admin Bar
+ *				
  * 		5 Layout
+ *				Normalize
+ *				Susy Grid
+ *				Print Stylesheet
  *
  * 		6 Base
  *
  * 		7 Debug
  *
  * 		8 Vendors
+ *			8.1 WordPress Plugins
+ *			8.2 Jquery Plugins
  *
- * Recommended reading:
- * http://thesassway.com/advanced/modular-css-naming-conventions
- * http://www.sitepoint.com/architecture-sass-project/
+ *
+ *
+ *
+ * @see http://thesassway.com/advanced/modular-css-naming-conventions
+ * @see http://www.sitepoint.com/architecture-sass-project/
  */
 
 
@@ -65,7 +84,7 @@ $breakpoint-to-ems: true;
 
 
 /**
- * 4 /MODULES
+ * 4 /MODULES (except debug)
  *
  * This directory also contains only partials and is reserved for reusable UI patterns.
  * As a general rule of thumb, anytime you anticipate needing the same CSS more than once,
@@ -95,7 +114,7 @@ $breakpoint-to-ems: true;
 @import "modules/admin_bar";
 
 
-/*
+/**
  * 5 /LAYOUT
  *
  *
@@ -138,17 +157,31 @@ $breakpoint-to-ems: true;
 @import "modules/debug";
 
 
-/*
- * 6 /VENDORS
+/**
+ * 8 /VENDORS
  *
- * Vendor specific css, for plugins, for example.
- * You must create and import the files. 
+ * Vendors specific css, like for
+ * 3rd party WordPress plugins.
+ *
+ * Here you can find some examples for a
+ * small selection of common plugins.
  */
 
-// Contact Form 7
+/**
+ * 8.1 WORDPRESS PLUGINS
+ */
+
+// Contact Form 7 ()
 // @import "vendors/cf7";
 
-// Cookie notice
+// Cookie notice ()
 // @import "vendors/cookie";
+
+// External Links ()
+// @import "vendors/external";
+
+/**
+ * 8.2 JQUERY PLUGINS
+ */
 
 
