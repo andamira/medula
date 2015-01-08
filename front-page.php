@@ -18,8 +18,6 @@
 			<footer class="entry-footer">
 			</footer>
 
-			<?php comments_template( '', true ); ?>
-
 		</article>
 
 	<?php endwhile; else: ?>
