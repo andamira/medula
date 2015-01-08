@@ -51,7 +51,7 @@ It s  DRY principles. Clear documentation. Index present in all files. Follows t
 
 It started as a fork of [Bones](https://github.com/eddiemachado/bones), but many things have changed since then. It's also got some inspiration from [HTML5 Reset WordPress Theme](https://github.com/murtaugh/HTML5-Reset-WordPress-Theme), [HTML5 Blank](https://github.com/toddmotto/html5blank), [SMACSS & Sass WP](https://github.com/websanya/smacss-sass-wp) and [WordPress Plugin Boilerplate](https://github.com/tommcfarlin/WordPress-Plugin-Boilerplate).
 
-It depends on [Compass](http://compass-style.org), [Sass](http://sass-lang.com/), [Susy](http://susy.oddbird.net/) and [Breakpoint](http://breakpoint-sass.com/). It also includes [Modernizr](http://modernizr.com/) and several jQuery libraries you can choose to use or not. It supports all modern browsers and also IE8 (for now).
+It depends on [Compass](http://compass-style.org), [Sass >=3.4](http://sass-lang.com/), [Susy](http://susy.oddbird.net/) and [Breakpoint](http://breakpoint-sass.com/). It also includes [Modernizr](http://modernizr.com/) and several optional jQuery libraries. It supports all modern browsers.
 
 
 ## Contributing
