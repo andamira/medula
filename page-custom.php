@@ -1,12 +1,12 @@
 <?php
 /**
- * Template Name: Custom Template
+ * Template Name: Ósea Custom Template
  *
  * This is your custom page template. You can create as many of these as you need.
- * Simply name is "page-whatever.php" and add the "Template Name" title at the
- * top, the same way it is here.
+ * Simply name the file "page-whatever.php" and change the "Template Name" title
+ * at the top, to the one you desire.
  *
- * When you create your page, you can just select the template
+ * When you create your page, you can just select the template from the metabox.
  *
  * @link http://codex.wordpress.org/Page_Templates
 */
