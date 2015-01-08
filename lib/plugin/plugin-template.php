@@ -29,4 +29,6 @@ include_once( 'taxonomies.php' );
 // Create Metaboxes
 include_once( 'metaboxes.php' );
 
+// Create Custom Admin Columns
+#include_once( 'columns.php' );
 
