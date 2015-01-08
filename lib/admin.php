@@ -86,7 +86,7 @@ function osea_example_dashboard_widget() {
  * 3 CUSTOM LOGIN PAGE
  * ************************************************************
  *
- * You can edit the style in /lib/scss/login.scss
+ * You can edit the style in /lib/sass/login.scss
  */
 function osea_login_css() {
 	wp_enqueue_style( 'osea_login_css', get_template_directory_uri() . '/lib/css/login.css', false );

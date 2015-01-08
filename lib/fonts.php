@@ -7,7 +7,7 @@
  *
  * To use dowloaded fonts put them in:
  * lib/fonts/ & then load them from:
- * lib/scss/modules/_typography.scss
+ * lib/sass/modules/_typography.scss
  *
  * You can find free fonts in:
  * @see http://www.google.com/fonts/

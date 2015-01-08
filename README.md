@@ -1,4 +1,4 @@
-# Ósea Theme <img src="https://raw.githubusercontent.com/andamira/osea/master/lib/img/apple-touch-icon.png" alt="Icon" title="Ósea means 'from the nature of the bone' in spanish" width="24" height="24">
+# Ósea Theme
 
 **A Mobile First Starter Theme for WordPress**
 
@@ -16,7 +16,7 @@
 
 3. Place it in theme folder, activate it from WordPress, and start developing.
 
-4. You can run `compass-watch.sh` script from `/lib/scss/` folder to automaticaly monitor the changes and compile css in the fly.
+4. You can run `compass-watch.sh` script from `/lib/sass/` folder to automaticaly monitor the changes and compile css in the fly.
 
 ## Features & Key Points
 

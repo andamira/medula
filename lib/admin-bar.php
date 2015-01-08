@@ -20,10 +20,10 @@ add_theme_support( 'admin-bar', array( 'callback' => 'osea_adminbar_cb' ) );
  * 2 CALLBACK FUNCTION
  * ************************************************************
  *
- * Disable inline styling, we're gonna use scss for that
+ * Disable inline styling, we're gonna use sass for that
  *
- * @see:styles /lib/scss/modules/_admin_bar.scss
- * @see:styles /lib/scss/breakpoints/base/_menus.scss
+ * @see:styles /lib/sass/modules/_admin_bar.scss
+ * @see:styles /lib/sass/breakpoints/base/_menus.scss
  * @see:source {WP_FOLDER}/wp-includes/admin-bar.php Original WordPress Code
  */
 function osea_adminbar_cb() {
