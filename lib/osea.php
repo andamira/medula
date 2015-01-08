@@ -173,10 +173,10 @@ function osea_theme_support() {
 	// lib/thumbnails.php
 
 	// post format support defined in:
-	// lib/plugin/post-formats.php
+	// medula/post-formats.php
 
 	// menus support is defined in:
-	// lib/plugin/menus.php
+	// medula/menus.php
 
 	// wp custom background (thx to @bransonwerner for update)
 	add_theme_support( 'custom-background',

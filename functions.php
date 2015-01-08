@@ -29,7 +29,7 @@
  *			4.4 Custom Theme Features
  *			4.5 Register Sidebars
  *		4 External Libraries
- *		5 Plugin Functionality
+ *		5 Médula: Plugin Functionality
  * 		6 Custom Functions, Actions & Filters
  *
  * Author: andamira
@@ -191,23 +191,25 @@ include_once( 'lib/vendor.php' );
 
 
 /**
- * 5 PLUGIN FUNCTIONALITY
+ * 5 PLUGIN FUNCTIONALITY (MÉDULA)
  * ************************************************************
  * 
- * @see:instructions https://github.com/andamira/osea/wiki/Plugin
+ * @see:instructions https://github.com/andamira/osea/wiki/Médula
+ *
+ * Médula is a starter plugin embedded in Ósea
  *
  * This enables functionality that scapes the scope
  * of the theme: Custom post types, shortcodes, etc.
  *
- * You must customize the included file, and the files
- * it itself includes, to your particular needs.
+ * You must customize the included file (and the files
+ * it itself includes) to your particular needs.
  *
  * Remember:
  * You should make this a standalone plugin ASAP.
  * (see the wiki for instructions)
  */
 
-include_once( 'lib/plugin/plugin-template.php' );
+include_once( 'lib/medula/medula.php' );
 
 
 /**

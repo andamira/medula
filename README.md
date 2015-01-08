@@ -37,7 +37,7 @@
 
 * Advanced Functionality
 
-  Ósea comes with a stater plugin in /lib/plugin/ where you can write all the functionality that [doesn't really belong in the theme](http://justintadlock.com/archives/2013/09/14/why-custom-post-types-belong-in-plugins) like Custom Post Types, Taxonomies, Shortcodes, Analytics, etc. You can either enable it from the functions.php file or you can move the folder to the plugins folder and turn it into a standalone plugin. [[WIKI]](https://github.com/andamira/osea/wiki/Plugin)
+  Ósea comes with a stater plugin named Médula where you can write all the functionality that [doesn't really belong in the theme](http://justintadlock.com/archives/2013/09/14/why-custom-post-types-belong-in-plugins) like Custom Post Types, Taxonomies, Shortcodes, Analytics, etc. You can enable it from the functions.php file for rapid protopying, but you should move the folder to the plugins folder and turn it into a standalone plugin for serious use. [[WIKI]](https://github.com/andamira/osea/wiki/Plugin)
 
 * Debug mode *(experimental)*
 
