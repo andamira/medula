@@ -6,7 +6,7 @@
 
 ## Quick Start
 
-1. Clone the git repo or [download it](https://github.com/andamira/osea/archive/master.zip).
+1. Clone the git repo or [download the zip file](https://github.com/andamira/osea/archive/master.zip).
 
   `git clone https://github.com/andamira/osea.git`
 
@@ -14,22 +14,22 @@
 
   `gem install compass sass susy breakpoint --no-ri --no-rdoc`
 
-3. Place it in theme folder, activate it from WordPress, and start developing like there's no tomorrow.
+3. Place it in theme folder, activate it from WordPress, and start developing.
 
-4. You can run `compass-watch.sh` script from `/lib/scss/` folder so it automatically monitor changes & updates the css files.
+4. You can run `compass-watch.sh` script from `/lib/scss/` folder to automaticaly monitor the changes and compile css in the fly.
 
 ## Features & Key Points
 
 * Starter Theme
 
-  Ósea is not designed to be a parent theme, nor a framework. It is designed to be a clean starting point to modify for each project, developing over it.
+  Ósea is not designed to be a parent theme or a framework. It is designed to be a clean starting point for any project, modifying it as needed.
 
 * Simplicity & Minimalism
 
-  Everything has a purpose and its own place. An big effort has been made in making it simple to be fully understood, as well as remaining very powerful.
+  Everything has a purpose and its own place. It is simple enough to be easily understood, as well as very powerful.
 
 * Modularity and Maintainability.
-It s  DRY principles. Clear documentation. Index present in all files. Follows the [WordPress Coding Standards](https://make.wordpress.org/core/handbook/coding-standards/).
+	It adheres to DRY principles. Clear documentation. Index present in all files. Follows the [WordPress Coding Standards](https://make.wordpress.org/core/handbook/coding-standards/).
 
 * Mobile First
 
@@ -39,7 +39,7 @@ It s  DRY principles. Clear documentation. Index present in all files. Follows t
 
   Ósea comes with a stater plugin in /lib/plugin/ where you can write all the functionality that [doesn't really belong in the theme](http://justintadlock.com/archives/2013/09/14/why-custom-post-types-belong-in-plugins) like Custom Post Types, Taxonomies, Shortcodes, Analytics, etc. You can either enable it from the functions.php file or you can move the folder to the plugins folder and turn it into a standalone plugin. [[WIKI]](https://github.com/andamira/osea/wiki/Plugin)
 
-* Debug mode
+* Debug mode *(experimental)*
 
   You can enable it in the functions.php file to help debugging new templates, grids and layouts.
 
@@ -49,7 +49,7 @@ It s  DRY principles. Clear documentation. Index present in all files. Follows t
 
 ## History
 
-It started as a fork of [Bones](https://github.com/eddiemachado/bones), but many things have changed since then. It's also got some inspiration from [HTML5 Reset WordPress Theme](https://github.com/murtaugh/HTML5-Reset-WordPress-Theme), [HTML5 Blank](https://github.com/toddmotto/html5blank), [SMACSS & Sass WP](https://github.com/websanya/smacss-sass-wp) and [WordPress Plugin Boilerplate](https://github.com/tommcfarlin/WordPress-Plugin-Boilerplate).
+It originally started as a fork of [Bones](https://github.com/eddiemachado/bones), but many things have changed since then.
 
 It depends on [Compass](http://compass-style.org), [Sass >=3.4](http://sass-lang.com/), [Susy](http://susy.oddbird.net/) and [Breakpoint](http://breakpoint-sass.com/). It also includes [Modernizr](http://modernizr.com/) and several optional jQuery libraries. It supports all modern browsers.
 
@@ -62,7 +62,7 @@ But feel free to [submit bugs & fixes](https://github.com/andamira/osea/issues).
 
 ## Licenses
 
-Ósea PHP Code is licensed under the [GNU General Public License v2](http://www.gnu.org/licenses/gpl-2.0.html) or later.
+Ósea Code is licensed under the [MIT License](http://opensource.org/licenses/MIT).
 
 Images are licensed under [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/).
 
