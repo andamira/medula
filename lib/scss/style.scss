@@ -10,6 +10,7 @@
  *				Variables
  *				Functions
  *				Mixins
+ *				Material Colors
  *
  * 		4 Modules
  *				Typography
@@ -81,6 +82,9 @@ $breakpoint-to-ems: true;
 
 // import mixins
 @import "helpers/mixins";
+
+// Material Colors Palette
+@import "helpers/colors-material";
 
 
 /**
