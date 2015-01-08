@@ -8,3 +8,4 @@ lib/css
 lib/js/scripts.min.js
 lib/js/includes
 
+doc/node_modules
