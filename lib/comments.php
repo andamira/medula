@@ -14,8 +14,8 @@
  *
  * @param bool $link 	Include a link to #comments-title if comments != 0
  *
- * @see:codex http://codex.wordpress.org/Function_Reference/comments_number
- * @see:codex http://codex.wordpress.org/Function_Reference/_n
+ * @link http://codex.wordpress.org/Function_Reference/comments_number
+ * @link http://codex.wordpress.org/Function_Reference/_n
  */
 function osea_comments_count( $link = false ) {
 
@@ -48,7 +48,7 @@ function osea_comments_count( $link = false ) {
  * 2 CUSTOM COMMENT LAYOUT
  * ************************************************************
  *
- * @see http://www.whatwg.org/specs/web-apps/current-work/multipage/sections.html#the-article-element
+ * @link http://www.whatwg.org/specs/web-apps/current-work/multipage/sections.html#the-article-element
  *
  */
 function osea_comments_layout( $comment, $args, $depth ) {

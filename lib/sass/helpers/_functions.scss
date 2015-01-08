@@ -12,7 +12,7 @@
  *
  *		4 Numbers, units, relationships
  *
- * @see:docs http://sass-lang.com/documentation/Sass/Script/Functions.html
+ * @link http://sass-lang.com/documentation/Sass/Script/Functions.html
  */
 
 
@@ -52,10 +52,11 @@
 /**
  * 3 LIST FUNCTIONS
  *
+ * @link http://hugogiraudel.com/2013/08/08/advanced-sass-list-functions/
+
+ * TODO: probably is better just to use sassy-list
  */
 
-// http://hugogiraudel.com/2013/08/08/advanced-sass-list-functions/
-// probably is better just to use sassy-list
 
 
 /**
@@ -65,7 +66,7 @@
 
 /**
  * Navigate a nested maps
- * @see https://gist.github.com/jlong/8760275
+ * @link https://gist.github.com/jlong/8760275
  */
 @function map-deep-get($map, $keys...) {
   $value: $map;
@@ -82,7 +83,7 @@
 
 /*
  * Strips the unit of measure and returns it
- * @see:source https://github.com/zurb/foundation/blob/master/scss/foundation/_functions.scss#L40
+ * @link https://github.com/zurb/foundation/blob/master/scss/foundation/_functions.scss#L40
  */
 @function strip-unit( $num ) {
 	@return $num / ($num * 0 + 1);
@@ -91,7 +92,7 @@
 /**
  * Convert rem to pixels
  *
- * @see:source http://davidwalsh.name/rem-px-browser-function-sass
+ * @link http://davidwalsh.name/rem-px-browser-function-sass
  */
 @function rem2px( $values ) {
 

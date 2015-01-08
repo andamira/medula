@@ -3,9 +3,7 @@
  * Custom Post Types (CPT) Template File
  *
  * Here you can write your own custom post types. You can
- * copy the example as a model, or use a generator like:
- * Generator: http://generatewp.com/post-type/
- *
+ * copy the example as a model, or use a {@link http://generatewp.com/post-type/ generator}
  */
 
 function custom_post_example() { 
@@ -36,8 +34,8 @@ function custom_post_example() {
 			'menu_position' => 8, // this is what order you want it to appear in on the left hand side menu
 
 			// For the icon you can use an image or an icon font ( http://melchoyce.github.io/dashicons/ )
-			'menu_icon' => 'dashicons-smiley',											// icon font
-			//'menu_icon' => get_stylesheet_directory_uri() . '/lib/img/favicon.png',	// icon image
+			'menu_icon' => 'dashicons-smiley',											// e.g. icon font
+			//'menu_icon' => get_stylesheet_directory_uri() . '/lib/img/favicon.png',	// e.g. icon image
 			
 			'rewrite'	=> array( 'slug' => 'custom_type', 'with_front' => false ),
 			'has_archive' => 'custom_type',

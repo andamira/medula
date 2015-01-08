@@ -30,8 +30,7 @@ function osea_get_entry_meta_date() {
  * 2 Returns the entry author
  * ************************************************************
  *
- * Codex:
- * http://codex.wordpress.org/Function_Reference/get_the_author_meta
+ * @link http://codex.wordpress.org/Function_Reference/get_the_author_meta
  */
 function osea_get_entry_meta_author() {
 	$author  = '<address class="entry-author vcard">';

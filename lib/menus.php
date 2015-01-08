@@ -1,17 +1,16 @@
 <?php
-/*
+/**
  * Menus template
  *
  * 		1 Theme Support
  *		2 Menus
  * 		3 Custom Nav Walker
  *
- * Codex:
- * http://codex.wordpress.org/Navigation_Menus
+ * @link http://codex.wordpress.org/Navigation_Menus
  */
 
 
-/*
+/**
  * 1 THEME SUPPORT
  * ************************************************************
  *
@@ -28,7 +27,7 @@ register_nav_menus(
 );
 
 
-/*
+/**
  * 2 MENUS
  * ************************************************************
  *
@@ -102,18 +101,16 @@ function osea_site_footer_nav() {
 
 
 
-/*
+/**
  * 3 CUSTOM NAV WALKER
  * ************************************************************
  *
  * Code sourced from WordPress 3.9.1
  * 
- * Codex
- * http://codex.wordpress.org/Function_Reference/wp_nav_menu#Using_a_Custom_Walker_Function
+ * @link http://codex.wordpress.org/Function_Reference/wp_nav_menu#Using_a_Custom_Walker_Function
  * 
- * Recommended reading:
- * http://shinraholdings.com/62/custom-nav-menu-walker-function/#example-code
- * http://illuminatikarate.com/blog/how-to-output-custom-html-in-wordpress-menus-using-a-custom-nav-walker/
+ * @link http://shinraholdings.com/62/custom-nav-menu-walker-function/#example-code
+ * @link http://illuminatikarate.com/blog/how-to-output-custom-html-in-wordpress-menus-using-a-custom-nav-walker/
  */
 class osea_Walker_Nav_Menu extends Walker {
     /** 

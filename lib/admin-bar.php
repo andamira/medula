@@ -22,9 +22,9 @@ add_theme_support( 'admin-bar', array( 'callback' => 'osea_adminbar_cb' ) );
  *
  * Disable inline styling, we're gonna use sass for that
  *
- * @see:styles /lib/sass/modules/_admin_bar.scss
- * @see:styles /lib/sass/breakpoints/base/_menus.scss
- * @see:source {WP_FOLDER}/wp-includes/admin-bar.php Original WordPress Code
+ * @see /lib/sass/modules/_admin_bar.scss
+ * @see /lib/sass/breakpoints/base/_menus.scss
+ * @see {WP_FOLDER}/wp-includes/admin-bar.php Original WordPress Code
  */
 function osea_adminbar_cb() {
 /* ?>
@@ -41,7 +41,7 @@ function osea_adminbar_cb() {
 
 
 
-/*
+/**
  * 3 SELECTIVE DISABLING OF THE ADMIN BAR
  * ************************************************************
  */

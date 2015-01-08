@@ -26,7 +26,7 @@ body.admin-bar {
  */
 #wpadminbar {
 	// Fixes absolute position on media < 600px
-	// see https://core.trac.wordpress.org/ticket/26609
+	// @link https://core.trac.wordpress.org/ticket/26609
 	position: fixed;	
 
 	// fixes adminbar position when MMenu (Mobile) Menu is open

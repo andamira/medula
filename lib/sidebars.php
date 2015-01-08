@@ -1,5 +1,5 @@
 <?php 
-/* 
+/**
  * Sidebars template
  *
  * To add more sidebars or widgetized areas, just copy

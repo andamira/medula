@@ -52,7 +52,7 @@ function extra_libraries_styles () {
 	/**
 	 * 3 SETUP THE LIBRARIES
 	 *
-	 * @see:source http://stackoverflow.com/a/19263523 
+	 * @link http://stackoverflow.com/a/19263523 
 	 */
 
 	/**
@@ -69,8 +69,8 @@ function extra_libraries_styles () {
 	 * JQUERY CYCLE2
 	 * 
 	 * SLIDER
-	 * @see http://jquery.malsup.com/cycle2/ 
-	 * @see https://github.com/malsup/cycle2
+	 * @link http://jquery.malsup.com/cycle2/ 
+	 * @link https://github.com/malsup/cycle2
 	 */
 	if ( $load_cycle2 ) { 
 		wp_register_script('cycle2_js', $EXT_DIR .'cycle2/jquery.cycle2'. $MIN .'.js', 'jquery' );
@@ -81,8 +81,8 @@ function extra_libraries_styles () {
 	 * JQUERY QTIP2 
 	 *
 	 * BUBBLE TIPS
-	 * @see http://qtip2.com/ 
-	 * @see https://github.com/qTip2/qTip2
+	 * @link http://qtip2.com/ 
+	 * @link https://github.com/qTip2/qTip2
 	 */
 	if ( $load_qtip2 ) { 
 		// there are more features available ( http://qtip2.com/download#builder-features )
@@ -96,8 +96,8 @@ function extra_libraries_styles () {
 	 * DYNATABLE
 	 *
 	 * TABLES
-	 * @see https://www.dynatable.com/
-	 * @see https://github.com/alfajango/jquery-dynatable
+	 * @link https://www.dynatable.com/
+	 * @link https://github.com/alfajango/jquery-dynatable
 	 */
 	if ( $load_dynatable ) { 
 		// This is a customized version of Dynatable that adds localization support
@@ -124,7 +124,7 @@ function extra_libraries_styles () {
 	 * MMENU
 	 *
 	 * OFF-CANVAS MENU
-	 * @see http://mmenu.frebsite.nl/
+	 * @link http://mmenu.frebsite.nl/
 	 */
 	if ( $load_mmenu ) { 
 		wp_register_script('mmenu_js', $EXT_DIR .'mmenu/jquery.mmenu.min.all.js', 'jquery' );

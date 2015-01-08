@@ -28,5 +28,5 @@ include_once( 'taxonomies.php' );
 include_once( 'metaboxes.php' );
 
 // Create Custom Admin Columns
-#include_once( 'columns.php' );
+# include_once( 'columns.php' );
 

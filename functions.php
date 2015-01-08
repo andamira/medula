@@ -2,15 +2,15 @@
 /**
  * This is the functions.php file
  *
- * INDEX:
+ * INDEX:								Disabled by def.
  * 		0 Readme First
  * 		1 Global Options
- * 			1.1 Debug			(#)
- * 			1.2 IE8 Support		( )
- * 			1.3 Optimization	(#)
+ * 			1.1 Debug							(#)
+ * 			1.2 IE8 Support						( )
+ * 			1.3 Optimization					(#)
  *		2 Theme Functionlity
  *			2.1  Ósea library
- *			2.2  Admin Área		( )
+ *			2.2  Admin Área						( )
  *			2.3  Icons & Favicons
  *			2.4  Fonts
  *			2.5  Menus
@@ -29,14 +29,13 @@
  *			4.4 Custom Theme Features
  *			4.5 Register Sidebars
  *		4 External Libraries
- *		5 Médula: Plugin Functionality
+ *		5 Médula: Plugin Functionality			(#)
  * 		6 Custom Functions, Actions & Filters
  *
  * Author: andamira
  * URL: htp://andamira.net/osea/
  *
- * Don't reinvent the wheel.
- * @see:codex http://codex.wordpress.org/Function_Reference/
+ * @link http://codex.wordpress.org/Function_Reference/ Don't reinvent the wheel.
  */
 
 
@@ -45,8 +44,8 @@
  * ************************************************************
  *
  * PHP FILES:
- * @see: https://make.wordpress.org/core/handbook/coding-standards/php/
- * @see: http://www.phpdoc.org/docs/latest/index.html
+ * @link https://make.wordpress.org/core/handbook/coding-standards/php/
+ * @link http://www.phpdoc.org/docs/latest/index.html
  *
  *
  *
@@ -97,7 +96,7 @@ define( 'OSEA_IE8_SUPPORT', true );			// ( ) enabled by default
  * 2 THEME FUNCTIONALITY
  * ************************************************************
  *
- * @see:instructions https://github.com/andamira/osea/wiki/Theme_includes
+ * @link https://github.com/andamira/osea/wiki/Theme_includes
  *
  * You can customize any of these files. You can also
  * comment the includes if you prefer to use your system
@@ -194,7 +193,7 @@ include_once( 'lib/vendor.php' );
  * 5 PLUGIN FUNCTIONALITY (MÉDULA)
  * ************************************************************
  * 
- * @see:instructions https://github.com/andamira/osea/wiki/Médula
+ * @link https://github.com/andamira/osea/wiki/Médula
  *
  * Médula is a starter plugin embedded in Ósea
  *
@@ -209,7 +208,7 @@ include_once( 'lib/vendor.php' );
  * (see the wiki for instructions)
  */
 
-include_once( 'lib/medula/medula.php' );
+# include_once( 'lib/medula/medula.php' );
 
 
 /**

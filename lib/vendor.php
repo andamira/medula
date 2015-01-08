@@ -40,14 +40,14 @@ include_once( 'js/libs.php' );
 /**
  * 4.1 WPML
  *
- * @see http://wpml.org/
+ * @link http://wpml.org/
  */
 #include_once( 'vendor/wpml.php' );			// < disabled by default
 
 /**
  * 4.2 WOOCOMMERCE
  *
- * @see http://www.woothemes.com/woocommerce/
+ * @link http://www.woothemes.com/woocommerce/
  */
 #include_once( 'vendor/woocommerce.php' );	// < disabled by default
 

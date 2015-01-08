@@ -8,12 +8,12 @@
  * functions file) on the login page. This way you can style
  * the login page. It won't affect any other page, admin or front-end.
  * 
- * @see http://codex.wordpress.org/Creating_Admin_Themes
- * @see http://codex.wordpress.org/Customizing_the_Login_Form
+ * @link http://codex.wordpress.org/Creating_Admin_Themes
+ * @link http://codex.wordpress.org/Customizing_the_Login_Form
  */
 
 
-/*
+/**
  * DEPENDENCIES
  */
 @import 'compass';
@@ -31,7 +31,7 @@
 
 	// WordPress logo in the admin area
 	h1 a {
-		//background: url(../img/apple-touch-icon.png) no-repeat top center; /* make sure to replace this! */
+		//background: url(../img/apple-touch-icon.png) no-repeat top center; // make sure to replace this!
 		//width: 326px;
 		//height: 100px;
 	}
@@ -57,7 +57,7 @@
 
   // you can put your 2x logo in here
   .login h1 a {
-		//background: url(../images/login-logo@2x.png) no-repeat top center; /* make sure to replace this! */
+		//background: url(../images/login-logo@2x.png) no-repeat top center; // make sure to replace this!
 	}
 
 }

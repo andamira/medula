@@ -1,5 +1,5 @@
 <?php
-/*
+/**
  * Icons Template
  *
  *		1 Favicons
@@ -9,16 +9,12 @@
 
 
 
-/*
+/**
  * 1 FAVICONS
  * ************************************************************
  *
- * Instructions:
- * https://github.com/andamira/osea/wiki/Favicons
- *
- * Recommended reading:
- * http://www.jonathantneal.com/blog/understand-the-favicon/
- *
+ * @link https://github.com/andamira/osea/wiki/Favicons
+ * @link http://www.jonathantneal.com/blog/understand-the-favicon/
  */
 $favicon_version="0";
 
@@ -38,7 +34,7 @@ function osea_favicons() {
 add_action('wp_head', 'osea_favicons', 2);
 
 
-/*
+/**
  * 2 ADMIN AREA FAVICON
  * ************************************************************
  *
@@ -52,7 +48,7 @@ function osea_admin_area_favicon() {
 }
 
 
-/*
+/**
  * 3 ICONS COLLECTIONS
  * ************************************************************
  *
@@ -64,12 +60,13 @@ function icons_collections() {
 
 	/**
 	 * DASHICONS
+	 * @link https://developer.wordpress.org/resource/dashicons/
 	 */
 	wp_enqueue_style( 'dashicons', get_stylesheet_uri(), array('dashicons'), '0.2' );
 
 	/**
 	 * FONT AWESOME
-	 * @see http://fortawesome.github.io/Font-Awesome/get-started/
+	 * @link http://fortawesome.github.io/Font-Awesome/get-started/
 	 */
 	#wp_enqueue_style( 'fontawesome', '//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css', null, '4.2.0' );
 }

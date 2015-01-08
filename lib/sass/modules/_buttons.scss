@@ -9,8 +9,7 @@
  *		1 Defaults
  *		2 Examples
  * 
- * Helpful Links:
- * http://galp.in/blog/2011/08/02/the-ui-guide-part-1-buttons/
+ * @link http://galp.in/blog/2011/08/02/the-ui-guide-part-1-buttons/
  */
 
 
@@ -21,9 +20,8 @@
  * so we can use common styles. We then use this
  * to load up the defaults in all our buttons.
  *
- * 
  * Here's a quick video to show how it works:
- * http://www.youtube.com/watch?v=hwdVpKiJzac
+ * @link http://www.youtube.com/watch?v=hwdVpKiJzac
  */
 
 %btn {
@@ -62,6 +60,7 @@
  * You can use this example if you want. Just replace all the variables
  * and it will create a button dependant on those variables.
  */
+
 .blue-btn {
   @extend %btn; // here we load the btn defaults
   background-color: $blue;

@@ -2,7 +2,7 @@
 /**
  * Wrapper for minifiying scripts.js
  *
- * @see https://github.com/tedious/JShrink
+ * @link https://github.com/tedious/JShrink
  */
 
 require 'JShrink/Minifier.php';

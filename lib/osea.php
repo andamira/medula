@@ -7,8 +7,6 @@
  * to put them in the functions.php file, or in
  * any of the suitable files included from there.
  *
- * URL: http://andamira.net/osea/
- *
  *		1 Cleanup (remove rsd, uri links, junk css, etc)
  *		2 Enqueueing scripts & styles
  *		3 Theme support functions
@@ -93,8 +91,8 @@ function osea_excerpt_more($more) {
 /**
  * filter html output
  *
- * @see:source http://stackoverflow.com/a/17472755
- * @see https://core.trac.wordpress.org/changeset/28708
+ * @link http://stackoverflow.com/a/17472755
+ * @link https://core.trac.wordpress.org/changeset/28708
  */
 function osea_optimize_html_callback( $buffer ) {
 	// option 1 ( http://wordpress.org/support/topic/how-do-i-strip-out-all-whitespace-via-a-filter )
@@ -152,7 +150,7 @@ function osea_scripts_and_styles() {
 	}
 	
 	// Admin styles are defined in:
-	// lib/admin.php
+	# lib/admin.php
 }
 
 
@@ -160,23 +158,21 @@ function osea_scripts_and_styles() {
  * 3 WP 3+ FUNCTIONS & THEME SUPPORT
  * ************************************************************
  *
- * Codex:
- * http://codex.wordpress.org/Function_Reference/add_theme_support
+ * @link http://codex.wordpress.org/Function_Reference/add_theme_support
  *
- * Generator:
- * http://generatewp.com/theme-support/
+ * @link http://generatewp.com/theme-support/ Theme Support Generator
  */
 
 function osea_theme_support() {
 
 	// thumbnails support defined in:
-	// lib/thumbnails.php
+	# lib/thumbnails.php
 
 	// post format support defined in:
-	// medula/post-formats.php
+	# medula/post-formats.php
 
 	// menus support is defined in:
-	// medula/menus.php
+	# medula/menus.php
 
 	// wp custom background (thx to @bransonwerner for update)
 	add_theme_support( 'custom-background',
@@ -192,14 +188,15 @@ function osea_theme_support() {
 	// rss support
 	add_theme_support('automatic-feed-links');
 
-	/* TITLE TAG SUPPORT
-	 * @see:codex http://codex.wordpress.org/Function_Reference/add_theme_support#Title_Tag
+	/** TITLE TAG SUPPORT
+	 * @link http://codex.wordpress.org/Function_Reference/add_theme_support#Title_Tag
 	 * @since 4.1.0
 	 */
 	add_theme_support( 'title-tag' );
 
-	// HTML5 SUPPORT
-	// http://codex.wordpress.org/Semantic_Markup
+	/** HTML5 SUPPORT
+	 * @link http://codex.wordpress.org/Semantic_Markup
+	 */
 	$args = array(
 		'search-form',
 		'comment-form',
@@ -214,7 +211,7 @@ function osea_theme_support() {
 /**
  * This is the maximum width in pixels for your content area
  *
- * @see:codex http://codex.wordpress.org/Content_Width
+ * @link http://codex.wordpress.org/Content_Width
  */
 if ( ! isset( $content_width ) ) {
 	    $content_width = 640;
@@ -226,9 +223,9 @@ if ( ! isset( $content_width ) ) {
 /**
  * 4 RELATED POSTS FUNCTION
  * ************************************************************
+ * call using osea_related_posts();
  */
 
-// Related Posts Function (call using osea_related_posts(); )
 function osea_related_posts() {
 	echo '<ul id="osea-related-posts">';
 	global $post;
@@ -239,7 +236,7 @@ function osea_related_posts() {
 		}
         $args = array(
         	'tag' => $tag_arr,
-        	'numberposts' => 5, /* you can change this to show more */
+        	'numberposts' => 5, // you can change this to show more
         	'post__not_in' => array($post->ID)
      	);
         $related_posts = get_posts( $args );
@@ -259,9 +256,9 @@ function osea_related_posts() {
 /**
  * 5 PAGE NAVI
  * ************************************************************
+ * Numeric Page Navi (built into the theme by default)
  */
 
-// Numeric Page Navi (built into the theme by default)
 function osea_page_navi() {
   global $wp_query;
   $bignum = 999999999;

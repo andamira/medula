@@ -1,9 +1,9 @@
 <?php
-/* 
+/**
  * The comments page
  *
- * @see:codex http://codex.wordpress.org/Template_Tags/wp_list_comments
-*/
+ * @link http://codex.wordpress.org/Template_Tags/wp_list_comments
+ */
 
 // don't load it if you can't comment
 if ( post_password_required() ) {

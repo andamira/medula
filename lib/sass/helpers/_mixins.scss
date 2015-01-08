@@ -6,16 +6,16 @@
  * Be careful and remember less is more.
  *
  * 
- * @see http://sachagreif.com/useful-sass-mixins/
- * @see http://thesassway.com/intermediate/leveraging-sass-mixins-for-cleaner-code
- * @see http://web-design-weekly.com/blog/2013/05/12/handy-sass-mixins/
+ * @link http://sachagreif.com/useful-sass-mixins/
+ * @link http://thesassway.com/intermediate/leveraging-sass-mixins-for-cleaner-code
+ * @link http://web-design-weekly.com/blog/2013/05/12/handy-sass-mixins/
  */
 
 
 /**
  * 1 REM MIXIN WITH PX FALLBACK
  *
- * @see:source http://hugogiraudel.com/2013/03/18/ultimate-rem-mixin/
+ * @link http://hugogiraudel.com/2013/03/18/ultimate-rem-mixin/
  */
 @mixin rem($property, $values) {
 	$px : ();
@@ -91,7 +91,7 @@
 /**
  * INPUT PLACEHOLDER
  *
- * http://css-tricks.com/snippets/css/style-placeholder-text/
+ * @link http://css-tricks.com/snippets/css/style-placeholder-text/
  */
 @mixin input-placeholder($color: #000, $opacity: auto, $ttime: auto, $ttype: ease) {
 	&::-webkit-input-placeholder {
@@ -103,7 +103,7 @@
 			transition: opacity $ttime $ttime $ttype;
 		}   
 	}   
-	&::-moz-placeholder {  /* Firefox 19+ */
+	&::-moz-placeholder {  // Firefox 19+
 		color: $color;
 		@if $opacity != 'auto' {
 			opacity: $opacity;

@@ -1,5 +1,5 @@
 <?php
-/*
+/**
  * CUSTOM POST TYPE TAXONOMY TEMPLATE
  *
  * This is the custom post type taxonomy template. If you edit the custom taxonomy name,
@@ -8,8 +8,8 @@
  * For Example, if your custom taxonomy is called "register_taxonomy('shoes')",
  * then your template name should be taxonomy-shoes.php
  *
- * For more info: http://codex.wordpress.org/Post_Type_Templates#Displaying_Custom_Taxonomies
-*/
+ * @link http://codex.wordpress.org/Post_Type_Templates#Displaying_Custom_Taxonomies
+ */
 ?>
 
 <?php get_header(); ?>

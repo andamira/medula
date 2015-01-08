@@ -16,7 +16,7 @@
  *			4.3 TODO: Custom TinyMCE buttons
  *			4.4 Changing text in footer of admin
  *
- * @see http://digwp.com/2010/10/customize-wordpress-dashboard/
+ * @link http://digwp.com/2010/10/customize-wordpress-dashboard/
  */
 
 
@@ -57,7 +57,7 @@ add_action( 'admin_menu', 'disable_default_dashboard_widgets' );
  * site. Here is an example Dashboard Widget that displays recent
  * entries from an RSS Feed.
  *
- * @see http://digwp.com/2010/10/customize-wordpress-dashboard/
+ * @link http://digwp.com/2010/10/customize-wordpress-dashboard/
  */
 
 /**
@@ -125,7 +125,7 @@ add_editor_style( get_template_directory_uri() . '/lib/css/admin/editor-style.cs
 
 /**
  * 4.3 TODO: Custom TinyMCE buttons
- * @see http://codex.wordpress.org/TinyMCE_Custom_Buttons
+ * @link http://codex.wordpress.org/TinyMCE_Custom_Buttons
  */
 
 

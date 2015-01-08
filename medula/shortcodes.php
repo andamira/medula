@@ -3,14 +3,10 @@
  * Shortcodes Template File
  *
  * Here you can write your own shortcodes. You can
- * copy the example as a model, or use a generator like:
- * @see http://generatewp.com/shortcodes/
+ * copy the example as a model, or use a {@link http://generatewp.com/shortcodes/ generator}
  *
- * Recommended reading:
- * @see http://www.webdesignerdepot.com/2013/06/how-to-create-your-own-wordpress-shortcodes/
- *
+ * @link http://www.webdesignerdepot.com/2013/06/how-to-create-your-own-wordpress-shortcodes/
  */
-
 
 
 /**
@@ -40,7 +36,6 @@
     return $out;
 }
 add_shortcode( 'osea-shortcode', 'osea_shortcode_example' );
-
 
 
 

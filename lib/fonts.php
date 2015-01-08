@@ -10,13 +10,13 @@
  * lib/sass/modules/_typography.scss
  *
  * You can find free fonts in:
- * @see http://www.google.com/fonts/
- * @see http://www.fontsquirrel.com/
- * @see http://openfontlibrary.org/
+ * @link http://www.google.com/fonts/
+ * @link http://www.fontsquirrel.com/
+ * @link http://openfontlibrary.org/
  *
  * And pay fonts in:
- * @see https://typekit.com/
- * @see http://www.fontspring.com/
+ * @link https://typekit.com/
+ * @link http://www.fontspring.com/
  */
 
 

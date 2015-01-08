@@ -3,8 +3,8 @@
 /**
 * Theme Customize
 *
-* @see http://code.tutsplus.com/series/a-guide-to-the-wordpress-theme-customizer--wp-33722
-* @see http://natko.com/changing-default-wordpress-theme-customization-api-sections/
+* @link http://code.tutsplus.com/series/a-guide-to-the-wordpress-theme-customizer--wp-33722
+* @link http://natko.com/changing-default-wordpress-theme-customization-api-sections/
 */
 
 function osea_theme_customizer( $wp_customize ) {

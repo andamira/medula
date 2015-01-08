@@ -5,9 +5,9 @@
  *
  * Several recommended frameworks for adding custom metaboxes:
  *
- * @see https://github.com/WebDevStudios/CMB2
- * @see https://github.com/humanmade/Custom-Meta-Boxes
- * @see https://github.com/rilwis/meta-box
+ * @link https://github.com/WebDevStudios/CMB2
+ * @link https://github.com/humanmade/Custom-Meta-Boxes
+ * @link https://github.com/rilwis/meta-box
  */
 	
 

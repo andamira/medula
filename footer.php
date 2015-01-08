@@ -1,10 +1,12 @@
 <?php
-/*
+/**
  * Footer Template
  *
- * Codex:
- * http://codex.wordpress.org/Function_Reference/get_footer
+ * Closes the site-content and page-wrapper tags that where opened in header.php
+ * Loads The js scripts
+ * Inserts the MMenu navigation menu
  *
+ * @link http://codex.wordpress.org/Function_Reference/get_footer
  */
 ?>
 			</div> <?php // (#site-content-wrapper) opening tag in header.php ?>

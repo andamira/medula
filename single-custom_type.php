@@ -1,5 +1,5 @@
 <?php
-/*
+/**
  * CUSTOM POST TYPE TEMPLATE
  *
  * This is the custom post type post template. If you edit the post type name, you've got
@@ -10,8 +10,8 @@
  *
  * Be aware of 'custom_cat' and 'custom_tag' in the entry footer
  *
- * For more info: http://codex.wordpress.org/Post_Type_Templates
-*/
+ * @link http://codex.wordpress.org/Post_Type_Templates
+ */
 ?>
 
 <?php get_header(); ?>

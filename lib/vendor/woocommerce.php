@@ -21,7 +21,7 @@
 /**
  *  1 THEME SUPPORT
  *
- * @see http://docs.woothemes.com/document/third-party-custom-theme-compatibility/
+ * @link http://docs.woothemes.com/document/third-party-custom-theme-compatibility/
  */
 
 // Unhook of WooCommerce wrappers and hook your own
@@ -55,14 +55,14 @@ function osea_theme_wrapper_end() {
  * If you remove the default WooCommerce styling, you must style
  * everything yourself.
  *
- * @see http://docs.woothemes.com/document/disable-the-default-stylesheet/
- * @see http://wordpress.org/support/topic/woocommerce-21-custom-css-only-2-rows
+ * @link http://docs.woothemes.com/document/disable-the-default-stylesheet/
+ * @link http://wordpress.org/support/topic/woocommerce-21-custom-css-only-2-rows
  *
  * WooCommerce Default Style Sheets:
- * @see https://github.com/woothemes/woocommerce/tree/master/assets/css
+ * @link https://github.com/woothemes/woocommerce/tree/master/assets/css
  *
  * Example Style Sheets:
- * @see https://github.com/claudiosmweb/woocommerce-sass
+ * @link https://github.com/claudiosmweb/woocommerce-sass
  */
 #add_filter( 'woocommerce_enqueue_styles', '__return_false' );
 
@@ -77,7 +77,7 @@ function osea_theme_wrapper_end() {
 /**
  * 3.1 Use WC 2.0 variable price format
  *
- * @see https://gist.github.com/kloon/8981075
+ * @link https://gist.github.com/kloon/8981075
  */
 #add_filter( 'woocommerce_variable_sale_price_html', 'wc_wc20_variation_price_format', 10, 2 );
 #add_filter( 'woocommerce_variable_price_html', 'wc_wc20_variation_price_format', 10, 2 );
@@ -120,7 +120,7 @@ function woo_remove_category_products_count() {
 
 /**
  * 3.4 Remove Title Attribute from WordPress List Categories
- * @see http://stackoverflow.com/questions/2405437/removing-title-from-wp-list-categories
+ * @link http://stackoverflow.com/questions/2405437/removing-title-from-wp-list-categories
  */
 #add_filter('wp_list_categories', 'wp_list_categories_remove_title_attributes');
 function wp_list_categories_remove_title_attributes($output) {
@@ -132,7 +132,7 @@ function wp_list_categories_remove_title_attributes($output) {
 /**
  * 3.5 Remove (or modify the text from) the add to cart button.
  *
- * @see https://wordpress.org/support/topic/how-to-change-add-to-cart-button-to-a-read-more-button
+ * @link https://wordpress.org/support/topic/how-to-change-add-to-cart-button-to-a-read-more-button
  */
 #remove_action( 'woocommerce_after_shop_loop_item', 'woocommerce_template_loop_add_to_cart', 10 );
 
@@ -148,7 +148,7 @@ function osea_woocommerce_template_loop_add_to_cart() {
 /**
  * 3.6 CUSTOM ADD TO CART MESSAGE
  *
- * @see http://stackoverflow.com/questions/21832684/alternative-for-the-wc-add-to-cart-message-hook-in-woocommerce-for-wp
+ * @link http://stackoverflow.com/questions/21832684/alternative-for-the-wc-add-to-cart-message-hook-in-woocommerce-for-wp
  */
 #add_filter( 'wc_add_to_cart_message', 'osea_custom_add_to_cart_message' );
 function osea_custom_add_to_cart_message ($message) {
@@ -164,7 +164,7 @@ function osea_custom_add_to_cart_message ($message) {
 /**
  * 3. Hide ALL or STANDARD shipping options when free shipping is available
  *
- * @see http://docs.woothemes.com/document/hide-other-shipping-methods-when-free-shipping-is-available/
+ * @link http://docs.woothemes.com/document/hide-other-shipping-methods-when-free-shipping-is-available/
  */
 
 // Hide STANDARD shipping options:

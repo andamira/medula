@@ -10,7 +10,7 @@
 /**
  * 1 Disable WPML CSS & JS
  *
- * @see http://wpml.org/documentation/support/wpml-coding-api
+ * @link http://wpml.org/documentation/support/wpml-coding-api
  */
 define('ICL_DONT_LOAD_LANGUAGE_SELECTOR_CSS', true);
 define('ICL_DONT_LOAD_NAVIGATION_CSS', true);
@@ -22,8 +22,8 @@ define('ICL_DONT_LOAD_LANGUAGES_JS', true);
  *
  * Shows all the languages, diferentiating between active, inactive and missing.
  *
- * @see http://wpml.org/documentation/getting-started-guide/language-setup/custom-language-switcher/
- * @see http://wpml.org/documentation/support/wpml-coding-api/
+ * @link http://wpml.org/documentation/getting-started-guide/language-setup/custom-language-switcher/
+ * @link http://wpml.org/documentation/support/wpml-coding-api/
  */
 function osea_wpml_switcher() {
 

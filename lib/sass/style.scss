@@ -36,8 +36,8 @@
  *
  *
  *
- * @see http://thesassway.com/advanced/modular-css-naming-conventions
- * @see http://www.sitepoint.com/architecture-sass-project/
+ * @link http://thesassway.com/advanced/modular-css-naming-conventions
+ * @link http://www.sitepoint.com/architecture-sass-project/
  */
 
 
@@ -126,7 +126,7 @@ $breakpoint-to-ems: true;
 
 /**
  *  normalize
- *  @see:source https://github.com/JohnAlbin/normalize-scss
+ *  @link https://github.com/JohnAlbin/normalize-scss
  */
 @import "layouts/normalize";
 @import "layouts/normalize_extra";

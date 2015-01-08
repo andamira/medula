@@ -1,9 +1,8 @@
 <?php
-/*
+/**
  * Header template
  * 
- * Codex:
- * http://codex.wordpress.org/Function_Reference/get_header
+ * @link http://codex.wordpress.org/Function_Reference/get_header
  */
 ?>
 <!doctype html>
@@ -17,8 +16,8 @@
 /**
  * SUPPORT IE 8 - Polyfills 
  *
- * @see http://stackoverflow.com/a/16732064 The source for this solution
- * @see https://core.trac.wordpress.org/ticket/16024 Why this can't be enqueued properly
+ * @link http://stackoverflow.com/a/16732064 The source for this solution
+ * @link https://core.trac.wordpress.org/ticket/16024 Why this can't be enqueued properly
  */
 if ( defined( 'OSEA_IE8_SUPPORT' ) && OSEA_IE8_SUPPORT ) { ?>
 <!--[if lt IE 9]>
