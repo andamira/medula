@@ -2,9 +2,17 @@
  * Stylesheet: Mixins
  * ************************************************************
  *
+ *		1 Rem Mixin with px fallback
+ *		2 CSS3 gradients
+ *		3 Box Sizing
+ *		4 Input Placeholder
+ *		5 CSSTricks Mixins
+ *			5.1 Covering Mixin
+ *			5.2 Centering Mixin
+ *
+ *
  * A WORD OF WARNING: It's very easy to overdo it here.
  * Be careful and remember less is more.
- *
  * 
  * @link http://sachagreif.com/useful-sass-mixins/
  * @link http://thesassway.com/intermediate/leveraging-sass-mixins-for-cleaner-code
@@ -58,7 +66,7 @@
 
 
 /**
- * CSS3 GRADIENTS
+ * 2 CSS3 GRADIENTS
  *
  * Be careful with these since they can
  * really slow down your CSS. Don't overdo it.
@@ -76,7 +84,7 @@
 
 
 /**
- * BOX SIZING
+ * 3 BOX SIZING
  *
  * USAGE: @include box-sizing(border-box);
  */
@@ -89,7 +97,7 @@
 
 
 /**
- * INPUT PLACEHOLDER
+ * 4 INPUT PLACEHOLDER
  *
  * @link http://css-tricks.com/snippets/css/style-placeholder-text/
  */
@@ -122,6 +130,53 @@
 			transition: opacity $ttime $ttime $ttype;
 		}   
 	}   
+}
+
+
+/**
+ * 5.1 CSSTRICKS MIXIN
+ *
+ * A selection of mixins published in CSS-Tricks website
+ *
+ * @link http://css-tricks.com/snippets/sass/
+ */
+
+/**
+ * 5.1 COVERING MIXIN
+ *
+ * USAGE:
+ * 		.overlay {
+ * 			@include coverer;
+ * 		}
+ *
+ * @link http://css-tricks.com/snippets/sass/covering-mixin/
+ */
+@mixin coverer {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+}
+
+/**
+ * 5.2 CENTERING MIXIN
+ *
+ * USAGE:
+ *		.parent {
+ *			position: relative;
+ *		}
+ *		.child {
+ *			@include centerer;
+ *		}
+ *
+ * @link http://css-tricks.com/snippets/sass/centering-mixin/
+ */
+@mixin centerer {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
 }
 
 
