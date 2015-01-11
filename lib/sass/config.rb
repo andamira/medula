@@ -14,7 +14,7 @@ require "compass/import-once/activate"
 require "susy"
 require "breakpoint"
 require "sassy-maps"
-#require "SassyLists"
+require "SassyLists"
 
 
 #
@@ -25,22 +25,37 @@ http_path = "/"
 
 
 #
-# 2. You can select your preferred output style here (can be overridden via the command line):
+# 3. You can select your preferred output style here. Use :compressed for production
+#
+
+environment = :development
+#environment = :production		# < enable on production
+
+
+#
+# 3. You can select your preferred output style here. Use :compressed for production
 #
 
 output_style = :expanded
-#output_style = :compressed	# On launch, uncomment this line and comment the above one
+#output_style = :compressed		# < enable on production
 
 
 #
-# 3. To disable debugging comments that display the original location of your selectors. Uncomment:
+# 4. To disable debugging comments that display the original location of your selectors. Uncomment:
 #
 
-# line_comments = false
+#line_comments = false			# < enable on production
 
 
 #
-# 4. Default options. You'll probably don't have to touch these
+# 5. Generate source maps. See http://thesassway.com/intermediate/using-source-maps-with-sass
+#
+
+sourcemap = true
+
+
+#
+# 6. Default options and paths. You'll probably don't have to touch these
 #
 
 css_dir = "../css"
@@ -49,7 +64,6 @@ images_dir = "../img"
 javascripts_dir = "../js"
 fonts_dir = "../fonts"
 relative_assets = true
-environment = :development
 
 # don't touch this
 preferred_syntax = :scss

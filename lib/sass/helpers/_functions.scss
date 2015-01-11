@@ -6,9 +6,10 @@
  * make repeated actions a lot easier. They are really similar to mixins,
  * but instead of outputting lines of Sass, functions return a value.
  *
- * 		0 Included Functions from dependencies
+ * 		0 Included Functions From Dependencies
  * 			0.1 Sassy Maps
  * 			0.2 Sassy Lists
+ * 			0.3 Compass
  *		1 CSS-Tricks Functions
  *			1.1 Black and White Opacity Functions
  *		2 Layout
@@ -25,7 +26,7 @@
  */
 
 /**
- * 0.1 SASSY MAPS
+ * 0.1 SASSY MAPS FUNCTIONS
  *
  * @link https://github.com/at-import/Sassy-Maps#functions
  *
@@ -36,7 +37,7 @@
  */
 
 /**
- * 0.2 SASSY LISTS
+ * 0.2 SASSY LISTS FUNCTIONS
  *
  * @link http://sassylists.com/documentation/
  *
@@ -83,15 +84,19 @@
  */
 
 /**
- * COMPASS
+ * 0.3 COMPASS FUNCTIONS
  *
  * @link http://compass-style.org/index/functions/
  * @link http://compass-style.org/reference/compass/helpers/ Compass Helper Functions
  * 
- * Color Stops Helper
+ *
+ *** Color Stops Helper
+ * --------------------
  * color-stops([$color-stop]*)			Provides a way to pass an arbitrary number of colors stops to the gradient mixins.
  *
- * Color Helpers
+ *
+ *** Color Helpers
+ * ---------------
  * adjust-lightness($color, $amount)	Adds $amount to $color's lightness value. $amount can be negative.
  * adjust-saturation($color, $amount)	Adds $amount to $color's saturation value. $amount can be negative.
  * scale-lightness($color, $amount)		Scales $color's lightness value by $amount. $amount can be negative.
@@ -99,10 +104,14 @@
  * shade($color, $percentage)			Darkens the $color by mixing it with black as specified by $percentage.
  * tint($color, $percentage)			Lightens the $color by mixing it with white as specified by $percentage.
  *
- * Constant Helpers
+ *
+ *** Constant Helpers
+ * ------------------
  * opposite-position($position)			Returns the opposition position for the position given.
  *
- * Cross Browser Helpers
+ *
+ *** Cross Browser Helpers
+ * -----------------------
  * prefixed($prefix, $arg, ...)			Returns true if any of the arguments require the given prefix.
  * prefix($prefix, $arg, ...)			Transforms the argument(s) into a representation for the rendering engine indicated by $prefix.
  * -webkit($arg, ...)					This is a shortcut for calling prefix(-webkit, $arg, ...).
@@ -114,28 +123,40 @@
  * -css2($arg, ...)						This is a shortcut for calling prefix(-css2, $arg, ...).
  * css2-fallback($value, $css2-value)
  *
- * Display Helpers
+ *
+ *** Display Helpers
+ * -----------------
  * elements-of-type($display)
  *
- * Environment Helpers
+ *
+ *** Environment Helpers
+ * ---------------------
  * compass-env()						Returns the compass environment for the current compile. (`development` or `production`)
  * current-time([$format])				Returns the current time when the file is compiled.
  * current-date([$format])				Returns the current date when the file is compiled.
  * current-source-file([$absolute])		Returns the file name of the Sass file that initiated the compilation.
  * current-output-file([$absolute])		Returns the file name of the CSS file that is being generated.
  *
- * Font Files Helper
+ *
+ *** Font Files Helper
+ * -------------------
  * font-files([$font]*)					The font-files function takes a list of arguments containing the path to each font files...
  *
- * Image Dimension Helpers
+ *
+ *** Image Dimension Helpers
+ * -------------------------
  * image-width($image)					Returns the width of the image found at the path supplied by $image...
  * image-height($image)					Returns the height of the image found at the path supplied by $image...
  *
- * Inline Data Helpers
+ *
+ *** Inline Data Helpers
+ * ---------------------
  * inline-image($image, $mime-type)		Embeds the contents of an image directly inside your stylesheet, eliminating the need for another HTTP request.
  * inline-font-files([$font, $format]*)	Like the font-files() helper, but the font file is embedded within the generated CSS file.
  *
- * Math Helpers
+ *
+ *** Math Helpers
+ * --------------
  * pi()									Returns the value of π.
  * sin($number)							Returns the sine of a number.
  * cos($number)							Returns the cosine of a number.
@@ -148,13 +169,17 @@
  * sqrt($number)						iCalculates the square root of a number.
  * pow($number, $exponent)				Calculates the value of a number raised to the power of an exponent.
  *
- * Selector Helpers
+ *
+ *** Selector Helpers
+ * ------------------
  * nest($selector1, $selector2, ...)					Nest selectors as if they had been nested within a sass file.
  * append-selector($selector, $to-append)				This helper function appends any selector with some string.
  * enumerate($prefix, $from, $through, $separator)		Enumerate the given $prefix from $from through $through.
  * headings($from, $to)									This helper function emits headings.
  * 
- * CSS Sprite Helpers
+ *
+ *** CSS Sprite Helpers
+ * --------------------
  * sprite-map($glob, ...)													Generates a css sprite map from the files matching the glob pattern.
  * sprite($map, $sprite, $offset-x, $offset-y, $use-percentages)			Returns the image and background position.
  * sprite-width($map)														Returns the width of the generated sprite.
@@ -166,7 +191,9 @@
  * sprite-url($map)															Returns a url to the sprite image.
  * sprite-position($map, $sprite, $offset-x, $offset-y, $use-percentages)	Returns the position for the original image in the sprite.
  *
- * URL Helpers
+ *
+ *** URL Helpers
+ * -------------
  * stylesheet-url($path, $only-path)				Generates a path to an asset found relative to the project's css directory.
  * font-url($path, $only-path, $cache-buster)		Generates a path to an asset found relative to the project's font directory.
  * image-url($path, $only-path, $cache-buster)		Generates a path to an asset found relative to the project's images directory.

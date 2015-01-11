@@ -2,13 +2,16 @@
  * Stylesheet: Mixins
  * ************************************************************
  *
+ *		0 Included Mixins From Dependencies
+ *			0.1 Compass CSS3
+ *			0.2 Compass Typography
+ *			0.3 Compass Utility
  *		1 CSS-Tricks Mixins
  *			1.1 Covering Mixin
  *			1.2 Centering Mixin
  *		2 Rem Mixin with px fallback
  *		3 CSS3 gradients
- *		4 Box Sizing
- *		5 Input Placeholder
+ *		4 Input Placeholder
  *
  *
  * A WORD OF WARNING: It's very easy to overdo it here.
@@ -17,6 +20,24 @@
  * @link http://sachagreif.com/useful-sass-mixins/
  * @link http://thesassway.com/intermediate/leveraging-sass-mixins-for-cleaner-code
  * @link http://web-design-weekly.com/blog/2013/05/12/handy-sass-mixins/
+ */
+
+
+/**
+ * 0 INCLUDED MIXINS FROM DEPENDENCIES
+ *
+ */
+
+/**
+ * 0.1 COMPASS CSS3 MIXINS
+ */
+
+/**
+ * 0.2 COMPASS TYPOGRAPHY MIXINS
+ */
+
+/**
+ * 0.3 COMPASS UTILITY MIXINS
  */
 
 
@@ -72,7 +93,7 @@
  *
  * @link http://hugogiraudel.com/2013/03/18/ultimate-rem-mixin/
  */
-@mixin rem($property, $values) {
+@mixin rem2($property, $values) {
 	$px : ();
 	$rem: ();
 
@@ -131,20 +152,7 @@
 
 
 /**
- * 4 BOX SIZING
- *
- * USAGE: @include box-sizing(border-box);
- */
-@mixin box-sizing($type: border-box) {
-	-webkit-box-sizing: $type;
-	-moz-box-sizing:    $type;
-	-ms-box-sizing:     $type;
-	box-sizing:         $type;
-}
-
-
-/**
- * 5 INPUT PLACEHOLDER
+ * 4 INPUT PLACEHOLDER
  *
  * @link http://css-tricks.com/snippets/css/style-placeholder-text/
  */

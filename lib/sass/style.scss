@@ -54,7 +54,7 @@
  * NOTE: Compass depends on ffi, a native extension that needs compiling.
  */
 
-@import "compass";
+@import "compass";		// CSS3, Typography and Utilities modules
 @import "susy";
 @import "breakpoint";
 @import "sassy-maps";
