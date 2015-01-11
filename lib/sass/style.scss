@@ -27,11 +27,9 @@
  *
  * 		6 Base
  *
- * 		7 Debug
+ * 		7 Vendors
  *
- * 		8 Vendors
- *			8.1 WordPress Plugins
- *			8.2 Jquery Plugins
+ * 		8 Debug
  *
  *
  * @link http://thesassway.com/advanced/modular-css-naming-conventions
@@ -99,13 +97,15 @@ $breakpoint-to-ems: true;
 /**
  * 4 /MODULES (except debug)
  *
- * This directory also contains only partials and is reserved for reusable UI patterns.
+ * This directory contains only partials and is reserved for reusable UI patterns.
+ *
  * As a general rule of thumb, anytime you anticipate needing the same CSS more than once,
  * you should modularize it. The more your project matures, the more CSS you should be able
  * to compartmentalize into modules. Preferably, each module contains a mixin at the top
- * with corresponding declarations at the bottom for including that mixin. Crafting your
- * modules in this fashion helps you start thinking about CSS in a more modular way.
- * They are also easier to expand upon and/or extend in the future.
+ * with corresponding declarations at the bottom for including that mixin.
+ *
+ * Crafting your modules in this fashion helps you start thinking about CSS in a more
+ * modular way. They are also easier to expand upon and/or extend in the future.
  */
 
 // typography
@@ -159,42 +159,24 @@ $breakpoint-to-ems: true;
 
 
 /**
- * 7 DEBUG
- *
- * (You can safely remove this if you don't plan to debug)
- *
- *
- * Loaded the last thing, despite being considered a 'module'
- *
- */
-@import "modules/debug";
-
-
-/**
- * 8 /VENDORS
+ * 7 /VENDORS
  *
  * Vendors specific css, like for
- * 3rd party WordPress plugins.
+ * 3rd party WordPress or jQuery plugins.
+ */
+
+@import "vendors";
+
+
+/**
+ * 8 DEBUG
  *
- * Here you can find some examples for a
- * small selection of common plugins.
+ * (You can safely remove this if you don't plan to use it)
+ *
+ * This must be loaded the last one of all,
+ * separating it from the rest of the 'modules'
+ *
  */
 
-/**
- * 8.1 WORDPRESS PLUGINS
- */
-
-// Contact Form 7 ()
-// @import "vendors/cf7";
-
-// Cookie notice ()
-// @import "vendors/cookie";
-
-// External Links ()
-// @import "vendors/external";
-
-/**
- * 8.2 JQUERY PLUGINS
- */
-
+@import "modules/debug";
 
