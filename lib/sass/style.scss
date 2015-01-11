@@ -2,9 +2,9 @@
  * Stylesheet: Main Stylesheet
  * ************************************************************
  *
- * 		1 Dependencies
+ * 		1 Configurable Variables
  *
- * 		2 Configuration
+ * 		2 Dependencies
  * 	
  * 		3 Helpers
  *				Variables
@@ -40,7 +40,22 @@
 
 
 /**
- * 1 DEPENDENCIES
+ * 1 GLOBAL CONFIGURABLE VARIABLES
+ *
+ * @link http://compass-style.org/help/tutorials/configurable-variables/
+ */
+
+$base-font-size: 16px;
+$base-line-height: 24px;
+
+$rhythm-unit: 'rem';
+$rem-with-px-fallback: true;	// set this to false to disable px fallback
+
+$breakpoint-to-ems: true;
+
+
+/**
+ * 2 DEPENDENCIES
  *
  * Installation:
  *		gem install sass compass susy breakpoint sassy-maps SassyLists
@@ -51,28 +66,13 @@
  * @link https://github.com/at-import/Sassy-Maps Sassy-Maps
  * @link https://github.com/at-import/SassyLists SassyLists
  *
- * NOTE: Compass depends on ffi, a native extension that needs compiling.
  */
 
-@import "compass";		// CSS3, Typography and Utilities modules
+@import "compass";		// imports CSS3, Typography and Utilities modules
 @import "susy";
 @import "breakpoint";
 @import "sassy-maps";
 @import "SassyLists";
-
-
-/**
- * 2 GLOBAL STYLE CONFIGURATION
- *
- */
-
-$base-font-size: 16px;
-$base-line-height: 24px;
-
-$rhythm-unit: 'rem';
-$rem-with-px-fallback: true;	// set to false to disable px fallback
-
-$breakpoint-to-ems: true;
 
 
 /**
