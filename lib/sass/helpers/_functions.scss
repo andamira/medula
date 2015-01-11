@@ -4,12 +4,15 @@
  *
  * You can do a lot of really cool things in Sass. Functions help you
  * make repeated actions a lot easier. They are really similar to mixins,
- * but can be used for so much more.
+ * but instead of outputting lines of Sass, functions return a value.
  *
- *		1 Color
+ * 		0 Included Functions from dependencies
+ * 			0.1 Sassy Maps
+ * 			0.2 Sassy Lists
+ *		1 CSS-Tricks Functions
+ *			1.1 Black and White Opacity Functions
  *		2 Layout
  *		3 Lists
- *
  *		4 Numbers, units, relationships
  *
  * @link http://sass-lang.com/documentation/Sass/Script/Functions.html
@@ -17,17 +20,181 @@
 
 
 /**
- * 1 COLOR FUNCTIONS
+ * 0 INCLUDED FUNCTIONS FROM DEPENDENCIES
  *
- * These are helpful when you're working with shadows and such things.
- * It's essentially a quicker way to write RGBA.
  */
 
-// black
+/**
+ * 0.1 SASSY MAPS
+ *
+ * @link https://github.com/at-import/Sassy-Maps#functions
+ *
+ * map-get-deep($map, $keys...)			Returns the value of the final item in $keys from the map $map.
+ * map-set($map, $key, $value)			Returns a map that has the $key in $map set to the to given $value.
+ * map-set-deep($map, $keys, $value)	Returns a map that has the $key in $map set to the given $value.
+ * map-to-string($map)					Returns a string representation of the given $map.
+ */
+
+/**
+ * 0.2 SASSY LISTS
+ *
+ * @link http://sassylists.com/documentation/
+ *
+ * sl-chunk()					returns whether list contains $value
+ * sl-comma-list()				initializes an empty comma-separated list
+ * sl-contain()					returns whether the list contains the value
+ * sl-count-values()			counts the number of occurrences of each value of list
+ * sl-debug()					returns list as a string
+ * sl-every()					returns whether all items from list pass test from given function
+ * sl-explode()					explodes a string into a list using a string as a delimiter
+ * sl-first()					returns first value in list
+ * sl-flatten()					turns multidimensional list into a one-level list
+ * sl-has-values()				checks if list is not empty
+ * sl-has-multiple-values()		checks if list has more than one value
+ * sl-insert-nth()				inserts value at index
+ * sl-intersection()			returns a list of shared values across all given lists
+ * sl-is-empty()				checks if list is empty
+ * sl-is-single()				checks if list has a single value
+ * sl-is-symmetrical()			checks if list is symmetrical
+ * sl-last()					returns last value in list
+ * sl-last-index()				returns last index of value in list
+ * sl-loop()					shifts indexes in list
+ * sl-prepend()					prepends value to list
+ * sl-purge()					removes all false and null values from list
+ * sl-random-value()			returns random value from list
+ * sl-range()					returns a list of values between 1 and given value
+ * sl-remove()					removes value in list
+ * sl-remove-duplicates()		removes duplicate values from list
+ * sl-remove-nth()				removes value at index
+ * sl-replace()					replaces value in list
+ * sl-replace-nth()				replaces value at index
+ * sl-reverse()					reverses list
+ * sl-shuffle()					shuffles list
+ * sl-slice()					slices list
+ * sl-sort()					sorts list
+ * sl-some()					returns whether some values from list pass test from given function
+ * sl-sum()						sums all unitless values in list
+ * sl-tail()					returns anything but the first element in list
+ * sl-to-list()					casts value as list
+ * sl-to-map()					casts list as map using indexes as keys
+ * sl-to-string()				casts list as string (JS .join())
+ * sl-union()					returns a list of values from given lists minus duplicates
+ * sl-walk()					applies a function to every value of list
+ */
+
+/**
+ * COMPASS
+ *
+ * @link http://compass-style.org/index/functions/
+ * @link http://compass-style.org/reference/compass/helpers/ Compass Helper Functions
+ * 
+ * Color Stops Helper
+ * color-stops([$color-stop]*)			Provides a way to pass an arbitrary number of colors stops to the gradient mixins.
+ *
+ * Color Helpers
+ * adjust-lightness($color, $amount)	Adds $amount to $color's lightness value. $amount can be negative.
+ * adjust-saturation($color, $amount)	Adds $amount to $color's saturation value. $amount can be negative.
+ * scale-lightness($color, $amount)		Scales $color's lightness value by $amount. $amount can be negative.
+ * scale-saturation($color, $amount)	Scales $color's saturation value by $amount. $amount can be negative.
+ * shade($color, $percentage)			Darkens the $color by mixing it with black as specified by $percentage.
+ * tint($color, $percentage)			Lightens the $color by mixing it with white as specified by $percentage.
+ *
+ * Constant Helpers
+ * opposite-position($position)			Returns the opposition position for the position given.
+ *
+ * Cross Browser Helpers
+ * prefixed($prefix, $arg, ...)			Returns true if any of the arguments require the given prefix.
+ * prefix($prefix, $arg, ...)			Transforms the argument(s) into a representation for the rendering engine indicated by $prefix.
+ * -webkit($arg, ...)					This is a shortcut for calling prefix(-webkit, $arg, ...).
+ * -moz($arg, ...)						This is a shortcut for calling prefix(-moz, $arg, ...).
+ * -o($arg, ...)						This is a shortcut for calling prefix(-o, $arg, ...).
+ * -ms($arg, ...)						This is a shortcut for calling prefix(-ms, $arg, ...).
+ * -svg($arg, ...)						This is a shortcut for calling prefix(-svg, $arg, ...).
+ * -pie($arg, ...)						This is a shortcut for calling prefix(-pie, $arg, ...).
+ * -css2($arg, ...)						This is a shortcut for calling prefix(-css2, $arg, ...).
+ * css2-fallback($value, $css2-value)
+ *
+ * Display Helpers
+ * elements-of-type($display)
+ *
+ * Environment Helpers
+ * compass-env()						Returns the compass environment for the current compile. (`development` or `production`)
+ * current-time([$format])				Returns the current time when the file is compiled.
+ * current-date([$format])				Returns the current date when the file is compiled.
+ * current-source-file([$absolute])		Returns the file name of the Sass file that initiated the compilation.
+ * current-output-file([$absolute])		Returns the file name of the CSS file that is being generated.
+ *
+ * Font Files Helper
+ * font-files([$font]*)					The font-files function takes a list of arguments containing the path to each font files...
+ *
+ * Image Dimension Helpers
+ * image-width($image)					Returns the width of the image found at the path supplied by $image...
+ * image-height($image)					Returns the height of the image found at the path supplied by $image...
+ *
+ * Inline Data Helpers
+ * inline-image($image, $mime-type)		Embeds the contents of an image directly inside your stylesheet, eliminating the need for another HTTP request.
+ * inline-font-files([$font, $format]*)	Like the font-files() helper, but the font file is embedded within the generated CSS file.
+ *
+ * Math Helpers
+ * pi()									Returns the value of π.
+ * sin($number)							Returns the sine of a number.
+ * cos($number)							Returns the cosine of a number.
+ * tan($number)							Returns the tangent of a number.
+ * asin($number)						Returns the arcsine of a number.
+ * acos($number)						Returns the arccosine of a number.
+ * atan($number)						Returns the arctangent of a number.
+ * e()									Returns the value of e.
+ * logarithm($number, $base)			Calculates the logarithm of a number to a base. Base defaults to e.
+ * sqrt($number)						iCalculates the square root of a number.
+ * pow($number, $exponent)				Calculates the value of a number raised to the power of an exponent.
+ *
+ * Selector Helpers
+ * nest($selector1, $selector2, ...)					Nest selectors as if they had been nested within a sass file.
+ * append-selector($selector, $to-append)				This helper function appends any selector with some string.
+ * enumerate($prefix, $from, $through, $separator)		Enumerate the given $prefix from $from through $through.
+ * headings($from, $to)									This helper function emits headings.
+ * 
+ * CSS Sprite Helpers
+ * sprite-map($glob, ...)													Generates a css sprite map from the files matching the glob pattern.
+ * sprite($map, $sprite, $offset-x, $offset-y, $use-percentages)			Returns the image and background position.
+ * sprite-width($map)														Returns the width of the generated sprite.
+ * sprite-height($map)														Returns the height of the generated sprite.
+ * sprite-path($map)														Returns the filesystem path of the generated sprite.
+ * sprite-names($map)														Returns a list of all sprite names within the supplied map.
+ * sprite-map-name($map)													Returns the name of a css sprite map.
+ * sprite-file($map, $sprite)												Returns the path to the original file used when construction the sprite.
+ * sprite-url($map)															Returns a url to the sprite image.
+ * sprite-position($map, $sprite, $offset-x, $offset-y, $use-percentages)	Returns the position for the original image in the sprite.
+ *
+ * URL Helpers
+ * stylesheet-url($path, $only-path)				Generates a path to an asset found relative to the project's css directory.
+ * font-url($path, $only-path, $cache-buster)		Generates a path to an asset found relative to the project's font directory.
+ * image-url($path, $only-path, $cache-buster)		Generates a path to an asset found relative to the project's images directory.
+ * generated-image-url($path, $cache-buster: false)	Generates a path to an image generated during compilation using generated_image ...
+ */
+
+
+/**
+ * 1 CSS-TRICKS FUNCTIONS
+ *
+ * A selection of mixins published in CSS-Tricks website
+ *
+ * @link http://css-tricks.com/snippets/sass/
+ */
+
+/**
+ * 1.1 BLACK AND WHITE OPACITIY FUNCTIONS
+ *
+ * It's pretty common to need a bit of transparent black or white.
+ *
+ * USAGE:
+ * 			black(0.5);
+ *
+ * @link http://css-tricks.com/snippets/sass/black-white-opacity-mixins/
+ */
 @function black($opacity) {
     @return rgba(0,0,0,$opacity);
 }
-// white
 @function white($opacity) {
     @return rgba(255,255,255,$opacity);
 }
@@ -60,24 +227,7 @@
 
 
 /**
- * 4 MAP FUNCTIONS
- *
- */
-
-/**
- * Navigate a nested maps
- * @link https://gist.github.com/jlong/8760275
- */
-@function map-deep-get($map, $keys...) {
-  $value: $map;
-  @each $key in $keys {
-    $value: map-get($value, $key);
-  }
-  @return $value;
-}
-
-/**
- * 5 NUMBERS, UNITS AND RELATIONSHIPS
+ * 4 NUMBERS, UNITS AND RELATIONSHIPS
  *
  */
 

@@ -34,8 +34,6 @@
  *			8.2 Jquery Plugins
  *
  *
- *
- *
  * @link http://thesassway.com/advanced/modular-css-naming-conventions
  * @link http://www.sitepoint.com/architecture-sass-project/
  */
@@ -44,12 +42,23 @@
 /**
  * 1 DEPENDENCIES
  *
+ * Installation:
+ *		gem install sass compass susy breakpoint sassy-maps SassyLists
+ *
+ * @link http://compass-style.org/
+ * @link https://github.com/ericam/susy/
+ * @link https://github.com/at-import/breakpoint Breakpoint
+ * @link https://github.com/at-import/Sassy-Maps Sassy-Maps
+ * @link https://github.com/at-import/SassyLists SassyLists
+ *
+ * NOTE: Compass depends on ffi, a native extension that needs compiling.
  */
 
-
-@import "compass";		// Compass v1.0 or greater
-@import "susy";			// Susy 2.1 or greater
-@import "breakpoint";	
+@import "compass";
+@import "susy";
+@import "breakpoint";
+@import "sassy-maps";
+@import "SassyLists";
 
 
 /**

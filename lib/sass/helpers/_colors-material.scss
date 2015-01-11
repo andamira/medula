@@ -13,7 +13,7 @@
  */
 
 @function color-material($color, $value: 500) {
-  @return map-deep-get($color-material, $color, $value);
+  @return map-get-deep($color-material, $color, $value);
 }
 
 
