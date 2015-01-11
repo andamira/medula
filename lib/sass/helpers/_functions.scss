@@ -9,7 +9,8 @@
  * 		0 Included Functions From Dependencies
  * 			0.1 Sassy Maps
  * 			0.2 Sassy Lists
- * 			0.3 Compass
+ * 			0.3 Compass Helper
+ * 			0.4 Compass Utility (For Mixins)
  *		1 CSS-Tricks Functions
  *			1.1 Black and White Opacity Functions
  *		2 Layout
@@ -84,7 +85,7 @@
  */
 
 /**
- * 0.3 COMPASS FUNCTIONS
+ * 0.3 COMPASS HELPER FUNCTIONS
  *
  * @link http://compass-style.org/index/functions/
  * @link http://compass-style.org/reference/compass/helpers/ Compass Helper Functions
@@ -200,6 +201,19 @@
  * generated-image-url($path, $cache-buster: false)	Generates a path to an image generated during compilation using generated_image ...
  */
 
+/**
+ * COMPASS FUNCTIONS FOR MIXINS
+ *
+ *** Vertical Rhythm                       {@link http://compass-style.org/reference/compass/typography/vertical_rhythm/}
+
+ * rhythm($lines, $font-size, $offset)     Calculate rhythm units.
+ * lines-for-font-size($font-size)         Calculate the minimum multiple of rhythm units needed to contain the font-size.
+ *
+ *** Utility                               {@link http://compass-style.org/reference/compass/utilities/}
+ *
+ * contrast-color($color, $dark, $light, $threshold)
+ *
+ */
 
 /**
  * 1 CSS-TRICKS FUNCTIONS

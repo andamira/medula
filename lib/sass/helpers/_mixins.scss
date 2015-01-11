@@ -34,6 +34,46 @@
 
 /**
  * 0.2 COMPASS TYPOGRAPHY MIXINS
+ *
+ * @link http://compass-style.org/reference/compass/typography/
+ *
+ *
+ *** Links
+ * -------
+ * hover-link                                                 A link that only has an underline when you hover over it
+ * link-colors($normal, $hover, $active, $visited, $focus)    Set all the colors for a link with one mixin call.
+ * unstyled-link                                              A link that looks and acts like the text it is contained within.
+ *
+ *
+ *** Lists
+ * -------
+ * no-bullet                                                                Turn off the bullet for an element of a list
+ * no-bullets                                                               turns off the bullets for an entire list
+ * pretty-bullets($bullet-icon, $width, $height, $line-height, $padding)    Make a list(ul/ol) have an image bullet.
+ *
+ * horizontal-list-container                    Can be mixed into any selector that target a ul or ol that is meant to have a horizontal layout.
+ * horizontal-list-item($padding, $direction)   Can be mixed into any li selector that is meant to participate in a horizontal layout.
+ * horizontal-list($padding, $direction)        A list(ol,ul) that is layed out such that the elements are floated left and won't wrap.
+ *
+ * inline-block-list-container               Can be mixed into any selector that target a ul or ol that is meant to have an inline-block layout.
+ * inline-block-list-item($padding)          Can be mixed into any li selector that is meant to participate in a horizontal layout.
+ * inline-block-list($padding)               A list(ol,ul) that is layed out such that the elements are inline-block and won't wrap.
+ *
+ * inline-list                               makes a list inline.
+ * delimited-list($separator)                makes an inline list delimited with the passed string. Defaults to making a comma-separated list.
+ *
+ *
+ *** Text
+ * ------
+ * ellipsis($no-wrap)
+ * force-wrap                            Prevent long urls and text from breaking layouts.
+ * nowrap                                When remembering whether or not there's a hyphen in white-space is too hard
+ *
+ * replace-text($img, $x, $y)                               Hides html text and replaces it with an image.
+ * replace-text-with-dimensions($img, $x, $y, $inline)      also sets the width and height of the element accordingly.
+ * hide-text($direction)                                    Hides text in an element so you can see the background.
+ * squish-text                                              Hides text in an element by squishing the text into oblivion.
+ *
  */
 
 /**

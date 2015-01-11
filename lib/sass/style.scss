@@ -2,34 +2,34 @@
  * Stylesheet: Main Stylesheet
  * ************************************************************
  *
- * 		1 Configurable Variables
+ *         1 Configurable Variables
  *
- * 		2 Dependencies
- * 	
- * 		3 Helpers
- *				Variables
- *				Functions
- *				Mixins
- *				Material Colors
+ *         2 Dependencies
+ *     
+ *         3 Helpers
+ *                Variables
+ *                Functions
+ *                Mixins
+ *                Material Colors
  *
- * 		4 Modules
- *				Typography
- *				Alerts
- *				Buttons
- *				Forms
- *				Icons
- *				Admin Bar
- *				
- * 		5 Layout
- *				Normalize
- *				Susy Grid
- *				Print Stylesheet
+ *         4 Modules
+ *                Typography
+ *                Alerts
+ *                Buttons
+ *                Forms
+ *                Icons
+ *                Admin Bar
+ *                
+ *         5 Layout
+ *                Normalize
+ *                Susy Grid
+ *                Print Stylesheet
  *
- * 		6 Base
+ *         6 Base
  *
- * 		7 Vendors
+ *         7 Vendors
  *
- * 		8 Debug
+ *         8 Debug
  *
  *
  * @link http://thesassway.com/advanced/modular-css-naming-conventions
@@ -41,13 +41,37 @@
  * 1 GLOBAL CONFIGURABLE VARIABLES
  *
  * @link http://compass-style.org/help/tutorials/configurable-variables/
+ *
+ * *******
+ * COMPASS
+ * *******
+ *
+ * TYPOGRAPHY
+ * 
+ *** Text                                {@link http://compass-style.org/reference/compass/typography/text}
+ * ------
+ * $use-mozilla-ellipsis-binding: false  To get full firefox support, you must install the ellipsis pattern.
+ * $hide-text-direction: left            Indicates the direction you prefer to move your text when hiding it.
+ *
+ *** Vertical Rhythm                     {@link http://compass-style.org/reference/compass/typography/vertical_rhythm/}
+ * -----------------
+ * $base-font-size: 16px                 The default font size for all text in pixels
+ * $base-line-height: 24px               The distance between text baselines (vertical rhythm) in pixels.
+ * $rhythm-unit: "em"                    The length unit in which to output rhythm values. Supported values: px, em, rem.
+ * $rem-with-px-fallback: true           Whether to output fallback values in px when using rem as the rhythm-unit.
+ * $default-rhythm-border-width: 1px    
+ * $default-rhythm-border-style: solid   Default values for rhythm borders properties. Supports style alone  or list of style and color.
+ * $round-to-nearest-half-line: false    Allows the adjust-font-size-to mixin and the lines-for-font-size function to round the line height
+ *                                       to the nearest half line height to avoid large spacing between lines.
+ * $min-line-padding: 2px                Ensure there is at least this many pixels of vertical padding above and below the text.
+ *
  */
 
+// Vertical Rhythm
 $base-font-size: 16px;
 $base-line-height: 24px;
-
 $rhythm-unit: 'rem';
-$rem-with-px-fallback: true;	// set this to false to disable px fallback
+$rem-with-px-fallback: true;
 
 $breakpoint-to-ems: true;
 
