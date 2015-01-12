@@ -97,16 +97,19 @@ $rem-with-px-fallback: true;
 // Breakpoint
 $breakpoint-to-ems: true;
 
+// For Susy & Breakpoint Slicer configuration see base/_grid.scss
+
 
 /**
  * 2 DEPENDENCIES
  *
  * Installation:
- *		gem install sass compass susy breakpoint sassy-maps SassyLists
+ *		gem install sass compass susy breakpoint breakpoint-slicer sassy-maps SassyLists
  *
  * @link http://compass-style.org/
  * @link https://github.com/ericam/susy/
  * @link https://github.com/at-import/breakpoint Breakpoint
+ * @link https://github.com/lolmaus/breakpoint-slicer
  * @link https://github.com/at-import/Sassy-Maps Sassy-Maps
  * @link https://github.com/at-import/SassyLists SassyLists
  *
@@ -115,6 +118,7 @@ $breakpoint-to-ems: true;
 @import "compass";		// imports CSS3, Typography and Utilities modules
 @import "susy";
 @import "breakpoint";
+@import "breakpoint-slicer";
 @import "sassy-maps";
 @import "SassyLists";
 
@@ -180,16 +184,16 @@ $breakpoint-to-ems: true;
  */
 
 /**
- *  normalize
+ *  Normalize
  *  @link https://github.com/JohnAlbin/normalize-scss
  */
 @import "layouts/normalize";
 @import "layouts/normalize_extra";
 
-// grid (Susy)
-@import "layouts/grid";
+// Grid Configuration
+@import "layouts/grid"
 
-// print stylesheet
+// Print Stylesheet
 @media print {
 	@import "layouts/print";
 }

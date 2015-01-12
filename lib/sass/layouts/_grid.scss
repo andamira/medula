@@ -1,52 +1,126 @@
 /**
- * Stylesheet: Susy 2 Global Configuration
+ * BASE GRID
  * ************************************************************
  *
- * The specific layouts are configured in:
- * 		/breakpoints/base/_grid.scss
- * 		/breakpoints/enhanced/_grid.scss
+ *		1 Breakpoints Variables
  *
- * @link http://susydocs.oddbird.net/en/latest/settings/
- * @link http://www.zell-weekeat.com/susy2-tutorial/
+ *		2 Page Widths Variables
+ *
+ *		3 Susy Setup
+ *
+ * 		4 The grid container
+ *
+ * 		5 The grid layout
  */
 
 
-/*
-$total-columns  : 10;
-$column-width   : 4.25rem;
+/**
+ * 1 BREAKPOINTS
+ */
+$bp-adminbar-mobile: 783px; // point where WordPress changes the admin bar to mobile mode
+$bp-mobile2desktop: 40em; // width change point from mobile to desktop (specially for menus in smart header)
+
+$slicer-breakpoints: 0 400px 600px 800px 1050px; // TODO
+
+
+/**
+ * 2 PAGE WIDTHS
+ */
+$page-width-desktop1: 60em; // 1st page-width on desktop
+
+
+/**
+ * SUSY
+ *
+ */
+$total-columns  : 4;
+$column-width   : 4;
 $gutter-width   : 1rem;
 $grid-padding   : $gutter-width;
 
-
 $susy: (
-	flow: ltr,
-	math: fluid,
-	output: float,
-	gutter-position: after,
-	container: auto,
-	container-position: center,
-	columns: $total-columns,		// default: 4
-	gutters: .25,					// default .25
-	column-width: $column-width,	// default: false
-	global-box-sizing: border-box,	// default: content-box
-	last-flow: to,
-	debug: (
-		image: hide,
-		color: rgba(#66f, .25),
-		output: background,
-		toggle: top right,
-	),
-	use-custom: (
-		background-image: true,
-		background-options: false,
-		box-sizing: true,
-		clearfix: true,
-		rem: true,
-	)
-
+    flow: ltr,
+    math: fluid,
+    output: float,
+    gutter-position: after,
+    container: auto,
+    container-position: left,
+    columns: $total-columns,        // default: 4
+    gutters: .25,                   // default .25
+    column-width: $column-width,    // default: false
+    global-box-sizing: border-box,  // default: content-box
+    last-flow: to, 
+    debug: (
+        image: hide,
+        color: $osea-orange-light,
+        output: background,
+        toggle: top right,
+    ),  
+    use-custom: (
+        background-image: true,
+        background-options: false,
+        box-sizing: true,
+        clearfix: true,
+        rem: true,
+    )   
 );
 
-/**/
 
+/**
+ * 3 THE GRID CONTAINER
+ *
+ * Here you establish the outer grid-containing elements
+ *
+ * If you want a wide header and footer comment the body
+ *
+ * Feel free to experiment modifying the div wrapper
+ * in defined in header.php and footer.php
+ */
+html {
+	//@include establish-baseline;
+}
+
+body {
+	@include container( );
+	overflow: auto;
+
+	&.debug {
+		//@include show-grid( show-columns );
+	}
+}
+
+
+.site-wrapper {
+	@include breakpoint( $bp-mobile2desktop ) { 
+		max-width: $page-width-desktop1;
+		margin: 0 auto;
+	}
+}
+
+#site-header-wrapper {}
+#site-content-wrapper {
+	@include clearfix;
+}
+#site-footer-wrapper {}
+
+.debug section {
+	//@include show-grid( show-baseline );
+}
+
+
+/**
+ * 5 THE GRID LAYOUT
+ *
+ */
+main {
+
+	min-height: 18rem;
+}
+.sidebar {
+}
+.site-header {
+}
+.site-footer {
+}
 
 

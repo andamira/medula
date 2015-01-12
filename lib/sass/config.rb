@@ -9,10 +9,13 @@
 #
 # 0. Dependencies
 #
+# See style.scss "2 Dependencies"
+#
 
 require "compass/import-once/activate"
 require "susy"
 require "breakpoint"
+require "breakpoint-slicer"
 require "sassy-maps"
 require "SassyLists"
 
