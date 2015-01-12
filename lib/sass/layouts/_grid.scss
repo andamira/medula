@@ -38,31 +38,34 @@ $column-width   : 4;
 $gutter-width   : 1rem;
 $grid-padding   : $gutter-width;
 
-$susy: (
-    flow: ltr,
-    math: fluid,
-    output: float,
-    gutter-position: after,
-    container: auto,
-    container-position: left,
-    columns: $total-columns,        // default: 4
-    gutters: .25,                   // default .25
-    column-width: $column-width,    // default: false
-    global-box-sizing: border-box,  // default: content-box
-    last-flow: to, 
-    debug: (
-        image: hide,
-        color: $osea-orange-light,
-        output: background,
-        toggle: top right,
-    ),  
-    use-custom: (
-        background-image: true,
-        background-options: false,
-        box-sizing: true,
-        clearfix: true,
-        rem: true,
-    )   
+$susy: (                            // *default | option2
+
+	flow: ltr,                      // *ltr | rtl
+	output: float,                  // *float | isolate
+	math: fluid,                    // *fluid | static (requires column-width)
+	gutter-position: after,         // before | *after | split | inside | inside-static (requires column-width)
+	container: auto,                // length or % | *auto
+	container-position: left,       // *left | center | right | <length> [*2] (grid padding)
+	columns: $total-columns,        // *4
+	gutters: .25,                   // *.25
+	column-width: $column-width,    // *false | value
+	global-box-sizing: border-box,  // *content-box | border-box (affects inside/inside-static)
+	last-flow: to, 
+
+	debug: (
+		image: hide,
+		color: $osea-orange-light,
+		output: background,         // *background | overlay
+		toggle: top right,
+	),  
+
+	use-custom: (
+		background-image: true,
+		background-options: false,
+		box-sizing: true,
+		clearfix: true,
+		rem: true,
+	)   
 );
 
 
