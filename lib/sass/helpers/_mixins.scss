@@ -78,6 +78,10 @@
  * hide-text($direction)                                    Hides text in an element so you can see the background.
  * squish-text                                              Hides text in an element by squishing the text into oblivion.
  *
+ *** Units
+ * -------
+ * rem($property, $values, $use-px-fallback: $rem-with-px-fallback)  Output a given style rule containing rem values along with an (optional)
+ *                                                                   fallback rule for older browsers (with rem values converted to px).
  */
 
 /**
