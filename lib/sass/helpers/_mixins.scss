@@ -7,11 +7,13 @@
  *			0.2 Compass Typography
  *			0.3 Compass Utility
  *		1 CSS-Tricks Mixins
- *			1.1 Covering Mixin
- *			1.2 Centering Mixin
- *		2 Rem Mixin with px fallback
- *		3 CSS3 gradients
- *		4 Input Placeholder
+ *			1.1 Covering
+ *			1.2 Centering
+ *			1.3 Striped Gradient
+ *		2 More Useful Mixins
+ *			2.1 CSS3 gradients
+ *			2.2 Input Placeholder
+ *		3 Custom Mixins
  *
  *
  * A WORD OF WARNING: It's very easy to overdo it here.
@@ -30,6 +32,8 @@
 
 /**
  * 0.1 COMPASS CSS3 MIXINS
+ *
+ *
  */
 
 /**
@@ -108,7 +112,7 @@
 }
 
 /**
- * 5.1 CENTERING MIXIN
+ * 1.2 CENTERING MIXIN
  *
  * USAGE:
  *		.parent {
@@ -127,54 +131,46 @@
 	transform: translate(-50%, -50%);
 }
 
-
 /**
- * 2 REM MIXIN WITH PX FALLBACK
+ * 1.3 STRIPED GRADIENT MIXIN
  *
- * @link http://hugogiraudel.com/2013/03/18/ultimate-rem-mixin/
+ * USAGE:
+ * 		body {
+ *			@include stripes(to right, #8e44ad #2c3e50 #2980b9 #16a085 #27ae60);
+ *		}
+ *
+ * @link http://css-tricks.com/snippets/sass/striped-gradient-mixin/
  */
-@mixin rem2($property, $values) {
-	$px : ();
-	$rem: ();
-
-	$base-font-val: strip-unit( $base-font-size );
-
-	@each $value in $values {
-
-		$unit: unit( $value );
-		$val: strip-unit( $value );
-
-		@if $value == 0 or type-of($value) != "number" or $val != "rem" or $val != "px" {
-			$px : append( $px, $value );
-			$rem: append( $rem, $value );
-		}
-		@else { 
-			@if $unit == "px" {
-				$px : append( $px,  $value );
-				$rem: append( $rem, ( $val / $base-font-val + rem ) );
+@mixin stripes($direction, $colors) {
+	$length: length($colors);
+	
+	@if $length > 1 {
+		$stripes: ();
+		
+		@for $i from 1 through $length {
+			$stripe: (100% / $length) * ($i - 1);
+			
+			@if $i > 1 {
+				$stripes: append($stripes, nth($colors, $i - 1) $stripe, comma);
 			}
-
-			@if $unit == "rem" {
-				$px : append( $px,  ( $val * $base-font-val + px ) );
-				$rem: append( $rem, $value );
-			}
+			
+			$stripes: append($stripes, nth($colors, $i) $stripe, comma);
 		}
-	}
-
-	@if $px == $rem {
-		#{$property}: $rem;
-	} @else {
-		// uses normalize class
-		html.no-cssremunit & {
-			#{$property}: $px;
-		}
-		#{$property}: $rem;
+		
+		background-image: linear-gradient($direction, $stripes);
+	} @else if $length == 1 {
+		background-color: $colors;
 	}
 }
 
 
 /**
- * 3 CSS3 GRADIENTS
+ * 2 OTHER USEFUL MIXINS
+ *
+ */
+
+/**
+ * 2.1 CSS3 GRADIENTS
  *
  * Be careful with these since they can
  * really slow down your CSS. Don't overdo it.
@@ -190,9 +186,8 @@
 	background-image: linear-gradient(to bottom, $from, $to);
 }
 
-
 /**
- * 4 INPUT PLACEHOLDER
+ * 2.2 INPUT PLACEHOLDER
  *
  * @link http://css-tricks.com/snippets/css/style-placeholder-text/
  */

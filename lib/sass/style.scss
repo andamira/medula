@@ -65,14 +65,36 @@
  *                                       to the nearest half line height to avoid large spacing between lines.
  * $min-line-padding: 2px                Ensure there is at least this many pixels of vertical padding above and below the text.
  *
+ *
+ * **********
+ * BREAKPOINT
+ * **********
+ * 
+ * @link https://github.com/at-import/breakpoint/wiki/Basic-Media-Queries
+ *
+ * $breakpoint-default-media             
+ * $breakpoint-default-feature           
+ * $breakpoint-default-pair              
+ * $breakpoint-to-ems                    Rewrites non-em based media queries into much more accesible em based media queries.
+ *
+ * @link https://github.com/at-import/breakpoint/wiki/Advanced-Media-Queries
+ *
+ * $breakpoint-force-media-all
+ * $breakpoint-resolutions
+ *
+ * @link https://github.com/at-import/breakpoint/wiki/No-Query-Fallbacks
+ *
+ * $breakpoint-no-queries: false
+ * $breakpoint-no-query-fallbacks
  */
 
-// Vertical Rhythm
+// Compass Vertical Rhythm
 $base-font-size: 16px;
 $base-line-height: 24px;
 $rhythm-unit: 'rem';
 $rem-with-px-fallback: true;
 
+// Breakpoint
 $breakpoint-to-ems: true;
 
 
