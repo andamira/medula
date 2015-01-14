@@ -1,0 +1,31 @@
+/**
+ * Vendor: Cookie Notice
+ * Type: WordPress Plugin
+ * ************************************************************
+ *
+ *     1 General Styling
+ *
+ * @link https://wordpress.org/plugins/cookie-notice/
+ */
+
+
+/**
+ * 1 GENERAL STYLING
+ *
+ */
+
+#cookie-notice {
+
+    .button.wp-default {
+
+        &:hover, &:focus {
+        }
+    }    
+
+    #cn-accept-cookie {
+
+        &:hover, &:focus {
+        }
+    }    
+}
+

@@ -1,0 +1,101 @@
+/*
+ * Stylesheet: vendor 
+ * ************************************************************
+ *
+ * vendor specific css, like for 3rd party WordPress or jQuery plugins.
+ * Here you can find some examples for a small selection of common plugins.
+ *
+ * They are grouped by category. Filenames that includes multiple plugins
+ * are prefixed with a double underdash (__).
+ *
+ * Uncomment the ones you want. Modify them according to your needs.
+ * You can also use them as a template, to make new ones.
+ *
+ *
+ * 		1 WordPress Plugins
+ *
+ * 		    1.1 Search:
+ * 		            Search Everything
+ * 		            Relevanssi
+ *
+ *          1.2 Forms:
+ *                  Contact Form 7
+ *
+ *          1.3 Cookies:
+ *          		Cookie Notice
+ *
+ *          1.4 Links
+ *          		External Links
+ *
+ *          1.5 Popups
+ *          		Popup Maker
+ *
+ *          1.6 Sliders
+ *                  ...
+ *                  ...
+ *
+ *          1.7 Archive List
+ *                  jQuery Archive List Widget
+ *
+ * 		2 jQuery Plugins
+ * 
+ */
+
+
+/**
+ * 1 WORDPRESS PLUGINS GROUPED BY NEEDS
+ *
+ */
+
+/**
+ * 1.1 SEARCH
+ *
+ * @link https://wordpress.org/plugins/search-everything/ Search Everything
+ * @link https://wordpress.org/plugins/relevanssi/ Relevanssi
+ */
+// @import "vendor/wordpress/__search";
+
+/**
+ * 1.2 FORMS
+ *
+ * @link https://wordpress.org/plugins/contact-form-7/ Contact Form 7 
+ */
+// @import "vendor/wordpress/contact-form-7";
+
+/**
+ * 1.3 COOKIES
+ * @link https://wordpress.org/plugins/cookie-notice/ Cookie notice
+ */
+// @import "vendor/wordpress/cookie-notice";
+
+/**
+ * 1.4 LINKS
+ *
+ * @link https://wordpress.org/plugins/sem-external-links/ External Links
+ */
+// @import "vendor/wordpress/external-links";
+
+/**
+ * 1.5 POPUPS
+ *
+ * @link https://wordpress.org/plugins/popup-maker/ Popup Maker
+ */
+// @import "vendor/wordpress/popup-maker";
+
+/**
+ * 1.6 SLIDERS
+ */
+
+/**
+ * 1.7 ARCHIVE LIST
+ *
+ * @link https://wordpress.org/plugins/jquery-archive-list-widget/ jQuery Archive List Widget
+ */
+// @import "vendor/wordpress/archive-list-widget"
+
+
+/**
+ * 2 JQUERY PLUGINS
+ */
+
+
