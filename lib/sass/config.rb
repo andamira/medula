@@ -62,7 +62,7 @@ if environment == :development
 	# For Development
 	output_style = :expanded
 	line_comments = true
-	sourcemap = true
+	#sourcemap = true
 
 else
 
