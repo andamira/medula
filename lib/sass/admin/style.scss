@@ -8,17 +8,57 @@
  * functions file) on the admin pages. This way you can style
  * elements of the the backend, like the dashboard, post pages,
  * etc. It won't affect any pages on the front-end.
+ *
+ *     0 Dependencies
+ *
+ *     1 Helpers
+ *
+ *     2 Your Custom Styling
  * 
  * @link http://codex.wordpress.org/Creating_Admin_Themes
-
  * @link https://github.com/bueltge/WordPress-Admin-Style
  * @link https://dotorgstyleguide.wordpress.com/
  * @link http://code.tutsplus.com/tutorials/integrating-with-wordpress-ui-the-basics--wp-26713
  */
 
+
+/**
+ * 0 DEPENDENCIES
+ */
+
 @import "compass";
-@import "susy";
 @import "breakpoint";
+@import "breakpoint-slicer"
 @import "sassy-maps";
 @import "SassyLists";
+
+
+/**
+ * 1 ../HELPERS
+ */
+
+// Sass variables
+@import "../helpers/variables";
+
+// Sass functions
+@import "../helpers/functions";
+
+// import mixins
+@import "../helpers/mixins";
+
+// Material Colors Palette
+@import "../helpers/colors-material";
+
+
+/**
+ * 2 YOUR CUSTOM STYLING
+ */
+
+
+
+
+
+
+
+
 
