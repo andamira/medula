@@ -209,13 +209,13 @@ $breakpoint-to-ems: true;
 
 
 /**
- * 7 /VENDORS
+ * 7 /VENDOR
  *
- * Vendors specific css, like for
+ * Vendor specific css, like for
  * 3rd party WordPress or jQuery plugins.
  */
 
-@import "vendors";
+@import "vendor";
 
 
 /**
