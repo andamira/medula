@@ -12,3 +12,5 @@ lib/js/includes
 
 doc/
 tmp/
+
+node_modules/
