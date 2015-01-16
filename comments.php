@@ -30,21 +30,21 @@ if ( post_password_required() ) {
 			}
 
 			wp_list_comments( array(
-				'walker'			=> null,
-				'max_depth'			=> '',
-				'style'				=> 'div',
-				'callback'			=> $cb,
-				'end-callback'		=> $cb_end,
+				'walker'            => null,
+				'max_depth'         => '',
+				'style'             => 'div',
+				'callback'          => $cb,
+				'end-callback'      => $cb_end,
 				'type'              => 'comment',
 				'reply_text'        => __( 'Reply', 'osea-theme' ),
 				'page'              => '',
 				'per_page'          => '',
-				'avatar_size'		=> 40,
+				'avatar_size'       => 40,
 				'reverse_top_level' => null,
 				'reverse_children'  => '',
-				'format'			=> 'html5',
-				'short_ping'		=> true,
-				'echo'				=> true
+				'format'            => 'html5',
+				'short_ping'        => true,
+				'echo'              => true
 			) );
 		?>
 		</section>

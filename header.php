@@ -14,7 +14,7 @@
 
 <?php
 /**
- * SUPPORT IE 8 - Polyfills 
+ * SUPPORT IE 8 - Polyfills
  *
  * @link http://stackoverflow.com/a/16732064 The source for this solution
  * @link https://core.trac.wordpress.org/ticket/16024 Why this can't be enqueued properly

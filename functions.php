@@ -2,35 +2,35 @@
 /**
  * This is the functions.php file
  *
- * INDEX:								Disabled by def.
- * 		0 Readme First
- * 		1 Global Options
- * 			1.1 Debug							(#)
- * 			1.2 IE8 Support						( )
- * 			1.3 Optimization					(#)
- *		2 Theme Functionlity
- *			2.1  Ósea library
- *			2.2  Admin Área						( )
- *			2.3  Icons & Favicons
- *			2.4  Fonts
- *			2.5  Menus
- *			2.6  Sidebars
- *			2.7  Thumbnails
- *			2.8  Titles
- *			2.9  Entry Meta
- *			2.10 Comments
- *			2.11 Page Links
- *			2.12 No Post Found
- *			2.13 Admin Bar
- *		3 After Setup Theme Actions
- *			4.1 Language Support
- *			4.2 Cleanup
- *			4.3 Load Base Scripts & Styles
- *			4.4 Custom Theme Features
- *			4.5 Register Sidebars
- *		4 External Libraries
- *		5 Médula: Plugin Functionality			(#)
- * 		6 Custom Functions, Actions & Filters
+ * INDEX:                                Disabled by def.
+ *         0 Readme First
+ *         1 Global Options
+ *             1.1 Debug                            (#)
+ *             1.2 IE8 Support                      ( )
+ *             1.3 Optimization                     (#)
+ *        2 Theme Functionlity
+ *            2.1  Ósea library
+ *            2.2  Admin Área                       ( )
+ *            2.3  Icons & Favicons
+ *            2.4  Fonts
+ *            2.5  Menus
+ *            2.6  Sidebars
+ *            2.7  Thumbnails
+ *            2.8  Titles
+ *            2.9  Entry Meta
+ *            2.10 Comments
+ *            2.11 Page Links
+ *            2.12 No Post Found
+ *            2.13 Admin Bar
+ *        3 After Setup Theme Actions
+ *            4.1 Language Support
+ *            4.2 Cleanup
+ *            4.3 Load Base Scripts & Styles
+ *            4.4 Custom Theme Features
+ *            4.5 Register Sidebars
+ *        4 External Libraries
+ *        5 Médula: Plugin Functionality            (#)
+ *         6 Custom Functions, Actions & Filters
  *
  * Author: andamira
  * URL: htp://andamira.net/osea/
@@ -64,7 +64,7 @@
  * Set to true in order to display debug information.
  * The functions are defined in lib/osea.php
  */
-#define( 'OSEA_DEBUG', true );				// (#) disabled by default
+#define( 'OSEA_DEBUG', true );           // (#) disabled by default
 
 /**
  * 1.2 IE 8 SUPPORT
@@ -73,7 +73,7 @@
  * conditionally loading the polyfill libraries
  * nwmatcher, respond & selectivizr, in header.php
  */
-define( 'OSEA_IE8_SUPPORT', true );			// ( ) enabled by default
+define( 'OSEA_IE8_SUPPORT', true );      // ( ) enabled by default
 
 /**
  * 1.3 OPTIMIZATION
@@ -83,13 +83,13 @@ define( 'OSEA_IE8_SUPPORT', true );			// ( ) enabled by default
  */
 
 // Remove the whitespace from HTML between wp_head and wp_footer.
-#define( 'OSEA_OPTIMIZE_HTML', true );		// (#) disabled by default
+#define( 'OSEA_OPTIMIZE_HTML', true );   // (#) disabled by default
 
 // Concatenate all js libs included in /lib/js/scripts.js
-#define( 'OSEA_CONCATENATE_JS', true );		// (#) disabled by default
+#define( 'OSEA_CONCATENATE_JS', true );  // (#) disabled by default
 
 // Minify the js libs, concatenated or not
-#define( 'OSEA_MINIFY_JS', true );			// (#) disabled by default
+#define( 'OSEA_MINIFY_JS', true );       // (#) disabled by default
 
 
 /**
@@ -108,7 +108,7 @@ define( 'OSEA_IE8_SUPPORT', true );			// ( ) enabled by default
 require_once( 'lib/osea.php' );
 
 // Admin Area Customization
-require_once( 'lib/admin.php' );			// ( ) enabled by default
+require_once( 'lib/admin.php' );         // ( ) enabled by default
 
 require_once( 'lib/icons.php' );
 require_once( 'lib/fonts.php' );
@@ -117,8 +117,8 @@ require_once( 'lib/theme-customize.php' );
 require_once( 'lib/sidebars.php' );
 require_once( 'lib/thumbnails.php' );
 require_once( 'lib/titles.php' );
-require_once( 'lib/entry-meta.php' ); 
-require_once( 'lib/comments.php' ); 
+require_once( 'lib/entry-meta.php' );
+require_once( 'lib/comments.php' );
 require_once( 'lib/page-links.php' );
 require_once( 'lib/no-post-found.php' );
 require_once( 'lib/admin-bar.php' );
@@ -127,7 +127,7 @@ require_once( 'lib/admin-bar.php' );
 /**
  * 3 AFTER SETUP THEME
  * ************************************************************
- * 
+ *
  * Functions defined in lib/osea.php
  */
 function osea_launch() {
@@ -154,7 +154,7 @@ function osea_launch() {
 	// cleaning up excerpt
 	add_filter( 'excerpt_more', 'osea_excerpt_more' );
 	// filters html output
-	if ( defined( 'OSEA_OPTIMIZE_HTML' ) && OSEA_OPTIMIZE_HTML ) { 
+	if ( defined( 'OSEA_OPTIMIZE_HTML' ) && OSEA_OPTIMIZE_HTML ) {
 		add_action('wp_head', 'osea_optimize_html_buffer_start');
 		add_action('wp_footer', 'osea_optimize_html_buffer_end');
 	}
@@ -192,7 +192,7 @@ include_once( 'lib/vendor.php' );
 /**
  * 5 PLUGIN FUNCTIONALITY (MÉDULA)
  * ************************************************************
- * 
+ *
  * @link https://github.com/andamira/osea/wiki/Médula
  *
  * Médula is a starter plugin embedded in Ósea
@@ -214,7 +214,7 @@ include_once( 'lib/vendor.php' );
 /**
  * 6 CUSTOM FUNCTIONS, ACTIONS & FILTERS
  * ************************************************************
- * 
+ *
  * Here you could put your custom functions, but
  * first better take a look at the included files
  * above, specially under THEME FUNCTIONALITY because probably there are more appropriate
@@ -222,8 +222,7 @@ include_once( 'lib/vendor.php' );
  *
  * Take a look at the embedded files above,
  * specially in the THEME FUNCTIONALITY section
- * 
+ *
  */
-
 
 

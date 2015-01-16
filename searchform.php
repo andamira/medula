@@ -6,7 +6,7 @@ osea_debug_showfile( __FILE__ );
 <!-- Search Form Type 1: Default -->
 
 <li id="search">
-    <label for="s"><?php _e('Search:', 'osea-theme')?></label>   
+    <label for="s"><?php _e('Search:', 'osea-theme')?></label>
     <form id="searchform" method="get" action="/index.php">
         <div>
             <input type="text" name="s" id="s" size="15" /><br />
