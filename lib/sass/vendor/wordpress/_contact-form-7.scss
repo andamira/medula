@@ -9,6 +9,7 @@
 
 .wpcf7 {
 
+	// Next to the Submit Button
 	img.ajax-loader {
 	}
 }
@@ -28,10 +29,15 @@
 		}
 
 			// Control types
+			// -------------
 
 			.wpcf7-form-control {
 			}
-			
+
+				// Submit Button
+				.wpcf7-submit {
+				}
+		
 				.wpcf7-text {
 				}
 
@@ -42,21 +48,57 @@
 				.wpcf7-email {
 				}
 
-				// Submit Button
-				.wpcf7-submit {
+				.wpcf7-url {
+				}
+
+				.wpcf7-number {
+				}
+
+				.wpcf7-range {
+				}
+
+				.wpcf7-select {
+				}
+
+				.wpcf7-checkbox {
+				}
+
+				.wpcf7-radio {
+				}
+
+				.wpcf7-acceptance {
+				}
+
+				.wpcf7-quiz {
+				}
+
+				.wpcf7-file {
+				}
+
+				.wpcf7-date {
 				}
 
 
-			// Control Validation
+			// Control Validation Types
+			// ------------------------
 			.wpcf7-validates-as-required {
 			}
-
-				.wpcf7-validates-as-email {
-				}
 
 				.wpcf7-not-valid {
 				}
 
+				.wpcf7-validates-as-email {
+				}
+
+				.wpcf7-validates-as-tel {
+				}
+				
+				.wpcf7-validates-as-url {
+				}
+
+				.wpcf7-validates-as-date {
+				}
+				
 
 			// Validation Tip
 			span.wpcf7-not-valid-tip {
