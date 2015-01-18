@@ -7,120 +7,39 @@
  * to put them in the functions.php file, or in
  * any of the suitable files included from there.
  *
- *		1 Cleanup (remove rsd, uri links, junk css, etc)
- *		2 Enqueueing scripts & styles
- *		3 Theme support functions
- *		4 Related post function
- *		5 Page-navi function
- *		7 Debug functions
- */
-
-
-/**
- * 1 CLEANUP
- * ************************************************************
- */
-
-function osea_head_cleanup() {
-	// category feeds
-	remove_action( 'wp_head', 'feed_links_extra', 3 );
-	// post and comment feeds
-	remove_action( 'wp_head', 'feed_links', 2 );
-	// EditURI link
-	remove_action( 'wp_head', 'rsd_link' );
-	// windows live writer
-	remove_action( 'wp_head', 'wlwmanifest_link' );
-	// previous link
-	remove_action( 'wp_head', 'parent_post_rel_link', 10, 0 );
-	// start link
-	remove_action( 'wp_head', 'start_post_rel_link', 10, 0 );
-	// links for adjacent posts
-	remove_action( 'wp_head', 'adjacent_posts_rel_link_wp_head', 10, 0 );
-	// WP version
-	remove_action( 'wp_head', 'wp_generator' );
-	// remove WP version from css
-	add_filter( 'style_loader_src', 'osea_remove_wp_ver_css_js', 9999 );
-	// remove Wp version from scripts
-	add_filter( 'script_loader_src', 'osea_remove_wp_ver_css_js', 9999 );
-
-}
-
-// remove WP version from RSS
-function osea_rss_version() { return ''; }
-
-// remove WP version from scripts
-function osea_remove_wp_ver_css_js( $src ) {
-    if ( strpos( $src, 'ver=' ) )
-        $src = remove_query_arg( 'ver', $src );
-    return $src;
-}
-
-// remove injected CSS for recent comments widget
-function osea_remove_wp_widget_recent_comments_style() {
-   if ( has_filter( 'wp_head', 'wp_widget_recent_comments_style' ) ) {
-      remove_filter( 'wp_head', 'wp_widget_recent_comments_style' );
-   }
-}
-
-// remove injected CSS from recent comments widget
-function osea_remove_recent_comments_style() {
-  global $wp_widget_factory;
-  if (isset($wp_widget_factory->widgets['WP_Widget_Recent_Comments'])) {
-    remove_action( 'wp_head', array($wp_widget_factory->widgets['WP_Widget_Recent_Comments'], 'recent_comments_style') );
-  }
-}
-
-// remove injected CSS from gallery
-function osea_gallery_style($css) {
-  return preg_replace( "!<style type='text/css'>(.*?)</style>!s", '', $css );
-}
-
-// remove the p from around imgs (http://css-tricks.com/snippets/wordpress/remove-paragraph-tags-from-around-images/)
-function osea_filter_ptags_on_images($content){
-   return preg_replace('/<p>\s*(<a .*>)?\s*(<img .* \/>)\s*(<\/a>)?\s*<\/p>/iU', '\1\2\3', $content);
-}
-
-// remove the annoying […] and change it to a Read More link
-function osea_excerpt_more($more) {
-	global $post;
-	return '...  <a class="excerpt-read-more" href="'. get_permalink($post->ID) .
-		'" title="'.__( 'Read', 'osea-theme' ) . get_the_title($post->ID).'">'.
-		__( 'Read more &raquo;', 'osea-theme' ) .'</a>';
-}
-
-/**
- * filter html output
+ *        1 Enqueueing Scripts & Styles
  *
- * @link http://stackoverflow.com/a/17472755
- * @link https://core.trac.wordpress.org/changeset/28708
+ *        2 Theme Support
+ *
+ *            2.1 Custom Background
+ *            2.2 Title Tag
+ *            2.3 Feed Links              (#)
+ *            2.4 HTML5
+ *
+ *            2.5 Maximum Content Witdh
+ *
+ *        3 Related Post Function
+ *
+ *        4 Page-Navi Function
+ *
+ *        5 Cleanup (Remove RSD, URI Links, Junk CSS, etc.)
+ *
+ *            5.1 Head
+ *            5.1 WP Version
+ *            5.3 Injected CSS
+ *            5.4 p tags around img
+ *            5.5 Read More Link
+ *
+ *        6 Filter HTML Output
+ *
+ *        7 Debug Functions
  */
-function osea_optimize_html_callback( $buffer ) {
-	// option 1 ( http://wordpress.org/support/topic/how-do-i-strip-out-all-whitespace-via-a-filter )
-	//buffer = str_replace( array( "\n", "\t", '  ' ), '', $buffer );
-
-	// option 2 ( http://stackoverflow.com/a/6225706 )
-	$search = array(
-		'/\>[^\S ]+/s',  // strip whitespaces after tags, except space
-		'/[^\S ]+\</s',  // strip whitespaces before tags, except space
-		'/(\s)+/s'       // shorten multiple whitespace sequences
-	);  
-	$replace = array(
-		'>',
-		'<',
-		'\\1'
-	);  
-	$buffer = preg_replace($search, $replace, $buffer);
-
-	return $buffer;
-}
-function osea_optimize_html_buffer_start() { ob_start("osea_optimize_html_callback"); }
-function osea_optimize_html_buffer_end() { ob_end_flush(); }
 
 
 /**
- * 2 SCRIPTS & ENQUEUEING
+ * 1 SCRIPTS & ENQUEUEING
  * ************************************************************
- * loads moderniz, jquery, and reply script
+ * Loads Modernizr, jQuery, and reply script
  */
 
 function osea_scripts_and_styles() {
@@ -150,51 +69,60 @@ function osea_scripts_and_styles() {
 	}
 	
 	// Admin styles are defined in:
-	# lib/admin.php
+	// lib/admin.php
 }
 
 
 /**
- * 3 WP 3+ FUNCTIONS & THEME SUPPORT
+ * 2 THEME SUPPORT
  * ************************************************************
  *
  * @link http://codex.wordpress.org/Function_Reference/add_theme_support
- *
  * @link http://generatewp.com/theme-support/ Theme Support Generator
  */
 
 function osea_theme_support() {
 
 	// thumbnails support defined in:
-	# lib/thumbnails.php
-
-	// post format support defined in:
-	# medula/post-formats.php
-
+	// lib/thumbnails.php
+	
 	// menus support is defined in:
-	# medula/menus.php
+	// lib/menus.php
+	
+	// post format support defined in:
+	// medula/post-formats.php
 
-	// wp custom background (thx to @bransonwerner for update)
+	/**
+	 * 2.1 CUSTOM BACKGROUND
+	 */
 	add_theme_support( 'custom-background',
 	    array(
 	    'default-image' => '',    // background image default
-	    'default-color' => '',    // background color default (dont add the #)
+	    'default-color' => '',    // background color default (don't add the #)
 	    'wp-head-callback' => '_custom_background_cb',
 	    'admin-head-callback' => '',
 	    'admin-preview-callback' => ''
 	    )
 	);
 
-	// rss support
-	add_theme_support('automatic-feed-links');
-
-	/** TITLE TAG SUPPORT
+	/**
+	 * 2.2 TITLE TAG SUPPORT
+	 *
 	 * @link http://codex.wordpress.org/Function_Reference/add_theme_support#Title_Tag
 	 * @since 4.1.0
 	 */
 	add_theme_support( 'title-tag' );
 
-	/** HTML5 SUPPORT
+	/**
+	 * 2.3 FEED LINKS
+	 *
+	 * Enables post and comment RSS feed links to head.
+	 */
+	# add_theme_support('automatic-feed-links');              // (#) disabled by default
+
+	/**
+	 * 2.4 HTML5 SUPPORT
+	 *
 	 * @link http://codex.wordpress.org/Semantic_Markup
 	 */
 	$args = array(
@@ -205,10 +133,11 @@ function osea_theme_support() {
 		'caption'
 	);
 	add_theme_support( 'html5', $args );
-
 }
 
 /**
+ * 2.5 MAXIMUM CONTENT WIDTH
+ *
  * This is the maximum width in pixels for your content area
  *
  * @link http://codex.wordpress.org/Content_Width
@@ -221,7 +150,7 @@ if ( ! isset( $content_width ) ) {
 
 
 /**
- * 4 RELATED POSTS FUNCTION
+ * 3 RELATED POSTS FUNCTION
  * ************************************************************
  * call using osea_related_posts();
  */
@@ -254,7 +183,7 @@ function osea_related_posts() {
 
 
 /**
- * 5 PAGE NAVI
+ * 4 PAGE NAVI
  * ************************************************************
  * Numeric Page Navi (built into the theme by default)
  */
@@ -282,24 +211,154 @@ function osea_page_navi() {
 
 
 /**
- * 6 DEBUG FUNCTIONS
+ * 5 CLEANUP
+ * ************************************************************
+ */
+
+/**
+ * 5.1 HEAD CLEANUP
+ */
+
+function osea_head_cleanup() {
+	// category feeds
+	remove_action( 'wp_head', 'feed_links_extra', 3 );
+
+	// post and comment feeds
+	remove_action( 'wp_head', 'feed_links', 2 );
+
+	// EditURI link
+	remove_action( 'wp_head', 'rsd_link' );
+
+	// windows live writer
+	remove_action( 'wp_head', 'wlwmanifest_link' );
+
+	// previous link
+	remove_action( 'wp_head', 'parent_post_rel_link', 10, 0 );
+
+	// start link
+	remove_action( 'wp_head', 'start_post_rel_link', 10, 0 );
+
+	// links for adjacent posts
+	remove_action( 'wp_head', 'adjacent_posts_rel_link_wp_head', 10, 0 );
+
+	// WP version
+	remove_action( 'wp_head', 'wp_generator' );
+
+	// remove WP version from css
+	add_filter( 'style_loader_src', 'osea_remove_wp_ver_css_js', 9999 );
+
+	// remove Wp version from scripts
+	add_filter( 'script_loader_src', 'osea_remove_wp_ver_css_js', 9999 );
+}
+
+/**
+ * 5.2 WP VERSION CLEANUP FUNCTIONS
+ */
+
+// remove WP version from RSS
+function osea_rss_version() { return ''; }
+
+// remove WP version from scripts
+function osea_remove_wp_ver_css_js( $src ) {
+    if ( strpos( $src, 'ver=' ) )
+        $src = remove_query_arg( 'ver', $src );
+    return $src;
+}
+
+/**
+ * 5.3 INJECTED CSS CLEANUP FUNCTIONS
+ */
+
+// remove injected CSS for recent comments widget
+function osea_remove_wp_widget_recent_comments_style() {
+   if ( has_filter( 'wp_head', 'wp_widget_recent_comments_style' ) ) {
+      remove_filter( 'wp_head', 'wp_widget_recent_comments_style' );
+   }
+}
+
+// remove injected CSS from recent comments widget
+function osea_remove_recent_comments_style() {
+  global $wp_widget_factory;
+  if (isset($wp_widget_factory->widgets['WP_Widget_Recent_Comments'])) {
+    remove_action( 'wp_head', array($wp_widget_factory->widgets['WP_Widget_Recent_Comments'], 'recent_comments_style') );
+  }
+}
+
+// remove injected CSS from gallery
+function osea_gallery_style($css) {
+  return preg_replace( "!<style type='text/css'>(.*?)</style>!s", '', $css );
+}
+
+/**
+ * 5.4 P TAGS AROUND IMG CLEANUP
+ *
+ * @link http://css-tricks.com/snippets/wordpress/remove-paragraph-tags-from-around-images/
+ */
+function osea_filter_ptags_on_images($content){
+   return preg_replace('/<p>\s*(<a .*>)?\s*(<img .* \/>)\s*(<\/a>)?\s*<\/p>/iU', '\1\2\3', $content);
+}
+
+/**
+ * 5.5 READ MORE LINK FORMAT
+ *
+ * remove the annoying […] and change it to a Read More link
+ */
+function osea_excerpt_more($more) {
+	global $post;
+	return '...  <a class="excerpt-read-more" href="'. get_permalink($post->ID) .
+		'" title="'.__( 'Read', 'osea-theme' ) . get_the_title($post->ID).'">'.
+		__( 'Read more &raquo;', 'osea-theme' ) .'</a>';
+}
+
+
+/**
+ * 6 FILTER HTML OUTPUT
+ *
+ * @link http://stackoverflow.com/a/17472755
+ * @link https://core.trac.wordpress.org/changeset/28708
+ */
+function osea_optimize_html_callback( $buffer ) {
+	// option 1 ( http://wordpress.org/support/topic/how-do-i-strip-out-all-whitespace-via-a-filter )
+	//buffer = str_replace( array( "\n", "\t", '  ' ), '', $buffer );
+
+	// option 2 ( http://stackoverflow.com/a/6225706 )
+	$search = array(
+		'/\>[^\S ]+/s',  // strip whitespaces after tags, except space
+		'/[^\S ]+\</s',  // strip whitespaces before tags, except space
+		'/(\s)+/s'       // shorten multiple whitespace sequences
+	);
+	$replace = array(
+		'>',
+		'<',
+		'\\1'
+	);
+	$buffer = preg_replace($search, $replace, $buffer);
+
+	return $buffer;
+}
+function osea_optimize_html_buffer_start() { ob_start("osea_optimize_html_callback"); }
+function osea_optimize_html_buffer_end() { ob_end_flush(); }
+
+
+/**
+ * 7 DEBUG FUNCTIONS
  * ************************************************************
  */
 
 // This debug function displays the template filename
 // It's Called from all the template files, at the header/top
-function osea_debug_showfile( $file ) { 
-	if ( defined( 'OSEA_DEBUG' ) && OSEA_DEBUG ) { 
+function osea_debug_showfile( $file ) {
+	if ( defined( 'OSEA_DEBUG' ) && OSEA_DEBUG ) {
 		echo '<span class="osea-debug-filename alert-info">';
 		echo __('File: ', 'osea-theme');
 		echo basename( $file );
 		echo '</span>';
-	}   
+	}
 }
 
 // This debug function adds a debug class to the body
-function osea_debug_body_class() { 
-	if ( defined( 'OSEA_DEBUG' ) && OSEA_DEBUG ) { 
+function osea_debug_body_class() {
+	if ( defined( 'OSEA_DEBUG' ) && OSEA_DEBUG ) {
 		return 'debug';
 	}
 }
