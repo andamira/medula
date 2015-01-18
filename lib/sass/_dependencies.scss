@@ -1,0 +1,107 @@
+/*
+ * Dependencies
+ * ************************************************************
+ *
+ * Intended for being imported by standalone sass files like:
+ * style.scss & admin.scss
+ * 
+ *           1 LOAD DEPENDENCIES
+ *           2 GLOBAL CONFIGURABLE VARIABLES
+ *               2.1 Compass Vertical Rhythm
+ *               2.2 Breakpoint
+ *
+ */
+
+
+/**
+ * 1 DEPENDENCIES
+ *
+ * Installation:
+ *      gem install sass compass susy breakpoint breakpoint-slicer sassy-maps SassyLists --no-ri --no-rdoc
+ *
+ * @link http://compass-style.org/
+ * @link https://github.com/ericam/susy/
+ * @link https://github.com/at-import/breakpoint Breakpoint
+ * @link https://github.com/lolmaus/breakpoint-slicer
+ * @link https://github.com/at-import/Sassy-Maps Sassy-Maps
+ * @link https://github.com/at-import/SassyLists SassyLists
+ *
+ */
+
+@import "compass";      // imports CSS3, Typography and Utilities modules
+@import "susy";
+@import "breakpoint";
+@import "breakpoint-slicer";
+@import "sassy-maps";
+@import "SassyLists";
+
+
+/**
+ * 2 GLOBAL CONFIGURABLE VARIABLES
+ *
+ * @link http://compass-style.org/help/tutorials/configurable-variables/
+ *
+ * *******
+ * COMPASS
+ * *******
+ *
+ * TYPOGRAPHY
+ * 
+ *** Text                                {@link http://compass-style.org/reference/compass/typography/text}
+ * ------
+ * $use-mozilla-ellipsis-binding: false  To get full firefox support, you must install the ellipsis pattern.
+ * $hide-text-direction: left            Indicates the direction you prefer to move your text when hiding it. 
+ *
+ *** Vertical Rhythm                     {@link http://compass-style.org/reference/compass/typography/vertical_rhythm/}
+ * -----------------
+ * $base-font-size: 16px                 The default font size for all text in pixels
+ * $base-line-height: 24px               The distance between text baselines (vertical rhythm) in pixels.
+ * $rhythm-unit: "em"                    The length unit in which to output rhythm values. Supported values: px, em, rem.
+ * $rem-with-px-fallback: true           Whether to output fallback values in px when using rem as the rhythm-unit.
+ * $default-rhythm-border-width: 1px    
+ * $default-rhythm-border-style: solid   Default values for rhythm borders properties. Supports style alone  or list of style and color.
+ * $round-to-nearest-half-line: false    Allows the adjust-font-size-to mixin and the lines-for-font-size function to round the line height
+ *                                       to the nearest half line height to avoid large spacing between lines.
+ * $min-line-padding: 2px                Ensure there is at least this many pixels of vertical padding above and below the text.
+ *
+ *
+ * **********
+ * BREAKPOINT
+ * **********
+ * 
+ * @link https://github.com/at-import/breakpoint/wiki/Basic-Media-Queries
+ *
+ * $breakpoint-default-media    
+ * $breakpoint-default-feature    
+ * $breakpoint-default-pair    
+ * $breakpoint-to-ems                    Rewrites non-em based media queries into much more accesible em based media queries.
+ *
+ * @link https://github.com/at-import/breakpoint/wiki/Advanced-Media-Queries
+ *
+ * $breakpoint-force-media-all
+ * $breakpoint-resolutions
+ *
+ * @link https://github.com/at-import/breakpoint/wiki/No-Query-Fallbacks
+ *
+ * $breakpoint-no-queries: false
+ * $breakpoint-no-query-fallbacks
+ */
+
+/**
+ * 2.1 Compass Vertical Rhythm
+ */
+$base-font-size: 16px;
+$base-line-height: 24px;
+$rhythm-unit: 'rem';
+$rem-with-px-fallback: true;
+
+/**
+ * 2.2 Breakpoint
+ */
+$breakpoint-to-ems: true;
+
+
+// For Susy & Breakpoint Slicer configuration see base/_grid.scss
+
+
+
