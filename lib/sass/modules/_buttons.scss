@@ -20,8 +20,7 @@
  * so we can use common styles. We then use this
  * to load up the defaults in all our buttons.
  *
- * Here's a quick video to show how it works:
- * @link http://www.youtube.com/watch?v=hwdVpKiJzac
+ * @link http://thesassway.com/intermediate/understanding-placeholder-selectors
  */
 
 %btn {
@@ -30,9 +29,8 @@
   font-family: $sans-serif;
   text-decoration: none;
   color: $white;
-  font-size: 0.9em;
-  font-size: 34px;
-  line-height: 34px;
+  font-size: 16pt;
+  line-height: 24pt;
   font-weight: normal;
   padding: 0 24px;
   @include border-radius( 4px );

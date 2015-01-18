@@ -37,8 +37,10 @@ select,
 textarea,
 .field {
 	height: 2rem;
+	line-height: 1rem;
+
 	width: 100%;
-	//max-width: 400px;
+	max-width: 25rem;
 
 	margin-bottom: 1rem;
 	padding: 0 .5rem;
