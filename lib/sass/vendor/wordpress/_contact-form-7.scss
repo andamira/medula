@@ -7,3 +7,81 @@
  */
 
 
+.wpcf7 {
+
+	img.ajax-loader {
+	}
+}
+
+	.wpcf7-form {
+	
+		p {
+		}
+
+		// Required
+		span.req {
+		}
+
+	}
+
+		.wpcf7-form-control-wrap {
+		}
+
+			// Control types
+
+			.wpcf7-form-control {
+			}
+			
+				.wpcf7-text {
+				}
+
+				.wpcf7-textarea {
+					max-width: 450px;
+				}
+
+				.wpcf7-email {
+				}
+
+				// Submit Button
+				.wpcf7-submit {
+				}
+
+
+			// Control Validation
+			.wpcf7-validates-as-required {
+			}
+
+				.wpcf7-validates-as-email {
+				}
+
+				.wpcf7-not-valid {
+				}
+
+
+			// Validation Tip
+			span.wpcf7-not-valid-tip {
+			}
+
+			.wpcf7-not-valid-tip-no-ajax {
+			}
+
+
+	// Response
+	.wpcf7-response-output {
+	}
+
+		.wpcf7-display-none {
+		}
+
+		.wpcf7-validation-errors {
+		}
+
+		.wpcf7-mail-sent-ok {
+		}
+
+		.wpcf7-mail-sent-ng {
+		}
+
+		.wpcf7-spam-blocked {
+		}
+	
