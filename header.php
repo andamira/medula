@@ -31,6 +31,9 @@ if ( defined( 'OSEA_IE8_SUPPORT' ) && OSEA_IE8_SUPPORT ) { ?>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 
+	<?php // META THEME COLOR {@link https://github.com/whatwg/meta-theme-color} ?>
+	<meta name="theme-color" content="#ffffff">
+
 	<?php // mobile meta ?>
 	<meta name="HandheldFriendly" content="True">
 	<meta name="MobileOptimized" content="320">
@@ -39,7 +42,6 @@ if ( defined( 'OSEA_IE8_SUPPORT' ) && OSEA_IE8_SUPPORT ) { ?>
 	<link rel="pingback" href="<?php bloginfo('pingback_url'); ?>">
 
 	<?php wp_head(); ?>
-
 </head>
 
 <body <?php body_class( osea_debug_body_class() ); ?>>
