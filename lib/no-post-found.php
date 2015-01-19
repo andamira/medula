@@ -3,8 +3,6 @@
  * Not Found template
  *
  *
- *
- *
  */
 
 function osea_no_post_found( $template ) {
@@ -21,4 +19,5 @@ function osea_no_post_found( $template ) {
 		</footer>
 	</article>
 <?php }
+
 

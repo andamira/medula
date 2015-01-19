@@ -2,17 +2,19 @@
 /**
  * WooCommerce Support Template
  *
- *		1 Theme Support
- *		2 Disable default stylesheet
+ *     1 Theme Support
  *
- *		3 Customizations
- *			3.1 Use WC 2.0 variable price format
- *			3.2 Remove tabs from product details page
- *			3.3 Remove WooCommerce Category Product Count
- *			3.4 Remove Title Attribute from WordPress List Categories 
- *			3.5 Remove
- *			3.6 Custom Add To Cart Message
- *			3.7 Hide all or standard shipping options when free shipping is available
+ *     2 Disable default stylesheet
+ *
+ *     3 Customizations
+ *
+ *         3.1 Use WC 2.0 variable price format
+ *         3.2 Remove tabs from product details page
+ *         3.3 Remove WooCommerce Category Product Count
+ *         3.4 Remove Title Attribute from WordPress List Categories 
+ *         3.5 Remove
+ *         3.6 Custom Add To Cart Message
+ *         3.7 Hide all or standard shipping options when free shipping is available
  *
  * NOTE: Uncomment lines starting with # to enable their actions / filters
  */
@@ -35,7 +37,7 @@ add_action('woocommerce_after_main_content', 'osea_theme_wrapper_end', 10);
 function osea_theme_wrapper_start() {
 ?>
 	<div id="site-content-wrapper"> <?php // in header.php ?>
-            <main role="main">
+		<main role="main">
 <?php
 }
 
@@ -43,8 +45,8 @@ function osea_theme_wrapper_start() {
 // closing tag (included) and the page <footer> (not included)
 function osea_theme_wrapper_end() {
 ?>
-            </main>
-            <?php get_sidebar(); ?> 
+		</main>
+		<?php get_sidebar(); ?>
 	</div> <?php // (#site-content-wrapper) in footer.php ?>
 <?php
 }
@@ -101,11 +103,11 @@ function wc_wc20_variation_price_format( $price, $product ) {
  */
 #add_filter( 'woocommerce_product_tabs', 'woo_remove_product_tabs', 98 );
 function woo_remove_product_tabs( $tabs ) {
-    unset( $tabs['description'] );
-    unset( $tabs['reviews'] );
-    unset( $tabs['additional_information'] );
+	unset( $tabs['description'] );
+	unset( $tabs['reviews'] );
+	unset( $tabs['additional_information'] );
 
-    return $tabs;
+	return $tabs;
 }
 
 
@@ -124,8 +126,8 @@ function woo_remove_category_products_count() {
  */
 #add_filter('wp_list_categories', 'wp_list_categories_remove_title_attributes');
 function wp_list_categories_remove_title_attributes($output) {
-    $output = preg_replace('` title="(.+)"`', '', $output);
-    return $output;
+	$output = preg_replace('` title="(.+)"`', '', $output);
+	return $output;
 }
 
 
@@ -138,10 +140,10 @@ function wp_list_categories_remove_title_attributes($output) {
 
 #add_action( 'woocommerce_after_shop_loop_item', 'osea_woocommerce_template_loop_add_to_cart', 10 );
 function osea_woocommerce_template_loop_add_to_cart() {
-    global $product;
-    echo '<form action="' . esc_url( $product->get_permalink( $product->id ) ) . '" method="get">
-            <button type="submit" class="single_add_to_cart_button button alt">' . __('View More', 'osea-theme') . '</button>
-          </form>';
+	global $product;
+	echo '<form action="' . esc_url( $product->get_permalink( $product->id ) ) . '" method="get">
+		<button type="submit" class="single_add_to_cart_button button alt">' . __('View More', 'osea-theme') . '</button>
+	</form>';
 }
 
 
@@ -152,12 +154,12 @@ function osea_woocommerce_template_loop_add_to_cart() {
  */
 #add_filter( 'wc_add_to_cart_message', 'osea_custom_add_to_cart_message' );
 function osea_custom_add_to_cart_message ($message) {
-    $custom_message = sprintf( __('Product has been succesfully added to cart.', 'osea-theme') );
+	$custom_message = sprintf( __('Product has been succesfully added to cart.', 'osea-theme') );
 
-    global $is_cart_added;
-    $is_cart_added = 1;
+	global $is_cart_added;
+	$is_cart_added = 1;
 
-    return $custom_message;
+	return $custom_message;
 }
 
 
@@ -170,11 +172,11 @@ function osea_custom_add_to_cart_message ($message) {
 // Hide STANDARD shipping options:
 #add_filter( 'woocommerce_available_shipping_methods', 'hide_standard_shipping_when_free_is_available' , 10, 1 );
 function hide_standard_shipping_when_free_is_available( $available_methods ) {
-    if( isset( $available_methods['free_shipping'] ) AND isset( $available_methods['flat_rate'] ) ) {
-        // remove standard shipping option
-        unset( $available_methods['flat_rate'] );
-    }
-    return $available_methods;
+	if( isset( $available_methods['free_shipping'] ) AND isset( $available_methods['flat_rate'] ) ) {
+		// remove standard shipping option
+		unset( $available_methods['flat_rate'] );
+	}
+	return $available_methods;
 }
 
 // Hide ALL shipping optins:
@@ -191,7 +193,7 @@ if( isset( $available_methods['free_shipping'] ) ) :
 
 	// Add Free Shipping back into $avaialble_methods
 	$available_methods = array();
-			$available_methods['free_shipping'] = $freeshipping;
+	$available_methods['free_shipping'] = $freeshipping;
 endif;
 
 return $available_methods;

@@ -2,9 +2,11 @@
 /**
  * Menus template
  *
- * 		1 Theme Support
- *		2 Menus
- * 		3 Custom Nav Walker
+ *     1 Theme Support
+ *
+ *     2 Menus
+ *
+ *     3 Custom Nav Walker
  *
  * @link http://codex.wordpress.org/Navigation_Menus
  */
@@ -20,9 +22,9 @@ add_theme_support( 'menus' );
 
 register_nav_menus(
 	array(
-		'site-main-nav' => __( 'The Main Menu', 'osea-theme' ),   // main nav in header
-		'site-mmenu-nav' => __( 'MMenu (Mobile) Menu', 'osea-theme' ),   // mmenu for mobile
-		'site-footer-nav' => __( 'The Footer Menu', 'osea-theme' ) // links in the footer
+		'site-main-nav' => __( 'The Main Menu', 'osea-theme' ),        // main nav in header
+		'site-mmenu-nav' => __( 'MMenu (Mobile) Menu', 'osea-theme' ), // mmenu for mobile
+		'site-footer-nav' => __( 'The Footer Menu', 'osea-theme' )     // links in the footer
 	)
 );
 
@@ -32,15 +34,15 @@ register_nav_menus(
  * ************************************************************
  *
  * To create a new menu:
- * 	- add a new key to the register_nav_menus array, above
- *	- duplicate any of the existing menus below, and modify the values
- *	- call the function from the template you want
+ *  - add a new key to the register_nav_menus array, above
+ *  - duplicate any of the existing menus below, and modify the values
+ *  - call the function from the template you want
  */
 
 // The Main Menu
 function osea_site_main_nav() {
 	wp_nav_menu(array(
-		'theme_location' => 'site-main-nav',			// Must match the registered key above
+		'theme_location' => 'site-main-nav',            // Must match the registered key above
 		'menu' => __( 'Main Site Menu', 'osea-theme' ),
 		'container' => false,
 		'container_class' => '',
@@ -53,7 +55,7 @@ function osea_site_main_nav() {
 		'link_after' => '',
 		'depth' => 0,
 		'fallback_cb' => '',
-		'walker' => new osea_Walker_Nav_Menu()			// Custom menu code, customizable below
+		'walker' => new osea_Walker_Nav_Menu()          // Custom menu code, customizable below
 	));
 }
 
@@ -63,34 +65,34 @@ function osea_site_mmenu_nav() {
 		'theme_location' => 'site-mmenu-nav',           // Must match the registered key above
 		'menu' => __( 'MMenu (Mobile) Menu', 'osea-theme' ),
 		'container' => false,
-		'container_class' => '', 
-		'container_id' => '', 
-		'menu_class' => '', 
-		'menu_id' => '', 
-		'before' => '', 
-		'after' => '', 
-		'link_before' => '', 
-		'link_after' => '', 
+		'container_class' => '',
+		'container_id' => '',
+		'menu_class' => '',
+		'menu_id' => '',
+		'before' => '',
+		'after' => '',
+		'link_before' => '',
+		'link_after' => '',
 		'depth' => 0,
-		'fallback_cb' => '', 
-		'walker' => '', 
-	)); 
+		'fallback_cb' => '',
+		'walker' => '',
+	));
 }
 
 // The Footer Links
 function osea_site_footer_nav() {
 	wp_nav_menu(array(
-		'theme_location' => 'site-footer-nav',			// Must match the registered key above
+		'theme_location' => 'site-footer-nav',          // Must match the registered key above
 		'menu' => __( 'Site Footer Menu', 'osea-theme' ),
 		'container' => false,
-		'container_class' => '', 
-		'container_id' => '', 
-		'menu_class' => '', 
-		'menu_id' => '', 
-		'before' => '', 
-		'after' => '', 
-		'link_before' => '', 
-		'link_after' => '', 
+		'container_class' => '',
+		'container_id' => '',
+		'menu_class' => '',
+		'menu_id' => '',
+		'before' => '',
+		'after' => '',
+		'link_before' => '',
+		'link_after' => '',
 		'depth' => 0,
 		'fallback_cb' => '',
 		'walker' => '',
@@ -98,43 +100,40 @@ function osea_site_footer_nav() {
 }
 
 
-
-
-
 /**
  * 3 CUSTOM NAV WALKER
  * ************************************************************
  *
  * Code sourced from WordPress 3.9.1
- * 
+ *
  * @link http://codex.wordpress.org/Function_Reference/wp_nav_menu#Using_a_Custom_Walker_Function
- * 
+ *
  * @link http://shinraholdings.com/62/custom-nav-menu-walker-function/#example-code
  * @link http://illuminatikarate.com/blog/how-to-output-custom-html-in-wordpress-menus-using-a-custom-nav-walker/
  */
 class osea_Walker_Nav_Menu extends Walker {
-    /** 
+    /**
      * What the class handles.
      *
      * @var string
      */
     var $tree_type = array( 'post_type', 'taxonomy', 'custom' );
 
-    /** 
+    /**
      * Database fields to use.
      *
      * @var array
      */
     var $db_fields = array( 'parent' => 'menu_item_parent', 'id' => 'db_id' );
 
-    /** 
+    /**
      * Starts the list before the elements are added.
      *
      * @param string $output Passed by reference. Used to append additional content.
      * @param int    $depth  Depth of menu item. Used for padding.
      * @param array  $args   An array of arguments. @see wp_nav_menu()
      */
-    function start_lvl( &$output, $depth = 0, $args = array() ) { 
+    function start_lvl( &$output, $depth = 0, $args = array() ) {
         $indent = str_repeat("\t", $depth);
         $output .= "\n$indent<ul class=\"sub-menu\">\n";
     }
@@ -254,7 +253,5 @@ class osea_Walker_Nav_Menu extends Walker {
         $output .= "</li>\n";
     }
 }
-
-
 
 

@@ -2,13 +2,16 @@
 /**
  * External Libraries Template
  *
- *		1 GLOBALS
- *		2 CHOOSE LIBRARIES
- *			2. Typography
- *			2. 
- *			2. Maps
- *			2.
- *		3 SETUP LIBRARIES
+ *     1 GLOBALS
+ *
+ *     2 CHOOSE LIBRARIES
+ *         2. Typography
+ *         2.
+ *         2. Maps
+ *         2.
+ *
+ *     3 SETUP LIBRARIES
+ *
  */
 
 
@@ -31,35 +34,35 @@ function extra_libraries_styles () {
 	 */
 
 	// Latest jquery
-	$load_jquery =		false;
+	$load_jquery =      false;
 
 	// Sliders
-	$load_cycle2 =		false;
+	$load_cycle2 =      false;
 
 	// Bubble Tips
-	$load_qtip2 =		false;
+	$load_qtip2 =       false;
 
 	// Tables
-	$load_dynatable =	false;
+	$load_dynatable =   false;
 
 	// MMenu (Mobile) Menu
-	$load_mmenu =   true;
+	$load_mmenu =       true;
 
 	// Typography TODO
-	$load_lettering =	false;	// letteringjs.com
+	$load_lettering =   false; // letteringjs.com
 
 
 	/**
 	 * 3 SETUP THE LIBRARIES
 	 *
-	 * @link http://stackoverflow.com/a/19263523 
+	 * @link http://stackoverflow.com/a/19263523
 	 */
 
 	/**
 	 * JQUERY
 	 * Google CDN
 	 */
-	if ( $load_jquery ) { 
+	if ( $load_jquery ) {
 		wp_deregister_script( 'jquery' );
 		wp_register_script( 'jquery', "http" . ($_SERVER['SERVER_PORT'] == 443 ? "s" : "") . "://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js", false, null );
 		wp_enqueue_script( 'jquery' );
@@ -67,24 +70,24 @@ function extra_libraries_styles () {
 
 	/**
 	 * JQUERY CYCLE2
-	 * 
+	 *
 	 * SLIDER
-	 * @link http://jquery.malsup.com/cycle2/ 
+	 * @link http://jquery.malsup.com/cycle2/
 	 * @link https://github.com/malsup/cycle2
 	 */
-	if ( $load_cycle2 ) { 
+	if ( $load_cycle2 ) {
 		wp_register_script('cycle2_js', $EXT_DIR .'cycle2/jquery.cycle2'. $MIN .'.js', 'jquery' );
 		wp_enqueue_script( 'cycle2_js');
-	}   
+	}
 
 	/**
-	 * JQUERY QTIP2 
+	 * JQUERY QTIP2
 	 *
 	 * BUBBLE TIPS
-	 * @link http://qtip2.com/ 
+	 * @link http://qtip2.com/
 	 * @link https://github.com/qTip2/qTip2
 	 */
-	if ( $load_qtip2 ) { 
+	if ( $load_qtip2 ) {
 		// there are more features available ( http://qtip2.com/download#builder-features )
 		wp_register_script( 'qtip2_js', '//cdnjs.cloudflare.com/ajax/libs/qtip2/2.2.0/basic/jquery.qtip'. $MIN .'.js', 'jquery' );
 		wp_enqueue_script( 'qtip2_js');
@@ -99,7 +102,7 @@ function extra_libraries_styles () {
 	 * @link https://www.dynatable.com/
 	 * @link https://github.com/alfajango/jquery-dynatable
 	 */
-	if ( $load_dynatable ) { 
+	if ( $load_dynatable ) {
 		// This is a customized version of Dynatable that adds localization support
 		wp_register_script('dynatable_js', $EXT_DIR .'dynatable/jquery.dynatable'. $MIN .'.js', 'jquery' ); // used http://jscompress.com/
 		// localization
@@ -120,13 +123,13 @@ function extra_libraries_styles () {
 	}
 
 
-	/** 
+	/**
 	 * MMENU
 	 *
 	 * OFF-CANVAS MENU
 	 * @link http://mmenu.frebsite.nl/
 	 */
-	if ( $load_mmenu ) { 
+	if ( $load_mmenu ) {
 		wp_register_script('mmenu_js', $EXT_DIR .'mmenu/jquery.mmenu.min.all.js', 'jquery' );
 		wp_enqueue_script( 'mmenu_js');
 		wp_register_style( 'mmenu_css', $EXT_DIR .'mmenu/jquery.mmenu.all.css' );

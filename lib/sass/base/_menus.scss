@@ -2,12 +2,14 @@
  * Base Menus
  * ************************************************************
  *
- * 		1 Smart Header
- * 		2 Navigation Elements
- *			2.1 Generic Nav elements
- *			2.2 Main Desktop Menu
- *			2.3 Mobile Button
- *			2.4 MMenu (Mobile) Menu
+ *     1 Smart Header
+ *     2 Navigation Elements
+ *
+ *         2.1 Generic Nav elements
+ *         2.2 Main Desktop Menu
+ *         2.3 Mobile Button
+ *         2.4 MMenu (Mobile) Menu
+ *
  */
 
 
@@ -17,19 +19,22 @@
  * Here we can control the behaviour of the header / top menu
  * with the help of automatic classes added in javascript:
  *
- *	.smart-header-above		= ID Class of the ELEMENT ABOVE the Smart Header
+ *     .smart-header-above     = ID Class of the ELEMENT ABOVE the Smart Header
  *
- *	.smart-header-no-above	= ID Class added to the BODY when there's
- *							  no element above the Smart Header
+ *     .smart-header-no-above  = ID Class added to the BODY when there's
+ *                               no element above the Smart Header
  *
- *	.smart-header			= ID Class of the Smart Header
- *	[Its Associated classes]	
- *		.scroll-up				= scrolling up
- *		.scroll-down			= scrolling down
+ *     .smart-header           = ID Class of the Smart Header
  *
- *	[Associated classes in all 3 possible elements]
- *		.hidden-bottom		= the bottom border of the Smart Header is hidden
- *		.hidden-top			= the top border of the Smart Header is hidden
+ * [Associated classes]
+ *
+ *     .scroll-up              = scrolling up
+ *     .scroll-down            = scrolling down
+ *
+ * [Associated classes in all 3 possible elements]
+ *
+ *     .hidden-bottom          = the bottom border of the Smart Header is hidden
+ *     .hidden-top             = the top border of the Smart Header is hidden
  *
  *
  * Take a look to the osea_smart_header function in /lib/js/scripts.js
@@ -52,9 +57,9 @@ $smart-header-height: 2rem;
 	
 	// Admin Bar Positioning Fix (see /modules/admin_bar.scss)
 	.admin-bar & {
-		top: 32px; 
+		top: 32px;
 		@include breakpoint( max-width 782px ) {
-			top: 46px; 
+			top: 46px;
 		}
 	}
 
@@ -71,10 +76,10 @@ $smart-header-height: 2rem;
 
 			// Admin Bar Positioning Fix
 			.admin-bar & {
-				top: 32px; 
+				top: 32px;
 				@include breakpoint( max-width 782px ) {
-					top: 46px; 
-				}   
+					top: 46px;
+				}
 			}
 		}
 	}
@@ -140,7 +145,6 @@ $smart-header-height: 2rem;
  * 2 NAVIGATION ELEMENTS
  *
  */
-
 
 /**
  * 2.1 GENERIC NAV ELEMENTS
@@ -271,7 +275,7 @@ nav {
 		a {}
 	}
 
-} 
+}
 
 
 /**
@@ -281,13 +285,13 @@ nav {
 	position: fixed;
 
 	// Hide on desktop size
-	@include breakpoint( $bp-adminbar-mobile ) { 
+	@include breakpoint( $bp-adminbar-mobile ) {
 		display: none;
-	}   
+	}
 
-	i { 
+	i {
 		@include rem( font-size, 2.5rem );
-	}   
+	}
 }
 
 
@@ -296,10 +300,10 @@ nav {
  */
 #mmenu {
 
-	a { 
+	a {
 
-		&:hover, &:focus {}   
-	}   
+		&:hover, &:focus {}
+	}
 }
 
 

@@ -2,35 +2,45 @@
 /**
  * This is the functions.php file
  *
- * INDEX:                                Disabled by def.
- *         0 Readme First
- *         1 Global Options
- *             1.1 Debug                            (#)
- *             1.2 IE8 Support                      ( )
- *             1.3 Optimization                     (#)
- *        2 Theme Functionlity
- *            2.1  Ósea library
- *            2.2  Admin Área                       ( )
- *            2.3  Icons & Favicons
- *            2.4  Fonts
- *            2.5  Menus
- *            2.6  Sidebars
- *            2.7  Thumbnails
- *            2.8  Titles
- *            2.9  Entry Meta
- *            2.10 Comments
- *            2.11 Page Links
- *            2.12 No Post Found
- *            2.13 Admin Bar
- *        3 After Setup Theme Actions
- *            4.1 Language Support
- *            4.2 Cleanup
- *            4.3 Load Base Scripts & Styles
- *            4.4 Custom Theme Features
- *            4.5 Register Sidebars
- *        4 External Libraries
- *        5 Médula: Plugin Functionality            (#)
- *         6 Custom Functions, Actions & Filters
+ *                                        Disabled by default
+ *     0 Readme First
+ *
+ *     1 Global Options
+ *
+ *         1.1 Debug                            (#)
+ *         1.2 IE8 Support                      ( )
+ *         1.3 Optimization                     (#)
+ *
+ *     2 Theme Functionlity
+ *
+ *         2.1  Ósea library
+ *         2.2  Admin Área                      ( )
+ *         2.3  Icons & Favicons
+ *         2.4  Fonts
+ *         2.5  Menus
+ *         2.6  Sidebars
+ *         2.7  Thumbnails
+ *         2.8  Titles
+ *         2.9  Entry Meta
+ *         2.10 Comments
+ *         2.11 Page Links
+ *         2.12 No Post Found
+ *         2.13 Admin Bar
+ *
+ *     3 After Setup Theme Actions
+ *
+ *         3.1 Language Support
+ *         3.2 Cleanup
+ *         3.3 Load Base Scripts & Styles
+ *         3.4 Custom Theme Features
+ *         3.5 Register Sidebars
+ *
+ *     4 External Libraries
+ *
+ *     5 Médula: Plugin Functionality           (#)
+ *
+ *     6 Custom Functions, Actions & Filters
+ *
  *
  * Author: andamira
  * URL: htp://andamira.net/osea/

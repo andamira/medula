@@ -7,32 +7,32 @@
  * to put them in the functions.php file, or in
  * any of the suitable files included from there.
  *
- *        1 Enqueueing Scripts & Styles
+ *     1 Enqueueing Scripts & Styles
  *
- *        2 Theme Support
+ *     2 Theme Support
  *
- *            2.1 Custom Background
- *            2.2 Title Tag
- *            2.3 Feed Links              (#)
- *            2.4 HTML5
+ *         2.1 Custom Background
+ *         2.2 Title Tag
+ *         2.3 Feed Links              (#)
+ *         2.4 HTML5
  *
- *            2.5 Maximum Content Witdh
+ *         2.5 Maximum Content Witdh
  *
- *        3 Related Post Function
+ *      3 Related Post Function
  *
- *        4 Page-Navi Function
+ *      4 Page-Navi Function
  *
- *        5 Cleanup (Remove RSD, URI Links, Junk CSS, etc.)
+ *      5 Cleanup (Remove RSD, URI Links, Junk CSS, etc.)
  *
- *            5.1 Head
- *            5.1 WP Version
- *            5.3 Injected CSS
- *            5.4 p tags around img
- *            5.5 Read More Link
+ *          5.1 Head
+ *          5.1 WP Version
+ *          5.3 Injected CSS
+ *          5.4 p tags around img
+ *          5.5 Read More Link
  *
- *        6 Filter HTML Output
+ *      6 Filter HTML Output
  *
- *        7 Debug Functions
+ *      7 Debug Functions
  */
 
 
@@ -96,13 +96,13 @@ function osea_theme_support() {
 	 * 2.1 CUSTOM BACKGROUND
 	 */
 	add_theme_support( 'custom-background',
-	    array(
-	    'default-image' => '',    // background image default
-	    'default-color' => '',    // background color default (don't add the #)
-	    'wp-head-callback' => '_custom_background_cb',
-	    'admin-head-callback' => '',
-	    'admin-preview-callback' => ''
-	    )
+	array(
+		'default-image' => '',    // background image default
+		'default-color' => '',    // background color default (don't add the #)
+		'wp-head-callback' => '_custom_background_cb',
+		'admin-head-callback' => '',
+		'admin-preview-callback' => ''
+		)
 	);
 
 	/**
@@ -143,10 +143,8 @@ function osea_theme_support() {
  * @link http://codex.wordpress.org/Content_Width
  */
 if ( ! isset( $content_width ) ) {
-	    $content_width = 640;
+	$content_width = 640;
 }
-
-
 
 
 /**
@@ -163,19 +161,19 @@ function osea_related_posts() {
 		foreach( $tags as $tag ) {
 			$tag_arr .= $tag->slug . ',';
 		}
-        $args = array(
-        	'tag' => $tag_arr,
-        	'numberposts' => 5, // you can change this to show more
-        	'post__not_in' => array($post->ID)
-     	);
-        $related_posts = get_posts( $args );
-        if($related_posts) {
-        	foreach ( $related_posts as $post ) : setup_postdata( $post ); ?>
-	           	<li class="related_post"><a class="entry-unrelated" href="<?php the_permalink() ?>" title="<?php the_title_attribute(); ?>"><?php the_title(); ?></a></li>
-	        <?php endforeach; }
-	    else { ?>
-            <?php echo '<li class="no_related_post">' . __( 'No Related Posts Yet!', 'osea-theme' ) . '</li>'; ?>
-		<?php }
+		$args = array(
+			'tag' => $tag_arr,
+			'numberposts' => 5, // you can change this to show more
+			'post__not_in' => array($post->ID)
+		);
+		$related_posts = get_posts( $args );
+		if($related_posts) {
+			foreach ( $related_posts as $post ) : setup_postdata( $post ); ?>
+			<li class="related_post"><a class="entry-unrelated" href="<?php the_permalink() ?>" title="<?php the_title_attribute(); ?>"><?php the_title(); ?></a></li>
+			<?php endforeach; }
+		else { ?>
+			<?php echo '<li class="no_related_post">' . __( 'No Related Posts Yet!', 'osea-theme' ) . '</li>'; ?>
+			<?php }
 	}
 	wp_reset_postdata();
 	echo '</ul>';
@@ -189,24 +187,24 @@ function osea_related_posts() {
  */
 
 function osea_page_navi() {
-  global $wp_query;
-  $bignum = 999999999;
-  if ( $wp_query->max_num_pages <= 1 )
-    return;
+	global $wp_query;
+	$bignum = 999999999;
+	if ( $wp_query->max_num_pages <= 1 )
+	return;
 
-  echo '<nav class="pagination">';
-  echo paginate_links( array(
-    'base'         => str_replace( $bignum, '%#%', esc_url( get_pagenum_link($bignum) ) ),
-    'format'       => '',
-    'current'      => max( 1, get_query_var('paged') ),
-    'total'        => $wp_query->max_num_pages,
-    'prev_text'    => '&larr;',
-    'next_text'    => '&rarr;',
-    'type'         => 'list',
-    'end_size'     => 3,
-    'mid_size'     => 3
-  ) );
-  echo '</nav>';
+	echo '<nav class="pagination">';
+	echo paginate_links( array(
+		'base'      => str_replace( $bignum, '%#%', esc_url( get_pagenum_link($bignum) ) ),
+		'format'    => '',
+		'current'   => max( 1, get_query_var('paged') ),
+		'total'     => $wp_query->max_num_pages,
+		'prev_text' => '&larr;',
+		'next_text' => '&rarr;',
+		'type'      => 'list',
+		'end_size'  => 3,
+		'mid_size'  => 3
+	) );
+	echo '</nav>';
 }
 
 
@@ -260,9 +258,9 @@ function osea_rss_version() { return ''; }
 
 // remove WP version from scripts
 function osea_remove_wp_ver_css_js( $src ) {
-    if ( strpos( $src, 'ver=' ) )
-        $src = remove_query_arg( 'ver', $src );
-    return $src;
+	if ( strpos( $src, 'ver=' ) )
+		$src = remove_query_arg( 'ver', $src );
+	return $src;
 }
 
 /**
@@ -271,17 +269,17 @@ function osea_remove_wp_ver_css_js( $src ) {
 
 // remove injected CSS for recent comments widget
 function osea_remove_wp_widget_recent_comments_style() {
-   if ( has_filter( 'wp_head', 'wp_widget_recent_comments_style' ) ) {
-      remove_filter( 'wp_head', 'wp_widget_recent_comments_style' );
-   }
+	if ( has_filter( 'wp_head', 'wp_widget_recent_comments_style' ) ) {
+		remove_filter( 'wp_head', 'wp_widget_recent_comments_style' );
+	}
 }
 
 // remove injected CSS from recent comments widget
 function osea_remove_recent_comments_style() {
-  global $wp_widget_factory;
-  if (isset($wp_widget_factory->widgets['WP_Widget_Recent_Comments'])) {
-    remove_action( 'wp_head', array($wp_widget_factory->widgets['WP_Widget_Recent_Comments'], 'recent_comments_style') );
-  }
+	global $wp_widget_factory;
+	if (isset($wp_widget_factory->widgets['WP_Widget_Recent_Comments'])) {
+		remove_action( 'wp_head', array($wp_widget_factory->widgets['WP_Widget_Recent_Comments'], 'recent_comments_style') );
+	}
 }
 
 // remove injected CSS from gallery
@@ -362,4 +360,5 @@ function osea_debug_body_class() {
 		return 'debug';
 	}
 }
+
 

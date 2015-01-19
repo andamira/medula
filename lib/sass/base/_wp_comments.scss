@@ -2,8 +2,9 @@
  * WordPress comments classes
  * ************************************************************
  *
- *		1 COMMENTS LIST
- *		2 COMMENTS FORM
+ *     1 COMMENTS LIST
+ *
+ *     2 COMMENTS FORM
  *
  *
  * NOTE: The comments layout has been adpted to HTML5. It doesn't use list
@@ -98,7 +99,7 @@
 			border-left: 5px solid #eee;
 
 			li {
-				&.alt {} 
+				&.alt {}
 				&.odd {}
 				&.even {}
 				&.bypostauthor {}

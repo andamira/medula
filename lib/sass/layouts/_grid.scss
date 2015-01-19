@@ -2,15 +2,15 @@
  * BASE GRID
  * ************************************************************
  *
- *		1 Breakpoints Variables
+ *     1 Breakpoints Variables
  *
- *		2 Page Widths Variables
+ *     2 Page Widths Variables
  *
- *		3 Susy Setup
+ *     3 Susy Setup
  *
- * 		4 The grid container
+ *     4 The grid container
  *
- * 		5 The grid layout
+ *     5 The grid layout
  */
 
 
@@ -50,14 +50,14 @@ $susy: (                            // *default | option2
 	gutters: .25,                   // *.25
 	column-width: $column-width,    // *false | value
 	global-box-sizing: border-box,  // *content-box | border-box (affects inside/inside-static)
-	last-flow: to, 
+	last-flow: to,
 
 	debug: (
 		image: hide,
 		color: $osea-orange-light,
 		output: background,         // *background | overlay
 		toggle: top right,
-	),  
+	),
 
 	use-custom: (
 		background-image: true,
@@ -65,7 +65,7 @@ $susy: (                            // *default | option2
 		box-sizing: true,
 		clearfix: true,
 		rem: true,
-	)   
+	)
 );
 
 
@@ -94,7 +94,7 @@ body {
 
 
 .site-wrapper {
-	@include breakpoint( $bp-mobile2desktop ) { 
+	@include breakpoint( $bp-mobile2desktop ) {
 		max-width: $page-width-desktop1;
 		margin: 0 auto;
 	}

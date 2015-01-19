@@ -2,7 +2,8 @@
 /*
  * Titles template
  *
- *		1 Entry Title
+ *     1 Entry Title
+ *
  */
 
 
@@ -12,9 +13,9 @@
  *
  * Prints entry title
  *
- * @param string $htag		Heading tag: h[1-6]
- * @param bool   $link		Display a link if true
- * @param bool   $headline	Add headline microdata if true
+ * @param string $htag      Heading tag: h[1-6]
+ * @param bool   $link      Display a link if true
+ * @param bool   $headline  Add headline microdata if true
  */
 function osea_entry_title( $htag, $with_link = false, $headline = false ) {
 

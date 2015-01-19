@@ -2,7 +2,7 @@
 /*
  * Fonts template
  *
- *      1 Google fonts
+ *     1 Google fonts
  *
  *
  * To use dowloaded fonts put them in:

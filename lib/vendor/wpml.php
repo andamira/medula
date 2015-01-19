@@ -2,8 +2,10 @@
 /**
  * WPML Support Template
  *
- *      1 Disable WPML CSS & JS
- *      2 Custom Language Switcher
+ *     1 Disable WPML CSS & JS
+ *
+ *     2 Custom Language Switcher
+ *
  */
 
 
@@ -47,7 +49,7 @@ function osea_wpml_switcher() {
 				} else {
 					//echo '<li><a title="'.title_from_url($l['url']).'" href="'.$l['url'].'">';
 					echo '<li><a href="'.$l['url'].'">';
-				}   
+				}
 				echo $l['native_name'];
 				echo '</a></li>';
 
@@ -57,10 +59,7 @@ function osea_wpml_switcher() {
 			}
 		}
 		echo '</ul>';
-	}   
+	}
 }
-
-
-
 
 

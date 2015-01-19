@@ -2,9 +2,11 @@
 /**
  * Icons Template
  *
- *		1 Favicons
- *		2 Admin Area Favicon
- *		3 Font Icons Collection
+ *     1 Favicons
+ *
+ *     2 Admin Area Favicon
+ *
+ *     3 Font Icons Collection
  */
 
 
@@ -70,6 +72,5 @@ function icons_collections() {
 	 */
 	#wp_enqueue_style( 'fontawesome', '//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css', null, '4.2.0' );
 }
-
 
 

@@ -2,9 +2,12 @@
 /**
  * Thumbnails template
  *
- *		1 Theme Support & default size
- *		2 Remove default image sizes
- *		3 Thumbnail Sizes
+ *     1 Theme Support & default size
+ *
+ *     2 Remove default image sizes
+ *
+ *     3 Thumbnail Sizes
+ *
  */
 
 
@@ -43,7 +46,6 @@ function osea_remove_image_size( $sizes ) {
 
 #add_image_size( 'osea-600', 600, 150, true );
 #add_image_size( 'osea-300', 300, 100, true );
-
 
 
 

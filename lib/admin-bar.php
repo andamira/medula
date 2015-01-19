@@ -2,9 +2,12 @@
 /**
  * Admin Bar template
  *
- *		1 Theme Support
- *		2 Callback
- *		3 Selective Disabling
+ *     1 Theme Support
+ *
+ *     2 Callback
+ *
+ *     3 Selective Disabling
+ *
  */
 
 
@@ -38,7 +41,6 @@ function osea_adminbar_cb() {
 </style>
 <?php /**/
 }
-
 
 
 /**

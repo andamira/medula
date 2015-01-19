@@ -1,6 +1,6 @@
 <?php
 /*
- * This is the 
+ * This is the
  *
  *
  *

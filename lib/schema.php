@@ -5,7 +5,7 @@
  * Functions for outputting schema.org html tags
  *
  * TODO: Still not in use
- * 
+ *
  */
 
 
@@ -43,9 +43,5 @@ function html_tag_schema()
 
 	echo 'itemscope="itemscope" itemtype="' . $schema . $type . '"';
 }
-
-
-
-
 
 

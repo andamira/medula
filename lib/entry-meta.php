@@ -2,13 +2,15 @@
 /**
  * Functions outputting ENTRY META fields
  *
- * 		1 DateTime
- * 		2 Author
+ *     1 DateTime
  *
- * 		3 Byline
- * 		4 Terms: taxonomies, Categories, tags
+ *     2 Author
  *
- * 		5 Entry Edit Post
+ *     3 Byline
+ *
+ *     4 Terms: taxonomies, Categories, tags
+ *
+ *     5 Entry Edit Post
  *
  * Feel free to modify them in any way you like. For example:
  * You could add a parameter to the author function to choose
@@ -69,7 +71,6 @@ function osea_entry_meta_byline() {
 }
 
 
-
 /**
  * 4 Prints the terms (taxonomies, categories, tags... )
  * ************************************************************
@@ -126,6 +127,5 @@ function osea_edit_post_link( $echo = true ) {
 function osea_edit_comment_link( $echo = true ) {
 	return osea_edit_link( get_edit_comment_link(), $echo );
 }
-
 
 

@@ -1,9 +1,10 @@
 /**
  * Stylesheet: Admin Bar Styles
  * ************************************************************
- * 
- *		1 Make Space for Admin Bar
- *		2 Admin Bar Styling
+ *
+ *    1 Make Space for Admin Bar
+ *
+ *    2 Admin Bar Styling
  *
  * @see /lib/admin-bar.php
  * @see breakpoints/base/_menus.scss
@@ -30,11 +31,11 @@ body.admin-bar {
 	position: fixed;	
 
 	// fixes adminbar position when MMenu (Mobile) Menu is open
-    .mm-opening &, .mm-opened & { 
+    .mm-opening &, .mm-opened & {
 		top: -32px;
-		@media screen and ( max-width: 782px ) { 
+		@media screen and ( max-width: 782px ) {
 			top: -46px;
-		}   
+		}
 	}
 
 	.quicklinks {}

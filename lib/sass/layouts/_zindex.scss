@@ -8,10 +8,10 @@
  *
  * To use it you just call the z() function (defined in /helpers/_functions.scss)
  * to assign an index to the element, e.g.:
- * 
- *	.input-field {
- *		z-index: z($elements, user-tooltip);
- *	}
+ *
+ *     .input-field {
+ *         z-index: z($elements, user-tooltip);
+ *     }
  *
  * @link http://www.smashingmagazine.com/2014/06/12/sassy-z-index-management-for-complex-layouts/
  */

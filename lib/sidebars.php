@@ -6,19 +6,19 @@
  * and edit the register_sidebar function, modifying
  * the ID, name and description to new values. e.g.:
  *
- * 		'id' => 'sidebar2',
- * 		'name' => __( 'Sidebar 2', 'osea-theme' ),
- * 		'description' => __( 'The secondary sidebar.', 'osea-theme' ),
+ *     'id' => 'sidebar2',
+ *     'name' => __( 'Sidebar 2', 'osea-theme' ),
+ *     'description' => __( 'The secondary sidebar.', 'osea-theme' ),
  *
  * To call the sidebar in your template, you can just copy
  * the sidebar.php file in the root and rename it adding
  * your new sidebar's id to the file name. e.g.:
  *
- * 		sidebar-sidebar2.php
+ *     sidebar-sidebar2.php
  *
  * And call it in the template like this:
  *
- * 		get_sidebar('sidebar2');
+ *     get_sidebar('sidebar2');
  *
  */
 
@@ -33,8 +33,9 @@ function osea_register_sidebars() {
 		'after_widget' => '</section>',
 		'before_title' => '<h4 class="widget-title">',
 		'after_title' => '</h4>',
-	)); 
+	));
 
+	// ...
 
 
 }

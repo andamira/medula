@@ -2,9 +2,10 @@
 /**
  * Comments template
  *
+ *     1 Comments Count Display Function
  *
- * 		1 Comments Count Display Function
- * 		2 Custom Comment Layout
+ *     2 Custom Comment Layout
+ *
  */
 
 
@@ -65,7 +66,7 @@ function osea_comments_layout( $comment, $args, $depth ) {
 			 * comment gravatars on larger screens only. What this means is that on larger posts, mobile sites
 			 * don't have a ton of requests for comment images. This makes load time incredibly fast! If you'd
 			 * like to change it back, just replace it with the regular wordpress gravatar call:
-			 * 
+			 *
 			 * echo get_avatar($comment,$size='32',$default='<path_to_url>' );
 			*/
 			$bgauthemail = get_comment_author_email();
@@ -95,6 +96,5 @@ function osea_comments_layout( $comment, $args, $depth ) {
 function osea_comments_layout_end( $comment, $args, $depth ) {
 	echo '</article>';
 }
-
 
 

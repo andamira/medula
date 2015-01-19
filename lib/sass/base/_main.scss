@@ -2,25 +2,26 @@
  * BASE MAIN
  * ************************************************************
  *
- *		1 General Styles
- *		2 Links & Headings
- *		3 Structure
- *			3.1 Base
- *			3.2 Wrappers
- *			3.3 Site Header
- *			3.4 Site Footer
- *			3.5 Page Header
- *			3.7 Entry Header
- *			3.8 Entry Content
- *			3.9 Entry Footer
- *		4 Special Cases
+ *     1 General Styles
  *
+ *     2 Links & Headings
  *
+ *     3 Structure
+ *
+ *            3.1 Base
+ *            3.2 Wrappers
+ *            3.3 Site Header
+ *            3.4 Site Footer
+ *            3.5 Page Header
+ *            3.7 Entry Header
+ *            3.8 Entry Content
+ *            3.9 Entry Footer
+ *
+ *     4 Special Cases
  *
  *
  * Default Styling Decisions:
- * 		SETS PAGE TO 100% HEIGHT
-
+ *     SETS PAGE TO 100% HEIGHT
  */
 
 
@@ -65,9 +66,9 @@ html {
 }
 
 body {
-    font-family: $sans-serif;
-    line-height: 1.5;
-    color: $text-color;
+	font-family: $sans-serif;
+	line-height: 1.5;
+	color: $text-color;
 	background: #ddd; // temp
 
 	-webkit-font-smoothing: antialiased;
@@ -103,13 +104,13 @@ body {
 	height: 3rem;
 }
 
-    .site-header-logo {}
+	.site-header-logo {}
 
-        .site-name {}
+		.site-name {}
 
-        .site-description {}
+		.site-description {}
 
-    .site-main-nav {}
+	.site-main-nav {}
 
 /**
  * 3.4 SITE FOOTER
@@ -123,34 +124,34 @@ body {
 	height: 5rem;
 }
 
-    .site-footer-nav {}
+	.site-footer-nav {}
 
-    .site-footer-copyright {}
+	.site-footer-copyright {}
 
 /**
  * 3.6 PAGE HEADER
  */
 .page-header {}
 
-    .page-title {}
+	.page-title {}
 
 /**
  * 3.7 ENTRY HEADER
  */
 .entry-header {}
 
-    .entry-title,
+	.entry-title,
 	.single-title {}
 
-    .entry-edit-post {}
+	.entry-edit-post {}
 
-    .entry-meta {}
+	.entry-meta {}
 
-        .entry-byline {}
+		.entry-byline {}
 
-            .entry-date {}
+			.entry-date {}
 
-            .entry-author {}
+			.entry-author {}
 
 /**
  * 3.8 ENTRY CONTENT
@@ -162,9 +163,9 @@ body {
  */
 .entry-footer {}
 
-    .entry-comment-count
+	.entry-comment-count
 
-    .entry-meta {}
+	.entry-meta {}
 
 		.entry-date {}
 
@@ -172,11 +173,11 @@ body {
 			display: inline-block;
 		}
 
-        .entry-categories {}
+		.entry-categories {}
 
-        .entry-tags {}
+		.entry-tags {}
 
-            .entry-tags-title {}
+			.entry-tags-title {}
 
 
 /**

@@ -5,16 +5,20 @@
  * dashboard. It's turned off by default, but you
  * can call it via the functions file.
  *
- *		1 Remove default dashboard wigets
- *		2 Custom dashboard widgets
- *			2.1 Load
- *			2.2 Define
- *		3 Customizing the Login Page
- *		4 Customize Admin
- *			4.1 Custom Admin Stylesheets
- *			4.2 Custom TinyMCE Editor Stylesheet
- *			4.3 TODO: Custom TinyMCE buttons
- *			4.4 Changing text in footer of admin
+ *     1 Remove default dashboard wigets
+ *     2 Custom dashboard widgets
+ *
+ *         2.1 Load
+ *         2.2 Define
+ *
+ *     3 Customizing the Login Page
+ *
+ *     4 Customize Admin
+ *
+ *         4.1 Custom Admin Stylesheets
+ *         4.2 Custom TinyMCE Editor Stylesheet
+ *         4.3 TODO: Custom TinyMCE buttons
+ *         4.4 Changing text in footer of admin
  *
  * @link http://digwp.com/2010/10/customize-wordpress-dashboard/
  */
@@ -28,23 +32,22 @@
  */
 function disable_default_dashboard_widgets() {
 
-	remove_meta_box( 'dashboard_right_now', 'dashboard', 'core' );			// Right Now Widget
-	remove_meta_box( 'dashboard_activity', 'dashboard', 'core' );			// Activity widget
-	remove_meta_box( 'dashboard_recent_comments', 'dashboard', 'core' );	// Comments Widget
-	#remove_meta_box( 'dashboard_incoming_links', 'dashboard', 'core' );	// Incoming Links Widget
-	#remove_meta_box( 'dashboard_plugins', 'dashboard', 'core' );			// Plugins Widget
-	remove_meta_box( 'dashboard_quick_press', 'dashboard', 'core' );		// Quick Press Widget
-	remove_meta_box( 'dashboard_recent_drafts', 'dashboard', 'core' );		// Recent Drafts Widget
-	remove_meta_box( 'dashboard_primary', 'dashboard', 'core' );			// WordPress News
-	remove_meta_box( 'dashboard_secondary', 'dashboard', 'core' );			// 
+	remove_meta_box( 'dashboard_right_now', 'dashboard', 'core' );         // Right Now Widget
+	remove_meta_box( 'dashboard_activity', 'dashboard', 'core' );          // Activity widget
+	remove_meta_box( 'dashboard_recent_comments', 'dashboard', 'core' );   // Comments Widget
+	#remove_meta_box( 'dashboard_incoming_links', 'dashboard', 'core' );   // Incoming Links Widget
+	#remove_meta_box( 'dashboard_plugins', 'dashboard', 'core' );          // Plugins Widget
+	remove_meta_box( 'dashboard_quick_press', 'dashboard', 'core' );       // Quick Press Widget
+	remove_meta_box( 'dashboard_recent_drafts', 'dashboard', 'core' );     // Recent Drafts Widget
+	remove_meta_box( 'dashboard_primary', 'dashboard', 'core' );           // WordPress News
+	remove_meta_box( 'dashboard_secondary', 'dashboard', 'core' );         //
 
 	// Plugins' dashboard boxes
-	remove_meta_box( 'yoast_db_widget', 'dashboard', 'normal' );			// Yoast's SEO
-	remove_meta_box( 'icl_dashboard_widget', 'dashboard', 'normal' );		// WPML
-	remove_meta_box( 'blc_dashboard_widget', 'dashboard', 'normal' );		// Broken Link Checker
+	remove_meta_box( 'yoast_db_widget', 'dashboard', 'normal' );           // Yoast's SEO
+	remove_meta_box( 'icl_dashboard_widget', 'dashboard', 'normal' );      // WPML
+	remove_meta_box( 'blc_dashboard_widget', 'dashboard', 'normal' );      // Broken Link Checker
 }
 add_action( 'admin_menu', 'disable_default_dashboard_widgets' );
-
 
 
 /**
@@ -79,7 +82,6 @@ function osea_example_dashboard_widget() {
 	<p>You can edit this message in /lib/admin.php and add your own widgets, and restore the disabled defaults.</p>
 	<?php
 }
-
 
 
 /**
