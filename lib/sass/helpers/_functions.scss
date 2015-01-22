@@ -295,27 +295,36 @@
  *
  * @link http://davidwalsh.name/rem-px-browser-function-sass
  */
-@function rem2px( $values ) {
+/**
+ * Convert rem to pixels
+ *
+ * @link http://davidwalsh.name/rem-px-browser-function-sass
+ */
+@function rem2px-list( $values ) {
 
 	$list: ();
 
 	@each $value in $values {
-
-		$unit : unit( $value );
-		$val  : strip-unit( $value );
-
-		@if ( $rem-with-px-fallback ) and ( $unit == 'rem' ) {
-			$list: append( $list, ( $val * $base-font-size ) );
-		}
-		@else if( $unit == 'px' ) or ( $unit == 'rem' ){
-			$list: append( $list, $value );
-		}
-		@else {
-			@warn 'There is no unit conversion for #{$unit}';
-		}
+		$list: append( $list, rem2px($value) );
 	}
 
 @return $list();
+}
+
+@function rem2px( $value ) {
+	$unit : unit( $value );
+	$val  : strip-unit( $value );
+
+	@if ( $rem-with-px-fallback ) and ( $unit == 'rem' ) {
+		$val: $val * $base-font-size;
+	}
+	@else if( $unit == 'px' ) or ( $unit == 'rem' ){
+		$val: $value;
+	}
+	@else {
+		@warn 'There is no unit conversion for #{$unit}';
+	}
+	@return $val;
 }
 
 /**
