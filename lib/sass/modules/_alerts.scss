@@ -14,14 +14,14 @@
   @extend %alert;
   border-color: $alert-yellow-dark;
   background: $alert-yellow;
-  background: $alert-yellow-text;
+  color: $alert-yellow-text;
 }
 
 .alert-info {
   @extend %alert;
   border-color: $alert-blue-dark;
   background: $alert-blue;
-  background: $alert-blue-text;
+  color: $alert-blue-text;
 }
 
 .alert-error {
@@ -35,6 +35,6 @@
   @extend %alert;
   border-color: $alert-green-dark;
   background: $alert-green;
-  background: $alert-green-text;
+  color: $alert-green-text;
 }
 

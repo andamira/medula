@@ -116,14 +116,18 @@
 		}
 
 		.wpcf7-validation-errors {
+			@extend .alert-help;
 		}
 
 		.wpcf7-mail-sent-ok {
+			@extend .alert-success;
 		}
 
 		.wpcf7-mail-sent-ng {
+			@extend .alert-success;
 		}
 
 		.wpcf7-spam-blocked {
+			@extend .alert-error;
 		}
 	
