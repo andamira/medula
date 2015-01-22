@@ -5,10 +5,10 @@
  *         0 Dependencies & Global Config
  *
  *         1 Helpers
+ *                Material Colors
  *                Variables
  *                Functions
  *                Mixins
- *                Material Colors
  *
  *         2 Modules
  *                Typography
@@ -50,6 +50,9 @@
  * the whole project.
  */
 
+// Material Colors Palette
+@import "helpers/colors-material";
+
 // Sass variables
 @import "helpers/variables";
 
@@ -58,9 +61,6 @@
 
 // import mixins
 @import "helpers/mixins";
-
-// Material Colors Palette
-@import "helpers/colors-material";
 
 
 /**
