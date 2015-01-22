@@ -50,14 +50,18 @@
  *
  */
 
+// Links
+
 a {
 	color: $link-color;
+	text-decoration: none;
 
 	&:hover, &:focus {
 		color: $link-color-hover;
 	}
-	
-	text-decoration: none;
+
+	&:active {
+	}
 }
 
 // Headings
@@ -458,4 +462,7 @@ body {
  */
 #post-not-found {}
 
+.hidden {
+	display: none;
+}
 
