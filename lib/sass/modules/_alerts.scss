@@ -12,25 +12,29 @@
 
 .alert-help {
   @extend %alert;
-  border-color: darken($alert-yellow, 5%);
+  border-color: $alert-yellow-dark;
   background: $alert-yellow;
+  background: $alert-yellow-text;
 }
 
 .alert-info {
   @extend %alert;
-  border-color: darken($alert-blue, 5%);
+  border-color: $alert-blue-dark;
   background: $alert-blue;
+  background: $alert-blue-text;
 }
 
 .alert-error {
   @extend %alert;
-  border-color: darken($alert-red, 5%);
+  border-color: $alert-red-dark;
   background: $alert-red;
+  color: $alert-red-text;
 }
 
 .alert-success {
   @extend %alert;
-  border-color: darken($alert-green, 5%);
+  border-color: $alert-green-dark;
   background: $alert-green;
+  background: $alert-green-text;
 }
 

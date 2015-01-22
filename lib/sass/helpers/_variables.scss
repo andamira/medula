@@ -30,10 +30,18 @@
 /**
  * 1.1 DEFAULT COLORS
  */
-$alert-yellow:      #ebe16f;
-$alert-red:         #fbe3e4;
-$alert-green:       #e6efc2;
-$alert-blue:        #d5edf8;
+$alert-yellow:       color-material(yellow, 100);
+$alert-yellow-dark:  color-material(yellow, 700);
+$alert-yellow-text:   color-material(orange, 900);
+$alert-red:          color-material(red, 200);
+$alert-red-dark:     color-material(red, 600);
+$alert-red-text:     color-material(red, a700);
+$alert-green:        color-material(light-green, 500);
+$alert-green-dark:   color-material(light-green, 800);
+$alert-green-text:   color-material(green, 900);
+$alert-blue:         color-material(blue, 400);
+$alert-blue-dark:    color-material(blue, 200);
+$alert-blue-text:    color-material(blue, 900);
 
 $black:             #000;
 $white:             #fff;
