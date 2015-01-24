@@ -1,0 +1,133 @@
+/**
+ * Stylesheet: Flat-UI Colors Palette
+ * ************************************************************
+ *
+ * This is an improved version, using nested maps, of:
+ * @link https://github.com/obibring/flat-ui-colors-sass/
+ * @link http://flatuicolors.com/
+ *
+ *
+ * Usage:
+ *     background: color-flat-ui(carrot);
+ *     background: color-flat-ui(green, 3);
+ *
+ *
+ * Colors:
+ *
+ *  // Greens
+ *     turquoise      green, 1
+ *     green-sea      green, 2
+ *     emerald        green, 3
+ *     nephritis      green, 4
+ *
+ *  // Blues
+ *     peter-river    blue, 1
+ *     belize-hole    blue, 2
+ *     wet-asphalt    blue, 3
+ *     midnight-blue  blue, 4
+ *
+ *  // Purples
+ *     amethyst       purple, 1
+ *     wisteria       purple, 2
+ *
+ *  // Yellows
+ *     sunflower      yellow, 1
+ *
+ *  // Oranges
+ *     orange         orange, 1
+ *     carrot         orange, 2
+ *     pumpkin        orange, 3
+ *
+ *  // Reds
+ *     alizarin       red, 1
+ *     pomegranate    red, 2
+ *
+ *  // Grays
+ *     clouds        gray, 1
+ *     silver        gray, 2
+ *     concrete      gray, 3
+ *     asbestos      gray, 4
+ *
+ */
+
+@function color-flat-ui( $color, $value: 1 ) {
+  @return map-get-deep( $color-flat-ui, $color, $value );
+}
+
+// Palette Colors
+
+$color-flat-ui: (
+	// Greens
+	turquoise:      ( 1: #1ABC9C ),
+	green-sea:      ( 1: #16A085 ),
+	emerald:        ( 1: #2ECC71 ),
+	nephritis:      ( 1: #27AE60 ),
+
+	// Blues
+	peter-river:    ( 1: #3498DB ),
+	belize-hole:    ( 1: #2980B9 ),
+	wet-asphalt:    ( 1: #34495E ),
+	midnight-blue:  ( 1: #2C3E50 ),
+
+	// Purples
+	amethyst:       ( 1: #9B59B6 ),
+	wisteria:       ( 1: #8E44AD ),
+
+	// Yellows
+	sunflower:      ( 1: #F1C40F ),
+
+	// Oranges
+	orange:         ( 1: #F39C12 ),
+	carrot:         ( 1: #E67E22 ),
+	pumpkin:        ( 1: #D35400 ),
+
+	// Reds
+	alizarin:       ( 1: #E74C3C ),
+	pomegranate:    ( 1: #C0392B ),
+
+	// Grays
+	clouds:         ( 1: #ECF0F1 ),
+	silver:         ( 1: #BDC3C7 ),
+	concrete:       ( 1: #95A5A6 ),
+	asbestos:       ( 1: #7F8C8D ),
+);
+
+// Aliases
+
+$color-flat-ui: join( $color-flat-ui, (
+	green: (
+		1: color-flat-ui( turquoise ),
+		2: color-flat-ui( green-sea ),
+		3: color-flat-ui( emerald ),
+		4: color-flat-ui( nephritis )
+	),
+	blue: (
+		1: color-flat-ui( peter-river ),
+		2: color-flat-ui( belize-hole ),
+		3: color-flat-ui( wet-asphalt ),
+		4: color-flat-ui( midnight-blue )
+	),
+	purple: (
+		1: color-flat-ui( peter-river ),
+		2: color-flat-ui( wisteria )
+	),
+	yellow: (
+		1: color-flat-ui( sunflower )
+	),
+	orange: (
+		1: color-flat-ui( orange ),
+		2: color-flat-ui( carrot ),
+		3: color-flat-ui( pumpkin )
+	),
+	red: (
+		1: color-flat-ui( alizarin ),
+		2: color-flat-ui( pomegranate )
+	),
+	gray: (
+		1: color-flat-ui( clouds ),
+		2: color-flat-ui( silver ),
+		3: color-flat-ui( concrete ),
+		4: color-flat-ui( asbestos )
+	)
+));
+
