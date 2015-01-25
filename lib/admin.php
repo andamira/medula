@@ -135,7 +135,7 @@ add_editor_style( get_template_directory_uri() . '/lib/css/admin/editor-style.cs
  * 4.4 Changing text in footer of admin
  */
 function osea_custom_admin_footer() {
-	_e( '<span id="footer-thankyou">Developed by <a href="http://yoursite.com" target="_blank">Your Site Name</a></span>. Built using <a href="http://andamira.net/osea" target="_blank">Ósea</a>.', 'osea-theme' );
+	_e( '<span id="footer-thankyou">Developed by <a href="http://yoursite.com" target="_blank">Your Site Name</a></span>. Built using <a class="andamira" href="http://andamira.net/osea" target="_blank">andamira Ósea</a>.', 'osea-theme' );
 }
 add_filter( 'admin_footer_text', 'osea_custom_admin_footer' );
 

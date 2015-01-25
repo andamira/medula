@@ -13,7 +13,9 @@
  *
  *     1 Helpers
  *
- *     2 Your Custom Styling
+ *     2 Default Styling
+ *
+ *     3 Your Custom Styling
  *
  *
  * @link http://codex.wordpress.org/Creating_Admin_Themes
@@ -50,6 +52,30 @@
 // Material Colors Palette
 @import "../helpers/colors-material";
 
+
+/**
+ * 2 DEFAULT STYLING
+ */
+
+#footer-thankyou {
+	display: inline-block;
+
+	a.andamira {
+		background: rgba(#FE850E, 0.19);
+		color: #222;
+		border: 1px solid rgba(#FE850E, .66);
+		border-width: 1px 1px 3px 1px;
+		padding: 0 3px 1px 5px;
+		font-size: 11pt;
+
+		&:hover, &:focus, &:active {
+			background: rgba(#FE850E, .56);
+			color: #FFF;
+			@include text-shadow( 0px 0px 8px black(.88) );
+			text-decoration: none;
+		}
+	}
+}
 
 /**
  * 2 YOUR CUSTOM STYLING
