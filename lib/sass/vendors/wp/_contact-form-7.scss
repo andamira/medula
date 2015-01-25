@@ -102,6 +102,8 @@
 
 			// Validation Tip
 			span.wpcf7-not-valid-tip {
+				display: inline-block;
+				@extend .alert-error;
 			}
 
 			.wpcf7-not-valid-tip-no-ajax {

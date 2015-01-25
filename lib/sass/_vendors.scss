@@ -6,7 +6,7 @@
  * Here you can find some examples for a small selection of common plugins.
  *
  * 		1 WordPress Plugins
- * 		2 jQuery Plugins
+ * 		2 Javascript Libraries & jQuery Plugins
  */
 
 
@@ -14,11 +14,11 @@
  * 1 WORDPRESS PLUGINS
  *
  */
-@import "vendors/wordpress";
+@import "vendors/wp";
 
 
 /**
- * 2 JQUERY PLUGINS
+ * 2 JAVASCRIPT LIBRARIES & JQUERY PLUGINS
  */
-@import "vendors/jquery"
+@import "vendors/js"
 
