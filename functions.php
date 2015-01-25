@@ -1,8 +1,7 @@
 <?php
 /**
- * This is the functions.php file
+ * This is the functions.php file. (#) means feature disabled by default
  *
- *                                        Disabled by default
  *     0 Readme First
  *
  *     1 Global Options
@@ -118,20 +117,20 @@ define( 'OSEA_IE8_SUPPORT', true );      // ( ) enabled by default
 require_once( 'lib/osea.php' );
 
 // Admin Area Customization
-require_once( 'lib/admin.php' );         // ( ) enabled by default
+require_once( 'lib/admin.php' );           // ( ) enabled by default
 
-require_once( 'lib/icons.php' );
-require_once( 'lib/fonts.php' );
-require_once( 'lib/menus.php' );
-require_once( 'lib/theme-customize.php' );
-require_once( 'lib/sidebars.php' );
-require_once( 'lib/thumbnails.php' );
-require_once( 'lib/titles.php' );
-require_once( 'lib/entry-meta.php' );
-require_once( 'lib/comments.php' );
-require_once( 'lib/page-links.php' );
-require_once( 'lib/no-post-found.php' );
-require_once( 'lib/admin-bar.php' );
+require_once( 'lib/icons.php' );           // 
+require_once( 'lib/fonts.php' );           // 
+require_once( 'lib/menus.php' );           // 
+require_once( 'lib/theme-customize.php' ); // 
+require_once( 'lib/sidebars.php' );        // 
+require_once( 'lib/thumbnails.php' );      // 
+require_once( 'lib/titles.php' );          // 
+require_once( 'lib/entry-meta.php' );      // 
+require_once( 'lib/comments.php' );        // 
+require_once( 'lib/page-links.php' );      // 
+require_once( 'lib/no-post-found.php' );   // 
+require_once( 'lib/admin-bar.php' );       // 
 
 
 /**
@@ -225,13 +224,9 @@ include_once( 'lib/vendor.php' );
  * 6 CUSTOM FUNCTIONS, ACTIONS & FILTERS
  * ************************************************************
  *
- * Here you could put your custom functions, but
- * first better take a look at the included files
- * above, specially under THEME FUNCTIONALITY because probably there are more appropriate
- * files to put them.
- *
- * Take a look at the embedded files above,
- * specially in the THEME FUNCTIONALITY section
+ * Here you could put your custom functions, but before doing
+ * that it's better if you take a look at the indexed sections
+ * above, specially the THEME FUNCTIONALITY one.
  *
  */
 
