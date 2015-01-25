@@ -32,7 +32,7 @@
  */
 $alert-yellow:       color-material(yellow, 100);
 $alert-yellow-dark:  color-material(yellow, 700);
-$alert-yellow-text:   color-material(orange, 900);
+$alert-yellow-text:  color-material(orange, 900);
 $alert-red:          color-material(red, 200);
 $alert-red-dark:     color-material(red, 600);
 $alert-red-text:     color-material(red, a700);
@@ -90,5 +90,50 @@ $link-color-hover:  darken( $link-color, 9% );
 $sans-serif:  Helmet, Freesans, sans-serif;
 $serif:       Cambria, 'Times New Roman', 'Nimbus Roman No9 L', 'Freeserif', Times, serif;
 $mono:        Consolas, 'Lucida Console', 'Bitstream VeraSans Mono', 'DejaVu Sans Mono', monospace, sans-serif;
+
+
+/**
+ * 4 PLACEHOLDERS
+ *
+ */
+
+// simple shadows
+%shadow-simple {
+	@include box-shadow(2px 3px 4px rgba(#666, 0.5));
+}
+
+// 3d shadows (http://codepen.io/haibnu/pen/FxGsI)
+%shadow-3d-1 {
+	@include box-shadow(0 15px 16px -6px #777)
+}
+%shadow-3d-2 {
+	position:relative;
+
+	&:before, &:after {
+		z-index: -1;
+		position: absolute;
+		content: "";
+		bottom: 15px;
+		left: 10px;
+		width: 50%;
+		top: 80%;
+		max-width:300px;
+		background: #777;
+		@include box-shadow(0 15px 10px #777);
+		@include transform( rotate(-3deg) );
+	}
+	&:after {
+		@include transform( rotate(3deg) );
+		right: 10px;
+		left: auto;
+	}
+}
+
+
+
+
+
+
+
 
 
