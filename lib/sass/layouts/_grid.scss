@@ -30,7 +30,7 @@ $page-width-desktop1: 60em; // 1st page-width on desktop
 
 
 /**
- * SUSY
+ * 3 SUSY SETUP
  *
  */
 $total-columns  : 4;
@@ -72,7 +72,21 @@ $susy: (                            // *default | option2
 
 
 /**
- * 3 THE GRID CONTAINER
+ * 4 CONDITIONAL CSS
+ *
+ * @see /lib/js/scripts.js
+ * @link http://adactio.com/journal/5429/
+ */
+@media all and (min-width: $bp-mobile2desktop) {
+	body:after {
+		content: 'widescreen';
+		display: none;
+	}
+}
+
+
+/**
+ * 5 THE GRID CONTAINER
  *
  * Here you establish the outer grid-containing elements
  *
