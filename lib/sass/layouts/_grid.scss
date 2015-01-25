@@ -43,7 +43,9 @@ $susy: (                            // *default | option2
 	flow: ltr,                      // *ltr | rtl
 	output: float,                  // *float | isolate
 	math: fluid,                    // *fluid | static (requires column-width)
-	gutter-position: after,         // before | *after | split | inside | inside-static (requires column-width)
+	gutter-position: inside,        // before | *after | split | inside | inside-static (requires column-width)
+	                                // @link http://www.zell-weekeat.com/susy-gutter-positions/
+									//
 	container: auto,                // length or % | *auto
 	container-position: left,       // *left | center | right | <length> [*2] (grid padding)
 	columns: $total-columns,        // *4
