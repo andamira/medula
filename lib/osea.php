@@ -363,3 +363,44 @@ function osea_debug_body_class() {
 }
 
 
+/**
+ * 8 UTILITY FUNCTIONS
+ * ************************************************************
+ */
+
+/**
+ * 8.1 PROTOCOL (HTTP(S))
+ * 
+ * @link http://codex.wordpress.org/Function_Reference/is_ssl
+ * @link https://gist.github.com/webaware/4688802
+ * @link http://snippets.webaware.com.au/snippets/wordpress-is_ssl-doesnt-work-behind-some-load-balancers/
+ */
+function osea_get_protocol() {
+	if ( is_ssl() ) {
+		return  "https://";
+	} else {
+		return "http://"
+	}
+}
+
+if (stripos(get_option('siteurl'), 'https://') === 0) {
+	$_SERVER['HTTPS'] = 'on';
+
+	// NOTE: Uncomment the next add_action() line if your WordPress
+    // instalation can't detect that SSL is being used:
+	# add_action('wp_print_scripts', 'force_ssl_url_scheme_script');
+}
+
+// JavaScript detection of page protocol
+function force_ssl_url_scheme_script() {
+?>
+<script>
+	if (document.location.protocol != "https:") {
+	document.location = document.URL.replace(/^http:/i, "https:");
+	}
+</script>
+<?php
+} 
+
+
+

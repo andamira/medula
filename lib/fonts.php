@@ -25,7 +25,7 @@
  * ************************************************************
  */
 function osea_fonts() {
-	wp_enqueue_style('googleFonts', 'http://fonts.googleapis.com/css?family=Open+Sans:400italic,700italic,400,700');
+	wp_enqueue_style('googleFonts', osea_get_protocol() . 'fonts.googleapis.com/css?family=Open+Sans:400italic,700italic,400,700');
 }
 add_action('wp_enqueue_scripts', 'osea_fonts');
 
