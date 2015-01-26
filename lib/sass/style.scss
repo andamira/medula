@@ -115,6 +115,9 @@
 // Grid Configuration
 @import "layouts/grid";
 
+// Accesibility Style
+@import "layouts/accessibility";
+
 // Print Stylesheet
 @media print {
 	@import "layouts/print";
