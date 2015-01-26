@@ -56,6 +56,8 @@ textarea,
 	background-color: $white;
 	@include transition(background-color .2s ease-in-out);
 
+	@include input-placeholder( black(0.5) );
+
 	&:focus,
     &:active {
 		background-color: darken( $white, 5% );
