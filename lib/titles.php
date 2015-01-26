@@ -13,9 +13,16 @@
  *
  * Prints entry title
  *
- * @param string $htag      Heading tag: h[1-6]
- * @param bool   $link      Display a link if true
- * @param bool   $headline  Add headline microdata if true
+ * NOTE: If you want to print the title and surround it yourself
+ * the way you want you can do it like this:
+ * 
+ *   <h1 class="entry-title">
+ *     <?php the_title(); echo osea_edit_post_link( false ); ?>
+ *   </h1>
+ *
+ * @param string $htag		Heading tag: h[1-6]
+ * @param bool   $link		Display a link if true
+ * @param bool   $headline	Add headline microdata if true
  */
 function osea_entry_title( $htag, $with_link = false, $headline = false ) {
 
