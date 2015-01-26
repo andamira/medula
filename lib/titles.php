@@ -39,7 +39,7 @@ function osea_entry_title( $htag, $with_link = false, $headline = false ) {
 		$title .= ' itemprop="headline">' . get_the_title();
 	}
 
-	// Shows Edit Post Link ( defined in /lib/edit-post.php )
+	// Shows Edit Post Link ( defined in /lib/entry-meta.php )
 	$title .= osea_edit_post_link( false );
 
 	$title .= "</$htag>";

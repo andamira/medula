@@ -106,8 +106,20 @@ function osea_entry_meta_tags( $custom = 'post_tag' ) {
 /**
  * 5 Returns the Edit Link (post, comment, etc.)
  * ************************************************************
+ *
+ * @link http://codex.wordpress.org/Function_Reference/current_user_can
+ * @link http://docs.appthemes.com/tutorials/wordpress-check-user-role-function/
  */
 function osea_edit_link( $link, $echo = true ) {
+
+	// Check if user has permission to see the edit link
+	$user = wp_get_current_user();
+	$allowed_roles = array('editor', 'administrator', 'author');
+	if( ! array_intersect($allowed_roles, $user->roles ) ) { return; }
+
+	// More possibilities:
+	//if ( ! current_user_can('edit_pages') ) { return; }
+
 	$edit  = '<span class="edit-link"><a href="' . $link . '"';
 	$edit .= ' title="' . __( 'Edit This', 'osea-theme' ) . '">';
 	$edit .= '<i class="dashicons dashicons-edit"></i>';
