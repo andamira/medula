@@ -50,11 +50,18 @@
  * the whole project.
  */
 
-// Material Colors Palette
-@import "helpers/colors-material";
+/**
+ * 3.1 Color Palettes
+ */
 
-// Flat-UI Colors Palette
-@import "helpers/colors-flat-ui";
+	// Material Colors
+	@import "helpers/colors-material";
+
+	// Tango Colors
+	@import "helpers/colors-tango";
+
+	// Flat-UI
+	@import "helpers/colors-flat-ui";
 
 // Sass variables
 @import "helpers/variables";

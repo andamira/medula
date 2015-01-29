@@ -1,0 +1,118 @@
+/**
+ * Stylesheet: Tango
+ * ************************************************************
+ *
+ * Usage:
+ *     background: color-tango(carrot);
+ *
+ *
+ * http://tango.freedesktop.org/Tango_Icon_Theme_Guidelines
+ *
+ * Colors:          
+ *                                 *
+ *     aluminium    |  grey      1 2 3 4 5 6
+ *     butter       |  yellow    1 2 3
+ *     chameleon    |  green     1 2 3
+ *     chocolate    |  brown     1 2 3
+ *     orange                    1 2 3
+ *     plum         |  purple    1 2 3
+ *     scarlet-red  |  red       1 2 3
+ *     sky-blue     |  blue      1 2 3
+ */
+
+@function color-tango( $color, $value: 2 ) {
+  @return map-get-deep( $color-tango, $color, $value );
+}
+
+// Palette Colors
+
+$color-tango: (
+	aluminium: (
+		1: #eeeeec,
+		2: #d3d7cf,
+		3: #babdb6,
+		4: #888a85,
+		5: #555753,
+		6: #2e3436
+	),
+	butter: (
+		1: #fce94f,
+		2: #edd400,
+		3: #c4a000
+	),
+	chameleon: (
+		1: #8ae234,
+		2: #73d216,
+		3: #4e9a06
+	),
+	chocolate: (
+		1: #e9b96e,
+		2: #c17d11,
+		3: #8f5902
+	),
+	orange: (
+		1: #fcaf3e,
+		2: #f57900,
+		3: #ce5c00
+	),
+	plum: (
+		1: #ad7fa8,
+		2: #75507b,
+		3: #5c3566
+	),
+	scarlet-red: (
+		1: #ef2929,
+		2: #cc0000,
+		3: #a40000
+	),
+	sky-blue: (
+		1: #729fcf,
+		2: #3465a4,
+		3: #204a87
+	)
+);
+
+// Aliases
+
+$color-tango: join( $color-tango, (
+	grey: (
+        1: color-tango( aluminium, 1),
+        2: color-tango( aluminium, 2),
+        3: color-tango( aluminium, 3),
+        4: color-tango( aluminium, 4),
+        5: color-tango( aluminium, 5),
+        6: color-tango( aluminium, 6)
+	),
+
+	yellow: (
+        1: color-tango( butter, 1),
+        2: color-tango( butter, 2),
+        3: color-tango( butter, 3)
+	),
+	brown: (
+        1: color-tango( chocolate, 1),
+        2: color-tango( chocolate, 2),
+        3: color-tango( chocolate, 3)
+	),
+	green: (
+        1: color-tango( chameleon, 1),
+        2: color-tango( chameleon, 2),
+        3: color-tango( chameleon, 3)
+	),
+	blue: (
+        1: color-tango( sky-blue, 1),
+        2: color-tango( sky-blue, 2),
+        3: color-tango( sky-blue, 3)
+	),
+	purple: (
+        1: color-tango( plum, 1),
+        2: color-tango( plum, 2),
+        3: color-tango( plum, 3)
+	),
+	red: (
+        1: color-tango( scarlet-red, 1),
+        2: color-tango( scarlet-red, 2),
+        3: color-tango( scarlet-red, 3)
+	)
+));
+
