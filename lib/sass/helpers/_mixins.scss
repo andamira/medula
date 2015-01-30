@@ -2,13 +2,7 @@
  * Stylesheet: Mixins
  * ************************************************************
  *
- *     0 Included Mixins From Dependencies
- *
- *         0.1 Compass CSS3
- *         0.2 Compass Typography
- *         0.3 Compass Utility
- *
- *     1 CSS-Tricks Mixins
+  *     1 CSS-Tricks Mixins
  *
  *         1.1 Covering
  *         1.2 Centering
@@ -29,70 +23,6 @@
  * @link http://sachagreif.com/useful-sass-mixins/
  * @link http://thesassway.com/intermediate/leveraging-sass-mixins-for-cleaner-code
  * @link http://web-design-weekly.com/blog/2013/05/12/handy-sass-mixins/
- */
-
-
-/**
- * 0 INCLUDED MIXINS FROM DEPENDENCIES
- *
- */
-
-/**
- * 0.1 COMPASS CSS3 MIXINS
- *
- *
- */
-
-/**
- * 0.2 COMPASS TYPOGRAPHY MIXINS
- *
- * @link http://compass-style.org/reference/compass/typography/
- *
- *
- *** Links
- * -------
- * hover-link                                               A link that only has an underline when you hover over it
- * link-colors($normal, $hover, $active, $visited, $focus)  Set all the colors for a link with one mixin call.
- * unstyled-link                                            A link that looks and acts like the text it is contained within.
- *
- *
- *** Lists
- * -------
- * no-bullet                                                              Turn off the bullet for an element of a list
- * no-bullets                                                             Turns off the bullets for an entire list
- * pretty-bullets($bullet-icon, $width, $height, $line-height, $padding)  Make a list(ul/ol) have an image bullet.
- *
- * horizontal-list-container                   Can be mixed into any selector that target a ul or ol that is meant to have a horizontal layout.
- * horizontal-list-item($padding, $direction)  Can be mixed into any li selector that is meant to participate in a horizontal layout.
- * horizontal-list($padding, $direction)       A list(ol,ul) that is layed out such that the elements are floated left and won't wrap.
- *
- * inline-block-list-container               Can be mixed into any selector that target a ul or ol that is meant to have an inline-block layout.
- * inline-block-list-item($padding)          Can be mixed into any li selector that is meant to participate in a horizontal layout.
- * inline-block-list($padding)               A list(ol,ul) that is layed out such that the elements are inline-block and won't wrap.
- *
- * inline-list                               makes a list inline.
- * delimited-list($separator)                makes an inline list delimited with the passed string. Defaults to making a comma-separated list.
- *
- *
- *** Text
- * ------
- * ellipsis($no-wrap)
- * force-wrap                            Prevent long urls and text from breaking layouts.
- * nowrap                                When remembering whether or not there's a hyphen in white-space is too hard
- *
- * replace-text($img, $x, $y)                            Hides html text and replaces it with an image.
- * replace-text-with-dimensions($img, $x, $y, $inline)   Also sets the width and height of the element accordingly.
- * hide-text($direction)                                 Hides text in an element so you can see the background.
- * squish-text                                           Hides text in an element by squishing the text into oblivion.
- *
- *** Units
- * -------
- * rem($property, $values, $use-px-fallback: $rem-with-px-fallback)  Output a given style rule containing rem values along with an (optional)
- *                                                                   fallback rule for older browsers (with rem values converted to px).
- */
-
-/**
- * 0.3 COMPASS UTILITY MIXINS
  */
 
 
@@ -246,4 +176,10 @@
 	height: 0;
 	padding-bottom: ($width / $ratio) * 1%;
 }
+
+
+/**
+ * 3 CUSTOM MIXINS
+ */
+
 
