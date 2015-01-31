@@ -5,8 +5,13 @@
  * Intended for being imported by standalone sass files like:
  * style.scss & admin.scss
  *
- *     1 LOAD DEPENDENCIES
- *     2 GLOBAL CONFIGURABLE VARIABLES
+ *     1 Load Dependencies
+ *
+ *         1.1 Gems
+ *         1.2 Included
+ *
+ *     2 Global Configurable Variables
+ *
  *         2.1 Compass Vertical Rhythm
  *         2.2 Breakpoint
  *
@@ -14,26 +19,34 @@
 
 
 /**
- * 1 DEPENDENCIES
+ * 1 LOAD DEPENDENCIES
+ *
+ */
+
+/**
+ * 1.1 GEMS
  *
  * Installation:
- *      gem install sass compass susy breakpoint breakpoint-slicer sassy-maps SassyLists --no-ri --no-rdoc
+ *      gem install sass compass susy breakpoint breakpoint sassy-maps --no-ri --no-rdoc
  *
  * @link http://compass-style.org/
  * @link https://github.com/ericam/susy/
- * @link https://github.com/at-import/breakpoint Breakpoint
- * @link https://github.com/lolmaus/breakpoint-slicer
  * @link https://github.com/at-import/Sassy-Maps Sassy-Maps
- * @link https://github.com/at-import/SassyLists SassyLists
  *
  */
 
 @import "compass";      // imports CSS3, Typography and Utilities modules
-@import "susy";
-@import "breakpoint";
-@import "breakpoint-slicer";
-@import "sassy-maps";
-@import "SassyLists";
+
+/**
+ * 1.2 INCLUDED DEPENDENCIES
+ *
+ * @link https://github.com/at-import/Sassy-Maps Sassy-Maps
+ * @link https://github.com/at-import/breakpoint Breakpoint
+ * @link https://github.com/ericam/susy/ Susy
+ */
+@import "include/sassy-maps";
+@import "include/breakpoint";
+@import "include/susy";
 
 
 /**
@@ -68,23 +81,26 @@
  * **********
  * BREAKPOINT
  * **********
+ *
+ * usage:
+ *      @include breakpoint-set('name', value);
  * 
  * @link https://github.com/at-import/breakpoint/wiki/Basic-Media-Queries
  *
- * $breakpoint-default-media
- * $breakpoint-default-feature
- * $breakpoint-default-pair
- * $breakpoint-to-ems                    Rewrites non-em based media queries into much more accesible em based media queries.
+ * default-media
+ * default-feature
+ * default-pair
+ * to-ems                    Rewrites non-em based media queries into much more accesible em based media queries.
  *
  * @link https://github.com/at-import/breakpoint/wiki/Advanced-Media-Queries
  *
- * $breakpoint-force-media-all
- * $breakpoint-resolutions
+ * force-media-all
+ * resolutions
  *
  * @link https://github.com/at-import/breakpoint/wiki/No-Query-Fallbacks
  *
- * $breakpoint-no-queries: false
- * $breakpoint-no-query-fallbacks
+ * no-queries: false
+ * no-query-fallbacks
  */
 
 /**
@@ -98,10 +114,10 @@ $rem-with-px-fallback: true;
 /**
  * 2.2 Breakpoint
  */
-$breakpoint-to-ems: true;
+@include breakpoint-set('to ems', true);
+ 
 
-
-// For Susy & Breakpoint Slicer configuration see base/_grid.scss
+// For Susy configuration see base/_grid.scss
 
 
 
