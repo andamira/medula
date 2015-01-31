@@ -379,7 +379,7 @@ function osea_get_protocol() {
 	if ( is_ssl() ) {
 		return  "https://";
 	} else {
-		return "http://"
+		return "http://";
 	}
 }
 
