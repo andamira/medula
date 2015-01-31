@@ -15,7 +15,11 @@
  *
  *     2 Default Styling
  *
- *     3 Your Custom Styling
+ *     3 Vendors
+ *         
+ *         3.1 WordPress Admin Plugins
+ *
+ *     4 Your Custom Styling
  *
  *
  * @link http://codex.wordpress.org/Creating_Admin_Themes
@@ -73,8 +77,19 @@
 	}
 }
 
+
 /**
- * 2 YOUR CUSTOM STYLING
+ * 3 VENDORS
+ */
+
+/**
+ * 3.1 WORDPRESS ADMIN PLUGINS
+ */
+@import "wp/__admin";
+
+
+/**
+ * 4 YOUR CUSTOM STYLING
  */
 
 
