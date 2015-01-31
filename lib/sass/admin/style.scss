@@ -33,12 +33,15 @@
  * 0 DEPENDENCIES
  */
 
-@import "compass";
+@import "../vendors/dependencies";
 
 
 /**
  * 1 ../HELPERS
  */
+
+// Color Palettes
+@import "../helpers/palettes";
 
 // Sass variables
 @import "../helpers/variables";
@@ -48,9 +51,6 @@
 
 // import mixins
 @import "../helpers/mixins";
-
-// Material Colors Palette
-@import "../helpers/colors-material";
 
 
 /**
@@ -85,7 +85,7 @@
 /**
  * 3.1 WORDPRESS ADMIN PLUGINS
  */
-@import "wp/__admin";
+@import "../vendors/wp/__admin";
 
 
 /**
