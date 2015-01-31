@@ -31,11 +31,9 @@ environment = :development
 #
 
 require "compass/import-once/activate"
-require "susy"
-require "breakpoint"
-require "breakpoint-slicer"
-require "sassy-maps"
-require "SassyLists"
+#require "susy"
+#require "breakpoint"
+#require "sassy-maps"
 
 
 #

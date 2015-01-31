@@ -14,3 +14,5 @@ doc/
 tmp/
 
 node_modules/
+
+.git-repositories
