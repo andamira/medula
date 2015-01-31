@@ -20,8 +20,6 @@
 $bp-adminbar-mobile: 783px; // point where WordPress changes the admin bar to mobile mode
 $bp-mobile2desktop: 40em; // width change point from mobile to desktop (specially for menus in smart header)
 
-$slicer-breakpoints: 0 400px 600px 800px 1050px; // TODO
-
 
 /**
  * 2 PAGE WIDTHS
@@ -56,7 +54,7 @@ $susy: (                            // *default | option2
 
 	debug: (
 		image: hide,
-		color: $osea-orange-light,
+		//color: $blue,
 		output: background,         // *background | overlay
 		toggle: top right,
 	),
