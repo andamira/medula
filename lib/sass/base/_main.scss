@@ -58,6 +58,7 @@ a {
 
 	&:hover, &:focus {
 		color: $link-color-hover;
+		outline: none;
 	}
 
 	&:active {
