@@ -3,6 +3,7 @@
  * Fonts template
  *
  *     1 Google fonts
+ *     2 Other
  *
  *
  * To use dowloaded fonts put them in:
@@ -20,13 +21,20 @@
  */
 
 
-/*
- * 1 GOOGLE FONTS
- * ************************************************************
- */
 function osea_fonts() {
-	wp_enqueue_style('googleFonts', osea_get_protocol() . 'fonts.googleapis.com/css?family=Open+Sans:400italic,700italic,400,700');
+
+	/**
+	 * 1 GOOGLE FONTS
+	 */
+	wp_register_style('googleFonts', osea_get_protocol() . 'fonts.googleapis.com/css?family=Open+Sans:400italic,700italic,400,700');
+	wp_enqueue_style( 'googleFonts' );
+
+
+	/**
+	 * 2 OTHER
+	 */
+
 }
-add_action('wp_enqueue_scripts', 'osea_fonts');
+add_action('wp_print_styles', 'osea_fonts');
 
 
