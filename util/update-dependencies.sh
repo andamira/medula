@@ -1,10 +1,5 @@
 #!/bin/bash
 
-# TODO 1: determine the root of the project (using git)
-# TODO 2: Don't delete the repositories, but update them
-# TODO 3: make choose, with a variable (default delete)
-
-
 PATH_OSEA="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )/.."
 PATH_INCLUDE="${PATH_OSEA}/lib/sass/vendors/include"
 DIR_GIT_REPOS=".git-repositories"
@@ -48,6 +43,7 @@ function update_dependency() {
 }
 
 
+# List of dependencies
 
 #update_dependency "https://github.com/at-import/SassyLists.git" "SassyLists/stylesheets/SassyLists" "SassyLists/stylesheets/_SassyLists.scss"
 update_dependency "https://github.com/at-import/Sassy-Maps.git" "Sassy-Maps/sass" "Sassy-Maps/sass/sassy-maps" "Sassy-Maps/sass/_sassy-maps.scss"
