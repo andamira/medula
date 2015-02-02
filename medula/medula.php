@@ -18,8 +18,9 @@
  *     functionality from presentation.
  *
  *   - If you have need for a more complex plugin framework, you could use
- *     { @link https://github.com/tommcfarlin/WordPress-Plugin-Boilerplate
- *     Wordpress Plugin Boilerplate} instead,instead, for example.
+ *     {@link https://github.com/tommcfarlin/WordPress-Plugin-Boilerplate
+ *     Wordpress Plugin Boilerplate} or {@link http://getherbert.com/
+ *     Herbert Plugin Framework} instead, or your own solution.
  *
  * NOTE: If you decide to use Médula, you must customize each one 
  * of the included files for your particular use case
@@ -27,6 +28,9 @@
 
 // Google Analytics Tracking Code
 include_once( 'analytics.php' );
+
+// Load Helper Functions
+include_once( 'helpers.php' );
 
 // Create Shortcodes
 include_once( 'shortcodes.php' );
