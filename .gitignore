@@ -1,7 +1,7 @@
 *.swp
+*.swo
 .sass-cache
 cwatch.pid
-
 .send-repo
 
 # temporary
@@ -9,10 +9,7 @@ lib/langs
 lib/css
 lib/js/scripts.min.js
 lib/js/includes
-
 doc/
 tmp/
-
-node_modules/
-
 .git-repositories
+node_modules/
