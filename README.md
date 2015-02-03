@@ -38,9 +38,10 @@ Feel free to [submit bugs & fixes](https://github.com/andamira/osea/issues) if y
 
 - Remove dependency on Compass
 - Remove IE8 compatibility
-- Improve the accesibility
-- Create build system with [Gulp 4](http://gulpjs.com/)
+- Manage packages with [Bower](http://bower.io)
+- Manage workflow  with [Gulp](http://gulpjs.com/)
 - Add [Autoprefixer](https://github.com/postcss/autoprefixer) to workflow
+- Improve the accesibility
 
 ## Licenses
 
