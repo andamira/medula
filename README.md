@@ -39,8 +39,9 @@ Feel free to [submit bugs & fixes](https://github.com/andamira/osea/issues) if y
 - Remove dependency on Compass
 - Remove IE8 compatibility
 - Manage packages with [Bower](http://bower.io)
-- Manage workflow  with [Gulp](http://gulpjs.com/)
-- Add [Autoprefixer](https://github.com/postcss/autoprefixer) to workflow
+- Manage workflow with [npm](https://www.npmjs.com)
+    - Add [Autoprefixer](https://github.com/postcss/autoprefixer) to workflow
+	- Add CSS, JS, HTML, etc. minification & concatenation to workflow
 - Improve the accesibility
 
 ## Licenses
