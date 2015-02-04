@@ -2,6 +2,8 @@
  * BASE MAIN
  * ************************************************************
  *
+ *     0 Styling Configuration Variables
+ *
  *     1 General Styles
  *
  *     2 Links & Headings
@@ -34,6 +36,13 @@
  * Default Styling Decisions:
  *     SETS PAGE TO 100% HEIGHT
  */
+
+
+/**
+ * 0 STYLING CONFIGURATION VARIABLES
+ *
+ */
+$tag_100_page_height: true; // Sets page to at least 100% screen height. Footer glued to the bottom
 
 
 /**
@@ -108,8 +117,9 @@ b, strong {
 html {
 	font-size: 100%;
 
-	// __tag_100_page_height
-	height: 100%;
+	@if $tag_100_page_height {
+		height: 100%;
+	}
 }
 
 body {
@@ -121,8 +131,9 @@ body {
 	-webkit-font-smoothing: antialiased;
 	-moz-osx-font-smoothing: grayscale;
 
-	// __tag_100_page_height
-	height: 100%;
+	@if $tag_100_page_height {
+		height: 100%;
+	}
 }
 
 /**
@@ -130,10 +141,11 @@ body {
  */
 #page-wrapper {
 
-	// __tag_100_page_height
-	min-height: 100%;
-	position: relative;
-	padding-bottom: 5rem;
+	@if $tag_100_page_height {
+		min-height: 100%;
+		position: relative;
+		padding-bottom: 5rem;
+	}
 }
 
 .site-wrapper {}
@@ -165,10 +177,11 @@ body {
 .site-footer {
 	width: 100%;
 
-	// __tag_100_page_height
-	position: absolute;
-	bottom: 0;
-	height: 5rem;
+	@if $tag_100_page_height {
+		position: absolute;
+		bottom: 0;
+		height: 5rem;
+	}
 }
 
 	.site-footer-nav {}
