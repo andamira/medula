@@ -9,7 +9,7 @@
  *     3 Structure
  *
  *            3.1 Base
- *            3.2 Wrappers
+ *            3.2 Page & Site Wrappers
  *            3.3 Site Header
  *            3.4 Site Footer
  *            3.5 Page Header
@@ -107,10 +107,6 @@ b, strong {
  */
 html {
 	font-size: 100%;
-
-	@if $conf_100_page_height {
-		height: 100%;
-	}
 }
 
 body {
@@ -121,29 +117,13 @@ body {
 
 	-webkit-font-smoothing: antialiased;
 	-moz-osx-font-smoothing: grayscale;
-
-	@if $conf_100_page_height {
-		height: 100%;
-	}
 }
 
 /**
- * 3.2 WRAPPERS
+ * 3.2 PAGE & SITE WRAPPERS
+ *
+ * @see ../layout/_grid.scss
  */
-#page-wrapper {
-
-	@if $conf_100_page_height {
-		min-height: 100%;
-		position: relative;
-		padding-bottom: 5rem;
-	}
-}
-
-.site-wrapper {}
-
-#site-header-wrapper {}
-#site-content-wrapper {}
-#site-footer-wrapper {}
 
 /**
  * 3.3 SITE HEADER
@@ -167,12 +147,6 @@ body {
  */
 .site-footer {
 	width: 100%;
-
-	@if $conf_100_page_height {
-		position: absolute;
-		bottom: 0;
-		height: 5rem;
-	}
 }
 
 	.site-footer-nav {}

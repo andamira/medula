@@ -32,11 +32,11 @@ $page-width-desktop1: 60em; // 1st page-width on desktop
  *
  */
 $total-columns  : 4;
-$column-width   : 4;
-$gutter-width   : 1rem;
+$column-width   : false;
+$gutter-width   : .25;
 $grid-padding   : $gutter-width;
 
-$susy: (                            // *default | option2
+$susy: (                            // *default | alternative
 
 	flow: ltr,                      // *ltr | rtl
 	output: float,                  // *float | isolate
@@ -47,18 +47,19 @@ $susy: (                            // *default | option2
 	container: auto,                // length or % | *auto
 	container-position: left,       // *left | center | right | <length> [*2] (grid padding)
 	columns: $total-columns,        // *4
-	gutters: .25,                   // *.25
+	gutters: $gutter-width,         // *.25
 	column-width: $column-width,    // *false | value
 	global-box-sizing: border-box,  // *content-box | border-box (affects inside/inside-static)
-	last-flow: to,
+	last-flow: to,                   
 
 	debug: (
-		image: hide,
+		image: hide,                // show | *hide | show-columns | show-baseline
 		//color: $blue,
-		output: background,         // *background | overlay
-		toggle: top right,
+		//output: background,       // *background | overlay
+		//toggle: top right,
 	),
 
+	/*
 	use-custom: (
 		background-image: true,
 		background-options: false,
@@ -66,6 +67,7 @@ $susy: (                            // *default | option2
 		clearfix: true,
 		rem: true,
 	)
+	*/
 );
 
 
@@ -94,12 +96,16 @@ $susy: (                            // *default | option2
  * in defined in header.php and footer.php
  */
 html {
-	//@include establish-baseline;
+	@if $conf_100_page_height {
+		height: 100%;
+	} 
+
 }
 
 body {
-	@include container( );
-	overflow: auto;
+	@if $conf_100_page_height {
+		height: 100%;
+	}
 
 	&.debug {
 		//@include show-grid( show-columns );
@@ -114,10 +120,22 @@ body {
 	}
 }
 
-#site-header-wrapper {}
-#site-content-wrapper {
-	@include clearfix;
+#page-wrapper {
+	@if $conf_100_page_height {
+		min-height: 100%;
+		position: relative;
+		padding-bottom: 5rem;
+	}
 }
+
+
+#site-header-wrapper {}
+
+#site-content-wrapper {
+	// Main container
+	@include container( $page-width-desktop1 );
+}
+
 #site-footer-wrapper {}
 
 .debug section {
@@ -133,11 +151,19 @@ main {
 
 	min-height: 18rem;
 }
+
 .sidebar {
 }
+
 .site-header {
 }
+
 .site-footer {
+	@if $conf_100_page_height {
+		position: absolute;
+		bottom: 0;
+		height: 5rem;
+	}
 }
 
 
