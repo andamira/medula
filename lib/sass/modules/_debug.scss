@@ -24,7 +24,7 @@ $aside-color: $main-color;
 
 
 .osea-debug-filename {
-	position: relative;
+	position: absolute;
 	margin: 0;
 	padding: 0.2rem;
 	font-size: 0.8rem;
@@ -133,6 +133,12 @@ body.debug {
 			@extend %debug-text;
 			color: $footer-color;
 			right: 0;
+		}
+	}
+
+	@if $conf_100_page_height {
+		.site-footer {
+			position: absolute;
 		}
 	}
 
