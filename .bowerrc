@@ -2,7 +2,7 @@
 	"directory": "bower_components/",
 	"scripts": {
 		"preinstall": "",
-		"postinstall": "preen",
+		"postinstall": "./.bower-postinstall",
 		"preuninstall": ""
 	}
 }

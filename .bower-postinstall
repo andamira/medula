@@ -1,0 +1,6 @@
+#!/bin/sh
+#
+# This script is called from .bowerrc and automatically runs after `bower install`
+
+preen
+
