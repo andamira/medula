@@ -1,15 +1,13 @@
 # Ósea Theme
 
-**A Mobile First Starter Theme for WordPress**
-
-Ósea is commited to semantic HTML5 markup and CSS3. It has many features and focuses in finding the sweet spot between minimalism and versatility.
+**A Mobile First Starter Theme & Plugin for WordPress**
 
 ## Features
 
 - It is designed to be a clean starting point for a WordPress theme.
 - It is mobile first and progresively enhanced.
 - It is modular, versatile, and simple enough to understand it all.
-- It has a clear, well documented structure.
+- It has a clear well commented structure.
 - It is still going through many changes, wait for it.
 
 
@@ -17,17 +15,15 @@
 
 1. Clone the git repo or [download the zip file](https://github.com/andamira/osea/archive/master.zip).
 
-  `git clone https://github.com/andamira/osea.git`
+	`git clone https://github.com/andamira/osea.git`
 
 1. Install the dependencies
 
-  `gem install compass sass susy breakpoint --no-ri --no-rdoc`
-  `bower install`
-
-1. Place it in theme folder, activate it from WordPress, and start developing.
-
-1. You can run `compass-watch.sh` script from `/lib/sass/` folder to automaticaly monitor the changes and compile css in the fly.
-
+	```
+	gem install compass sass --no-ri --no-rdoc
+	npm -g install
+	bower install
+	```
 
 ## Contributing
 
@@ -39,7 +35,7 @@ Feel free to [submit bugs & fixes](https://github.com/andamira/osea/issues) if y
 
 - Remove dependency on Compass
 - Manage build system with [Tup](https://github.com/gittup/tup)
-    - Add [Autoprefixer](https://github.com/postcss/autoprefixer) to workflow
+	- Add [Autoprefixer](https://github.com/postcss/autoprefixer) to workflow
 	- Add CSS, JS, HTML, etc. minification & concatenation to workflow
 - Improve the accesibility
 - Remove IE8 compatibility

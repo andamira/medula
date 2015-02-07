@@ -8,11 +8,12 @@
 		"url": "https://github.com/andamira/osea.git"
 	},
 	"author": "andamira",
-	"dependencies": {},
-	"devDependencies": {
-		"bower": "latest"
-	},
 	"engines": {
 		"node": ">=0.10.0"
+	},
+	"dependencies": {},
+	"devDependencies": {
+		"bower": "latest",
+		"preen": "latest"
 	}
 }
