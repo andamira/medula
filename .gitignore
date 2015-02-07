@@ -1,16 +1,18 @@
+#################### general
+node_modules
+bower_components
 *.swp
 *.swo
+.tup
 .sass-cache
-cwatch.pid
-.send-repo
 
-node_modules/
-bower_components/
-
-# temporary
-lib/langs
+#################### output
 lib/css
 lib/js/scripts.min.js
+
+#################### temp
+lib/langs
 lib/js/includes
-doc/
-tmp/
+tmp
+.send-repo
+

@@ -110,11 +110,7 @@ $conf_100_page_height: true; // Sets page to at least 100% screen height. Footer
  *
  */
 
-/**
- *  Normalize
- *  @link https://github.com/JohnAlbin/normalize-scss
- */
-@import "layouts/normalize";
+// Fixes normalize defaults
 @import "layouts/normalize_extra";
 
 // Grid Configuration

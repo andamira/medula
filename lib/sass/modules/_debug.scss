@@ -89,7 +89,7 @@ body.debug {
 	article {
 		@extend %debug-box;
 		outline-color: $article-color;
-		@include rem( min-height, 10rem);
+		min-height: 10rem;
 
 		&:after {
 			content: '<article>';
@@ -102,7 +102,7 @@ body.debug {
 	section {
 		@extend %debug-box;
 		outline-color: $section-color;
-		@include rem( min-height, 5rem);
+		min-height: 5rem;
 
 		&:after {
 			content: '<section>';

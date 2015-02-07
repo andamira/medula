@@ -1,0 +1,10 @@
+
+# SASS
+: lib/sass/style.scss |> node-sass %f %o |> lib/css/%B.css
+: lib/sass/login.scss |> node-sass %f %o |> lib/css/%B.css
+: lib/sass/admin/style.scss |> node-sass %f %o |> lib/css/admin/%B.css
+: lib/sass/admin/editor-style.scss |> node-sass %f %o |> lib/css/admin/%B.css
+
+# CSS
+
+# JS

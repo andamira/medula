@@ -5,13 +5,17 @@
 	"dependencies": {},
 
 	"devDependencies": {
+		"normalize.css" : "latest",
 		"susy" : "latest",
 		"include-media" : "eduardoboucas/include-media",
+		"compass-mixins" : "Igosuki/compass-mixins",
 		"sassy-maps" : "latest"
 	},
 	"preen": {
+		"normalize.css": [ "*.css" ],
 		"susy": [ "sass/**/*.scss" ],
 		"include-media": [ "dist/*.scss" ],
-		"sassy-maps": [ "sass/**/*.scss" ]
+		"sassy-maps": [ "sass/**/*.scss" ],
+		"compass-mixins": [ "lib/**/*.scss" ]
 	}
 }
