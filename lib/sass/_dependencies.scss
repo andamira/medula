@@ -44,9 +44,9 @@
  * @link https://github.com/at-import/breakpoint Breakpoint
  * @link https://github.com/ericam/susy/ Susy
  */
-@import "vendors/include/sassy-maps";
-@import "vendors/include/breakpoint";
-@import "vendors/include/susy";
+@import "../../bower_components/sassy-maps/sass/sassy-maps";
+@import "../../bower_components/compass-breakpoint/stylesheets/breakpoint";
+@import "../../bower_components/susy/sass/susy";
 
 
 /**
@@ -77,30 +77,6 @@
  *                                       to the nearest half line height to avoid large spacing between lines.
  * $min-line-padding: 2px                Ensure there is at least this many pixels of vertical padding above and below the text.
  *
- *
- * **********
- * BREAKPOINT
- * **********
- *
- * usage:
- *      @include breakpoint-set('name', value);
- * 
- * @link https://github.com/at-import/breakpoint/wiki/Basic-Media-Queries
- *
- * default-media
- * default-feature
- * default-pair
- * to-ems                    Rewrites non-em based media queries into much more accesible em based media queries.
- *
- * @link https://github.com/at-import/breakpoint/wiki/Advanced-Media-Queries
- *
- * force-media-all
- * resolutions
- *
- * @link https://github.com/at-import/breakpoint/wiki/No-Query-Fallbacks
- *
- * no-queries: false
- * no-query-fallbacks
  */
 
 /**
@@ -114,8 +90,7 @@ $rem-with-px-fallback: true;
 /**
  * 2.2 Breakpoint
  */
-@include breakpoint-set('to ems', true);
- 
+$breakpoint-to-ems: true; 
 
 // For Susy configuration see base/_grid.scss
 

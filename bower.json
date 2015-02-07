@@ -1,0 +1,12 @@
+{
+	"name": "Osea",
+	"version": "0.3.0",
+
+	"dependencies": {},
+
+	"devDependencies": {
+		"susy" : "latest",
+		"compass-breakpoint" : "latest",
+		"sassy-maps" : "latest"
+	}
+}

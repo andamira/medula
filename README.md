@@ -22,6 +22,7 @@
 1. Install the dependencies
 
   `gem install compass sass susy breakpoint --no-ri --no-rdoc`
+  `bower install`
 
 1. Place it in theme folder, activate it from WordPress, and start developing.
 
@@ -36,13 +37,14 @@ Feel free to [submit bugs & fixes](https://github.com/andamira/osea/issues) if y
 
 ## Main TODO Points
 
+- Manage packages with [Bower](http://bower.io) & [npm](https://www.npmjs.com)
+- Substitute [breakpoint](https://github.com/at-import/breakpoint/) with [import-media](https://github.com/eduardoboucas/include-media)
 - Remove dependency on Compass
-- Remove IE8 compatibility
-- Manage packages with [Bower](http://bower.io)
-- Manage workflow with [npm](https://www.npmjs.com)
+- Manage build system with [Tup](https://github.com/gittup/tup)
     - Add [Autoprefixer](https://github.com/postcss/autoprefixer) to workflow
 	- Add CSS, JS, HTML, etc. minification & concatenation to workflow
 - Improve the accesibility
+- Remove IE8 compatibility
 
 ## Licenses
 

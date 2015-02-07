@@ -4,6 +4,9 @@
 cwatch.pid
 .send-repo
 
+node_modules/
+bower_components/
+
 # temporary
 lib/langs
 lib/css
@@ -12,4 +15,3 @@ lib/js/includes
 doc/
 tmp/
 .git-repositories
-node_modules/
