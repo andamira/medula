@@ -58,7 +58,7 @@ $smart-header-height: 2rem;
 	// Admin Bar Positioning Fix (see /modules/admin_bar.scss)
 	.admin-bar & {
 		top: 32px;
-		@include breakpoint( max-width 782px ) {
+		@include media( "<wp-adminbar-mobile" ) {
 			top: 46px;
 		}
 	}
@@ -71,13 +71,13 @@ $smart-header-height: 2rem;
 		top: -$smart-header-height;
 
 		// But Don't hide it On Desktop
-		@include breakpoint( $bp-mobile2desktop ) {
+		@include media( ">=mobile2desktop" ) {
 			top: 0;
 
 			// Admin Bar Positioning Fix
 			.admin-bar & {
 				top: 32px;
-				@include breakpoint( max-width 782px ) {
+				@include media( "<wp-adminbar-mobile" ) {
 					top: 46px;
 				}
 			}
@@ -96,7 +96,7 @@ $smart-header-height: 2rem;
 
 	// ...on desktop, when the top border is hidden
 	&.hidden-top {
-		@include breakpoint( $bp-mobile2desktop ) {
+		@include media( ">=mobile2desktop" ) {
 			position: fixed;
 		}
 	}
@@ -119,7 +119,7 @@ $smart-header-height: 2rem;
 
 	// ...on desktop when the top gets hidden
 	&.hidden-top {
-		@include breakpoint( $bp-mobile2desktop ) {
+		@include media( ">=mobile2desktop" ) {
 			padding-bottom: $smart-header-height;
 		}
 	}  
@@ -176,7 +176,7 @@ nav {
 	$submenu-width: 10rem;
 
 	// Show on desktop size
-	@include breakpoint( 0 $bp-adminbar-mobile ) { 
+	@include media( "<wp-adminbar-mobile" ) { 
 		display: none;
 	}
 
@@ -285,7 +285,7 @@ nav {
 	position: fixed;
 
 	// Hide on desktop size
-	@include breakpoint( $bp-adminbar-mobile ) {
+	@include media( ">=wp-adminbar-mobile" ) {
 		display: none;
 	}
 

@@ -16,9 +16,24 @@
 
 /**
  * 1 BREAKPOINTS
+ *
+ * @link https://github.com/eduardoboucas/include-media
  */
-$bp-adminbar-mobile: 783px; // point where WordPress changes the admin bar to mobile mode
-$bp-mobile2desktop: 40em; // width change point from mobile to desktop (specially for menus in smart header)
+
+$breakpoints: (
+	wp-adminbar-mobile: 783px, // point where WordPress changes the admin bar to mobile mode
+
+	mobile2desktop: 40em,
+);
+
+$media-expressions: (
+	all: "all",
+	screen: "screen", 
+	print: "print", 
+	handheld: "handheld",
+	retina2x: ("(-webkit-min-device-pixel-ratio: 2)", "(min-resolution: 192dpi)"), 
+	retina3x: ("(-webkit-min-device-pixel-ratio: 3)", "(min-resolution: 350dpi)")
+	);
 
 
 /**
@@ -77,7 +92,7 @@ $susy: (                            // *default | alternative
  * @see /lib/js/scripts.js
  * @link http://adactio.com/journal/5429/
  */
-@media all and (min-width: $bp-mobile2desktop) {
+@include media( ">=mobile2desktop" ) {
 	body:after {
 		content: 'widescreen';
 		display: none;
@@ -114,7 +129,7 @@ body {
 
 
 .site-wrapper {
-	@include breakpoint( $bp-mobile2desktop ) {
+	@include media( ">=mobile2desktop" ) {
 		max-width: $page-width-desktop1;
 		margin: 0 auto;
 	}

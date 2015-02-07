@@ -37,8 +37,6 @@ Feel free to [submit bugs & fixes](https://github.com/andamira/osea/issues) if y
 
 ## Main TODO Points
 
-- Manage packages with [Bower](http://bower.io) & [npm](https://www.npmjs.com)
-- Substitute [breakpoint](https://github.com/at-import/breakpoint/) with [import-media](https://github.com/eduardoboucas/include-media)
 - Remove dependency on Compass
 - Manage build system with [Tup](https://github.com/gittup/tup)
     - Add [Autoprefixer](https://github.com/postcss/autoprefixer) to workflow

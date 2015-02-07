@@ -6,7 +6,7 @@
 
 	"devDependencies": {
 		"susy" : "latest",
-		"compass-breakpoint" : "latest",
+		"include-media" : "eduardoboucas/include-media",
 		"sassy-maps" : "latest"
 	}
 }
