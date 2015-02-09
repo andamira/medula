@@ -7,8 +7,8 @@
 - It is a clean start point for a new WordPress theme.
 - It is mobile first and progresively enhanced.
 - It is modular, versatile, and simple enough.
+- Uses [Gulp](http://gulpjs.com/), [Bower](http://bower.io/), [Sass](http://sass-lang.com/), [Susy](http://susy.oddbird.net/) & [include-media](https://github.com/eduardoboucas/include-media).
 - It has a clear and well commented structure.
-- It is still going through many many changes.
 
 
 ## Quick Start
@@ -26,21 +26,22 @@
 		npm install
 		bower install
 	```
-1. You can compile the the project with `gulp dev` for development or `gulp` for production
+
+1. You can compile the the project with `gulp dev` during development and with `gulp` for production
 
 1. Make changes and start developing.
 
 
 ## Contributing
 
-_Warning: This project is not stable yet. But..._
-
-Feel free to [submit bugs & fixes](https://github.com/andamira/osea/issues) if you want.
+_This project is still going through many changes. But Feel free to [submit bugs & fixes](https://github.com/andamira/osea/issues)._
 
 ## Main TODO Points
 
-- Make a solid build system using Gulp & [Tup]() as an alternative
-- Improve the accesibility
+- Improve the system for embedding js & jquery libs, using bower to download them
+- Improve the system for embedding the style files of those libraries
+- Improve the file structure, making it clearer
+- Improve the accesibility ([#3](https://github.com/andamira/osea/issues/3), [#4](https://github.com/andamira/osea/issues/4), [#8](https://github.com/andamira/osea/issues/8), [#9](https://github.com/andamira/osea/issues/9))
 
 ## Licenses
 

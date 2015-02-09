@@ -217,7 +217,7 @@ include_once( 'lib/vendor.php' );
  * (see the wiki for instructions)
  */
 
-# include_once( 'lib/medula/medula.php' );
+# include_once( 'medula/medula.php' );
 
 
 /**
