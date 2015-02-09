@@ -202,8 +202,6 @@ include_once( 'lib/vendor.php' );
  * 5 PLUGIN FUNCTIONALITY (MÉDULA)
  * ************************************************************
  *
- * @link https://github.com/andamira/osea/wiki/Médula
- *
  * Médula is a starter plugin embedded in Ósea
  *
  * This enables functionality that scapes the scope
@@ -213,8 +211,10 @@ include_once( 'lib/vendor.php' );
  * it itself includes) to your particular needs.
  *
  * Remember:
- * You should make this a standalone plugin ASAP.
- * (see the wiki for instructions)
+ * You should make this a standalone plugin.
+ * See the wiki for instructions:
+ *
+ * @link https://github.com/andamira/osea/wiki/Medula
  */
 
 # include_once( 'medula/medula.php' );

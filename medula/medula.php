@@ -1,7 +1,7 @@
 <?php
 /**
  * Plugin Name: Médula (Ósea)
- * Plugin URI: https://github.com/andamira/osea/wiki/Médula
+ * Plugin URI: https://github.com/andamira/osea/wiki/Medula
  * Description: This plugin contains all the theme independent functionality.
  * Version 0.01
  * Author: andamira
@@ -24,6 +24,8 @@
  *
  * NOTE: If you decide to use Médula, you must customize each one 
  * of the included files for your particular use case
+ *
+ * @link https://github.com/andamira/osea/wiki/Medula
  */
 
 // Google Analytics Tracking Code
@@ -43,7 +45,4 @@ include_once( 'taxonomies.php' );
 
 // Create Metaboxes
 include_once( 'metaboxes.php' );
-
-// Create Custom Admin Columns
-# include_once( 'columns.php' );
 

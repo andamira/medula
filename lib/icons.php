@@ -54,7 +54,7 @@ function osea_admin_area_favicon() {
  * 3 ICONS COLLECTIONS
  * ************************************************************
  *
- * Uncomment the libraries you want to use
+ * Uncomment the fonticons libraries you want to use
  */
 
 add_action( 'wp_enqueue_scripts', 'icons_collections' );
@@ -70,7 +70,7 @@ function icons_collections() {
 	 * FONT AWESOME
 	 * @link http://fortawesome.github.io/Font-Awesome/get-started/
 	 */
-	#wp_enqueue_style( 'fontawesome', '//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css', null, '4.2.0' );
+	# wp_enqueue_style( 'fontawesome', '//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css', null, '4.2.0' );
 }
 
 

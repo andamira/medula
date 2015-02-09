@@ -22,9 +22,9 @@
 	1. First you need to have npm & bower in your system
 
 	1. Then you need to install the local dependencies from the root of the project:
-		```
-		npm install
-		bower install
+	```
+	npm install
+	bower install
 	```
 
 1. You can compile the the project with `gulp dev` during development and with `gulp` for production
