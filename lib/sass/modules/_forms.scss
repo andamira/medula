@@ -54,7 +54,7 @@ textarea,
 	font-family: $sans-serif;
 
 	background-color: $white;
-	@include transition(background-color .2s ease-in-out);
+	transition: background-color .2s ease-in-out;
 
 	@include input-placeholder( black(0.5) );
 
@@ -85,7 +85,7 @@ textarea,
     &.is-disabled {
         cursor: not-allowed;
         border-color: lighten( $gray-light, 3% );
-        @include opacity( .6 );
+        opacity: .6;
 
         &:focus,
         &:active {

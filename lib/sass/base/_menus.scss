@@ -53,7 +53,7 @@ $smart-header-height: 2rem;
 	z-index: 1;
 	height: $smart-header-height;
 	top: 0;
-	@include transition( top 0.2s ease-in-out );
+	transition: top 0.2s ease-in-out;
 	
 	// Admin Bar Positioning Fix (see /modules/admin_bar.scss)
 	.admin-bar & {

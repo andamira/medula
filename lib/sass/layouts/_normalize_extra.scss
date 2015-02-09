@@ -16,7 +16,7 @@ hr,
 input[type="search"],
 input[type="checkbox"],
 input[type="radio"] {
-	@include box-sizing( border-box );
+	box-sizing: border-box;
 }
 
 

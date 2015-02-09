@@ -4,11 +4,11 @@
 
 ## Features
 
-- It is designed to be a clean starting point for a WordPress theme.
+- It is a clean start point for a new WordPress theme.
 - It is mobile first and progresively enhanced.
-- It is modular, versatile, and simple enough to understand it all.
-- It has a clear well commented structure.
-- It is still going through many changes, wait for it.
+- It is modular, versatile, and simple enough.
+- It has a clear and well commented structure.
+- It is still going through many many changes.
 
 
 ## Quick Start
@@ -19,11 +19,17 @@
 
 1. Install the dependencies
 
+	1. First you need to have npm & bower in your system
+
+	1. Then you need to install the local dependencies from the root of the project:
+		```
+		npm install
+		bower install
 	```
-	gem install compass sass --no-ri --no-rdoc
-	npm -g install
-	bower install
-	```
+1. You can compile the the project with `gulp dev` for development or `gulp` for production
+
+1. Make changes and start developing.
+
 
 ## Contributing
 
@@ -33,12 +39,8 @@ Feel free to [submit bugs & fixes](https://github.com/andamira/osea/issues) if y
 
 ## Main TODO Points
 
-- Remove dependency on Compass
-- Manage build system with [Tup](https://github.com/gittup/tup)
-	- Add [Autoprefixer](https://github.com/postcss/autoprefixer) to workflow
-	- Add CSS, JS, HTML, etc. minification & concatenation to workflow
+- Make a solid build system using Gulp & [Tup]() as an alternative
 - Improve the accesibility
-- Remove IE8 compatibility
 
 ## Licenses
 

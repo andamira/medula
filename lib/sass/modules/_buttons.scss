@@ -34,10 +34,10 @@
   line-height: 24pt;
   font-weight: normal;
   padding: 0 24px;
-  @include border-radius( 4px );
+  border-radius: 4px;
   border: 0;
   cursor: pointer;
-  @include transition( background-color 0.14s ease-in-out );
+  transition: background-color 0.14s ease-in-out;
 
   // hovering on the button
   &:hover, &:focus {

@@ -135,31 +135,12 @@
  * @link http://css-tricks.com/snippets/css/style-placeholder-text/
  */
 @mixin input-placeholder($color: #000, $opacity: auto, $ttime: auto, $ttype: ease) {
-	&::-webkit-input-placeholder {
+	&::placeholder {
 		color: $color;
 		@if $opacity != 'auto' {
 			opacity: $opacity;
 		}
 		@if $ttime!= 'auto' {
-			transition: opacity $ttime $ttime $ttype;
-		}
-	}
-	&::-moz-placeholder {  // Firefox 19+
-		color: $color;
-		@if $opacity != 'auto' {
-			opacity: $opacity;
-		}
-		@if $ttime != 'auto' {
-			transition: opacity $ttime $ttime $ttype;
-		}
-		opacity: $opacity;
-	}
-	&:-ms-input-placeholder {
-		color: $color;
-		@if $opacity != 'auto' {
-			opacity: $opacity;
-		}
-		@if $ttime != 'auto' {
 			transition: opacity $ttime $ttime $ttype;
 		}
 	}
