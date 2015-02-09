@@ -11,7 +11,8 @@
  *     4 SPECIFIC PLUGINS
  *
  *         4.1 WPML
- *         4.2 WOOCOMMERCE
+ *         4.2 WP-TYPES
+ *         4.3 WOOCOMMERCE
  */
 
 /**
@@ -48,7 +49,14 @@ include_once( 'js/libs.php' );
 # include_once( 'vendor/wpml.php' );         // < disabled by default
 
 /**
- * 4.2 WOOCOMMERCE
+ * 4.2 WP-TYPES
+ *
+ * @link http://wp-types.org/
+ */
+# include_once( 'vendor/wp-types.php' );         // < disabled by default
+
+/**
+ * 4.3 WOOCOMMERCE
  *
  * @link http://www.woothemes.com/woocommerce/
  */

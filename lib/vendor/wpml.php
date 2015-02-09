@@ -6,6 +6,7 @@
  *
  *     2 Custom Language Switcher
  *
+ * @link http://wpml.org
  */
 
 
