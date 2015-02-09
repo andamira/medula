@@ -1,8 +1,13 @@
 #!/bin/sh
 #
 # This script is called from .bowerrc and automatically runs after `bower install`
+dir=$( cat .bowerrc | grep -Po '"directory":.*?[^\\]",' | sed 's/:[[:space:]]/@/g' | sed 's/\",*//g' | cut -d@ -f2 )
 
 preen
 
-mv bower_components/normalize.css/normalize.css bower_components/normalize.css/_normalize.scss
+# rename css files for importing in sass
+# don't forget to import them from lib/sass/_dependencies.scss
+echo -n "renaming css files... "
+mv ${dir}/normalize.css/normalize.css ${dir}/normalize.css/_normalize.scss 2>/dev/null
 
+echo "Done."

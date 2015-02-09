@@ -27,7 +27,7 @@
  *
  *         5 Base
  *
- *         6 Vendors
+ *         6 Vendor
  *
  *         7 Debug
  *
@@ -135,13 +135,13 @@ $conf_100_page_height: true; // Sets page to at least 100% screen height. Footer
 
 
 /**
- * 6 /VENDORS
+ * 6 /VENDOR
  *
- * Vendors specific css, like for
+ * Vendor specific css, like for
  * 3rd party WordPress or jQuery plugins.
  */
 
-@import "vendors";
+@import "vendor";
 
 
 /**

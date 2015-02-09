@@ -1,5 +1,5 @@
 {
-	"directory": "bower_components/",
+	"directory": "vendor-dl/",
 	"scripts": {
 		"preinstall": "",
 		"postinstall": "./.bower-postinstall",
