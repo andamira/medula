@@ -8,9 +8,11 @@
  *
  *     3 Susy Setup
  *
- *     4 The grid container
+ *     4 Conditional CSS
  *
- *     5 The grid layout
+ *     5 The grid container
+ *
+ *     6 The grid layout
  */
 
 
@@ -33,7 +35,7 @@ $media-expressions: (
 	handheld: "handheld",
 	retina2x: ("(-webkit-min-device-pixel-ratio: 2)", "(min-resolution: 192dpi)"), 
 	retina3x: ("(-webkit-min-device-pixel-ratio: 3)", "(min-resolution: 350dpi)")
-	);
+);
 
 
 /**
@@ -92,7 +94,7 @@ $susy: (                            // *default | alternative
  * @see /lib/js/scripts.js
  * @link http://adactio.com/journal/5429/
  */
-@include media( ">=mobile2desktop" ) {
+@include media( "all", ">=mobile2desktop" ) {
 	body:after {
 		content: 'widescreen';
 		display: none;

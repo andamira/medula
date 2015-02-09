@@ -18,11 +18,9 @@
  *     3 Numbers & Units
  *
  *         3.1 strip-unit()
- *         3.2 rem2px()
- *             rem2px-list()
- *         3.3 clamp()
- *         3.4 calc-percent()
- *         3.5 convert-angle()
+ *         3.2 clamp()
+ *         3.3 calc-percent()
+ *         3.4 convert-angle()
  *
  *     4 Custom Functions
  *
@@ -86,48 +84,16 @@
 	@return $num / ($num * 0 + 1);
  }
 
-/**
- * 3.2 Convert rem to pixels
- *
- * @link http://davidwalsh.name/rem-px-browser-function-sass
- */
-@function rem2px( $value ) {
-	$unit : unit( $value );
-	$val  : strip-unit( $value );
-
-	@if ( $rem-with-px-fallback ) and ( $unit == 'rem' ) {
-		$val: $val * $base-font-size;
-	}
-	@else if( $unit == 'px' ) or ( $unit == 'rem' ){
-		$val: $value;
-	}
-	@else {
-		@warn 'There is no unit conversion for #{$unit}';
-	}
-	@return $val;
-}
-
-@function rem2px-list( $values ) {
-
-	$list: ();
-
-	@each $value in $values {
-		$list: append( $list, rem2px($value) );
-	}
-
-@return $list();
-}
-
 
 /**
- * 3.3 Restrict a number between min and max values
+ * 3.2 Restrict a number between min and max values
  */
 @function clamp($value, $min, $max) {
 	@return if($value > $max, $max, if($value < $min, $min, $value));
 }
 
 /**
- * 3.4 Calculate target / context
+ * 3.3 Calculate target / context
  *
  * Example:
  *     width: calc-percent(650px, 1000px);
@@ -140,7 +106,7 @@
   }
 
 /**
- * 3.5 Converts angles into another unit.
+ * 3.4 Converts angles into another unit.
  * You could probably do this for anything fixed (px, in, cm, mm)
  */
 @function convert-angle($value, $unit) {

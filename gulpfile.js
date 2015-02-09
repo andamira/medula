@@ -71,6 +71,7 @@ gulp.task('sass', function () {
 //			.pipe(plumber())
 			.pipe(sourcemaps.init())
 			.pipe( sass({
+				errLogToConsole: true,
 				style: "nested",
 				precision: 10,
 				sourceComments: false
@@ -85,6 +86,7 @@ gulp.task('sass', function () {
 		gulp.src(source.sass)
 //			.pipe(exclude(source.sass_exclude))
 			.pipe( sass({
+				errLogToConsole: true,
 				style: "compressed",
 				precision: 10
 			}))
