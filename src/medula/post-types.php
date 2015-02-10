@@ -35,7 +35,7 @@ function custom_post_example() {
 
 			// For the icon you can use an image or an icon font ( http://melchoyce.github.io/dashicons/ )
 			'menu_icon' => 'dashicons-smiley',											// e.g. icon font
-			//'menu_icon' => get_stylesheet_directory_uri() . '/lib/img/favicon.png',	// e.g. icon image
+			//'menu_icon' => get_stylesheet_directory_uri() . '/img/favicon.png',	// e.g. icon image
 			
 			'rewrite'	=> array( 'slug' => 'custom_type', 'with_front' => false ),
 			'has_archive' => 'custom_type',

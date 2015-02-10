@@ -47,10 +47,10 @@ function osea_scripts_and_styles() {
 	if (!is_admin()) {
 
 		// modernizr
-		wp_register_script( 'osea-modernizr', get_stylesheet_directory_uri() . '/lib/js/compat/modernizr.custom.min.js', array(), '2.8.3', false );
+		wp_register_script( 'osea-modernizr', get_stylesheet_directory_uri() . '/js/compat/modernizr.custom.min.js', array(), '2.8.3', false );
 
 		// register main stylesheet
-		wp_register_style( 'main-stylesheet', get_stylesheet_directory_uri() . '/lib/css/style.css', array(), '', 'all' );
+		wp_register_style( 'main-stylesheet', get_stylesheet_directory_uri() . '/css/style.css', array(), '', 'all' );
 
 		// comment reply script for threaded comments
 		if ( is_singular() AND comments_open() AND (get_option('thread_comments') == 1)) {
@@ -58,7 +58,7 @@ function osea_scripts_and_styles() {
 		}
 
 		//adding scripts file in the footer
-		wp_register_script( 'osea-js', get_stylesheet_directory_uri() . '/lib/js/scripts.php', array( 'jquery' ), '', true );
+		wp_register_script( 'osea-js', get_stylesheet_directory_uri() . '/js/scripts.php', array( 'jquery' ), '', true );
 
 		// enqueue styles and scripts
 		wp_enqueue_script( 'osea-modernizr' );
@@ -84,13 +84,13 @@ function osea_scripts_and_styles() {
 function osea_theme_support() {
 
 	// thumbnails support defined in:
-	// lib/thumbnails.php
+	// /src/lib/thumbnails.php
 	
 	// menus support is defined in:
-	// lib/menus.php
+	// /src/lib/menus.php
 	
 	// post format support defined in:
-	// medula/post-formats.php
+	// /src/medula/post-formats.php
 
 	/**
 	 * 2.1 CUSTOM BACKGROUND

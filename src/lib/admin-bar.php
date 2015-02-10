@@ -25,8 +25,8 @@ add_theme_support( 'admin-bar', array( 'callback' => 'osea_adminbar_cb' ) );
  *
  * Disable inline styling, we're gonna use sass for that
  *
- * @see /lib/sass/modules/_admin_bar.scss
- * @see /lib/sass/breakpoints/base/_menus.scss
+ * @see /src/sass/modules/_admin_bar.scss
+ * @see /src/sass/breakpoints/base/_menus.scss
  * @see {WP_FOLDER}/wp-includes/admin-bar.php Original WordPress Code
  */
 function osea_adminbar_cb() {

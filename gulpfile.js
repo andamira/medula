@@ -12,7 +12,7 @@ var source = {
 	// plugins
 	// You should specifically load your js plugins or plugin folders in the order you want them to load
 	js: [
-		'vendor/lib/js/libs/**/*.js',  // I put jquery in the header b/c its used by everything it seems like.
+//		'vendor/lib/js/libs/**/*.js',  // I put jquery in the header b/c its used by everything it seems like.
 	],
 	//js_exclude: [],
 
@@ -24,8 +24,8 @@ var source = {
 };
 
 var target = {
-	sass: 'lib/css',
-	js: 'lib/js',
+	sass: 'src/css',
+	js: 'src/js',
 
 	// "static" stuff
 	//images: assettarget + 'lib/img',
@@ -79,7 +79,7 @@ gulp.task('sass', function () {
 				.on( "error", gutil.log)
 			.pipe(sourcemaps.write({includeContent: false, sourceRoot: '../sass'}))
 			.pipe(pixrem())
-			.pipe(autoprefixer('ie >= 8, > 5%, last 5 versions'))
+			.pipe(autoprefixer('ie >= 8, > 5%, last 3 versions'))
 			.pipe(gulp.dest(target.sass))
 //			.pipe(livereload(server));
 	} else {
@@ -92,7 +92,7 @@ gulp.task('sass', function () {
 			}))
 				.on( "error", gutil.log)
 			.pipe(pixrem())
-			.pipe(autoprefixer('ie >= 8, > 5%, last 5 versions'))
+			.pipe(autoprefixer('ie >= 8, > 5%, last 3 versions'))
 			.pipe(minifycss({
 				compatibility: 'ie8',
 				keepBreaks: false,

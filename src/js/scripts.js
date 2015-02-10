@@ -42,7 +42,7 @@ jQuery(document).ready(function($) {
 	 * (Uncomment one of these lines and the function at 2.1 if you intend to use it)
 	 *
 	 * Define the height of chosen element in:
-	 * @see /lib/sass/base/_menus.scss
+	 * @see /src/sass/base/_menus.scss
 	 */
 	//osea_smart_header('.site-header' );
 	//osea_smart_header('.site-main-nav', '.site-header-logo');
@@ -86,7 +86,7 @@ jQuery(document).ready(function($) {
 	/**
 	 * Detect Conditional CSS
 	 *
-	 * @see /lib/sass/layout/_grid.scss
+	 * @see /src/sass/layout/_grid.scss
 	 * @link http://adactio.com/journal/5429/
 	 */
 	var size = window.getComputedStyle(document.body,':after').getPropertyValue('content');
@@ -112,7 +112,7 @@ jQuery(document).ready(function($) {
  * @param string $navbar        selector for the element
  * @param string $above Navbar  optional selector for the above element
  *
- * @see /lib/sass/breakpoints/base/_menus.scss
+ * @see /src/sass/breakpoints/base/_menus.scss
  * @link http://jsfiddle.net/mariusc23/s6mLJ/31/ Inspired by this
  */
 
@@ -201,7 +201,7 @@ function osea_smart_header(navbar, aboveNavbar) {
 /**
  * 2.2 SWAP GRAVATARS
  *
- * In the /lib/comments.php file, you can see we're not loading the gravatar
+ * In the /src/lib/comments.php file, you can see we're not loading the gravatar
  * images on mobile to save bandwidth. Once we hit an acceptable viewport
  * then we can swap out those images since they are located in a data attribute.
  */

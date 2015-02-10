@@ -71,7 +71,7 @@
  * 1.1 DEBUG
  *
  * Set to true in order to display debug information.
- * The functions are defined in lib/osea.php
+ * The functions are defined in /src/lib/osea.php
  */
 #define( 'OSEA_DEBUG', true );           // (#) disabled by default
 
@@ -93,12 +93,6 @@ define( 'OSEA_IE8_SUPPORT', true );      // ( ) enabled by default
 
 // Remove the whitespace from HTML between wp_head and wp_footer.
 #define( 'OSEA_OPTIMIZE_HTML', true );   // (#) disabled by default
-
-// Concatenate all js libs included in /lib/js/scripts.js
-#define( 'OSEA_CONCATENATE_JS', true );  // (#) disabled by default
-
-// Minify the js libs, concatenated or not
-#define( 'OSEA_MINIFY_JS', true );       // (#) disabled by default
 
 
 /**
@@ -137,14 +131,14 @@ require_once( 'lib/admin-bar.php' );       //
  * 3 AFTER SETUP THEME
  * ************************************************************
  *
- * Functions defined in lib/osea.php
+ * Functions defined in /src/lib/osea.php
  */
 function osea_launch() {
 
 	/**
 	* 4.1 language support
 	*/
-	load_theme_textdomain( 'osea-theme', get_template_directory() . '/lib/langs' );
+	load_theme_textdomain( 'osea-theme', get_template_directory() . '/translations' );
 
 	/**
 	* 4.2 cleanup
@@ -179,7 +173,7 @@ function osea_launch() {
 	osea_theme_support();
 
 	/**
-	* 4.5 register sidebars ( sidebars are defined in lib/sidebars.php )
+	* 4.5 register sidebars ( sidebars are defined in /src/lib/sidebars.php )
 	*/
 	add_action( 'widgets_init', 'osea_register_sidebars' );
 }

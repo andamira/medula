@@ -19,7 +19,7 @@
  * 1 Load external libraries
  * ************************************************************
  */
-include_once( 'js/libs.php' );
+include_once( dirname(__FILE__) . '/../js/libs.php' );
 
 
 /**

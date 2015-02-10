@@ -1,9 +1,21 @@
 
+env = dev
+#env = prod
+
+# Paths
+sass = node_modules/.bin/node-sass
+
+
 # SASS
-: lib/sass/style.scss |> node-sass %f %o |> lib/css/%B.css
-: lib/sass/login.scss |> node-sass %f %o |> lib/css/%B.css
-: lib/sass/admin/style.scss |> node-sass %f %o |> lib/css/admin/%B.css
-: lib/sass/admin/editor-style.scss |> node-sass %f %o |> lib/css/admin/%B.css
+: src/lib/sass/style.scss |> $(sass) %f %o |> lib/css/%B.css
+: src/lib/sass/login.scss |> $(sass) %f %o |> lib/css/%B.css
+: src/lib/sass/admin/style.scss |> $(sass) %f %o |> lib/css/admin/%B.css
+: src/lib/sass/admin/editor-style.scss |> $(sass) %f %o |> lib/css/admin/%B.css
+
+# TODO: TEST THIS
+#: src/lib/sass/[^_]*.scss |> $(sass) %f %o |> lib/css/%B.css
+#: src/lib/sass/admin/[^_]*.scss |> $(sass) %f %o |> lib/css/admin/%B.css
+
 
 # CSS
 

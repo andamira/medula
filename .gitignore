@@ -7,12 +7,13 @@ vendor-dl
 .sass-cache
 
 #################### output
-lib/css
-lib/js/scripts.min.js
+src/css/*.css
+src/css/admin/
+src/js/scripts.min.js
 
 #################### temp
-lib/langs
-lib/js/includes
+src/translations
+src/js/includes
 tmp
 .send-repo
 

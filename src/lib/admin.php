@@ -79,7 +79,7 @@ add_action( 'wp_dashboard_setup', 'osea_custom_dashboard_widgets' );
 function osea_example_dashboard_widget() {
 	?>
 	<h1> </h1>
-	<p>You can edit this message in /lib/admin.php and add your own widgets, and restore the disabled defaults.</p>
+	<p>You can edit this message in /src/lib/admin.php and add your own widgets, and restore the disabled defaults.</p>
 	<?php
 }
 
@@ -88,10 +88,10 @@ function osea_example_dashboard_widget() {
  * 3 CUSTOM LOGIN PAGE
  * ************************************************************
  *
- * You can edit the style in /lib/sass/login.scss
+ * You can edit the style in /src/sass/login.scss
  */
 function osea_login_css() {
-	wp_enqueue_style( 'osea_login_css', get_template_directory_uri() . '/lib/css/login.css', false );
+	wp_enqueue_style( 'osea_login_css', get_template_directory_uri() . '/css/login.css', false );
 }
 
 // changing the logo link from wordpress.org to your site
@@ -116,14 +116,14 @@ add_filter( 'login_headertitle', 'osea_login_title' );
  * 4.1 Custom Admin Stylesheets
  */
 function load_admin_styles() {
-	wp_enqueue_style( 'admin_css', get_template_directory_uri() . '/lib/css/admin/style.css' );
+	wp_enqueue_style( 'admin_css', get_template_directory_uri() . '/css/admin/style.css' );
 }  
 add_action( 'admin_enqueue_scripts', 'load_admin_styles' );
 
 /**
  * 4.2 Custom TinyMCE Editor Stylesheet
  */
-add_editor_style( get_template_directory_uri() . '/lib/css/admin/editor-style.css' );
+add_editor_style( get_template_directory_uri() . '/css/admin/editor-style.css' );
 
 /**
  * 4.3 TODO: Custom TinyMCE buttons
