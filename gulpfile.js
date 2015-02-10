@@ -3,7 +3,7 @@
 var source = {
 
 	sass: [
-		'lib/sass/**/[^_]*.scss',
+		'src/sass/**/[^_]*.scss',
 	],
 	sass_exclude: [
 //		'lib/sass/**/_*.scss',

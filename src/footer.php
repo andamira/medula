@@ -25,7 +25,7 @@
 
 			</footer>
 
-			<?php // js scripts that loads in the footer are defined in lib/osea.php ?>
+			<?php // js scripts that loads in the footer are defined in /src/lib/osea.php ?>
 			<?php wp_footer(); ?>
 
 		</div> <?php // (#page-wrapper) opening tag in header.php ?>
