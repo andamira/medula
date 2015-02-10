@@ -2,9 +2,7 @@
  * Stylesheet: Main Stylesheet
  * ************************************************************
  *
- *         0 Dependencies Configuration
- *         
- *         1 Global Configuration Variables
+ *         1 Dependencies & Global Variables
  *
  *         2 Helpers
  *                Material Colors
@@ -38,16 +36,11 @@
 
 
 /**
- * 0 DEPENDENCIES & GLOBAL CONFIGURATION
+ * 1 DEPENDENCIES & GLOBAL VARIABLES
  *
+ * Configure your theme includes & paths in this file
  */
 @import "dependencies";
-
-
-/**
- * 1 GLOBAL VARIABLES
- */
-$conf_100_page_height: true; // Sets page to at least 100% screen height. Footer glued to the bottom
 
 
 /**

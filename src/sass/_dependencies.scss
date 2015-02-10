@@ -7,8 +7,11 @@
  *
  *     1 Load Dependencies
  *
- *     2 Global Configurable Variables
+ *     2 Global Variables
  *
+ *         2.1 Theme Dirname !!!
+ *         2.2 Assets
+ *         2.3 Misc
  */
 
 
@@ -26,5 +29,35 @@
 @import "../../vendor-dl/susy/sass/susy";
 @import "../../vendor-dl/include-media/dist/include-media";
 @import "../../vendor-dl/sassy-maps/sass/sassy-maps";
+
+
+/**
+ * 2 GLOBAL VARIABLES
+ */
+
+/**
+ * 2.1 THEME DIRNAME !!!
+ *
+ * IMPORTANT: Your must write the same name the theme directory will have
+ * when you copy (or symlink) src/ dir to the WordPress themes folder.
+ * 
+ * For example:
+ *
+ *     cp -r src/ /var/www/wordpress/wp-content/themes/DIRNAME/
+ */
+$theme-dir-name: "osea" ;
+
+/**
+ * 2.2 Assets
+ */
+$image-url-path: "/wp-content/themes/#{$theme-dir-name}/img/" !default;
+$font-url-path: "/wp-content/themes/#{$theme-dir-name}/fonts/" !default;
+
+/**
+ * 2.3 Misc
+ */
+
+// Sets page to at least 100% screen height & leaves page footer glued to the bottom
+$conf_100_page_height: true; 
 
 

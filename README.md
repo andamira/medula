@@ -27,7 +27,11 @@
 	bower install
 	```
 
-1. You can compile the the project with `gulp dev` during development and with `gulp` for production
+1. Configure your theme dirname in `/src/sass/_dependencies.scss`
+
+1. You can compile the the project with `gulp dev` during development and `gulp` for production
+
+1. Copy (or symlink) the `src/` dir to the WordPress themes dir using the same dirname you configured before.
 
 1. Make changes and start developing.
 

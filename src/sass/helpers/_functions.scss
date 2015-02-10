@@ -6,23 +6,24 @@
  * make repeated actions a lot easier. They are really similar to mixins,
  * but instead of outputting lines of Sass, functions return a value.
  *
+ *     1 Assets Functions
  *
- *     1 CSS-Tricks Functions
+ *     2 CSS-Tricks Functions
  *
- *         1.1 Black and White Opacity Functions
+ *         2.1 Black and White Opacity Functions
  *
- *     2 Layout
+ *     3 Layout
  *
- *         2.1 (z-index)
+ *         3.1 (z-index)
  *
- *     3 Numbers & Units
+ *     4 Numbers & Units
  *
- *         3.1 strip-unit()
- *         3.2 clamp()
- *         3.3 calc-percent()
- *         3.4 convert-angle()
+ *         4.1 strip-unit()
+ *         4.2 clamp()
+ *         4.3 calc-percent()
+ *         4.4 convert-angle()
  *
- *     4 Custom Functions
+ *     5 Custom Functions
  *
  *
  * @link http://sass-lang.com/documentation/Sass/Script/Functions.html
@@ -30,7 +31,21 @@
 
 
 /**
- * 1 CSS-TRICKS FUNCTIONS
+ * 1 ASSETS FUNCTIONS
+ *
+ * Paths are defined in /src/sass/_global.scss
+ */
+@function image-url($url) {
+	@return url("#{$image-url-path}#{$url}");
+}
+
+@function font-url($url) {
+	@return url("#{$font-url-path}#{$url}");
+}
+
+
+/**
+ * 2 CSS-TRICKS FUNCTIONS
  *
  * A selection of mixins published in CSS-Tricks website
  *
@@ -38,7 +53,7 @@
  */
 
 /**
- * 1.1 BLACK AND WHITE OPACITIY FUNCTIONS
+ * 2.1 BLACK AND WHITE OPACITIY FUNCTIONS
  *
  * It's pretty common to need a bit of transparent black or white.
  *
@@ -56,7 +71,7 @@
 
 
 /**
- * 2 LAYOUT FUNCTIONS
+ * 3 LAYOUT FUNCTIONS
  *
  */
 
@@ -72,12 +87,12 @@
 
 
 /**
- * 3 NUMBERS & UNITS
+ * 4 NUMBERS & UNITS
  *
  */
 
 /*
- * 3.1 Strips the unit of measure and returns it
+ * 4.1 Strips the unit of measure and returns it
  * @link https://github.com/zurb/foundation/blob/master/scss/foundation/_functions.scss#L40
  */
 @function strip-unit( $num ) {
@@ -86,14 +101,14 @@
 
 
 /**
- * 3.2 Restrict a number between min and max values
+ * 4.2 Restrict a number between min and max values
  */
 @function clamp($value, $min, $max) {
 	@return if($value > $max, $max, if($value < $min, $min, $value));
 }
 
 /**
- * 3.3 Calculate target / context
+ * 4.3 Calculate target / context
  *
  * Example:
  *     width: calc-percent(650px, 1000px);
@@ -106,7 +121,7 @@
   }
 
 /**
- * 3.4 Converts angles into another unit.
+ * 4.4 Converts angles into another unit.
  * You could probably do this for anything fixed (px, in, cm, mm)
  */
 @function convert-angle($value, $unit) {
@@ -123,7 +138,7 @@
 
 
 /**
- * 4 CUSTOM FUNCTIONS
+ * 5 CUSTOM FUNCTIONS
  */
 
 

@@ -89,8 +89,7 @@ function osea_theme_support() {
 	// menus support is defined in:
 	// /src/lib/menus.php
 	
-	// post format support defined in:
-	// /src/medula/post-formats.php
+	// post format support is not defined
 
 	/**
 	 * 2.1 CUSTOM BACKGROUND
