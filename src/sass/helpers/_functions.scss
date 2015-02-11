@@ -6,27 +6,41 @@
  * make repeated actions a lot easier. They are really similar to mixins,
  * but instead of outputting lines of Sass, functions return a value.
  *
- *     1 Assets Functions
+ * (You can put yours at the end of the file in section 5 Custom)
  *
- *     2 CSS-Tricks Functions
  *
- *         2.1 Black and White Opacity Functions
+ *     0 Assets
  *
- *     3 Layout
+ *     1 Color
  *
- *         3.1 (z-index)
+ *         1.1 black() and white()
+ *         1.2 tint() and shade()
+ *         1.3 luminance()
  *
- *     4 Numbers & Units
+ *     2 Layout
  *
- *         4.1 strip-unit()
- *         4.2 clamp()
- *         4.3 calc-percent()
- *         4.4 convert-angle()
+ *         2.1 z() for z-indez
  *
- *     5 Custom Functions
+ *     3 Numbers & Units
+ *
+ *         3.1 strip-unit()
+ *         3.2 clamp()
+ *         3.3 calc-percent()
+ *         3.4 convert-angle()
+ *
+ *     4 Functional Programming
+ *
+ *         4.1 walk()
+ *         4.2 some()
+ *         4.3 every()
+ *         4.4 functions-walk()
+ *         4.5 Advanced Type Checking
+ *
+ *     5 Custom
  *
  *
  * @link http://sass-lang.com/documentation/Sass/Script/Functions.html
+ * @link http://css-tricks.com/snippets/sass/
  */
 
 
@@ -45,15 +59,12 @@
 
 
 /**
- * 2 CSS-TRICKS FUNCTIONS
+ * 1 COLOR FUNCTIONS
  *
- * A selection of mixins published in CSS-Tricks website
- *
- * @link http://css-tricks.com/snippets/sass/
  */
 
 /**
- * 2.1 BLACK AND WHITE OPACITIY FUNCTIONS
+ * 1.1 BLACK AND WHITE OPACITIY
  *
  * It's pretty common to need a bit of transparent black or white.
  *
@@ -63,10 +74,89 @@
  * @link http://css-tricks.com/snippets/sass/black-white-opacity-mixins/
  */
 @function black($opacity) {
-    @return rgba(0,0,0,$opacity);
+	@return rgba(0,0,0,$opacity);
 }
 @function white($opacity) {
-    @return rgba(255,255,255,$opacity);
+	@return rgba(255,255,255,$opacity);
+}
+
+/// 1.2 TINT AND SHADE
+///
+/// @link http://css-tricks.com/snippets/sass/tint-shade-functions/
+///
+
+/// TINT()
+///
+/// Slightly lighten a color, mixing it with white
+///
+/// @access public
+/// @param {Color} $color - color to tint/shade
+/// @param {Number} $percentage - percentage of `$color` in returned color
+/// @return {Color}
+///
+/// Usage:
+///		 color: tint(#BADA55, 42%);
+///
+@function tint($color, $percentage) {
+	@return mix($color, white, $percentage);
+}
+
+/// SHADE()
+///
+/// Slightly darken a color, by mixing it with black
+///
+/// @access public
+/// @param {Color} $color - color to shade
+/// @param {Number} $percentage - percentage of `$color` in returned color
+/// @return {Color}
+///
+/// Usage:
+///		 color: shade(#BADA55, 42%);
+///
+@function shade($color, $percentage) {
+	@return mix($color, black, $percentage);
+}
+
+/// 1.3 COLOR LUMINANCE
+///
+/// Returns the luminance of `$color` as a float (between 0 and 1)
+/// 1 is pure white, 0 is pure black
+///
+/// Knowing the luminance of a color can be useful when dealing with
+/// dynamic or random colors, in order to provide an accurate
+/// background color if the color is too bright or too dark. As a
+/// rule of thumb, you can consider that a color whose luminance is
+/// over 0.7 is going to be hard to read on a white background.
+///
+/// @param {Color} $color - Color
+/// @return {Number}
+/// @link http://www.w3.org/TR/2008/REC-WCAG20-20081211/#relativeluminancedef Reference
+/// @link http://css-tricks.com/snippets/sass/luminance-color-function/
+///
+/// Usage:
+///     $color: #BADA55;
+///     $luminance: luminance($color);
+///     // 0.6123778773 
+///
+@function luminance($color) {
+	$colors: (
+		'red': red($color),
+		'green': green($color),
+		'blue': blue($color)
+	);
+	@each $name, $value in $colors {
+		$adjusted: 0;
+		$value: $value / 255;
+
+		@if $value < 0.03928 {
+			$value: $value / 12.92;
+		} @else {
+			$value: ($value + .055) / 1.055;
+			$value: pow($value, 2.4);
+		}
+		$colors: map-merge($colors, ($name: $value));
+	}
+	@return (map-get($colors, 'red') * .2126) + (map-get($colors, 'green') * .7152) + (map-get($colors, 'blue') * .0722);
 }
 
 
@@ -87,13 +177,13 @@
 
 
 /**
- * 4 NUMBERS & UNITS
+ * 3 NUMBERS & UNITS
  *
  */
 
 /*
- * 4.1 Strips the unit of measure and returns it
- * @link https://github.com/zurb/foundation/blob/master/scss/foundation/_functions.scss#L40
+ * 3.1 Strips the unit of measure and returns it
+ * @link https://github.com/zurb/foundation/blob/master/scss/foundation/_functions.scss
  */
 @function strip-unit( $num ) {
 	@return $num / ($num * 0 + 1);
@@ -101,16 +191,16 @@
 
 
 /**
- * 4.2 Restrict a number between min and max values
+ * 3.2 Restrict a number between min and max values
  */
 @function clamp($value, $min, $max) {
 	@return if($value > $max, $max, if($value < $min, $min, $value));
 }
 
 /**
- * 4.3 Calculate target / context
+ * 3.3 Calculate target / context
  *
- * Example:
+ * Usage:
  *     width: calc-percent(650px, 1000px);
  *
  * Compiles to:
@@ -121,7 +211,7 @@
   }
 
 /**
- * 4.4 Converts angles into another unit.
+ * 3.4 Converts angles into another unit.
  * You could probably do this for anything fixed (px, in, cm, mm)
  */
 @function convert-angle($value, $unit) {
@@ -134,6 +224,199 @@
 	} @else {
 		@warn "Cannot convert #{unit($value)} to #{$unit}";
 	}
+}
+
+
+/**
+ * 4 FUNCTIONAL PROGRAMMING FUNCTIONS
+ *
+ * @link http://css-tricks.com/snippets/sass/functional-programming-functions/
+ */
+
+/// 4.1 WALK()
+///
+/// Apply `$function` with `$args` to each item from `$list`.
+/// @author Hugo Giraudel
+/// @param {List} $list - List of items
+/// @param {String} $function - Function to apply to every item from `$list`
+/// @param {Arglist} $args - Extra arguments to pass to `$function`
+/// @return {List}
+/// @throw There is no `#{$function}` function.
+///
+/// Usage:
+///    walk: walk(red green blue, invert);
+///    walk: walk(red green blue, lighten, 20%);
+///    walk: walk(2 4 6 8 10, sqrt);
+///
+/// Compiles to:
+///    walk: cyan #ff7fff yellow;
+///    walk: #ff6666 #00e600 #6666ff;
+///    walk: 1.41421 2 2.44949 2.82843 3.16228;
+///
+@function walk($list, $function, $args...) {
+	@if not function-exists($function) {
+		@error "There is no `#{$function}` function.";
+	}
+	
+	@for $i from 1 through length($list) {
+		$list: set-nth($list, $i, call($function, nth($list, $i), $args...));
+	}
+	
+	@return $list;
+}
+
+/// 4.2 SOME()
+///
+/// Return whether some items from `$list` passed `$function` test.
+/// @author Hugo Giraudel
+/// @param {List} $list - List of items
+/// @param {String} $function - Function to run on every item from `$list`
+/// @param {Arglist} $args - Extra arguments to pass to `$function`
+/// @return {Boolean}
+/// @throw There is no `#{$function}` function.
+///
+/// Usage:
+///    some: some(round ceil floor, function-exists);
+///    some: some(round ceil unknown, function-exists);
+///    some: some(completely unknown function, function-exists);
+///
+/// Compiles to:
+///    some {
+///        some: true;
+///        some: true;
+///        some: false;
+///    }
+///
+@function some($list, $function, $args...) {
+	@if not function-exists($function) {
+		@error "There is no `#{$function}` function.";
+	}
+	
+	@each $item in $list {
+		@if call($function, $item, $args...) {
+			@return true;
+		}
+	}
+	
+	@return false;
+}
+
+/// 4.3 EVERY()
+///
+/// Return whether all items from `$list` passed `$function` test.
+/// @author Hugo Giraudel
+/// @param {List} $list - List of items
+/// @param {String} $function - Function to run on every item from `$list`
+/// @param {Arglist} $args - Extra arguments to pass to `$function`
+/// @return {Boolean}
+/// @throw There is no `#{$function}` function.
+///
+/// Usage:
+///    every: every(round ceil floor, function-exists);
+///    every: every(round ceil unknown, function-exists);
+///    every: every(completely unknown function, function-exists);
+///
+/// Compiles to:
+///        some: true;
+///        some: false;
+///        some: false;
+///
+@function every($list, $function, $args...) {
+	@if not function-exists($function) {
+		@error "There is no `#{$function}` function.";
+	}
+	
+	@each $item in $list {
+		@if not call($function, $item, $args...) {
+			@return false;
+		}
+	}
+	
+	@return true;
+}
+
+/// 4.4 FUNCTIONS-WALK()
+///
+/// Return a list made of the result of each function call from `$functions` with `$args`.
+/// @author Hugo Giraudel
+/// @param {List} $functions - List of functions to call 
+/// @param {Arglist} $args - Extra arguments to pass to each function in `$functions`
+/// @return {List}
+/// @throw There is no `#{$function}` function.
+///
+/// Usage:
+///    functions-walk: functions-walk('red' 'blue' 'green', #BADA55);
+///    functions-walk: functions-walk('round' 'ceil' 'floor', 3.1415279);
+///
+/// Compiles to:
+///    functions-walk: 186 85 218;
+///    functions-walk: 3 4 3;
+///
+@function functions-walk($functions, $args...) {
+	$list: ();
+	
+	@each $function in $functions {
+		@if not function-exists($function) {
+			@error "There is no `#{$function}` function.";
+		}
+		
+		$list: append($list, call($function, $args...));
+	}
+	
+	@return $list;
+}
+
+/// 4.5 ADVANCED TYPE CHECKING FUNCTIONS
+//
+/// A collection of functions for advanced type checking
+/// @link http://css-tricks.com/snippets/sass/advanced-type-checking/
+
+@function is-number($value) {
+	@return type-of($value) == 'number';
+}
+ 
+@function is-time($value) {
+	@return is-number($value) and index('ms' 's', unit($value)) != null;
+}
+ 
+@function is-duration($value) {
+	@return is-time($value);
+}
+ 
+@function is-angle($value) {
+	@return is-number($value) and index('deg' 'rad' 'grad' 'turn', unit($value)) != null;
+}
+ 
+@function is-frequency($value) {
+	@return is-number($value) and index('Hz' 'kHz', unit($value)) != null;
+}
+ 
+@function is-integer($value) {
+	@return is-number($value) and round($value) == $value;
+}
+ 
+@function is-relative-length($value) {
+	@return is-number($value) and index('em' 'ex' 'ch' 'rem' 'vw' 'vh' 'vmin' 'vmax', unit($value)) != null;
+}
+ 
+@function is-absolute-length($value) {
+	@return is-number($value) and index('cm' 'mm' 'in' 'px' 'pt' 'pc', unit($value)) != null;
+}
+ 
+@function is-percentage($value) {
+	@return is-number($value) and unit($value) == '%';
+}
+ 
+@function is-length($value) {
+	@return is-relative-length($value) or is-absolute-length($value);
+}
+ 
+@function is-resolution($value) {
+	@return is-number($value) and index('dpi' 'dpcm' 'dppx', unit($value)) != null;
+}
+ 
+@function is-position($value) {
+	@return is-length($value) or is-percentage($value) or index('top' 'right' 'bottom' 'left' 'center', $value) != null;
 }
 
 
