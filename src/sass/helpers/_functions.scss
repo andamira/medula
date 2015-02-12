@@ -19,14 +19,15 @@
  *
  *     2 Layout
  *
- *         2.1 z() for z-indez
+ *         2.1 z() for z-index
  *
- *     3 Numbers & Units
+ *     3 Numbers, Units & Strings
  *
  *         3.1 strip-unit()
  *         3.2 clamp()
  *         3.3 calc-percent()
  *         3.4 convert-angle()
+ *         3.5 str-replace()
  *
  *     4 Functional Programming
  *
@@ -224,6 +225,18 @@
 	} @else {
 		@warn "Cannot convert #{unit($value)} to #{$unit}";
 	}
+}
+
+/// 3.5 STRING REPLACE
+///
+/// @link https://gist.github.com/jonathantneal/d0460e5c2d5d7f9bc5e6 Source
+///
+@function str-replace($string, $search, $replace: "") {
+	$index: str-index($string, $search);
+	@if $index {
+		@return str-slice($string, 1, $index - 1) + $replace + str-replace(str-slice($string, $index + str-length($search)), $search, $replace);
+	}
+	@return $string;
 }
 
 
