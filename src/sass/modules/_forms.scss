@@ -1,28 +1,28 @@
-/**
- * Stylesheet: Form Styles
- * ************************************************************
- *
- * We put all the form and button styles in here to setup a consistent
- * look. If we need to customize them, we can do this in the main
- * stylesheets and just override them.o
- *
- *      1 Inputs
- *
- *      2 Text Areas
- *
- *      3 Selects
- *
- *      4 Search Forms
- *
- *
- * @link  http://css-tricks.com/data-uris/
- * @link  http://datauri.net/
- */
+////
+/// Stylesheet: Form Styles
+/// ************************************************************
+///
+/// We put all the form and button styles in here to setup a consistent
+/// look. If we need to customize them, we can do this in the main
+/// stylesheets and just override them.o
+///
+///      1 Inputs
+///
+///      2 Text Areas
+///
+///      3 Selects
+///
+///      4 Search Forms
+///
+///
+/// @link  http://css-tricks.com/data-uris/
+/// @link  http://datauri.net/
+////
 
 
-/**
- * 1 INPUTS
- */
+///
+/// 1 INPUTS
+///
 input[type="text"],
 input[type="password"],
 input[type="datetime"],
@@ -96,9 +96,9 @@ textarea,
 }
 
 
-/**
- * 2 TEXT AREAS
- */
+///
+/// 2 TEXT AREAS
+///
 textarea {
 	max-width: 100%;
 	min-height: 120px;
@@ -106,17 +106,17 @@ textarea {
 }
 
 
-/**
- * 3 SELECTS
- */
+///
+/// 3 SELECTS
+///
 select {
 	-webkit-appearance: none;
 }
 
 
-/**
- * 4 SEARCH FORMS
- */
+///
+/// 4 SEARCH FORMS
+///
 .searchform {
 	position: relative;
 	max-width: 90%;
@@ -132,3 +132,4 @@ select {
 		top: 0;
 	}
 }
+

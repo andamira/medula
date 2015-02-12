@@ -1,21 +1,20 @@
-/**
- * Stylesheet: Print Stylesheet
- * ************************************************************
- *
- * This is the print stylesheet. There's probably not a lot
- * of reasons to edit this stylesheet.
- *
- * But feel free to customize this. Remember to add things that won't make
- * sense to print at the bottom. Things like nav, ads, and forms should
- * be set to display none
- */
+////
+/// Stylesheet: Print Stylesheet
+/// ************************************************************
+///
+/// This is the print stylesheet. There's probably not a lot
+/// of reasons to edit this stylesheet.
+///
+/// But feel free to customize this. Remember to add things that won't make
+/// sense to print at the bottom. Things like nav, ads, and forms should
+/// be set to display none
+////
 
 * {
 	background: transparent !important;
 	color: black !important;
 	text-shadow: none !important;
 	filter:none !important;
-	-ms-filter: none !important;
 }
 
 a, a:visited {
@@ -78,3 +77,4 @@ img {
 	nav {
 		display: none;
 	}
+

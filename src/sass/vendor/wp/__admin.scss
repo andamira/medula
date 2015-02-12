@@ -1,37 +1,41 @@
-/**
- * Type: WordPress Administration Plugins
- * ************************************************************
- *
- * NOTE: This sylesheet is only loaded in the WordPress backend
- *
- *     1 Custom Fields
- *     
- *          1.1 Advanced Custom Fields
- *                  Titles and descriptions
- *
- *          1.2 Types
- *
- *     2 Columns
- *
- *          2.1 Admin Columns
- *                  Data Icons
- *
- */
+////
+/// Type: WordPress Administration Plugins
+/// ************************************************************
+///
+/// NOTE: This sylesheet is only loaded in the WordPress backend
+///
+///     1 Custom Fields
+///     
+///          1.1 Advanced Custom Fields
+///
+///              Titles and descriptions
+///
+///          1.2 Types
+///
+///     2 Columns
+///
+///          2.1 Admin Columns
+///
+///              Data Icons
+///
+////
 
 
-/**
- * 1 CUSTOM FIELDS
- */
+///
+/// 1 CUSTOM FIELDS
+///
 
-/**
- * 1.1 ADVANCED CUSTOM FIELDS (ACF)
- *
- * @link http://advancedcustomfields.com
- */
+///
+/// 1.1 ADVANCED CUSTOM FIELDS (ACF)
+///
+/// @link http://advancedcustomfields.com
+///
 
-/**
- * Style the Custom Fields titles and descriptions
- */
+///
+/// Style the Custom Fields titles and descriptions
+///
+
+/*
 .acf-label {
     background: #EFE3BF;
 
@@ -45,9 +49,11 @@
 }
 /**/
 
-/**
- * Style the text area
- */
+///
+/// Style the text area
+///
+
+/*
 .acf-input textarea {
     color: #333;
     max-width: 800px;
@@ -55,33 +61,35 @@
 /**/
 
 
-/**
- * 1.2 TYPES (TOOLSET)
- *
- * @link http://wp-types.com/
- */
+///
+/// 1.2 TYPES (TOOLSET)
+///
+/// @link http://wp-types.com/
+///
 
 
-/**
- * 2 ADMIN COLUMNS
- *
- * @link https://wordpress.org/plugins/codepress-admin-columns/
- */
+///
+/// 2 ADMIN COLUMNS
+///
+/// @link https://wordpress.org/plugins/codepress-admin-columns/
+///
 
-/**
- * This is class you can add to style the dashicons
- * used in the data field and hiding its content
- *
- * Usage example (Filling the Admin Columns fields like this):
- *
- *      Label:   <span class="dashicons dashicons-phone" title="Telephone"></span>
- *      Before:  <span class="admin-column-data-icon dashicons dashicons-phone" title="Telephone filled">
- *      After:   </span>
- *
- * If you don't want to hide the content put the closing </span> in the same field than the starting <span>
- *
- * @link https://developer.wordpress.org/resource/dashicons/
- */
+///
+/// This is class you can add to style the dashicons
+/// used in the data field and hiding its content
+///
+/// Usage example (Filling the Admin Columns fields like this):
+///
+///      Label:   <span class="dashicons dashicons-phone" title="Telephone"></span>
+///      Before:  <span class="admin-column-data-icon dashicons dashicons-phone" title="Telephone filled">
+///      After:   </span>
+///
+/// If you don't want to hide the content put the closing </span> in the same field than the starting <span>
+///
+/// @link https://developer.wordpress.org/resource/dashicons/
+///
+
+/*
 .admin-column-data-icon {
     color: #bbb;
     visibility: hidden;

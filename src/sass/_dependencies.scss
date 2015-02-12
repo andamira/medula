@@ -1,28 +1,28 @@
-/*
- * Dependencies
- * ************************************************************
- *
- * Intended for being imported by standalone sass files like:
- * style.scss & admin.scss
- *
- *     1 Load Dependencies
- *
- *     2 Global Variables
- *
- *         2.1 Theme Dirname !!!
- *         2.2 Assets
- *         2.3 Misc
- */
+////
+/// Dependencies
+/// ************************************************************
+///
+/// Intended for being imported by standalone sass files like:
+/// style.scss & admin.scss
+///
+///     1 Load Dependencies
+///
+///     2 Global Variables
+///
+///         2.1 Theme Dirname !!!
+///         2.2 Assets
+///         2.3 Misc
+////
 
 
-/**
- * 1 LOAD DEPENDENCIES
- *
- * @link https://github.com/necolas/normalize.css/       Normalize
- * @link https://github.com/ericam/susy/                 Susy
- * @link https://github.com/eduardoboucas/include-media  Include Media
- * @link https://github.com/at-import/Sassy-Maps         Sassy-Maps
- */
+///
+/// 1 LOAD DEPENDENCIES
+///
+/// @link https://github.com/necolas/normalize.css/       Normalize
+/// @link https://github.com/ericam/susy/                 Susy
+/// @link https://github.com/eduardoboucas/include-media  Include Media
+/// @link https://github.com/at-import/Sassy-Maps         Sassy-Maps
+///
 
 @import "../../vendor-dl/normalize.css/normalize";
 
@@ -31,31 +31,31 @@
 @import "../../vendor-dl/sassy-maps/sass/sassy-maps";
 
 
-/**
- * 2 GLOBAL VARIABLES
- */
+///
+/// 2 GLOBAL VARIABLES
+///
 
-/**
- * 2.1 THEME DIRNAME !!!
- *
- * IMPORTANT: Your must write the same name the theme directory will have
- * when you copy (or symlink) src/ dir to the WordPress themes folder.
- * 
- * For example:
- *
- *     cp -r src/ /var/www/wordpress/wp-content/themes/DIRNAME/
- */
+///
+/// 2.1 THEME DIRNAME !!!
+///
+/// IMPORTANT: Your must write the same name the theme directory will have
+/// when you copy (or symlink) src/ dir to the WordPress themes folder.
+/// 
+/// For example:
+///
+///     cp -r src/ /var/www/wordpress/wp-content/themes/DIRNAME/
+///
 $theme-dir-name: "osea" ;
 
-/**
- * 2.2 Assets
- */
+///
+/// 2.2 Assets
+///
 $image-url-path: "/wp-content/themes/#{$theme-dir-name}/img/" !default;
 $font-url-path: "/wp-content/themes/#{$theme-dir-name}/fonts/" !default;
 
-/**
- * 2.3 Misc
- */
+///
+/// 2.3 Misc
+///
 
 // Sets page to at least 100% screen height & leaves page footer glued to the bottom
 $conf_100_page_height: true; 

@@ -1,77 +1,75 @@
-/**
- * Stylesheet: Button Styles
- * ************************************************************
- *
- * Buttons are a pretty important part of your site's style, so it's
- * important to have a consistent baseline for them. Use this stylesheet
- * to create all kinds of buttons.
- *
- *     1 Defaults
- *
- *     2 Examples
- *
- * @link http://galp.in/blog/2011/08/02/the-ui-guide-part-1-buttons/
- */
+////
+/// Stylesheet: Button Styles
+/// ************************************************************
+///
+/// Buttons are a pretty important part of your site's style, so it's
+/// important to have a consistent baseline for them. Use this stylesheet
+/// to create all kinds of buttons.
+///
+///     1 Defaults
+///
+///     2 Examples
+///
+/// @link http://galp.in/blog/2011/08/02/the-ui-guide-part-1-buttons/
+////
 
 
-/**
- * 1 BUTTON DEFAULTS
- *
- * We're gonna use a placeholder selector here
- * so we can use common styles. We then use this
- * to load up the defaults in all our buttons.
- *
- * @link http://thesassway.com/intermediate/understanding-placeholder-selectors
- */
-
+///
+/// 1 BUTTON DEFAULTS
+///
+/// We're gonna use a placeholder selector here
+/// so we can use common styles. We then use this
+/// to load up the defaults in all our buttons.
+///
+/// @link http://thesassway.com/intermediate/understanding-placeholder-selectors
+///
 %btn {
-  display: inline-block;
-  position: relative;
-  font-family: $sans-serif;
-  text-decoration: none;
-  color: $white;
-  font-size: 16pt;
-  line-height: 24pt;
-  font-weight: normal;
-  padding: 0 24px;
-  border-radius: 4px;
-  border: 0;
-  cursor: pointer;
-  transition: background-color 0.14s ease-in-out;
+	display: inline-block;
+	position: relative;
+	font-family: $sans-serif;
+	text-decoration: none;
+	color: $white;
+	font-size: 16pt;
+	line-height: 24pt;
+	font-weight: normal;
+	padding: 0 24px;
+	border-radius: 4px;
+	border: 0;
+	cursor: pointer;
+	transition: background-color 0.14s ease-in-out;
 
-  // hovering on the button
-  &:hover, &:focus {
-    color: $white;
-    text-decoration: none;
-  }
+	// hovering on the button
+	&:hover, &:focus {
+		color: $white;
+		text-decoration: none;
+	}
 
-  // clicking on the button
-  &:active {
-    top: 1px;
-  }
+	// clicking on the button
+	&:active {
+		top: 1px;
+	}
 
 }
 
 
-/**
- * 2 BUTTON EXAMPLES
- *
- * You can use this example if you want. Just replace all the variables
- * and it will create a button dependant on those variables.
- */
-
+///
+/// 2 BUTTON EXAMPLES
+///
+/// You can use this example if you want. Just replace all the variables
+/// and it will create a button dependant on those variables.
+///
 .blue-btn {
-  @extend %btn; // here we load the btn defaults
-  background-color: $blue;
+	@extend %btn; // here we load the btn defaults
+	background-color: $blue;
 
-  &:hover,
-  &:focus {
-    background-color: darken($blue, 4%);
-  }
+	&:hover,
+	&:focus {
+		background-color: darken($blue, 4%);
+	}
 
-  &:active {
-    background-color: darken($blue, 5%);
-  }
+	&:active {
+		background-color: darken($blue, 5%);
+	}
 }
 
 

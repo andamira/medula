@@ -1,21 +1,21 @@
-/**
- * Vendor: Popup Maker
- * Type: WordPress Plugin
- * ************************************************************
- *
- *
- *     1 Fix Overlay z-index
- *
- * @link https://wordpress.org/plugins/popup-maker/
- * @link https://wppopupmaker.com/
- */
+////
+/// Vendor: Popup Maker
+/// Type: WordPress Plugin
+/// ************************************************************
+///
+///
+///     1 Fix Overlay z-index
+///
+/// @link https://wordpress.org/plugins/popup-maker/
+/// @link https://wppopupmaker.com/
+////
 
 
-/*
- * 1 FIX OVERLAY Z-INDEX
- *
- * @link https://wppopupmaker.com/kb/headermenu-appear-popups
- */
+///
+/// 1 FIX OVERLAY Z-INDEX
+///
+/// @link https://wppopupmaker.com/kb/headermenu-appear-popups
+///
 
 .popmake-overlay { z-index: 99999998!important; }
 .popmake { z-index: 99999999!important; }

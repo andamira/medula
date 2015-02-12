@@ -1,44 +1,39 @@
-/**
- * Site Name:
- * Author:
- *
- * Stylesheet: TinyMCE Editor Stylesheet
- *
- * This stylesheet is loaded (if admin.php is setup in your
- * functions file) on the admin pages. Here you can style
- * the TinyMCE Visual Rich Text Editor.
- *
- * @link http://codex.wordpress.org/Creating_Admin_Themes
- * @link http://codex.wordpress.org/Editor_Style
- */
+////
+/// Site Name:
+/// Author:
+///
+/// Stylesheet: TinyMCE Editor Stylesheet
+///
+/// This stylesheet is loaded (if admin.php is setup in your
+/// functions file) on the admin pages. Here you can style
+/// the TinyMCE Visual Rich Text Editor.
+///
+/// @link http://codex.wordpress.org/Creating_Admin_Themes
+/// @link http://codex.wordpress.org/Editor_Style
+///
+////
 
 
 @import '../dependencies';
 
 
-/*
-Theme Name: Twenty Fifteen
-Description: Used to style the TinyMCE editor.
-*/
+///
+/// Table of Contents:
+///
+/// 1.0 - Body
+/// 2.0 - Typography
+/// 3.0 - Elements
+/// 4.0 - Alignment
+/// 5.0 - Caption
+/// 6.0 - Galleries
+/// 7.0 - Audio / Video
+/// 8.0 - RTL
+///
 
 
-/**
- * Table of Contents:
- *
- * 1.0 - Body
- * 2.0 - Typography
- * 3.0 - Elements
- * 4.0 - Alignment
- * 5.0 - Caption
- * 6.0 - Galleries
- * 7.0 - Audio / Video
- * 8.0 - RTL
- */
-
-
-/**
- * 1.0 Body
- */
+///
+/// 1.0 Body
+///
 
 body {
 	color: #333;
@@ -52,9 +47,9 @@ body {
 }
 
 
-/**
- * 2.0 Typography
- */
+///
+/// 2.0 Typography
+///
 
 h1,
 h2,
@@ -226,9 +221,9 @@ big {
 }
 
 
-/**
- * 3.0 Elements
- */
+///
+/// 3.0 Elements
+///
 
 hr {
 	background-color: #eaeaea;
@@ -337,9 +332,9 @@ a {
 }
 
 
-/**
- * 4.0 Alignment
- */
+///
+/// 4.0 Alignment
+///
 
 .alignleft {
 	float: left;
@@ -358,9 +353,9 @@ a {
 }
 
 
-/**
- * 5.0 Caption
- */
+///
+/// 5.0 Caption
+///
 
 .wp-caption {
 	background: transparent;
@@ -393,9 +388,9 @@ a {
 }
 
 
-/**
- * 6.0 Galleries
- */
+///
+/// 6.0 Galleries
+///
 
 .gallery {
 	margin-bottom: 28px;
@@ -458,9 +453,9 @@ a {
 }
 
 
-/**
- * 7.0 Audio / Video
- */
+///
+/// 7.0 Audio / Video
+///
 
 .mce-content-body .wpview-wrap {
 	margin-bottom: 32px;
@@ -471,9 +466,9 @@ a {
 }
 
 
-/**
- * 8.0 RTL
- */
+///
+/// 8.0 RTL
+///
 
 .rtl blockquote {
 	border-left: none;

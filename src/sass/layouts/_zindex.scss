@@ -1,20 +1,21 @@
-/**
- * Stylesheet: Z-index Elements Order
- * ************************************************************
- *
- * Here you define the list(s) of elements to order using z-index.
- * Their position in the list will determine their z-index value.
- * You could have several lists if you have more than one context.
- *
- * To use it you just call the z() function (defined in /helpers/_functions.scss)
- * to assign an index to the element, e.g.:
- *
- *     .input-field {
- *         z-index: z($elements, user-tooltip);
- *     }
- *
- * @link http://www.smashingmagazine.com/2014/06/12/sassy-z-index-management-for-complex-layouts/
- */
+////
+/// Stylesheet: Z-index Elements Order
+/// ************************************************************
+///
+/// Here you define the list(s) of elements to order using z-index.
+/// Their position in the list will determine their z-index value.
+/// You could have several lists if you have more than one context.
+///
+/// To use it you just call the z() function (defined in /helpers/_functions.scss)
+/// to assign an index to the element, e.g.:
+///
+///     .input-field {
+///         z-index: z($elements, user-tooltip);
+///     }
+///
+/// @see z
+/// @source http://www.smashingmagazine.com/2014/06/12/sassy-z-index-management-for-complex-layouts/
+////
 
 
 $elements: project-covers, user-tooltip, sorting-bar, modals, navigation;

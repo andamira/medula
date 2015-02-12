@@ -1,48 +1,51 @@
-/**
- * Base Menus
- * ************************************************************
- *
- *     1 Smart Header
- *     2 Navigation Elements
- *
- *         2.1 Generic Nav elements
- *         2.2 Main Desktop Menu
- *         2.3 Mobile Button
- *         2.4 MMenu (Mobile) Menu
- *
- */
+////
+/// Base Menus
+/// ************************************************************
+///
+///     1 Smart Header
+///
+///     2 Navigation Elements
+///
+///         2.1 Generic Nav elements
+///         2.2 Main Desktop Menu
+///         2.3 Mobile Button
+///         2.4 MMenu (Mobile) Menu
+///
+////
 
 
-/**
- * 1 SMART HEADER
- *
- * Here we can control the behaviour of the header / top menu
- * with the help of automatic classes added in javascript:
- *
- *     .smart-header-above     = ID Class of the ELEMENT ABOVE the Smart Header
- *
- *     .smart-header-no-above  = ID Class added to the BODY when there's
- *                               no element above the Smart Header
- *
- *     .smart-header           = ID Class of the Smart Header
- *
- * [Associated classes]
- *
- *     .scroll-up              = scrolling up
- *     .scroll-down            = scrolling down
- *
- * [Associated classes in all 3 possible elements]
- *
- *     .hidden-bottom          = the bottom border of the Smart Header is hidden
- *     .hidden-top             = the top border of the Smart Header is hidden
- *
- *
- * Take a look to the osea_smart_header function in /js/scripts.js
- *
- * TODO:
- * @link http://www.sitepoint.com/cross-media-query-extend-sass/
- */
+///
+/// 1 SMART HEADER
+///
+/// Here we can control the behaviour of the header / top menu
+/// with the help of automatic classes added in javascript:
+///
+///     .smart-header-above     = ID Class of the ELEMENT ABOVE the Smart Header
+///
+///     .smart-header-no-above  = ID Class added to the BODY when there's
+///                               no element above the Smart Header
+///
+///     .smart-header           = ID Class of the Smart Header
+///
+/// [Associated classes]
+///
+///     .scroll-up              = scrolling up
+///     .scroll-down            = scrolling down
+///
+/// [Associated classes in all 3 possible elements]
+///
+///     .hidden-bottom          = the bottom border of the Smart Header is hidden
+///     .hidden-top             = the top border of the Smart Header is hidden
+///
+///
+/// Take a look to the osea_smart_header function in /js/scripts.js
+///
+/// TODO:
+/// @link http://www.sitepoint.com/cross-media-query-extend-sass/
+///
+
 /*
+
 // height of the smart header element
 $smart-header-height: 2rem;	
 
@@ -141,14 +144,13 @@ $smart-header-height: 2rem;
 /**/
 
 
-/**
- * 2 NAVIGATION ELEMENTS
- *
- */
+///
+/// 2 NAVIGATION ELEMENTS
+///
 
-/**
- * 2.1 GENERIC NAV ELEMENTS
- */
+///
+/// 2.1 GENERIC NAV ELEMENTS
+///
 nav {
 
 	ul {
@@ -168,9 +170,9 @@ nav {
 }
 
 
-/**
- * 2.2 MAIN DESKTOP MENU
- */
+///
+/// 2.2 MAIN DESKTOP MENU
+///
 .site-main-nav {
 
 	$submenu-width: 10rem;
@@ -278,9 +280,9 @@ nav {
 }
 
 
-/**
- * 2.3 MOBILE BUTTON
- */
+///
+/// 2.3 MOBILE BUTTON
+///
 .mmenu-button {
 	position: fixed;
 
@@ -295,9 +297,9 @@ nav {
 }
 
 
-/**
- * 2.4 MMENU (MOBILE) MENU
- */
+///
+/// 2.4 MMENU (MOBILE) MENU
+///
 #mmenu {
 
 	a {

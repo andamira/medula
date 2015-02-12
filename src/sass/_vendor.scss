@@ -1,24 +1,25 @@
-/*
- * Stylesheet: vendor 
- * ************************************************************
- *
- * vendor specific css, like for 3rd party WordPress or jQuery plugins.
- * Here you can find some examples for a small selection of common plugins.
- *
- * 		1 WordPress Plugins
- * 		2 Javascript Libraries & jQuery Plugins
- */
+////
+/// Stylesheet: vendor 
+/// ************************************************************
+///
+/// vendor specific css, like for 3rd party WordPress or jQuery plugins.
+/// Here you can find some examples for a small selection of common plugins.
+///
+///     1 WordPress Plugins
+///
+///     2 Javascript Libraries & jQuery Plugins
+///
+////
 
 
-/**
- * 1 WORDPRESS PLUGINS
- *
- */
+///
+/// 1 WORDPRESS PLUGINS
+///
 @import "vendor/wp";
 
 
-/**
- * 2 JAVASCRIPT LIBRARIES & JQUERY PLUGINS
- */
+///
+/// 2 JAVASCRIPT LIBRARIES & JQUERY PLUGINS
+///
 @import "vendor/js";
 

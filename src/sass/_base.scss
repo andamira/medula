@@ -1,11 +1,11 @@
-/*
- * Base breakpoint
- * ************************************************************
- *
- * Intended for mobile and and also as a base
- * to be enhanced in further breakpoints
- *
- */
+////
+/// Base breakpoint
+/// ************************************************************
+///
+/// Intended for mobile and and also as a base
+/// to be enhanced in further breakpoints
+///
+////
 
 
 // For the grid see layout/_grid.scss
@@ -24,9 +24,9 @@
 @import "base/sidebars";
 
 
-/**
- * WordPress CSS Classes
- */
+///
+/// WordPress CSS Classes
+///
 
 // body
 @import "base/wp_body";

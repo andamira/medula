@@ -1,24 +1,24 @@
-/**
- * Stylesheet: Tango
- * ************************************************************
- *
- * Usage:
- *     background: color-tango(carrot);
- *
- *
- * @link http://tango.freedesktop.org/Tango_Icon_Theme_Guidelines
- *
- * Colors:          
- *                                 *
- *     aluminium    |  grey      1 2 3 4 5 6
- *     butter       |  yellow    1 2 3
- *     chameleon    |  green     1 2 3
- *     chocolate    |  brown     1 2 3
- *     orange                    1 2 3
- *     plum         |  purple    1 2 3
- *     scarlet-red  |  red       1 2 3
- *     sky-blue     |  blue      1 2 3
- */
+////
+/// Stylesheet: Tango
+/// ************************************************************
+///
+/// Usage:
+///     background: color-tango(carrot);
+///
+///
+/// @link http://tango.freedesktop.org/Tango_Icon_Theme_Guidelines
+///
+/// Colors:          
+///                                 *
+///     aluminium    |  grey      1 2 3 4 5 6
+///     butter       |  yellow    1 2 3
+///     chameleon    |  green     1 2 3
+///     chocolate    |  brown     1 2 3
+///     orange                    1 2 3
+///     plum         |  purple    1 2 3
+///     scarlet-red  |  red       1 2 3
+///     sky-blue     |  blue      1 2 3
+////
 
 @function color-tango( $color, $value: 2 ) {
   @return map-get-deep( $color-tango, $color, $value );

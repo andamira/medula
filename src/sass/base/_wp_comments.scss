@@ -1,19 +1,19 @@
-/**
- * WordPress comments classes
- * ************************************************************
- *
- *     1 COMMENTS LIST
- *
- *     2 COMMENTS FORM
- *
- *
- * NOTE: The comments layout has been adpted to HTML5. It doesn't use list
- * ( ul / ol / li ) but nested articles.
- */
+////
+/// WordPress comments classes
+/// ************************************************************
+///
+///     1 COMMENTS LIST
+///
+///     2 COMMENTS FORM
+///
+///
+/// NOTE: The comments layout has been adpted to HTML5. It doesn't use list
+/// ( ul / ol / li ) but nested articles.
+////
 
-/**
- * 1 COMMENTS LIST
- */
+///
+/// 1 COMMENTS LIST
+///
 .comments-list {
 
 	.bypostauthor {}
@@ -126,9 +126,9 @@
 }
 
 
-/**
- * 2 COMMENTS FORM
- */
+///
+/// 2 COMMENTS FORM
+///
 .comment-form {
 
 	.logged-in-as {	

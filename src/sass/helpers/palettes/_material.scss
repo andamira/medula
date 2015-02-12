@@ -1,61 +1,61 @@
-/**
- * Stylesheet: Material Colors Palette
- * ************************************************************
- *
- * This is an improved version, using nested maps, of:
- * @link https://github.com/nilskaspersson/Google-Material-UI-Color-Palette
- *
- *
- * Usage:
- *     background: color-material(indigo, 400);
- *
- *
- * Colors:
- *
- *     red
- *     pink
- *     purple
- *     deep-purple
- *     indigo
- *     blue
- *     light-blue
- *     cyan
- *     teal
- *     gren
- *     light-green
- *     lime
- *     yellow
- *     amber
- *     orange
- *     deep-orange
- *     brown
- *     grey
- *     blue-grey
- *
- * Range:
- *
- *     PRIMARY
- *
- *     50      lightest
- *     100     .
- *     200     .
- *     300     .
- *     400     .
- *     500     default (primary)
- *     600     .
- *     700     .
- *     800     .
- *     900     darkest
- *
- *     ACCENTS
- *
- *     a100    lightest
- *     a200    .
- *     a400    .
- *     a700    darkest
- *
- * @link http://www.google.es/design/spec/style/color.html
- */
+////
+/// Stylesheet: Material Colors Palette
+/// ************************************************************
+///
+/// This is an improved version, using nested maps, of:
+/// @link https://github.com/nilskaspersson/Google-Material-UI-Color-Palette
+///
+///
+/// Usage:
+///     background: color-material(indigo, 400);
+///
+///
+/// Colors:
+///
+///     red
+///     pink
+///     purple
+///     deep-purple
+///     indigo
+///     blue
+///     light-blue
+///     cyan
+///     teal
+///     gren
+///     light-green
+///     lime
+///     yellow
+///     amber
+///     orange
+///     deep-orange
+///     brown
+///     grey
+///     blue-grey
+///
+/// Range:
+///
+///     PRIMARY
+///
+///     50      lightest
+///     100     .
+///     200     .
+///     300     .
+///     400     .
+///     500     default (primary)
+///     600     .
+///     700     .
+///     800     .
+///     900     darkest
+///
+///     ACCENTS
+///
+///     a100    lightest
+///     a200    .
+///     a400    .
+///     a700    darkest
+///
+/// @link http://www.google.es/design/spec/style/color.html
+////
 
 @function color-material( $color, $value: 500 ) {
   @return map-get-deep( $color-material, $color, $value );

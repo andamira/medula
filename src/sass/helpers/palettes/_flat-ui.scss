@@ -1,54 +1,54 @@
-/**
- * Stylesheet: Flat-UI Colors Palette
- * ************************************************************
- *
- * This is an improved version, using nested maps, of:
- * @link https://github.com/obibring/flat-ui-colors-sass/
- * @link http://flatuicolors.com/
- *
- *
- * Usage:
- *     background: color-flat-ui(carrot);
- *     background: color-flat-ui(green, 3);
- *
- *
- * Colors:
- *
- *  // Greens
- *     turquoise      green, 1
- *     green-sea      green, 2
- *     emerald        green, 3
- *     nephritis      green, 4
- *
- *  // Blues
- *     peter-river    blue, 1
- *     belize-hole    blue, 2
- *     wet-asphalt    blue, 3
- *     midnight-blue  blue, 4
- *
- *  // Purples
- *     amethyst       purple, 1
- *     wisteria       purple, 2
- *
- *  // Yellows
- *     sunflower      yellow, 1
- *
- *  // Oranges
- *     orange         orange, 1
- *     carrot         orange, 2
- *     pumpkin        orange, 3
- *
- *  // Reds
- *     alizarin       red, 1
- *     pomegranate    red, 2
- *
- *  // Grays
- *     clouds        gray, 1
- *     silver        gray, 2
- *     concrete      gray, 3
- *     asbestos      gray, 4
- *
- */
+////
+/// Stylesheet: Flat-UI Colors Palette
+/// ************************************************************
+///
+/// This is an improved version, using nested maps, of:
+/// @link https://github.com/obibring/flat-ui-colors-sass/
+/// @link http://flatuicolors.com/
+///
+///
+/// Usage:
+///     background: color-flat-ui(carrot);
+///     background: color-flat-ui(green, 3);
+///
+///
+/// Colors:
+///
+///  // Greens
+///     turquoise      green, 1
+///     green-sea      green, 2
+///     emerald        green, 3
+///     nephritis      green, 4
+///
+///  // Blues
+///     peter-river    blue, 1
+///     belize-hole    blue, 2
+///     wet-asphalt    blue, 3
+///     midnight-blue  blue, 4
+///
+///  // Purples
+///     amethyst       purple, 1
+///     wisteria       purple, 2
+///
+///  // Yellows
+///     sunflower      yellow, 1
+///
+///  // Oranges
+///     orange         orange, 1
+///     carrot         orange, 2
+///     pumpkin        orange, 3
+///
+///  // Reds
+///     alizarin       red, 1
+///     pomegranate    red, 2
+///
+///  // Grays
+///     clouds        gray, 1
+///     silver        gray, 2
+///     concrete      gray, 3
+///     asbestos      gray, 4
+///
+////
 
 @function color-flat-ui( $color, $value: 1 ) {
   @return map-get-deep( $color-flat-ui, $color, $value );

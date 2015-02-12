@@ -1,19 +1,19 @@
-/**
- * Stylesheet: Admin Bar Styles
- * ************************************************************
- *
- *    1 Make Space for Admin Bar
- *
- *    2 Admin Bar Styling
- *
- * @see /src/lib/admin-bar.php
- * @see /src/sass/base/_menus.scss
- */
+////
+/// Stylesheet: Admin Bar Styles
+/// ************************************************************
+///
+///    1 Make Space for Admin Bar
+///
+///    2 Admin Bar Styling
+///
+/// @see /src/lib/admin-bar.php
+/// @see /src/sass/base/_menus.scss
+////
 
 
-/**
- * 1 MAKE SPACE FOR ADMIN BAR
- */
+///
+/// 1 MAKE SPACE FOR ADMIN BAR
+///
 body.admin-bar {
 	padding-top: 32px;
 	@media screen and ( max-width: 782px ) {
@@ -22,9 +22,9 @@ body.admin-bar {
 }
 
 
-/**
- * 2 ADMIN BAR STYLING
- */
+///
+/// 2 ADMIN BAR STYLING
+///
 #wpadminbar {
 	// Fixes absolute position on media < 600px
 	// @link https://core.trac.wordpress.org/ticket/26609

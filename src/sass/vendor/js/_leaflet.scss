@@ -1,40 +1,40 @@
-/**
- * Vendor: leaflet.js
- * Type: javascript library
- * Need: Maps
- * ************************************************************
- *
- *     1 Default Styling
- *
- *          1.1 Required Styles
- *          1.2 Control Positioning
- *          1.3 Zoom and Fade Animations
- *          1.4 Cursors
- *          1.5 Visual Tweaks
- *          1.6 General Typography
- *          1.7 General Toolbar Styles
- *          1.8 Zoom Control
- *          1.9 Layer Control
- *         1.10 Attribution and Scale Controls
- *         1.11 Popup
- *         1.12 Older browsers
- *
- *     2 Custom Styling
- *
- *
- * @link http://leafletjs.com/
- */
+////
+/// Vendor: leaflet.js
+/// Type: javascript library
+/// Need: Maps
+/// ************************************************************
+///
+///     1 Default Styling
+///
+///          1.1 Required Styles
+///          1.2 Control Positioning
+///          1.3 Zoom and Fade Animations
+///          1.4 Cursors
+///          1.5 Visual Tweaks
+///          1.6 General Typography
+///          1.7 General Toolbar Styles
+///          1.8 Zoom Control
+///          1.9 Layer Control
+///         1.10 Attribution and Scale Controls
+///         1.11 Popup
+///         1.12 Older browsers
+///
+///     2 Custom Styling
+///
+///
+/// @link http://leafletjs.com/
+////
 
 
-/**
- * 1 DEFAULT STYLING
- *
- * The styles are adapted from leaflet.js version 0.7.3
- */
+///
+/// 1 DEFAULT STYLING
+///
+/// The styles are adapted from leaflet.js version 0.7.3
+///
 
-/**
- * 1.1 REQUIRED STYLES
- */
+///
+/// 1.1 REQUIRED STYLES
+///
 .leaflet-map-pane,
 .leaflet-tile,
 .leaflet-marker-icon,
@@ -108,9 +108,9 @@
 	position: absolute;
 	}
 
-/**
- * 1.2 control positioning
- */
+///
+/// 1.2 control positioning
+///
 .leaflet-control {
 	position: relative;
 	z-index: 7;
@@ -154,9 +154,9 @@
 	margin-right: 10px;
 	}
 
-/**
- * 1.3 zoom and fade animations
- */
+///
+/// 1.3 zoom and fade animations
+///
 .leaflet-fade-anim .leaflet-tile,
 .leaflet-fade-anim .leaflet-popup {
 	opacity: 0;
@@ -187,9 +187,9 @@
 	visibility: hidden;
 	}
 
-/**
- * 1.4 Cursors
- */
+///
+/// 1.4 Cursors
+///
 .leaflet-clickable {
 	cursor: pointer;
 	}
@@ -208,9 +208,9 @@
 	cursor:    -moz-grabbing;
 	}
 
-/**
- *  1.5 visual tweaks
- */
+///
+///  1.5 visual tweaks
+///
 .leaflet-container {
 	background: #ddd;
 	outline: 0;
@@ -226,16 +226,16 @@
 	background: rgba(255,255,255,0.5);
 	}
 
-/**
- * 1.6 general typography
- */
+///
+/// 1.6 general typography
+///
 .leaflet-container {
 	font: 12px/1.5 "Helvetica Neue", Arial, Helvetica, sans-serif;
 	}
 
-/**
- * 1.7 general toolbar styles
- */
+///
+/// 1.7 general toolbar styles
+///
 .leaflet-bar {
 	box-shadow: 0 1px 5px rgba(0,0,0,0.65);
 	border-radius: 4px;
@@ -282,9 +282,9 @@
 	line-height: 30px;
 	}
 
-/**
- * 1.8 zoom control
- */
+///
+/// 1.8 zoom control
+///
 .leaflet-control-zoom-in,
 .leaflet-control-zoom-out {
 	font: bold 18px 'Lucida Console', Monaco, monospace;
@@ -300,9 +300,9 @@
 	font-size: 24px;
 }
 
-/**
- * 1.9 layers control
- */
+///
+/// 1.9 layers control
+///
 .leaflet-control-layers {
 	box-shadow: 0 1px 5px rgba(0,0,0,0.4);
 	background: #fff;
@@ -348,9 +348,9 @@
 	margin: 5px -10px 5px -6px;
 	}
 
-/**
- * 1.10 attribution and scale controls
- */
+///
+/// 1.10 attribution and scale controls
+///
 .leaflet-container .leaflet-control-attribution {
 	background: #fff;
 	background: rgba(255, 255, 255, 0.7);
@@ -411,9 +411,9 @@
 	background-clip: padding-box;
 	}
 
-/**
- * 1.11 Popup
- */
+///
+/// 1.11 Popup
+///
 .leaflet-popup {
 	position: absolute;
 	text-align: center;
@@ -481,11 +481,11 @@
 	border-top: 1px solid #ddd;
 }
 
-/**
- * 1.12 Older browsers
- *
- * @link https://github.com/Leaflet/Leaflet/issues/2159#issuecomment-28067321
- */
+///
+/// 1.12 Older browsers
+///
+/// @link https://github.com/Leaflet/Leaflet/issues/2159#issuecomment-28067321
+///
 
 .leaflet-oldie {
 	.leaflet-popup-content-wrapper {

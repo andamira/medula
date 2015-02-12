@@ -1,19 +1,19 @@
-/**
- * Stylesheet: Accesibility Stylesheet
- * ************************************************************
- *
- *     1 Screen Readers
- */
+////
+/// Stylesheet: Accesibility Stylesheet
+/// ************************************************************
+///
+///     1 Screen Readers
+////
 
 
-/**
- * 1 SCREEN READERS
- *
- * Text meant only for screen readers
- *
- * @link https://codex.wordpress.org/CSS#WordPress_Generated_Classes
- * @link http://webaim.org/techniques/css/invisiblecontent/
- */
+///
+/// 1 SCREEN READERS
+///
+/// Text meant only for screen readers
+///
+/// @link https://codex.wordpress.org/CSS#WordPress_Generated_Classes
+/// @link http://webaim.org/techniques/css/invisiblecontent/
+///
 
 .screen-reader-text {
 	clip: rect(1px, 1px, 1px, 1px);

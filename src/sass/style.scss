@@ -1,55 +1,58 @@
-/**
- * Stylesheet: Main Stylesheet
- * ************************************************************
- *
- *         1 Dependencies & Global Variables
- *
- *         2 Helpers
- *                Material Colors
- *                Variables
- *                Functions
- *                Mixins
- *
- *         3 Modules
- *                Typography
- *                Alerts
- *                Buttons
- *                Forms
- *                Icons
- *                Admin Bar
- *
- *         4 Layout
- *                Normalize
- *                Susy Grid
- *                Print Stylesheet
- *
- *         5 Base
- *
- *         6 Vendor
- *
- *         7 Debug
- *
- *
- * @link http://thesassway.com/advanced/modular-css-naming-conventions
- * @link http://www.sitepoint.com/architecture-sass-project/
- */
+////
+/// Stylesheet: Main Stylesheet
+/// ************************************************************
+///
+///     1 Dependencies & Global Variables
+///
+///     2 Helpers
+///
+///         Material Colors
+///         Variables
+///         Functions
+///         Mixins
+///
+///     3 Modules
+///
+///         Typography
+///         Alerts
+///         Buttons
+///         Forms
+///         Icons
+///         Admin Bar
+///
+///     4 Layout
+///
+///         Normalize
+///         Susy Grid
+///         Print Stylesheet
+///
+///     5 Base
+///
+///     6 Vendor
+///
+///     7 Debug (#)
+///
+///
+/// @link http://thesassway.com/advanced/modular-css-naming-conventions
+/// @link http://www.sitepoint.com/architecture-sass-project/
+////
 
 
-/**
- * 1 DEPENDENCIES & GLOBAL VARIABLES
- *
- * Configure your theme includes & paths in this file
- */
+///
+/// 1 DEPENDENCIES & GLOBAL VARIABLES
+///
+/// Configure your theme includes & paths in this file
+///
 @import "dependencies";
 
 
-/**
- * 2 /HELPERS
- *
- * These files are needed at the beginning so that we establish all
- * our mixins, functions, and variables that we'll be using across
- * the whole project.
- */
+///
+/// 2 /HELPERS
+///
+/// These files are needed at the beginning so that we establish all
+/// our mixins, functions, and variables that we'll be using across
+/// the whole project.
+///
 
 // Color Palettes
 @import "helpers/palettes";
@@ -64,19 +67,19 @@
 @import "helpers/mixins";
 
 
-/**
- * 3 /MODULES (except debug)
- *
- * This directory contains only partials and is reserved for reusable UI patterns.
- *
- * As a general rule of thumb, anytime you anticipate needing the same CSS more than once,
- * you should modularize it. The more your project matures, the more CSS you should be able
- * to compartmentalize into modules. Preferably, each module contains a mixin at the top
- * with corresponding declarations at the bottom for including that mixin.
- *
- * Crafting your modules in this fashion helps you start thinking about CSS in a more
- * modular way. They are also easier to expand upon and/or extend in the future.
- */
+///
+/// 3 /MODULES (except debug)
+///
+/// This directory contains only partials and is reserved for reusable UI patterns.
+///
+/// As a general rule of thumb, anytime you anticipate needing the same CSS more than once,
+/// you should modularize it. The more your project matures, the more CSS you should be able
+/// to compartmentalize into modules. Preferably, each module contains a mixin at the top
+/// with corresponding declarations at the bottom for including that mixin.
+///
+/// Crafting your modules in this fashion helps you start thinking about CSS in a more
+/// modular way. They are also easier to expand upon and/or extend in the future.
+///
 
 // typography
 @import "modules/typography";
@@ -97,11 +100,11 @@
 @import "modules/admin_bar";
 
 
-/**
- * 4 /LAYOUT
- *
- *
- */
+///
+/// 4 /LAYOUT
+///
+///
+///
 
 // Fixes normalize defaults
 @import "layouts/normalize_extra";
@@ -118,34 +121,32 @@
 }
 
 
-/**
- * 5 /BASE
- *
- *
- */
+///
+/// 5 /BASE
+///
 
 @import "base";
 
 
-/**
- * 6 /VENDOR
- *
- * Vendor specific css, like for
- * 3rd party WordPress or jQuery plugins.
- */
+///
+/// 6 /VENDOR
+///
+/// Vendor specific styles, for 3rd party 
+/// WordPress, jQuery or javascript plugins.
+///
 
 @import "vendor";
 
 
-/**
- * 7 DEBUG
- *
- * (You can safely remove this if you don't plan to use it)
- *
- * This must be loaded the last one of all,
- * separating it from the rest of the 'modules'
- *
- */
+///
+/// 7 DEBUG
+///
+/// (You can uncomment this to load the debug styling (experimental)
+///
+/// NOTE: This must be loaded the last, therefore
+/// separating it from the other 'normal' modules
+///
 
-@import "modules/debug";
+// @import "modules/debug"; // (#) Commented by default
+
 

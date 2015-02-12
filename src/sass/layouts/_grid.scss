@@ -1,27 +1,26 @@
-/**
- * BASE GRID
- * ************************************************************
- *
- *     1 Breakpoints Variables
- *
- *     2 Page Widths Variables
- *
- *     3 Susy Setup
- *
- *     4 Conditional CSS
- *
- *     5 The grid container
- *
- *     6 The grid layout
- */
+////
+/// BASE GRID
+/// ************************************************************
+///
+///     1 Breakpoints Variables
+///
+///     2 Page Widths Variables
+///
+///     3 Susy Setup
+///
+///     4 Conditional CSS
+///
+///     5 The grid container
+///
+///     6 The grid layout
+////
 
 
-/**
- * 1 BREAKPOINTS
- *
- * @link https://github.com/eduardoboucas/include-media
- */
-
+///
+/// 1 BREAKPOINTS
+///
+/// @link https://github.com/eduardoboucas/include-media
+///
 $breakpoints: (
 	wp-adminbar-mobile: 783px, // point where WordPress changes the admin bar to mobile mode
 
@@ -38,16 +37,15 @@ $media-expressions: (
 );
 
 
-/**
- * 2 PAGE WIDTHS
- */
+///
+/// 2 PAGE WIDTHS
+///
 $page-width-desktop1: 60em; // 1st page-width on desktop
 
 
-/**
- * 3 SUSY SETUP
- *
- */
+///
+/// 3 SUSY SETUP
+///
 $total-columns  : 4;
 $column-width   : false;
 $gutter-width   : .25;
@@ -88,12 +86,12 @@ $susy: (                            // *default | alternative
 );
 
 
-/**
- * 4 CONDITIONAL CSS
- *
- * @see /src/js/scripts.js
- * @link http://adactio.com/journal/5429/
- */
+///
+/// 4 CONDITIONAL CSS
+///
+/// @see /src/js/scripts.js
+/// @link http://adactio.com/journal/5429/
+///
 @include media( "all", ">=mobile2desktop" ) {
 	body:after {
 		content: 'widescreen';
@@ -102,16 +100,16 @@ $susy: (                            // *default | alternative
 }
 
 
-/**
- * 5 THE GRID CONTAINER
- *
- * Here you establish the outer grid-containing elements
- *
- * If you want a wide header and footer comment the body
- *
- * Feel free to experiment modifying the div wrapper
- * in defined in header.php and footer.php
- */
+///
+/// 5 THE GRID CONTAINER
+///
+/// Here you establish the outer grid-containing elements
+///
+/// If you want a wide header and footer comment the body
+///
+/// Feel free to experiment modifying the div wrapper
+/// in defined in header.php and footer.php
+///
 html {
 	@if $conf_100_page_height {
 		height: 100%;
@@ -160,10 +158,9 @@ body {
 }
 
 
-/**
- * 5 THE GRID LAYOUT
- *
- */
+///
+/// 5 THE GRID LAYOUT
+///
 main {
 
 	min-height: 18rem;

@@ -1,46 +1,45 @@
-/**
- * Stylesheet: Mixins
- * ************************************************************
- *
-  *     1 Colors
- *
- *         1.1 Covering
- *         1.2 Centering
- *         1.3 Striped Gradient
- *
- *     2 Layout
- *
- *         2.1 CSS3 gradients
- *         2.2 Input Placeholder
- *         2.3 Intrinsic Ratio
- *
- *     3 Custom Mixins
- *
- *
- * A WORD OF WARNING: It's very easy to overdo it here.
- * Be careful and remember less is more.
- *
- * @link http://sachagreif.com/useful-sass-mixins/
- * @link http://thesassway.com/intermediate/leveraging-sass-mixins-for-cleaner-code
- * @link http://web-design-weekly.com/blog/2013/05/12/handy-sass-mixins/
- */
+////
+/// Stylesheet: Mixins
+/// ************************************************************
+///
+///     1 Colors
+///
+///         1.1 Covering
+///         1.2 Centering
+///         1.3 Striped Gradient
+///
+///     2 Layout
+///
+///         2.1 CSS3 gradients
+///         2.2 Input Placeholder
+///         2.3 Intrinsic Ratio
+///
+///     3 Custom Mixins
+///
+///
+/// A WORD OF WARNING: It's very easy to overdo it here.
+/// Be careful and remember less is more.
+///
+/// @link http://sachagreif.com/useful-sass-mixins/
+/// @link http://thesassway.com/intermediate/leveraging-sass-mixins-for-cleaner-code
+/// @link http://web-design-weekly.com/blog/2013/05/12/handy-sass-mixins/
+////
 
 
-/**
- * 1 COLORS MIXINS
- *
- */
+///
+/// 1 COLORS MIXINS
+///
 
-/**
- * 1.1 STRIPED GRADIENT MIXIN
- *
- * Usage:
- *     body {
- *         @include stripes(to right, #8e44ad #2c3e50 #2980b9 #16a085 #27ae60);
- *     }
- *
- * @link http://css-tricks.com/snippets/sass/striped-gradient-mixin/
- */
+///
+/// 1.1 STRIPED GRADIENT MIXIN
+///
+/// Usage:
+///     body {
+///         @include stripes(to right, #8e44ad #2c3e50 #2980b9 #16a085 #27ae60);
+///     }
+///
+/// @link http://css-tricks.com/snippets/sass/striped-gradient-mixin/
+///
 @mixin stripes($direction, $colors) {
 	$length: length($colors);
 	
@@ -63,14 +62,14 @@
 	}
 }
 
-/**
- * 1.1 CSS3 GRADIENTS
- *
- * Be careful with these since they can
- * really slow down your CSS. Don't overdo it.
- *
- * USAGE: @include css-gradient( #dfdfdf, #f8f8f8 );
- */
+///
+/// 1.1 CSS3 GRADIENTS
+///
+/// Be careful with these since they can
+/// really slow down your CSS. Don't overdo it.
+///
+/// USAGE: @include css-gradient( #dfdfdf, #f8f8f8 );
+///
 @mixin css-gradient($from: #dfdfdf, $to: #f8f8f8) {
 	background-color: $to;
 	background-image: -webkit-gradient(linear, left top, left bottom, from($from), to($to));
@@ -84,16 +83,16 @@
 /// 2 LAYOUT
 ///
 
-/**
- * 2.1 COVERING MIXIN
- *
- * Usage:
- *     .overlay {
- *         @include coverer;
- *     }
- *
- * @link http://css-tricks.com/snippets/sass/covering-mixin/
- */
+///
+/// 2.1 COVERING MIXIN
+///
+/// Usage:
+///     .overlay {
+///         @include coverer;
+///     }
+///
+/// @link http://css-tricks.com/snippets/sass/covering-mixin/
+///
 @mixin coverer {
 	position: absolute;
 	top: 0;
@@ -102,19 +101,19 @@
 	height: 100%;
 }
 
-/**
- * 2.2 CENTERING MIXIN
- *
- * Usage:
- *    .parent {
- *        position: relative;
- *    }
- *    .child {
- *        @include centerer;
- *    }
- *
- * @link http://css-tricks.com/snippets/sass/centering-mixin/
- */
+///
+/// 2.2 CENTERING MIXIN
+///
+/// Usage:
+///    .parent {
+///        position: relative;
+///    }
+///    .child {
+///        @include centerer;
+///    }
+///
+/// @link http://css-tricks.com/snippets/sass/centering-mixin/
+///
 @mixin centerer {
 	position: absolute;
 	top: 50%;
@@ -122,11 +121,11 @@
 	transform: translate(-50%, -50%);
 }
 
-/**
- * 2.3 INTRINSIC RATIO
- *
- * @link https://github.com/aebsr/intrinsic-ratio-generator
- */
+///
+/// 2.3 INTRINSIC RATIO
+///
+/// @link https://github.com/aebsr/intrinsic-ratio-generator
+///
 @mixin ir($ratio, $width: 100) {
 	width: $width * 1%;
 	height: 0;
@@ -138,6 +137,7 @@
 /// 3 TYPOGRAPHY & FORMS MIXINS
 ///
 
+///
 /// 3.1 FONT-FACE
 ///
 /// Font File Formats Support:
@@ -150,6 +150,7 @@
 /// @see /src/sass/modules/_typography.scss
 /// @link http://css-tricks.com/snippets/css/using-font-face/
 /// @source https://gist.github.com/jonathantneal/d0460e5c2d5d7f9bc5e6
+///
 @mixin font-face($name, $path, $weight: null, $style: null, $exts: eot woff2 woff ttf svg) {
 	$src: null;
 	$extmods: (
@@ -173,13 +174,13 @@
 	}
 }
 
-/**
- * 3.2 INPUT PLACEHOLDER
- *
- * Style placeholder text in inputs
- *
- * @link http://css-tricks.com/snippets/css/style-placeholder-text/
- */
+///
+/// 3.2 INPUT PLACEHOLDER
+///
+/// Style placeholder text in inputs
+///
+/// @link http://css-tricks.com/snippets/css/style-placeholder-text/
+///
 @mixin input-placeholder($color: #000, $opacity: auto, $ttime: auto, $ttype: ease) {
 	&::placeholder {
 		color: $color;
@@ -193,8 +194,8 @@
 }
 
 
-/**
- * 4 CUSTOM MIXINS
- */
+///
+/// 4 CUSTOM MIXINS
+///
 
 

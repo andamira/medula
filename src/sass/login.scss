@@ -1,16 +1,16 @@
-/**
- * Site Name:
- * Author:
- *
- * Stylesheet: Login Stylesheet
- *
- * This stylesheet is loaded (if admin.php is setup in your
- * functions file) on the login page. This way you can style
- * the login page. It won't affect any other page, admin or front-end.
- *
- * @link http://codex.wordpress.org/Creating_Admin_Themes
- * @link http://codex.wordpress.org/Customizing_the_Login_Form
- */
+////
+/// Site Name:
+/// Author:
+///
+/// Stylesheet: Login Stylesheet
+///
+/// This stylesheet is loaded (if admin.php is setup in your
+/// functions file) on the login page. This way you can style
+/// the login page. It won't affect any other page, admin or front-end.
+///
+/// @link http://codex.wordpress.org/Creating_Admin_Themes
+/// @link http://codex.wordpress.org/Customizing_the_Login_Form
+////
 
 
 @import "dependencies";
@@ -45,9 +45,9 @@
 #wp-submit {}
 
 
-/**
- * retina login logo
- */
+///
+/// retina login logo
+///
 @media only screen and (-webkit-min-device-pixel-ratio: 1.5),
        only screen and (min--moz-device-pixel-ratio: 1.5),
        only screen and (min-device-pixel-ratio: 1.5) {

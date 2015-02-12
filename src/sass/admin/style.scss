@@ -1,38 +1,38 @@
-/**
- * Site Name:
- * Author:
- *
- * Stylesheet: Admin Stylesheet
- *
- * This stylesheet is loaded (if admin.php is setup in your
- * functions file) on the admin pages. This way you can style
- * elements of the the backend, like the dashboard, post pages,
- * etc. It won't affect any pages on the front-end.
- *
- *     1 Helpers
- *
- *     2 Default Styling
- *
- *     3 Vendors
- *         
- *         3.1 WordPress Admin Plugins
- *
- *     4 Your Custom Styling
- *
- *
- * @link http://codex.wordpress.org/Creating_Admin_Themes
- * @link https://github.com/bueltge/WordPress-Admin-Style
- * @link https://dotorgstyleguide.wordpress.com/
- * @link http://code.tutsplus.com/tutorials/integrating-with-wordpress-ui-the-basics--wp-26713
- */
+////
+/// Site Name:
+/// Author:
+///
+/// Stylesheet: Admin Stylesheet
+///
+/// This stylesheet is loaded (if admin.php is setup in your
+/// functions file) on the admin pages. This way you can style
+/// elements of the the backend, like the dashboard, post pages,
+/// etc. It won't affect any pages on the front-end.
+///
+///     1 Helpers
+///
+///     2 Default Styling
+///
+///     3 Vendors
+///         
+///         3.1 WordPress Admin Plugins
+///
+///     4 Your Custom Styling
+///
+///
+/// @link http://codex.wordpress.org/Creating_Admin_Themes
+/// @link https://github.com/bueltge/WordPress-Admin-Style
+/// @link https://dotorgstyleguide.wordpress.com/
+/// @link http://code.tutsplus.com/tutorials/integrating-with-wordpress-ui-the-basics--wp-26713
+////
 
 
 @import "../dependencies";
 
 
-/**
- * 1 ../HELPERS
- */
+///
+/// 1 ../HELPERS
+///
 
 // Color Palettes
 @import "../helpers/palettes";
@@ -47,9 +47,9 @@
 @import "../helpers/mixins";
 
 
-/**
- * 2 DEFAULT STYLING
- */
+///
+/// 2 DEFAULT STYLING
+///
 
 #footer-thankyou {
 	display: inline-block;
@@ -72,23 +72,19 @@
 }
 
 
-/**
- * 3 VENDORS
- */
+///
+/// 3 VENDORS
+///
 
-/**
- * 3.1 WORDPRESS ADMIN PLUGINS
- */
+///
+/// 3.1 WORDPRESS ADMIN PLUGINS
+///
 @import "../vendor/wp/__admin";
 
 
-/**
- * 4 YOUR CUSTOM STYLING
- */
-
-
-
-
+///
+/// 4 YOUR CUSTOM STYLING
+///
 
 
 

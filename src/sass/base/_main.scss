@@ -1,56 +1,48 @@
-/*
- * BASE MAIN
- * ************************************************************
- *
- *     1 General Styles
- *
- *     2 Links & Headings
- *
- *     3 Structure
- *
- *            3.1 Base
- *            3.2 Page & Site Wrappers
- *            3.3 Site Header
- *            3.4 Site Footer
- *            3.5 Page Header
- *            3.7 Entry Header
- *
- *            3.8 Entry Content
- *
- *                3.8.1 List
- *                3.8.2 Table
- *                3.8.3 Alignment
- *                3.8.4 Img
- *                3.8.5 Caption
- *                3.8.6 Gallery
- *                3.8.7 Blockquote
- *                3.8.8 Special
- *
- *            3.9 Entry Footer
- *
- *     4 Special Cases
- *
- *
- * Default Styling Decisions:
- *     SETS PAGE TO 100% HEIGHT
- */
+////
+/// BASE MAIN
+/// ************************************************************
+///
+///     1 General Styles
+///
+///         1.1 Links
+///         1.2 Headings
+///         1.3 Typography
+///         1.4 Selection
+///
+///     2 Structure
+///
+///         2.1 Base
+///         2.2 Page & Site Wrappers
+///         2.3 Site Header
+///         2.4 Site Footer
+///         2.5 Page Header
+///         2.7 Entry Header
+///
+///         2.8 Entry Content
+///
+///             2.8.1 List
+///             2.8.2 Table
+///             2.8.3 Alignment
+///             2.8.4 Img
+///             2.8.5 Caption
+///             2.8.6 Gallery
+///             2.8.7 Blockquote
+///             2.8.8 Special
+///
+///         2.9 Entry Footer
+///
+///     2 Special Cases
+///
+////
 
 
-/**
- * 1 GENERAL STYLES
- *
- */
+///
+/// 1 GENERAL STYLES
+///
 
-::selection, ::-moz-selection {
-}
-
-
-/**
- * 2 LINKS, HEADINGS & TYPOGRAPHY
- *
- */
-
-// Links
+///
+/// 1.1 Links
+///
 
 a {
 	color: $link-color;
@@ -65,8 +57,9 @@ a {
 	}
 }
 
-// Headings
-
+///
+/// 1.2 HEADINGS
+///
 h1, h2, h3, h4, h5, h6,
 .h1, .h2, .h3, .h4, .h5, .h6 {
 
@@ -90,21 +83,36 @@ h5, .h5 {
 h6, .h6 {
 }
 
-// Typography
-
+///
+/// 1.3 TYPOGRAPHY
+///
+/// @link http://html5doctor.com/i-b-em-strong-element/
+///
 b, strong {
 
 }
+i {
+}
+em {
+}
+
+///
+/// 1.4 SELECTION
+///
+/// @link https://developer.mozilla.org/en-US/docs/Web/CSS/::selection
+///
+::selection {
+}
 
 
-/**
- * 3 STRUCTURE
- *
- */
+///
+/// 2 STRUCTURE
+///
+///
 
-/**
- * 3.1 BASE
- */
+///
+/// 2.1 BASE
+///
 html {
 	font-size: 100%;
 }
@@ -119,15 +127,15 @@ body {
 	-moz-osx-font-smoothing: grayscale;
 }
 
-/**
- * 3.2 PAGE & SITE WRAPPERS
- *
- * @see /src/sass/layout/_grid.scss
- */
+///
+/// 2.2 PAGE & SITE WRAPPERS
+///
+/// @see /src/sass/layout/_grid.scss
+///
 
-/**
- * 3.3 SITE HEADER
- */
+///
+/// 2.3 SITE HEADER
+///
 .site-header {
 	position: relative;
 	width: 100%;
@@ -142,9 +150,9 @@ body {
 
 	.site-main-nav {}
 
-/**
- * 3.4 SITE FOOTER
- */
+///
+/// 2.4 SITE FOOTER
+///
 .site-footer {
 	width: 100%;
 }
@@ -153,16 +161,16 @@ body {
 
 	.site-footer-copyright {}
 
-/**
- * 3.6 PAGE HEADER
- */
+///
+/// 2.6 PAGE HEADER
+///
 .page-header {}
 
 	.page-title {}
 
-/**
- * 3.7 ENTRY HEADER
- */
+///
+/// 2.7 ENTRY HEADER
+///
 .entry-header {}
 
 	.entry-title,
@@ -178,17 +186,17 @@ body {
 
 			.entry-author {}
 
-/**
- * 3.8 ENTRY CONTENT
- */
+///
+/// 2.8 ENTRY CONTENT
+///
 .entry-content {
 
 	p {
 	}
 
-	// 3.8.1 LIST
-	// ----------
-
+	///
+	/// 2.8.1 LIST
+	///
 	ul, ol, table, dl {}
 
 	ul, ol {
@@ -206,9 +214,9 @@ body {
 		li {}
 	}
 
-	// 3.8.2 TABLE
-	// -----------
-
+	///
+	/// 2.8.2 TABLE
+	///
 	table, th, td {
 
 		.rtl & {
@@ -233,9 +241,9 @@ body {
 
 	td {}
 
-	// 3.8.3 ALIGNMENT
-	// ---------------
-	
+	///
+	/// 2.8.3 ALIGNMENT
+	///
 	$img-margin: 0.5rem;
 
 	.alignleft {
@@ -253,17 +261,18 @@ body {
 		margin: $img-margin auto;
 	}
 
-	// 3.8.4 IMG
-	// ---------
-	
+	///
+	/// 2.8.4 IMG
+	///
 	img {}
 
 	a img {}
 
 	figure {}
 
-	// 3.8.5 CAPTION
-	// ---------------
+	///
+	/// 2.8.5 CAPTION
+	///
 	.wp-caption {
 		background: transparent;
 		border: none;
@@ -290,9 +299,9 @@ body {
 		}
 	}
 
-	// 3.8.6 GALLERY
-	// -------------
-
+	///
+	/// 2.8.6 GALLERY
+	///
 	.gallery {
 		margin-bottom: 28px;
 
@@ -344,12 +353,11 @@ body {
 	.gallery-columns-8 .gallery-caption,
 	.gallery-columns-9 .gallery-caption {
 		display: none;
-	} 
+	}
 
-
-	// 3.8.7 BLOCKQUOTE
-	// ----------------
-
+	///
+	/// 2.8.7 BLOCKQUOTE
+	///
 	blockquote {
 
 		p {}
@@ -366,9 +374,9 @@ body {
 		&:before {}
 	}
 
-	// 3.8.8 SPECIAL
-	// -------------
-
+	///
+	/// 2.8.8 SPECIAL
+	///
 	address {}
 
 	code, kbd, tt, var, samp, pre {
@@ -416,9 +424,9 @@ body {
 }
 
 
-/**
- * 3.9 ENTRY FOOTER
- */
+///
+/// 2.9 ENTRY FOOTER
+///
 .entry-footer {}
 
 	.entry-comment-count
@@ -438,9 +446,9 @@ body {
 			.entry-tags-title {}
 
 
-/**
- * 4 SPECIAL CASES
- */
+///
+/// 3 SPECIAL CASES
+///
 #post-not-found {}
 
 .hidden {

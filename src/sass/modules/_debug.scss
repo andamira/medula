@@ -1,17 +1,15 @@
-/**
- * Stylesheet: Debug styles
- * ************************************************************
- *
- * This is to style some parts that are only used when constant
- * OSEA_DEBUG is set to true in functions.php file
- *
- */
+////
+/// Stylesheet: Debug styles
+/// ************************************************************
+///
+/// This is to style some parts that are only used when constant
+/// OSEA_DEBUG is set to true in functions.php file
+///
+////
 
-/*
- * Colors
- *
- */
-
+///
+/// Colors
+///
 $grid-color: gray;
 
 $header-color: blue;
@@ -30,10 +28,9 @@ $aside-color: $main-color;
 	font-size: 0.8rem;
 }
 
-/**
- * Show html tag limits and print the name
- *
- */
+///
+/// Show html tag limits and print the name
+///
 %debug-box {
 	box-shadow: inset 0 0 1rem;
 	outline: 0.2rem dotted;
@@ -49,13 +46,10 @@ $aside-color: $main-color;
 }
 
 
-
 body.debug {
-	// @include show-grid( show-columns ); // show, show-columns, show-baseline
 
 	//	
 	position: relative;
-
 
 	//
 	main {
@@ -143,5 +137,4 @@ body.debug {
 	}
 
 }
-
 

@@ -1,40 +1,39 @@
-/**
- * Stylesheet: Alert Styles
- * ************************************************************
- * 
- */
+////
+/// Stylesheet: Alert Styles
+/// ************************************************************
+////
 
 %alert {
-  margin: 10px;
-  padding: 5px 18px;
-  border: 1px solid;
+	margin: 10px;
+	padding: 5px 18px;
+	border: 1px solid;
 }
 
 .alert-help {
-  @extend %alert;
-  border-color: $alert-yellow-dark;
-  background: $alert-yellow;
-  color: $alert-yellow-text;
+	@extend %alert;
+	border-color: $alert-yellow-dark;
+	background: $alert-yellow;
+	color: $alert-yellow-text;
 }
 
 .alert-info {
-  @extend %alert;
-  border-color: $alert-blue-dark;
-  background: $alert-blue;
-  color: $alert-blue-text;
+	@extend %alert;
+	border-color: $alert-blue-dark;
+	background: $alert-blue;
+	color: $alert-blue-text;
 }
 
 .alert-error {
-  @extend %alert;
-  border-color: $alert-red-dark;
-  background: $alert-red;
-  color: $alert-red-text;
+	@extend %alert;
+	border-color: $alert-red-dark;
+	background: $alert-red;
+	color: $alert-red-text;
 }
 
 .alert-success {
-  @extend %alert;
-  border-color: $alert-green-dark;
-  background: $alert-green;
-  color: $alert-green-text;
+	@extend %alert;
+	border-color: $alert-green-dark;
+	background: $alert-green;
+	color: $alert-green-text;
 }
 

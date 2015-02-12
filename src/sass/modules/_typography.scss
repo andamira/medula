@@ -1,32 +1,32 @@
-/**
- * Stylesheet: Typography
- * ************************************************************
- *
- * Need to import a font or set of icons for your site? Drop them here.
- *
- *     1 Font Face
- *
- *     2 Typographical Defaults
- *
- *
- * @link http://trentwalton.com/2012/06/19/fluid-type/
- * @link http://ia.net/blog/responsive-typography-the-basics/
- * @link http://alistapart.com/column/responsive-typography-is-a-physical-discipline
- */
+////
+/// Stylesheet: Typography
+/// ************************************************************
+///
+/// Need to import a font or set of icons for your site? Drop them here.
+///
+///     1 Font Face
+///
+///     2 Typographical Defaults
+///
+///
+/// @link http://trentwalton.com/2012/06/19/fluid-type/
+/// @link http://ia.net/blog/responsive-typography-the-basics/
+/// @link http://alistapart.com/column/responsive-typography-is-a-physical-discipline
+////
 
 
-/**
- * 1 FONT FACE
- *
- * To embed your own self-hosted fonts put them in /src/fonts/ and use
- * font-face mixin with the correct parameters for your case.
- *
- * @see {mixin} font-face
- * @source https://gist.github.com/jonathantneal/d0460e5c2d5d7f9bc5e6
- * @link http://www.fontsquirrel.com/ More information on embedding fonts
- *
- * Be sure to remove the comment brackets and rename Font Name & font-file
- */
+///
+/// 1 FONT FACE
+///
+/// To embed your own self-hosted fonts put them in /src/fonts/ and use
+/// font-face mixin with the correct parameters for your case.
+///
+/// @see {mixin} font-face
+/// @source https://gist.github.com/jonathantneal/d0460e5c2d5d7f9bc5e6
+/// @link http://www.fontsquirrel.com/ More information on embedding fonts
+///
+/// Be sure to remove the comment brackets and rename Font Name & font-file
+///
 
 // Examples:
 //
@@ -38,12 +38,11 @@
 //
 
 
-/**
- * 2 NICE TYPOGRAPHICAL DEFAULTS
- *
- * @link http://www.newnet-soft.com/blog/csstypography
- */
-
+///
+/// 2 NICE TYPOGRAPHICAL DEFAULTS
+///
+/// @link http://www.newnet-soft.com/blog/csstypography
+///
 p {
 	word-wrap: break-word;
 
