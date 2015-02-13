@@ -73,7 +73,7 @@
  * Set to true in order to display debug information.
  * The functions are defined in /src/lib/osea.php
  */
-#define( 'OSEA_DEBUG', true );           // (#) disabled by default
+# define( 'OSEA_DEBUG', true );           // (#) disabled by default
 
 /**
  * 1.2 IE 8 SUPPORT
@@ -92,7 +92,7 @@ define( 'OSEA_IE8_SUPPORT', true );      // ( ) enabled by default
  */
 
 // Remove the whitespace from HTML between wp_head and wp_footer.
-#define( 'OSEA_OPTIMIZE_HTML', true );   // (#) disabled by default
+# define( 'OSEA_OPTIMIZE_HTML', true );   // (#) disabled by default
 
 
 /**

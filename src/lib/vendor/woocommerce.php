@@ -66,7 +66,7 @@ function osea_theme_wrapper_end() {
  * Example Style Sheets:
  * @link https://github.com/claudiosmweb/woocommerce-sass
  */
-#add_filter( 'woocommerce_enqueue_styles', '__return_false' );
+# add_filter( 'woocommerce_enqueue_styles', '__return_false' );
 
 
 /**
@@ -81,8 +81,8 @@ function osea_theme_wrapper_end() {
  *
  * @link https://gist.github.com/kloon/8981075
  */
-#add_filter( 'woocommerce_variable_sale_price_html', 'wc_wc20_variation_price_format', 10, 2 );
-#add_filter( 'woocommerce_variable_price_html', 'wc_wc20_variation_price_format', 10, 2 );
+# add_filter( 'woocommerce_variable_sale_price_html', 'wc_wc20_variation_price_format', 10, 2 );
+# add_filter( 'woocommerce_variable_price_html', 'wc_wc20_variation_price_format', 10, 2 );
 function wc_wc20_variation_price_format( $price, $product ) {
 	// Main Price
 	$prices = array( $product->get_variation_price( 'min', true ), $product->get_variation_price( 'max', true ) );
@@ -101,7 +101,7 @@ function wc_wc20_variation_price_format( $price, $product ) {
 /**
  * 3.2 Remove tabs from product details page
  */
-#add_filter( 'woocommerce_product_tabs', 'woo_remove_product_tabs', 98 );
+# add_filter( 'woocommerce_product_tabs', 'woo_remove_product_tabs', 98 );
 function woo_remove_product_tabs( $tabs ) {
 	unset( $tabs['description'] );
 	unset( $tabs['reviews'] );
@@ -114,7 +114,7 @@ function woo_remove_product_tabs( $tabs ) {
 /**
  * 3.3 Remove WooCommerce Category Product Count
  */
-#add_filter( 'woocommerce_subcategory_count_html', 'woo_remove_category_products_count' );
+# add_filter( 'woocommerce_subcategory_count_html', 'woo_remove_category_products_count' );
 function woo_remove_category_products_count() {
 	return;
 }
@@ -124,7 +124,7 @@ function woo_remove_category_products_count() {
  * 3.4 Remove Title Attribute from WordPress List Categories
  * @link http://stackoverflow.com/questions/2405437/removing-title-from-wp-list-categories
  */
-#add_filter('wp_list_categories', 'wp_list_categories_remove_title_attributes');
+# add_filter('wp_list_categories', 'wp_list_categories_remove_title_attributes');
 function wp_list_categories_remove_title_attributes($output) {
 	$output = preg_replace('` title="(.+)"`', '', $output);
 	return $output;
@@ -136,9 +136,9 @@ function wp_list_categories_remove_title_attributes($output) {
  *
  * @link https://wordpress.org/support/topic/how-to-change-add-to-cart-button-to-a-read-more-button
  */
-#remove_action( 'woocommerce_after_shop_loop_item', 'woocommerce_template_loop_add_to_cart', 10 );
+# remove_action( 'woocommerce_after_shop_loop_item', 'woocommerce_template_loop_add_to_cart', 10 );
 
-#add_action( 'woocommerce_after_shop_loop_item', 'osea_woocommerce_template_loop_add_to_cart', 10 );
+# add_action( 'woocommerce_after_shop_loop_item', 'osea_woocommerce_template_loop_add_to_cart', 10 );
 function osea_woocommerce_template_loop_add_to_cart() {
 	global $product;
 	echo '<form action="' . esc_url( $product->get_permalink( $product->id ) ) . '" method="get">
@@ -152,7 +152,7 @@ function osea_woocommerce_template_loop_add_to_cart() {
  *
  * @link http://stackoverflow.com/questions/21832684/alternative-for-the-wc-add-to-cart-message-hook-in-woocommerce-for-wp
  */
-#add_filter( 'wc_add_to_cart_message', 'osea_custom_add_to_cart_message' );
+# add_filter( 'wc_add_to_cart_message', 'osea_custom_add_to_cart_message' );
 function osea_custom_add_to_cart_message ($message) {
 	$custom_message = sprintf( __('Product has been succesfully added to cart.', 'osea-theme') );
 
@@ -170,7 +170,7 @@ function osea_custom_add_to_cart_message ($message) {
  */
 
 // Hide STANDARD shipping options:
-#add_filter( 'woocommerce_available_shipping_methods', 'hide_standard_shipping_when_free_is_available' , 10, 1 );
+# add_filter( 'woocommerce_available_shipping_methods', 'hide_standard_shipping_when_free_is_available' , 10, 1 );
 function hide_standard_shipping_when_free_is_available( $available_methods ) {
 	if( isset( $available_methods['free_shipping'] ) AND isset( $available_methods['flat_rate'] ) ) {
 		// remove standard shipping option
@@ -180,7 +180,7 @@ function hide_standard_shipping_when_free_is_available( $available_methods ) {
 }
 
 // Hide ALL shipping optins:
-#add_filter( 'woocommerce_available_shipping_methods', 'hide_all_shipping_when_free_is_available' , 10, 1 );
+# add_filter( 'woocommerce_available_shipping_methods', 'hide_all_shipping_when_free_is_available' , 10, 1 );
 function hide_all_shipping_when_free_is_available( $available_methods ) {
 if( isset( $available_methods['free_shipping'] ) ) :
 
