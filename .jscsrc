@@ -1,0 +1,17 @@
+{
+	"fileExtensions": [ ".js", "jscs" ],
+
+	"excludeFiles": [
+		"vendor-dl/**/"
+	],
+
+	"maximumLineLength": 120,
+	"validateLineBreaks": "LF",
+	"validateIndentation": "\t",
+	"disallowMixedSpacesAndTabs": "smart",
+
+	"requireParenthesesAroundIIFE": null,
+	"disallowSpacesInsideObjectBrackets": null,
+
+	"disallowImplicitTypeConversion": ["string"]
+}

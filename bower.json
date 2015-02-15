@@ -1,19 +1,30 @@
 {
-	"name": "Osea",
-	"version": "0.3.0",
-
-	"dependencies": {},
-
-	"devDependencies": {
-		"normalize.css" : "latest",
-		"susy" : "latest",
-		"include-media" : "eduardoboucas/include-media",
-		"sassy-maps" : "latest"
-	},
-	"preen": {
-		"normalize.css": [ "*.css" ],
-		"susy": [ "sass/**/*.scss" ],
-		"include-media": [ "dist/*.scss" ],
-		"sassy-maps": [ "sass/**/*.scss" ]
-	}
+  "name": "Osea",
+  "version": "0.3.0",
+  "dependencies": {},
+  "devDependencies": {
+    "normalize.css": "latest",
+    "susy": "latest",
+    "include-media": "eduardoboucas/include-media",
+    "sassy-maps": "latest",
+	"modernizr": "~2.8.3",
+    "jQuery.mmenu": "~4.7.5"
+  },
+  "preen": {
+    "normalize.css": [
+      "*.css"
+    ],
+    "susy": [
+      "sass/**/*.scss"
+    ],
+    "include-media": [
+      "dist/*.scss"
+    ],
+    "sassy-maps": [
+      "sass/**/*.scss"
+    ],
+    "modernizr": [
+      "modernizr.js"
+    ]
+  }
 }

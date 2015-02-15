@@ -17,7 +17,7 @@
  * SUPPORT IE 8 - Polyfills
  *
  * @link http://stackoverflow.com/a/16732064 The source for this solution
- * @link https://core.trac.wordpress.org/ticket/16024 Why this can't be enqueued properly
+ * @link https://core.trac.wordpress.org/ticket/16024 In WordPress 4.2 we will be able to enqueue these properly
  */
 if ( defined( 'OSEA_IE8_SUPPORT' ) && OSEA_IE8_SUPPORT ) { ?>
 <!--[if lt IE 9]>

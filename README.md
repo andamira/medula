@@ -29,7 +29,7 @@
 
 1. Configure your theme dirname in `/src/sass/_dependencies.scss`
 
-1. You can compile the the project with `gulp dev` during development and `gulp` for production
+1. You can compile the the project with `gulp --dev` during development and `gulp` for production
 
 1. Copy (or symlink) the `src/` dir to the WordPress themes dir using the same dirname you configured before.
 
@@ -42,16 +42,11 @@ _This project is still going through many changes. But Feel free to [submit bugs
 
 ## Main TODO Points
 
-- Improve the system for embedding js & jquery libs, using bower to download them
-- Improve the system for embedding the style files of those libraries
-- Improve the file structure, making it clearer
 - Improve the accesibility ([#3](https://github.com/andamira/osea/issues/3), [#4](https://github.com/andamira/osea/issues/4), [#8](https://github.com/andamira/osea/issues/8), [#9](https://github.com/andamira/osea/issues/9))
 
 ## Licenses
 
 Original Code is licensed under the [MIT License](http://opensource.org/licenses/MIT).
-
-JShrink javascript minifier included in `/lib/js/JShrink/` is under the [BSD License](https://github.com/tedious/JShrink/blob/master/LICENSE).
 
 Images are licensed under [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/).
 

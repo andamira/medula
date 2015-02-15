@@ -46,9 +46,6 @@ function osea_scripts_and_styles() {
 
 	if (!is_admin()) {
 
-		// modernizr
-		wp_register_script( 'osea-modernizr', get_stylesheet_directory_uri() . '/js/compat/modernizr.custom.min.js', array(), '2.8.3', false );
-
 		// register main stylesheet
 		wp_register_style( 'main-stylesheet', get_stylesheet_directory_uri() . '/css/style.css', array(), '', 'all' );
 
@@ -58,10 +55,9 @@ function osea_scripts_and_styles() {
 		}
 
 		//adding scripts file in the footer
-		wp_register_script( 'osea-js', get_stylesheet_directory_uri() . '/js/scripts.php', array( 'jquery' ), '', true );
+		wp_register_script( 'osea-js', get_stylesheet_directory_uri() . '/js/scripts.js', array( 'jquery' ), '', true );
 
 		// enqueue styles and scripts
-		wp_enqueue_script( 'osea-modernizr' );
 		wp_enqueue_style( 'main-stylesheet' );
 
 		wp_enqueue_script( 'jquery' );

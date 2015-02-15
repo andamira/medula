@@ -9,7 +9,7 @@ vendor-dl
 #################### output
 src/css/*.css
 src/css/admin/
-src/js/scripts.min.js
+src/js/scripts.js
 
 #################### temp
 src/translations
