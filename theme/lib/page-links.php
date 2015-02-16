@@ -13,16 +13,16 @@
  * @link http://codex.wordpress.org/Function_Reference/wp_link_pages
  */
 
-function osea_page_links() {
+function medula_page_links() {
 	wp_link_pages( array(
-		'before'      => '<div class="page-links"><span class="page-links-title">' . __( 'Pages:', 'osea-theme' ) . '</span>',
+		'before'      => '<div class="page-links"><span class="page-links-title">' . __( 'Pages:', 'medula-theme' ) . '</span>',
 		'after'       => '</div>',
 		'link_before' => '<span>',
 		'link_after'  => '</span>',
 		'next_or_number'   => 'number',
 		'separator'        => ' ',
-		'nextpagelink'     => __( 'Next page', 'osea-theme' ),
-		'previouspagelink' => __( 'Previous page', 'osea-theme' ),
+		'nextpagelink'     => __( 'Next page', 'medula-theme' ),
+		'previouspagelink' => __( 'Previous page', 'medula-theme' ),
 		'pagelink'         => '%',
 		'echo'             => 1
 	));

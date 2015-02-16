@@ -10,15 +10,15 @@
 
 
 /**
- * Osea Example shortcode
+ * Medula Example shortcode
  *
  * Creates a div with any number of additional classes
  *
- * Usage: [osea-shortcode class="example"]
+ * Usage: [medula-shortcode class="example"]
  * 
  */
 
- function osea_shortcode_example( $atts
+ function medula_shortcode_example( $atts
 		// Comment the next line for a self-enclosing shortcode
 		, $content = null  
 		) { 
@@ -30,12 +30,12 @@
         ), $atts )
     );
 
-    $out = '<div class="osea_shortcode " ' . $class . '">';
+    $out = '<div class="medula_shortcode " ' . $class . '">';
     $out .= $content;
     $out .= '</div>';
     return $out;
 }
-add_shortcode( 'osea-shortcode', 'osea_shortcode_example' );
+add_shortcode( 'medula-shortcode', 'medula_shortcode_example' );
 
 
 

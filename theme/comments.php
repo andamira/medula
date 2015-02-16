@@ -15,15 +15,15 @@ if ( post_password_required() ) {
 		<section class="comments-list">
 
 		<header>
-			<h2 id="comments-title" ><?php comments_number( __( '<span>No</span> Comments', 'osea-theme' ), __( '<span>One</span> Comment', 'osea-theme' ), _n( '<span>%</span> Comments', '<span>%</span> Comments', get_comments_number(), 'osea-theme' ) );?></h2>
+			<h2 id="comments-title" ><?php comments_number( __( '<span>No</span> Comments', 'medula-theme' ), __( '<span>One</span> Comment', 'medula-theme' ), _n( '<span>%</span> Comments', '<span>%</span> Comments', get_comments_number(), 'medula-theme' ) );?></h2>
 		</header>
 
 		<section class="comments-list">
 
 		<?php
-			if ( function_exists('osea_comments_layout') ) {
-				$cb = 'osea_comments_layout';
-				$cb_end = 'osea_comments_layout_end';
+			if ( function_exists('medula_comments_layout') ) {
+				$cb = 'medula_comments_layout';
+				$cb_end = 'medula_comments_layout_end';
 			} else {
 				$cb = '';
 				$cv_end = '';
@@ -36,7 +36,7 @@ if ( post_password_required() ) {
 				'callback'          => $cb,
 				'end-callback'      => $cb_end,
 				'type'              => 'comment',
-				'reply_text'        => __( 'Reply', 'osea-theme' ),
+				'reply_text'        => __( 'Reply', 'medula-theme' ),
 				'page'              => '',
 				'per_page'          => '',
 				'avatar_size'       => 40,
@@ -51,13 +51,13 @@ if ( post_password_required() ) {
 
 		<?php if ( get_comment_pages_count() > 1 && get_option( 'page_comments' ) ) : ?>
 			<nav class="comments-nav" role="navigation">
-			<div class="comments-nav-prev"><?php previous_comments_link( __( '&larr; Previous Comments', 'osea-theme' ) ); ?></div>
-			<div class="comments-nav-next"><?php next_comments_link( __( 'More Comments &rarr;', 'osea-theme' ) ); ?></div>
+			<div class="comments-nav-prev"><?php previous_comments_link( __( '&larr; Previous Comments', 'medula-theme' ) ); ?></div>
+			<div class="comments-nav-next"><?php next_comments_link( __( 'More Comments &rarr;', 'medula-theme' ) ); ?></div>
 			</nav>
 		<?php endif; ?>
 
 		<?php if ( ! comments_open() ) : ?>
-			<p class="no-comments"><?php _e( 'Comments are closed.' , 'osea-theme' ); ?></p>
+			<p class="no-comments"><?php _e( 'Comments are closed.' , 'medula-theme' ); ?></p>
 		<?php endif; ?>
 
 	<?php endif; ?>

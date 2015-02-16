@@ -1,5 +1,5 @@
 /**
- * Osea Scripts File
+ * Medula Scripts File
  * Author: andamira
  *
  *     1 jQuery(document).ready()
@@ -30,7 +30,7 @@
 jQuery(document).ready(function($) {
 
 	// Swap Gravatars (Uncomment here and the function at 2.3 if you intend to use it)
-	// osea_swap_gravatars();
+	// medula_swap_gravatars();
 
 	/**
 	 * Smart Header
@@ -40,8 +40,8 @@ jQuery(document).ready(function($) {
 	 * Define the height of chosen element in:
 	 * @see /assets/sass/base/_menus.scss
 	 */
-	//osea_smart_header('.site-header' );
-	//osea_smart_header('.site-main-nav', '.site-header-logo');
+	//medula_smart_header('.site-header' );
+	//medula_smart_header('.site-main-nav', '.site-header-logo');
 
 
 	/**
@@ -111,7 +111,7 @@ jQuery(document).ready(function($) {
  */
 
 /*
-function osea_smart_header(navbar, aboveNavbar) {
+function medula_smart_header(navbar, aboveNavbar) {
 
 	// Variables
 	var didScroll;
@@ -201,7 +201,7 @@ function osea_smart_header(navbar, aboveNavbar) {
  */
 
 /*
-function osea_swap_gravatars() {
+function medula_swap_gravatars() {
 	// set the viewport using the function above
 	viewport = updateViewportDimensions();
 	// if the viewport is tablet or larger, we load in the gravatars

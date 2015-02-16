@@ -66,17 +66,17 @@ add_action( 'admin_menu', 'disable_default_dashboard_widgets' );
 /**
  * 2.1 Load the Custom Widgets
  */
-function osea_custom_dashboard_widgets() {
-	wp_add_dashboard_widget( 'osea_example_dashboard_widget', __( 'Example Dashboard Widget (Osea)', 'osea-theme' ), 'osea_example_dashboard_widget' );
+function medula_custom_dashboard_widgets() {
+	wp_add_dashboard_widget( 'medula_example_dashboard_widget', __( 'Example Dashboard Widget (Medula)', 'medula-theme' ), 'medula_example_dashboard_widget' );
 
 }
-add_action( 'wp_dashboard_setup', 'osea_custom_dashboard_widgets' );
+add_action( 'wp_dashboard_setup', 'medula_custom_dashboard_widgets' );
 
 
 /**
  * 2.2 Define here all the Custom Widgets
  */
-function osea_example_dashboard_widget() {
+function medula_example_dashboard_widget() {
 	?>
 	<h1> </h1>
 	<p>You can edit this message in /theme/lib/admin.php and add your own widgets, and restore the disabled defaults.</p>
@@ -90,20 +90,20 @@ function osea_example_dashboard_widget() {
  *
  * You can edit the style in /src/sass/login.scss
  */
-function osea_login_css() {
-	wp_enqueue_style( 'osea_login_css', get_template_directory_uri() . '/css/login.css', false );
+function medula_login_css() {
+	wp_enqueue_style( 'medula_login_css', get_template_directory_uri() . '/css/login.css', false );
 }
 
 // changing the logo link from wordpress.org to your site
-function osea_login_url() {  return home_url(); }
+function medula_login_url() {  return home_url(); }
 
 // changing the alt text on the logo to show your site name
-function osea_login_title() { return get_option( 'blogname' ); }
+function medula_login_title() { return get_option( 'blogname' ); }
 
 // calling it only on the login page
-add_action( 'login_enqueue_scripts', 'osea_login_css', 10 );
-add_filter( 'login_headerurl', 'osea_login_url' );
-add_filter( 'login_headertitle', 'osea_login_title' );
+add_action( 'login_enqueue_scripts', 'medula_login_css', 10 );
+add_filter( 'login_headerurl', 'medula_login_url' );
+add_filter( 'login_headertitle', 'medula_login_title' );
 
 
 /**
@@ -134,9 +134,9 @@ add_editor_style( get_template_directory_uri() . '/css/admin/editor-style.css' )
 /**
  * 4.4 Changing text in footer of admin
  */
-function osea_custom_admin_footer() {
-	_e( '<span id="footer-thankyou">Developed by <a href="http://yoursite.com" target="_blank">Your Site Name</a></span>. Built using <a class="andamira" href="http://andamira.net/osea" target="_blank">andamira Osea</a>.', 'osea-theme' );
+function medula_custom_admin_footer() {
+	_e( '<span id="footer-thankyou">Developed by <a href="http://yoursite.com" target="_blank">Your Site Name</a></span>. Built using <a class="andamira" href="http://andamira.net/medula" target="_blank">andamira Medula</a>.', 'medula-theme' );
 }
-add_filter( 'admin_footer_text', 'osea_custom_admin_footer' );
+add_filter( 'admin_footer_text', 'medula_custom_admin_footer' );
 
 

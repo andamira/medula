@@ -1,16 +1,16 @@
 <?php 
 
-osea_debug_showfile( __FILE__ );
+medula_debug_showfile( __FILE__ );
 
 /*
 <!-- Search Form Type 1: Default -->
 
 <li id="search">
-    <label for="s"><?php _e('Search:', 'osea-theme')?></label>
+    <label for="s"><?php _e('Search:', 'medula-theme')?></label>
     <form id="searchform" method="get" action="/index.php">
         <div>
             <input type="text" name="s" id="s" size="15" /><br />
-            <input type="submit" value="<?php _e('Search','osea-theme')?>" />
+            <input type="submit" value="<?php _e('Search','medula-theme')?>" />
         </div>
     </form>
 </li>
@@ -20,7 +20,7 @@ osea_debug_showfile( __FILE__ );
 
 <form id="searchform" method="get" action="/index.php">
     <input type="text" name="s" id="s" />
-    <button type="submit" title="<?php _e('Search','osea-theme')?>">
+    <button type="submit" title="<?php _e('Search','medula-theme')?>">
         <i class="dashicons-search dashicons"></i>
     </button>
 </form>
@@ -36,8 +36,8 @@ osea_debug_showfile( __FILE__ );
 ?>
 
 <form class="searchform" method="get" action="/index.php">
-    <input type="text" name="s" id="s" placeholder="<?php _e('Search . . .','osea-theme')?>" />
-    <button type="submit" title="<?php _e('Search','osea-theme')?>">
+    <input type="text" name="s" id="s" placeholder="<?php _e('Search . . .','medula-theme')?>" />
+    <button type="submit" title="<?php _e('Search','medula-theme')?>">
         <i class="dashicons-search dashicons"></i>
     </button>
 </form>

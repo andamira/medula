@@ -17,7 +17,7 @@
 <main role="main">
 
 	<header class="page-header">
-		<?php osea_debug_showfile( __FILE__ ); ?>
+		<?php medula_debug_showfile( __FILE__ ); ?>
 		<h1 class="page-title"> <?php post_type_archive_title(); ?></h1>
 	</header>
 
@@ -26,8 +26,8 @@
 		<article id="post-<?php the_ID(); ?>" <?php post_class( 'cf' ); ?> role="article">
 
 			<header class="entry-header">
-				<?php osea_entry_title( 'h2', true ); ?>
-                <div class="entry-meta"><?php osea_entry_meta_byline(); osea_entry_meta_tags() ?></div>
+				<?php medula_entry_title( 'h2', true ); ?>
+                <div class="entry-meta"><?php medula_entry_meta_byline(); medula_entry_meta_tags() ?></div>
 			</header>
 
 			<section class="entry-content">
@@ -35,19 +35,19 @@
 			</section>
 
 			<footer class="entry-footer">
-				<?php osea_comments_count( true ); ?>
-				<div class="entry-meta"><?php osea_entry_meta_tags('custom_tag'); osea_entry_meta_categories('custom_cat'); ?></div>
+				<?php medula_comments_count( true ); ?>
+				<div class="entry-meta"><?php medula_entry_meta_tags('custom_tag'); medula_entry_meta_categories('custom_cat'); ?></div>
 			</footer>
 
 		</article>
 
 	<?php endwhile; ?>
 
-		<?php osea_page_navi(); ?>
+		<?php medula_page_navi(); ?>
 
 	<?php else : ?>
 
-		<?php osea_no_post_found( basename( __FILE__ ) ); ?>
+		<?php medula_no_post_found( basename( __FILE__ ) ); ?>
 
 	<?php endif; ?>
 

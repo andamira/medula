@@ -6,7 +6,7 @@
 * @link http://natko.com/changing-default-wordpress-theme-customization-api-sections/
 */
 
-function osea_theme_customizer( $wp_customize ) {
+function medula_theme_customizer( $wp_customize ) {
   // $wp_customize calls go here.
   //
   // Uncomment the below lines to remove the default customize sections
@@ -25,6 +25,6 @@ function osea_theme_customizer( $wp_customize ) {
   // $wp_customize->get_section('background_image')->title = __( 'Images' );
 }
 
-add_action( 'customize_register', 'osea_theme_customizer' );
+add_action( 'customize_register', 'medula_theme_customizer' );
 
 

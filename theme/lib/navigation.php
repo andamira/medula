@@ -1,6 +1,6 @@
 <?php
 /**
- * Menus template
+ * Navigation Menus template
  *
  *     1 Theme Support
  *
@@ -22,9 +22,9 @@ add_theme_support( 'menus' );
 
 register_nav_menus(
 	array(
-		'site-main-nav' => __( 'The Main Menu', 'osea-theme' ),        // main nav in header
-		'site-mmenu-nav' => __( 'MMenu (Mobile) Menu', 'osea-theme' ), // mmenu for mobile
-		'site-footer-nav' => __( 'The Footer Menu', 'osea-theme' )     // links in the footer
+		'site-main-nav' => __( 'The Main Menu', 'medula-theme' ),        // main nav in header
+		'site-mmenu-nav' => __( 'MMenu (Mobile) Menu', 'medula-theme' ), // mmenu for mobile
+		'site-footer-nav' => __( 'The Footer Menu', 'medula-theme' )     // links in the footer
 	)
 );
 
@@ -40,10 +40,10 @@ register_nav_menus(
  */
 
 // The Main Menu
-function osea_site_main_nav() {
+function medula_site_main_nav() {
 	wp_nav_menu(array(
 		'theme_location' => 'site-main-nav',            // Must match the registered key above
-		'menu' => __( 'Main Site Menu', 'osea-theme' ),
+		'menu' => __( 'Main Site Menu', 'medula-theme' ),
 		'container' => false,
 		'container_class' => '',
 		'container_id' => '',
@@ -55,15 +55,15 @@ function osea_site_main_nav() {
 		'link_after' => '',
 		'depth' => 0,
 		'fallback_cb' => '',
-		'walker' => new osea_Walker_Nav_Menu()          // Custom menu code, customizable below
+		'walker' => new medula_Walker_Nav_Menu()          // Custom menu code, customizable below
 	));
 }
 
 // MMenu (Mobile Menu)
-function osea_site_mmenu_nav() {
+function medula_site_mmenu_nav() {
 	wp_nav_menu(array(
 		'theme_location' => 'site-mmenu-nav',           // Must match the registered key above
-		'menu' => __( 'MMenu (Mobile) Menu', 'osea-theme' ),
+		'menu' => __( 'MMenu (Mobile) Menu', 'medula-theme' ),
 		'container' => false,
 		'container_class' => '',
 		'container_id' => '',
@@ -80,10 +80,10 @@ function osea_site_mmenu_nav() {
 }
 
 // The Footer Links
-function osea_site_footer_nav() {
+function medula_site_footer_nav() {
 	wp_nav_menu(array(
 		'theme_location' => 'site-footer-nav',          // Must match the registered key above
-		'menu' => __( 'Site Footer Menu', 'osea-theme' ),
+		'menu' => __( 'Site Footer Menu', 'medula-theme' ),
 		'container' => false,
 		'container_class' => '',
 		'container_id' => '',
@@ -111,7 +111,7 @@ function osea_site_footer_nav() {
  * @link http://shinraholdings.com/62/custom-nav-menu-walker-function/#example-code
  * @link http://illuminatikarate.com/blog/how-to-output-custom-html-in-wordpress-menus-using-a-custom-nav-walker/
  */
-class osea_Walker_Nav_Menu extends Walker {
+class medula_Walker_Nav_Menu extends Walker {
     /**
      * What the class handles.
      *

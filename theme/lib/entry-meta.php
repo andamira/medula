@@ -23,7 +23,7 @@
  * 1 Returns the entry datetime
  * ************************************************************
  */
-function osea_get_entry_meta_date() {
+function medula_get_entry_meta_date() {
 	return( '<time class="entry-date updated" datetime="' . get_the_time( 'Y-m-dTH:i:sO' ) . '" itemprop="datePublished" pubdate>' . get_the_time( get_option( 'date_format' ) ) . '</time>' );
 }
 
@@ -34,7 +34,7 @@ function osea_get_entry_meta_date() {
  *
  * @link http://codex.wordpress.org/Function_Reference/get_the_author_meta
  */
-function osea_get_entry_meta_author() {
+function medula_get_entry_meta_author() {
 	$author  = '<address class="entry-author vcard">';
 
 	// Author link ( set condition to false to disable link )
@@ -62,9 +62,9 @@ function osea_get_entry_meta_author() {
  * 3 Prints the byline
  * ************************************************************
  */
-function osea_entry_meta_byline() {
+function medula_entry_meta_byline() {
 	$byline  = '<span class="entry-byline byline">';
-	$byline .= sprintf(__( 'Posted %1$s by %2$s', 'osea-theme' ), osea_get_entry_meta_date(), osea_get_entry_meta_author( 'index' ) );
+	$byline .= sprintf(__( 'Posted %1$s by %2$s', 'medula-theme' ), medula_get_entry_meta_date(), medula_get_entry_meta_author( 'index' ) );
 	$byline .= '</span>';
 
 	echo $byline;
@@ -75,7 +75,7 @@ function osea_entry_meta_byline() {
  * 4 Prints the terms (taxonomies, categories, tags... )
  * ************************************************************
  */
-function osea_entry_meta_terms( $custom, $class, $label) {
+function medula_entry_meta_terms( $custom, $class, $label) {
 
 	$tags  = '<span class="entry-' . $class . '">';
 	$title = '<span class="entry-' . $class . '-title">' . $label . '</span>';
@@ -94,12 +94,12 @@ function osea_entry_meta_terms( $custom, $class, $label) {
 	echo $tags;
 }
 // convenience function for categories
-function osea_entry_meta_categories( $custom = 'category' ) {
-	osea_entry_meta_terms( $custom, 'categories', __( 'Filed under', 'osea-theme' ) );
+function medula_entry_meta_categories( $custom = 'category' ) {
+	medula_entry_meta_terms( $custom, 'categories', __( 'Filed under', 'medula-theme' ) );
 }
 // convenience function for tags
-function osea_entry_meta_tags( $custom = 'post_tag' ) {
-	osea_entry_meta_terms( $custom, 'tags', __( 'Tags:', 'osea-theme' ) );
+function medula_entry_meta_tags( $custom = 'post_tag' ) {
+	medula_entry_meta_terms( $custom, 'tags', __( 'Tags:', 'medula-theme' ) );
 }
 
 
@@ -110,7 +110,7 @@ function osea_entry_meta_tags( $custom = 'post_tag' ) {
  * @link http://codex.wordpress.org/Function_Reference/current_user_can
  * @link http://docs.appthemes.com/tutorials/wordpress-check-user-role-function/
  */
-function osea_edit_link( $link, $echo = true ) {
+function medula_edit_link( $link, $echo = true ) {
 
 	// Check if user has permission to see the edit link
 	$user = wp_get_current_user();
@@ -121,7 +121,7 @@ function osea_edit_link( $link, $echo = true ) {
 	//if ( ! current_user_can('edit_pages') ) { return; }
 
 	$edit  = '<span class="edit-link"><a href="' . $link . '"';
-	$edit .= ' title="' . __( 'Edit This', 'osea-theme' ) . '">';
+	$edit .= ' title="' . __( 'Edit This', 'medula-theme' ) . '">';
 	$edit .= '<i class="dashicons dashicons-edit"></i>';
 	$edit .= '</a></span>';
 
@@ -132,12 +132,12 @@ function osea_edit_link( $link, $echo = true ) {
 	}
 }
 // convenience function for posts
-function osea_edit_post_link( $echo = true ) {
-	return osea_edit_link( get_edit_post_link(), $echo );
+function medula_edit_post_link( $echo = true ) {
+	return medula_edit_link( get_edit_post_link(), $echo );
 }
 // convenience function for comments
-function osea_edit_comment_link( $echo = true ) {
-	return osea_edit_link( get_edit_comment_link(), $echo );
+function medula_edit_comment_link( $echo = true ) {
+	return medula_edit_link( get_edit_comment_link(), $echo );
 }
 
 

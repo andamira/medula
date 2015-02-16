@@ -17,14 +17,14 @@
  * the way you want you can do it like this:
  * 
  *   <h1 class="entry-title">
- *     <?php the_title(); echo osea_edit_post_link( false ); ?>
+ *     <?php the_title(); echo medula_edit_post_link( false ); ?>
  *   </h1>
  *
  * @param string $htag		Heading tag: h[1-6]
  * @param bool   $link		Display a link if true
  * @param bool   $headline	Add headline microdata if true
  */
-function osea_entry_title( $htag, $with_link = false, $headline = false ) {
+function medula_entry_title( $htag, $with_link = false, $headline = false ) {
 
 	if ( !in_array( $htag, array( 'h1', 'h2', 'h3', 'h4', 'h5', 'h6' ) ) ) {
 		$htag = 'h1'; // value by default if none provided or wrong value
@@ -44,7 +44,7 @@ function osea_entry_title( $htag, $with_link = false, $headline = false ) {
 	 *
 	 * @see /theme/lib/entry-meta.php
 	 */
-	$title .= osea_edit_post_link( false );
+	$title .= medula_edit_post_link( false );
 
 	$title .= "</$htag>";
 

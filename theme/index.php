@@ -3,7 +3,7 @@
 <main role="main">
 
 	<header class="page-header">
-		<?php osea_debug_showfile( __FILE__ ); ?>
+		<?php medula_debug_showfile( __FILE__ ); ?>
 		<h1 class="page-title"><?php $t= get_queried_object(); echo $t->post_title; ?></h1>
 	</header>
 
@@ -12,8 +12,8 @@
 		<article id="post-<?php the_ID(); ?>" <?php post_class(); ?> role="article">
 
 			<header class="entry-header">
-				<?php osea_entry_title( 'h2', true ); ?>
-				<div class="entry-meta"><?php osea_entry_meta_byline(); ?></div>
+				<?php medula_entry_title( 'h2', true ); ?>
+				<div class="entry-meta"><?php medula_entry_meta_byline(); ?></div>
 			</header>
 
 			<section class="entry-content">
@@ -21,19 +21,19 @@
 			</section>
 
 			<footer class="entry-footer">
-				<?php osea_comments_count( true ); ?>
-				<div class="entry-meta"><?php osea_entry_meta_tags(); osea_entry_meta_categories(); ?></div>
+				<?php medula_comments_count( true ); ?>
+				<div class="entry-meta"><?php medula_entry_meta_tags(); medula_entry_meta_categories(); ?></div>
 			</footer>
 
 		</article>
 
 	<?php endwhile; ?>
 
-			<?php osea_page_navi(); ?>
+			<?php medula_page_navi(); ?>
 
 	<?php else : ?>
 
-		<?php osea_no_post_found( basename( __FILE__ ) ); ?>
+		<?php medula_no_post_found( basename( __FILE__ ) ); ?>
 
 	<?php endif; ?>
 

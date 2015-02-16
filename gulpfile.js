@@ -22,6 +22,7 @@
 autoprefixer_rules = 'ie >= 8, > 5%, last 3 versions';
 remPixelFallback = true;
 jsMangle = true;
+//TODO: combine-mq = false;
 
 
 // DEFINE SOURCES AND TARGETS
@@ -32,23 +33,19 @@ var source = {
 	// YOUR ASSETS
 	// ===========
 
-	// Sass
 	sass: [
 		'src/sass/**/[^_]*.scss',
 	],
 	sass_exclude: [ '', ],
 
-	// javascript
 	js: [
 		'src/js/main.js',
 	],
 	js_exclude: [ '', ],
 
-	// Images
 	img: ['src/img/**/*.{png,gif,jpg,jpeg,svg,ico}'],
 	img_exclude: [ '', ],
 
-	// Fonts
 	fonts: ['src/fonts/**/*.{woff,woff2,svg,ttf,eof}'],
 	fonts_exclude: [ '', ],
 

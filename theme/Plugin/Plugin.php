@@ -1,14 +1,14 @@
 <?php
 /**
- * Plugin Name: Medula (Osea)
- * Plugin URI: https://github.com/andamira/osea/wiki/Medula
+ * Plugin Name: Medula Extended Functionality
+ * Plugin URI: https://github.com/andamira/medula/wiki/Plugin
  * Description: This plugin contains all the theme independent functionality.
- * Version 0.3.0
+ * Version 0.4.0
  * Author: andamira
  * Author URI: http://andamira.net
  *
  *
- * Medula is a minimal plugin template already included in Ósea.
+ * This is a minimal plugin template already included in Medula.
  *
  *   - You can access this functionality very easily, just by uncommenting
  *     the corresponding line in the functions.php file (section 5).
@@ -22,10 +22,10 @@
  *     Wordpress Plugin Boilerplate} or {@link http://getherbert.com/
  *     Herbert Plugin Framework} instead, or your own solution.
  *
- * NOTE: If you decide to use Medula, you must customize each one 
+ * NOTE: If you decide to use this template, you must customize each one 
  * of the included files for your particular use case
  *
- * @link https://github.com/andamira/osea/wiki/Medula
+ * @link https://github.com/andamira/medula/wiki/Plugin
  */
 
 // Google Analytics Tracking Code

@@ -5,11 +5,11 @@
 	<article id="post-not-found" class="hentry">
 
 		<header class="entry-header">
-			<h1><?php _e( '404 - Post Not Found', 'osea-theme' ); ?></h1>
+			<h1><?php _e( '404 - Post Not Found', 'medula-theme' ); ?></h1>
 		</header>
 
 		<section class="entry-content">
-			<p><?php _e( 'The article you were looking for was not found, try looking again!', 'osea-theme' ); ?></p>
+			<p><?php _e( 'The article you were looking for was not found, try looking again!', 'medula-theme' ); ?></p>
 		</section>
 
 		<section class="search">
@@ -17,7 +17,7 @@
 		</section>
 
 		<footer class="entry-footer">
-				<p class="alert-error"><?php _e( 'This is the 404.php template.', 'osea-theme' ); ?></p>
+				<p class="alert-error"><?php _e( 'This is the 404.php template.', 'medula-theme' ); ?></p>
 		</footer>
 
 	</article>

@@ -28,7 +28,7 @@ define('ICL_DONT_LOAD_LANGUAGES_JS', true);
  * @link http://wpml.org/documentation/getting-started-guide/language-setup/custom-language-switcher/
  * @link http://wpml.org/documentation/support/wpml-coding-api/
  */
-function osea_wpml_switcher() {
+function medula_wpml_switcher() {
 
 	$languages = icl_get_languages('skip_missing=0&orderby=code');
 
@@ -43,7 +43,7 @@ function osea_wpml_switcher() {
 				// Missing translation
 				if($l['missing']){
 					echo '<li><a style="color:#444444 !important;" title="' .
-						sprintf( __( 'Not available in %1s', 'osea-theme' ),  ) .
+						sprintf( __( 'Not available in %1s', 'medula-theme' ),  ) .
 						'" href="'.$l['url'] . '">';
 
 				// Translation is present

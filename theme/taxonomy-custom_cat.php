@@ -17,8 +17,8 @@
 <main role="main">
 
 	<header class="page-header">
-		<?php osea_debug_showfile( __FILE__ ); ?>
-		<h1 class="page-title"><span><?php _e( 'Posts Categorized:', 'osea-theme' ); ?></span> <?php single_cat_title(); ?></h1>
+		<?php medula_debug_showfile( __FILE__ ); ?>
+		<h1 class="page-title"><span><?php _e( 'Posts Categorized:', 'medula-theme' ); ?></span> <?php single_cat_title(); ?></h1>
 	</header>
 
 	<?php if (have_posts()) : while (have_posts()) : the_post(); ?>
@@ -27,32 +27,32 @@
 
 			<header class="article-header">
 
-				<?php osea_entry_title( 'h2', true ); ?>
+				<?php medula_entry_title( 'h2', true ); ?>
 
 				<p class="byline vcard">
-					<div class="entry-meta"><?php osea_entry_meta_byline(); osea_entry_meta_tags() ?></div>
+					<div class="entry-meta"><?php medula_entry_meta_byline(); medula_entry_meta_tags() ?></div>
 				</p>
 
 			</header>
 
 			<section class="entry-content">
-				<?php the_excerpt( '<span class="read-more">' . __( 'Read More &raquo;', 'osea-theme' ) . '</span>' ); ?>
+				<?php the_excerpt( '<span class="read-more">' . __( 'Read More &raquo;', 'medula-theme' ) . '</span>' ); ?>
 
 			</section>
 
 			<footer class="article-footer">
-				<div class="entry-meta"><?php osea_entry_meta_tags( 'custom_tag' ); osea_entry_meta_categories( 'custom_cat' ); ?></div>
+				<div class="entry-meta"><?php medula_entry_meta_tags( 'custom_tag' ); medula_entry_meta_categories( 'custom_cat' ); ?></div>
 			</footer>
 
 		</article>
 
 	<?php endwhile; ?>
 
-		<?php osea_page_navi(); ?>
+		<?php medula_page_navi(); ?>
 
 	<?php else : ?>
 
-		<?php osea_no_post_found( basename( __FILE__ ) ); ?>
+		<?php medula_no_post_found( basename( __FILE__ ) ); ?>
 
 	<?php endif; ?>
 

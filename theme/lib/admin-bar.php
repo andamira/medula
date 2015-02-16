@@ -16,7 +16,7 @@
  * ************************************************************
  *
  */
-add_theme_support( 'admin-bar', array( 'callback' => 'osea_adminbar_cb' ) );
+add_theme_support( 'admin-bar', array( 'callback' => 'medula_adminbar_cb' ) );
 
 
 /**
@@ -29,7 +29,7 @@ add_theme_support( 'admin-bar', array( 'callback' => 'osea_adminbar_cb' ) );
  * @see /src/sass/breakpoints/base/_menus.scss
  * @see {WP_FOLDER}/wp-includes/admin-bar.php Original WordPress Code
  */
-function osea_adminbar_cb() {
+function medula_adminbar_cb() {
 /* ?>
 <style type="text/css" media="screen">
 	html { margin-top: 32px !important; }

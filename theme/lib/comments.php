@@ -18,7 +18,7 @@
  * @link http://codex.wordpress.org/Function_Reference/comments_number
  * @link http://codex.wordpress.org/Function_Reference/_n
  */
-function osea_comments_count( $link = false ) {
+function medula_comments_count( $link = false ) {
 
 	$cc  = '<span class="entry-comments-count">';
 
@@ -26,13 +26,13 @@ function osea_comments_count( $link = false ) {
 	#$com_num = get_comments_number_text(); // (since 4.0)
 
 	if ( $link && $com_num ) {
-		$cc .= '<a href="' . get_the_permalink() . '#comments-title" title="' . __( 'Go to comments', 'osea-theme' ) . '">';
+		$cc .= '<a href="' . get_the_permalink() . '#comments-title" title="' . __( 'Go to comments', 'medula-theme' ) . '">';
 	}
 
 	if ( ! $com_num ) {
-		$cc .= __( '<span>No</span> Comments', 'osea-theme' );
+		$cc .= __( '<span>No</span> Comments', 'medula-theme' );
 	} else {
-		$cc .= sprintf ( _n( '<span>%s</span> Comment', '<span>%s</span> Comments', $com_num, 'osea-theme' ), $com_num );
+		$cc .= sprintf ( _n( '<span>%s</span> Comment', '<span>%s</span> Comments', $com_num, 'medula-theme' ), $com_num );
 	}
 
 	if ( $link && $com_num ) {
@@ -52,7 +52,7 @@ function osea_comments_count( $link = false ) {
  * @link http://www.whatwg.org/specs/web-apps/current-work/multipage/sections.html#the-article-element
  *
  */
-function osea_comments_layout( $comment, $args, $depth ) {
+function medula_comments_layout( $comment, $args, $depth ) {
 	$GLOBALS['comment'] = $comment; ?>
 
 	<article id="comment-<?php comment_ID(); ?>" <?php comment_class(); ?>>
@@ -71,16 +71,16 @@ function osea_comments_layout( $comment, $args, $depth ) {
 			*/
 			$bgauthemail = get_comment_author_email();
 			?>
-			<img data-gravatar="<?php echo osea_get_protocol(); ?>www.gravatar.com/avatar/<?php echo md5( $bgauthemail ); ?>?s=40" class="load-gravatar avatar avatar-48 photo" height="40" width="40" src="<?php echo get_template_directory_uri(); ?>/img/nothing.gif" />
+			<img data-gravatar="<?php echo medula_get_protocol(); ?>www.gravatar.com/avatar/<?php echo md5( $bgauthemail ); ?>?s=40" class="load-gravatar avatar avatar-48 photo" height="40" width="40" src="<?php echo get_template_directory_uri(); ?>/img/nothing.gif" />
 
-			<?php printf(__( '<cite class="fn">%1$s</cite> %2$s', 'osea-theme' ), get_comment_author_link(), osea_edit_comment_link() ) ?>
+			<?php printf(__( '<cite class="fn">%1$s</cite> %2$s', 'medula-theme' ), get_comment_author_link(), medula_edit_comment_link() ) ?>
 			<time datetime="<?php echo comment_time('Y-m-dTH:i:sO'); ?>"><a href="<?php echo htmlspecialchars( get_comment_link( $comment->comment_ID ) ) ?>"><?php comment_time( get_option( 'date_format' ) ); ?> </a></time>
 
 		</header>
 
 		<?php if ($comment->comment_approved == '0') : ?>
 			<div class="alert alert-info">
-				<p><?php _e( 'Your comment is awaiting moderation.', 'osea-theme' ) ?></p>
+				<p><?php _e( 'Your comment is awaiting moderation.', 'medula-theme' ) ?></p>
 			</div>
 		<?php endif; ?>
 
@@ -93,7 +93,7 @@ function osea_comments_layout( $comment, $args, $depth ) {
 
 }
 
-function osea_comments_layout_end( $comment, $args, $depth ) {
+function medula_comments_layout_end( $comment, $args, $depth ) {
 	echo '</article>';
 }
 

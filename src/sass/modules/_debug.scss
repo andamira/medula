@@ -3,7 +3,7 @@
 /// ************************************************************
 ///
 /// This is to style some parts that are only used when constant
-/// OSEA_DEBUG is set to true in functions.php file
+/// MEDULA_DEBUG is set to true in functions.php file
 ///
 ////
 
@@ -21,7 +21,7 @@ $main-color: #3895A7;
 $aside-color: $main-color;
 
 
-.osea-debug-filename {
+.medula-debug-filename {
 	position: absolute;
 	margin: 0;
 	padding: 0.2rem;

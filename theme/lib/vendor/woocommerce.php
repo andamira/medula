@@ -29,12 +29,12 @@
 // Unhook of WooCommerce wrappers and hook your own
 remove_action( 'woocommerce_before_main_content', 'woocommerce_output_content_wrapper', 10);
 remove_action( 'woocommerce_after_main_content', 'woocommerce_output_content_wrapper_end', 10);
-add_action('woocommerce_before_main_content', 'osea_theme_wrapper_start', 10);
-add_action('woocommerce_after_main_content', 'osea_theme_wrapper_end', 10);
+add_action('woocommerce_before_main_content', 'medula_theme_wrapper_start', 10);
+add_action('woocommerce_after_main_content', 'medula_theme_wrapper_end', 10);
 
 // Structure of your theme between the </head> tag (not included)
 // and the main section opening tag (included)
-function osea_theme_wrapper_start() {
+function medula_theme_wrapper_start() {
 ?>
 	<div id="site-content-wrapper"> <?php // in header.php ?>
 		<main role="main">
@@ -43,7 +43,7 @@ function osea_theme_wrapper_start() {
 
 // Structure of your theme between the main section
 // closing tag (included) and the page <footer> (not included)
-function osea_theme_wrapper_end() {
+function medula_theme_wrapper_end() {
 ?>
 		</main>
 		<?php get_sidebar(); ?>
@@ -86,11 +86,11 @@ function osea_theme_wrapper_end() {
 function wc_wc20_variation_price_format( $price, $product ) {
 	// Main Price
 	$prices = array( $product->get_variation_price( 'min', true ), $product->get_variation_price( 'max', true ) );
-	$price = $prices[0] !== $prices[1] ? sprintf( __( 'From: %1$s', 'osea-theme' ), wc_price( $prices[0] ) ) : wc_price( $prices[0] );
+	$price = $prices[0] !== $prices[1] ? sprintf( __( 'From: %1$s', 'medula-theme' ), wc_price( $prices[0] ) ) : wc_price( $prices[0] );
 	// Sale Price
 	$prices = array( $product->get_variation_regular_price( 'min', true ), $product->get_variation_regular_price( 'max', true ) );
 	sort( $prices );
-	$saleprice = $prices[0] !== $prices[1] ? sprintf( __( 'From: %1$s', 'osea-theme' ), wc_price( $prices[0] ) ) : wc_price( $prices[0] );
+	$saleprice = $prices[0] !== $prices[1] ? sprintf( __( 'From: %1$s', 'medula-theme' ), wc_price( $prices[0] ) ) : wc_price( $prices[0] );
  
 	if ( $price !== $saleprice ) {
 		$price = '<del>' . $saleprice . '</del> <ins>' . $price . '</ins>';
@@ -138,11 +138,11 @@ function wp_list_categories_remove_title_attributes($output) {
  */
 # remove_action( 'woocommerce_after_shop_loop_item', 'woocommerce_template_loop_add_to_cart', 10 );
 
-# add_action( 'woocommerce_after_shop_loop_item', 'osea_woocommerce_template_loop_add_to_cart', 10 );
-function osea_woocommerce_template_loop_add_to_cart() {
+# add_action( 'woocommerce_after_shop_loop_item', 'medula_woocommerce_template_loop_add_to_cart', 10 );
+function medula_woocommerce_template_loop_add_to_cart() {
 	global $product;
 	echo '<form action="' . esc_url( $product->get_permalink( $product->id ) ) . '" method="get">
-		<button type="submit" class="single_add_to_cart_button button alt">' . __('View More', 'osea-theme') . '</button>
+		<button type="submit" class="single_add_to_cart_button button alt">' . __('View More', 'medula-theme') . '</button>
 	</form>';
 }
 
@@ -152,9 +152,9 @@ function osea_woocommerce_template_loop_add_to_cart() {
  *
  * @link http://stackoverflow.com/questions/21832684/alternative-for-the-wc-add-to-cart-message-hook-in-woocommerce-for-wp
  */
-# add_filter( 'wc_add_to_cart_message', 'osea_custom_add_to_cart_message' );
-function osea_custom_add_to_cart_message ($message) {
-	$custom_message = sprintf( __('Product has been succesfully added to cart.', 'osea-theme') );
+# add_filter( 'wc_add_to_cart_message', 'medula_custom_add_to_cart_message' );
+function medula_custom_add_to_cart_message ($message) {
+	$custom_message = sprintf( __('Product has been succesfully added to cart.', 'medula-theme') );
 
 	global $is_cart_added;
 	$is_cart_added = 1;

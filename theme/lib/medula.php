@@ -1,6 +1,6 @@
 <?php
 /**
- * This is the Core Osea library file, where
+ * This is the Core Medula library file, where
  * most of the main functions and features reside.
  *
  * If you have any custom functions, it's best
@@ -42,7 +42,7 @@
  * Loads Modernizr, jQuery, and reply script
  */
 
-function osea_scripts_and_styles() {
+function medula_scripts_and_styles() {
 
 	if (!is_admin()) {
 
@@ -55,13 +55,13 @@ function osea_scripts_and_styles() {
 		}
 
 		//adding scripts file in the footer
-		wp_register_script( 'osea-js', get_stylesheet_directory_uri() . '/js/scripts.js', array( 'jquery' ), '', true );
+		wp_register_script( 'medula-js', get_stylesheet_directory_uri() . '/js/scripts.js', array( 'jquery' ), '', true );
 
 		// enqueue styles and scripts
 		wp_enqueue_style( 'main-stylesheet' );
 
 		wp_enqueue_script( 'jquery' );
-		wp_enqueue_script( 'osea-js' );
+		wp_enqueue_script( 'medula-js' );
 	}
 	
 	// Admin styles are defined in:
@@ -77,13 +77,13 @@ function osea_scripts_and_styles() {
  * @link http://generatewp.com/theme-support/ Theme Support Generator
  */
 
-function osea_theme_support() {
+function medula_theme_support() {
 
 	// thumbnails support defined in:
 	// /theme/lib/thumbnails.php
 	
 	// menus support is defined in:
-	// /theme/lib/menus.php
+	// /theme/lib/navigation.php
 	
 	// post format support is not defined
 
@@ -145,11 +145,11 @@ if ( ! isset( $content_width ) ) {
 /**
  * 3 RELATED POSTS FUNCTION
  * ************************************************************
- * call using osea_related_posts();
+ * call using medula_related_posts();
  */
 
-function osea_related_posts() {
-	echo '<ul id="osea-related-posts">';
+function medula_related_posts() {
+	echo '<ul id="medula-related-posts">';
 	global $post;
 	$tags = wp_get_post_tags( $post->ID );
 	if($tags) {
@@ -167,7 +167,7 @@ function osea_related_posts() {
 			<li class="related_post"><a class="entry-unrelated" href="<?php the_permalink() ?>" title="<?php the_title_attribute(); ?>"><?php the_title(); ?></a></li>
 			<?php endforeach; }
 		else { ?>
-			<?php echo '<li class="no_related_post">' . __( 'No Related Posts Yet!', 'osea-theme' ) . '</li>'; ?>
+			<?php echo '<li class="no_related_post">' . __( 'No Related Posts Yet!', 'medula-theme' ) . '</li>'; ?>
 			<?php }
 	}
 	wp_reset_postdata();
@@ -181,7 +181,7 @@ function osea_related_posts() {
  * Numeric Page Navi (built into the theme by default)
  */
 
-function osea_page_navi() {
+function medula_page_navi() {
 	global $wp_query;
 	$bignum = 999999999;
 	if ( $wp_query->max_num_pages <= 1 )
@@ -213,7 +213,7 @@ function osea_page_navi() {
  * 5.1 HEAD CLEANUP
  */
 
-function osea_head_cleanup() {
+function medula_head_cleanup() {
 	// category feeds
 	remove_action( 'wp_head', 'feed_links_extra', 3 );
 
@@ -239,10 +239,10 @@ function osea_head_cleanup() {
 	remove_action( 'wp_head', 'wp_generator' );
 
 	// remove WP version from css
-	add_filter( 'style_loader_src', 'osea_remove_wp_ver_css_js', 9999 );
+	add_filter( 'style_loader_src', 'medula_remove_wp_ver_css_js', 9999 );
 
 	// remove Wp version from scripts
-	add_filter( 'script_loader_src', 'osea_remove_wp_ver_css_js', 9999 );
+	add_filter( 'script_loader_src', 'medula_remove_wp_ver_css_js', 9999 );
 }
 
 /**
@@ -250,10 +250,10 @@ function osea_head_cleanup() {
  */
 
 // remove WP version from RSS
-function osea_rss_version() { return ''; }
+function medula_rss_version() { return ''; }
 
 // remove WP version from scripts
-function osea_remove_wp_ver_css_js( $src ) {
+function medula_remove_wp_ver_css_js( $src ) {
 	if ( strpos( $src, 'ver=' ) )
 		$src = remove_query_arg( 'ver', $src );
 	return $src;
@@ -264,14 +264,14 @@ function osea_remove_wp_ver_css_js( $src ) {
  */
 
 // remove injected CSS for recent comments widget
-function osea_remove_wp_widget_recent_comments_style() {
+function medula_remove_wp_widget_recent_comments_style() {
 	if ( has_filter( 'wp_head', 'wp_widget_recent_comments_style' ) ) {
 		remove_filter( 'wp_head', 'wp_widget_recent_comments_style' );
 	}
 }
 
 // remove injected CSS from recent comments widget
-function osea_remove_recent_comments_style() {
+function medula_remove_recent_comments_style() {
 	global $wp_widget_factory;
 	if (isset($wp_widget_factory->widgets['WP_Widget_Recent_Comments'])) {
 		remove_action( 'wp_head', array($wp_widget_factory->widgets['WP_Widget_Recent_Comments'], 'recent_comments_style') );
@@ -279,7 +279,7 @@ function osea_remove_recent_comments_style() {
 }
 
 // remove injected CSS from gallery
-function osea_gallery_style($css) {
+function medula_gallery_style($css) {
   return preg_replace( "!<style type='text/css'>(.*?)</style>!s", '', $css );
 }
 
@@ -288,7 +288,7 @@ function osea_gallery_style($css) {
  *
  * @link http://css-tricks.com/snippets/wordpress/remove-paragraph-tags-from-around-images/
  */
-function osea_filter_ptags_on_images($content){
+function medula_filter_ptags_on_images($content){
    return preg_replace('/<p>\s*(<a .*>)?\s*(<img .* \/>)\s*(<\/a>)?\s*<\/p>/iU', '\1\2\3', $content);
 }
 
@@ -297,11 +297,11 @@ function osea_filter_ptags_on_images($content){
  *
  * remove the annoying […] and change it to a Read More link
  */
-function osea_excerpt_more($more) {
+function medula_excerpt_more($more) {
 	global $post;
 	return '...  <a class="excerpt-read-more" href="'. get_permalink($post->ID) .
-		'" title="'.__( 'Read', 'osea-theme' ) . get_the_title($post->ID).'">'.
-		__( 'Read more &raquo;', 'osea-theme' ) .'</a>';
+		'" title="'.__( 'Read', 'medula-theme' ) . get_the_title($post->ID).'">'.
+		__( 'Read more &raquo;', 'medula-theme' ) .'</a>';
 }
 
 
@@ -311,7 +311,7 @@ function osea_excerpt_more($more) {
  * @link http://stackoverflow.com/a/17472755
  * @link https://core.trac.wordpress.org/changeset/28708
  */
-function osea_optimize_html_callback( $buffer ) {
+function medula_optimize_html_callback( $buffer ) {
 	// option 1 ( http://wordpress.org/support/topic/how-do-i-strip-out-all-whitespace-via-a-filter )
 	//buffer = str_replace( array( "\n", "\t", '  ' ), '', $buffer );
 
@@ -330,8 +330,8 @@ function osea_optimize_html_callback( $buffer ) {
 
 	return $buffer;
 }
-function osea_optimize_html_buffer_start() { ob_start("osea_optimize_html_callback"); }
-function osea_optimize_html_buffer_end() { ob_end_flush(); }
+function medula_optimize_html_buffer_start() { ob_start("medula_optimize_html_callback"); }
+function medula_optimize_html_buffer_end() { ob_end_flush(); }
 
 
 /**
@@ -341,18 +341,18 @@ function osea_optimize_html_buffer_end() { ob_end_flush(); }
 
 // This debug function displays the template filename
 // It's Called from all the template files, at the header/top
-function osea_debug_showfile( $file ) {
-	if ( defined( 'OSEA_DEBUG' ) && OSEA_DEBUG ) {
-		echo '<span class="osea-debug-filename alert-info">';
-		echo __('File: ', 'osea-theme');
+function medula_debug_showfile( $file ) {
+	if ( defined( 'MEDULA_DEBUG' ) && MEDULA_DEBUG ) {
+		echo '<span class="medula-debug-filename alert-info">';
+		echo __('File: ', 'medula-theme');
 		echo basename( $file );
 		echo '</span>';
 	}
 }
 
 // This debug function adds a debug class to the body
-function osea_debug_body_class() {
-	if ( defined( 'OSEA_DEBUG' ) && OSEA_DEBUG ) {
+function medula_debug_body_class() {
+	if ( defined( 'MEDULA_DEBUG' ) && MEDULA_DEBUG ) {
 		return 'debug';
 	}
 }
@@ -370,7 +370,7 @@ function osea_debug_body_class() {
  * @link https://gist.github.com/webaware/4688802
  * @link http://snippets.webaware.com.au/snippets/wordpress-is_ssl-doesnt-work-behind-some-load-balancers/
  */
-function osea_get_protocol() {
+function medula_get_protocol() {
 	if ( is_ssl() ) {
 		return  "https://";
 	} else {

@@ -7,13 +7,13 @@
 		<article id="post-<?php the_ID(); ?>" <?php post_class(); ?> role="article" itemscope itemtype="http://schema.org/BlogPosting">
 
 			<header class="entry-header">
-				<?php osea_debug_showfile( __FILE__ ); ?>
-				<?php osea_entry_title( 'h1' ); ?>
+				<?php medula_debug_showfile( __FILE__ ); ?>
+				<?php medula_entry_title( 'h1' ); ?>
 			</header>
 
 			<section class="entry-content">
 				<?php the_content(); ?>
-				<?php osea_page_links(); ?>
+				<?php medula_page_links(); ?>
 			</section>
 
 			<footer class="entry-footer">
@@ -25,7 +25,7 @@
 
 	<?php endwhile; else: ?>
 
-		<?php osea_no_post_found( basename( __FILE__ ) ); ?>
+		<?php medula_no_post_found( basename( __FILE__ ) ); ?>
 
 	<?php endif; ?>
 

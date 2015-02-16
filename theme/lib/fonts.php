@@ -28,12 +28,12 @@
  */
 
 
-function osea_fonts() {
+function medula_fonts() {
 
 	/**
 	 * 1 GOOGLE FONTS
 	 */
-	wp_register_style('googleFonts', osea_get_protocol() . 'fonts.googleapis.com/css?family=Open+Sans:400,400italic,700');
+	wp_register_style('googleFonts', medula_get_protocol() . 'fonts.googleapis.com/css?family=Open+Sans:400,400italic,700');
 	wp_enqueue_style( 'googleFonts' );
 
 
@@ -42,6 +42,6 @@ function osea_fonts() {
 	 */
 
 }
-add_action('wp_print_styles', 'osea_fonts');
+add_action('wp_print_styles', 'medula_fonts');
 
 

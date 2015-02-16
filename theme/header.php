@@ -19,7 +19,7 @@
  * @link http://stackoverflow.com/a/16732064 The source for this solution
  * @link https://core.trac.wordpress.org/ticket/16024 In WordPress 4.2 we will be able to enqueue these properly
  */
-if ( defined( 'OSEA_IE8_SUPPORT' ) && OSEA_IE8_SUPPORT ) { ?>
+if ( defined( 'MEDULA_IE8_SUPPORT' ) && MEDULA_IE8_SUPPORT ) { ?>
 <!--[if lt IE 9]>
 <script src="<?php echo get_template_directory_uri(); ?>/js/vendor/nwmatcher.js"></script>
 <script src="<?php echo get_template_directory_uri(); ?>/js/vendor/selectivizr.js"></script>
@@ -44,13 +44,13 @@ if ( defined( 'OSEA_IE8_SUPPORT' ) && OSEA_IE8_SUPPORT ) { ?>
 	<?php wp_head(); ?>
 </head>
 
-<body <?php body_class( osea_debug_body_class() ); ?>>
+<body <?php body_class( medula_debug_body_class() ); ?>>
 	
 	<div id="page-wrapper">
 
 		<header class="site-header" role="banner">
 
-			<?php osea_debug_showfile( __FILE__ ); ?>
+			<?php medula_debug_showfile( __FILE__ ); ?>
 
 			<a class="mmenu-button" href="#mmenu" >
 				<i class="dashicons dashicons-menu"></i>
@@ -64,7 +64,7 @@ if ( defined( 'OSEA_IE8_SUPPORT' ) && OSEA_IE8_SUPPORT ) { ?>
 
 			<div id="site-header-wrapper" class="site-wrapper">
 
-				<nav class="site-main-nav" role="navigation"><?php osea_site_main_nav(); ?></nav>
+				<nav class="site-main-nav" role="navigation"><?php medula_site_main_nav(); ?></nav>
 
 			</div>
 

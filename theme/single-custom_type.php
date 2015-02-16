@@ -23,9 +23,9 @@
 		<article id="post-<?php the_ID(); ?>" <?php post_class(); ?> role="article">
 
 			<header class="entry-header">
-				<?php osea_debug_showfile( __FILE__ ); ?>
-				<?php osea_entry_title( 'h1' ); ?>
-				<div class="entry-meta"><?php osea_entry_meta_byline(); ?></div>
+				<?php medula_debug_showfile( __FILE__ ); ?>
+				<?php medula_entry_title( 'h1' ); ?>
+				<div class="entry-meta"><?php medula_entry_meta_byline(); ?></div>
 			</header>
 
 			<section class="entry-content" itemprop="articleBody">
@@ -33,7 +33,7 @@
 			</section>
 
 			<footer class="entry-footer">
-				<div class="entry-meta"><?php osea_entry_meta_tags('custom_tag'); osea_entry_meta_categories('custom_cat'); ?></div>
+				<div class="entry-meta"><?php medula_entry_meta_tags('custom_tag'); medula_entry_meta_categories('custom_cat'); ?></div>
 			</footer>
 
 			<?php comments_template(); ?>
@@ -42,7 +42,7 @@
 
 	<?php endwhile; else : ?>
 
-		<?php osea_no_post_found( basename( __FILE__ ) ); ?>
+		<?php medula_no_post_found( basename( __FILE__ ) ); ?>
 
 	<?php endif; ?>
 

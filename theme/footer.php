@@ -13,11 +13,11 @@
 
 			<footer class="site-footer" role="contentinfo">
 
-				<?php osea_debug_showfile( __FILE__ ); ?>
+				<?php medula_debug_showfile( __FILE__ ); ?>
 
 				<div id="site-footer-wrapper" class="site-wrapper">
 
-					<nav class="site-footer-nav" role="navigation"><?php osea_site_footer_nav(); ?></nav>
+					<nav class="site-footer-nav" role="navigation"><?php medula_site_footer_nav(); ?></nav>
 
 					<span class="site-footer-copyright">&copy; <?php echo date('Y'); ?> <?php bloginfo( 'name' ); ?>.</span>
 
@@ -25,13 +25,13 @@
 
 			</footer>
 
-			<?php // js scripts that loads in the footer are defined in /theme/lib/osea.php ?>
+			<?php // js scripts that loads in the footer are defined in /theme/lib/medula.php ?>
 			<?php wp_footer(); ?>
 
 		</div> <?php // (#page-wrapper) opening tag in header.php ?>
 
 		<?php // MMenu (Mobile) Menu. The last so it doesn't get in the way ?>
-		<nav id="mmenu" class="site-mmenu-nav" role="navigation"><?php osea_site_mmenu_nav(); ?></nav>
+		<nav id="mmenu" class="site-mmenu-nav" role="navigation"><?php medula_site_mmenu_nav(); ?></nav>
 
 	</body>
 

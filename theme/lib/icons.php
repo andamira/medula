@@ -15,12 +15,12 @@
  * 1 FAVICONS
  * ************************************************************
  *
- * @link https://github.com/andamira/osea/wiki/Favicons
+ * @link https://github.com/andamira/medula/wiki/Favicons
  * @link http://www.jonathantneal.com/blog/understand-the-favicon/
  */
 $favicon_version="0";
 
-function osea_favicons() {
+function medula_favicons() {
 	global $favicon_version;
 ?>
 	<link rel="apple-touch-icon" href="<?php echo get_template_directory_uri(); ?>/img/apple-touch-icon.png?v=<?php echo $favicon_version ?>">
@@ -33,7 +33,7 @@ function osea_favicons() {
 	<meta name="msapplication-TileImage" content="<?php echo get_template_directory_uri(); ?>/img/win8-tile-icon.png?v=<?php echo $favicon_version ?>">
 <?php
 }
-add_action('wp_head', 'osea_favicons', 2);
+add_action('wp_head', 'medula_favicons', 2);
 
 
 /**
@@ -42,8 +42,8 @@ add_action('wp_head', 'osea_favicons', 2);
  *
  * This is the favicon for the WP backend
  */
-add_action('admin_head', 'osea_admin_area_favicon');
-function osea_admin_area_favicon() {
+add_action('admin_head', 'medula_admin_area_favicon');
+function medula_admin_area_favicon() {
 	global $favicon_version;
 	$favicon_url = get_template_directory_uri() . "/img/favicon_adm.png?v=$favicon_version";
 	echo '<link rel="shortcut icon" href="' . $favicon_url . '" />';

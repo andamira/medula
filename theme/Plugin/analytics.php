@@ -9,7 +9,7 @@ $ga_ua = "";
 
 
 if ($ga_ua) {
-	function osea_analytics() {
+	function medula_analytics() {
 		global $ga_ua;
 ?>
 	<script>
@@ -22,7 +22,7 @@ if ($ga_ua) {
 	</script>
 <?php
 	}
-	add_action('wp_head','osea_analytics',1,20);
+	add_action('wp_head','medula_analytics',1,20);
 }
 
 
