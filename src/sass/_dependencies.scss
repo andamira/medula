@@ -18,13 +18,10 @@
 ///
 /// 1 LOAD DEPENDENCIES
 ///
-/// @link https://github.com/necolas/normalize.css/       Normalize
 /// @link https://github.com/ericam/susy/                 Susy
 /// @link https://github.com/eduardoboucas/include-media  Include Media
 /// @link https://github.com/at-import/Sassy-Maps         Sassy-Maps
 ///
-
-@import "../../vendor-dl/normalize.css/normalize";
 
 @import "../../vendor-dl/susy/sass/susy";
 @import "../../vendor-dl/include-media/dist/include-media";
@@ -39,11 +36,11 @@
 /// 2.1 THEME DIRNAME !!!
 ///
 /// IMPORTANT: Your must write the same name the theme directory will have
-/// when you copy (or symlink) src/ dir to the WordPress themes folder.
+/// when you copy (or symlink) the theme/ dir to the WordPress themes folder.
 /// 
-/// For example:
+/// e.g.:
 ///
-///     cp -r src/ /var/www/wordpress/wp-content/themes/DIRNAME/
+///     cp -r theme/ ~/www/wordpress/wp-content/themes/DIRNAME/
 ///
 $theme-dir-name: "osea" ;
 

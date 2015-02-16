@@ -36,7 +36,7 @@
  *
  *     4 External Libraries
  *
- *     5 Médula: Plugin Functionality           (#)
+ *     5 Medula: Plugin Functionality           (#)
  *
  *     6 Custom Functions, Actions & Filters
  *
@@ -71,7 +71,7 @@
  * 1.1 DEBUG
  *
  * Set to true in order to display debug information.
- * The functions are defined in /src/lib/osea.php
+ * The functions are defined in /theme/lib/osea.php
  */
 # define( 'OSEA_DEBUG', true );           // (#) disabled by default
 
@@ -131,7 +131,7 @@ require_once( 'lib/admin-bar.php' );       //
  * 3 AFTER SETUP THEME
  * ************************************************************
  *
- * Functions defined in /src/lib/osea.php
+ * Functions defined in /theme/lib/osea.php
  */
 function osea_launch() {
 
@@ -173,7 +173,7 @@ function osea_launch() {
 	osea_theme_support();
 
 	/**
-	* 4.5 register sidebars ( sidebars are defined in /src/lib/sidebars.php )
+	* 4.5 register sidebars ( sidebars are defined in /theme/lib/sidebars.php )
 	*/
 	add_action( 'widgets_init', 'osea_register_sidebars' );
 }
@@ -196,7 +196,7 @@ include_once( 'lib/vendor.php' );
  * 5 PLUGIN FUNCTIONALITY (MÉDULA)
  * ************************************************************
  *
- * Médula is a starter plugin embedded in Ósea
+ * Medula is a starter plugin embedded in Osea
  *
  * This enables functionality that scapes the scope
  * of the theme: Custom post types, shortcodes, etc.

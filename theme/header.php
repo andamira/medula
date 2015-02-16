@@ -21,9 +21,9 @@
  */
 if ( defined( 'OSEA_IE8_SUPPORT' ) && OSEA_IE8_SUPPORT ) { ?>
 <!--[if lt IE 9]>
-<script src="<?php echo get_template_directory_uri(); ?>/js/compat/nwmatcher.min.js"></script>
-<script src="<?php echo get_template_directory_uri(); ?>/js/compat/selectivizr.min.js"></script>
-<script src="<?php echo get_template_directory_uri(); ?>/js/compat/respond.min.js"></script>
+<script src="<?php echo get_template_directory_uri(); ?>/js/vendor/nwmatcher.js"></script>
+<script src="<?php echo get_template_directory_uri(); ?>/js/vendor/selectivizr.js"></script>
+<script src="<?php echo get_template_directory_uri(); ?>/js/vendor/respond.min.js"></script>
 <![endif]-->
 <?php } ?>
 

@@ -14,15 +14,3 @@ DIR="vendor-dl/"
 preen
 
 
-##
-# 2 RENAME CSS FILES
-#
-# don't forget to import them from lib/sass/_dependencies.scss
-#
-
-echo -n "renaming css files... "
-
-mv ${DIR}/normalize.css/normalize.css ${DIR}/normalize.css/_normalize.scss 2>/dev/null
-
-echo "Done."
-

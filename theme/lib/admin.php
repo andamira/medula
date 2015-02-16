@@ -67,7 +67,7 @@ add_action( 'admin_menu', 'disable_default_dashboard_widgets' );
  * 2.1 Load the Custom Widgets
  */
 function osea_custom_dashboard_widgets() {
-	wp_add_dashboard_widget( 'osea_example_dashboard_widget', __( 'Example Dashboard Widget (Ósea)', 'osea-theme' ), 'osea_example_dashboard_widget' );
+	wp_add_dashboard_widget( 'osea_example_dashboard_widget', __( 'Example Dashboard Widget (Osea)', 'osea-theme' ), 'osea_example_dashboard_widget' );
 
 }
 add_action( 'wp_dashboard_setup', 'osea_custom_dashboard_widgets' );
@@ -79,7 +79,7 @@ add_action( 'wp_dashboard_setup', 'osea_custom_dashboard_widgets' );
 function osea_example_dashboard_widget() {
 	?>
 	<h1> </h1>
-	<p>You can edit this message in /src/lib/admin.php and add your own widgets, and restore the disabled defaults.</p>
+	<p>You can edit this message in /theme/lib/admin.php and add your own widgets, and restore the disabled defaults.</p>
 	<?php
 }
 
@@ -135,7 +135,7 @@ add_editor_style( get_template_directory_uri() . '/css/admin/editor-style.css' )
  * 4.4 Changing text in footer of admin
  */
 function osea_custom_admin_footer() {
-	_e( '<span id="footer-thankyou">Developed by <a href="http://yoursite.com" target="_blank">Your Site Name</a></span>. Built using <a class="andamira" href="http://andamira.net/osea" target="_blank">andamira Ósea</a>.', 'osea-theme' );
+	_e( '<span id="footer-thankyou">Developed by <a href="http://yoursite.com" target="_blank">Your Site Name</a></span>. Built using <a class="andamira" href="http://andamira.net/osea" target="_blank">andamira Osea</a>.', 'osea-theme' );
 }
 add_filter( 'admin_footer_text', 'osea_custom_admin_footer' );
 

@@ -42,7 +42,7 @@ function osea_entry_title( $htag, $with_link = false, $headline = false ) {
 	/**
 	 * Shows Edit Post Link 
 	 *
-	 * @see /src/lib/entry-meta.php
+	 * @see /theme/lib/entry-meta.php
 	 */
 	$title .= osea_edit_post_link( false );
 

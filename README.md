@@ -1,4 +1,4 @@
-# Ósea Theme
+# Osea Theme
 
 **A Mobile First Starter Theme & Plugin for WordPress**
 
@@ -27,18 +27,22 @@
 	bower install
 	```
 
-1. Configure your theme dirname in `/src/sass/_dependencies.scss`
+1. Configure your themes' directory name for the server in: `/src/sass/_dependencies.scss`
+
+	e.g.: `mytheme`
 
 1. You can compile the the project with `gulp --dev` during development and `gulp` for production
 
-1. Copy (or symlink) the `src/` dir to the WordPress themes dir using the same dirname you configured before.
+1. Copy (or symlink) the `theme/` directory to the WordPress themes directory , using for the target directory name the same name you configured before.
 
-1. Make changes and start developing.
+	e.g.: `cp -r theme ~/www/wordpress/wp-content/themes/mytheme`
+
+1. Make changes, compile, see the result, develop websites.
 
 
 ## Contributing
 
-_This project is still going through many changes. But Feel free to [submit bugs & fixes](https://github.com/andamira/osea/issues)._
+_This project is still going through many many changes. But feel free to [submit bugs & fixes](https://github.com/andamira/osea/issues)._
 
 ## Main TODO Points
 

@@ -1,6 +1,6 @@
 <?php
 /**
- * This is the Core Ósea library file, where
+ * This is the Core Osea library file, where
  * most of the main functions and features reside.
  *
  * If you have any custom functions, it's best
@@ -80,10 +80,10 @@ function osea_scripts_and_styles() {
 function osea_theme_support() {
 
 	// thumbnails support defined in:
-	// /src/lib/thumbnails.php
+	// /theme/lib/thumbnails.php
 	
 	// menus support is defined in:
-	// /src/lib/menus.php
+	// /theme/lib/menus.php
 	
 	// post format support is not defined
 

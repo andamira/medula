@@ -1,19 +1,18 @@
 #################### general
-node_modules
 vendor-dl
+node_modules
 *.swp
 *.swo
-.tup
 .sass-cache
 
 #################### output
-src/css/*.css
-src/css/admin/
-src/js/scripts.js
+theme/css
+theme/js
+theme/img
+theme/fonts
 
 #################### temp
-src/translations
-src/js/includes
-tmp
+theme/translations
+.tmp
 .send-repo
 
