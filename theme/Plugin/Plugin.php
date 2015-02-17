@@ -1,6 +1,6 @@
 <?php
 /**
- * Plugin Name: Medula Extended Functionality
+ * Plugin Name: Médula Starter Plugin
  * Plugin URI: https://github.com/andamira/medula/wiki/Plugin
  * Description: This plugin contains all the theme independent functionality.
  * Version 0.4.0
@@ -8,7 +8,7 @@
  * Author URI: http://andamira.net
  *
  *
- * This is a minimal plugin template already included in Medula.
+ * This is a minimal plugin template already included in Médula Starter Theme
  *
  *   - You can access this functionality very easily, just by uncommenting
  *     the corresponding line in the functions.php file (section 5).

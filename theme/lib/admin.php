@@ -67,7 +67,7 @@ add_action( 'admin_menu', 'disable_default_dashboard_widgets' );
  * 2.1 Load the Custom Widgets
  */
 function medula_custom_dashboard_widgets() {
-	wp_add_dashboard_widget( 'medula_example_dashboard_widget', __( 'Example Dashboard Widget (Medula)', 'medula-theme' ), 'medula_example_dashboard_widget' );
+	wp_add_dashboard_widget( 'medula_example_dashboard_widget', __( 'Example Dashboard Widget (Médula)', 'medula-theme' ), 'medula_example_dashboard_widget' );
 
 }
 add_action( 'wp_dashboard_setup', 'medula_custom_dashboard_widgets' );
@@ -135,7 +135,7 @@ add_editor_style( get_template_directory_uri() . '/css/admin/editor-style.css' )
  * 4.4 Changing text in footer of admin
  */
 function medula_custom_admin_footer() {
-	_e( '<span id="footer-thankyou">Developed by <a href="http://yoursite.com" target="_blank">Your Site Name</a></span>. Built using <a class="andamira" href="http://andamira.net/medula" target="_blank">andamira Medula</a>.', 'medula-theme' );
+	_e( '<span id="footer-thankyou">Developed by <a href="http://yoursite.com" target="_blank">Your Site Name</a></span>. Built using <a class="andamira" href="http://andamira.net/medula" target="_blank">andamira Médula</a>.', 'medula-theme' );
 }
 add_filter( 'admin_footer_text', 'medula_custom_admin_footer' );
 

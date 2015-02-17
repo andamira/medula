@@ -1,6 +1,6 @@
 <?php
 /**
- * Template Name: Medula Custom Template
+ * Template Name: Custom Template Example
  *
  * This is your custom page template. You can create as many of these as you need.
  * Simply name the file "page-whatever.php" and change the "Template Name" title

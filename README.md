@@ -1,15 +1,15 @@
-# Medula
+# Médula
 
 **Starter Theme & Plugin for WordPress**
 
 ## Features
 
-- It is a clean start point for a new WordPress theme.
-- It is mobile first and progresively enhanced.
-- It supports extended functionality via plugin.
+- A clean start point for a new WordPress theme.
+- It is Mobile First and progresively enhanced.
+- Includes a minimal plugin framework inside.
 - It is modular, versatile, and simple enough.
 - It has a clear and well commented structure.
-- Uses [Gulp](http://gulpjs.com/), [Bower](http://bower.io/), [Sass](http://sass-lang.com/), [Susy](http://susy.oddbird.net/) & [include-media](https://github.com/eduardoboucas/include-media).
+- With [Gulp](http://gulpjs.com/), [Bower](http://bower.io/), [Sass](http://sass-lang.com/), [Susy](http://susy.oddbird.net/) & [include-media](https://github.com/eduardoboucas/include-media).
 
 
 ## Quick Start

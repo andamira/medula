@@ -1,5 +1,5 @@
 /**
- * Medula Scripts File
+ * Médula Scripts File
  * Author: andamira
  *
  *     1 jQuery(document).ready()

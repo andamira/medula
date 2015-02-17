@@ -1,6 +1,6 @@
 <?php
 /**
- * This is the Core Medula library file, where
+ * This is the Core Médula library file, where
  * most of the main functions and features reside.
  *
  * If you have any custom functions, it's best

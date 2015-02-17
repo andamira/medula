@@ -12,7 +12,7 @@
  *
  *     2 Theme Functionlity
  *
- *         2.1  Core Medula library
+ *         2.1  Core Médula library
  *         2.2  Admin Área                      ( )
  *         2.3  Icons & Favicons
  *         2.4  Fonts
@@ -196,7 +196,7 @@ include_once( 'lib/vendor.php' );
  * 5 PLUGIN FUNCTIONALITY FOR MEDULA
  * ************************************************************
  *
- * This is a very simple plugin template embedded in Medula
+ * This is a very simple plugin template embedded in Médula
  *
  * This enables functionality that scapes the scope
  * of the theme: Custom post types, shortcodes, etc.

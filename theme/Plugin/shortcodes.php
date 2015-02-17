@@ -10,7 +10,7 @@
 
 
 /**
- * Medula Example shortcode
+ * Shortcode Example
  *
  * Creates a div with any number of additional classes
  *
