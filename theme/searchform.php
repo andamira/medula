@@ -28,7 +28,7 @@ medula_debug_showfile( __FILE__ );
 
 <!-- Search Form Type 2: simple clean + icon -->
 <form role="search" method="get" id="searchform" action="<?php echo home_url( '/' ); ?>">
-<input type="text" value="" name="s" id="s" placeholder="<?php _e('Type & Hit Enter')?>" />
+<input type="text" value="" name="s" id="s" placeholder="<?php _e('Type & Hit Enter','medula-theme')?>" />
 </form>
 
 

@@ -16,7 +16,7 @@
  *         2.2  Admin Área                      ( )
  *         2.3  Icons & Favicons
  *         2.4  Fonts
- *         2.5  Menus
+ *         2.5  Navigation Menus
  *         2.6  Sidebars
  *         2.7  Thumbnails
  *         2.8  Titles

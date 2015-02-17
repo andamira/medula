@@ -1,6 +1,6 @@
 // Install dependencies:
 //
-//         sudo npm install -g gulp bower
+//         sudo npm install -g bower
 //         npm install
 //         bower install
 //
@@ -9,6 +9,12 @@
 //      type "gulp" for production (minified) stuff
 //      type "gulp --dev" for dev stuff
 //      type "gulp clean" to delete/clean out your target folders.
+//
+//      Additional options (TODO):
+//
+//      --imgmin | --no-imgmin     (Don't) minify images
+//      --cmq | --no-cmq           (Don't) combine media queries
+//      --rem2px | --no-rem2px     (Don't) prefix rem with pixels
 //
 // INFO:
 // See https://github.com/isaacs/minimatch for glob matching syntax info
@@ -22,7 +28,6 @@
 autoprefixer_rules = 'ie >= 8, > 5%, last 3 versions';
 remPixelFallback = true;
 jsMangle = true;
-//TODO: combine-mq = false;
 
 
 // DEFINE SOURCES AND TARGETS
@@ -77,6 +82,7 @@ var source = {
 		// 'vendor-dl/dynatable/jquery.dynatable.css',
 
 		// 'vendor-dl/jquery-cycle2/build/jquery.cycle2.js',      // Slideshow plugin      jquery.malsup.com/cycle2
+
 	],
 	vendor_exclude: [ '', ],
 	
@@ -140,7 +146,7 @@ var cmq = require('gulp-combine-mq');
 
 // JS componentss
 var jscs = require('gulp-jscs');
-var jshint = require('gulp-jshint');
+//var jshint = require('gulp-jshint');
 var uglify = require('gulp-uglify');
 
 // Images
@@ -206,11 +212,13 @@ gulp.task('compile-sass', function () {
 // --------------
 gulp.task('compile-js', function () {
 
-	var filter_yourjs = gulpFilter( source.js );
 	var filter_js = gulpFilter( '**/*.js' );
 
+	var filter_yourjs = gulpFilter( [ 'main.js', '!vendor-dl/**' ] );
+	//var filter_yourjs = gulpFilter( [ '**/*.js', '!vendor-dl/**' ] ); // BUG I can't make this filters work (because of addsrc?)
+
 	// Select the vendor files
-	return gulp.src( source.vendor )
+	return gulp.src( source.vendor, { base: '' } )
 		.pipe(exclude(source.js_exclude))
 
 		// Select only the javascript files
@@ -221,7 +229,9 @@ gulp.task('compile-js', function () {
 				// .pipe(print()) // DEBUG
 
 			// Detect errors in your code only
+			// TODO do this part in a different way (merge? separate streams?)
 			.pipe(filter_yourjs)
+				//.pipe(print()) // DEBUG
 				.pipe(jscs())
 			.pipe(filter_yourjs.restore())
 

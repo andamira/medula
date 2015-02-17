@@ -1,5 +1,6 @@
 {
 	"directory": "vendor-dl/",
+	"analytics": true,
 	"scripts": {
 		"preinstall": "",
 		"postinstall": "./.bower-postinstall",
