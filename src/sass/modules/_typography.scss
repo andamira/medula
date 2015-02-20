@@ -27,15 +27,11 @@
 ///
 /// Be sure to remove the comment brackets and rename Font Name & font-file
 ///
-
-// Examples:
-//
-// @include font-face("Font Name", file-name);
-//
-// @include font-face(Samplinal, Samplinal, null, null, woff, ttf);
-//
-// @include font-face(Samplinal, Samplinal, 500, normal, eot woff2 woff);
-//
+/// @example
+///   @include font-face("Font Name", file-name);
+///   @include font-face(Samplinal, Samplinal, null, null, woff, ttf);
+///   @include font-face(Samplinal, Samplinal, 500, normal, eot woff2 woff);
+///
 
 
 ///

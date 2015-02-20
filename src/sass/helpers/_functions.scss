@@ -72,9 +72,9 @@
 /// 1.1 BLACK AND WHITE OPACITIY
 ///
 /// It's pretty common to need a bit of transparent black or white.
-///
-/// Usage:
-///      black(0.5);
+///.
+/// @example
+///   black(0.5);
 ///
 /// @link http://css-tricks.com/snippets/sass/black-white-opacity-mixins/
 ///
@@ -99,8 +99,8 @@
 /// @param {Number} $percentage - percentage of `$color` in returned color
 /// @return {Color}
 ///
-/// Usage:
-///		 color: tint(#BADA55, 42%);
+/// @example
+///   color: tint(#BADA55, 42%);
 ///
 @function tint($color, $percentage) {
 	@return mix($color, white, $percentage);
@@ -115,8 +115,8 @@
 /// @param {Number} $percentage - percentage of `$color` in returned color
 /// @return {Color}
 ///
-/// Usage:
-///		 color: shade(#BADA55, 42%);
+/// @example
+///   color: shade(#BADA55, 42%);
 ///
 @function shade($color, $percentage) {
 	@return mix($color, black, $percentage);
@@ -138,10 +138,10 @@
 /// @link http://www.w3.org/TR/2008/REC-WCAG20-20081211/#relativeluminancedef Reference
 /// @link http://css-tricks.com/snippets/sass/luminance-color-function/
 ///
-/// Usage:
-///     $color: #BADA55;
-///     $luminance: luminance($color);
-///     // 0.6123778773 
+/// @example
+///   $color: #BADA55;
+///   $luminance: luminance($color);
+///   // 0.6123778773 
 ///
 @function luminance($color) {
 	$colors: (
@@ -204,11 +204,10 @@
 ///
 /// 3.3 Calculate target / context
 ///
-/// Usage:
-///     width: calc-percent(650px, 1000px);
-///
-/// Compiles to:
-///     width: 65%;
+/// @example
+///   width: calc-percent(650px, 1000px);
+///   // Compiles to:
+///   // width: 65%;
 ///
 @function calc-percent($target, $container) {
 	@return ($target / $container) * 100%;
@@ -260,15 +259,14 @@
 /// @return {List}
 /// @throw There is no `#{$function}` function.
 ///
-/// Usage:
-///    walk: walk(red green blue, invert);
-///    walk: walk(red green blue, lighten, 20%);
-///    walk: walk(2 4 6 8 10, sqrt);
-///
-/// Compiles to:
-///    walk: cyan #ff7fff yellow;
-///    walk: #ff6666 #00e600 #6666ff;
-///    walk: 1.41421 2 2.44949 2.82843 3.16228;
+/// @example
+///   walk: walk(red green blue, invert);
+///   walk: walk(red green blue, lighten, 20%);
+///   walk: walk(2 4 6 8 10, sqrt);
+///   // Compiles to:
+///   // walk: cyan #ff7fff yellow;
+///   // walk: #ff6666 #00e600 #6666ff;
+///   // walk: 1.41421 2 2.44949 2.82843 3.16228;
 ///
 @function walk($list, $function, $args...) {
 	@if not function-exists($function) {
@@ -293,17 +291,16 @@
 /// @return {Boolean}
 /// @throw There is no `#{$function}` function.
 ///
-/// Usage:
-///    some: some(round ceil floor, function-exists);
-///    some: some(round ceil unknown, function-exists);
-///    some: some(completely unknown function, function-exists);
-///
-/// Compiles to:
-///    some {
-///        some: true;
-///        some: true;
-///        some: false;
-///    }
+/// @example
+///   some: some(round ceil floor, function-exists);
+///   some: some(round ceil unknown, function-exists);
+///   some: some(completely unknown function, function-exists);
+///   // Compiles to:
+///   // some {
+///   //   some: true;
+///   //   some: true;
+///   //   some: false;
+///   // }
 ///
 @function some($list, $function, $args...) {
 	@if not function-exists($function) {
@@ -330,15 +327,14 @@
 /// @return {Boolean}
 /// @throw There is no `#{$function}` function.
 ///
-/// Usage:
-///    every: every(round ceil floor, function-exists);
-///    every: every(round ceil unknown, function-exists);
-///    every: every(completely unknown function, function-exists);
-///
-/// Compiles to:
-///        some: true;
-///        some: false;
-///        some: false;
+/// @example
+///   every: every(round ceil floor, function-exists);
+///   every: every(round ceil unknown, function-exists);
+///   every: every(completely unknown function, function-exists);
+///   // Compiles to:
+///   // some: true;
+///   // some: false;
+///   // some: false;
 ///
 @function every($list, $function, $args...) {
 	@if not function-exists($function) {
@@ -364,13 +360,12 @@
 /// @return {List}
 /// @throw There is no `#{$function}` function.
 ///
-/// Usage:
-///    functions-walk: functions-walk('red' 'blue' 'green', #BADA55);
-///    functions-walk: functions-walk('round' 'ceil' 'floor', 3.1415279);
-///
-/// Compiles to:
-///    functions-walk: 186 85 218;
-///    functions-walk: 3 4 3;
+/// @example
+///   functions-walk: functions-walk('red' 'blue' 'green', #BADA55);
+///   functions-walk: functions-walk('round' 'ceil' 'floor', 3.1415279);
+///   // Compiles to:
+///   // functions-walk: 186 85 218;
+///   // functions-walk: 3 4 3;
 ///
 @function functions-walk($functions, $args...) {
 	$list: ();
@@ -388,7 +383,7 @@
 
 ///
 /// 4.5 ADVANCED TYPE CHECKING FUNCTIONS
-//
+///
 /// A collection of functions for advanced type checking
 /// @link http://css-tricks.com/snippets/sass/advanced-type-checking/
 

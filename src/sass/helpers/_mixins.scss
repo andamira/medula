@@ -33,10 +33,10 @@
 ///
 /// 1.1 STRIPED GRADIENT MIXIN
 ///
-/// Usage:
-///     body {
-///         @include stripes(to right, #8e44ad #2c3e50 #2980b9 #16a085 #27ae60);
-///     }
+/// @example
+///   body {
+///     @include stripes(to right, #8e44ad #2c3e50 #2980b9 #16a085 #27ae60);
+///   }
 ///
 /// @link http://css-tricks.com/snippets/sass/striped-gradient-mixin/
 ///
@@ -68,7 +68,8 @@
 /// Be careful with these since they can
 /// really slow down your CSS. Don't overdo it.
 ///
-/// USAGE: @include css-gradient( #dfdfdf, #f8f8f8 );
+/// @example
+///   @include css-gradient( #dfdfdf, #f8f8f8 );
 ///
 @mixin css-gradient($from: #dfdfdf, $to: #f8f8f8) {
 	background-color: $to;
@@ -86,10 +87,10 @@
 ///
 /// 2.1 COVERING MIXIN
 ///
-/// Usage:
-///     .overlay {
-///         @include coverer;
-///     }
+/// @example
+///   .overlay {
+///     @include coverer;
+///   }
 ///
 /// @link http://css-tricks.com/snippets/sass/covering-mixin/
 ///
@@ -104,13 +105,13 @@
 ///
 /// 2.2 CENTERING MIXIN
 ///
-/// Usage:
-///    .parent {
-///        position: relative;
-///    }
-///    .child {
-///        @include centerer;
-///    }
+/// @example
+///  .parent {
+///    position: relative;
+///  }
+///  .child {
+///    @include centerer;
+///  }
 ///
 /// @link http://css-tricks.com/snippets/sass/centering-mixin/
 ///

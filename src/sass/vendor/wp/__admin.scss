@@ -78,13 +78,11 @@
 /// This is class you can add to style the dashicons
 /// used in the data field and hiding its content
 ///
-/// Usage example (Filling the Admin Columns fields like this):
-///
-///      Label:   <span class="dashicons dashicons-phone" title="Telephone"></span>
-///      Before:  <span class="admin-column-data-icon dashicons dashicons-phone" title="Telephone filled">
-///      After:   </span>
-///
-/// If you don't want to hide the content put the closing </span> in the same field than the starting <span>
+/// @example (Filling the Admin Columns fields like this):
+///   // Label:   <span class="dashicons dashicons-phone" title="Telephone"></span>
+///   // Before:  <span class="admin-column-data-icon dashicons dashicons-phone" title="Telephone filled">
+///   // After:   </span>
+///   // If you don't want to hide the content put the closing </span> in the same field than the starting <span>
 ///
 /// @link https://developer.wordpress.org/resource/dashicons/
 ///
