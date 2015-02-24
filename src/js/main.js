@@ -175,13 +175,13 @@ function medula_smart_header(navbar, aboveNavbar) {
 
 				//if(st <= navbar_height + aboveNavbar_height) {
 
-					if(st <= aboveNavbar_height) {
-						jQuery(navbar).removeClass('hidden-bottom');
-						jQuery(aboveNavbar).removeClass('hidden-bottom');
+				if(st <= aboveNavbar_height) {
+					jQuery(navbar).removeClass('hidden-bottom');
+					jQuery(aboveNavbar).removeClass('hidden-bottom');
 
-						jQuery(navbar).removeClass('hidden-top');
-						jQuery(aboveNavbar).removeClass('hidden-top');
-					}
+					jQuery(navbar).removeClass('hidden-top');
+					jQuery(aboveNavbar).removeClass('hidden-top');
+				}
 				//}
 			}
 		}

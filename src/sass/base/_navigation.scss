@@ -221,7 +221,7 @@ nav {
 			&:last-child {}
 
 			// SUBMENUS
-			&.sub-menu, &.children {
+			ul.sub-menu, ul.children {
 				margin: 0;
 				position: absolute;
 				display: none;
