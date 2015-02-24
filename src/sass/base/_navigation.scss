@@ -8,8 +8,9 @@
 ///
 ///         2.1 Generic Nav elements
 ///         2.2 Main Desktop Menu
-///         2.3 Mobile Button
-///         2.4 MMenu (Mobile) Menu
+///         2.3 Footer Menu
+///         2.4 Mobile Button
+///         2.5 MMenu (Mobile App) Menu
 ///
 ////
 
@@ -279,7 +280,26 @@ nav {
 
 
 ///
-/// 2.3 MOBILE BUTTON
+/// 2.3 FOOTER MENU
+///
+/// @todo remove duplication in _main.scss
+///
+.site-footer-nav {
+
+	ul {
+		&.sub-menu, &.children {
+			display: none;
+		}
+	}
+
+		li {
+			margin: 0 0.5rem;
+		}
+}
+
+
+///
+/// 2.4 MOBILE BUTTON
 ///
 .mmenu-button {
 	position: fixed;
@@ -296,7 +316,7 @@ nav {
 
 
 ///
-/// 2.4 MMENU (MOBILE) MENU
+/// 2.5 MMENU (MOBILE) MENU
 ///
 #mmenu {
 
