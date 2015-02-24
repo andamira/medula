@@ -142,14 +142,28 @@ body {
 	height: 3rem;
 }
 
-	.site-header-logo {}
+	.site-header-logo {
+		display: inline-block;
+		position: absolute; // so it doesn't affect nav positioning
+	}
 
-		.site-name {}
+		.site-name {
+			font-size: 2rem;
+		}
 
 		.site-description {}
 
-	// To customize the menu see _navigation.scss
-	.site-main-nav {}
+	// Positioning only. To further customize the menu see _navigation.scss
+	.site-main-nav {
+		// Show on desktop size
+		@include media( "<wp-adminbar-mobile" ) {
+			display: none;
+		}
+
+		// center the menu
+		margin: 0.5rem auto 0;
+		text-align: center;
+	}
 
 ///
 /// 2.4 SITE FOOTER
@@ -158,7 +172,7 @@ body {
 	width: 100%;
 }
 
-	// To customize the menu see _navigation.scss
+	// Positioning only. To customize the menu see _navigation.scss
 	.site-footer-nav {
 		float: right;
 	}

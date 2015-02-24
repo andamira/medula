@@ -46,7 +46,7 @@
 ///
 
 // height of the smart header element
-$smart-header-height: 2rem;	
+$smart-header-height: 3rem;
 
 // This is the Smart Header element
 .smart-header {
@@ -134,7 +134,9 @@ $smart-header-height: 2rem;
 	// ADD SPACE ABOVE:
 
 	// ...always
-	padding-top: $smart-header-height;
+	#site-content-wrapper {
+		padding-top: $smart-header-height + 1rem;
+	}
 
 	&.hidden-bottom {}
 
@@ -175,17 +177,6 @@ nav {
 .site-main-nav {
 
 	$submenu-width: 10rem;
-
-	// Show on desktop size
-	@include media( "<wp-adminbar-mobile" ) { 
-		display: none;
-	}
-
-	// center the menu
-	margin: 0 auto;
-	text-align: center;
-	position: relative;
-	bottom: 0.5rem;
 
 	ul  {
 		margin: 0;
