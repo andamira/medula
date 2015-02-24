@@ -30,13 +30,13 @@
       "modernizr.js"
     ],
     "nwmatcher": [
-		"src/**/*.js"
-	],
+      "src/**/*.js"
+    ],
     "selectivizr": [
-		"selectivizr.js"
-	],
+      "selectivizr.js"
+    ],
     "respond": [
-		"dest/*.js"
-	]
+      "dest/*.js"
+    ]
   }
 }

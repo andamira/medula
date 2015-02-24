@@ -27,6 +27,7 @@
 // -----------------------------------------------------------
 autoprefixer_rules = 'ie >= 8, > 5%, last 3 versions';
 remPixelFallback = true;
+imageMin = true;
 jsMangle = true;
 
 
@@ -73,15 +74,33 @@ var source = {
 		// Recommended Plugins:
 		// --------------------
 
-		'vendor-dl/jQuery.mmenu/src/js/jquery.mmenu.min.all.js',  // Mobile-App Menus      mmenu.frebsite.nl
+		/// Compatibility / Accesibility
+		// 'vendor-dl/picturefill/dist/picturefill.js',           // PictureFill       -
+
+		/// Navigation
+		'vendor-dl/jQuery.mmenu/src/js/jquery.mmenu.min.all.js',  // MMenu             mmenu.frebsite.nl
 		'vendor-dl/jQuery.mmenu/src/css/jquery.mmenu.all.css',
 
-		// 'vendor-dl/leaflet/dist/leaflet.js',                   // Interactive Maps      leafletjs.com
+		/// Maps
+		// 'vendor-dl/leaflet/dist/leaflet.js',                   // Leaflet           leafletjs.com
 
-		// 'vendor-dl/dynatable/jquery.dynatable.js',             // Interactive Table     dynatable.com
+		/// Tables
+		// 'vendor-dl/dynatable/jquery.dynatable.js',             // Dynatable         dynatable.com
 		// 'vendor-dl/dynatable/jquery.dynatable.css',
 
-		// 'vendor-dl/jquery-cycle2/build/jquery.cycle2.js',      // Slideshow plugin      jquery.malsup.com/cycle2
+		/// Sliders / Slideshows
+		// 'vendor-dl/jquery-cycle2/build/jquery.cycle2.js',      // Cycle2            jquery.malsup.com/cycle2
+		
+		/// Animations
+		// 'vendor-dl/snabbt.js/snabbt.js',                       // Snabbt            daniel-lundin.github.io/snabbt.js
+		
+		/// Autocomplete
+		// 'vendor-dl/awesomeplete/awesomeplete.js',              // Awesomeplete      leaverou.github.io/awesomplete
+		// 'vendor-dl/awesomeplete/awesomeplete.css',             // $ bower install LeaVerou/awesomplete#gh-pages --save-dev
+
+		/// Syntax Highlighting
+		// 'vendor-dl/prism/prism.js',                            // Prism             prismjs.com
+		// 'vendor-dl/prism/themes/prism.css',                    // $ bower install git@github.com:LeaVerou/prism.git\#gh-pages --save-dev
 
 	],
 	vendor_exclude: [ '', ],
@@ -313,7 +332,7 @@ gulp.task('images', function(){
 	// Images
     return gulp.src(source.img)
 		.pipe(exclude(source.images_exclude))
-		.pipe(imagemin())
+		.pipe(imageMin ? imagemin() : gutil.noop() ) // --no-imgmin
 		.pipe(flatten())
 		.pipe(gulp.dest(target.img));
 
@@ -326,6 +345,7 @@ gulp.task('images', function(){
 		.pipe(addsrc.append(source.vendor_live))
 		.pipe(exclude(source.vendor_live_exclude))
 		.pipe(filter_img)
+			.pipe(imageMin ? imagemin() : gutil.noop() ) // --no-imgmin
 			.pipe(flatten())
 			.pipe(gulp.dest(target.vendor_img));
 });
@@ -352,7 +372,12 @@ if(gutil.env.dev === true) {         // --dev
 	isProduction = false;
 	var sassStyle = 'compressed';
 }
-// TODO: --no-imgmin
+if(gutil.env.no-imgmin === true) {   // --no-imgmin
+	imageMin = false;
+}
+if(gutil.env.no-rem2px === true) {   // --no-rem2px
+	remPixelFallback = false;
+}
 
 
 gulp.task( 'default',

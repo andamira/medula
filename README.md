@@ -26,8 +26,7 @@
 	`package.json` & `bower.json` are located, and install the dependencies:
 	```
 	cd medula-master
-	npm install
-	bower install
+	npm install && bower install
 	```
 
 1. Customize the theme target directory name in the server here: `/src/sass/_dependencies.scss`
