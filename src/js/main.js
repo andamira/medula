@@ -40,7 +40,7 @@ jQuery(document).ready(function($) {
 	 * Define the height of chosen element in:
 	 * @see /assets/sass/base/_menus.scss
 	 */
-	//medula_smart_header('.site-header' );
+	medula_smart_header('.site-header' );
 	//medula_smart_header('.site-main-nav', '.site-header-logo');
 
 
@@ -110,7 +110,6 @@ jQuery(document).ready(function($) {
  * @link http://jsfiddle.net/mariusc23/s6mLJ/31/ Inspired by this
  */
 
-/*
 function medula_smart_header(navbar, aboveNavbar) {
 
 	// Variables
