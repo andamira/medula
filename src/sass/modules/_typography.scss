@@ -24,13 +24,24 @@
 /// @see {mixin} font-face
 /// @source https://gist.github.com/jonathantneal/d0460e5c2d5d7f9bc5e6
 /// @link http://www.fontsquirrel.com/ More information on embedding fonts
+/// @link https://developer.mozilla.org/en-US/docs/Web/CSS/font-weight
 ///
-/// Be sure to remove the comment brackets and rename Font Name & font-file
+/// Common (almost-standard) weight names:
+///
+/// 100 Thin, Ultra Light, Extra Light, Ultra Thin
+/// 200 Light, Thin, Extra Light
+/// 300 Light, Book
+/// 400 (normal)    Regular, Normal, Book
+/// 500 Medium
+/// 600 Semibold, Demibold
+/// 700 (bold)  Bold
+/// 800 Extra Bold, Heavy, Black
+/// 900 Black, Extra Black, Ultra Black, Fat
 ///
 /// @example
-///   @include font-face("Font Name", file-name);
-///   @include font-face(Samplinal, Samplinal, null, null, woff, ttf);
-///   @include font-face(Samplinal, Samplinal, 500, normal, eot woff2 woff);
+///   @include font-face("Font Name", "file-name");
+///   @include font-face("Samplinal", "../fonts/Samplinal_Bold", 700, null);
+///   @include font-face("Samplinal", "../fonts/Samplinal_Book_Italic", normal, italic, eot woff2 woff);
 ///
 
 
