@@ -12,9 +12,9 @@
 //
 //      Additional options (TODO):
 //
-//      --imgmin | --no-imgmin     (Don't) minify images
-//      --cmq | --no-cmq           (Don't) combine media queries
-//      --rem2px | --no-rem2px     (Don't) prefix rem with pixels
+//      --imgmin | --noimgmin     (Don't) minify images
+//      --rem2px | --norem2px     (Don't) prefix rem with pixels
+//      --cmq | --nocmq           (Don't) combine media queries
 //
 // INFO:
 // See https://github.com/isaacs/minimatch for glob matching syntax info
@@ -372,10 +372,10 @@ if(gutil.env.dev === true) {         // --dev
 	isProduction = false;
 	var sassStyle = 'compressed';
 }
-if(gutil.env.no-imgmin === true) {   // --no-imgmin
+if(gutil.env.noimgmin === true) {   // --noimgmin
 	imageMin = false;
 }
-if(gutil.env.no-rem2px === true) {   // --no-rem2px
+if(gutil.env.norem2px === true) {   // --norem2px
 	remPixelFallback = false;
 }
 
