@@ -211,7 +211,7 @@ include_once( 'lib/vendor.php' );
  * @link https://github.com/andamira/medula/wiki/Plugin
  */
 
-# include_once( 'medula/medula.php' );
+# include_once( 'Plugin/Plugin.php' );
 
 
 /**
