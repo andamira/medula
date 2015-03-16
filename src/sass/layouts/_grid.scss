@@ -147,8 +147,9 @@ body {
 #site-header-wrapper {}
 
 #site-content-wrapper {
+
 	// Main container
-	@include container( $page-width-desktop1 );
+	@include container( $page-width-desktop1 center );
 }
 
 #site-footer-wrapper {}
