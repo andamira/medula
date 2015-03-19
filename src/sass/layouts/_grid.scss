@@ -150,6 +150,7 @@ body {
 
 	// Main container
 	@include container( $page-width-desktop1 center );
+	margin: 0 auto;
 }
 
 #site-footer-wrapper {}
