@@ -293,11 +293,11 @@ body {
 	///
 	/// 2.8.5 CAPTION
 	///
-	.wp-caption {
+	.wp-caption {  // TODO: improve measures
 		background: transparent;
 		border: none;
 		color: #707070;
-		font-family: "Noto Sans", sans-serif;
+		font-family: $wp-caption-font;
 		margin: 0 0 28px 0;
 		max-width: 660px;
 		padding: 0;
@@ -328,7 +328,7 @@ body {
 		.gallery-caption {
 			color: #707070;
 			display: block;
-			font-family: "Noto Sans", sans-serif;
+			font-family: $wp-caption-font;
 			font-size: 14px;
 			line-height: 1.5;
 			padding: 7px 0;
