@@ -6,9 +6,9 @@
 ///
 ///     2 Helpers
 ///
-///         Material Colors
-///         Variables
 ///         Functions
+///         Palettes
+///         Variables
 ///         Mixins
 ///
 ///     3 Modules
@@ -54,16 +54,16 @@
 /// the whole project.
 ///
 
+// Sass Functions
+@import "helpers/functions";
+
 // Color Palettes
 @import "helpers/palettes";
 
-// Sass variables
+// Sass Variables
 @import "helpers/variables";
 
-// Sass functions
-@import "helpers/functions";
-
-// import mixins
+// Import Mixins
 @import "helpers/mixins";
 
 
