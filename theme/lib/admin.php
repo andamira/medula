@@ -88,10 +88,10 @@ function medula_example_dashboard_widget() {
  * 3 CUSTOM LOGIN PAGE
  * ************************************************************
  *
- * You can edit the style in /src/sass/login.scss
+ * You can edit the style in /src/sass/Login.scss
  */
 function medula_login_css() {
-	wp_enqueue_style( 'medula_login_css', get_template_directory_uri() . '/css/login.css', false );
+	wp_enqueue_style( 'medula_login_css', get_template_directory_uri() . '/css/Login.css', false );
 }
 
 // changing the logo link from wordpress.org to your site
