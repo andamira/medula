@@ -8,7 +8,7 @@
     "include-media": "eduardoboucas/include-media",
     "sassy-maps": "~0.4.0",
     "modernizr": "~2.8.3",
-    "jQuery.mmenu": "~4.7.5",
+    "jQuery.mmenu": "~5.0.1",
     "nwmatcher": "~1.3.4",
     "respond": "~1.4.2",
     "selectivizr": "~1.0.2"

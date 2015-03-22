@@ -78,8 +78,8 @@ var source = {
 		// 'vendor-dl/picturefill/dist/picturefill.js',           // PictureFill       -
 
 		/// Navigation
-		'vendor-dl/jQuery.mmenu/src/js/jquery.mmenu.min.all.js',  // MMenu             mmenu.frebsite.nl
-		'vendor-dl/jQuery.mmenu/src/css/jquery.mmenu.all.css',
+		'vendor-dl/jQuery.mmenu/dist/js/jquery.mmenu.min.all.js',  // MMenu             mmenu.frebsite.nl
+		'vendor-dl/jQuery.mmenu/dist/css/jquery.mmenu.all.css',
 
 		/// Maps
 		// 'vendor-dl/leaflet/dist/leaflet.js',                   // Leaflet           leafletjs.com
@@ -100,7 +100,7 @@ var source = {
 
 		/// Syntax Highlighting
 		// 'vendor-dl/prism/prism.js',                            // Prism             prismjs.com
-		// 'vendor-dl/prism/themes/prism.css',                    // $ bower install git@github.com:LeaVerou/prism.git\#gh-pages --save-dev
+		// 'vendor-dl/prism/themes/prism.css',                    // $ bower install -D prism.git#gh-pages
 
 	],
 	vendor_exclude: [ '', ],
