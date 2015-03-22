@@ -16,11 +16,27 @@
 
 #cookie-notice {
 
-    .button.wp-default {
+	.cn-top {
+	}
+
+	.cn-bottom {
+	}
+
+    #cn-notice-text {
+	}
+
+	// BUTTONS
+
+    .button {
 
         &:hover, &:focus {
         }
+
+		.wp-default {}
     }
+
+    #cn-more-info {
+	}
 
     #cn-accept-cookie {
 
