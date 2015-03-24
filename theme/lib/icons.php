@@ -64,13 +64,13 @@ function icons_collections() {
 	 * DASHICONS
 	 * @link https://developer.wordpress.org/resource/dashicons/
 	 */
-	wp_enqueue_style( 'dashicons', get_stylesheet_uri(), array('dashicons'), '0.2' );
+	wp_enqueue_style( 'dashicons', get_stylesheet_uri(), array('dashicons'), '1.0.4' );
 
 	/**
 	 * FONT AWESOME
 	 * @link http://fortawesome.github.io/Font-Awesome/get-started/
 	 */
-	# wp_enqueue_style( 'fontawesome', '//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css', null, '4.2.0' );
+	# wp_enqueue_style( 'fontawesome', '//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css', null, '4.3.0' );
 }
 
 
