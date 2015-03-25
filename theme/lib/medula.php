@@ -209,10 +209,43 @@ function medula_page_navi() {
  * ************************************************************
  */
 
+function medula_cleanup_all() {
+
+	// cleaning head (5.1)
+	add_action( 'init', 'medula_head_cleanup' );
+
+	// remove WP version from RSS (5.2)
+	add_filter( 'the_generator', 'medula_rss_version' );
+
+	// remove pesky injected css for recent comments widget (5.3)
+	add_filter( 'wp_head', 'medula_remove_wp_widget_recent_comments_style', 1 );
+
+	// clean up comment styles in the head (5.3)
+	add_action( 'wp_head', 'medula_remove_recent_comments_style', 1 );
+
+	// clean up gallery output in wp (5.3)
+	add_filter( 'gallery_style', 'medula_gallery_style' );
+
+	// cleaning up random code around images (5.4)
+	add_filter( 'the_content', 'medula_filter_ptags_on_images' );
+
+	// cleaning up excerpt (5.5)
+	add_filter( 'excerpt_more', 'medula_excerpt_more' );
+
+	// cleaning up \u00a0 unicode characters (5.6)
+	add_filter( 'content_save_pre', 'medula_filter_unicode_nbsp' ); // on database
+	#add_filter( 'the_content', 'medula_filter_unicode_nbsp' ); // on display
+
+	// filters html output (6)
+	if ( defined( 'MEDULA_OPTIMIZE_HTML' ) && MEDULA_OPTIMIZE_HTML ) { 
+		add_action('wp_head', 'medula_optimize_html_buffer_start');
+		add_action('wp_footer', 'medula_optimize_html_buffer_end');
+	}
+}
+
 /**
  * 5.1 HEAD CLEANUP
  */
-
 function medula_head_cleanup() {
 	// category feeds
 	remove_action( 'wp_head', 'feed_links_extra', 3 );
@@ -238,10 +271,10 @@ function medula_head_cleanup() {
 	// WP version
 	remove_action( 'wp_head', 'wp_generator' );
 
-	// remove WP version from css
+	// remove WP version from css (5.2)
 	add_filter( 'style_loader_src', 'medula_remove_wp_ver_css_js', 9999 );
 
-	// remove Wp version from scripts
+	// remove Wp version from scripts (5.2)
 	add_filter( 'script_loader_src', 'medula_remove_wp_ver_css_js', 9999 );
 }
 
@@ -304,6 +337,20 @@ function medula_excerpt_more($more) {
 		__( 'Read more &raquo;', 'medula-theme' ) .'</a>';
 }
 
+/**
+ * 5.6 &NBSP; UNICODE CHARACTERS
+ *
+ * Remove the annoying invisible unicode characters \u00a0 and \u200b, (non-
+ * breaking-space and zero-width-space) and change them to a normal space.
+ * TinyMCE seems to be creating them characters when typing 2 spaces.
+ *
+ * @link https://core.trac.wordpress.org/ticket/6942
+ * @link http://core.trac.wordpress.org/ticket/6562
+ */
+function medula_filter_unicode_nbsp($content){
+	return preg_replace("/[\x{00a0}\x{200b}]+/u", " ", $content);
+}
+
 
 /**
  * 6 FILTER HTML OUTPUT
@@ -311,6 +358,7 @@ function medula_excerpt_more($more) {
  * @link http://stackoverflow.com/a/17472755
  * @link https://core.trac.wordpress.org/changeset/28708
  */
+
 function medula_optimize_html_callback( $buffer ) {
 	// option 1 ( http://wordpress.org/support/topic/how-do-i-strip-out-all-whitespace-via-a-filter )
 	//buffer = str_replace( array( "\n", "\t", '  ' ), '', $buffer );

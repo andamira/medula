@@ -143,24 +143,7 @@ function medula_launch() {
 	/**
 	* 4.2 cleanup
 	*/
-	add_action( 'init', 'medula_head_cleanup' );
-	// remove WP version from RSS
-	add_filter( 'the_generator', 'medula_rss_version' );
-	// remove pesky injected css for recent comments widget
-	add_filter( 'wp_head', 'medula_remove_wp_widget_recent_comments_style', 1 );
-	// clean up comment styles in the head
-	add_action( 'wp_head', 'medula_remove_recent_comments_style', 1 );
-	// clean up gallery output in wp
-	add_filter( 'gallery_style', 'medula_gallery_style' );
-	// cleaning up random code around images
-	add_filter( 'the_content', 'medula_filter_ptags_on_images' );
-	// cleaning up excerpt
-	add_filter( 'excerpt_more', 'medula_excerpt_more' );
-	// filters html output
-	if ( defined( 'MEDULA_OPTIMIZE_HTML' ) && MEDULA_OPTIMIZE_HTML ) {
-		add_action('wp_head', 'medula_optimize_html_buffer_start');
-		add_action('wp_footer', 'medula_optimize_html_buffer_end');
-	}
+	medula_cleanup_all();
 
 	/**
 	* 4.3 enqueue base scripts and styles
