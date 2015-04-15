@@ -449,9 +449,16 @@ body {
 ///
 .entry-footer {}
 
-	.entry-comment-count
+	.entry-comment-count {}
 
-	.entry-meta {}
+	.entry-meta {
+
+		> span {
+		
+			.title {
+			}
+		}
+	}
 
 		.entry-date {}
 

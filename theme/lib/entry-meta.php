@@ -78,7 +78,7 @@ function medula_entry_meta_byline() {
 function medula_entry_meta_terms( $custom, $class, $label) {
 
 	$tags  = '<span class="entry-' . $class . '">';
-	$title = '<span class="entry-' . $class . '-title">' . $label . '</span>';
+	$title = '<span class="entry-' . $class . '-title title">' . $label . '</span>';
 
 	// Error catching
 	if ( is_wp_error(
