@@ -6,6 +6,7 @@
  * can call it via the functions file.
  *
  *     1 Remove default dashboard wigets
+ *
  *     2 Custom dashboard widgets
  *
  *         2.1 Load
@@ -19,6 +20,8 @@
  *         4.2 Custom TinyMCE Editor Stylesheet
  *         4.3 TODO: Custom TinyMCE buttons
  *         4.4 Changing text in footer of admin
+ *
+ *     5 Options Page
  *
  * @link http://digwp.com/2010/10/customize-wordpress-dashboard/
  */
@@ -138,5 +141,13 @@ function medula_custom_admin_footer() {
 	_e( '<span id="footer-thankyou">Developed by <a href="http://yoursite.com" target="_blank">Your Site Name</a></span>. Built using <a class="andamira" href="http://andamira.net/medula" target="_blank">andamira Médula</a>.', 'medula-theme' );
 }
 add_filter( 'admin_footer_text', 'medula_custom_admin_footer' );
+
+
+/**
+ * 5 OPTIONS PAGE
+ * ************************************************************
+ *
+ */
+include_once( 'admin-options.php' );
 
 
