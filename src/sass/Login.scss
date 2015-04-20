@@ -1,12 +1,13 @@
 ////
-/// Site Name:
-/// Author:
-///
 /// Stylesheet: Login Stylesheet
 ///
 /// This stylesheet is loaded (if admin.php is setup in your
 /// functions file) on the login page. This way you can style
 /// the login page. It won't affect any other page, admin or front-end.
+///
+///     1 Helpers
+///
+///     2 Default Styling
 ///
 /// @link http://codex.wordpress.org/Creating_Admin_Themes
 /// @link http://codex.wordpress.org/Customizing_the_Login_Form
@@ -14,6 +15,30 @@
 
 
 @import "dependencies";
+
+///
+/// 1 HELPERS
+///
+
+// Color Palettes
+@import "helpers/palettes";
+
+// Sass variables
+@import "helpers/variables";
+
+// Sass functions
+@import "helpers/functions";
+
+// import mixins
+@import "helpers/mixins";
+
+
+///
+/// 2 STYLING
+///
+
+body {
+}
 
 
 // the form box
