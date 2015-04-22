@@ -38,11 +38,13 @@ function medula_remove_image_size( $sizes ) {
 /*
  * 3 CUSTOM THUMBNAIL SIZES
  * ************************************************************
+ *
+ * @link https://codex.wordpress.org/Function_Reference/add_image_size
  */
 
 # add_image_size( 'small', 150, 150, true );
-# add_image_size( 'medium', 300, 300, true );
-# add_image_size( 'large', 1024, 1024, true );
+# add_image_size( 'medium', 300, 300 );
+# add_image_size( 'large', 1024, 1024 );
 
 # add_image_size( 'medula-600', 600, 150, true );
 # add_image_size( 'medula-300', 300, 100, true );
