@@ -1,0 +1,83 @@
+////
+/// Stylesheet: HTML Symbols
+/// ************************************************************
+///
+/// @link http://tango.freedesktop.org/Tango_Icon_Theme_Guidelines
+///
+////
+
+@function symbol( $name ) {
+  @return map-get-deep( $symbols, $name );
+}
+
+
+$symbols: (
+	non-breaking-space: '&nbsp;',
+	non-breaking-hyphen: '&#8209;',
+
+	section: '&sect;',                 // §
+	pilcrow: '&para;',                 // ¶
+	reverse-pilcrow: '&#x204B;',       // ⁋
+	ornamental-pilcrow: '&#x2761;',    // ❡
+
+	dagger: '&dagger;',                // †
+	double-dagger: '&Dagger;',         // ‡
+
+	ditto: '&Prime;',                  // ″
+
+	interrobang: '',                   // ‽
+	irony: '',                         // ⸮
+
+	vertical-bar: '&#124;',            // |
+	broken-bar: '&brvbar;',            // ¦
+	double-vertical-line: '&#x2016;',  // ‖
+
+	en-dash: '&ndash;',                // –
+	em-dash: '&mdash;',                // —
+	figure-dash: '&#8210;',            // ‒
+	horizontal-bar: '&#8212;',         // ―
+	swung-dash: '&#8275;',             // ⁓
+
+	bullet: '&bull;',                  // •
+	triangular-bullet: '&8827;',       // ‣
+	white-bullet: '&9702;',            // ◦
+	white-bullet: '&8259;',            // ⁃
+	black-leftwards-bullet: '&8268;',  // ⁌
+	black-rightwards-bullet: '&8269;', // ⁍
+
+	degree: '&deg;',                   // °
+	feminine-ordinal: '&ordf;',        // ª
+	masculine-ordinal: '&ordm;',       // º
+	superscript-zero: '&#8304;',       // ⁰
+	numero: '&#8470;',                 // №
+
+	obelus: '&divide;',                // ÷
+	commercial-minus: '&#x2052;',      // ⁒
+	fraction-slash: '&#x2044;',        // ⁄
+
+	horizontal-ellipsis: '&hellip;',   // …
+	vertical-ellipsis: '&vellip;',     // ⋮
+	up-right-ellipsis: '&#x22F0;',     // ⋰
+	down-right-ellipsis: '&#x22F1;',   // ⋱
+
+);
+
+
+// Aliases
+
+$color-tango: join( $color-tango, (
+	nbsp: symbol(non-breaking-space),
+	nbhp: symbol(non-breaking-hyphen),
+	paragraph: symbol(pilcrow),
+	divide: symbol(obelus),
+	ellipsis: symbol(horizontal-ellipsis)
+
+));
+
+// See more
+//
+// http://www.dionysia.org/html/entities/symbols.html
+// http://en.wikipedia.org/wiki/Geometric_Shapes
+// http://en.wikipedia.org/wiki/Mathematical_operators_and_symbols_in_Unicode
+
+
