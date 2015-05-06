@@ -14,6 +14,12 @@
 		display: inline-block;
 		vertical-align: middle;
 		width: 2rem;
+
+		opacity: 0.3;
+		&:hover, &:focus {
+			opacity: 0.9;
+		}
+
 	}
 		i {
 			vertical-align: baseline;
