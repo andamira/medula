@@ -191,7 +191,7 @@ body {
 ///
 /// 2.7 ENTRY HEADER
 ///
-.entry-header {}
+.entry-header {
 
 	.entry-title,
 	.single-title {}
@@ -204,7 +204,10 @@ body {
 
 			.entry-date {}
 
-			.entry-author {}
+			.entry-author {
+				display: inline-block;
+			}
+}
 
 ///
 /// 2.8 ENTRY CONTENT
@@ -447,7 +450,7 @@ body {
 ///
 /// 2.9 ENTRY FOOTER
 ///
-.entry-footer {}
+.entry-footer {
 
 	.entry-comment-count {}
 
@@ -471,6 +474,7 @@ body {
 		.entry-tags {}
 
 			.entry-tags-title {}
+}
 
 
 ///
