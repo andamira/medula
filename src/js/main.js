@@ -63,10 +63,10 @@ jQuery(document).ready(function($) {
 
 		// theme classes : *mm-dark, mm-light, mm-black, mm-white
 		// extensions classes: mm-fullscreen,
-		"classes": "mm-light",
+		// "classes": "mm-light",
 
-		//"footer": { "add": true, "title": "MENU" },
-		//"header": { "title": "MENU", "add": true, "update": true }
+		// "footer": { "add": true, "title": "MENU" },
+		// "header": { "title": "MENU", "add": true, "update": true }
 
 
 		}, {        // CONFIGURATION
