@@ -7,6 +7,9 @@
 ///
 ///     1 Load Dependencies
 ///
+///         1.1 Default
+///         1.2 Optional
+///
 ///     2 Global Variables
 ///
 ///         2.1 Theme Dirname !!!
@@ -23,9 +26,22 @@
 /// @link https://github.com/at-import/Sassy-Maps         Sassy-Maps
 ///
 
+/// 1.1 Default
+
 @import "../../vendor-dl/susy/sass/susy";
 @import "../../vendor-dl/include-media/dist/include-media";
 @import "../../vendor-dl/sassy-maps/sass/sassy-maps";
+
+
+/// 1.2 Optional
+///
+/// Font Awesome Variables
+///
+/// @example
+///  content: $fa-var-calendar-o;
+///
+/// @link http://fortawesome.github.io/Font-Awesome/cheatsheet/
+@import "../../vendor-dl/font-awesome/scss/variables";
 
 
 ///
@@ -56,5 +72,6 @@ $font-url-path: "/wp-content/themes/#{$theme-dir-name}/fonts/" !default;
 
 // Sets page to at least 100% screen height & leaves page footer glued to the bottom
 $conf_100_page_height: true; 
+	$conf_footer_height: 5rem; 
 
 

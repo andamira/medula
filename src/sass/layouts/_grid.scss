@@ -139,7 +139,7 @@ body {
 	@if $conf_100_page_height {
 		min-height: 100%;
 		position: relative;
-		padding-bottom: 5rem;
+		padding-bottom: $conf_footer_height;
 	}
 }
 
@@ -180,7 +180,7 @@ main {
 	@if $conf_100_page_height {
 		position: absolute;
 		bottom: 0;
-		height: 5rem;
+		height: $conf_footer_height;
 	}
 }
 
