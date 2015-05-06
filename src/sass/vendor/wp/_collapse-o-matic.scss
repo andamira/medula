@@ -1,5 +1,5 @@
 ////
-/// Vendor: Collapse-O-Matic
+/// Vendor: Collapse-O-Matic / Collapse-Pro-Matic
 /// Type: WordPress Plugin
 /// Need: Accordion
 /// ************************************************************
@@ -7,10 +7,13 @@
 /// default styles: /wp-content/plugins/jquery-collapse-o-matic//light_style.css
 ///
 /// @link https://wordpress.org/plugins/jquery-collapse-o-matic/
+/// @link http://plugins.twinpictures.de/premium-plugins/collapse-pro-matic
 /// @link http://plugins.twinpictures.de/plugins/collapse-o-matic/documentation/
 ////
 
 .collapseomatic {
+	cursor: pointer;
+	background: none;
 
 	&.colomat-hover {
 	}
