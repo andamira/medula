@@ -29,6 +29,7 @@
  *          5.3 Injected CSS
  *          5.4 p tags around img
  *          5.5 Read More Link
+ *          5.6 &nbsp; unichode characters
  *
  *      6 Filter HTML Output
  *

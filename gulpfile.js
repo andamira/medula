@@ -370,6 +370,7 @@ var sassStyle = 'nested';
 // -----------
 if(gutil.env.dev === true) {         // --dev
 	isProduction = false;
+	imageMin = false;
 	var sassStyle = 'compressed';
 }
 if(gutil.env.noimgmin === true) {   // --noimgmin
