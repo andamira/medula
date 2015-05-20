@@ -5,37 +5,40 @@
 /// Intended for being imported by standalone sass files like:
 /// style.scss & admin.scss
 ///
-///     1 Load Dependencies
+///     1 Load Default Dependencies
 ///
-///         1.1 Default
-///         1.2 Optional
+///     2 Load Optional Dependencies
 ///
-///     2 Global Variables
+///         2.1 Font Awesome Variables
+///         2.2 Sass Animate
 ///
-///         2.1 Theme Dirname !!!
-///         2.2 Assets
-///         2.3 Misc
+///     3 Global Variables
+///
+///         3.1 Theme Dirname !!!
+///         3.2 Assets
+///         3.3 Misc
 ////
 
 
 ///
-/// 1 LOAD DEPENDENCIES
+/// 1 LOAD DEFAULT DEPENDENCIES
 ///
 /// @link https://github.com/ericam/susy/                 Susy
 /// @link https://github.com/eduardoboucas/include-media  Include Media
 /// @link https://github.com/at-import/Sassy-Maps         Sassy-Maps
 ///
 
-/// 1.1 Default
-
 @import "../../vendor-dl/susy/sass/susy";
 @import "../../vendor-dl/include-media/dist/include-media";
 @import "../../vendor-dl/sassy-maps/sass/sassy-maps";
 
 
-/// 1.2 Optional
 ///
-/// Font Awesome Variables
+/// 2 LOAD OPTIONAL DEPENDENCIES
+///
+
+///
+/// 2.1 Font Awesome Variables
 ///
 /// @example
 ///  content: $fa-var-calendar-o;
@@ -44,13 +47,20 @@
 
 // @import "../../vendor-dl/font-awesome/scss/variables";
 
+///
+/// 2.2 Font Awesome Variables
+///
+/// @link https://github.com/tgdev/animate-sass
+
+// @import "../../vendor-dl/animate-sass/animate";
+
 
 ///
-/// 2 GLOBAL VARIABLES
+/// 3 GLOBAL VARIABLES
 ///
 
 ///
-/// 2.1 THEME DIRNAME !!!
+/// 3.1 THEME DIRNAME !!!
 ///
 /// IMPORTANT: Your must write the same name the theme directory will have
 /// when you copy (or symlink) the theme/ dir to the WordPress themes folder.
@@ -62,13 +72,13 @@
 $theme-dir-name: "medula-master" ;
 
 ///
-/// 2.2 Assets
+/// 3.2 Assets
 ///
 $image-url-path: "/wp-content/themes/#{$theme-dir-name}/img/" !default;
 $font-url-path: "/wp-content/themes/#{$theme-dir-name}/fonts/" !default;
 
 ///
-/// 2.3 Misc
+/// 3.3 Misc
 ///
 
 // Sets page to at least 100% screen height & leaves page footer glued to the bottom
