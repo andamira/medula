@@ -28,7 +28,6 @@ $breakpoints: (
 );
 
 $media-expressions: (
-	all: "all",
 	screen: "screen", 
 	print: "print", 
 	handheld: "handheld",
@@ -92,7 +91,7 @@ $susy: (                            // *default | alternative
 /// @see /src/js/main.js
 /// @link http://adactio.com/journal/5429/
 ///
-@include media( "all", ">=mobile2desktop" ) {
+@include media( ">=mobile2desktop" ) {
 	body:after {
 		content: 'widescreen';
 		display: none;

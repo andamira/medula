@@ -59,7 +59,7 @@ jQuery(document).ready(function($) {
 		"offCanvas": {
 			//"position": "right",
 			"zposition": "front"
-		},
+		}
 
 		// theme classes : *mm-dark, mm-light, mm-black, mm-white
 		// extensions classes: mm-fullscreen,
@@ -69,7 +69,8 @@ jQuery(document).ready(function($) {
 		// "header": { "title": "MENU", "add": true, "update": true }
 
 
-		}, {        // CONFIGURATION
+	}, {
+		// CONFIGURATION
 		// -------------------------
 
 		"offCanvas": {
