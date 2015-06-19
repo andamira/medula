@@ -54,14 +54,14 @@ function register_my_custom_menu_page() {
 		$position    # This allows you to choose when the menu item appears in the list.
 	); /**/
 
-	add_menu_page( 'Theme Options', 'Options', 'manage_options', 'medula_theme_options.php', 'medula_theme_page', get_template_directory_uri() . '/img/favicon.png', 61 );
+	//add_menu_page( 'Options', 'Theme Options', 'manage_options', 'medula_theme_options.php', 'medula_theme_page', get_template_directory_uri() . '/img/favicon.png', 61 );
 
 
 	/**
 	 * 1.2 SUB-MENU UNDER APPEARANCE
 	 */
 
-	//add_theme_page( 'Theme Options', 'Options', 'manage_options', 'medula_theme_options.php', 'medula_theme_page');
+	add_theme_page( 'Theme Options', 'Theme Options', 'manage_options', 'medula_theme_options.php', 'medula_theme_page');
 }
 
 /**
@@ -146,7 +146,7 @@ function medula_theme_page() {
 
 ?>
 	<div class="section panel">
-	<h1><img src="<?php echo get_template_directory_uri() . '/img/apple-touch-icon.png' ?>" height=24 width=24 /> Theme Options</h1>
+	<h1><img src="<?php echo get_template_directory_uri() . '/img/apple-touch-icon.png' ?>" height=24 width=24 /> <?php printf(wp_kses(__('Theme Options', 'medula-theme'), array())); ?></h1>
 		<form method="post" enctype="multipart/form-data" action="options.php">
 			<?php
 			settings_fields('medula_theme_options');

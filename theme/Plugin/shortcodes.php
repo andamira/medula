@@ -31,7 +31,10 @@ function medula_shortcode_example( $atts
 	);
 
 	$out = '<div class="medula_shortcode " ' . $class . '">';
-	$out .= $content;
+
+	$out .= do_shortcode($content); // render shortcodes in content
+	// $out .= $content; // do not render shortcodes
+
 	$out .= '</div>';
 	return $out;
 }
