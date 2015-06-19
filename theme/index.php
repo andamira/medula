@@ -3,7 +3,6 @@
 <main role="main">
 
 	<header class="page-header">
-		<?php medula_debug_showfile( __FILE__ ); ?>
 		<h1 class="page-title"><?php $t= get_queried_object(); echo $t->post_title; ?></h1>
 	</header>
 

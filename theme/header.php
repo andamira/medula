@@ -44,13 +44,11 @@ if ( defined( 'MEDULA_IE8_SUPPORT' ) && MEDULA_IE8_SUPPORT ) { ?>
 	<?php wp_head(); ?>
 </head>
 
-<body <?php body_class( medula_debug_body_class() ); ?>>
+<body <?php body_class(); ?>>
 	
 	<div id="page-wrapper">
 
 		<header class="site-header" role="banner">
-
-			<?php medula_debug_showfile( __FILE__ ); ?>
 
 			<a class="mmenu-button" href="#mmenu" >
 				<i class="dashicons dashicons-menu"></i>

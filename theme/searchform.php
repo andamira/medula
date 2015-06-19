@@ -1,7 +1,5 @@
 <?php 
 
-medula_debug_showfile( __FILE__ );
-
 /*
 <!-- Search Form Type 1: Default -->
 

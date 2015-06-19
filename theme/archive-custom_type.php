@@ -17,7 +17,6 @@
 <main role="main">
 
 	<header class="page-header">
-		<?php medula_debug_showfile( __FILE__ ); ?>
 		<h1 class="page-title"> <?php post_type_archive_title(); ?></h1>
 	</header>
 

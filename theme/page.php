@@ -7,7 +7,6 @@
 		<article id="post-<?php the_ID(); ?>" <?php post_class(); ?> role="article" itemscope itemtype="http://schema.org/BlogPosting">
 
 			<header class="entry-header">
-				<?php medula_debug_showfile( __FILE__ ); ?>
 				<?php medula_entry_title( 'h1' ); ?>
 			</header>
 

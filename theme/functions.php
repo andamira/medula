@@ -6,7 +6,7 @@
  *
  *     1 Global Options
  *
- *         1.1 Debug                            (#)
+ *         1.1 Toolset Layouts                  (#)
  *         1.2 IE8 Support                      ( )
  *         1.3 Optimization                     (#)
  *
@@ -71,17 +71,15 @@
  * 1.1 TOOLSET LAYOUTS
  *
  *
- * @see medula_after_setup_theme
  */
 
-// Remove the whitespace from HTML between wp_head and wp_footer.
-# define( 'MEDULA_OPTIMIZE_HTML', true );   // (#) disabled by default
+# define( 'TOOLSET_LAYOUTS', true );   // (#) disabled by default
 
 /**
  * 1.2 OPTIMIZATION
  *
  *
- * @see medula_after_setup_theme
+ * @see medula_cleanup_all()
  */
 
 // Remove the whitespace from HTML between wp_head and wp_footer.
@@ -95,14 +93,6 @@
  * nwmatcher, respond & selectivizr, in header.php
  */
 define( 'MEDULA_IE8_SUPPORT', true );      // ( ) enabled by default
-
-/**
- * 1.4 DEBUG
- *
- * Set to true in order to display debug information.
- * The functions are defined in /theme/lib/medula.php
- */
-# define( 'MEDULA_DEBUG', true );           // (#) disabled by default
 
 
 /**

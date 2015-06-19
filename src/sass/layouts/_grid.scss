@@ -121,9 +121,6 @@ body {
 		height: 100%;
 	}
 
-	&.debug {
-		//@include show-grid( show-columns );
-	}
 }
 
 
@@ -156,9 +153,6 @@ body {
 
 #site-footer-wrapper {}
 
-.debug section {
-	//@include show-grid( show-baseline );
-}
 
 
 ///

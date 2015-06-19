@@ -4,8 +4,6 @@
 
 	<header class="page-header">
 
-		<?php medula_debug_showfile( __FILE__ ); ?>
-
 		<h1 class="page-title">
 
 		<?php if (is_category()) { ?>

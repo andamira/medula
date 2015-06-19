@@ -17,7 +17,6 @@
 <main role="main">
 
 	<header class="page-header">
-		<?php medula_debug_showfile( __FILE__ ); ?>
 		<h1 class="page-title"><span><?php _e( 'Posts Categorized:', 'medula-theme' ); ?></span> <?php single_cat_title(); ?></h1>
 	</header>
 

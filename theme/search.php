@@ -3,7 +3,6 @@
 <main role="main">
 
 	<header class="page-header">
-		<?php medula_debug_showfile( __FILE__ ); ?>
 		<h1 class="page-title"><span><?php _e( 'Search Results for:', 'medula-theme' ); ?></span> <?php echo esc_attr(get_search_query()); ?></h1>
 	</header>
 

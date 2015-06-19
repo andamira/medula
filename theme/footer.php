@@ -13,8 +13,6 @@
 
 			<footer class="site-footer" role="contentinfo">
 
-				<?php medula_debug_showfile( __FILE__ ); ?>
-
 				<div id="site-footer-wrapper" class="site-wrapper">
 
 					<nav class="site-footer-nav" role="navigation"><?php medula_site_footer_nav(); ?></nav>

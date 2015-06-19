@@ -33,7 +33,7 @@
  *
  *      6 Filter HTML Output
  *
- *      7 Debug Functions
+ *      7 Utility Functions
  */
 
 
@@ -384,36 +384,12 @@ function medula_optimize_html_buffer_end() { ob_end_flush(); }
 
 
 /**
- * 7 DEBUG FUNCTIONS
- * ************************************************************
- */
-
-// This debug function displays the template filename
-// It's Called from all the template files, at the header/top
-function medula_debug_showfile( $file ) {
-	if ( defined( 'MEDULA_DEBUG' ) && MEDULA_DEBUG ) {
-		echo '<span class="medula-debug-filename alert-info">';
-		echo __('File: ', 'medula-theme');
-		echo basename( $file );
-		echo '</span>';
-	}
-}
-
-// This debug function adds a debug class to the body
-function medula_debug_body_class() {
-	if ( defined( 'MEDULA_DEBUG' ) && MEDULA_DEBUG ) {
-		return 'debug';
-	}
-}
-
-
-/**
- * 8 UTILITY FUNCTIONS
+ * 7 UTILITY FUNCTIONS
  * ************************************************************
  */
 
 /**
- * 8.1 PROTOCOL (HTTP(S))
+ * 7.1 PROTOCOL (HTTP(S))
  * 
  * @link http://codex.wordpress.org/Function_Reference/is_ssl
  * @link https://gist.github.com/webaware/4688802

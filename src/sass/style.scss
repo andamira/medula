@@ -30,8 +30,6 @@
 ///
 ///     6 Vendor
 ///
-///     7 Debug (#)
-///
 ///
 /// @link http://thesassway.com/advanced/modular-css-naming-conventions
 /// @link http://www.sitepoint.com/architecture-sass-project/
@@ -71,7 +69,7 @@
 
 
 ///
-/// 3 /MODULES (except debug)
+/// 3 /MODULES
 ///
 /// This directory contains only partials and is reserved for reusable UI patterns.
 ///
@@ -139,17 +137,5 @@
 ///
 
 @import "vendor";
-
-
-///
-/// 7 DEBUG
-///
-/// (You can uncomment this to load the debug styling (experimental)
-///
-/// NOTE: This must be loaded the last, therefore
-/// separating it from the other 'normal' modules
-///
-
-// @import "modules/debug"; // (#) Commented by default
 
 
