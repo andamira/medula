@@ -7,13 +7,12 @@
  *     1 Global Options
  *
  *         1.1 Toolset Layouts                  (#)
- *         1.2 IE8 Support                      ( )
- *         1.3 Optimization                     (#)
+ *         1.2 Optimization                     (#)
  *
  *     2 Theme Functionlity
  *
  *         2.1  Core Médula library
- *         2.2  Admin Área                      ( )
+ *         2.2  Admin Area                      ( )
  *         2.3  Icons & Favicons
  *         2.4  Fonts
  *         2.5  Navigation Menus
@@ -44,7 +43,7 @@
  * Author: andamira
  * URL: htp://andamira.net/medula/
  *
- * @link http://codex.wordpress.org/Function_Reference/ Don't reinvent the wheel.
+ * @link http://codex.wordpress.org/Function_Reference/ Don't reinvent the wheel
  */
 
 
@@ -84,15 +83,6 @@
 
 // Remove the whitespace from HTML between wp_head and wp_footer.
 # define( 'MEDULA_OPTIMIZE_HTML', true );   // (#) disabled by default
-
-/**
- * 1.3 IE 8 SUPPORT
- *
- * Set to true to enable support for IE 8 by
- * conditionally loading the polyfill libraries
- * nwmatcher, respond & selectivizr, in header.php
- */
-define( 'MEDULA_IE8_SUPPORT', true );      // ( ) enabled by default
 
 
 /**

@@ -10,9 +10,8 @@
  *
  *     3 Utility Functions
  *         3.1 REM Functions
- *         3.2 IE8 polyfill
- *         3.3 Get Viewport
- *         3.4 Throttle Resize-triggered Events
+ *         3.2 Get Viewport
+ *         3.3 Throttle Resize-triggered Events
  *             with example...
  *
  * This file should contain any js scripts you want to add to the site.
@@ -244,29 +243,7 @@ function rem2px(length) {
 
 
 /**
- * 3.2 IE8 polyfill for GetComputed Style (for Responsive Script below)
- * If you don't want to support IE8, you can just remove this.
- */
-if (!window.getComputedStyle) {
-	window.getComputedStyle = function(el, pseudo) {
-		this.el = el;
-		this.getPropertyValue = function(prop) {
-			var re = /(\-([a-z]){1})/g;
-			if (prop == 'float') prop = 'styleFloat';
-			if (re.test(prop)) {
-				prop = prop.replace(re, function () {
-					return arguments[2].toUpperCase();
-				});
-			}
-			return el.currentStyle[prop] ? el.currentStyle[prop] : null;
-		}
-		return this;
-	}
-}
-
-
-/**
- * 3.3 Get Viewport Dimensions
+ * 3.2 Get Viewport Dimensions
  *
  * returns object with viewport dimensions to match css in width and height properties
  * @link http://andylangton.co.uk/blog/development/get-viewport-size-width-and-height-javascript
@@ -281,7 +258,7 @@ var viewport = updateViewportDimensions();
 
 
 /**
- * 3.4 Throttle Resize-triggered Events
+ * 3.3 Throttle Resize-triggered Events
  *
  * Wrap your actions in this function to throttle the frequency
  * of firing them off, for better performance, esp. on mobile.

@@ -116,11 +116,6 @@ var source = {
 	//     wp_register_script( 'thatvendor-js', get_stylesheet_directory_uri() . '/js/vendor/thatvendor.js', array( 'jquery' ), '', true );
 	//
 	vendor_live: [
-
-		// IE8 COMPAT (loaded from theme/header.php)
-		'vendor-dl/nwmatcher/src/nwmatcher.js',
-		'vendor-dl/respond/dest/respond.min.js',
-		'vendor-dl/selectivizr/selectivizr.js',
 	],
 	vendor_live_exclude: [ '', ],
 

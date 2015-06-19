@@ -7,25 +7,7 @@
 ?>
 <!doctype html>
 
-<!--[if lt IE 7]><html <?php language_attributes(); ?> class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
-<!--[if (IE 7)&!(IEMobile)]><html <?php language_attributes(); ?> class="no-js lt-ie9 lt-ie8"><![endif]-->
-<!--[if (IE 8)&!(IEMobile)]><html <?php language_attributes(); ?> class="no-js lt-ie9"><![endif]-->
 <!--[if gt IE 8]><!--> <html <?php language_attributes(); ?> class="no-js"><!--<![endif]-->
-
-<?php
-/**
- * SUPPORT IE 8 - Polyfills
- *
- * @link http://stackoverflow.com/a/16732064 The source for this solution
- * @link https://core.trac.wordpress.org/ticket/16024 In WordPress 4.2 we will be able to enqueue these properly
- */
-if ( defined( 'MEDULA_IE8_SUPPORT' ) && MEDULA_IE8_SUPPORT ) { ?>
-<!--[if lt IE 9]>
-<script src="<?php echo get_template_directory_uri(); ?>/js/vendor/nwmatcher.js"></script>
-<script src="<?php echo get_template_directory_uri(); ?>/js/vendor/selectivizr.js"></script>
-<script src="<?php echo get_template_directory_uri(); ?>/js/vendor/respond.min.js"></script>
-<![endif]-->
-<?php } ?>
 
 <head>
 	<meta charset="utf-8">
