@@ -49,11 +49,11 @@
 # include_once( 'vendor/wpml.php' );         // < disabled by default
 
 /**
- * 4.2 WP-TYPES
+ * 4.2 TOOLSET
  *
- * @link http://wp-types.org/
+ * @link http://wp-types.org/ Toolset
  */
-# include_once( 'vendor/wp-types.php' );         // < disabled by default
+# include_once( 'vendor/toolset.php' );      // < disabled by default
 
 /**
  * 4.3 WOOCOMMERCE

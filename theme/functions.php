@@ -68,15 +68,27 @@
  */
 
 /**
- * 1.1 DEBUG
+ * 1.1 TOOLSET LAYOUTS
  *
- * Set to true in order to display debug information.
- * The functions are defined in /theme/lib/medula.php
+ *
+ * @see medula_after_setup_theme
  */
-# define( 'MEDULA_DEBUG', true );           // (#) disabled by default
+
+// Remove the whitespace from HTML between wp_head and wp_footer.
+# define( 'MEDULA_OPTIMIZE_HTML', true );   // (#) disabled by default
 
 /**
- * 1.2 IE 8 SUPPORT
+ * 1.2 OPTIMIZATION
+ *
+ *
+ * @see medula_after_setup_theme
+ */
+
+// Remove the whitespace from HTML between wp_head and wp_footer.
+# define( 'MEDULA_OPTIMIZE_HTML', true );   // (#) disabled by default
+
+/**
+ * 1.3 IE 8 SUPPORT
  *
  * Set to true to enable support for IE 8 by
  * conditionally loading the polyfill libraries
@@ -85,14 +97,12 @@
 define( 'MEDULA_IE8_SUPPORT', true );      // ( ) enabled by default
 
 /**
- * 1.3 OPTIMIZATION
+ * 1.4 DEBUG
  *
- *
- * @see medula_after_setup_theme
+ * Set to true in order to display debug information.
+ * The functions are defined in /theme/lib/medula.php
  */
-
-// Remove the whitespace from HTML between wp_head and wp_footer.
-# define( 'MEDULA_OPTIMIZE_HTML', true );   // (#) disabled by default
+# define( 'MEDULA_DEBUG', true );           // (#) disabled by default
 
 
 /**
