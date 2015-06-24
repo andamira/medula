@@ -52,7 +52,7 @@ $smart-header-height: 3rem;
 .smart-header {
 	background: $white;
 	width: 100%;
-	z-index: 1;
+	z-index: 99999;
 	height: $smart-header-height;
 	top: 0;
 	transition: top 0.2s ease-in-out;

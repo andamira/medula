@@ -4,8 +4,6 @@
  *
  */
 ?>
-	</div><?php // .container ?>
-
 	<?php do_action( 'wpbootstrap_before_footer' ); ?>
 	<footer class="site-footer" role="contentinfo">
 	</footer>

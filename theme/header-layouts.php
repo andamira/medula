@@ -40,7 +40,3 @@
 		<nav class="site-main-nav" role="navigation"><?php medula_site_main_nav(); ?></nav>
 	</header>
 	<?php do_action( 'wpbootstrap_after_header' ); ?>
-
-	<?php do_action( 'wpbootstrap_before_container' ); ?>
-	<div class="container">
-	<?php do_action( 'wpbootstrap_before_content' ); ?>
