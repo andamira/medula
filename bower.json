@@ -4,6 +4,7 @@
   "dependencies": {},
   "devDependencies": {
     "normalize.css": "*",
+    "bootstrap-sass-official": "*",
     "susy": "*",
     "include-media": "*",
     "sassy-maps": "*",

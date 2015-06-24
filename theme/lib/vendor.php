@@ -53,7 +53,9 @@
  *
  * @link http://wp-types.org/ Toolset
  */
-# include_once( 'vendor/toolset.php' );      // < disabled by default
+if ( defined( 'TOOLSET_LAYOUTS' ) && TOOLSET_LAYOUTS ) {
+	include_once( 'vendor/toolset.php' );
+}
 
 /**
  * 4.3 WOOCOMMERCE

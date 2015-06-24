@@ -1,35 +1,62 @@
-<?php get_header(); ?>
+<?php
+if ( defined( 'TOOLSET_LAYOUTS' ) && TOOLSET_LAYOUTS ) {
 
-<main role="main">
+	if ( function_exists( 'the_ddlayout' ) ) {
 
-	<?php if (have_posts()) : while (have_posts()) : the_post(); ?>
+		get_header('layouts');
 
-		<article id="post-<?php the_ID(); ?>" <?php post_class(); ?> role="article" itemscope itemtype="http://schema.org/BlogPosting">
+		the_ddlayout( 'page-layout', array('post-content-callback' => 'wp_bootstrap_content_output') );
+		//the_ddlayout();
 
-			<header class="entry-header">
-				<?php medula_entry_title( 'h1' ); ?>
-			</header>
+		/*
+		the_ddlayout(
+			'YOUR-DEFAULT-LAYOUT-FOR-THIS-TEMPLATE-SLUG-OR-ID',
+			array(
+				'post-content-callback' => 'A-CALLBACK-FUNCTION-AS-FALLBACK-FOR-POST-CONTENT-IF-YOU-WANT',
+				'allow_overrides' => 'false'
+			)
+		);
+		/**/
 
-			<section class="entry-content">
-				<?php the_content(); ?>
-				<?php medula_page_links(); ?>
-			</section>
+		get_footer('layouts');
+	}
 
-			<footer class="entry-footer">
-			</footer>
+} else {
 
-			<?php comments_template( '', true ); ?>
+	get_header(); ?>
 
-		</article>
+	<main role="main">
 
-	<?php endwhile; else: ?>
+		<?php if (have_posts()) : while (have_posts()) : the_post(); ?>
 
-		<?php medula_no_post_found( basename( __FILE__ ) ); ?>
+			<article id="post-<?php the_ID(); ?>" <?php post_class(); ?> role="article" itemscope itemtype="http://schema.org/BlogPosting">
 
-	<?php endif; ?>
+				<header class="entry-header">
+					<?php medula_entry_title( 'h1' ); ?>
+				</header>
 
-</main>
+				<section class="entry-content">
+					<?php the_content(); ?>
+					<?php medula_page_links(); ?>
+				</section>
+
+				<footer class="entry-footer">
+				</footer>
+
+				<?php comments_template( '', true ); ?>
+
+			</article>
+
+		<?php endwhile; else: ?>
+
+			<?php medula_no_post_found( basename( __FILE__ ) ); ?>
+
+		<?php endif; ?>
+
+	</main>
 
 <?php get_sidebar(); ?>
 
-<?php get_footer(); ?>
+<?php get_footer();
+
+}

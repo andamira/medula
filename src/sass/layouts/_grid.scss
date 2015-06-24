@@ -166,6 +166,15 @@ main {
 .sidebar {
 }
 
+.site-header,
+.site-footer {
+	width: 100%;
+
+	.page-template-page-toolset & {
+		width: auto;
+	}
+}
+
 .site-header {
 }
 

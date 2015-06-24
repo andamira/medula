@@ -48,23 +48,21 @@ if (!function_exists('wpbootstrap_toolset_layouts_activated')) {
  *
  * @link http://wp-types.com/documentation/user-guides/layouts-cells-api/
  */
-if( class_exists( 'WPDD_Layouts' ) && !function_exists( 'include_ddl_layouts' ) )
-{
-    function include_ddl_layouts( $tpls_dir = '' )
-    {
-        $dir_str = dirname(__FILE__) . $tpls_dir;
-        $dir = opendir( $dir_str );
-        while( ( $currentFile = readdir($dir) ) !== false ) {
-           if ( $currentFile == '.' || $currentFile == '..' || $currentFile[0] == '.' ) {
-              continue;
-           }
-
-           include $dir_str.$currentFile;
-        }
-        closedir($dir);
-    }
-
-    include_ddl_layouts('/toolset/cells/');
+if( class_exists( 'WPDD_Layouts' ) && !function_exists( 'include_ddl_layouts' ) ) {
+	/*
+	function include_ddl_layouts( $tpls_dir = '' ) {
+		$dir_str = dirname(__FILE__) . $tpls_dir;
+		$dir = opendir( $dir_str );
+		while( ( $currentFile = readdir($dir) ) !== false ) {
+			if ( $currentFile == '.' || $currentFile == '..' || $currentFile[0] == '.' ) {
+				continue;
+			}
+			include $dir_str.$currentFile;
+		}
+		closedir($dir);
+	}
+	include_ddl_layouts('/toolset/cells/');
+	/**/
 }
 
 
@@ -72,7 +70,7 @@ if( class_exists( 'WPDD_Layouts' ) && !function_exists( 'include_ddl_layouts' ) 
  * 2 Dequeue Toolset front-end scripts and stylesheets
  *
  */
-add_action('wp_enqueue_scripts', 'prefix_remove_views_assets', 20);
+# add_action('wp_enqueue_scripts', 'prefix_remove_views_assets', 20);
 function prefix_remove_views_assets() {
 
 	// Scripts
@@ -98,7 +96,7 @@ function prefix_remove_views_assets() {
 
 
 /**
- * 2 Disable edit post link
+ * 3 Disable edit post link
  */
 
 add_filter( 'edit_post_link', '__return_false' );
