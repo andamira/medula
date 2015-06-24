@@ -30,24 +30,17 @@
 		do_action( 'wpbootstrap_before_wp_head' );
 		wp_head();
 		do_action( 'wpbootstrap_after_wp_head' );
-	?> 
+	?>
 </head>
 
-<body <?php body_class(); ?>>
+<body <?php body_class('toolset-layouts'); ?>>
+
+	<?php do_action( 'wpbootstrap_before_header' ); ?>
+	<header class="site-header" role="banner">
+		<nav class="site-main-nav" role="navigation"><?php medula_site_main_nav(); ?></nav>
+	</header>
+	<?php do_action( 'wpbootstrap_after_header' ); ?>
 
 	<?php do_action( 'wpbootstrap_before_container' ); ?>
 	<div class="container">
-
-		<?php do_action( 'wpbootstrap_before_header' ); ?>
-
-		<header class="site-header" role="banner">
-
-		<nav class="site-main-nav" role="navigation"><?php medula_site_main_nav(); ?></nav>
-
-		</header>
-
-		<?php do_action( 'wpbootstrap_after_header' ); ?>
-
-		<div class="row" id="main">
-			<?php do_action( 'wpbootstrap_before_content' ); ?>
-			<section class="span12" id="content" role="main">
+	<?php do_action( 'wpbootstrap_before_content' ); ?>
