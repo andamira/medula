@@ -1,0 +1,58 @@
+////
+/// Dependencies
+/// ************************************************************
+///
+/// Intended for being imported by style.scss
+///
+///     1 Load Default Dependencies
+///
+///     2 Load Optional Dependencies
+///
+///         2.1 Font Awesome Variables
+///         2.2 Sass Animate
+///
+///     3 Global Variables
+///
+////
+
+
+///
+/// 1 LOAD DEFAULT DEPENDENCIES
+///
+/// @link https://github.com/ericam/susy/                 Susy
+///
+
+@import "global";
+
+@import "../../../vendor-dl/susy/sass/susy";
+@import "../../../vendor-dl/bootstrap-sass-official/assets/stylesheets/bootstrap";
+
+
+///
+/// 2 LOAD OPTIONAL DEPENDENCIES
+///
+
+///
+/// 2.1 Font Awesome Variables
+///
+/// @example
+///  content: $fa-var-calendar-o;
+///
+/// @link http://fortawesome.github.io/Font-Awesome/cheatsheet/
+
+// @import "../../vendor-dl/font-awesome/scss/variables";
+
+///
+/// 2.2 Animate Sass
+///
+/// @link https://github.com/tgdev/animate-sass
+
+// @import "../../vendor-dl/animate-sass/animate";
+
+
+///
+/// 3 GLOBAL VARIABLES
+///
+
+
+

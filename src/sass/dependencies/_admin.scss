@@ -1,0 +1,48 @@
+////
+/// Dependencies for the WP Administration
+/// ************************************************************
+///
+/// Intended for being imported by admin/style.scss
+///
+///     1 Load Default Dependencies
+///
+///     2 Load Optional Dependencies
+///
+///         2.1 Font Awesome Variables
+///
+///     3 Global Variables
+///
+////
+
+
+///
+/// 1 LOAD DEFAULT DEPENDENCIES
+///
+/// @link https://github.com/ericam/susy/                 Susy
+/// @link https://github.com/eduardoboucas/include-media  Include Media
+/// @link https://github.com/at-import/Sassy-Maps         Sassy-Maps
+///
+
+@import "global";
+
+
+///
+/// 2 LOAD OPTIONAL DEPENDENCIES
+///
+
+///
+/// 2.1 Font Awesome Variables
+///
+/// @example
+///  content: $fa-var-calendar-o;
+///
+/// @link http://fortawesome.github.io/Font-Awesome/cheatsheet/
+
+// @import "../../vendor-dl/font-awesome/scss/variables";
+
+
+///
+/// 3 GLOBAL VARIABLES
+///
+
+
