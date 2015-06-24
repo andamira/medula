@@ -12,51 +12,67 @@
  */
 ?>
 
-<?php get_header(); ?>
+<?php
 
-<main role="main">
+if ( defined( 'TOOLSET_LAYOUTS' ) && TOOLSET_LAYOUTS ) {
 
-	<header class="page-header">
-		<h1 class="page-title"><span><?php _e( 'Posts Categorized:', 'medula-theme' ); ?></span> <?php single_cat_title(); ?></h1>
-	</header>
+	if ( function_exists( 'the_ddlayout' ) ) { 
+		get_header('layouts');
+		the_ddlayout();
+		//the_ddlayout( 'default-layout', array('post-content-callback' => 'function_name', 'allow_overrides' => 'false') );
+		get_footer('layouts');
+	}
 
-	<?php if (have_posts()) : while (have_posts()) : the_post(); ?>
+} else {
 
-		<article id="post-<?php the_ID(); ?>" <?php post_class(); ?> role="article">
+	get_header();
+?>
 
-			<header class="article-header">
+	<main role="main">
 
-				<?php medula_entry_title( 'h2', true ); ?>
+		<header class="page-header">
+			<h1 class="page-title"><span><?php _e( 'Posts Categorized:', 'medula-theme' ); ?></span> <?php single_cat_title(); ?></h1>
+		</header>
 
-				<p class="byline vcard">
-					<div class="entry-meta"><?php medula_entry_meta_byline(); medula_entry_meta_tags() ?></div>
-				</p>
+		<?php if (have_posts()) : while (have_posts()) : the_post(); ?>
 
-			</header>
+			<article id="post-<?php the_ID(); ?>" <?php post_class(); ?> role="article">
 
-			<section class="entry-content">
-				<?php the_excerpt( '<span class="read-more">' . __( 'Read More &raquo;', 'medula-theme' ) . '</span>' ); ?>
+				<header class="article-header">
 
-			</section>
+					<?php medula_entry_title( 'h2', true ); ?>
 
-			<footer class="article-footer">
-				<div class="entry-meta"><?php medula_entry_meta_tags( 'custom_tag' ); medula_entry_meta_categories( 'custom_cat' ); ?></div>
-			</footer>
+					<p class="byline vcard">
+						<div class="entry-meta"><?php medula_entry_meta_byline(); medula_entry_meta_tags() ?></div>
+					</p>
 
-		</article>
+				</header>
 
-	<?php endwhile; ?>
+				<section class="entry-content">
+					<?php the_excerpt( '<span class="read-more">' . __( 'Read More &raquo;', 'medula-theme' ) . '</span>' ); ?>
 
-		<?php medula_page_navi(); ?>
+				</section>
 
-	<?php else : ?>
+				<footer class="article-footer">
+					<div class="entry-meta"><?php medula_entry_meta_tags( 'custom_tag' ); medula_entry_meta_categories( 'custom_cat' ); ?></div>
+				</footer>
 
-		<?php medula_no_post_found( basename( __FILE__ ) ); ?>
+			</article>
 
-	<?php endif; ?>
+		<?php endwhile; ?>
 
-</main>
+			<?php medula_page_navi(); ?>
 
-<?php get_sidebar(); ?>
+		<?php else : ?>
 
-<?php get_footer(); ?>
+			<?php medula_no_post_found( basename( __FILE__ ) ); ?>
+
+		<?php endif; ?>
+
+	</main>
+
+<?php
+	get_sidebar();
+	get_footer();
+
+}

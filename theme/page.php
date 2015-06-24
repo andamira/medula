@@ -2,28 +2,16 @@
 if ( defined( 'TOOLSET_LAYOUTS' ) && TOOLSET_LAYOUTS ) {
 
 	if ( function_exists( 'the_ddlayout' ) ) {
-
 		get_header('layouts');
-
-		the_ddlayout( 'page-layout', array('post-content-callback' => 'wp_bootstrap_content_output') );
-		//the_ddlayout();
-
-		/*
-		the_ddlayout(
-			'YOUR-DEFAULT-LAYOUT-FOR-THIS-TEMPLATE-SLUG-OR-ID',
-			array(
-				'post-content-callback' => 'A-CALLBACK-FUNCTION-AS-FALLBACK-FOR-POST-CONTENT-IF-YOU-WANT',
-				'allow_overrides' => 'false'
-			)
-		);
-		/**/
-
+		the_ddlayout();
+		//the_ddlayout( 'default-layout', array('post-content-callback' => 'function_name', 'allow_overrides' => 'false') );
 		get_footer('layouts');
 	}
 
 } else {
 
-	get_header(); ?>
+	get_header();
+?>
 
 	<main role="main">
 
@@ -55,8 +43,8 @@ if ( defined( 'TOOLSET_LAYOUTS' ) && TOOLSET_LAYOUTS ) {
 
 	</main>
 
-<?php get_sidebar(); ?>
-
-<?php get_footer();
+<?php
+	get_sidebar();
+	get_footer();
 
 }

@@ -1,30 +1,46 @@
-<?php get_header(); ?>
+<?php
+if ( defined( 'TOOLSET_LAYOUTS' ) && TOOLSET_LAYOUTS ) {
 
-<main role="main">
+	if ( function_exists( 'the_ddlayout' ) ) { 
+		get_header('layouts');
+		the_ddlayout();
+		//the_ddlayout( 'default-layout', array('post-content-callback' => 'function_name', 'allow_overrides' => 'false') );
+		get_footer('layouts');
+	}
 
-	<?php if (have_posts()) : while (have_posts()) : the_post(); ?>
+} else {
 
-		<article id="post-<?php the_ID(); ?>" <?php post_class(); ?> role="article" itemscope itemtype="http://schema.org/BlogPosting">
+	get_header();
+?>
 
-			<header class="entry-header">
-			</header>
+	<main role="main">
 
-			<section class="entry-content">
-				<?php the_content(); ?>
-				<?php medula_page_links(); ?>
-			</section>
+		<?php if (have_posts()) : while (have_posts()) : the_post(); ?>
 
-			<footer class="entry-footer">
-			</footer>
+			<article id="post-<?php the_ID(); ?>" <?php post_class(); ?> role="article" itemscope itemtype="http://schema.org/BlogPosting">
 
-		</article>
+				<header class="entry-header">
+				</header>
 
-	<?php endwhile; else: ?>
+				<section class="entry-content">
+					<?php the_content(); ?>
+					<?php medula_page_links(); ?>
+				</section>
 
-		<?php medula_no_post_found( basename( __FILE__ ) ); ?>
+				<footer class="entry-footer">
+				</footer>
 
-	<?php endif; ?>
+			</article>
 
-</main>
+		<?php endwhile; else: ?>
 
-<?php get_footer(); ?>
+			<?php medula_no_post_found( basename( __FILE__ ) ); ?>
+
+		<?php endif; ?>
+
+	</main>
+
+<?php
+	get_footer();
+
+}

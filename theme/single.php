@@ -1,36 +1,52 @@
-<?php get_header(); ?>
+<?php
 
-<main role="main">
+if ( defined( 'TOOLSET_LAYOUTS' ) && TOOLSET_LAYOUTS ) {
 
-	<?php if (have_posts()) : while (have_posts()) : the_post(); ?>
+	if ( function_exists( 'the_ddlayout' ) ) { 
+		get_header('layouts');
+		the_ddlayout();
+		//the_ddlayout( 'default-layout', array('post-content-callback' => 'function_name', 'allow_overrides' => 'false') );
+		get_footer('layouts');
+	}
 
-		<article id="post-<?php the_ID(); ?>" <?php post_class(); ?> role="article" itemscope itemtype="http://schema.org/BlogPosting" itemprop="blogPost">
+} else {
 
-			<header class="entry-header">
-				<?php medula_entry_title( 'h1' ); ?>
-				<div class="entry-meta"><?php medula_entry_meta_byline(); ?></div>
-			</header>
+	get_header();
+?>
 
-			<section class="entry-content" itemprop="articleBody">
-				<?php the_content(); ?>
-			</section>
+	<main role="main">
 
-			<footer class="entry-footer">
-				<div class="entry-meta"><?php medula_entry_meta_tags(); medula_entry_meta_categories(); ?></div>
-			</footer>
+		<?php if (have_posts()) : while (have_posts()) : the_post(); ?>
 
-			<?php comments_template(); ?>
+			<article id="post-<?php the_ID(); ?>" <?php post_class(); ?> role="article" itemscope itemtype="http://schema.org/BlogPosting" itemprop="blogPost">
 
-		</article>
+				<header class="entry-header">
+					<?php medula_entry_title( 'h1' ); ?>
+					<div class="entry-meta"><?php medula_entry_meta_byline(); ?></div>
+				</header>
 
-	<?php endwhile; else : ?>
+				<section class="entry-content" itemprop="articleBody">
+					<?php the_content(); ?>
+				</section>
 
-		<?php medula_no_post_found( basename( __FILE__ ) ); ?>
+				<footer class="entry-footer">
+					<div class="entry-meta"><?php medula_entry_meta_tags(); medula_entry_meta_categories(); ?></div>
+				</footer>
 
-	<?php endif; ?>
+				<?php comments_template(); ?>
 
-</main>
+			</article>
 
-<?php get_sidebar(); ?>
+		<?php endwhile; else : ?>
 
-<?php get_footer(); ?>
+			<?php medula_no_post_found( basename( __FILE__ ) ); ?>
+
+		<?php endif; ?>
+
+	</main>
+
+<?php
+	get_sidebar();
+	get_footer();
+
+}

@@ -1,52 +1,68 @@
-<?php get_header(); ?>
+<?php
 
-<main role="main">
+if ( defined( 'TOOLSET_LAYOUTS' ) && TOOLSET_LAYOUTS ) {
 
-	<header class="page-header">
-		<h1 class="page-title"><span><?php _e( 'Search Results for:', 'medula-theme' ); ?></span> <?php echo esc_attr(get_search_query()); ?></h1>
-	</header>
+	if ( function_exists( 'the_ddlayout' ) ) { 
+		get_header('layouts');
+		the_ddlayout();
+		//the_ddlayout( 'default-layout', array('post-content-callback' => 'function_name', 'allow_overrides' => 'false') );
+		get_footer('layouts');
+	}
 
-	<?php if (have_posts()) : while (have_posts()) : the_post(); ?>
+} else {
 
-		<article id="post-<?php the_ID(); ?>" <?php post_class(); ?> role="article">
+	get_header();
+?>
 
-			<header class="entry-header">
-				<?php medula_entry_title( 'h2', true ); ?>
-				<div class="entry-meta"><?php medula_entry_meta_byline(); ?></div>
-			</header>
+	<main role="main">
 
-			<section class="entry-content">
-				<?php the_excerpt( '<span class="read-more">' . __( 'Read more &raquo;', 'medula-theme' ) . '</span>' ); ?>
-			</section>
+		<header class="page-header">
+			<h1 class="page-title"><span><?php _e( 'Search Results for:', 'medula-theme' ); ?></span> <?php echo esc_attr(get_search_query()); ?></h1>
+		</header>
 
-			<footer class="entry-footer">
-				 <div class="entry-meta"><?php medula_entry_meta_tags(); medula_entry_meta_categories(); ?></div>
-			</footer>
+		<?php if (have_posts()) : while (have_posts()) : the_post(); ?>
 
-		</article>
+			<article id="post-<?php the_ID(); ?>" <?php post_class(); ?> role="article">
 
-	<?php endwhile; ?>
+				<header class="entry-header">
+					<?php medula_entry_title( 'h2', true ); ?>
+					<div class="entry-meta"><?php medula_entry_meta_byline(); ?></div>
+				</header>
 
-		<?php medula_page_navi(); ?>
+				<section class="entry-content">
+					<?php the_excerpt( '<span class="read-more">' . __( 'Read more &raquo;', 'medula-theme' ) . '</span>' ); ?>
+				</section>
 
-	<?php else : ?>
+				<footer class="entry-footer">
+					 <div class="entry-meta"><?php medula_entry_meta_tags(); medula_entry_meta_categories(); ?></div>
+				</footer>
 
-		<article id="post-not-found" class="hentry cf">
-			<header class="article-header">
-				<h2><?php _e( 'Sorry, No Results.', 'medula-theme' ); ?></h2>
-			</header>
-			<section class="entry-content">
-				<p><?php _e( 'Try your search again.', 'medula-theme' ); ?></p>
-			</section>
-			<footer class="article-footer">
-				<p class="alert-error"><?php _e( 'This is the error message in the search.php template.', 'medula-theme' ); ?></p>
-			</footer>
-		</article>
+			</article>
 
-	<?php endif; ?>
+		<?php endwhile; ?>
 
-</main>
+			<?php medula_page_navi(); ?>
 
-<?php get_sidebar(); ?>
+		<?php else : ?>
 
-<?php get_footer(); ?>
+			<article id="post-not-found" class="hentry cf">
+				<header class="article-header">
+					<h2><?php _e( 'Sorry, No Results.', 'medula-theme' ); ?></h2>
+				</header>
+				<section class="entry-content">
+					<p><?php _e( 'Try your search again.', 'medula-theme' ); ?></p>
+				</section>
+				<footer class="article-footer">
+					<p class="alert-error"><?php _e( 'This is the error message in the search.php template.', 'medula-theme' ); ?></p>
+				</footer>
+			</article>
+
+		<?php endif; ?>
+
+	</main>
+
+<?php
+	get_sidebar();
+	get_footer();
+
+}

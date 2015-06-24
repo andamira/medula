@@ -121,6 +121,9 @@ body {
 		height: 100%;
 	}
 
+	&:not(.toolset-layouts) {
+		width: 100%; 
+	}
 }
 
 
@@ -169,10 +172,6 @@ main {
 .site-header,
 .site-footer {
 	width: 100%;
-
-	.toolset-layouts & {
-		width: auto;
-	}
 }
 
 .site-header {
