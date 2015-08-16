@@ -11,7 +11,7 @@
  *     4 SPECIFIC PLUGINS
  *
  *         4.1 WPML
- *         4.2 WP-TYPES
+ *         4.2 TOOLSET
  *         4.3 WOOCOMMERCE
  */
 
@@ -63,6 +63,5 @@ if ( defined( 'TOOLSET_LAYOUTS' ) && TOOLSET_LAYOUTS ) {
  * @link http://www.woothemes.com/woocommerce/
  */
 # include_once( 'vendor/woocommerce.php' );  // < disabled by default
-
 
 

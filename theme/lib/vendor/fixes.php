@@ -27,7 +27,7 @@ function post_type_tags_fix($request) {
 
 
 /**
- * 2 USING RELEVANSSI HIGHTLIGHTING ON TYPES
+ * 2 USING RELEVANSSI HIGHLIGHTING ON TYPES
  * ************************************************************
  * @link http://wp-types.com/forums/topic/the_excerpt-and-relevanssi/
  */
