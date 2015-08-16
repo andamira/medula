@@ -78,7 +78,7 @@ var source = {
 		// 'vendor-dl/picturefill/dist/picturefill.js',           // PictureFill       -
 
 		/// Navigation
-		'vendor-dl/jQuery.mmenu/dist/js/jquery.mmenu.min.all.js',  // MMenu             mmenu.frebsite.nl
+		'vendor-dl/jQuery.mmenu/dist/core/js/jquery.mmenu.min.all.js',  // MMenu             mmenu.frebsite.nl
 		// 'vendor-dl/jQuery.mmenu/dist/css/jquery.mmenu.all.css',
 
 		/// Maps
@@ -174,7 +174,7 @@ var imagemin = require('gulp-imagemin');
 // ----------------
 gulp.task('compile-sass', function () {
 
-	var filter_frontend_style = gulpFilter( ['style.css', 'src/sass/'] );
+	var filter_frontend_style = gulpFilter( ['style.css', 'src/sass/'], {restore: true} );
 	var filter_css = gulpFilter( '**/*.css' );
 
 	return gulp.src(source.sass, { base: '' } )
@@ -200,7 +200,7 @@ gulp.task('compile-sass', function () {
 			.pipe(addsrc.prepend('theme/style.css')) // theme info comment
 				// .pipe(print()) // DEBUG
 				.pipe(concat('style.css'))
-		.pipe(filter_frontend_style.restore())
+		.pipe(filter_frontend_style.restore)
 
 //		.pipe(isProduction ? gutil.noop() : sourcemaps.write({includeContent: false, sourceRoot: '../sass'})) // --dev
 
@@ -226,10 +226,10 @@ gulp.task('compile-sass', function () {
 // --------------
 gulp.task('compile-js', function () {
 
-	var filter_js = gulpFilter( '**/*.js' );
+	var filter_js = gulpFilter( '**/*.js', {restore: true} );
 
-	var filter_yourjs = gulpFilter( [ 'main.js', '!vendor-dl/**' ] );
-	//var filter_yourjs = gulpFilter( [ '**/*.js', '!vendor-dl/**' ] ); // BUG I can't make this filters work (because of addsrc?)
+	var filter_yourjs = gulpFilter( [ 'main.js', '!vendor-dl/**' ], {restore: true} );
+	//var filter_yourjs = gulpFilter( [ '**/*.js', '!vendor-dl/**' ], {restore: true} ); // BUG I can't make this filters work (because of addsrc?)
 
 	// Select the vendor files
 	return gulp.src( source.vendor, { base: '' } )
@@ -247,7 +247,7 @@ gulp.task('compile-js', function () {
 			.pipe(filter_yourjs)
 				//.pipe(print()) // DEBUG
 				.pipe(jscs())
-			.pipe(filter_yourjs.restore())
+			.pipe(filter_yourjs.restore)
 
 			// Concatenate all in this file
 			.pipe(concat('scripts.js')).on( "error", gutil.log)
@@ -258,7 +258,7 @@ gulp.task('compile-js', function () {
 			// Save output
 			.pipe(gulp.dest(target.js))
 
-		.pipe(filter_js.restore())
+		.pipe(filter_js.restore)
 });
 
 
@@ -266,8 +266,8 @@ gulp.task('compile-js', function () {
 // --------------------------------------------
 gulp.task('compile-vendor_live', function () {
 
-	var filter_css = gulpFilter( '**/*.css' );
-	var filter_js = gulpFilter( '**/*.js' );
+	var filter_css = gulpFilter( '**/*.css', {restore: true} );
+	var filter_js = gulpFilter( '**/*.js', {restore: true} );
 
 	return gulp.src( source.vendor_live )
 		.pipe(exclude(source.vendor_live_exclude))
@@ -281,7 +281,7 @@ gulp.task('compile-vendor_live', function () {
 
 			// Save output
 			.pipe(gulp.dest(target.vendor_live_js))
-		.pipe(filter_js.restore())
+		.pipe(filter_js.restore)
 
 
 		// process CSS files
@@ -304,7 +304,7 @@ gulp.task('compile-vendor_live', function () {
 			// Save output
 			.pipe(gulp.dest(target.vendor_live_css))
 
-		.pipe(filter_css.restore())
+		.pipe(filter_css.restore)
 });
 
 
