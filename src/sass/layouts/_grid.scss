@@ -169,20 +169,25 @@ main {
 .sidebar {
 }
 
-.site-header,
-.site-footer {
-	width: 100%;
-}
-
 .site-header {
 }
 
 .site-footer {
 	@if $conf_100_page_height {
-		position: absolute;
+		position: fixed;
+		padding: 0 0.5rem;
 		bottom: 0;
+		z-index: -999; 
 	}
 	height: $conf_footer_height;
+	width: 100%;
 }
 
+
+// TOOLSET-LAYOUTS 
+.layouts-containers {
+	@if $conf_100_page_height {
+		margin-bottom: $conf_footer_height;
+	}
+}
 

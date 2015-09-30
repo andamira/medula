@@ -4,8 +4,20 @@
  *
  */
 ?>
+
+	</div> <?php // container of layouts containers ?>
+
 	<?php do_action( 'wpbootstrap_before_footer' ); ?>
 	<footer class="site-footer" role="contentinfo">
+
+		<div id="site-footer-wrapper">
+
+			<nav class="site-footer-nav" role="navigation"><?php medula_site_footer_nav(); ?></nav>
+
+			<span class="site-footer-copyright">&copy; <?php echo date('Y'); ?> <?php bloginfo( 'name' ); ?>.</span>
+
+		</div>
+
 	</footer>
 	<?php do_action( 'wpbootstrap_after_footer' ); ?>
 
