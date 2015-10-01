@@ -8,7 +8,7 @@
 
 function custom_post_example() { 
 
-	register_post_type( 'custom_type', 
+	register_post_type( 'CPT', 
 		array( 'labels' => array(
 			'name' => __( 'Custom Types', 'medula-theme' ),
 			'singular_name' => __( 'Custom Post', 'medula-theme' ),
@@ -37,8 +37,8 @@ function custom_post_example() {
 			'menu_icon' => 'dashicons-smiley',											// e.g. icon font
 			//'menu_icon' => get_stylesheet_directory_uri() . '/img/favicon.png',	// e.g. icon image
 			
-			'rewrite'	=> array( 'slug' => 'custom_type', 'with_front' => false ),
-			'has_archive' => 'custom_type',
+			'rewrite'	=> array( 'slug' => 'CPT', 'with_front' => false ),
+			'has_archive' => 'CPT',
 			'capability_type' => 'post',
 			'hierarchical' => false,
 			// the next line tells what's enabled in the post editor
@@ -46,8 +46,8 @@ function custom_post_example() {
 	 	)
 	);
 	// Here you can add your post categories and tags to your custom post type
-	register_taxonomy_for_object_type( 'category', 'custom_type' );
-	register_taxonomy_for_object_type( 'post_tag', 'custom_type' );
+	register_taxonomy_for_object_type( 'category', 'CPT' );
+	register_taxonomy_for_object_type( 'post_tag', 'CPT' );
 } 
 add_action( 'init', 'custom_post_example');
 	

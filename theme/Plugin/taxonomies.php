@@ -39,7 +39,7 @@ function custom_category_example() {
 		'show_tagcloud'              => true,
 		'rewrite'                    => $rewrite,
 	);
-	register_taxonomy( 'custom_cat', array( 'custom_type' ), $args );
+	register_taxonomy( 'CTCAT', array( 'CPT' ), $args );
 }
 add_action( 'init', 'custom_category_example', 0 );
 
@@ -77,33 +77,8 @@ function custom_tag_example() {
 		'show_tagcloud'              => true,
 		'rewrite'                    => $rewrite,
 	);
-	register_taxonomy( 'custom_tag', array( 'custom_type' ), $args );
+	register_taxonomy( 'CTTAG', array( 'CPT' ), $args );
 }
 add_action( 'init', 'custom_tag_example', 0 );
-
-
-/*
-// add custom tag
-register_taxonomy( 'custom_tag', 
-	array('custom_type'),
-	array('hierarchical' => false,
-		'labels' => array(
-			'name' => __( 'Custom Tags', 'medula-theme' ),
-			'singular_name' => __( 'Custom Tag', 'medula-theme' ),
-			'search_items' =>  __( 'Search Custom Tags', 'medula-theme' ),
-			'all_items' => __( 'All Custom Tags', 'medula-theme' ),
-			'parent_item' => __( 'Parent Custom Tag', 'medula-theme' ),
-			'parent_item_colon' => __( 'Parent Custom Tag:', 'medula-theme' ),
-			'edit_item' => __( 'Edit Custom Tag', 'medula-theme' ),
-			'update_item' => __( 'Update Custom Tag', 'medula-theme' ),
-			'add_new_item' => __( 'Add New Custom Tag', 'medula-theme' ),
-			'new_item_name' => __( 'New Custom Tag Name', 'medula-theme' )
-		),
-		'show_admin_column' => true,
-		'show_ui' => true,
-		'query_var' => true,
-	)
-); 
-/**/
 
 

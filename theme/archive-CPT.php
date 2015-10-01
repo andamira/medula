@@ -8,6 +8,9 @@
  * For Example, if your custom post type is called "register_post_type( 'bookmarks')",
  * then your template name should be archive-bookmarks.php
  *
+ * Be aware of 'CTCAT' and 'CTTAG' in the entry footer (two example custom taxonomies for
+ * categories and tags, created in Plugin/taxonomies.php
+ *
  * @link http://codex.wordpress.org/Post_Type_Templates
 */
 ?>
@@ -48,7 +51,7 @@ if ( defined( 'TOOLSET_LAYOUTS' ) && TOOLSET_LAYOUTS ) {
 
 				<footer class="entry-footer">
 					<?php medula_comments_count( true ); ?>
-					<div class="entry-meta"><?php medula_entry_meta_tags('custom_tag'); medula_entry_meta_categories('custom_cat'); ?></div>
+					<div class="entry-meta"><?php medula_entry_meta_tags('CTTAG'); medula_entry_meta_categories('CTCAT'); ?></div>
 				</footer>
 
 			</article>

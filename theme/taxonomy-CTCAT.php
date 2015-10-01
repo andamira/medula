@@ -8,6 +8,9 @@
  * For Example, if your custom taxonomy is called "register_taxonomy('shoes')",
  * then your template name should be taxonomy-shoes.php
  *
+ * Be aware of 'CTCAT' and 'CTTAG' in the entry footer (two example custom taxonomies for
+ * categories and tags, created in Plugin/taxonomies.php
+ *
  * @link http://codex.wordpress.org/Post_Type_Templates#Displaying_Custom_Taxonomies
  */
 ?>
@@ -54,7 +57,7 @@ if ( defined( 'TOOLSET_LAYOUTS' ) && TOOLSET_LAYOUTS ) {
 				</section>
 
 				<footer class="article-footer">
-					<div class="entry-meta"><?php medula_entry_meta_tags( 'custom_tag' ); medula_entry_meta_categories( 'custom_cat' ); ?></div>
+					<div class="entry-meta"><?php medula_entry_meta_tags( 'CTTAG' ); medula_entry_meta_categories( 'CTCAT' ); ?></div>
 				</footer>
 
 			</article>
