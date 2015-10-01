@@ -10,9 +10,6 @@
     "sassy-maps": "*",
     "modernizr": "*",
     "jQuery.mmenu": "*",
-    "nwmatcher": "*",
-    "respond": "*",
-    "selectivizr": "*",
     "animate-sass": "*"
   },
   "ignore": [ "" ],
@@ -31,15 +28,6 @@
     ],
     "modernizr": [
       "modernizr.js"
-    ],
-    "nwmatcher": [
-      "src/**/*.js"
-    ],
-    "selectivizr": [
-      "selectivizr.js"
-    ],
-    "respond": [
-      "dest/*.js"
     ]
   }
 }
