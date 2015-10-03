@@ -54,7 +54,7 @@ function medula_admin_area_favicon() {
  * 3 ICONS COLLECTIONS
  * ************************************************************
  *
- * Uncomment the fonticons libraries you want to use
+ * Uncomment the fonticons libraries you want to use in the frontend
  */
 
 add_action( 'wp_enqueue_scripts', 'icons_collections' );
@@ -64,13 +64,13 @@ function icons_collections() {
 	 * DASHICONS
 	 * @link https://developer.wordpress.org/resource/dashicons/
 	 */
-	wp_enqueue_style( 'dashicons', get_stylesheet_uri(), array('dashicons'), '1.0.4' );
+	wp_enqueue_style( 'dashicons', get_stylesheet_uri(), array('dashicons') );
 
 	/**
 	 * FONT AWESOME
 	 * @link http://fortawesome.github.io/Font-Awesome/get-started/
 	 */
-	# wp_enqueue_style( 'fontawesome', '//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css', null, '4.3.0' );
+	# wp_enqueue_style( 'fontawesome', '//maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css', null, '4.4.0' );
 }
 
 

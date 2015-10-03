@@ -105,7 +105,7 @@ require_once( 'lib/admin.php' );           // ( ) enabled by default
 
 require_once( 'lib/icons.php' );           // 
 require_once( 'lib/fonts.php' );           // 
-require_once( 'lib/navigation.php' );           // 
+require_once( 'lib/navigation.php' );      // 
 require_once( 'lib/theme-customize.php' ); // 
 require_once( 'lib/sidebars.php' );        // 
 require_once( 'lib/thumbnails.php' );      // 
@@ -171,14 +171,13 @@ include_once( 'lib/vendor.php' );
  *
  * This is a very simple plugin template embedded in Médula
  *
- * This enables functionality that scapes the scope
+ * This enables the functionality that escapes the scope
  * of the theme: Custom post types, shortcodes, etc.
  *
  * You must customize the included file (and the files
  * it itself includes) to your particular needs.
  *
- * Remember:
- * You should make this a standalone plugin.
+ * You probably should make this a standalone plugin.
  * See the wiki for instructions:
  *
  * @link https://github.com/andamira/medula/wiki/Plugin
