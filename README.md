@@ -1,4 +1,4 @@
-# &nbsp;<img src="https://raw.githubusercontent.com/andamira/medula/master/src/img/apple-touch-icon.png" width="32" height="32"> Médula
+# Médula <img src="https://raw.githubusercontent.com/andamira/medula/master/src/img/apple-touch-icon.png" width="24" height="24">
 
 **Starter Theme & Plugin for WordPress**
 
@@ -31,30 +31,33 @@
 
 	1. Install [Node.js and update npm](https://docs.npmjs.com/getting-started/installing-node)
 
-	```
-	sudo apt-get install nodejs
-	sudo npm install -g npm
-	```
+		```
+		sudo apt-get install nodejs
+		sudo npm install -g npm
+		```
 
 	1. Install [Gulp](https://github.com/gulpjs/gulp/blob/master/docs/getting-started.md) and [Bower](hnpm ttps://www.npmjs.com/package/bower)
 
-	`sudo npm install -g gulp bower`
+		`sudo npm install -g gulp bower`
 
 	1. Install the project dependencies from the root folder (where the files`package.json` & `bower.json` are located)
-	```
-	cd medula-master
-	npm install && bower install
-	```
+	
+		```
+		cd medula-master
+		npm install && bower install
+		```
 
 1. Customize your theme name and other details in the [theme stylesheet](https://codex.wordpress.org/Theme_Development#Theme_Stylesheet): `/theme/style.css`
 
-1. Rename the target theme directory in the file: `/src/sass/dependencies/_global.scss` section 3.1
+1. Rename the target theme directory in the file: `/src/sass/dependencies/_global.scss` (3.1)
 
-1. You can put your custom favicons in `/src/img/` and increase the icon version number in `/theme/lib/icons.php` section 1
+1. You can overwrite the default favicons in `/src/img/` and everytime you update them, increase the icon version number in `/theme/lib/icons.php`
 
-1. To compile the project use `gulp --dev` during development and `gulp` for production
+1. To compile the project you may use `gulp --dev` during development and `gulp` for production
 
-1. To install theme you can copy, send, or symlink the `theme/` directory into the WordPress themes directory, giving the target theme folder the custom name you configured before.
+1. To install theme you can copy, send, or symlink the `theme/` directory into the WordPress themes directory, giving the target theme folder the custom name you configured before
+
+1. You can explore and start making changes yourself, you can take a look to the `theme/functions.php` file to get a good idea on how this starter theme is structured, and you can visit the [Wiki](https://github.com/andamira/medula/wiki) for more information.
 
 
 ## Contributing
