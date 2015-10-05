@@ -57,7 +57,11 @@
 
 1. To install theme you can copy, send, or symlink the `theme/` directory into the WordPress themes directory, giving the target theme folder the custom name you configured before
 
-1. You can explore and start making changes yourself, you can take a look to the `theme/functions.php` file to get a good idea on how this starter theme is structured, and you can visit the [Wiki](https://github.com/andamira/medula/wiki) for more information.
+
+## Documentation
+
+- You can find more information in the [Médula Wiki](https://github.com/andamira/medula/wiki)
+- You could also take a look to the `theme/functions.php` file to get an idea on how the theme is structured, and the included files from there.
 
 
 ## Contributing

@@ -1,0 +1,17 @@
+#!/bin/sh
+#
+# This script is called from .bowerrc and automatically runs after `bower install`
+
+# NOTE: The packages downloaded by bower in this directory wont be copied to the theme
+# folder. If the theme needs to load any of them in production you must modify the
+# gulpfile.js file in order to copy them to the appropiate subfolder under /src/ 
+
+DIR="vendor-dl/"
+
+
+##
+# 1 PREEN PACKAGES
+#
+preen
+
+
