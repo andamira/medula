@@ -50,8 +50,8 @@ if ( defined( 'TOOLSET_LAYOUTS' ) && TOOLSET_LAYOUTS ) {
 
 	</main>
 
-	<?php get_sidebar(); ?>
+	<?php
+	get_sidebar();
+	get_footer();
 
-	<?php get_footer(); ?>
-
-}
+// TOOLSET_LAYOUTS

@@ -65,4 +65,4 @@ if ( defined( 'TOOLSET_LAYOUTS' ) && TOOLSET_LAYOUTS ) {
 	get_sidebar();
 	get_footer();
 
-}
+} // TOOLSET_LAYOUTS

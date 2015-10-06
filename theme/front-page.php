@@ -43,4 +43,4 @@ if ( defined( 'TOOLSET_LAYOUTS' ) && TOOLSET_LAYOUTS ) {
 <?php
 	get_footer();
 
-}
+} // TOOLSET_LAYOUTS
