@@ -17,8 +17,7 @@
  *
  */
 add_theme_support( 'post-thumbnails' );
-
-set_post_thumbnail_size(125, 125, true);
+#set_post_thumbnail_size(125, 125, true);
 
 
 /**
