@@ -285,6 +285,14 @@ body {
 	///
 	/// 2.8.4 IMG
 	///
+	
+	img,
+	a img,
+	figure {
+		max-width: 100%;
+		height: auto;
+	}
+
 	img {}
 
 	a img {}
