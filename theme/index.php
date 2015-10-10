@@ -1,57 +1,47 @@
 <?php
-if ( defined( 'TOOLSET_LAYOUTS' ) && TOOLSET_LAYOUTS ) {
+if (medula_toolset_layout()) {return;}
 
-	if ( function_exists( 'the_ddlayout' ) ) { 
-		get_header('layouts');
-		the_ddlayout();
-		//the_ddlayout( 'default-layout', array('post-content-callback' => 'function_name', 'allow_overrides' => 'false') );
-		get_footer('layouts');
-	}
+get_header();
+?>
 
-} else {
+<main role="main">
 
-	get_header(); ?>
+	<header class="page-header">
+		<h1 class="page-title"><?php $t= get_queried_object(); echo $t->post_title; ?></h1>
+	</header>
 
-	<main role="main">
+	<?php if (have_posts()) : while (have_posts()) : the_post(); ?>
 
-		<header class="page-header">
-			<h1 class="page-title"><?php $t= get_queried_object(); echo $t->post_title; ?></h1>
-		</header>
+		<article id="post-<?php the_ID(); ?>" <?php post_class(); ?> role="article">
 
-		<?php if (have_posts()) : while (have_posts()) : the_post(); ?>
+			<header class="entry-header">
+				<?php medula_entry_title( 'h2', true ); ?>
+				<div class="entry-meta"><?php medula_entry_meta_byline(); ?></div>
+			</header>
 
-			<article id="post-<?php the_ID(); ?>" <?php post_class(); ?> role="article">
+			<section class="entry-content">
+				<?php the_content(); ?>
+			</section>
 
-				<header class="entry-header">
-					<?php medula_entry_title( 'h2', true ); ?>
-					<div class="entry-meta"><?php medula_entry_meta_byline(); ?></div>
-				</header>
+			<footer class="entry-footer">
+				<?php medula_comments_count( true ); ?>
+				<div class="entry-meta"><?php medula_entry_meta_tags(); medula_entry_meta_categories(); ?></div>
+			</footer>
 
-				<section class="entry-content">
-					<?php the_content(); ?>
-				</section>
+		</article>
 
-				<footer class="entry-footer">
-					<?php medula_comments_count( true ); ?>
-					<div class="entry-meta"><?php medula_entry_meta_tags(); medula_entry_meta_categories(); ?></div>
-				</footer>
+	<?php endwhile; ?>
 
-			</article>
+			<?php medula_page_navi(); ?>
 
-		<?php endwhile; ?>
+	<?php else : ?>
 
-				<?php medula_page_navi(); ?>
+		<?php medula_no_post_found( basename( __FILE__ ) ); ?>
 
-		<?php else : ?>
+	<?php endif; ?>
 
-			<?php medula_no_post_found( basename( __FILE__ ) ); ?>
+</main>
 
-		<?php endif; ?>
-
-	</main>
-
-	<?php
-	get_sidebar();
-	get_footer();
-
-// TOOLSET_LAYOUTS
+<?php
+get_sidebar();
+get_footer();

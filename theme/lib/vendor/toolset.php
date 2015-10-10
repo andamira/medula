@@ -4,13 +4,11 @@
  *
  *     1 Toolset Layouts
  *
- *         1.1 Helper functions
+ *         1.1 Load Layout in Template
  *         1.2 Load Custom Cells Layouts
  *         1.3 Load Custom Theme Layouts
  *
  *     2 Disable Toolset CSS & JS
- *
- *     3 Disable edit post link
  *
  *
  * @link http://wp-types.com Toolset
@@ -21,27 +19,28 @@
  *
  */
 
+define( 'TOOLSET_LAYOUTS', true );
+
 /**
- * 1.1 Helper functions
+ * 1.1 Load Toolset Layout in Template
  */
-//Helper function to check if Layouts is activated
-if (!function_exists('wpbootstrap_toolset_layouts_activated')) {
+function medula_toolset_layout($layout = '') {
 
-	function wpbootstrap_toolset_layouts_activated() {
+	if ( defined( 'TOOLSET_LAYOUTS') && TOOLSET_LAYOUTS && function_exists( 'the_ddlayout' ) ) {
 
-		$activated=false;
-	 
-		if( defined('WPDDL_VERSION') ) {
-			global $wpddlayout;
+		get_header('layouts');
 
-			if (is_object($wpddlayout))  {
-				$activated=true;
-			}
-		}
-		return $activated;
-	}	
+		the_ddlayout($layout);
+		//the_ddlayout( $layout, array('post-content-callback' => 'function_name', 'allow_overrides' => 'false') );
+
+		get_footer('layouts');
+
+		return(true);
+
+	} else {
+		return(false);
+	}
 }
-
 
 /**
  * 1.2 Custom Cells
@@ -93,12 +92,5 @@ function prefix_remove_views_assets() {
 	// wpv-pagination.css -used in Views pagination
 	wp_deregister_style( 'views-pagination-style' );
 }
-
-
-/**
- * 3 Disable edit post link
- */
-
-add_filter( 'edit_post_link', '__return_false' );
 
 

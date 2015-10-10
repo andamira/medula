@@ -6,8 +6,7 @@
  *
  *     1 Global Options
  *
- *         1.1 Toolset Layouts                  (#)
- *         1.2 Optimization                     (#)
+ *         1.1 Optimization                     (#)
  *
  *     2 Theme Functionlity
  *
@@ -67,15 +66,7 @@
  */
 
 /**
- * 1.1 TOOLSET LAYOUTS
- *
- *
- */
-
-# define( 'TOOLSET_LAYOUTS', true );   // (#) disabled by default
-
-/**
- * 1.2 OPTIMIZATION
+ * 1.1 OPTIMIZATION
  *
  *
  * @see medula_cleanup_all()
