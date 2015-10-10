@@ -1,40 +1,60 @@
 <?php
 /**
- * EXTERNAL LIBRARIES & PLUGINS TEMPLATES
+ * External Libraries & Plugins Templates
  *
- *     1 SPECIFIC PLUGINS
+ *     1 Templates Overriding
  *
- *         1.1 WPML
- *         1.2 TOOLSET
- *         1.3 WOOCOMMERCE
+ *     2 Specific Plugins
  *
- *     2 EXT. FIXES
+ *         2.1 WPML
+ *         2.2 Toolset
+ *         2.3 WooCommerce
  *
- *     3 DOWNLOADED LIBRARIES
+ *     3 Misc. Fixes 
+ *
+ *     4 Downloaded Libraries
  */
 
 
 /**
- * 2 SPECIFIC PLUGINS SUPPORT
+ * 1 TEMPLATES OVERRIDING
+ * ************************************************************
+ * Currently only Toolset Layouts is supported
+ */
+function medula_template_override($layout = '') {
+
+ 	// You must enable the Toolset suite in section 2.2
+	//
+	if ( function_exists('medula_toolset_layout') ) {
+		return( medula_toolset_layout($layout) ); 
+
+	} else {
+		return(false);
+	}
+}
+
+
+/**
+ * 2 SPECIFIC PLUGINS THEME SUPPORT
  * ************************************************************
  */
 
 /**
- * 1.1 WPML
+ * 2.1 WPML
  *
  * @link http://wpml.org/
  */
 # include_once( 'vendor/wpml.php' );
 
 /**
- * 1.2 TOOLSET
+ * 2.2 TOOLSET
  *
  * @link http://wp-types.org/ Toolset
  */
 # include_once( 'vendor/toolset.php' );
 
 /**
- * 1.3 WOOCOMMERCE
+ * 2.3 WOOCOMMERCE
  *
  * @link http://www.woothemes.com/woocommerce/
  */

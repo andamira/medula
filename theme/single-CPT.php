@@ -12,7 +12,7 @@
 ?>
 
 <?php
-if ( medula_toolset_layout('') ) { return; }
+if ( medula_template_override('') ) { return; }
 
 get_header();
 ?>

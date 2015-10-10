@@ -16,9 +16,17 @@
 
 /**
  * 1 Toolset Layouts Theme Support
+ * 
+ * In order to use the Layouts plugin you'll have to:
+ * do some preparations:
  *
+ * a) ... bower
+ * b) ... gulp
+ * c) ... sass
+ *
+ * NOTE: you can disable the loading of the Layouts templates
+ * by commenting the next line which defines TOOLSET_LAYOUTS:
  */
-
 define( 'TOOLSET_LAYOUTS', true );
 
 /**
