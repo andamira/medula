@@ -26,7 +26,7 @@
  * 2 Fix problems with external libraries & plugins
  * ************************************************************
  */
-# include_once( 'vendor/fixes.php' );
+include_once( 'vendor/fixes.php' );
 
 
 /**
