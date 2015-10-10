@@ -8,12 +8,11 @@
 
 - It is Mobile First and progresively enhanced.
 - It is modular, versatile, and simple enough.
-- It incorporates a minimal plugin framework.
 - It has a clear and well commented structure.
-- Uses a Plain Procedural Programming Paradigm.
-- Includes some support for common plugins.
+- It incorporates a minimal plugin framework.
+- It uses a procedural programming structure.
 
-## Makes use of
+## Dependencies
 
 - [NPM](https://www.npmjs.com/) & [Gulp](http://gulpjs.com/) for building the project
 - [Bower](http://bower.io/) for managing the vendor libraries
@@ -63,7 +62,7 @@
 ## Documentation
 
 - You can find more information in the [Médula Wiki](https://github.com/andamira/medula/wiki)
-- You could also take a look to the `theme/functions.php` file to get an idea on how the theme is structured, and the included files from there.
+- You could also take a look to the `theme/functions.php` file to get an idea on how the theme is structured, and follow the included files from there.
 
 
 ## Contributing
