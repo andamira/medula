@@ -98,7 +98,7 @@ function medula_login_css() {
 }
 
 // changing the logo link from wordpress.org to your site
-function medula_login_url() {  return home_url(); }
+function medula_login_url() { return home_url(); }
 
 // changing the alt text on the logo to show your site name
 function medula_login_title() { return get_option( 'blogname' ); }
@@ -138,7 +138,17 @@ add_editor_style( get_template_directory_uri() . '/css/admin/editor-style.css' )
  * 4.4 Changing text in footer of admin
  */
 function medula_custom_admin_footer() {
-	_e( '<span id="footer-thankyou">Developed by <a href="http://yoursite.com" target="_blank">Your Site Name</a></span>. Built using <a class="andamira" href="http://andamira.net/medula" target="_blank">andamira Médula</a>.', 'medula-theme' );
+	$your_site_name="Your Site Name";
+	$your_site_url="http://yourwebsite.com";
+
+	printf(
+		'<span id="footer-thankyou">' . esc_html__( 'Developed by %1$s', 'medula-theme' ) . '</span>.',
+		'<a href="' . $your_site_url . '">' . $your_site_name . '</a>'
+	);
+	printf(
+		esc_html__('Built using %s.', 'medula-theme'),
+		'<a class="andamira" href="https://github.com/andamira/medula" target="_blank">andamira Médula</a>'
+	);
 }
 add_filter( 'admin_footer_text', 'medula_custom_admin_footer' );
 
