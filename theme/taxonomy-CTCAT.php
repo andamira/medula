@@ -1,22 +1,18 @@
 <?php
 /**
- * CUSTOM POST TYPE TAXONOMY TEMPLATE
+ * Custom Post Type Taxonomy Template
  *
- * This is the custom post type taxonomy template. If you edit the custom taxonomy name,
- * you've got to change the name of this template to reflect that name change.
+ * The name of this template should reflect the slug of your custom post type.
  *
- * For Example, if your custom taxonomy is called "register_taxonomy('shoes')",
- * then your template name should be taxonomy-shoes.php
- *
- * Be aware of 'CTCAT' and 'CTTAG' in the entry footer (two example custom taxonomies for
- * categories and tags, created in Plugin/taxonomies.php
+ * Be aware of 'CTCAT' and 'CTTAG' in the footre entry-meta (two example custom
+ * taxonomies for categories and tags, created in /theme/Plugin/taxonomies.php
  *
  * @link http://codex.wordpress.org/Post_Type_Templates#Displaying_Custom_Taxonomies
  */
 ?>
 
 <?php
-if (medula_toolset_layout()) {return;}
+if ( medula_toolset_layout('') ) { return; }
 
 get_header();
 ?>
@@ -32,18 +28,12 @@ get_header();
 		<article id="post-<?php the_ID(); ?>" <?php post_class(); ?> role="article">
 
 			<header class="article-header">
-
 				<?php medula_entry_title( 'h2', true ); ?>
-
-				<p class="byline vcard">
-					<div class="entry-meta"><?php medula_entry_meta_byline(); medula_entry_meta_tags() ?></div>
-				</p>
-
+				<div class="entry-meta"><?php medula_entry_meta_byline(); medula_entry_meta_tags() ?></div>
 			</header>
 
 			<section class="entry-content">
 				<?php the_excerpt( '<span class="read-more">' . __( 'Read More &raquo;', 'medula-theme' ) . '</span>' ); ?>
-
 			</section>
 
 			<footer class="article-footer">

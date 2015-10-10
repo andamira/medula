@@ -2,7 +2,6 @@
 /**
  * Not Found template
  *
- *
  */
 
 function medula_no_post_found( $template ) {
@@ -18,6 +17,5 @@ function medula_no_post_found( $template ) {
 			<p class="alert-error"><?php printf( __( 'This is the error message in the %1$s template.', 'medula-theme' ), $template ); ?></p>
 		</footer>
 	</article>
-<?php }
-
-
+<?php
+}

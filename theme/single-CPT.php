@@ -1,22 +1,18 @@
 <?php
 /**
- * CUSTOM POST TYPE TEMPLATE
+ * Custom Post Type Single Template
  *
- * This is the custom post type post template. If you edit the post type name, you've got
- * to change the name of this template to reflect that name change.
+ * The name of this template should reflect the slug of your custom post type.
  *
- * For Example, if your custom post type is "register_post_type( 'bookmarks')",
- * then your single template should be single-bookmarks.php
- *
- * Be aware of 'CTCAT' and 'CTTAG' in the entry footer (two example custom taxonomies for
- * categories and tags, created in Plugin/taxonomies.php
+ * Be aware of 'CTCAT' and 'CTTAG' in the footre entry-meta (two example custom
+ * taxonomies for categories and tags, created in /theme/Plugin/taxonomies.php
  *
  * @link http://codex.wordpress.org/Post_Type_Templates
  */
 ?>
 
 <?php
-if (medula_toolset_layout()) {return;}
+if ( medula_toolset_layout('') ) { return; }
 
 get_header();
 ?>

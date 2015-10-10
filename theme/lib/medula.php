@@ -13,7 +13,7 @@
  *
  *         2.1 Custom Background
  *         2.2 Title Tag
- *         2.3 Feed Links              (#)
+ *         2.3 Feed Links
  *         2.4 HTML5
  *
  *         2.5 Maximum Content Witdh
@@ -114,7 +114,7 @@ function medula_theme_support() {
 	 *
 	 * Enables post and comment RSS feed links to head.
 	 */
-	# add_theme_support('automatic-feed-links');              // (#) disabled by default
+	add_theme_support( 'automatic-feed-links' );
 
 	/**
 	 * 2.4 HTML5 SUPPORT

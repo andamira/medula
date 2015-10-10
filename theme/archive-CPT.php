@@ -1,22 +1,18 @@
 <?php
 /**
- * CUSTOM POST TYPE ARCHIVE TEMPLATE
+ * Custom Post Type Archive Template
  *
- * This is the custom post type archive template. If you edit the custom post type name,
- * you've got to change the name of this template to reflect that name change.
+ * The name of this template should reflect the slug of your custom post type.
  *
- * For Example, if your custom post type is called "register_post_type( 'bookmarks')",
- * then your template name should be archive-bookmarks.php
- *
- * Be aware of 'CTCAT' and 'CTTAG' in the entry footer (two example custom taxonomies for
- * categories and tags, created in Plugin/taxonomies.php
+ * Be aware of 'CTCAT' and 'CTTAG' in the footre entry-meta (two example custom
+ * taxonomies for categories and tags, created in /theme/Plugin/taxonomies.php
  *
  * @link http://codex.wordpress.org/Post_Type_Templates
 */
 ?>
 
 <?php
-if (medula_toolset_layout()) {return;}
+if ( medula_toolset_layout('') ) { return; }
 
 get_header();
 ?>
@@ -24,7 +20,7 @@ get_header();
 <main role="main">
 
 	<header class="page-header">
-		<h1 class="page-title"> <?php post_type_archive_title(); ?></h1>
+		<h1 class="page-title"><?php post_type_archive_title(); ?></h1>
 	</header>
 
 	<?php if (have_posts()) : while (have_posts()) : the_post(); ?>

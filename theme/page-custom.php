@@ -2,8 +2,8 @@
 /**
  * Template Name: Custom Template Example
  *
- * This is your custom page template. You can create as many of these as you need.
- * Simply name the file "page-whatever.php" and change the "Template Name" title
+ * You can create as many of these custom templates as you need. Simply
+ * name the file "page-whatever.php" and change the "Template Name" title
  * at the top, to the one you desire.
  *
  * When you create your page, you can just select the template from the metabox.
@@ -13,7 +13,7 @@
 ?>
 
 <?php
-if (medula_toolset_layout()) {return;}
+if ( medula_toolset_layout('') ) { return; }
 
 get_header();
 ?>
