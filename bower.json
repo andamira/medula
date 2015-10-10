@@ -1,14 +1,12 @@
 {
   "name": "Medula",
-  "version": "0.4.6",
-  "dependencies": {},
   "devDependencies": {
     "normalize.css": "*",
-    "bootstrap-sass-official": "*",
     "susy": "*",
     "include-media": "*",
     "sassy-maps": "*",
     "modernizr": "*",
+    "bootstrap-sass-official": "*",
     "jQuery.mmenu": "*",
     "animate-sass": "*"
   },

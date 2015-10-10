@@ -185,10 +185,13 @@ gulp.task('compile-sass', function () {
 		// .pipe(print()) // DEBUG
 
 		// Preprocess
+		// @link https://www.npmjs.com/package/node-sass#options
 		.pipe( sass({
 			errLogToConsole: true,
 			style: sassStyle,
 			precision: 10,
+			indentType: 'tab',
+			indentWidth: 1,
 			sourceComments: false
 		})).on( "error", gutil.log)
 

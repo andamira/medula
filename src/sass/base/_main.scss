@@ -207,6 +207,14 @@ body {
 			}
 }
 
+
+// TEMP
+article.sticky { // [theme_check]
+	border: 2px solid $orange;
+	border-radius: 0.5rem;
+	padding: 1rem;
+}
+
 ///
 /// 2.8 ENTRY CONTENT
 ///
@@ -412,7 +420,7 @@ body {
 		}
 	}
 
-}
+} // entry-content
 
 	.gallery-item {
 		display: inline-block;

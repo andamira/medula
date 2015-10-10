@@ -1,15 +1,12 @@
 /*!
- * Theme Name: Médula Starter Theme
+ * Theme Name: Medula
  * Theme URI: https://github.com/andamira/medula
- * Description: Starter Theme & Plugin for WordPress
- * Version: 0.4.6
- * Author: andamira (@andamira_net)
+ * Description: Starter Theme & Plugin for WordPress >=4.3
+ * Version: 0.4.7
+ * Author: andamira
  * Author URI: https://andamira.net
  * Text Domain: medula-theme
  * License: MIT
  * License URI: http://opensource.org/licenses/MIT
+ * Tags: starter-theme, starter, framework, flexible, modular, flexible, structured, clear, simple, clear, zen, minimal, versatile, responsive, mobile-first, custom-admin, smart-header, developer, code, procedural, programming, functional, toolset, layouts, npm, bower, gulp, sass, susy, include-media
  */
-
-.sticky {}
-.gallery-caption {}
-.bypostauthor {}

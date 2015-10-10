@@ -16,7 +16,9 @@
 ///
 .comments-list {
 
-	.bypostauthor {}
+	.bypostauthor { // [theme_check]
+		border: inherit;
+	}
 	.byuser {}
 	.comment-author-admin {}
 	.pingback {}
