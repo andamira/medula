@@ -1,19 +1,21 @@
-# Médula <img src="https://raw.githubusercontent.com/andamira/medula/master/src/img/apple-touch-icon.png" width="24" height="24">
+# Médula
+
+![logo](src/img/apple-touch-icon.png)
 
 **Starter Theme & Plugin for WordPress**
 
 ## Features
 
-- A clean starting point for a WordPress theme.
 - It is Mobile First and progresively enhanced.
-- It has included a minimal plugin framework.
 - It is modular, versatile, and simple enough.
+- It incorporates a minimal plugin framework.
 - It has a clear and well commented structure.
-- Already includes templates for common plugins.
+- Uses a Plain Procedural Programming Paradigm.
+- Includes some support for common plugins.
 
 ## Makes use of
 
-- [Gulp](http://gulpjs.com/) for building the project
+- [NPM](https://www.npmjs.com/) & [Gulp](http://gulpjs.com/) for building the project
 - [Bower](http://bower.io/) for managing the vendor libraries
 - [Sass](http://sass-lang.com/) for creating the stylesheets
 - [Susy](http://susy.oddbird.net/) for the responsive grid
@@ -49,7 +51,7 @@
 
 1. Customize your theme name and other details in the [theme stylesheet](https://codex.wordpress.org/Theme_Development#Theme_Stylesheet): `/theme/style.css`
 
-1. Rename the target theme directory in the file: `/src/sass/dependencies/_global.scss` (3.1)
+1. Rename the target theme directory in the file: `/src/sass/dependencies/_global.scss` `[3.1]`
 
 1. You can overwrite the default favicons in `/src/img/` and everytime you update them, increase the icon version number in `/theme/lib/icons.php`
 
@@ -72,7 +74,4 @@ _This project is still going through strong changes. But feel free to [submit bu
 ## Licenses
 
 Original Code is licensed under the [MIT License](https://github.com/andamira/medula/blob/master/LICENSE.md).
-
-Images are licensed under [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/).
-
 

@@ -15,6 +15,7 @@
  * 1 THEME SUPPORT & DEFAULT THUMB SIZE
  * ************************************************************
  *
+ * @link https://codex.wordpress.org/Post_Thumbnails
  */
 add_theme_support( 'post-thumbnails' );
 #set_post_thumbnail_size(125, 125, true);
