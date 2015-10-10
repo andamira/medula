@@ -134,7 +134,7 @@ function medula_register_settings() {
 /**
  * 3 CALLBACK FUNCTIONS
  * ************************************************************
- */ 
+ */
 
 /**
  * 3.1 THEME PAGE
@@ -153,7 +153,7 @@ function medula_theme_page() {
 			do_settings_sections('medula_theme_options.php');
 			?>
 			<p class="submit">
-				<input type="submit" class="button-primary" value="<?php _e('Save Changes') ?>" />
+				<input type="submit" class="button-primary" value="<?php _e('Save Changes', 'medula-theme') ?>" />
 			</p>
 		</form>
 	</div>
@@ -165,7 +165,7 @@ function medula_theme_page() {
  *
  * Function to add extra text to display on each section
  */
-function medula_display_section( $section ) { 
+function medula_display_section( $section ) {
 
 }
 
@@ -187,12 +187,12 @@ function medula_display_settings( $args ) {
 
 	switch ( $type ) {
 	case 'text':
-			// Sanitize Input
-			//$options[$id] = stripslashes($options[$id]);
-			//$options[$id] = esc_attr( $options[$id]);
+		// Sanitize Input
+		//$options[$id] = stripslashes($options[$id]);
+		//$options[$id] = esc_attr( $options[$id]);
 
-			echo "<input class='regular-text $class' type='text' id='$id' name='" . $option_name . "[$id]' size='100' value='" . $options[$id] . "' />";
-			echo ($desc != '') ? "<br /><span class='description'>$desc</span>" : "";
+		echo "<input class='regular-text $class' type='text' id='$id' name='" . $option_name . "[$id]' size='100' value='" . $options[$id] . "' />";
+		echo ($desc != '') ? "<br /><span class='description'>$desc</span>" : "";
 		break;
 	}
 }
@@ -220,6 +220,4 @@ function medula_validate_settings($input) {
 
 	return $input;
 }
-
-
 

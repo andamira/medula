@@ -146,7 +146,7 @@ function medula_custom_admin_footer() {
 		'<a href="' . $your_site_url . '">' . $your_site_name . '</a>'
 	);
 	printf(
-		esc_html__('Built using %s.', 'medula-theme'),
+		' ' . esc_html__('Built using %s.', 'medula-theme'),
 		'<a class="andamira" href="https://github.com/andamira/medula" target="_blank">andamira Médula</a>'
 	);
 }
