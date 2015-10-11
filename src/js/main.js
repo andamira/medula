@@ -48,6 +48,7 @@ jQuery(document).ready(function($) {
 	 *
 	 * @link http://mmenu.frebsite.nl/documentation/
 	 */
+	/*
 	$("#mmenu").mmenu({     // OPTIONS
 		// ---------------------------
 
@@ -76,7 +77,7 @@ jQuery(document).ready(function($) {
 			"pageSelector": "#page-wrapper"
 		}
 
-	});
+	});/**/
 
 
 	/**

@@ -23,7 +23,7 @@ add_theme_support( 'menus' );
 register_nav_menus(
 	array(
 		'site-main-nav' => __( 'The Main Menu', 'medula-theme' ),        // main nav in header
-		'site-mmenu-nav' => __( 'MMenu (Mobile) Menu', 'medula-theme' ), // mmenu for mobile
+		//'site-mmenu-nav' => __( 'MMenu (Mobile) Menu', 'medula-theme' ), // mmenu for mobile
 		'site-footer-nav' => __( 'The Footer Menu', 'medula-theme' )     // links in the footer
 	)
 );
@@ -59,6 +59,7 @@ function medula_site_main_nav() {
 	));
 }
 
+/*
 // MMenu (Mobile Menu)
 function medula_site_mmenu_nav() {
 	wp_nav_menu(array(
@@ -77,7 +78,7 @@ function medula_site_mmenu_nav() {
 		'fallback_cb' => '',
 		'walker' => '',
 	));
-}
+} /**/
 
 // The Footer Links
 function medula_site_footer_nav() {

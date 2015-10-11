@@ -3,11 +3,11 @@
  * Plugin Name: Medula Plugin
  * Plugin URI: https://github.com/andamira/medula/
  * Description: This is a minimal plugin template that accompains Médula (Starter) Theme
- * Version 0.4.8
+ * Version 0.4.10
  * Author: andamira
  * Author URI: http://andamira.net
  * Text Domain: medula-plugin
- * Tags: starter-plugin, starter, simple, clear, minimal, fleible, zen, developer, code, procedural, programming, functional
+ * Tags: starter-plugin, starter, simple, minimal, flexible, developer, code, procedural, programming, functional
  *
  *
  * This plugin framework is very simple and procedural.

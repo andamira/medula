@@ -78,7 +78,7 @@ var source = {
 		// 'vendor-dl/picturefill/dist/picturefill.js',           // PictureFill       -
 
 		/// Navigation
-		'vendor-dl/jQuery.mmenu/dist/core/js/jquery.mmenu.min.all.js',  // MMenu             mmenu.frebsite.nl
+		// 'vendor-dl/jQuery.mmenu/dist/core/js/jquery.mmenu.min.all.js',  // MMenu             mmenu.frebsite.nl
 		// 'vendor-dl/jQuery.mmenu/dist/core/css/jquery.mmenu.all.css',
 
 		/// Maps
@@ -200,7 +200,7 @@ gulp.task('compile-sass', function () {
 		.pipe(filter_frontend_style)
 			.pipe(addsrc.prepend(source.vendor)) // add it before your code so it can be overruled
 			.pipe(filter_css)
-			.pipe(addsrc.prepend('theme/style.css')) // theme info comment
+			//.pipe(addsrc.prepend('theme/style.css')) // prepend theme info comment
 				// .pipe(print()) // DEBUG
 				.pipe(concat('main.css'))
 		.pipe(filter_frontend_style.restore)

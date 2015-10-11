@@ -35,9 +35,11 @@
 
 		<header class="site-header" role="banner">
 
+			<?php /*
 			<a class="mmenu-button" href="#mmenu" >
 				<i class="dashicons dashicons-menu"></i>
 			</a>
+			/**/ ?>
 
 			<?php // to use a image just replace the bloginfo('name') with your img src ?>
 			<div class="site-header-logo"><a href="<?php echo home_url(); ?>" rel="nofollow">

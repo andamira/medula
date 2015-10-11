@@ -28,9 +28,9 @@
 
 		</div> <?php // (#page-wrapper) opening tag in header.php ?>
 
-		<?php // MMenu (Mobile) Menu. The last so it doesn't get in the way ?>
-		<nav id="mmenu" class="site-mmenu-nav" role="navigation"><?php medula_site_mmenu_nav(); ?></nav>
-
+		<?php /* // MMenu (Mobile) Menu. The last so it doesn't get in the way ?>
+		<nav id="mmenu" class="site-mmenu-nav" role="navigation"><?php // medula_site_mmenu_nav(); ?></nav>
+		/**/ ?>
 	</body>
 
 </html>

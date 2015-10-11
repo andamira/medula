@@ -7,7 +7,6 @@
     "sassy-maps": "*",
     "modernizr": "*",
     "bootstrap-sass-official": "*",
-    "jQuery.mmenu": "*",
     "animate-sass": "*"
   },
   "ignore": [ "" ],
