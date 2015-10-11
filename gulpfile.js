@@ -174,7 +174,7 @@ var imagemin = require('gulp-imagemin');
 // ----------------
 gulp.task('compile-sass', function () {
 
-	var filter_frontend_style = gulpFilter( ['style.css', 'src/sass/'], {restore: true} );
+	var filter_frontend_style = gulpFilter( ['main.css', 'src/sass/'], {restore: true} );
 	var filter_css = gulpFilter( '**/*.css' );
 
 	return gulp.src(source.sass, { base: '' } )
@@ -202,7 +202,7 @@ gulp.task('compile-sass', function () {
 			.pipe(filter_css)
 			.pipe(addsrc.prepend('theme/style.css')) // theme info comment
 				// .pipe(print()) // DEBUG
-				.pipe(concat('style.css'))
+				.pipe(concat('main.css'))
 		.pipe(filter_frontend_style.restore)
 
 //		.pipe(isProduction ? gutil.noop() : sourcemaps.write({includeContent: false, sourceRoot: '../sass'})) // --dev
