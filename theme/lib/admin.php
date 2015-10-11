@@ -138,8 +138,8 @@ add_editor_style( get_template_directory_uri() . '/css/admin/editor-style.css' )
  * 4.4 Changing text in footer of admin
  */
 function medula_custom_admin_footer() {
-	$your_site_name="Your Site Name";
-	$your_site_url="http://yourwebsite.com";
+	$your_site_name="...";
+	$your_site_url="#";
 
 	printf(
 		'<span id="footer-thankyou">' . esc_html__( 'Developed by %1$s', 'medula-theme' ) . '</span>.',

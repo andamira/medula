@@ -1,8 +1,9 @@
 <?php
 /**
- * This is the functions.php file. (#) means feature disabled by default
+ * This is the functions.php file.
  *
- *     0 Readme First
+ * (#) indicates some features that are disabled by default
+ *
  *
  *     1 Global Options
  *
@@ -11,7 +12,7 @@
  *     2 Theme Functionlity
  *
  *         2.1  Core Médula library
- *         2.2  Admin Area                      ( )
+ *         2.2  Admin Area                      (#)
  *         2.3  Icons & Favicons
  *         2.4  Fonts
  *         2.5  Navigation Menus
@@ -34,28 +35,13 @@
  *
  *     4 External Libraries
  *
- *     5 Plugin Functionality                   (#)
- *
- *     6 Custom Functions, Actions & Filters
+ *     5 Custom Functions, Actions & Filters
  *
  *
  * Author: andamira
  * URL: htp://andamira.net/medula/
  *
  * @link http://codex.wordpress.org/Function_Reference/ Don't reinvent the wheel
- */
-
-
-/**
- * 0 README FIRST
- * ************************************************************
- *
- * PHP FILES:
- * @link https://make.wordpress.org/core/handbook/coding-standards/php/
- * @link http://www.phpdoc.org/docs/latest/index.html
- *
- *
- *
  */
 
 
@@ -148,42 +134,21 @@ add_action( 'after_setup_theme', 'medula_launch' );
  * 4 EXTERNAL LIBRARIES & PLUGINS
  * ************************************************************
  *
- * This file controls the inclusion of third party
- * libraries, fixes & cleanups for external libraries
- * and plugins. And specific includes for some big
- * and important plugins like WPML & WooCommerce
+ * This file controls the inclusion of third party libraries,
+ *  fixes & cleanups for external libraries
+ * and plugins. And specific includes for some big plugins 
+ * like like WPML, Toolset & WooCommerce
  */
 include_once( 'lib/vendor.php' );
 
 
 /**
- * 5 PLUGIN FUNCTIONALITY FOR MEDULA
+ * 5 CUSTOM FUNCTIONS, ACTIONS & FILTERS
  * ************************************************************
  *
- * This is a very simple plugin template embedded in Médula
- *
- * This enables the functionality that escapes the scope
- * of the theme: Custom post types, shortcodes, etc.
- *
- * You must customize the included file (and the files
- * it itself includes) to your particular needs.
- *
- * You probably should make this a standalone plugin.
- * See the wiki for instructions:
- *
- * @link https://github.com/andamira/medula/wiki/Plugin
- */
-
-# include_once( 'Plugin/Plugin.php' );
-
-
-/**
- * 6 CUSTOM FUNCTIONS, ACTIONS & FILTERS
- * ************************************************************
- *
- * Here you could put your custom functions, but before doing
- * that it's better if you take a look at the indexed sections
- * above, specially the THEME FUNCTIONALITY one.
+ * Here you could put some quick & dirty custom functions, but
+ * before doing that it would be better to take a look at the
+ * indexed sections above, and try to find a better place.
  *
  */
 

@@ -7,7 +7,7 @@ get_header();
 <main role="main">
 
 	<header class="page-header">
-		<h1 class="page-title"><?php $t= get_queried_object(); echo $t->post_title; ?></h1>
+		<h1 class="page-title"><?php $t=get_queried_object(); echo ($t) ? $t->post_title : ''; ?></h1>
 	</header>
 
 	<?php if (have_posts()) : while (have_posts()) : the_post(); ?>
