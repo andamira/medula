@@ -2,7 +2,7 @@
 /// Dependencies
 /// ************************************************************
 ///
-/// Intended for being imported by style.scss
+/// Intended for being imported by main.scss
 ///
 ///     1 Load Default Dependencies
 ///
@@ -27,6 +27,7 @@
 @import "../../../vendor-dl/susy/sass/susy";
 
 // Uncomment this to use Toolset Layouts
+// TODO: only load what is needed
 // @import "../../../vendor-dl/bootstrap-sass-official/assets/stylesheets/bootstrap";
 
 
@@ -37,6 +38,9 @@
 ///
 /// 2.1 Font Awesome Variables
 ///
+/// To install:
+///   bower install --save-dev font-awesome
+///
 /// @example
 ///  content: $fa-var-calendar-o;
 ///
@@ -46,6 +50,9 @@
 
 ///
 /// 2.2 Animate Sass
+///
+/// To install:
+///   bower install --save-dev animate-sass
 ///
 /// @link https://github.com/tgdev/animate-sass
 

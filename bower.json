@@ -6,8 +6,7 @@
     "include-media": "*",
     "sassy-maps": "*",
     "modernizr": "*",
-    "bootstrap-sass-official": "*",
-    "animate-sass": "*"
+    "bootstrap-sass-official": "*"
   },
   "ignore": [ "" ],
   "preen": {

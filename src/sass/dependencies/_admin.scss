@@ -2,7 +2,7 @@
 /// Dependencies for the WP Administration
 /// ************************************************************
 ///
-/// Intended for being imported by admin/style.scss
+/// Intended for being imported by admin/main.scss
 ///
 ///     1 Load Default Dependencies
 ///
@@ -32,6 +32,9 @@
 
 ///
 /// 2.1 Font Awesome Variables
+///
+/// To install:
+///   bower install --save-dev font-awesome
 ///
 /// @example
 ///  content: $fa-var-calendar-o;
