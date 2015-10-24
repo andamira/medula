@@ -76,6 +76,7 @@ if( class_exists( 'WPDD_Layouts' ) && !function_exists( 'include_ddl_layouts' ) 
 /**
  * 2 Dequeue Toolset front-end scripts and stylesheets
  *
+ * @link https://wp-types.com/forums/topic/remove-unneccessary-css-files/#post-210881
  */
 # add_action('wp_enqueue_scripts', 'prefix_remove_views_assets', 20);
 function prefix_remove_views_assets() {
@@ -86,7 +87,7 @@ function prefix_remove_views_assets() {
 	wp_deregister_script( 'wpv-front-end-utils' );
 
 	// wpv-pagination-embedded.js - used in Views pagination and table sorting
-	wp_deregister_script( 'views-pagination-script' );
+	//wp_deregister_script( 'views-pagination-script' );
 
 	// jquery.ui.datepicker.min.js and wpv-date-front-end-control.js - used in Views parametric searches by a date field
 	wp_deregister_script( 'jquery-ui-datepicker' );

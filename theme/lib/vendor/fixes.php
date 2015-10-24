@@ -2,11 +2,13 @@
 /**
  * External Libraries & Plugins Fixes
  *
- *     1 Custom Post Type Tags Fix
+ *     1 Custom Post Type Tags Fix                  (#)
  *
- *     2 Relevanssi highlighting on Types
+ *     2 Relevanssi highlighting on Types           (#)
  *
- *     3 Foobar Notification Bars & Admin Bar fix
+ *     3 Foobar Notification Bars & Admin Bar fix   (#)
+ *
+ *     4 Chrome Admin Menu fix                      ( )
  *
  * NOTE: Uncomment the ones you want to use. Add yours at the end.
  */
@@ -70,7 +72,9 @@ function my_admin_bar_init() {
 }
 
 
-/** 4 Chrome Admin Menu Fix
+/**
+ * 4 CHROME ADMIN MENU FIX
+ *
  * Description: Quick fix for the Chrome 45 admin menu display glitches
  * Author: Steve Jones for The Space Between / Samuel Wood / Otto42
  * Author URI: http://the--space--between.com
