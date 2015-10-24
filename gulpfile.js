@@ -123,15 +123,14 @@ var source = {
 
 
 var target = {
-	css: 'theme/css',
-	js: 'theme/js',
+	css: 'theme/res/css',
+	js: 'theme/res/js',
+	img: 'theme/res/img',
+	fonts: 'theme/res/fonts',
 
-	vendor_live_js: 'theme/js/vendor/',
-	vendor_live_css: 'theme/css/vendor/',
-
-	fonts: 'theme/fonts',
-	img: 'theme/img',
-	vendor_img: 'theme/img/vendor',
+	vendor_live_css: 'theme/res/css/vendor/',
+	vendor_live_js: 'theme/res/js/vendor/',
+	vendor_img: 'theme/res/img/vendor',
 };
 
 

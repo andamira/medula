@@ -4,48 +4,30 @@
 ///
 /// Intended for being imported by admin/main.scss
 ///
-///     1 Load Default Dependencies
+///     1 Global Variables & Dependencies
 ///
-///     2 Load Optional Dependencies
+///     2 Load Admin Only Dependencies
 ///
-///         2.1 Font Awesome Variables
-///
-///     3 Global Variables
+///     3 Configuration
 ///
 ////
 
 
 ///
-/// 1 LOAD DEFAULT DEPENDENCIES
-///
-/// @link https://github.com/ericam/susy/                 Susy
-/// @link https://github.com/eduardoboucas/include-media  Include Media
-/// @link https://github.com/at-import/Sassy-Maps         Sassy-Maps
+/// 1 GLOBAL VARIABLES & DEPENDENCIES
 ///
 
 @import "global";
 
 
 ///
-/// 2 LOAD OPTIONAL DEPENDENCIES
+/// 2 LOAD ADMIN ONLY DEPENDENCIES
 ///
 
-///
-/// 2.1 Font Awesome Variables
-///
-/// To install:
-///   bower install --save-dev font-awesome
-///
-/// @example
-///  content: $fa-var-calendar-o;
-///
-/// @link http://fortawesome.github.io/Font-Awesome/cheatsheet/
-
-// @import "../../vendor-dl/font-awesome/scss/variables";
 
 
 ///
-/// 3 GLOBAL VARIABLES
+/// 3 DEPENDENCIES CONFIGURATION
 ///
 
 

@@ -4,12 +4,19 @@
 ///
 /// Intended for being imported by main.scss
 ///
-///     1 Load Default Dependencies
+///     1 Global Variables & Dependencies
 ///
-///     2 Load Optional Dependencies
+///     2 Load Frontend Only Dependencies
 ///
-///         2.1 Font Awesome Variables
-///         2.2 Sass Animate
+///         2.1 Grids
+///
+///             2.1.1 Susy Grid               ( ) default
+///             2.1.2 Bootstrap               (#) for use with Toolset Layouts
+///
+///         2.2 Other
+///
+///             2.2.1 Font Awesome Variables  (#)
+///             2.2.2 Sass Animate            (#)
 ///
 ///     3 Global Variables
 ///
@@ -17,26 +24,45 @@
 
 
 ///
-/// 1 LOAD DEFAULT DEPENDENCIES
-///
-/// @link https://github.com/ericam/susy/                 Susy
+/// 1 GLOBAL VARIABLES & DEPENDENCIES
 ///
 
 @import "global";
 
+
+///
+/// 2 LOAD FRONTEND ONLY DEPENDENCIES
+///
+
+///
+/// 2.1 GRIDS
+///
+
+///
+/// 2.1.1 Susy Grid
+///
+/// @link https://github.com/ericam/susy/ Susy
 @import "../../../vendor-dl/susy/sass/susy";
 
-// Uncomment this to use Toolset Layouts
-// TODO: only load what is needed
+///
+/// 2.1.2 BOOTSTRAP STYLESHEET
+///
+/// You'll need this if you want to use Toolset Layouts.
+/// In that case, comment the previous Susy Grid import.
+///
+/// @link https://github.com/twbs/bootstrap-sass Bootstrap
+///
+/// TODO: make it load only what is needed (grid)
+
 // @import "../../../vendor-dl/bootstrap-sass-official/assets/stylesheets/bootstrap";
 
 
 ///
-/// 2 LOAD OPTIONAL DEPENDENCIES
+/// 2.2 OTHER
 ///
 
 ///
-/// 2.1 Font Awesome Variables
+/// 2.2.1 Font Awesome Variables
 ///
 /// To install:
 ///   bower install --save-dev font-awesome
@@ -49,7 +75,7 @@
 // @import "../../vendor-dl/font-awesome/scss/variables";
 
 ///
-/// 2.2 Animate Sass
+/// 2.2.2 Animate Sass
 ///
 /// To install:
 ///   bower install --save-dev animate-sass
@@ -60,7 +86,7 @@
 
 
 ///
-/// 3 GLOBAL VARIABLES
+/// 3 DEPENDENCIES CONFIGURATION
 ///
 
 

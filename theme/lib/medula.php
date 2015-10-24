@@ -48,7 +48,7 @@ function medula_scripts_and_styles() {
 	if (!is_admin()) {
 
 		// register main stylesheet
-		wp_register_style( 'main-stylesheet', get_stylesheet_directory_uri() . '/css/main.css', array(), '', 'all' );
+		wp_register_style( 'main-stylesheet', get_stylesheet_directory_uri() . '/res/css/main.css', array(), '', 'all' );
 
 		// comment reply script for threaded comments
 		if ( is_singular() AND comments_open() AND (get_option('thread_comments') == 1)) {
@@ -56,7 +56,7 @@ function medula_scripts_and_styles() {
 		}
 
 		//adding scripts file in the footer
-		wp_register_script( 'medula-js', get_stylesheet_directory_uri() . '/js/scripts.js', array( 'jquery' ), '', true );
+		wp_register_script( 'medula-js', get_stylesheet_directory_uri() . '/res/js/scripts.js', array( 'jquery' ), '', true );
 
 		// enqueue styles and scripts
 		wp_enqueue_style( 'main-stylesheet' );
@@ -421,6 +421,5 @@ function force_ssl_url_scheme_script() {
 </script>
 <?php
 } 
-
 
 

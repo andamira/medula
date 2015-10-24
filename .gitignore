@@ -4,8 +4,5 @@ node_modules
 .sass-cache
 
 #################### output
-theme/css
-theme/js
-theme/img
-theme/fonts
+theme/res
 
