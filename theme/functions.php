@@ -2,8 +2,6 @@
 /**
  * This is the functions.php file.
  *
- * (#) indicates some features that are disabled by default
- *
  *
  *     1 Global Options
  *
@@ -38,9 +36,6 @@
  *     5 Custom Functions, Actions & Filters
  *
  *
- * Author: andamira
- * URL: htp://andamira.net/medula/
- *
  * @link http://codex.wordpress.org/Function_Reference/ Don't reinvent the wheel
  */
 
@@ -59,7 +54,7 @@
  */
 
 // Remove the whitespace from HTML between wp_head and wp_footer.
-# define( 'MEDULA_OPTIMIZE_HTML', true );   // (#) disabled by default
+# define( 'MEDULA_OPTIMIZE_HTML', true );    // (#) disabled by default
 
 
 /**
@@ -78,7 +73,7 @@
 require_once( 'lib/medula.php' );
 
 // Admin Area Customization
-require_once( 'lib/admin.php' );           // ( ) enabled by default
+# require_once( 'lib/admin.php' );           // (#) disabled by default
 
 require_once( 'lib/icons.php' );           // 
 require_once( 'lib/fonts.php' );           // 
@@ -103,27 +98,27 @@ require_once( 'lib/admin-bar.php' );       //
 function medula_launch() {
 
 	/**
-	* 4.1 language support
+	* 3.1 language support
 	*/
 	load_theme_textdomain( 'medula-theme', get_template_directory() . '/translations' );
 
 	/**
-	* 4.2 cleanup
+	* 3.2 cleanup
 	*/
 	medula_cleanup_all();
 
 	/**
-	* 4.3 enqueue base scripts and styles
+	* 3.3 enqueue base scripts and styles
 	*/
 	add_action( 'wp_enqueue_scripts', 'medula_scripts_and_styles', 999 );
 
 	/**
-	* 4.4 custom theme features
+	* 3.4 custom theme features
 	*/
 	medula_theme_support();
 
 	/**
-	* 4.5 register sidebars ( sidebars are defined in /theme/lib/sidebars.php )
+	* 3.5 register sidebars ( sidebars are defined in /theme/lib/sidebars.php )
 	*/
 	add_action( 'widgets_init', 'medula_register_sidebars' );
 }

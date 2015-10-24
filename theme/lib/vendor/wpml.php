@@ -15,9 +15,14 @@
  *
  * @link http://wpml.org/documentation/support/wpml-coding-api
  */
-define('ICL_DONT_LOAD_LANGUAGE_SELECTOR_CSS', true);
-define('ICL_DONT_LOAD_NAVIGATION_CSS', true);
-define('ICL_DONT_LOAD_LANGUAGES_JS', true);
+
+# medula_wpml_disable_css_js();
+
+function medula_wpml_disable_css_js() {
+	define('ICL_DONT_LOAD_LANGUAGE_SELECTOR_CSS', true);
+	define('ICL_DONT_LOAD_NAVIGATION_CSS', true);
+	define('ICL_DONT_LOAD_LANGUAGES_JS', true);
+}
 
 
 /**
