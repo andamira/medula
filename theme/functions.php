@@ -11,7 +11,7 @@
  *
  *         2.1  Core Médula library
  *         2.2  Admin Area                              (#)
- *         2.3  Favicons, Theme Color & Fonticons
+ *         2.3  Header Tags (favicons, etc.)
  *         2.4  Fonts
  *         2.5  Navigation Menus
  *         2.6  Sidebars
@@ -75,7 +75,7 @@ require_once( 'lib/medula.php' );
 // Admin Area Customization
 # require_once( 'lib/admin.php' );           // (#) disabled by default
 
-require_once( 'lib/icons-colors.php' );    // 
+require_once( 'lib/header-tags.php' );    // 
 require_once( 'lib/fonts.php' );           // 
 require_once( 'lib/navigation.php' );      // 
 require_once( 'lib/theme-customize.php' ); // 

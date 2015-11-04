@@ -1,24 +1,22 @@
 <?php
 /**
  * Header template
- * 
- * @link http://codex.wordpress.org/Function_Reference/get_header
+ *
+ * @link https://developer.wordpress.org/reference/functions/get_header/
  */
 ?>
 <!DOCTYPE html>
 <html <?php language_attributes(); ?> class="no-js">
 
 <head>
-	<meta charset="utf-8">
-	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<?php
 
-	<meta name="HandheldFriendly" content="True">
-	<meta name="MobileOptimized" content="320">
-	<meta name="viewport" content="width=device-width, initial-scale=1"/>
+	// Meta Tags can be configured in lib/header-tags.php (pingback, favicons, etc.)
+	// Header cleanup can be configured in lib/medula.php [5]
 
-	<link rel="pingback" href="<?php bloginfo('pingback_url'); ?>">
+	wp_head();
 
-	<?php wp_head(); ?>
+?>
 </head>
 
 <body <?php body_class(); ?>>

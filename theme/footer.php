@@ -2,14 +2,14 @@
 /**
  * Footer Template
  *
- * Closes the site-content and page-wrapper tags that where opened in header.php
- * Loads The js scripts
- * Inserts the MMenu navigation menu
+ * - Closes the #site-content and #page-wrapper id tags opened in header.php
+ * - Shows the footer and the footer navigation menu
+ * - Loads The js scripts
  *
- * @link http://codex.wordpress.org/Function_Reference/get_footer
+ * @link https://developer.wordpress.org/reference/functions/get_footer/
  */
 ?>
-			</div> <?php // (#site-content-wrapper) opening tag in header.php ?>
+			</div> <?php // (#site-content-wrapper) ?>
 
 			<footer class="site-footer" role="contentinfo">
 
@@ -23,14 +23,12 @@
 
 			</footer>
 
-			<?php // js scripts that loads in the footer are defined in /theme/lib/medula.php ?>
-			<?php wp_footer(); ?>
+			<?php // js scripts that load in the footer are defined in lib/medula.php 
+				wp_footer();
+			?>
 
-		</div> <?php // (#page-wrapper) opening tag in header.php ?>
+		</div> <?php // (#page-wrapper) ?>
 
-		<?php /* // MMenu (Mobile) Menu. The last so it doesn't get in the way ?>
-		<nav id="mmenu" class="site-mmenu-nav" role="navigation"><?php // medula_site_mmenu_nav(); ?></nav>
-		/**/ ?>
 	</body>
 
 </html>
