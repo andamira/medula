@@ -10,6 +10,7 @@
  *         2.2 Backend (Admin Area)
  *
  *     3 Pingbacks                            (#)
+ *         3.1 Remove Pings to Self
  *
  *     4 Font Icons Collection
  *         4.1 Dashicons                      (#)
@@ -92,6 +93,17 @@ function medula_header_tags_pingback() {
 	echo '<link rel="pingback" href="' . bloginfo('pingback_url') . '">';
 }
 # add_action('admin_head', 'medula_header_tags_pingback');
+
+/**
+ * 3.1 REMOVE PINGS TO SELF
+ */
+function no_self_ping( &$links ) {
+	$home = get_option( 'home' );
+	foreach ( $links as $l => $link )
+		if ( 0 === strpos( $link, $home ) )
+			unset($links[$l]);
+}
+add_action( 'pre_ping', 'no_self_ping' );
 
 
 /**
