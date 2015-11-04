@@ -3,6 +3,8 @@
 /// ************************************************************
 ///
 ///     1 Screen Readers
+///
+///     2 Skip Link
 ////
 
 
@@ -16,8 +18,8 @@
 ///
 
 .screen-reader-text {
-	clip: rect(1px, 1px, 1px, 1px);
 	position: absolute !important;
+	clip: rect(1px, 1px, 1px, 1px);
 	height: 1px;
 	width: 1px;
 	overflow: hidden;
@@ -25,23 +27,30 @@
 	&:hover,
 	&:active,
 	&:focus {
-		background-color: #f1f1f1;
-		border-radius: 3px;
-		box-shadow: 0 0 2px 2px black(0.6);
 		clip: auto !important;
-		color: #21759b;
 		display: block;
-		font-size: 14px;
-		font-size: 0.875rem;
-		font-weight: bold;
+		left: 0.3rem;
+		top: 0.3rem;
 		height: auto;
-		left: 5px;
-		line-height: normal;
-		padding: 15px 23px 14px;
-		text-decoration: none;
-		top: 5px;
 		width: auto;
-		z-index: 100000; // Above WP toolbar.
+		padding: 0.8rem 1.5rem;
+
+		background-color: $body-background-color;
+		box-shadow: 0 0 2px 2px black(0.6);
+		border-radius: 0.2rem;
+
+		font-size: 0.9rem;
+		font-weight: bold;
+		line-height: normal;
+		z-index: 100000;
 	}
+}
+
+
+///
+/// 2 SKIP LINK
+///
+
+.skip-link {
 }
 
