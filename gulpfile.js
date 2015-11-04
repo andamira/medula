@@ -25,8 +25,8 @@
 
 // GLOBAL OPTIONS
 // -----------------------------------------------------------
-autoprefixer_rules = 'ie >= 8, > 5%, last 3 versions';
-remPixelFallback = true;
+autoprefixer_rules = 'ie >= 9, > 5%, last 3 versions';
+remPixelFallback = false;
 imageMin = true;
 jsMangle = true;
 
@@ -213,10 +213,16 @@ gulp.task('compile-sass', function () {
 
 		// Minify
 		.pipe(isProduction ? minifycss({
-			compatibility: 'ie8',
-			keepBreaks: true,
-			roundingPrecision: 7,
-			keepSpecialComments: 1 // only keep the first one
+
+			keepBreaks: true,     // defaults to false
+			roundingPrecision: 7, // defaults to 2
+
+			// https://github.com/jakubpawlowicz/clean-css#how-to-set-a-compatibility-mode
+			compatibility: '*', 
+
+			// * for keeping all (default), 1 for keeping first one only, 0 for removing all
+			keepSpecialComments: *
+
 		}) : gutil.noop())
 
 
@@ -297,9 +303,9 @@ gulp.task('compile-vendor_live', function () {
 
 			// Minify
 			.pipe(isProduction ? minifycss({
-				compatibility: 'ie8',
+				compatibility: '*',
 				keepBreaks: true,
-				roundingPrecision: 10,
+				roundingPrecision: 7,
 				keepSpecialComments: 0
 			}) : gutil.noop())
 
