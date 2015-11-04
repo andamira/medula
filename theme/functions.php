@@ -5,13 +5,13 @@
  *
  *     1 Global Options
  *
- *         1.1 Optimization                     (#)
+ *         1.1 Optimization                             (#)
  *
  *     2 Theme Functionlity
  *
  *         2.1  Core Médula library
- *         2.2  Admin Area                      (#)
- *         2.3  Icons & Favicons
+ *         2.2  Admin Area                              (#)
+ *         2.3  Favicons, Theme Color & Fonticons
  *         2.4  Fonts
  *         2.5  Navigation Menus
  *         2.6  Sidebars
@@ -75,7 +75,7 @@ require_once( 'lib/medula.php' );
 // Admin Area Customization
 # require_once( 'lib/admin.php' );           // (#) disabled by default
 
-require_once( 'lib/icons.php' );           // 
+require_once( 'lib/icons-colors.php' );    // 
 require_once( 'lib/fonts.php' );           // 
 require_once( 'lib/navigation.php' );      // 
 require_once( 'lib/theme-customize.php' ); // 

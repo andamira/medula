@@ -12,10 +12,6 @@
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-	<?php // META THEME COLOR {@link https://github.com/whatwg/meta-theme-color} ?>
-	<meta name="theme-color" content="#ffffff">
-
-	<?php // mobile meta ?>
 	<meta name="HandheldFriendly" content="True">
 	<meta name="MobileOptimized" content="320">
 	<meta name="viewport" content="width=device-width, initial-scale=1"/>
