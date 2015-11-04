@@ -11,8 +11,8 @@
 <head>
 <?php
 
-	// Meta Tags can be configured in lib/header-tags.php (pingback, favicons, etc.)
-	// Header cleanup can be configured in lib/medula.php [5]
+	// Head meta and link tags can be configured in lib/head-tags.php
+	// Head cleanup can be configured in lib/medula.php [5]
 
 	wp_head();
 
