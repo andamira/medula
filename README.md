@@ -2,7 +2,7 @@
 
 [![Join the chat at https://gitter.im/andamira/medula](https://badges.gitter.im/Join%20Chat.svg)](https://gitter.im/andamira/medula?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
 
-![logo](src/img/apple-touch-icon.png)
+![logo](src/img/favicon-big.png)
 
 **Starter Theme & Plugin for WordPress**
 
