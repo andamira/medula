@@ -146,7 +146,7 @@ function medula_theme_page() {
 
 ?>
 	<div class="section panel">
-	<h1><img src="<?php echo get_template_directory_uri() . '/img/apple-touch-icon.png' ?>" height=24 width=24 /> <?php printf(wp_kses(__('Theme Options', 'medula-theme'), array())); ?></h1>
+	<h1><img src="<?php echo get_template_directory_uri() . '/res/img/favicon-big.png' ?>" height=24 width=24 /> <?php printf(wp_kses(__('Theme Options', 'medula-theme'), array())); ?></h1>
 		<form method="post" enctype="multipart/form-data" action="options.php">
 			<?php
 			settings_fields('medula_theme_options');

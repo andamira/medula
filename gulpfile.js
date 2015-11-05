@@ -221,7 +221,7 @@ gulp.task('compile-sass', function () {
 			compatibility: '*', 
 
 			// * for keeping all (default), 1 for keeping first one only, 0 for removing all
-			keepSpecialComments: *
+			keepSpecialComments: 0
 
 		}) : gutil.noop())
 

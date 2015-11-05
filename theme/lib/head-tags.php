@@ -1,29 +1,91 @@
 <?php
 /**
- * Header Tags Template
+ * Head Tags Template
  *
  *
- *     1 Main Tags
+ *     1 Favicons (& Theme Color)
+ *         1.1 Frontend
+ *         1.2 Backend (Admin Area)
  *
- *     2 Favicons (& Theme Color)
- *         2.1 Frontend
- *         2.2 Backend (Admin Area)
+ *     2 Pingbacks                                                (#)
  *
- *     3 Pingbacks                            (#)
- *         3.1 Remove Pings to Self
+ *     3 Main Meta Tags
  *
  *     4 Font Icons Collection
- *         4.1 Dashicons                      (#)
- *         4.2 Font Awesome                   (#)
+ *         4.1 Dashicons                                          (#)
+ *         4.2 Font Awesome                                       (#)
  */
 
 
 /**
- * 1 Main Tags
+ * 1 FAVICONS AND THEME COLOR
+ * ************************************************************
+ *
+ * @link https://en.wikipedia.org/wiki/Favicon
+ * @link http://www.jonathantneal.com/blog/understand-the-favicon/
+ */
+
+// Increase this number each time the favicons are updated
+$medula_favicon_v="0";
+
+// This will be used on some systems to customize their UI
+$medula_theme_color=""; // e.g. #ffffff
+
+/**
+ * 1.1 FRONTEND
+ */
+function medula_header_tags_frontend_favicons_theme_color() {
+	global $medula_favicon_v, $medula_theme_color;
+
+	// 16x16 ico for Internet Explorer <11
+	echo '<link rel="shortcut icon" href="' . get_template_directory_uri() . '/res/img/favicon.ico?v=' . $medula_favicon_v . '">';
+	// 16x16 png for the rest of the browsers
+	echo '<link rel="icon" href="' . get_template_directory_uri() . '/res/img/favicon.png?v=' . $medula_favicon_v . '">';
+	// 180x180 png both for Apple devices and for Microsoft Windows tiles
+	echo '<link rel="apple-touch-icon" href="' . get_template_directory_uri() . '/res/img/favicon-big.png?v=' . $medula_favicon_v . '">';
+	echo '<meta name="msapplication-TileImage" content="' . get_template_directory_uri() . '/res/img/favicon-big.png?v=' . $medula_favicon_v . '">';
+
+	if ($medula_theme_color) {
+		// @link https://msdn.microsoft.com/en-us/library/dn255024(v=vs.85).aspx#msapplication-TileColor
+		echo '<meta name="msapplication-TileColor" content="' . $medula_theme_color . '">';
+
+		// @link https://github.com/whatwg/meta-theme-color
+		echo '<meta name="theme-color" content="' . $medula_theme_color . '">';
+	}
+}
+add_action('wp_head', 'medula_header_tags_frontend_favicons_theme_color', 2);
+
+/**
+ * 1.2 BACKEND (WORDPRESS ADMIN AREA)
+ */
+function medula_header_tags_favicon_backend() {
+	global $medula_favicon_v;
+
+	echo '<link rel="icon" href="' . get_template_directory_uri() . '/res/img/favicon_adm.png?v=' . $medula_favicon_v . '" />';
+}
+add_action('admin_head', 'medula_header_tags_favicon_backend');
+
+
+/**
+ * 2 PINGBACKS
+ * ************************************************************
+ *
+ * Self pings are disabled in medula.php
+ *
+ * @link http://codex.wordpress.org/Glossary#Pingback
+ */
+function medula_header_tags_pingback() {
+	echo '<link rel="pingback" href="' . bloginfo('pingback_url') . '">';
+}
+# add_action('admin_head', 'medula_header_tags_pingback');
+
+
+/**
+ * 3 Main Meta Tags
  * ************************************************************
  */
 function medula_header_tags_main() {
-	
+
 ?>
 <meta charset="<?php bloginfo( 'charset' ); ?>">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -32,78 +94,6 @@ function medula_header_tags_main() {
 
 }
 add_action('wp_head', 'medula_header_tags_main', 0);
-
-
-/**
- * 2 FAVICONS AND THEME COLOR
- * ************************************************************
- *
- * @link https://en.wikipedia.org/wiki/Favicon
- * @link http://www.jonathantneal.com/blog/understand-the-favicon/
- */
-
-// Increase this number each time the favicons are updated
-$favicon_version="0";
-
-// Color used on some systems to customize their UIs when visiting your page
-$medula_theme_color=""; // #ffffff
-
-/**
- * 2.1 FRONTEND
- */
-function medula_header_tags_frontend_favicons_theme_color() {
-	global $favicon_version, $medula_theme_color;
-
-	// 16x16 ico for Internet Explorer <11
-	echo '<link rel="shortcut icon" href="' . get_template_directory_uri() . '/res/img/favicon.ico?v=' . $favicon_version . '">';
-	// 16x16 png for the rest of the browsers
-	echo '<link rel="icon" href="' . get_template_directory_uri() . '/res/img/favicon.png?v=' . $favicon_version . '">';
-	// 180x180 png both for Apple devices and for Microsoft Windows tiles
-	echo '<link rel="apple-touch-icon" href="' . get_template_directory_uri() . '/res/img/favicon-big.png?v=' . $favicon_version . '">';
-	echo '<meta name="msapplication-TileImage" content="' . get_template_directory_uri() . '/res/img/favicon-big.png?v=' . $favicon_version . '">';
-
-	if ($medula_theme_color) {
-		// @link https://msdn.microsoft.com/en-us/library/dn255024(v=vs.85).aspx#msapplication-TileColor
-		echo '<meta name="msapplication-TileColor" content="' . $medula_theme_color . '">';
-
-		// Theme Color @link https://github.com/whatwg/meta-theme-color
-		echo '<meta name="theme-color" content="' . $medula_theme_color . '">';
-	}
-}
-add_action('wp_head', 'medula_header_tags_frontend_favicons_theme_color', 2);
-
-/**
- * 2.2 BACKEND (WORDPRESS ADMIN AREA)
- */
-function medula_header_tags_favicon_backend() {
-	global $favicon_version;
-
-	echo '<link rel="icon" href="' . get_template_directory_uri() . '/res/img/favicon_adm.png?v=' . $favicon_version . '" />';
-}
-add_action('admin_head', 'medula_header_tags_favicon_backend');
-
-
-/**
- * 3 PINGBACKS
- * ************************************************************
- *
- * @link http://codex.wordpress.org/Glossary#Pingback Pingbacks
- */
-function medula_header_tags_pingback() {
-	echo '<link rel="pingback" href="' . bloginfo('pingback_url') . '">';
-}
-# add_action('admin_head', 'medula_header_tags_pingback');
-
-/**
- * 3.1 REMOVE PINGS TO SELF
- */
-function no_self_ping( &$links ) {
-	$home = get_option( 'home' );
-	foreach ( $links as $l => $link )
-		if ( 0 === strpos( $link, $home ) )
-			unset($links[$l]);
-}
-add_action( 'pre_ping', 'no_self_ping' );
 
 
 /**
@@ -128,5 +118,4 @@ function icons_collections() {
 	 */
 	# wp_enqueue_style( 'fontawesome', '//maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css', null, '4.4.0' );
 }
-
 

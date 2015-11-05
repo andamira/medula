@@ -54,7 +54,7 @@
  */
 
 // Remove the whitespace from HTML between wp_head and wp_footer.
-# define( 'MEDULA_OPTIMIZE_HTML', true );    // (#) disabled by default
+# define( 'MEDULA_OPTIMIZE_HTML', true );
 
 
 /**
@@ -62,20 +62,15 @@
  * ************************************************************
  *
  * @link https://github.com/andamira/medula/wiki/Theme_includes
- *
- * You can customize any of these files. You can also
- * comment the includes if you prefer to use your system
- * for favicons, fonts, sidebars, etc.
- *
  */
 
 // Core Functions & Libraries
+// Enqueue styles & scripts, theme support, cleanup, etc.
 require_once( 'lib/medula.php' );
 
-// Admin Area Customization
-# require_once( 'lib/admin.php' );           // (#) disabled by default
+# require_once( 'lib/admin.php' );         // Customize WP Admin Area
 
-require_once( 'lib/head-tags.php' );    // 
+require_once( 'lib/head-tags.php' );       // Meta Tags, Favicons, etc.
 require_once( 'lib/fonts.php' );           // 
 require_once( 'lib/navigation.php' );      // 
 require_once( 'lib/theme-customize.php' ); // 

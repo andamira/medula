@@ -237,7 +237,10 @@ function medula_cleanup_all() {
 	add_filter( 'content_save_pre', 'medula_filter_unicode_nbsp' ); // on database
 	#add_filter( 'the_content', 'medula_filter_unicode_nbsp' ); // on display
 
-	// filters html output (6)
+	// removing pingbacks to self (5.7)
+	add_action( 'pre_ping', 'medula_no_self_pingbacks' );
+
+	// filter html output (6)
 	if ( defined( 'MEDULA_OPTIMIZE_HTML' ) && MEDULA_OPTIMIZE_HTML ) { 
 		add_action('wp_head', 'medula_optimize_html_buffer_start');
 		add_action('wp_footer', 'medula_optimize_html_buffer_end');
@@ -350,6 +353,18 @@ function medula_excerpt_more($more) {
  */
 function medula_filter_unicode_nbsp($content){
 	return preg_replace("/[\x{00a0}\x{200b}]+/u", " ", $content);
+}
+
+/**
+ * 5.7 REMOVE PINGBACKS TO SELF
+ */
+function medula_no_self_pingbacks( &$links ) {
+	$home = get_option( 'home' );
+	foreach ( $links as $l => $link ) {
+		if ( 0 === strpos( $link, $home ) ) {
+			unset( $links[$l] );
+		}
+	}
 }
 
 
