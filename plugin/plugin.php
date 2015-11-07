@@ -1,44 +1,44 @@
 <?php
 /**
- * Plugin Name: Medula Plugin
- * Plugin URI: https://github.com/andamira/medula/
- * Description: This is a minimal plugin template that accompains Médula (Starter) Theme
+ * Plugin Name: Medula P
+ * Plugin URI: https://github.com/andamira/medula/plugin/
+ * Description: A minimal starter plugin, and optional companion for Medula T starter theme
  * Version 0.4.10
  * Author: andamira
  * Author URI: http://andamira.net
- * Text Domain: medula-plugin
- * Tags: starter-plugin, starter, simple, minimal, flexible, developer, code, procedural, programming, functional
+ * Text Domain: medula-p
+ * Tags: medula, boilerplate, starter, simple, minimal, developer, code, procedural, programming, functional
  *
- *
- * This plugin framework is very simple and procedural.
- * If you need a more complex framework, you could try:
+ * This minimal plugin framework is simple and procedural. Is intended mainly to hold the
+ * extra functionality for your custom theme. If you need something more complex and / or
+ * object oriented, please use any of the fantastic boilerplates that exist. For example:
  *
  *   - https://github.com/tommcfarlin/WordPress-Plugin-Boilerplate
- *   - http://getherbert.com/
+ *   - https://github.com/getherbert/herbert/
  *
- * NOTE: If you decide to use this template, you must customize each one 
- * of the included files for your particular use case, and/or extend them.
+ * NOTE: If you decide to use this template, you have to customize each one 
+ * of the included files for your particular use case, and / or extend them.
  *
  * @link https://github.com/andamira/medula/wiki/Plugin
  */
 
 
 // Google Analytics Tracking Code
-include_once( 'lib/analytics.php' );
+include( 'lib/analytics.php' );
 
 // Load Helper Functions
-include_once( 'lib/helpers.php' );
+include( 'lib/helpers.php' );
 
 // Create Shortcodes
-include_once( 'lib/shortcodes.php' );
+include( 'lib/shortcodes.php' );
 
 // Create Custom Post Types
-include_once( 'lib/post-types.php' );
+include( 'lib/post-types.php' );
 
 // Create Custom Taxonomies
-include_once( 'lib/taxonomies.php' );
+include( 'lib/taxonomies.php' );
 
 // Create Metaboxes
-include_once( 'lib/metaboxes.php' );
+include( 'lib/metaboxes.php' );
 
 
