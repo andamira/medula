@@ -296,34 +296,3 @@ nav {
 }
 
 
-/*
-///
-/// 2.4 MOBILE BUTTON
-///
-.mmenu-button {
-	position: fixed;
-	z-index: 9999;
-
-	// Hide on desktop size
-	@include media( ">=wp-adminbar-mobile" ) {
-		display: none;
-	}
-
-	i {
-		font-size: 2.5rem;
-	}
-}
-
-
-///
-/// 2.5 MMENU (MOBILE) MENU
-///
-#mmenu {
-
-	a {
-
-		&:hover, &:focus {}
-	}
-}
-/**/
-

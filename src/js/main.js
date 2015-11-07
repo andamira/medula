@@ -48,43 +48,6 @@ jQuery(document).ready(function($) {
 
 
 	/**
-	 * MMenu (Mobile) Menu
-	 *
-	 * @link http://mmenu.frebsite.nl/documentation/
-	 */
-	/*
-	$("#mmenu").mmenu({     // OPTIONS
-		// ---------------------------
-
-		"slidingSubmenus": false,   // *true, false
-
-		// position can be: *left, right, top, bottom (last 2 only works if zposition=front)
-		// zposition can be: *back, front, side
-		"offCanvas": {
-			//"position": "right",
-			"zposition": "front"
-		}
-
-		// theme classes : *mm-dark, mm-light, mm-black, mm-white
-		// extensions classes: mm-fullscreen,
-		// "classes": "mm-light",
-
-		// "footer": { "add": true, "title": "MENU" },
-		// "header": { "title": "MENU", "add": true, "update": true }
-
-
-	}, {
-		// CONFIGURATION
-		// -------------------------
-
-		"offCanvas": {
-			"pageSelector": "#page-wrapper"
-		}
-
-	});/**/
-
-
-	/**
 	 * Detect Conditional CSS
 	 *
 	 * @see /assets/sass/layout/_grid.scss
