@@ -15,14 +15,14 @@
 
 function medula_page_links() {
 	wp_link_pages( array(
-		'before'      => '<div class="page-links"><span class="page-links-title">' . __( 'Pages:', 'medula-theme' ) . '</span>',
+		'before'      => '<div class="page-links"><span class="page-links-title">' . __( 'Pages:', 'medula-t' ) . '</span>',
 		'after'       => '</div>',
 		'link_before' => '<span>',
 		'link_after'  => '</span>',
 		'next_or_number'   => 'number',
 		'separator'        => ' ',
-		'nextpagelink'     => __( 'Next page', 'medula-theme' ),
-		'previouspagelink' => __( 'Previous page', 'medula-theme' ),
+		'nextpagelink'     => __( 'Next page', 'medula-t' ),
+		'previouspagelink' => __( 'Previous page', 'medula-t' ),
 		'pagelink'         => '%',
 		'echo'             => 1
 	));

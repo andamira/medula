@@ -64,7 +64,7 @@ function medula_get_entry_meta_author() {
  */
 function medula_entry_meta_byline() {
 	$byline  = '<span class="entry-byline byline">';
-	$byline .= sprintf(__( 'Posted %1$s by %2$s', 'medula-theme' ), medula_get_entry_meta_date(), medula_get_entry_meta_author( 'index' ) );
+	$byline .= sprintf(__( 'Posted %1$s by %2$s', 'medula-t' ), medula_get_entry_meta_date(), medula_get_entry_meta_author( 'index' ) );
 	$byline .= '</span>';
 
 	echo $byline;
@@ -95,11 +95,11 @@ function medula_entry_meta_terms( $custom, $class, $label) {
 }
 // convenience function for categories
 function medula_entry_meta_categories( $custom = 'category' ) {
-	medula_entry_meta_terms( $custom, 'categories', __( 'Filed under', 'medula-theme' ) );
+	medula_entry_meta_terms( $custom, 'categories', __( 'Filed under', 'medula-t' ) );
 }
 // convenience function for tags
 function medula_entry_meta_tags( $custom = 'post_tag' ) {
-	medula_entry_meta_terms( $custom, 'tags', __( 'Tags:', 'medula-theme' ) );
+	medula_entry_meta_terms( $custom, 'tags', __( 'Tags:', 'medula-t' ) );
 }
 
 
@@ -121,7 +121,7 @@ function medula_edit_link( $link, $echo = true ) {
 	//if ( ! current_user_can('edit_pages') ) { return; }
 
 	$edit  = '<span class="edit-link"><a href="' . $link . '"';
-	$edit .= ' title="' . __( 'Edit This', 'medula-theme' ) . '">';
+	$edit .= ' title="' . __( 'Edit This', 'medula-t' ) . '">';
 	$edit .= '<i class="dashicons dashicons-edit"></i>';
 	$edit .= '</a></span>';
 

@@ -11,25 +11,25 @@ get_header();
 		<h1 class="page-title">
 
 		<?php if (is_category()) { ?>
-			<span><?php _e( 'Posts Categorized:', 'medula-theme' ); ?></span> <?php single_cat_title(); ?>
+			<span><?php _e( 'Posts Categorized:', 'medula-t' ); ?></span> <?php single_cat_title(); ?>
 
 		<?php } elseif (is_tag()) { ?>
-			<span><?php _e( 'Posts Tagged:', 'medula-theme' ); ?></span> <?php single_tag_title(); ?>
+			<span><?php _e( 'Posts Tagged:', 'medula-t' ); ?></span> <?php single_tag_title(); ?>
 
 		<?php } elseif (is_author()) {
 			global $post;
 			$author_id = $post->post_author;
 		?>
-			<span><?php _e( 'Posts By:', 'medula-theme' ); ?></span> <?php the_author_meta('display_name', $author_id); ?>
+			<span><?php _e( 'Posts By:', 'medula-t' ); ?></span> <?php the_author_meta('display_name', $author_id); ?>
 
 		<?php } elseif (is_day()) { ?>
-			<span><?php _e( 'Daily Archives:', 'medula-theme' ); ?></span> <?php the_time( get_option('date_format') ); ?>
+			<span><?php _e( 'Daily Archives:', 'medula-t' ); ?></span> <?php the_time( get_option('date_format') ); ?>
 
 		<?php } elseif (is_month()) { ?>
-			<span><?php _e( 'Monthly Archives:', 'medula-theme' ); ?></span> <?php the_time('F Y'); ?>
+			<span><?php _e( 'Monthly Archives:', 'medula-t' ); ?></span> <?php the_time('F Y'); ?>
 
 		<?php } elseif (is_year()) { ?>
-			<span><?php _e( 'Yearly Archives:', 'medula-theme' ); ?></span> <?php the_time('Y'); ?>
+			<span><?php _e( 'Yearly Archives:', 'medula-t' ); ?></span> <?php the_time('Y'); ?>
 		<?php } ?>
 
 		</h1>

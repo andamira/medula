@@ -7,8 +7,8 @@
  * the ID, name and description to new values. e.g.:
  *
  *     'id' => 'sidebar2',
- *     'name' => __( 'Sidebar 2', 'medula-theme' ),
- *     'description' => __( 'The secondary sidebar.', 'medula-theme' ),
+ *     'name' => __( 'Sidebar 2', 'medula-t' ),
+ *     'description' => __( 'The secondary sidebar.', 'medula-t' ),
  *
  * To call the sidebar in your template, you can just copy
  * the sidebar.php file in the root and rename it adding
@@ -27,8 +27,8 @@ function medula_register_sidebars() {
 	// Sidebar 1
 	register_sidebar(array(
 		'id' => 'sidebar1',
-		'name' => __( 'Sidebar 1', 'medula-theme' ),
-		'description' => __( 'The first (primary) sidebar.', 'medula-theme' ),
+		'name' => __( 'Sidebar 1', 'medula-t' ),
+		'description' => __( 'The first (primary) sidebar.', 'medula-t' ),
 		'before_widget' => '<section id="%1$s" class="widget %2$s">',
 		'after_widget' => '</section>',
 		'before_title' => '<h4 class="widget-title">',

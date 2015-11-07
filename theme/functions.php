@@ -95,7 +95,7 @@ function medula_launch() {
 	/**
 	* 3.1 language support
 	*/
-	load_theme_textdomain( 'medula-theme', get_template_directory() . '/translations' );
+	load_theme_textdomain( 'medula-t', get_template_directory() . '/translations' );
 
 	/**
 	* 3.2 cleanup

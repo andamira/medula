@@ -20,7 +20,7 @@ get_header();
 <main role="main">
 
 	<header class="page-header">
-		<h1 class="page-title"><span><?php _e( 'Posts Categorized:', 'medula-theme' ); ?></span> <?php single_cat_title(); ?></h1>
+		<h1 class="page-title"><span><?php _e( 'Posts Categorized:', 'medula-t' ); ?></span> <?php single_cat_title(); ?></h1>
 	</header>
 
 	<?php if (have_posts()) : while (have_posts()) : the_post(); ?>
@@ -33,7 +33,7 @@ get_header();
 			</header>
 
 			<section class="entry-content">
-				<?php the_excerpt( '<span class="read-more">' . __( 'Read More &raquo;', 'medula-theme' ) . '</span>' ); ?>
+				<?php the_excerpt( '<span class="read-more">' . __( 'Read More &raquo;', 'medula-t' ) . '</span>' ); ?>
 			</section>
 
 			<footer class="article-footer">

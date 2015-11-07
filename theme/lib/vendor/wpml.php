@@ -48,7 +48,7 @@ function medula_wpml_switcher() {
 				// Missing translation
 				if($l['missing']){
 					echo '<li><a style="color:#444444 !important;" title="' .
-						sprintf( __( 'Not available in %1s', 'medula-theme' ),  ) .
+						sprintf( __( 'Not available in %1s', 'medula-t' ),  ) .
 						'" href="'.$l['url'] . '">';
 
 				// Translation is present

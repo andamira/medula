@@ -15,7 +15,7 @@ if ( post_password_required() ) {
 		<section class="comments-list">
 
 		<header>
-			<h2 id="comments-title" ><?php comments_number( __( '<span>No</span> Comments', 'medula-theme' ), __( '<span>One</span> Comment', 'medula-theme' ), _n( '<span>%</span> Comments', '<span>%</span> Comments', get_comments_number(), 'medula-theme' ) );?></h2>
+			<h2 id="comments-title" ><?php comments_number( __( '<span>No</span> Comments', 'medula-t' ), __( '<span>One</span> Comment', 'medula-t' ), _n( '<span>%</span> Comments', '<span>%</span> Comments', get_comments_number(), 'medula-t' ) );?></h2>
 		</header>
 
 		<section class="comments-list">
@@ -36,7 +36,7 @@ if ( post_password_required() ) {
 				'callback'          => $cb,
 				'end-callback'      => $cb_end,
 				'type'              => 'comment',
-				'reply_text'        => __( 'Reply', 'medula-theme' ),
+				'reply_text'        => __( 'Reply', 'medula-t' ),
 				'page'              => '',
 				'per_page'          => '',
 				'avatar_size'       => 40,
@@ -51,13 +51,13 @@ if ( post_password_required() ) {
 
 		<?php if ( get_comment_pages_count() > 1 && get_option( 'page_comments' ) ) : ?>
 			<nav class="comments-nav" role="navigation">
-			<div class="comments-nav-prev"><?php previous_comments_link( __( '&larr; Previous Comments', 'medula-theme' ) ); ?></div>
-			<div class="comments-nav-next"><?php next_comments_link( __( 'More Comments &rarr;', 'medula-theme' ) ); ?></div>
+			<div class="comments-nav-prev"><?php previous_comments_link( __( '&larr; Previous Comments', 'medula-t' ) ); ?></div>
+			<div class="comments-nav-next"><?php next_comments_link( __( 'More Comments &rarr;', 'medula-t' ) ); ?></div>
 			</nav>
 		<?php endif; ?>
 
 		<?php if ( ! comments_open() ) : ?>
-			<p class="no-comments"><?php _e( 'Comments are closed.' , 'medula-theme' ); ?></p>
+			<p class="no-comments"><?php _e( 'Comments are closed.' , 'medula-t' ); ?></p>
 		<?php endif; ?>
 
 	<?php endif; ?>

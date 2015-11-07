@@ -22,7 +22,7 @@
 <body <?php body_class(); ?>>
 	
 	<div id="page-wrapper">
-		<a class="skip-link screen-reader-text" href="#site-content-wrapper"><?php _e( 'Skip to content', 'medula-theme' ); ?></a>
+		<a class="skip-link screen-reader-text" href="#site-content-wrapper"><?php _e( 'Skip to content', 'medula-t' ); ?></a>
 
 		<header class="site-header" role="banner">
 

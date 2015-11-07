@@ -7,7 +7,7 @@ get_header();
 <main role="main">
 
 	<header class="page-header">
-		<h1 class="page-title"><span><?php _e( 'Search Results for:', 'medula-theme' ); ?></span> <?php echo esc_attr(get_search_query()); ?></h1>
+		<h1 class="page-title"><span><?php _e( 'Search Results for:', 'medula-t' ); ?></span> <?php echo esc_attr(get_search_query()); ?></h1>
 	</header>
 
 	<?php if (have_posts()) : while (have_posts()) : the_post(); ?>
@@ -20,7 +20,7 @@ get_header();
 			</header>
 
 			<section class="entry-content">
-				<?php the_excerpt( '<span class="read-more">' . __( 'Read more &raquo;', 'medula-theme' ) . '</span>' ); ?>
+				<?php the_excerpt( '<span class="read-more">' . __( 'Read more &raquo;', 'medula-t' ) . '</span>' ); ?>
 			</section>
 
 			<footer class="entry-footer">
@@ -37,13 +37,13 @@ get_header();
 
 		<article id="post-not-found" class="hentry cf">
 			<header class="article-header">
-				<h2><?php _e( 'Sorry, No Results.', 'medula-theme' ); ?></h2>
+				<h2><?php _e( 'Sorry, No Results.', 'medula-t' ); ?></h2>
 			</header>
 			<section class="entry-content">
-				<p><?php _e( 'Try your search again.', 'medula-theme' ); ?></p>
+				<p><?php _e( 'Try your search again.', 'medula-t' ); ?></p>
 			</section>
 			<footer class="article-footer">
-				<p class="alert-error"><?php _e( 'This is the error message in the search.php template.', 'medula-theme' ); ?></p>
+				<p class="alert-error"><?php _e( 'This is the error message in the search.php template.', 'medula-t' ); ?></p>
 			</footer>
 		</article>
 

@@ -70,7 +70,7 @@ add_action( 'admin_menu', 'disable_default_dashboard_widgets' );
  * 2.1 Load the Custom Widgets
  */
 function medula_custom_dashboard_widgets() {
-	wp_add_dashboard_widget( 'medula_example_dashboard_widget', __( 'Example Dashboard Widget (Médula)', 'medula-theme' ), 'medula_example_dashboard_widget' );
+	wp_add_dashboard_widget( 'medula_example_dashboard_widget', __( 'Example Dashboard Widget (Médula)', 'medula-t' ), 'medula_example_dashboard_widget' );
 
 }
 add_action( 'wp_dashboard_setup', 'medula_custom_dashboard_widgets' );
@@ -142,11 +142,11 @@ function medula_custom_admin_footer() {
 	$your_site_url="#";
 
 	printf(
-		'<span id="footer-thankyou">' . esc_html__( 'Developed by %1$s', 'medula-theme' ) . '</span>.',
+		'<span id="footer-thankyou">' . esc_html__( 'Developed by %1$s', 'medula-t' ) . '</span>.',
 		'<a href="' . $your_site_url . '">' . $your_site_name . '</a>'
 	);
 	printf(
-		' ' . esc_html__('Built using %s.', 'medula-theme'),
+		' ' . esc_html__('Built using %s.', 'medula-t'),
 		'<a class="andamira" href="https://github.com/andamira/medula" target="_blank">andamira Médula</a>'
 	);
 }
