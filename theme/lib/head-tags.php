@@ -4,8 +4,8 @@
  *
  *
  *     1 Favicons (& Theme Color)
- *         1.1 Frontend
- *         1.2 Backend (Admin Area)
+ *         1.1 Frontend                                           (#)
+ *         1.2 Backend (Admin Area)                               (#)
  *
  *     2 Pingbacks                                                (#)
  *
@@ -33,7 +33,17 @@ $medula_theme_color=""; // e.g. #ffffff
 
 /**
  * 1.1 FRONTEND
+ *
+ * Create a 16x16 favicon and put it in:
+ *     - /src/img/favicon.png and /src/img/favicon.ico
+ *     - /src/img/favicon.png and /src/img/favicon.png
+ *
+ * Create a 180x180 favicon and put it in:
+ *     - /src/img/favicon-big.png
  */
+
+# add_action('wp_head', 'medula_header_tags_frontend_favicons_theme_color', 2);
+
 function medula_header_tags_frontend_favicons_theme_color() {
 	global $medula_favicon_v, $medula_theme_color;
 
@@ -53,17 +63,20 @@ function medula_header_tags_frontend_favicons_theme_color() {
 		echo '<meta name="theme-color" content="' . $medula_theme_color . '">';
 	}
 }
-add_action('wp_head', 'medula_header_tags_frontend_favicons_theme_color', 2);
 
 /**
  * 1.2 BACKEND (WORDPRESS ADMIN AREA)
+ *
+ * Create a 16x16 favicon and put it in /src/img/favicon_adm.png
  */
+
+# add_action('admin_head', 'medula_header_tags_favicon_backend');
+
 function medula_header_tags_favicon_backend() {
 	global $medula_favicon_v;
 
 	echo '<link rel="icon" href="' . get_template_directory_uri() . '/res/img/favicon_adm.png?v=' . $medula_favicon_v . '" />';
 }
-add_action('admin_head', 'medula_header_tags_favicon_backend');
 
 
 /**
@@ -74,26 +87,28 @@ add_action('admin_head', 'medula_header_tags_favicon_backend');
  *
  * @link http://codex.wordpress.org/Glossary#Pingback
  */
+
+# add_action('admin_head', 'medula_header_tags_pingback');
+
 function medula_header_tags_pingback() {
 	echo '<link rel="pingback" href="' . bloginfo('pingback_url') . '">';
 }
-# add_action('admin_head', 'medula_header_tags_pingback');
 
 
 /**
  * 3 Main Meta Tags
  * ************************************************************
  */
-function medula_header_tags_main() {
 
+add_action('wp_head', 'medula_header_tags_main', 0);
+
+function medula_header_tags_main() {
 ?>
 <meta charset="<?php bloginfo( 'charset' ); ?>">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
 <?php
-
 }
-add_action('wp_head', 'medula_header_tags_main', 0);
 
 
 /**
@@ -104,6 +119,7 @@ add_action('wp_head', 'medula_header_tags_main', 0);
  */
 
 add_action( 'wp_enqueue_scripts', 'icons_collections' );
+
 function icons_collections() {
 
 	/**
