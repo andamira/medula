@@ -20,27 +20,31 @@
  *
  * NOTE: If you decide to use this template, you have to customize each one 
  * of the included files for your particular use case, and / or extend them.
+ * Uncomment the includes you want to enable and take good look to the code.
  *
  * @link https://github.com/andamira/medula/wiki/Plugin
  */
 
 
 // Google Analytics Tracking Code
-include( 'lib/analytics.php' );
+# include( 'lib/analytics.php' );
 
 // Load Helper Functions
-include( 'lib/helpers.php' );
+# include( 'lib/helpers.php' );
 
 // Create Shortcodes
-include( 'lib/shortcodes.php' );
+# include( 'lib/shortcodes.php' );
 
 // Create Custom Post Types
-include( 'lib/post-types.php' );
+# include( 'lib/post-types.php' );
 
 // Create Custom Taxonomies
-include( 'lib/taxonomies.php' );
+# include( 'lib/taxonomies.php' );
 
 // Create Metaboxes
-include( 'lib/metaboxes.php' );
+# include( 'lib/metaboxes.php' );
+
+// Compression and Caching
+# include ( 'lib/compression-caching.php'  );
 
 

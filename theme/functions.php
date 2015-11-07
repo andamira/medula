@@ -5,8 +5,6 @@
  *
  *     1 Global Options
  *
- *         1.1 Optimization                             (#)
- *
  *     2 Theme Functionlity
  *
  *         2.1  Core Médula library
@@ -45,16 +43,6 @@
  * ************************************************************
  *
  */
-
-/**
- * 1.1 OPTIMIZATION
- *
- *
- * @see medula_cleanup_all()
- */
-
-// Remove the whitespace from HTML between wp_head and wp_footer.
-# define( 'MEDULA_OPTIMIZE_HTML', true );
 
 
 /**

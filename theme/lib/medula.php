@@ -31,9 +31,7 @@
  *          5.5 Read More Link
  *          5.6 &nbsp; unichode characters
  *
- *      6 Filter HTML Output
- *
- *      7 Utility Functions
+ *      6 Utility Functions
  */
 
 
@@ -239,12 +237,6 @@ function medula_cleanup_all() {
 
 	// removing pingbacks to self (5.7)
 	add_action( 'pre_ping', 'medula_no_self_pingbacks' );
-
-	// filter html output (6)
-	if ( defined( 'MEDULA_OPTIMIZE_HTML' ) && MEDULA_OPTIMIZE_HTML ) { 
-		add_action('wp_head', 'medula_optimize_html_buffer_start');
-		add_action('wp_footer', 'medula_optimize_html_buffer_end');
-	}
 }
 
 /**
@@ -369,42 +361,12 @@ function medula_no_self_pingbacks( &$links ) {
 
 
 /**
- * 6 FILTER HTML OUTPUT
- *
- * @link http://stackoverflow.com/a/17472755
- * @link https://core.trac.wordpress.org/changeset/28708
- */
-
-function medula_optimize_html_callback( $buffer ) {
-	// option 1 ( http://wordpress.org/support/topic/how-do-i-strip-out-all-whitespace-via-a-filter )
-	//buffer = str_replace( array( "\n", "\t", '  ' ), '', $buffer );
-
-	// option 2 ( http://stackoverflow.com/a/6225706 )
-	$search = array(
-		'/\>[^\S ]+/s',  // strip whitespaces after tags, except space
-		'/[^\S ]+\</s',  // strip whitespaces before tags, except space
-		'/(\s)+/s'       // shorten multiple whitespace sequences
-	);
-	$replace = array(
-		'>',
-		'<',
-		'\\1'
-	);
-	$buffer = preg_replace($search, $replace, $buffer);
-
-	return $buffer;
-}
-function medula_optimize_html_buffer_start() { ob_start("medula_optimize_html_callback"); }
-function medula_optimize_html_buffer_end() { ob_end_flush(); }
-
-
-/**
- * 7 UTILITY FUNCTIONS
+ * 6 UTILITY FUNCTIONS
  * ************************************************************
  */
 
 /**
- * 7.1 PROTOCOL (HTTP(S))
+ * 6.1 PROTOCOL (HTTP(S))
  * 
  * @link http://codex.wordpress.org/Function_Reference/is_ssl
  * @link https://gist.github.com/webaware/4688802
