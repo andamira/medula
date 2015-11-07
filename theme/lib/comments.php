@@ -65,7 +65,7 @@ function medula_comments_layout( $comment, $args, $depth ) {
 			 * this is the new responsive optimized comment image. It used the new HTML5 data-attribute to display
 			 * comment gravatars on larger screens only. What this means is that on larger posts, mobile sites
 			 * don't have a ton of requests for comment images. This makes load time incredibly fast! If you'd
-			 * like to change it back, just replace it with the regular wordpress gravatar call:
+			 * like to change it back, just replace it with the regular WordPress gravatar call:
 			 *
 			 * echo get_avatar($comment,$size='32',$default='<path_to_url>' );
 			*/

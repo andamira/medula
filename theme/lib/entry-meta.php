@@ -41,7 +41,7 @@ function medula_get_entry_meta_author() {
 	if ( true ) {
 		$author .= '<a href="';
 
-		// You can choose to link either to author's wordpress user page
+		// You can choose to link either to author's WordPress user page
 		$author .= get_author_posts_url( get_the_author_meta( "ID" ) ) . '">';
 		// or to author's website
 		//$author .= get_the_author_meta( "user_url" ) . '">';
