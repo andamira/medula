@@ -1,6 +1,6 @@
 
 /**
- * Médula Main Scripts File
+ * Medula Main Scripts File
  * Author: andamira
  *
  *     1 jQuery(document).ready()

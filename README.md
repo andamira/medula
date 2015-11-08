@@ -1,4 +1,4 @@
-# Médula
+# Medula
 
 [![Join the chat at https://gitter.im/andamira/medula](https://badges.gitter.im/Join%20Chat.svg)](https://gitter.im/andamira/medula?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
 
@@ -63,7 +63,7 @@
 
 ## Documentation
 
-- You can find more information in the [Médula Wiki](https://github.com/andamira/medula/wiki)
+- You can find more information in the [Medula Wiki](https://github.com/andamira/medula/wiki)
 - You could also take a look to the `theme/functions.php` file to get an idea on how the theme is structured, and follow the included files from there.
 
 

@@ -7,7 +7,7 @@
  *
  *     2 Theme Functionlity
  *
- *         2.1  Core Médula library
+ *         2.1  Core Medula library
  *         2.2  Admin Area                              (#)
  *         2.3  Head Meta & Link Tags
  *         2.4  Fonts
