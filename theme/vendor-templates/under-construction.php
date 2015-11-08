@@ -109,7 +109,7 @@ get_footer('');
 	</head>
 	<body>
 		<p class="headerText"><?php
-			 echo site_url();
+			 echo home_url();
 		?></p>
 		<p class="bodyText"><?php
 			printf(__('%s is coming soon', 'medula'), '');
