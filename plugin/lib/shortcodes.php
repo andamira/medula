@@ -18,7 +18,7 @@
  *
  */
 
-function medula_shortcode_example( $atts
+function medula_p_shortcode_example( $atts
 	// Comment the next line for a self-enclosing shortcode
 	, $content = null
 	) {
@@ -30,7 +30,7 @@ function medula_shortcode_example( $atts
 		), $atts )
 	);
 
-	$out = '<div class="medula_shortcode " ' . $class . '">';
+	$out = '<div class="medula_p_shortcode " ' . $class . '">';
 
 	$out .= do_shortcode($content); // render shortcodes in content
 	// $out .= $content; // do not render shortcodes
@@ -38,7 +38,7 @@ function medula_shortcode_example( $atts
 	$out .= '</div>';
 	return $out;
 }
-add_shortcode( 'medula-shortcode', 'medula_shortcode_example' );
+add_shortcode( 'medula-shortcode', 'medula_p_shortcode_example' );
 
 
 

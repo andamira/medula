@@ -16,14 +16,14 @@
  * @link https://core.trac.wordpress.org/changeset/28708
  */
 
-# define( 'MEDULA_OPTIMIZE_HTML', true );
+# define( 'medula_p_FILTER_HTML' true );
 
-if ( defined( 'MEDULA_OPTIMIZE_HTML' ) && MEDULA_OPTIMIZE_HTML ) {
-	add_action('wp_head', 'medula_optimize_html_buffer_start');
-	add_action('wp_footer', 'medula_optimize_html_buffer_end');
+if ( defined( 'medula_p_FILTER_HTML' ) && medula_p_FILTER_HTML ) {
+	add_action('wp_head', 'medula_p_optimize_html_buffer_start');
+	add_action('wp_footer', 'medula_p_optimize_html_buffer_end');
 }
 
-function medula_optimize_html_callback( $buffer ) { 
+function medula_p_optimize_html_callback( $buffer ) { 
     // option 1 ( http://wordpress.org/support/topic/how-do-i-strip-out-all-whitespace-via-a-filter )
     //buffer = str_replace( array( "\n", "\t", '  ' ), '', $buffer );
 
@@ -42,5 +42,5 @@ function medula_optimize_html_callback( $buffer ) {
 
     return $buffer;
 }
-function medula_optimize_html_buffer_start() { ob_start("medula_optimize_html_callback"); }
-function medula_optimize_html_buffer_end() { ob_end_flush(); }
+function medula_p_optimize_html_buffer_start() { ob_start("medula_p_optimize_html_callback"); }
+function medula_p_optimize_html_buffer_end() { ob_end_flush(); }
