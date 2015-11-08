@@ -19,8 +19,10 @@
  * ************************************************************
  * @link http://wordpress.stackexchange.com/questions/13237/custom-post-type-tag-archives-dont-work-for-basic-loop
  */
+
 # add_filter('request', 'post_type_tags_fix');
-function post_type_tags_fix($request) {
+
+function medula_post_type_tags_fix($request) {
 	if ( isset($request['tag']) && !isset($request['post_type']) ) {
 		$request['post_type'] = 'any';
 		return $request;
@@ -33,8 +35,10 @@ function post_type_tags_fix($request) {
  * ************************************************************
  * @link http://wp-types.com/forums/topic/the_excerpt-and-relevanssi/
  */
-# add_shortcode('relevanssi-excerpt', 'f_relevanssi_excerpt');
-function f_relevanssi_excerpt() {
+
+# add_shortcode('relevanssi-excerpt', 'medula_relevanssi_excerpt');
+
+function medula_relevanssi_excerpt() {
 	ob_start();
 	relevanssi_the_excerpt();
 	$summary .= ob_get_contents();
@@ -51,8 +55,10 @@ function f_relevanssi_excerpt() {
  * @link http://forrst.com/posts/Fix_Admin_Bar_Styling_in_Wordpress_Theme_for_abs-HHR
  * @link http://codecanyon.net/item/foobar-wordpress-notification-bars/411466
  */
-# add_action('admin_bar_init', 'my_admin_bar_init');
-function my_admin_bar_init() {
+
+# add_action('admin_bar_init', 'medula_admin_bar_init');
+
+function medula_admin_bar_init() {
 		remove_action('wp_head', '_admin_bar_bump_cb');
 
 		if (is_user_logged_in()) {
@@ -81,8 +87,10 @@ function my_admin_bar_init() {
  * Author URI: http://the--space--between.com
  * Version: 2.1.0
  */
-add_action('admin_enqueue_scripts', 'chromefix_inline_css');
-function chromefix_inline_css() {
+
+add_action('admin_enqueue_scripts', 'medula_chromefix_inline_css');
+
+function medula_chromefix_inline_css() {
     wp_add_inline_style( 'wp-admin', '#adminmenu { transform: translateZ(0); }' );
 }
 

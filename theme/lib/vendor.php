@@ -2,28 +2,30 @@
 /**
  * External Libraries & Plugins Templates
  *
- *     1 Templates Overriding
+ *     1 Override WordPress Templates
  *
  *     2 Specific Plugins
  *
- *         2.1 WPML
- *         2.2 Toolset
- *         2.3 WooCommerce
+ *         2.1 WPML                                         (#)
+ *         2.2 Toolset                                      (#)
+ *         2.3 WooCommerce                                  (#)
  *
- *     3 Misc. Fixes 
+ *     3 Misc. Fixes
  *
  *     4 Downloaded Libraries
  */
 
 
 /**
- * 1 TEMPLATES OVERRIDING
+ * 1 OVERRIDE WORDPRESS TEMPLATES
  * ************************************************************
- * Currently only Toolset Layouts is supported
+ *
  */
 function medula_template_override($layout = '') {
 
- 	// You must enable the Toolset suite in section 2.2
+ 	// NOTE: Currently only Toolset Layouts is officially supported.
+	// In order to use it you must first enable it in section 2.2,
+	// and change the grid in /src/sass/dependencies/_frontend.scss
 	//
 	if ( function_exists('medula_toolset_layout') ) {
 		return( medula_toolset_layout($layout) ); 
@@ -62,16 +64,16 @@ function medula_template_override($layout = '') {
 
 
 /**
- * 2 Fix misc. problems with some browsers libraries & plugins
+ * 3 Fix misc. problems with some browsers libraries & plugins
  * ************************************************************
  */
 include_once( 'vendor/fixes.php' );
 
 
 /**
- * 3 Downloaded Libraries
+ * 4 Downloaded Libraries
  * ************************************************************
  */
-# include_once( '../vendor/example/example.php' ); // TODO
+# include_once( '../vendor/example/example.php' );
 
 

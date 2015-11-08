@@ -57,7 +57,9 @@ function medula_toolset_layout($layout = '') {
  */
 if( class_exists( 'WPDD_Layouts' ) && !function_exists( 'include_ddl_layouts' ) ) {
 	/*
-	function include_ddl_layouts( $tpls_dir = '' ) {
+	medula_include_ddl_layouts('/toolset/cells/');
+
+	function medula_include_ddl_layouts( $tpls_dir = '' ) {
 		$dir_str = dirname(__FILE__) . $tpls_dir;
 		$dir = opendir( $dir_str );
 		while( ( $currentFile = readdir($dir) ) !== false ) {
@@ -68,7 +70,6 @@ if( class_exists( 'WPDD_Layouts' ) && !function_exists( 'include_ddl_layouts' ) 
 		}
 		closedir($dir);
 	}
-	include_ddl_layouts('/toolset/cells/');
 	/**/
 }
 
@@ -78,8 +79,10 @@ if( class_exists( 'WPDD_Layouts' ) && !function_exists( 'include_ddl_layouts' ) 
  *
  * @link https://wp-types.com/forums/topic/remove-unneccessary-css-files/#post-210881
  */
-# add_action('wp_enqueue_scripts', 'prefix_remove_views_assets', 20);
-function prefix_remove_views_assets() {
+	
+add_action('wp_enqueue_scripts', 'medula_prefix_remove_views_assets', 20);
+
+function medula_prefix_remove_views_assets() {
 
 	// Scripts
 	// ------
