@@ -3,30 +3,30 @@
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "https://github.com/andamira/medula.git"
+    "url": "https://github.com/andamira/medula"
   },
   "engines": {
     "node": ">=4.0.0"
   },
   "dependencies": {},
   "devDependencies": {
-    "del": "*",
-    "gulp": "*",
-    "gulp-add-src": "*",
-    "gulp-autoprefixer": "*",
-    "gulp-combine-mq": "*",
-    "gulp-concat": "*",
-    "gulp-filter": "*",
-    "gulp-flatten": "*",
-    "gulp-ignore": "*",
-    "gulp-imagemin": "*",
-    "gulp-jscs": "*",
-    "gulp-minify-css": "*",
-    "gulp-pixrem": "*",
-    "gulp-print": "*",
-    "gulp-sass": "*",
-    "gulp-sourcemaps": "*",
-    "gulp-uglify": "*",
-    "gulp-util": "*"
+    "del": "2.x",
+    "gulp": "3.x",
+    "gulp-add-src": "0.2.x",
+    "gulp-autoprefixer": "3.x",
+    "gulp-combine-mq": "0.4.x",
+    "gulp-concat": "2.x",
+    "gulp-filter": "3.x",
+    "gulp-flatten": "0.2.x",
+    "gulp-ignore": "2.x",
+    "gulp-imagemin": "2.x",
+    "gulp-jscs": "3.x",
+    "gulp-minify-css": "1.x",
+    "gulp-pixrem": "1.x",
+    "gulp-print": "2.x",
+    "gulp-sass": "2.x",
+    "gulp-sourcemaps": "1.x",
+    "gulp-uglify": "1.x",
+    "gulp-util": "3.x"
   }
 }
