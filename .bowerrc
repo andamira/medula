@@ -3,7 +3,7 @@
 	"analytics": true,
 	"scripts": {
 		"preinstall": "",
-		"postinstall": "./.bower-after",
+		"postinstall": "",
 		"preuninstall": ""
 	}
 }
