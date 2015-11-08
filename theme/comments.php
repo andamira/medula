@@ -1,8 +1,9 @@
 <?php
 /**
- * The comments page
+ * The Comments Template
  *
- * @link http://codex.wordpress.org/Template_Tags/wp_list_comments
+ * @link https://developer.wordpress.org/reference/functions/wp_list_comments/
+ * @link https://developer.wordpress.org/reference/functions/comments_template/
  */
 
 // don't load it if you can't comment
@@ -15,7 +16,7 @@ if ( post_password_required() ) {
 		<section class="comments-list">
 
 		<header>
-			<h2 id="comments-title" ><?php comments_number( __( '<span>No</span> Comments', 'medula-t' ), __( '<span>One</span> Comment', 'medula-t' ), _n( '<span>%</span> Comments', '<span>%</span> Comments', get_comments_number(), 'medula-t' ) );?></h2>
+			<h2 id="comments-title" ><?php medula_comments_count(); ?></h2>
 		</header>
 
 		<section class="comments-list">

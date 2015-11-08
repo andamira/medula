@@ -22,7 +22,7 @@ get_header();
 			<footer class="entry-footer">
 			</footer>
 
-			<?php comments_template( '', true ); ?>
+			<?php comments_template(); ?>
 
 		</article>
 

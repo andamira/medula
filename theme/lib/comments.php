@@ -13,31 +13,32 @@
  * 1 COMMENTS COUNT
  * ************************************************************
  *
- * @param bool $link 	Include a link to #comments-title if comments != 0
+ * @param bool $link Include a link to #comments-title if comments != 0
  *
  * @link http://codex.wordpress.org/Function_Reference/comments_number
  * @link http://codex.wordpress.org/Function_Reference/_n
  */
 function medula_comments_count( $link = false ) {
 
+	$com_num = get_comments_number();
+	# $com_num = get_comments_number_text();
+
 	$cc  = '<span class="entry-comments-count">';
 
-	$com_num = get_comments_number();
-	#$com_num = get_comments_number_text(); // (since 4.0)
+		// make it a link if requested
+		if ( $link && $com_num ) {
+			$cc .= '<a href="' . get_the_permalink() . '#comments-title" title="' . __( 'Go to comments', 'medula-t' ) . '">';
+		}
 
-	if ( $link && $com_num ) {
-		$cc .= '<a href="' . get_the_permalink() . '#comments-title" title="' . __( 'Go to comments', 'medula-t' ) . '">';
-	}
+			$cc .= comments_number(
+				__( 'No comments', 'medula-t' ),
+				__( 'One comment', 'medula-t' ),
+				sprintf( __( '% comments', 'medula-t' ), $com_num() )
+			);
 
-	if ( ! $com_num ) {
-		$cc .= __( '<span>No</span> Comments', 'medula-t' );
-	} else {
-		$cc .= sprintf ( _n( '<span>%s</span> Comment', '<span>%s</span> Comments', $com_num, 'medula-t' ), $com_num );
-	}
-
-	if ( $link && $com_num ) {
-		$cc .= '</a>';
-	}
+		if ( $link && $com_num ) {
+			$cc .= '</a>';
+		}
 
 	$cc .= '</span>';
 
