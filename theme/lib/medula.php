@@ -166,7 +166,7 @@ function medula_related_posts() {
 			<li class="related_post"><a class="entry-unrelated" href="<?php the_permalink() ?>" title="<?php the_title_attribute(); ?>"><?php the_title(); ?></a></li>
 			<?php endforeach; }
 		else { ?>
-			<?php echo '<li class="no_related_post">' . __( 'No Related Posts Yet!', 'medula-t' ) . '</li>'; ?>
+			<?php echo '<li class="no_related_post">' . __( 'No Related Posts Yet!', 'medula' ) . '</li>'; ?>
 			<?php }
 	}
 	wp_reset_postdata();
@@ -329,8 +329,8 @@ function medula_filter_ptags_on_images($content){
 function medula_excerpt_more($more) {
 	global $post;
 	return '...  <a class="excerpt-read-more" href="' . get_permalink($post->ID) .
-		'" title="' . __( 'Read', 'medula-t' ) . esc_attr( get_the_title($post->ID) ) . '">'.
-		__( 'Read more &raquo;', 'medula-t' ) .'</a>';
+		'" title="' . __( 'Read', 'medula' ) . esc_attr( get_the_title($post->ID) ) . '">'.
+		__( 'Read more &raquo;', 'medula' ) .'</a>';
 }
 
 /**

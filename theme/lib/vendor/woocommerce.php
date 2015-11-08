@@ -86,11 +86,11 @@ function medula_theme_wrapper_end() {
 function wc_wc20_variation_price_format( $price, $product ) {
 	// Main Price
 	$prices = array( $product->get_variation_price( 'min', true ), $product->get_variation_price( 'max', true ) );
-	$price = $prices[0] !== $prices[1] ? sprintf( __( 'From: %1$s', 'medula-t' ), wc_price( $prices[0] ) ) : wc_price( $prices[0] );
+	$price = $prices[0] !== $prices[1] ? sprintf( __( 'From: %1$s', 'medula' ), wc_price( $prices[0] ) ) : wc_price( $prices[0] );
 	// Sale Price
 	$prices = array( $product->get_variation_regular_price( 'min', true ), $product->get_variation_regular_price( 'max', true ) );
 	sort( $prices );
-	$saleprice = $prices[0] !== $prices[1] ? sprintf( __( 'From: %1$s', 'medula-t' ), wc_price( $prices[0] ) ) : wc_price( $prices[0] );
+	$saleprice = $prices[0] !== $prices[1] ? sprintf( __( 'From: %1$s', 'medula' ), wc_price( $prices[0] ) ) : wc_price( $prices[0] );
  
 	if ( $price !== $saleprice ) {
 		$price = '<del>' . $saleprice . '</del> <ins>' . $price . '</ins>';
@@ -142,7 +142,7 @@ function wp_list_categories_remove_title_attributes($output) {
 function medula_woocommerce_template_loop_add_to_cart() {
 	global $product;
 	echo '<form action="' . esc_url( $product->get_permalink( $product->id ) ) . '" method="get">
-		<button type="submit" class="single_add_to_cart_button button alt">' . __('View More', 'medula-t') . '</button>
+		<button type="submit" class="single_add_to_cart_button button alt">' . __('View More', 'medula') . '</button>
 	</form>';
 }
 
@@ -154,7 +154,7 @@ function medula_woocommerce_template_loop_add_to_cart() {
  */
 # add_filter( 'wc_add_to_cart_message', 'medula_custom_add_to_cart_message' );
 function medula_custom_add_to_cart_message ($message) {
-	$custom_message = sprintf( __('Product has been succesfully added to cart.', 'medula-t') );
+	$custom_message = sprintf( __('Product has been succesfully added to cart.', 'medula') );
 
 	global $is_cart_added;
 	$is_cart_added = 1;

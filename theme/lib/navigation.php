@@ -22,8 +22,8 @@ add_theme_support( 'menus' );
 
 register_nav_menus(
 	array(
-		'site-main-nav' => __( 'The Main Menu', 'medula-t' ),        // main nav in header
-		'site-footer-nav' => __( 'The Footer Menu', 'medula-t' )     // links in the footer
+		'site-main-nav' => __( 'The Main Menu', 'medula' ),        // main nav in header
+		'site-footer-nav' => __( 'The Footer Menu', 'medula' )     // links in the footer
 	)
 );
 
@@ -42,7 +42,7 @@ register_nav_menus(
 function medula_site_main_nav() {
 	wp_nav_menu(array(
 		'theme_location' => 'site-main-nav',            // Must match the registered key above
-		'menu' => __( 'Main Site Menu', 'medula-t' ),
+		'menu' => __( 'Main Site Menu', 'medula' ),
 		'container' => false,
 		'container_class' => '',
 		'container_id' => '',
@@ -62,7 +62,7 @@ function medula_site_main_nav() {
 function medula_site_footer_nav() {
 	wp_nav_menu(array(
 		'theme_location' => 'site-footer-nav',          // Must match the registered key above
-		'menu' => __( 'Site Footer Menu', 'medula-t' ),
+		'menu' => __( 'Site Footer Menu', 'medula' ),
 		'container' => false,
 		'container_class' => '',
 		'container_id' => '',

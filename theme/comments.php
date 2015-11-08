@@ -37,7 +37,7 @@ if ( post_password_required() ) {
 				'callback'          => $cb,
 				'end-callback'      => $cb_end,
 				'type'              => 'comment',
-				'reply_text'        => __( 'Reply', 'medula-t' ),
+				'reply_text'        => __( 'Reply', 'medula' ),
 				'page'              => '',
 				'per_page'          => '',
 				'avatar_size'       => 40,
@@ -52,13 +52,13 @@ if ( post_password_required() ) {
 
 		<?php if ( get_comment_pages_count() > 1 && get_option( 'page_comments' ) ) : ?>
 			<nav class="comments-nav" role="navigation">
-			<div class="comments-nav-prev"><?php previous_comments_link( __( '&larr; Previous Comments', 'medula-t' ) ); ?></div>
-			<div class="comments-nav-next"><?php next_comments_link( __( 'More Comments &rarr;', 'medula-t' ) ); ?></div>
+			<div class="comments-nav-prev"><?php previous_comments_link( __( '&larr; Previous Comments', 'medula' ) ); ?></div>
+			<div class="comments-nav-next"><?php next_comments_link( __( 'More Comments &rarr;', 'medula' ) ); ?></div>
 			</nav>
 		<?php endif; ?>
 
 		<?php if ( ! comments_open() ) : ?>
-			<p class="no-comments"><?php _e( 'Comments are closed.' , 'medula-t' ); ?></p>
+			<p class="no-comments"><?php _e( 'Comments are closed.' , 'medula' ); ?></p>
 		<?php endif; ?>
 
 	<?php endif; ?>

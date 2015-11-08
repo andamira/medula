@@ -27,13 +27,13 @@ function medula_comments_count( $link = false ) {
 
 		// make it a link if requested
 		if ( $link && $com_num ) {
-			$cc .= '<a href="' . get_the_permalink() . '#comments-title" title="' . __( 'Go to comments', 'medula-t' ) . '">';
+			$cc .= '<a href="' . get_the_permalink() . '#comments-title" title="' . __( 'Go to comments', 'medula' ) . '">';
 		}
 
 			$cc .= comments_number(
-				__( 'No comments', 'medula-t' ),
-				__( 'One comment', 'medula-t' ),
-				sprintf( __( '% comments', 'medula-t' ), $com_num() )
+				__( 'No comments', 'medula' ),
+				__( 'One comment', 'medula' ),
+				sprintf( __( '% comments', 'medula' ), $com_num() )
 			);
 
 		if ( $link && $com_num ) {
@@ -74,14 +74,14 @@ function medula_comments_layout( $comment, $args, $depth ) {
 			?>
 			<img data-gravatar="<?php echo medula_get_protocol(); ?>www.gravatar.com/avatar/<?php echo md5( $bgauthemail ); ?>?s=40" class="load-gravatar avatar avatar-48 photo" height="40" width="40" src="<?php echo get_template_directory_uri(); ?>/res/img/nothing.gif" />
 
-			<?php printf(__( '<cite class="fn">%1$s</cite> %2$s', 'medula-t' ), get_comment_author_link(), medula_edit_comment_link() ) ?>
+			<?php printf(__( '<cite class="fn">%1$s</cite> %2$s', 'medula' ), get_comment_author_link(), medula_edit_comment_link() ) ?>
 			<time datetime="<?php echo comment_time('Y-m-dTH:i:sO'); ?>"><a href="<?php echo htmlspecialchars( get_comment_link( $comment->comment_ID ) ) ?>"><?php comment_time( get_option( 'date_format' ) ); ?> </a></time>
 
 		</header>
 
 		<?php if ($comment->comment_approved == '0') : ?>
 			<div class="alert alert-info">
-				<p><?php _e( 'Your comment is awaiting moderation.', 'medula-t' ) ?></p>
+				<p><?php _e( 'Your comment is awaiting moderation.', 'medula' ) ?></p>
 			</div>
 		<?php endif; ?>
 

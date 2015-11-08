@@ -7,7 +7,7 @@
 
 	} else {
 
-		echo '<div class="no-widgets alert-info"><p>' . __( 'Empty widget area', 'medula-t' ) . '</p></div>';
+		echo '<div class="no-widgets alert-info"><p>' . __( 'Empty widget area', 'medula' ) . '</p></div>';
 
 	}
 

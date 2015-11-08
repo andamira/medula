@@ -6,7 +6,7 @@
 // <!-- Search Form Type 1: simple text box -->
 ?>
 <form class="searchform" role="search" method="get" action="<?php echo esc_url( home_url( '/' ) ); ?>">
-<input type="text" value="" name="s" id="s" placeholder="<?php _e('Type & Hit Enter', 'medula-t')?>" />
+<input type="text" value="" name="s" id="s" placeholder="<?php _e('Type & Hit Enter', 'medula')?>" />
 </form>
 <?php
 
@@ -14,7 +14,7 @@
 /*
 <form id="searchform" method="get" action="/index.php">
     <input type="text" name="s" id="s" />
-    <button type="submit" title="<?php _e('Search', 'medula-t')?>">
+    <button type="submit" title="<?php _e('Search', 'medula')?>">
         <i class="dashicons-search dashicons"></i>
     </button>
 </form>
@@ -23,8 +23,8 @@
 // <!-- Search Form Type 3 with button -->
 /*
 <form class="searchform" method="get" action="/index.php">
-    <input type="text" name="s" id="s" placeholder="<?php _e('Search', 'medula-t') . ' . . .'; ?>" />
-    <button type="submit" title="<?php _e('Search', 'medula-t'); ?>">
+    <input type="text" name="s" id="s" placeholder="<?php _e('Search', 'medula') . ' . . .'; ?>" />
+    <button type="submit" title="<?php _e('Search', 'medula'); ?>">
         <i class="dashicons-search dashicons"></i>
     </button>
 </form>
