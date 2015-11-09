@@ -162,9 +162,10 @@ function medula_smart_header(navbar, aboveNavbar) {
 /**
  * 2.2 SWAP GRAVATARS
  *
- * In the /theme/lib/comments.php file, you can see we're not loading the gravatar
- * images on mobile to save bandwidth. Once we hit an acceptable viewport
- * then we can swap out those images since they are located in a data attribute.
+ * You'll have to switch to the custom gravatar call in /theme/lib/comments.php 2.2
+ * 
+ * Images wont be loaded on mobile. Once we hit an acceptable viewport then
+ * we can swap out those images since they are located in a data attribute.
  */
 
 /*

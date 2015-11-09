@@ -58,21 +58,28 @@ function medula_comments_layout( $comment, $args, $depth ) {
 
 	<article id="comment-<?php comment_ID(); ?>" <?php comment_class(); ?>>
 
-		  <header class="comment-author vcard">
+		  <header class="comment-author">
 			<?php
+
 			/*
-			 * Custom gravatar call
+			 * 2.1 Gravatar Call
 			 *
-			 * this is the new responsive optimized comment image. It used the new HTML5 data-attribute to display
-			 * comment gravatars on larger screens only. What this means is that on larger posts, mobile sites
-			 * don't have a ton of requests for comment images. This makes load time incredibly fast! If you'd
-			 * like to change it back, just replace it with the regular WordPress gravatar call:
+			 * @link https://en.gravatar.com/site/implement/images/
+			 */
+
+			echo get_avatar($comment, $size='42', $default='' );
+
+			/*
+			 * 2.2 Custom gravatar call
 			 *
-			 * echo get_avatar($comment,$size='32',$default='<path_to_url>' );
-			*/
-			$bgauthemail = get_comment_author_email();
+			 * This is an alternative responsive optimized comment image loader.
+			 * It uses the data-attribute to display comment gravatars on larger screens only.
+			 *
+			 * You'll have to enable it also in /src/js/main.js
+			 */
+
+			# echo '<img data-gravatar="' . medula_get_protocol() . 'www.gravatar.com/avatar/' . md5( get_comment_author_email() ) . '?r=pg&s=40" class="load-gravatar avatar photo" height="40" width="40" src="' . get_template_directory_uri() . '/res/img/nothing.gif" />';
 			?>
-			<img data-gravatar="<?php echo medula_get_protocol(); ?>www.gravatar.com/avatar/<?php echo md5( $bgauthemail ); ?>?s=40" class="load-gravatar avatar avatar-48 photo" height="40" width="40" src="<?php echo get_template_directory_uri(); ?>/res/img/nothing.gif" />
 
 			<?php printf(__( '<cite class="fn">%1$s</cite> %2$s', 'medula' ), get_comment_author_link(), medula_edit_comment_link() ) ?>
 			<time datetime="<?php echo comment_time('Y-m-dTH:i:sO'); ?>"><a href="<?php echo htmlspecialchars( get_comment_link( $comment->comment_ID ) ) ?>"><?php comment_time( get_option( 'date_format' ) ); ?> </a></time>
