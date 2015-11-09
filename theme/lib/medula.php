@@ -32,13 +32,14 @@
  *          5.6 &nbsp; unichode characters
  *
  *      6 Utility Functions
+ *
+ *          6.1 http(s) Protocol Fix
  */
 
 
 /**
- * 1 SCRIPTS & ENQUEUEING
+ * 1 ENQUEUEING SCRIPTS & STYLES
  * ************************************************************
- * Loads Modernizr, jQuery, and reply script
  */
 
 function medula_scripts_and_styles() {
@@ -50,7 +51,7 @@ function medula_scripts_and_styles() {
 
 		// comment reply script for threaded comments
 		if ( is_singular() AND comments_open() AND (get_option('thread_comments') == 1)) {
-			  wp_enqueue_script( 'comment-reply' );
+			wp_enqueue_script( 'comment-reply' );
 		}
 
 		//adding scripts file in the footer
@@ -63,8 +64,7 @@ function medula_scripts_and_styles() {
 		wp_enqueue_script( 'medula-js' );
 	}
 	
-	// Admin styles are defined in:
-	// lib/admin.php
+	// Note: Styles for the WordPress Backend are defined in admin.php
 }
 
 
@@ -366,12 +366,14 @@ function medula_no_self_pingbacks( &$links ) {
  */
 
 /**
- * 6.1 PROTOCOL (HTTP(S))
- * 
+ * 6.1 HTTP(S) PROTOCOL FIX
+ *
+ * @link http://snippets.webaware.com.au/snippets/wordpress-is_ssl-doesnt-work-behind-some-load-balancers/
  * @link http://codex.wordpress.org/Function_Reference/is_ssl
  * @link https://gist.github.com/webaware/4688802
- * @link http://snippets.webaware.com.au/snippets/wordpress-is_ssl-doesnt-work-behind-some-load-balancers/
+ * @link http://wordpress.stackexchange.com/a/24863/39050
  */
+
 function medula_get_protocol() {
 	if ( is_ssl() ) {
 		return  "https://";
@@ -384,19 +386,18 @@ if (stripos(get_option('siteurl'), 'https://') === 0) {
 	$_SERVER['HTTPS'] = 'on';
 
 	// NOTE: Uncomment the next add_action() line if your WordPress
-    // instalation can't detect that SSL is being used:
-	# add_action('wp_print_scripts', 'force_ssl_url_scheme_script');
+	// instalation can't detect that SSL is being used:
+	# add_action( 'wp_footer', 'medula_force_ssl_url_scheme_script' );
 }
 
 // JavaScript detection of page protocol
-function force_ssl_url_scheme_script() {
+function medula_force_ssl_url_scheme_script() {
 ?>
 <script>
 	if (document.location.protocol != "https:") {
-	document.location = document.URL.replace(/^http:/i, "https:");
+		document.location = document.URL.replace(/^http:/i, "https:");
 	}
 </script>
 <?php
-} 
-
+}
 
