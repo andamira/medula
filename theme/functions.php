@@ -3,7 +3,7 @@
  * This is the functions.php file.
  *
  *
- *     1 Global Options
+ *     1 Globals
  *
  *         1.1 Resources URI
  *
@@ -49,8 +49,8 @@
  * 1.1 Returns the resources URI, with optional parameter: css, js, img, fonts.
  *     NOTE: The default path must match THEME_RESOURCES global in /gulpfile.js 
  */
-function medula_get_theme_resources_uri( $subfolder = '' ){
-	return get_template_directory_uri() . '/res/' . esc_url($subfolder);
+function medula_get_theme_resources_uri( $subpath= '' ){
+	return get_template_directory_uri() . '/res/' . esc_url($subpath);
 }
 
 /**
