@@ -1,43 +1,77 @@
-// Install dependencies:
-//
-//         sudo npm install -g bower
-//         npm install
-//         bower install
-//
-// Usage:
-//
-//      type "gulp" for production (minified) stuff
-//      type "gulp --dev" for dev stuff
-//      type "gulp clean" to delete/clean out your target folders.
-//
-//      Additional options (TODO):
-//
-//      --imgmin | --noimgmin     (Don't) minify images
-//      --rem2px | --norem2px     (Don't) prefix rem with pixels
-//      --cmq | --nocmq           (Don't) combine media queries
-//
-// INFO:
-// See https://github.com/isaacs/minimatch for glob matching syntax info
-//
-// TODO: jshint, sourcemaps, browserify, livereload...
-//
+/**
+ * Gulp Configuration File
+ *
+ * Usage:
+ *
+ *      type: `gulp --dev` while developing stuff
+ *      type: `gulp` for production (minified) stuff
+ *      type: `gulp clean` to delete out your target res/ folders
+ *
+ *      Additional options:
+ *
+ *      --imgmin | --noimgmin     (Don't) minify images
+ *      --rem2px | --norem2px     (Don't) prefix rem with pixels
+ *      --cmq | --nocmq           (Don't) combine media queries
+ *
+ *
+ * Index:
+ *
+ *     1 Global Options
+ *
+ *     2 Define Sources
+ *
+ *         2.1 Your Own Assets
+ *         2.2 Vendor CSS & js (concat)
+ *         2.2 Vendor CSS & js (live)
+ *         2.4 Suggested Plugins
+ *
+ *     3 Define Targets
+ *
+ *     4 Load Gulp Dependencies
+ *
+ *     5 (reserved)
+ *
+ *     6 Define Tasks
+ *
+ *         6.1 Sass Compilation
+ *         6.2 js Compilation
+ *         6.3 live vendor css & js
+ *         6.4 Process and Copy Images
+ *         6.5 Copy Fonts
+ *         6.6 Clean
+ *
+ *     7 Environment, Options & Default Task
+ *
+ *
+ * Links:
+ *
+ * @link https://github.com/isaacs/minimatch Syntax for Glob Matching 
+ *
+ */
 
 
-// GLOBAL OPTIONS
-// -----------------------------------------------------------
+/**
+ * 1 GLOBAL OPTIONS
+ * -----------------------------------------------------------
+ */
+
 autoprefixer_rules = 'ie >= 9, > 5%, last 3 versions';
 remPixelFallback = false;
 imageMin = true;
 jsMangle = true;
 
 
-// DEFINE SOURCES AND TARGETS
-// ------------------------------------------------------------
+/**
+ * 2 DEFINE SOURCES
+ * ------------------------------------------------------------
+ */
 
 var source = {
 
-	// YOUR ASSETS
-	// ===========
+	/**
+	 * 2.1 YOUR OWN ASSETS
+	 * -------------------
+	 */
 
 	sass: [
 		'src/sass/**/[^_]*.scss',
@@ -56,71 +90,97 @@ var source = {
 	fonts_exclude: [ '', ],
 
 
-	// VENDOR JS & CSS (INTENDED TO BE CONCATENATED AND POSTPROCESSED)
-	// =====================================================================
-	// (you can also add images and they will be copied to theme/img/vendor)
-	//
-	// Warning: Order of files is important for concatenation. (TODO)
-	//
-	// Here you have some suggested plugins. You can install
-	// the ones you want. From the root of the project type:
-	//
-	//     bower install PLUGINNAME --save-dev
-	//
+	/**
+	 * 2.2 VENDOR JS & CSS (CONCAT)
+	 * ----------------------------
+	 *
+	 * List of vendor files intented to be concatenated into the theme main.css
+	 * and main.js, and then postprocessed. The order matters for concatenation.
+	 *
+	 * Note: they are included _before_ the custom styles and scripts.
+	 *
+	 */
 	vendor: [
-		'vendor-dl/normalize.css/normalize.css',
-		'vendor-dl/modernizr/modernizr.custom.js',
-
-		// Recommended Plugins:
-		// --------------------
-
-		/// Compatibility / Accesibility
-		// 'vendor-dl/picturefill/dist/picturefill.js',           // PictureFill       -
-
-		/// Navigation
-		// 'vendor-dl/jQuery.mmenu/dist/core/js/jquery.mmenu.min.all.js',  // MMenu             mmenu.frebsite.nl
-		// 'vendor-dl/jQuery.mmenu/dist/core/css/jquery.mmenu.all.css',
-
-		/// Maps
-		// 'vendor-dl/leaflet/dist/leaflet.js',                   // Leaflet           leafletjs.com
-
-		/// Tables
-		// 'vendor-dl/dynatable/jquery.dynatable.js',             // Dynatable         dynatable.com
-		// 'vendor-dl/dynatable/jquery.dynatable.css',
-
-		/// Sliders / Slideshows
-		// 'vendor-dl/jquery-cycle2/build/jquery.cycle2.js',      // Cycle2            jquery.malsup.com/cycle2
-		
-		/// Animations
-		// 'vendor-dl/snabbt.js/snabbt.js',                       // Snabbt            daniel-lundin.github.io/snabbt.js
-		
-		/// Autocomplete
-		// 'vendor-dl/awesomeplete/awesomeplete.js',              // Awesomeplete      leaverou.github.io/awesomplete
-		// 'vendor-dl/awesomeplete/awesomeplete.css',             // $ bower install LeaVerou/awesomplete#gh-pages --save-dev
-
-		/// Syntax Highlighting
-		// 'vendor-dl/prism/prism.js',                            // Prism             prismjs.com
-		// 'vendor-dl/prism/themes/prism.css',                    // $ bower install -D prism.git#gh-pages
-
+		'vendor-dl/normalize.css/normalize.css',           // Normalize         necolas.github.io/normalize.css/
+		'vendor-dl/modernizr/modernizr.custom.js',         // Modernizr         modernizr.com
 	],
 	vendor_exclude: [ '', ],
 	
 
-	// VENDOR JS & CSS (INTENDED TO BE LOADED LIVE FROM WORDPRESS)
-	// =====================================================================
-	// (you can also add images and they will be copied to theme/img/vendor)
-	//
-	// They will be (minified and) copied to /theme/[js|css]/vendor/
-	// You'll have to load them from WordPress php files, usually like this:
-	//
-	//     wp_register_script( 'thatvendor-js', get_stylesheet_directory_uri() . '/js/vendor/thatvendor.js', array( 'jquery' ), '', true );
-	//
+	/**
+	 * 2.3 VENDOR JS & CSS (LIVE)
+	 * --------------------------
+	 *
+	 * List of vendor files intented to be (minified and) copied to the theme and plugin 
+	 * vendor folders, and later loaded from the php templates;
+	 *
+	 * Note: You'll have to load them from the theme like this:
+	 *
+	 *     wp_register_script( 'thatvendor-js', get_stylesheet_directory_uri() . '/res/js/vendor/thatvendor.js', array(), '', true );
+	 *
+	 * or load them from the plugin like this:
+	 *
+	 *     wp_register_script( 'thatvendor-js', plugins_url('/res/js/vendor/thatvendor.js'), array(), '', true );
+	 */
 	vendor_live: [
 	],
 	vendor_live_exclude: [ '', ],
+	
 
+	/**
+	 * 2.4 LIST OF SUGGESTED PLUGINS
+	 * -----------------------------
+	 *
+	 * This is a list of recommended vendor plugins and libraries.
+	 * Install the ones you want from the root folder, like this:
+	 *
+	 *     bower install PLUGIN_NAME --save-dev
+	 *
+	 * (or use the custom bower install command when specified).
+	 * After that, copy the line to the appropiate section above.
+	 *
+ 	 * @link https://github.com/sorrycc/awesome-javascript/ Collection of js libraries
+	 */
+
+	/* NEED                                                  PLUGIN_NAME        WEBSITE
+	 * --------------------------------------------------------------------------------
+
+	// Compatibility / Accesibility
+	'vendor-dl/picturefill/dist/picturefill.js',           // PictureFill       -
+
+	// Navigation
+	'vendor-dl/jQuery.mmenu/dist/core/js/jquery.mmenu.min.all.js',  // MMenu    mmenu.frebsite.nl
+	'vendor-dl/jQuery.mmenu/dist/core/css/jquery.mmenu.all.css',
+
+	// Maps
+	'vendor-dl/leaflet/dist/leaflet.js',                   // Leaflet           leafletjs.com
+
+	// Tables
+	'vendor-dl/dynatable/jquery.dynatable.js',             // Dynatable         dynatable.com
+	'vendor-dl/dynatable/jquery.dynatable.css',
+
+	// Sliders / Slideshows
+	'vendor-dl/jquery-cycle2/build/jquery.cycle2.js',      // Cycle2            jquery.malsup.com/cycle2
+	
+	// Animations
+	'vendor-dl/snabbt.js/snabbt.js',                       // Snabbt            daniel-lundin.github.io/snabbt.js
+	
+	// Autocomplete
+	'vendor-dl/awesomeplete/awesomeplete.js',              // Awesomeplete      leaverou.github.io/awesomplete
+	'vendor-dl/awesomeplete/awesomeplete.css',             // $ bower install LeaVerou/awesomplete#gh-pages --save-dev
+
+	// Syntax Highlighting
+	'vendor-dl/prism/prism.js',                            // Prism             prismjs.com
+	'vendor-dl/prism/themes/prism.css',                    // $ bower install -D prism.git#gh-pages
+
+	 */
 };
 
+
+/**
+ * 3 DEFINE TARGETS
+ * ------------------------------------------------------------
+ */
 
 var target = {
 	css: 'theme/res/css',
@@ -134,9 +194,10 @@ var target = {
 };
 
 
-
-// LOAD DEPENDENCIES
-// ------------------------------------------------------------
+/**
+ * 4 LOAD GULP DEPENDENCIES
+ * ------------------------------------------------------------
+ */
 
 // General
 var gulp = require('gulp');
@@ -166,11 +227,22 @@ var uglify = require('gulp-uglify');
 var imagemin = require('gulp-imagemin');
 
 
-// DEFINE TASKS
-// ------------------------------------------------------------
+/**
+ * 5 (reserved) 
+ * ------------------------------------------------------------
+ */
 
-// Sass Compilation
-// ----------------
+
+/**
+ * 6 DEFINE TASKS
+ * ------------------------------------------------------------
+ */
+
+/**
+ * 6.1 Sass Compilation
+ * --------------------
+ */
+
 gulp.task('compile-sass', function () {
 
 	var filter_frontend_style = gulpFilter( ['main.css', 'src/sass/'], {restore: true} );
@@ -218,7 +290,7 @@ gulp.task('compile-sass', function () {
 			roundingPrecision: 7, // defaults to 2
 
 			// https://github.com/jakubpawlowicz/clean-css#how-to-set-a-compatibility-mode
-			compatibility: '*', 
+			compatibility: '*',
 
 			// * for keeping all (default), 1 for keeping first one only, 0 for removing all
 			keepSpecialComments: 0
@@ -230,8 +302,11 @@ gulp.task('compile-sass', function () {
 });
 
 
-// js Compilation
-// --------------
+/**
+ * 6.2 js Compilation
+ * --------------------
+ */
+
 gulp.task('compile-js', function () {
 
 	var filter_js = gulpFilter( '**/*.js', {restore: true} );
@@ -270,8 +345,11 @@ gulp.task('compile-js', function () {
 });
 
 
-// vendor js & CSS files to load from WordPress
-// --------------------------------------------
+/**
+ * 6.3 live vendor js & CSS files compilation
+ * ------------------------------------------
+ */
+
 gulp.task('compile-vendor_live', function () {
 
 	var filter_css = gulpFilter( '**/*.css', {restore: true} );
@@ -316,20 +394,12 @@ gulp.task('compile-vendor_live', function () {
 });
 
 
-// COPY FONTS
-// ----------
-gulp.task('fonts', function(){
-	return gulp.src(source.fonts)
-		.pipe(exclude(source.fonts_exclude))
+/**
+ * 6.4 Process and Copy Images
+ * ---------------------------
+ * TODO: compress
+ */
 
-		.pipe(flatten())
-		.pipe(gulp.dest(target.fonts));
-});
-
-
-// PROCESS AND COPY IMAGES
-// -----------------------
-// TODO: compress
 gulp.task('images', function(){
 
 	// Images
@@ -354,23 +424,47 @@ gulp.task('images', function(){
 });
 
 
+/**
+ * 6.5 Copy Fonts
+ * --------------
+ */
 
-// CLEAN COMPILATION
+gulp.task('fonts', function(){
+	return gulp.src(source.fonts)
+		.pipe(exclude(source.fonts_exclude))
+
+		.pipe(flatten())
+		.pipe(gulp.dest(target.fonts));
+});
+
+
+/**
+ * 6.6 CLEAN COMPILATION
+ * ------------------------------------------------------------
+ */
 gulp.task('clean', function(cb) {
 	del([target.css, target.js, target.img, target.fonts], cb)
 });
 
 
+/**
+ * 7 ENVIRONMENT, OPTIONS & DEFAULT TASK
+ * ------------------------------------------------------------
+ */
 
-// DEFINE ENVIRONMENT & DEFAULT TASK
-// ------------------------------------------------------------
+
+/**
+ * 7.2 ENVIRONMENT
+ */
 
 var isProduction = true;             // gulp
 var sassStyle = 'nested';
 
 
-// CLI options
-// -----------
+/**
+ * 7.2 CLI OPTIONS
+ */
+
 if(gutil.env.dev === true) {         // --dev
 	isProduction = false;
 	imageMin = false;
@@ -383,6 +477,10 @@ if(gutil.env.norem2px === true) {   // --norem2px
 	remPixelFallback = false;
 }
 
+
+/**
+ * 7.3 DEFAULT TASK
+ */
 
 gulp.task( 'default',
 	[ 'compile-sass', 'compile-js', 'compile-vendor_live', 'fonts', 'images' ]
