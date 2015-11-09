@@ -61,27 +61,10 @@ function medula_comments_layout( $comment, $args, $depth ) {
 		  <header class="comment-author">
 			<?php
 
-			/*
-			 * 2.1 Gravatar Call
-			 *
-			 * @link https://en.gravatar.com/site/implement/images/
-			 */
-
 			echo get_avatar($comment, $size='42', $default='' );
 
-			/*
-			 * 2.2 Custom gravatar call
-			 *
-			 * This is an alternative responsive optimized comment image loader.
-			 * It uses the data-attribute to display comment gravatars on larger screens only.
-			 *
-			 * You'll have to enable it also in /src/js/main.js
-			 */
-
-			# echo '<img data-gravatar="' . medula_get_protocol() . 'www.gravatar.com/avatar/' . md5( get_comment_author_email() ) . '?r=pg&s=40" class="load-gravatar avatar photo" height="40" width="40" src="' . get_template_directory_uri() . '/res/img/nothing.gif" />';
+			printf(__( '<cite class="fn">%1$s</cite> %2$s', 'medula' ), get_comment_author_link(), medula_edit_comment_link() );
 			?>
-
-			<?php printf(__( '<cite class="fn">%1$s</cite> %2$s', 'medula' ), get_comment_author_link(), medula_edit_comment_link() ) ?>
 			<time datetime="<?php echo comment_time('Y-m-dTH:i:sO'); ?>"><a href="<?php echo htmlspecialchars( get_comment_link( $comment->comment_ID ) ) ?>"><?php comment_time( get_option( 'date_format' ) ); ?> </a></time>
 
 		</header>

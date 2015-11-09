@@ -6,16 +6,18 @@
  *     1 jQuery(document).ready()
  *
  *     2 Big Functions
+ *
  *         2.1 Smart Header (auto hide)
- *         2.3 Swap Gravatars
  *
  *     3 Utility Functions
+ *
  *         3.1 REM Functions
  *         3.2 Get Viewport
  *         3.3 Throttle Resize-triggered Events
  *             with example...
  *
  *     4 Fixes
+ *
  *         4.1 Skip to Content fix
  *
  * This file should contain any js scripts you want to add to the site.
@@ -31,9 +33,6 @@
  * Put all your regular jQuery in here.
  */
 jQuery(document).ready(function($) {
-
-	// Swap Gravatars (Uncomment here and the function at 2.3 if you intend to use it)
-	// medula_swap_gravatars();
 
 	/**
 	 * Smart Header
@@ -155,28 +154,6 @@ function medula_smart_header(navbar, aboveNavbar) {
 		}
 
 		lastScrollTop = st;
-	}
-}
-/**/
-
-/**
- * 2.2 SWAP GRAVATARS
- *
- * You'll have to switch to the custom gravatar call in /theme/lib/comments.php 2.2
- * 
- * Images wont be loaded on mobile. Once we hit an acceptable viewport then
- * we can swap out those images since they are located in a data attribute.
- */
-
-/*
-function medula_swap_gravatars() {
-	// set the viewport using the function above
-	viewport = updateViewportDimensions();
-	// if the viewport is tablet or larger, we load in the gravatars
-	if (viewport.width >= 768) {
-		jQuery('.comment img[data-gravatar]').each(function(){
-			jQuery(this).attr('src',jQuery(this).attr('data-gravatar'));
-		});
 	}
 }
 /**/

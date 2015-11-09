@@ -40,7 +40,7 @@ if ( post_password_required() ) {
 				'reply_text'        => __( 'Reply', 'medula' ),
 				'page'              => '',
 				'per_page'          => '',
-				'avatar_size'       => 40,
+				'avatar_size'       => 42,
 				'reverse_top_level' => null,
 				'reverse_children'  => '',
 				'format'            => 'html5',
