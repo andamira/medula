@@ -18,12 +18,15 @@
  *
  *     1 Global Options
  *
+ *         1.1 Resources Paths
+ *         1.2 Gulp Defaults
+ *
  *     2 Define Sources
  *
  *         2.1 Your Own Assets
  *         2.2 Vendor CSS & js (concat)
  *         2.2 Vendor CSS & js (live)
- *         2.4 Suggested Plugins
+ *         2.4 Suggested Plugins for common needs
  *
  *     3 Define Targets
  *
@@ -40,7 +43,11 @@
  *         6.5 Copy Fonts
  *         6.6 Clean
  *
- *     7 Environment, Options & Default Task
+ *     7 Environment
+ *
+ *         7.1 Environment Options
+ *         7.1 CLI Parameters
+ *         7.3 Default Task
  *
  *
  * Links:
@@ -55,6 +62,17 @@
  * -----------------------------------------------------------
  */
 
+/**
+ * 1.1 Resources Paths
+ */
+ORIG_RESOURCES   = "src";
+THEME_RESOURCES  = "theme/res";  // must match medula_get_theme_resources_uri() in theme/functions.php
+PLUGIN_RESOURCES = "plugin/res"; //
+BOWER_DIR        = "vendor-dl";  // must match directory in .bowerrc
+
+/**
+ * 1.2 Gulp Defaults
+ */
 autoprefixer_rules = 'ie >= 9, > 5%, last 3 versions';
 remPixelFallback = false;
 imageMin = true;
@@ -74,19 +92,23 @@ var source = {
 	 */
 
 	sass: [
-		'src/sass/**/[^_]*.scss',
+		ORIG_RESOURCES+ '/sass/**/[^_]*.scss',
 	],
 	sass_exclude: [ '', ],
 
 	js: [
-		'src/js/main.js',
+		ORIG_RESOURCES+ '/js/main.js',
 	],
 	js_exclude: [ '', ],
 
-	img: ['src/img/**/*.{png,gif,jpg,jpeg,svg,ico}'],
+	img: [
+		ORIG_RESOURCES+ '/img/**/*.{png,gif,jpg,jpeg,svg,ico}'
+	],
 	img_exclude: [ '', ],
 
-	fonts: ['src/fonts/**/*.{woff,woff2,svg,ttf,eof}'],
+	fonts: [
+		ORIG_RESOURCES+ '/fonts/**/*.{woff,woff2,svg,ttf,eof}'
+	],
 	fonts_exclude: [ '', ],
 
 
@@ -101,8 +123,8 @@ var source = {
 	 *
 	 */
 	vendor: [
-		'vendor-dl/normalize.css/normalize.css',           // Normalize         necolas.github.io/normalize.css/
-		'vendor-dl/modernizr/modernizr.custom.js',         // Modernizr         modernizr.com
+		BOWER_DIR+ '/normalize.css/normalize.css',           // Normalize         necolas.github.io/normalize.css/
+		BOWER_DIR+ '/modernizr/modernizr.custom.js',         // Modernizr         modernizr.com
 	],
 	vendor_exclude: [ '', ],
 	
@@ -111,7 +133,7 @@ var source = {
 	 * 2.3 VENDOR JS & CSS (LIVE)
 	 * --------------------------
 	 *
-	 * List of vendor files intented to be (minified and) copied to the theme and plugin 
+	 * List of vendor files intented to be (minified and) copied to the theme and plugin
 	 * vendor folders, and later loaded from the php templates;
 	 *
 	 * Note: You'll have to load them from the theme like this:
@@ -128,8 +150,8 @@ var source = {
 	
 
 	/**
-	 * 2.4 LIST OF SUGGESTED PLUGINS
-	 * -----------------------------
+	 * 2.4 LIST OF SUGGESTED PLUGINS FOR COMMON NEEDS
+	 * ----------------------------------------------
 	 *
 	 * This is a list of recommended vendor plugins and libraries.
 	 * Install the ones you want from the root folder, like this:
@@ -146,51 +168,51 @@ var source = {
 	 * --------------------------------------------------------------------------------
 
 	// Compatibility / Accesibility
-	'vendor-dl/picturefill/dist/picturefill.js',           // PictureFill       -
+	BOWER_DIR+ '/picturefill/dist/picturefill.js',           // PictureFill       -
 
 	// Navigation
-	'vendor-dl/jQuery.mmenu/dist/core/js/jquery.mmenu.min.all.js',  // MMenu    mmenu.frebsite.nl
-	'vendor-dl/jQuery.mmenu/dist/core/css/jquery.mmenu.all.css',
+	BOWER_DIR+ '/jQuery.mmenu/dist/core/js/jquery.mmenu.min.all.js',  // MMenu    mmenu.frebsite.nl
+	BOWER_DIR+ '/jQuery.mmenu/dist/core/css/jquery.mmenu.all.css',
 
 	// Maps
-	'vendor-dl/leaflet/dist/leaflet.js',                   // Leaflet           leafletjs.com
+	BOWER_DIR+ '/leaflet/dist/leaflet.js',                   // Leaflet           leafletjs.com
 
 	// Tables
-	'vendor-dl/dynatable/jquery.dynatable.js',             // Dynatable         dynatable.com
-	'vendor-dl/dynatable/jquery.dynatable.css',
+	BOWER_DIR+ '/dynatable/jquery.dynatable.js',             // Dynatable         dynatable.com
+	BOWER_DIR+ '/dynatable/jquery.dynatable.css',
 
 	// Sliders / Slideshows
-	'vendor-dl/jquery-cycle2/build/jquery.cycle2.js',      // Cycle2            jquery.malsup.com/cycle2
+	BOWER_DIR+ '/jquery-cycle2/build/jquery.cycle2.js',      // Cycle2            jquery.malsup.com/cycle2
 	
 	// Animations
-	'vendor-dl/snabbt.js/snabbt.js',                       // Snabbt            daniel-lundin.github.io/snabbt.js
+	BOWER_DIR+ '/snabbt.js/snabbt.js',                       // Snabbt            daniel-lundin.github.io/snabbt.js
 	
 	// Autocomplete
-	'vendor-dl/awesomeplete/awesomeplete.js',              // Awesomeplete      leaverou.github.io/awesomplete
-	'vendor-dl/awesomeplete/awesomeplete.css',             // $ bower install LeaVerou/awesomplete#gh-pages --save-dev
+	BOWER_DIR+ '/awesomeplete/awesomeplete.js',              // Awesomeplete      leaverou.github.io/awesomplete
+	BOWER_DIR+ '/awesomeplete/awesomeplete.css',             // $ bower install LeaVerou/awesomplete#gh-pages --save-dev
 
 	// Syntax Highlighting
-	'vendor-dl/prism/prism.js',                            // Prism             prismjs.com
-	'vendor-dl/prism/themes/prism.css',                    // $ bower install -D prism.git#gh-pages
+	BOWER_DIR+ '/prism/prism.js',                            // Prism             prismjs.com
+	BOWER_DIR+ '/prism/themes/prism.css',                    // $ bower install -D prism.git#gh-pages
 
-	 */
+	--- */
 };
 
 
 /**
- * 3 DEFINE TARGETS
+ * 3 DEFINE TARGET FOLDERS
  * ------------------------------------------------------------
  */
 
 var target = {
-	css: 'theme/res/css',
-	js: 'theme/res/js',
-	img: 'theme/res/img',
-	fonts: 'theme/res/fonts',
+	css:             THEME_RESOURCES+ '/css',
+	js:              THEME_RESOURCES+ '/js',
+	img:             THEME_RESOURCES+ '/img',
+	fonts:           THEME_RESOURCES+ '/fonts',
 
-	vendor_live_css: 'theme/res/css/vendor/',
-	vendor_live_js: 'theme/res/js/vendor/',
-	vendor_img: 'theme/res/img/vendor',
+	vendor_live_css: THEME_RESOURCES+ '/css/vendor',
+	vendor_live_js:  THEME_RESOURCES+ '/js/vendor',
+	vendor_img:      THEME_RESOURCES+ '/img/vendor',
 };
 
 
@@ -443,7 +465,18 @@ gulp.task('fonts', function(){
  * ------------------------------------------------------------
  */
 gulp.task('clean', function(cb) {
-	del([target.css, target.js, target.img, target.fonts], cb)
+
+	// Delete individual resources folders:
+	del([
+		target.css,
+		target.js,
+		target.img,
+		target.fonts
+	], cb)
+
+	// Delete the whole resources folder:
+	del(THEME_RESOURCES, cb)
+
 });
 
 
@@ -454,7 +487,7 @@ gulp.task('clean', function(cb) {
 
 
 /**
- * 7.2 ENVIRONMENT
+ * 7.1 ENVIRONMENT OPTIONS
  */
 
 var isProduction = true;             // gulp
@@ -462,7 +495,7 @@ var sassStyle = 'nested';
 
 
 /**
- * 7.2 CLI OPTIONS
+ * 7.2 CLI PARAMETERS
  */
 
 if(gutil.env.dev === true) {         // --dev
@@ -479,10 +512,10 @@ if(gutil.env.norem2px === true) {   // --norem2px
 
 
 /**
- * 7.3 DEFAULT TASK
+ * 7.3 DEFAULT TASK (PRODUCTION)
  */
 
 gulp.task( 'default',
-	[ 'compile-sass', 'compile-js', 'compile-vendor_live', 'fonts', 'images' ]
+	[ 'clean', 'compile-sass', 'compile-js', 'compile-vendor_live', 'fonts', 'images' ]
 );
 
