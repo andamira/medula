@@ -29,7 +29,7 @@ get_header();
 
 			<header class="article-header">
 				<?php medula_entry_title( 'h2', true ); ?>
-				<div class="entry-meta"><?php medula_entry_meta_byline(); medula_entry_meta_tags() ?></div>
+				<div class="entry-meta"><?php medula_entry_meta_byline(); medula_entry_meta_tags(); ?></div>
 			</header>
 
 			<section class="entry-content">

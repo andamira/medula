@@ -92,22 +92,22 @@ var source = {
 	 */
 
 	sass: [
-		ORIG_RESOURCES+ 'sass/**/[^_]*.scss',
+		ORIG_RESOURCES + 'sass/**/[^_]*.scss',
 	],
 	sass_exclude: [ '', ],
 
 	js: [
-		ORIG_RESOURCES+ 'js/main.js',
+		ORIG_RESOURCES + 'js/main.js',
 	],
 	js_exclude: [ '', ],
 
 	img: [
-		ORIG_RESOURCES+ 'img/**/*.{png,gif,jpg,jpeg,svg,ico}'
+		ORIG_RESOURCES + 'img/**/*.{png,gif,jpg,jpeg,svg,ico}'
 	],
 	img_exclude: [ '', ],
 
 	fonts: [
-		ORIG_RESOURCES+ 'fonts/**/*.{woff,woff2,svg,ttf,eof}'
+		ORIG_RESOURCES + 'fonts/**/*.{woff,woff2,svg,ttf,eof}'
 	],
 	fonts_exclude: [ '', ],
 
@@ -123,8 +123,8 @@ var source = {
 	 *
 	 */
 	vendor: [
-		BOWER_DIR+ 'normalize.css/normalize.css',           // Normalize         necolas.github.io/normalize.css/
-		BOWER_DIR+ 'modernizr/modernizr.custom.js',         // Modernizr         modernizr.com
+		BOWER_DIR + 'normalize.css/normalize.css',           // Normalize         necolas.github.io/normalize.css/
+		BOWER_DIR + 'modernizr/modernizr.custom.js',         // Modernizr         modernizr.com
 	],
 	vendor_exclude: [ '', ],
 	
@@ -168,32 +168,32 @@ var source = {
 	 * --------------------------------------------------------------------------------
 
 	// Compatibility / Accesibility
-	BOWER_DIR+ 'picturefill/dist/picturefill.js',           // PictureFill       -
+	BOWER_DIR + 'picturefill/dist/picturefill.js',           // PictureFill       -
 
 	// Navigation
-	BOWER_DIR+ 'jQuery.mmenu/dist/core/js/jquery.mmenu.min.all.js',  // MMenu    mmenu.frebsite.nl
-	BOWER_DIR+ 'jQuery.mmenu/dist/core/css/jquery.mmenu.all.css',
+	BOWER_DIR + 'jQuery.mmenu/dist/core/js/jquery.mmenu.min.all.js',  // MMenu    mmenu.frebsite.nl
+	BOWER_DIR + 'jQuery.mmenu/dist/core/css/jquery.mmenu.all.css',
 
 	// Maps
-	BOWER_DIR+ 'leaflet/dist/leaflet.js',                   // Leaflet           leafletjs.com
+	BOWER_DIR + 'leaflet/dist/leaflet.js',                   // Leaflet           leafletjs.com
 
 	// Tables
-	BOWER_DIR+ 'dynatable/jquery.dynatable.js',             // Dynatable         dynatable.com
-	BOWER_DIR+ '/dynatable/jquery.dynatable.css',
+	BOWER_DIR + 'dynatable/jquery.dynatable.js',             // Dynatable         dynatable.com
+	BOWER_DIR + '/dynatable/jquery.dynatable.css',
 
 	// Sliders / Slideshows
-	BOWER_DIR+ 'jquery-cycle2/build/jquery.cycle2.js',      // Cycle2            jquery.malsup.com/cycle2
+	BOWER_DIR + 'jquery-cycle2/build/jquery.cycle2.js',      // Cycle2            jquery.malsup.com/cycle2
 	
 	// Animations
-	BOWER_DIR+ 'snabbt.js/snabbt.js',                       // Snabbt            daniel-lundin.github.io/snabbt.js
+	BOWER_DIR + 'snabbt.js/snabbt.js',                       // Snabbt            daniel-lundin.github.io/snabbt.js
 	
 	// Autocomplete
-	BOWER_DIR+ 'awesomeplete/awesomeplete.js',              // Awesomeplete      leaverou.github.io/awesomplete
-	BOWER_DIR+ 'awesomeplete/awesomeplete.css',             // $ bower install LeaVerou/awesomplete#gh-pages --save-dev
+	BOWER_DIR + 'awesomeplete/awesomeplete.js',              // Awesomeplete      leaverou.github.io/awesomplete
+	BOWER_DIR + 'awesomeplete/awesomeplete.css',             // $ bower install LeaVerou/awesomplete#gh-pages --save-dev
 
 	// Syntax Highlighting
-	BOWER_DIR+ 'prism/prism.js',                            // Prism             prismjs.com
-	BOWER_DIR+ 'prism/themes/prism.css',                    // $ bower install -D prism.git#gh-pages
+	BOWER_DIR + 'prism/prism.js',                            // Prism             prismjs.com
+	BOWER_DIR + 'prism/themes/prism.css',                    // $ bower install -D prism.git#gh-pages
 
 	--- */
 };
@@ -205,14 +205,14 @@ var source = {
  */
 
 var target = {
-	css:             THEME_RESOURCES+ 'css',
-	js:              THEME_RESOURCES+ 'js',
-	img:             THEME_RESOURCES+ 'img',
-	fonts:           THEME_RESOURCES+ 'fonts',
+	css:             THEME_RESOURCES + 'css',
+	js:              THEME_RESOURCES + 'js',
+	img:             THEME_RESOURCES + 'img',
+	fonts:           THEME_RESOURCES + 'fonts',
 
-	vendor_live_css: THEME_RESOURCES+ 'css/vendor',
-	vendor_live_js:  THEME_RESOURCES+ 'js/vendor',
-	vendor_img:      THEME_RESOURCES+ 'img/vendor',
+	vendor_live_css: THEME_RESOURCES + 'css/vendor',
+	vendor_live_js:  THEME_RESOURCES + 'js/vendor',
+	vendor_img:      THEME_RESOURCES + 'img/vendor',
 };
 
 

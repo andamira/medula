@@ -54,7 +54,7 @@ function register_my_custom_menu_page() {
 		$position    # This allows you to choose when the menu item appears in the list.
 	); /**/
 
-	//add_menu_page( 'Options', 'Theme Options', 'manage_options', 'medula_theme_options.php', 'medula_theme_page', get_template_directory_uri() . '/img/favicon.png', 61 );
+	//add_menu_page( 'Options', 'Theme Options', 'manage_options', 'medula_theme_options.php', 'medula_theme_page', medula_get_theme_resources_uri('img') . '/favicon.png', 61 );
 
 
 	/**
@@ -146,14 +146,14 @@ function medula_theme_page() {
 
 ?>
 	<div class="section panel">
-	<h1><img src="<?php echo get_template_directory_uri() . '/res/img/favicon-big.png' ?>" height=24 width=24 /> <?php printf(wp_kses(__('Theme Options', 'medula'), array())); ?></h1>
+	<h1><img src="<?php echo medula_get_theme_resources_uri('img') . '/favicon-big.png'; ?>" height=24 width=24 /> <?php printf(wp_kses(__('Theme Options', 'medula'), array())); ?></h1>
 		<form method="post" enctype="multipart/form-data" action="options.php">
 			<?php
 			settings_fields('medula_theme_options');
 			do_settings_sections('medula_theme_options.php');
 			?>
 			<p class="submit">
-				<input type="submit" class="button-primary" value="<?php _e('Save Changes', 'medula') ?>" />
+				<input type="submit" class="button-primary" value="<?php _e('Save Changes', 'medula'); ?>" />
 			</p>
 		</form>
 	</div>

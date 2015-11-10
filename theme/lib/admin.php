@@ -7,7 +7,7 @@
  *
  *     1 Remove default dashboard wigets
  *
- *     2 Custom dashboard widgets
+ *     2 Custom dashboard widgets                           (#)
  *
  *         2.1 Load
  *         2.2 Define
@@ -33,7 +33,10 @@
  *
  * Comment/Uncomment the ones you want to maintain/remove
  */
-function disable_default_dashboard_widgets() {
+
+# add_action( 'admin_menu', 'medula_disable_default_dashboard_widgets' );
+
+function medula_disable_default_dashboard_widgets() {
 
 	remove_meta_box( 'dashboard_right_now', 'dashboard', 'core' );         // Right Now Widget
 	remove_meta_box( 'dashboard_activity', 'dashboard', 'core' );          // Activity widget
@@ -50,7 +53,6 @@ function disable_default_dashboard_widgets() {
 	remove_meta_box( 'icl_dashboard_widget', 'dashboard', 'normal' );      // WPML
 	remove_meta_box( 'blc_dashboard_widget', 'dashboard', 'normal' );      // Broken Link Checker
 }
-add_action( 'admin_menu', 'disable_default_dashboard_widgets' );
 
 
 /**
@@ -66,24 +68,25 @@ add_action( 'admin_menu', 'disable_default_dashboard_widgets' );
  * @link http://digwp.com/2010/10/customize-wordpress-dashboard/
  */
 
+# add_action( 'wp_dashboard_setup', 'medula_custom_dashboard_widgets' );
+
 /**
  * 2.1 Load the Custom Widgets
  */
+
 function medula_custom_dashboard_widgets() {
 	wp_add_dashboard_widget( 'medula_example_dashboard_widget', __( 'Example Dashboard Widget (Medula)', 'medula' ), 'medula_example_dashboard_widget' );
 
 }
-add_action( 'wp_dashboard_setup', 'medula_custom_dashboard_widgets' );
-
 
 /**
  * 2.2 Define here all the Custom Widgets
  */
 function medula_example_dashboard_widget() {
-	?>
-	<h1> </h1>
-	<p>You can edit this message in /theme/lib/admin.php and add your own widgets, and restore the disabled defaults.</p>
-	<?php
+	echo '<h1>' . esc_html('Medula Example Widget', 'medula') . '</h1>';
+	echo '<p>' .
+		esc_html__('You can edit this message in /theme/lib/admin.php and add your own widgets, and modify the disabled defaults.', 'medula') .
+		'</p>';
 }
 
 
@@ -94,7 +97,7 @@ function medula_example_dashboard_widget() {
  * You can edit the style in /src/sass/login.scss
  */
 function medula_login_css() {
-	wp_enqueue_style( 'medula_login_css', get_template_directory_uri() . '/res/css/login.css', false );
+	wp_enqueue_style( 'medula_login_css', medula_get_theme_resources_uri('css/login.css'), false );
 }
 
 // changing the logo link from wordpress.org to your site
@@ -118,15 +121,16 @@ add_filter( 'login_headertitle', 'medula_login_title' );
 /**
  * 4.1 Custom Admin Stylesheets
  */
-function load_admin_styles() {
-	wp_enqueue_style( 'admin_css', get_template_directory_uri() . '/res/css/admin/main.css' );
+add_action( 'admin_enqueue_scripts', 'medula_load_admin_styles' );
+
+function medula_load_admin_styles() {
+	wp_enqueue_style( 'admin_css', medula_get_theme_resources_uri('css/admin/main.css') );
 }  
-add_action( 'admin_enqueue_scripts', 'load_admin_styles' );
 
 /**
  * 4.2 Custom TinyMCE Editor Stylesheet
  */
-add_editor_style( get_template_directory_uri() . '/res/css/admin/editor.css' );
+add_editor_style( medula_get_theme_resources_uri('css/admin/editor.css') );
 
 /**
  * 4.3 TODO: Custom TinyMCE buttons
@@ -137,6 +141,8 @@ add_editor_style( get_template_directory_uri() . '/res/css/admin/editor.css' );
 /**
  * 4.4 Changing text in footer of admin
  */
+add_filter( 'admin_footer_text', 'medula_custom_admin_footer' );
+
 function medula_custom_admin_footer() {
 	$your_site_name="...";
 	$your_site_url="#";
@@ -150,7 +156,6 @@ function medula_custom_admin_footer() {
 		'<a class="andamira" href="https://github.com/andamira/medula" target="_blank">andamira Medula</a>'
 	);
 }
-add_filter( 'admin_footer_text', 'medula_custom_admin_footer' );
 
 
 /**

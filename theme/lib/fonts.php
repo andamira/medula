@@ -23,6 +23,7 @@
  * @link http://www.myfonts.com/
  */
 
+add_action('wp_enqueue_scripts', 'medula_fonts');
 
 function medula_fonts() {
 
@@ -31,7 +32,6 @@ function medula_fonts() {
 	 */
 	# wp_enqueue_script('googleFonts', medula_get_protocol() . 'fonts.googleapis.com/css?family=Open+Sans:400,400italic,700');
 
-}
-add_action('wp_enqueue_scripts', 'medula_fonts');
 
+}
 

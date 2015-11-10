@@ -71,15 +71,15 @@ function medula_comments_layout( $comment, $args, $depth ) {
 
 		<?php if ($comment->comment_approved == '0') : ?>
 			<div class="alert alert-info">
-				<p><?php _e( 'Your comment is awaiting moderation.', 'medula' ) ?></p>
+				<p><?php _e( 'Your comment is awaiting moderation.', 'medula' ); ?></p>
 			</div>
 		<?php endif; ?>
 
 		<section class="comment-content">
-			<?php comment_text() ?>
+			<?php comment_text(); ?>
 		</section>
 
-		<?php comment_reply_link(array_merge( $args, array('depth' => $depth, 'max_depth' => $args['max_depth']))) ?>
+		<?php comment_reply_link( array_merge( $args, array('depth' => $depth, 'max_depth' => $args['max_depth']) ) ); ?>
 <?php
 
 }
