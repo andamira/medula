@@ -55,7 +55,7 @@ function medula_scripts_and_styles() {
 		}
 
 		//adding scripts file in the footer
-		wp_register_script( 'medula-js', get_stylesheet_directory_uri() . '/res/js/scripts.js', array( 'jquery' ), '', true );
+		wp_register_script( 'medula-js', get_stylesheet_directory_uri() . '/res/js/main.js', array( 'jquery' ), '', true );
 
 		// enqueue styles and scripts
 		wp_enqueue_style( 'main-stylesheet' );

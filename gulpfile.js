@@ -355,7 +355,7 @@ gulp.task('compile-js', function () {
 			.pipe(filter_yourjs.restore)
 
 			// Concatenate all in this file
-			.pipe(concat('scripts.js')).on( "error", gutil.log)
+			.pipe(concat('main.js')).on( "error", gutil.log)
 
 			// Minify
 			.pipe(isProduction ? uglify({mangle: jsMangle}).on('error', gutil.log) : gutil.noop())
