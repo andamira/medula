@@ -65,18 +65,23 @@
 /**
  * 1.1 Resources Paths
  */
-ORIG_RESOURCES   = "src/";
-THEME_RESOURCES  = "theme/res/";  // must match medula_get_theme_resources_uri() in theme/functions.php
-PLUGIN_RESOURCES = "plugin/res/"; //
-BOWER_DIR        = "vendor-dl/";  // must match directory in .bowerrc
+
+var ORIG_RESOURCES   = "src/";
+var THEME_RESOURCES  = "theme/res/";  // must match medula_get_theme_resources_uri() in theme/functions.php
+var PLUGIN_RESOURCES = "plugin/res/"; //
+var BOWER_DIR        = "vendor-dl/";  // must match directory in .bowerrc
 
 /**
  * 1.2 Gulp Defaults
  */
-autoprefixer_rules = 'ie >= 9, > 5%, last 3 versions';
-remPixelFallback = false;
-imageMin = true;
-jsMangle = true;
+
+var DEBUG_LVL          = 0; // 0 = none, 1 = print files going through main tasks pipes 
+
+var AUTOPREFIXER_RULES = 'ie >= 9, > 5%, last 3 versions';
+
+var DO_REMPIXEL        = false; // rem to pixel fallback
+var DO_IMAGEMIN        = true; // image minification
+var DO_JSMANGLE        = true; // javascript uglification
 
 
 /**
@@ -219,12 +224,15 @@ var target = {
 /**
  * 4 LOAD GULP DEPENDENCIES
  * ------------------------------------------------------------
+ *
+ * Don't use plugins on the blacklist:
+ * @link https://github.com/gulpjs/plugins/blob/master/src/blackList.json
  */
 
 // General
 var gulp = require('gulp');
 var gutil = require('gulp-util');
-var print = require('gulp-print');
+var debug = require('gulp-debug');
 var exclude = require('gulp-ignore').exclude;
 var addsrc = require('gulp-add-src');
 var gulpFilter = require('gulp-filter');
@@ -275,7 +283,7 @@ gulp.task('compile-sass', function () {
 
 //		.pipe(isProduction ? gutil.noop() : sourcemaps.init() ) // --dev
 
-		// .pipe(print()) // DEBUG
+		.pipe( (DEBUG_LVL > 0) ? debug({title: '> compile-sass:'}) : gutil.noop() )
 
 		// Preprocess
 		// @link https://www.npmjs.com/package/node-sass#options
@@ -288,13 +296,11 @@ gulp.task('compile-sass', function () {
 			sourceComments: false
 		})).on( "error", gutil.log)
 
-
 		// Prepend vendor CSS to frontend style file
 		.pipe(filter_frontend_style)
 			.pipe(addsrc.prepend(source.vendor)) // add it before your code so it can be overruled
 			.pipe(filter_css)
 			//.pipe(addsrc.prepend('theme/style.css')) // prepend theme info comment
-				// .pipe(print()) // DEBUG
 				.pipe(concat('main.css'))
 		.pipe(filter_frontend_style.restore)
 
@@ -302,8 +308,8 @@ gulp.task('compile-sass', function () {
 
 		// Postprocess
 //		.pipe(cmq({	log: false })) // NOTE: no sourcemap support
-		.pipe(remPixelFallback ? pixrem() : gutil.noop() )
-		.pipe(autoprefixer(autoprefixer_rules))
+		.pipe(DO_REMPIXEL ? pixrem() : gutil.noop() )
+		.pipe(autoprefixer(AUTOPREFIXER_RULES))
 
 		// Minify
 		.pipe(isProduction ? minifycss({
@@ -345,20 +351,20 @@ gulp.task('compile-js', function () {
 
 			// Insert your js code after the others
 			.pipe(addsrc.append(source.js))
-				// .pipe(print()) // DEBUG
 
 			// Detect errors in your code only
 			// TODO do this part in a different way (merge? separate streams?)
 			.pipe(filter_yourjs)
-				//.pipe(print()) // DEBUG
 				.pipe(jscs())
 			.pipe(filter_yourjs.restore)
+
+			.pipe( (DEBUG_LVL > 0) ? debug({title: '> compile-js:'}) : gutil.noop() )
 
 			// Concatenate all in this file
 			.pipe(concat('main.js')).on( "error", gutil.log)
 
 			// Minify
-			.pipe(isProduction ? uglify({mangle: jsMangle}).on('error', gutil.log) : gutil.noop())
+			.pipe(isProduction ? uglify({mangle: DO_JSMANGLE}).on('error', gutil.log) : gutil.noop())
 
 			// Save output
 			.pipe(gulp.dest(target.js))
@@ -385,7 +391,7 @@ gulp.task('compile-vendor_live', function () {
 		.pipe(filter_js)
 
 			// Minify
-			.pipe(isProduction ? uglify({mangle: jsMangle}).on('error', gutil.log) : gutil.noop())
+			.pipe(isProduction ? uglify({mangle: DO_JSMANGLE}).on('error', gutil.log) : gutil.noop())
 
 			// Save output
 			.pipe(gulp.dest(target.vendor_live_js))
@@ -395,11 +401,11 @@ gulp.task('compile-vendor_live', function () {
 		// process CSS files
 		.pipe(filter_css)
 
-			// .pipe(print()) // DEBUG
+			.pipe( (DEBUG_LVL > 0) ? debug({title: '> compile-vendor_live:'}) : gutil.noop() )
 
 			// Postprocess
-			.pipe(remPixelFallback ? pixrem() : gutil.noop() )
-			.pipe(autoprefixer(autoprefixer_rules))
+			.pipe(DO_REMPIXEL ? pixrem() : gutil.noop() )
+			.pipe(autoprefixer(AUTOPREFIXER_RULES))
 
 			// Minify
 			.pipe(isProduction ? minifycss({
@@ -419,7 +425,6 @@ gulp.task('compile-vendor_live', function () {
 /**
  * 6.4 Process and Copy Images
  * ---------------------------
- * TODO: compress
  */
 
 gulp.task('images', function(){
@@ -427,7 +432,10 @@ gulp.task('images', function(){
 	// Images
     return gulp.src(source.img)
 		.pipe(exclude(source.images_exclude))
-		.pipe(imageMin ? imagemin() : gutil.noop() ) // --no-imgmin
+		.pipe(DO_IMAGEMIN ? imagemin() : gutil.noop() ) // --no-imgmin
+
+		.pipe( (DEBUG_LVL > 0) ? debug({title: '> images:'}) : gutil.noop() )
+
 		.pipe(flatten())
 		.pipe(gulp.dest(target.img));
 
@@ -440,7 +448,10 @@ gulp.task('images', function(){
 		.pipe(addsrc.append(source.vendor_live))
 		.pipe(exclude(source.vendor_live_exclude))
 		.pipe(filter_img)
-			.pipe(imageMin ? imagemin() : gutil.noop() ) // --no-imgmin
+			.pipe(DO_IMAGEMIN ? imagemin() : gutil.noop() ) // --no-imgmin
+
+			.pipe( (DEBUG_LVL > 0) ? debug({title: '> images[vendor]:'}) : gutil.noop() )
+
 			.pipe(flatten())
 			.pipe(gulp.dest(target.vendor_img));
 });
@@ -454,6 +465,8 @@ gulp.task('images', function(){
 gulp.task('fonts', function(){
 	return gulp.src(source.fonts)
 		.pipe(exclude(source.fonts_exclude))
+
+		.pipe( (DEBUG_LVL > 0) ? debug({title: '> fonts:'}) : gutil.noop() )
 
 		.pipe(flatten())
 		.pipe(gulp.dest(target.fonts));
@@ -485,7 +498,6 @@ gulp.task('clean', function(cb) {
  * ------------------------------------------------------------
  */
 
-
 /**
  * 7.1 ENVIRONMENT OPTIONS
  */
@@ -500,14 +512,14 @@ var sassStyle = 'nested';
 
 if(gutil.env.dev === true) {         // --dev
 	isProduction = false;
-	imageMin = false;
+	DO_IMAGEMIN = false;
 	var sassStyle = 'compressed';
 }
 if(gutil.env.noimgmin === true) {   // --noimgmin
-	imageMin = false;
+	DO_IMAGEMIN = false;
 }
 if(gutil.env.norem2px === true) {   // --norem2px
-	remPixelFallback = false;
+	DO_REMPIXEL = false;
 }
 
 
