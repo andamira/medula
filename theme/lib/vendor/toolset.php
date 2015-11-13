@@ -2,36 +2,40 @@
 /**
  * Toolset Support Template
  *
- *     1 Toolset Layouts
+ *
+ *     1 Toolset Layouts Theme SUpport
  *
  *         1.1 Load Layout in Template
  *         1.2 Load Custom Cells Layouts
- *         1.3 Load Custom Theme Layouts
  *
- *     2 Disable Toolset CSS & JS
+ *     2 Cleanup & Fixes
+ *
+ *         2.1 Disable Toolset CSS & JS                     (#)
+ *         2.2 Using Relevanssi Highlights                  (#)
  *
  *
  * @link http://wp-types.com Toolset
  */
 
+
 /**
- * 1 Toolset Layouts Theme Support
- * 
- * In order to use the Layouts plugin you'll have to:
- * do some preparations:
+ * 1 TOOLSET LAYOUTS THEME SUPPORT
+ * ************************************************************
  *
- * a) ... bower
- * b) ... gulp
- * c) ... sass
+ * In order to use the Layouts plugin you'll have to: TODO
  *
- * NOTE: you can disable the loading of the Layouts templates
- * by commenting the next line which defines TOOLSET_LAYOUTS:
+ *     a) ... bower
+ *     b) ... gulp
+ *     c) ... sass
+ *
+ * You can comment the next line to disable loading Layouts templates.
  */
 define( 'TOOLSET_LAYOUTS', true );
 
 /**
- * 1.1 Load Toolset Layout in Template
+ * 1.1 LOAD TOOLSET LAYOUT IN TEMPLATE
  */
+
 function medula_toolset_layout($layout = '') {
 
 	if ( defined( 'TOOLSET_LAYOUTS') && TOOLSET_LAYOUTS && function_exists( 'the_ddlayout' ) ) {
@@ -51,10 +55,11 @@ function medula_toolset_layout($layout = '') {
 }
 
 /**
- * 1.2 Custom Cells
+ * 1.2 TODO: CUSTOM CELLS
  *
  * @link http://wp-types.com/documentation/user-guides/layouts-cells-api/
  */
+
 if( class_exists( 'WPDD_Layouts' ) && !function_exists( 'include_ddl_layouts' ) ) {
 	/*
 	medula_include_ddl_layouts('/toolset/cells/');
@@ -75,12 +80,17 @@ if( class_exists( 'WPDD_Layouts' ) && !function_exists( 'include_ddl_layouts' ) 
 
 
 /**
- * 2 Dequeue Toolset front-end scripts and stylesheets
+ * 2 CLEANUP & FIXES
+ * ************************************************************
+ */
+
+/**
+ * 2.1 DISABLE TOOLSET FRONT-END SCRIPTS AND STYLESHEETS
  *
  * @link https://wp-types.com/forums/topic/remove-unneccessary-css-files/#post-210881
  */
-	
-add_action('wp_enqueue_scripts', 'medula_prefix_remove_views_assets', 20);
+
+# add_action('wp_enqueue_scripts', 'medula_prefix_remove_views_assets', 20);
 
 function medula_prefix_remove_views_assets() {
 
@@ -105,4 +115,19 @@ function medula_prefix_remove_views_assets() {
 	wp_deregister_style( 'views-pagination-style' );
 }
 
+/**
+ * 2.2 USING RELEVANSSI HIGHLIGHTING ON TYPES
+ * ************************************************************
+ * @link http://wp-types.com/forums/topic/the_excerpt-and-relevanssi/
+ */
+
+# add_shortcode('relevanssi-excerpt', 'medula_relevanssi_excerpt');
+
+function medula_relevanssi_excerpt() {
+    ob_start();
+    relevanssi_the_excerpt();
+    $summary .= ob_get_contents();
+    ob_end_clean();
+    return $summary;
+}
 

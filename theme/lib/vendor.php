@@ -2,6 +2,7 @@
 /**
  * External Libraries & Plugins Templates
  *
+ *
  *     1 Override WordPress Templates
  *
  *     2 Specific Plugins
@@ -10,7 +11,7 @@
  *         2.2 Toolset                                      (#)
  *         2.3 WooCommerce                                  (#)
  *
- *     3 Misc. Fixes
+ *     3 General Cleanup & Fixes                            ( )
  *
  *     4 Downloaded Libraries
  */
@@ -21,10 +22,11 @@
  * ************************************************************
  *
  */
+
 function medula_template_override($layout = '') {
 
  	// NOTE: Currently only Toolset Layouts is officially supported.
-	// In order to use it you must first enable it in section 2.2,
+	// In order to use it you must enable it below, in section 2.2,
 	// and change the grid in /src/sass/dependencies/_frontend.scss
 	//
 	if ( function_exists('medula_toolset_layout') ) {
@@ -46,6 +48,7 @@ function medula_template_override($layout = '') {
  *
  * @link http://wpml.org/
  */
+
 # include_once( 'vendor/wpml.php' );
 
 /**
@@ -53,6 +56,7 @@ function medula_template_override($layout = '') {
  *
  * @link http://wp-types.org/ Toolset
  */
+
 # include_once( 'vendor/toolset.php' );
 
 /**
@@ -60,20 +64,28 @@ function medula_template_override($layout = '') {
  *
  * @link http://www.woothemes.com/woocommerce/
  */
+
 # include_once( 'vendor/woocommerce.php' );
 
 
 /**
- * 3 Fix misc. problems with some browsers libraries & plugins
+ * 3 CLEANUP & FIXES
+ *
+ * Fix misc. problems with some browsers libraries & plugins
+ * and perform some cleaning for widgets, and other elements
  * ************************************************************
  */
-include_once( 'vendor/fixes.php' );
+
+include_once( 'vendor/clean-fix.php' );
 
 
 /**
  * 4 Downloaded Libraries
  * ************************************************************
+ *
+ * Here you could include third party php libraries
  */
-# include_once( '../vendor/example/example.php' );
+
+# include_once( 'vendor/example/example.php' );
 
 
