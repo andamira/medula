@@ -19,6 +19,7 @@
     "gulp-debug": "2.x",
     "gulp-filter": "3.x",
     "gulp-flatten": "0.2.x",
+    "gulp-if": "^2.0.0",
     "gulp-ignore": "2.x",
     "gulp-imagemin": "2.x",
     "gulp-jscs": "3.x",
@@ -27,6 +28,7 @@
     "gulp-sass": "2.x",
     "gulp-sourcemaps": "1.x",
     "gulp-uglify": "1.x",
-    "gulp-util": "3.x"
+    "gulp-util": "3.x",
+    "lazypipe": "1.x"
   }
 }

@@ -24,26 +24,29 @@
  *     2 Define Sources
  *
  *         2.1 Your Own Assets
- *         2.2 Vendor CSS & js (concat)
- *         2.2 Vendor CSS & js (live)
- *         2.4 Suggested Plugins for common needs
+ *         2.2 Vendor CSS & JS (concat)
+ *         2.2 Vendor CSS & JS (live)
+ *         2.4 Suggested Plugins
  *
  *     3 Define Targets
  *
  *     4 Load Gulp Dependencies
  *
- *     5 (reserved)
+ *     5 Define Subtasks
+ *
+ *         5.1 Minify CSS
+ *         5.2 Process Images
  *
  *     6 Define Tasks
  *
  *         6.1 Sass Compilation
- *         6.2 js Compilation
- *         6.3 live vendor css & js
- *         6.4 Process and Copy Images
- *         6.5 Copy Fonts
+ *         6.2 JS Compilation
+ *         6.3 Live vendor CSS & JS
+ *         6.4 Process Images
+ *         6.5 Process Fonts
  *         6.6 Clean
  *
- *     7 Environment
+ *     7 Configure Environment
  *
  *         7.1 Environment Options
  *         7.1 CLI Parameters
@@ -75,7 +78,7 @@ var BOWER_DIR        = "vendor-dl/";  // must match directory in .bowerrc
  * 1.2 Gulp Defaults
  */
 
-var DEBUG_LVL          = 0; // 0 = none, 1 = print files going through main tasks pipes 
+var DEBUG_LVL          = 0; // 0 = none | 1 = print files going through tasks pipes | 2 = also for subtasks
 
 var AUTOPREFIXER_RULES = 'ie >= 9, > 5%, last 3 versions';
 
@@ -239,6 +242,8 @@ var gulpFilter = require('gulp-filter');
 var concat = require('gulp-concat');
 var flatten = require('gulp-flatten');
 var del = require('del');
+var gulpif = require('gulp-if');
+var lazypipe = require('lazypipe');
 
 // CSS components
 var sass = require('gulp-sass')
@@ -258,9 +263,43 @@ var imagemin = require('gulp-imagemin');
 
 
 /**
- * 5 (reserved) 
+ * 5 DEFINE SUB-TASKS
  * ------------------------------------------------------------
  */
+
+/**
+ * 5.1 MINIFY CSS
+ */
+var subtask_minifycss = lazypipe()
+
+	.pipe(function () {
+		return gulpif( DEBUG_LVL > 1, debug({title: ' » minifycss:'}) );
+	})
+
+	.pipe( minifycss, {
+		keepBreaks: true,     // defaults to false
+		roundingPrecision: 7, // defaults to 2
+
+		// https://github.com/jakubpawlowicz/clean-css#how-to-set-a-compatibility-mode
+		compatibility: '*',
+
+		// * for keeping all (default), 1 for keeping first one only, 0 for removing all
+		keepSpecialComments: 0
+	});
+
+/**
+ * 5.2 PROCESS IMAGES
+ */
+var subtask_process_images = lazypipe()
+
+	.pipe(function () {
+		return gulpif( DEBUG_LVL > 1, debug({title: ' » images:'}) );
+	})
+
+	.pipe(imagemin)
+
+	.pipe(flatten)
+	;
 
 
 /**
@@ -269,7 +308,7 @@ var imagemin = require('gulp-imagemin');
  */
 
 /**
- * 6.1 Sass Compilation
+ * 6.1 SASS COMPILATION
  * --------------------
  */
 
@@ -283,7 +322,7 @@ gulp.task('compile-sass', function () {
 
 //		.pipe(isProduction ? gutil.noop() : sourcemaps.init() ) // --dev
 
-		.pipe( (DEBUG_LVL > 0) ? debug({title: '> compile-sass:'}) : gutil.noop() )
+		.pipe( gulpif( DEBUG_LVL > 0, debug({title: '> compile-sass:'}) ) )
 
 		// Preprocess
 		// @link https://www.npmjs.com/package/node-sass#options
@@ -312,27 +351,15 @@ gulp.task('compile-sass', function () {
 		.pipe(autoprefixer(AUTOPREFIXER_RULES))
 
 		// Minify
-		.pipe(isProduction ? minifycss({
-
-			keepBreaks: true,     // defaults to false
-			roundingPrecision: 7, // defaults to 2
-
-			// https://github.com/jakubpawlowicz/clean-css#how-to-set-a-compatibility-mode
-			compatibility: '*',
-
-			// * for keeping all (default), 1 for keeping first one only, 0 for removing all
-			keepSpecialComments: 0
-
-		}) : gutil.noop())
-
+		.pipe( gulpif( isProduction, subtask_minifycss() ) )
 
 		.pipe(gulp.dest(target.css))
 });
 
 
 /**
- * 6.2 js Compilation
- * --------------------
+ * 6.2 JS COMPILATION
+ * ------------------
  */
 
 gulp.task('compile-js', function () {
@@ -349,7 +376,7 @@ gulp.task('compile-js', function () {
 		// Select only the javascript files
 		.pipe(filter_js)
 
-			// Insert your js code after the others
+			// Insert your JS code after the others
 			.pipe(addsrc.append(source.js))
 
 			// Detect errors in your code only
@@ -358,7 +385,7 @@ gulp.task('compile-js', function () {
 				.pipe(jscs())
 			.pipe(filter_yourjs.restore)
 
-			.pipe( (DEBUG_LVL > 0) ? debug({title: '> compile-js:'}) : gutil.noop() )
+			.pipe( gulpif( DEBUG_LVL > 0, debug({title: '> compile-js:'}) ) )
 
 			// Concatenate all in this file
 			.pipe(concat('main.js')).on( "error", gutil.log)
@@ -374,8 +401,8 @@ gulp.task('compile-js', function () {
 
 
 /**
- * 6.3 live vendor js & CSS files compilation
- * ------------------------------------------
+ * 6.3 LIVE VENDOR JS & CSS COMPILATION
+ * ------------------------------------
  */
 
 gulp.task('compile-vendor_live', function () {
@@ -401,19 +428,14 @@ gulp.task('compile-vendor_live', function () {
 		// process CSS files
 		.pipe(filter_css)
 
-			.pipe( (DEBUG_LVL > 0) ? debug({title: '> compile-vendor_live:'}) : gutil.noop() )
+			.pipe( gulpif( DEBUG_LVL > 0, debug({title: '> compile-vendor-live:'}) ) )
 
 			// Postprocess
 			.pipe(DO_REMPIXEL ? pixrem() : gutil.noop() )
 			.pipe(autoprefixer(AUTOPREFIXER_RULES))
 
 			// Minify
-			.pipe(isProduction ? minifycss({
-				compatibility: '*',
-				keepBreaks: true,
-				roundingPrecision: 7,
-				keepSpecialComments: 0
-			}) : gutil.noop())
+			.pipe( gulpif( isProduction, subtask_minifycss() ) )
 
 			// Save output
 			.pipe(gulp.dest(target.vendor_live_css))
@@ -423,50 +445,45 @@ gulp.task('compile-vendor_live', function () {
 
 
 /**
- * 6.4 Process and Copy Images
- * ---------------------------
+ * 6.4 PROCESS IMAGES
+ * ------------------
  */
 
 gulp.task('images', function(){
 
+	var filter_img = gulpFilter( '*.{png,gif,jpg,jpeg,svg,ico}' );
+
 	// Images
     return gulp.src(source.img)
 		.pipe(exclude(source.images_exclude))
-		.pipe(DO_IMAGEMIN ? imagemin() : gutil.noop() ) // --no-imgmin
 
-		.pipe( (DEBUG_LVL > 0) ? debug({title: '> images:'}) : gutil.noop() )
+		.pipe( gulpif( DO_IMAGEMIN, subtask_process_images() ) )
 
-		.pipe(flatten())
 		.pipe(gulp.dest(target.img));
 
 
 	// Vendor images
-	
-	var filter_img = gulpFilter( '*.{png,gif,jpg,jpeg,svg,ico}' );
-
     return gulp.src(source.vendor)
 		.pipe(addsrc.append(source.vendor_live))
 		.pipe(exclude(source.vendor_live_exclude))
 		.pipe(filter_img)
-			.pipe(DO_IMAGEMIN ? imagemin() : gutil.noop() ) // --no-imgmin
 
-			.pipe( (DEBUG_LVL > 0) ? debug({title: '> images[vendor]:'}) : gutil.noop() )
+		.pipe( gulpif( DO_IMAGEMIN, subtask_process_images() ) )
 
-			.pipe(flatten())
-			.pipe(gulp.dest(target.vendor_img));
+		.pipe(gulp.dest(target.vendor_img));
 });
 
 
 /**
- * 6.5 Copy Fonts
- * --------------
+ * 6.5 PROCESS FONTS
+ * -----------------
  */
 
 gulp.task('fonts', function(){
 	return gulp.src(source.fonts)
 		.pipe(exclude(source.fonts_exclude))
 
-		.pipe( (DEBUG_LVL > 0) ? debug({title: '> fonts:'}) : gutil.noop() )
+		.pipe( gulpif( DEBUG_LVL > 0, debug({title: '> fonts:'}) ) )
 
 		.pipe(flatten())
 		.pipe(gulp.dest(target.fonts));
@@ -474,7 +491,7 @@ gulp.task('fonts', function(){
 
 
 /**
- * 6.6 CLEAN COMPILATION
+ * 6.6 CLEAN PREVIOUSLY COMPILED RESOURCES
  * ------------------------------------------------------------
  */
 gulp.task('clean', function(cb) {
