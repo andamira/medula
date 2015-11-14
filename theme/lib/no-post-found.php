@@ -6,7 +6,7 @@
 
 function medula_no_post_found( $template ) {
 ?>
-	<article id="post-not-found" class="hentry">
+	<article id="post-not-found">
 		<header class="entry-header">
 			<h1><?php _e( 'Post Not Found!', 'medula' ); ?></h1>
 		</header>

@@ -2,7 +2,7 @@
 
 <main role="main">
 
-	<article id="post-not-found" class="hentry">
+	<article id="post-not-found">
 
 		<header class="entry-header">
 			<h1><?php _e( '404 - Post Not Found', 'medula' ); ?></h1>

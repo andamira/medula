@@ -35,7 +35,7 @@ get_header();
 
 	<?php else : ?>
 
-		<article id="post-not-found" class="hentry cf">
+		<article id="post-not-found">
 			<header class="article-header">
 				<h2><?php _e( 'Sorry, No Results.', 'medula' ); ?></h2>
 			</header>
