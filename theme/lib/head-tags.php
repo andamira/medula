@@ -69,7 +69,7 @@ function medula_header_tags_frontend_favicons_theme_color() {
 /**
  * 1.2 BACKEND (WORDPRESS ADMIN AREA)
  *
- * Create a 16x16 favicon and put it in /src/img/favicon_adm.png
+ * Create a 16x16 favicon and put it in /src/img/favicon-adm.png
  */
 
 # add_action('admin_head', 'medula_header_tags_favicon_backend');

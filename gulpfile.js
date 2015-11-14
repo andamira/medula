@@ -298,7 +298,7 @@ var subtask_process_images = lazypipe()
 
 	.pipe(imagemin)
 
-	.pipe(flatten)
+	// .pipe(flatten)
 	;
 
 
@@ -486,6 +486,7 @@ gulp.task('fonts', function(){
 		.pipe( gulpif( DEBUG_LVL > 0, debug({title: '> fonts:'}) ) )
 
 		.pipe(flatten())
+
 		.pipe(gulp.dest(target.fonts));
 });
 
@@ -497,12 +498,14 @@ gulp.task('fonts', function(){
 gulp.task('clean', function(cb) {
 
 	// Delete individual resources folders:
+	/*
 	del([
 		target.css,
 		target.js,
 		target.img,
 		target.fonts
 	], cb)
+	/**/
 
 	// Delete the whole resources folder:
 	del(THEME_RESOURCES, cb)
