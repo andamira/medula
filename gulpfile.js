@@ -48,7 +48,7 @@
  *
  *     7 Configure Environment
  *
- *         7.1 Environment Options
+ *         7.1 Default Options
  *         7.1 CLI Parameters
  *         7.3 Default Task
  *
@@ -80,11 +80,11 @@ var BOWER_DIR        = "vendor-dl/";  // must match directory in .bowerrc
 
 var DEBUG_LVL          = 0; // 0 = none | 1 = print files going through tasks pipes | 2 = also for subtasks
 
-var AUTOPREFIXER_RULES = 'ie >= 9, > 5%, last 3 versions';
+var AUTOPREFIXER_RULES = 'ie >= 9, > 5%, last 3 versions'; // https://github.com/ai/browserslist#queries
 
 var DO_REMPIXEL        = false; // rem to pixel fallback
-var DO_IMAGEMIN        = true; // image minification
-var DO_JSMANGLE        = true; // javascript uglification
+var DO_IMAGEMIN        = true;  // image minification
+var DO_JSMANGLE        = true;  // javascript uglification
 
 
 /**
@@ -320,7 +320,7 @@ gulp.task('compile-sass', function () {
 	return gulp.src(source.sass, { base: '' } )
 		.pipe(exclude(source.sass_exclude))
 
-//		.pipe(isProduction ? gutil.noop() : sourcemaps.init() ) // --dev
+//		.pipe(IS_PRODUCTION ? gutil.noop() : sourcemaps.init() ) // --dev
 
 		.pipe( gulpif( DEBUG_LVL > 0, debug({title: '> compile-sass:'}) ) )
 
@@ -328,7 +328,7 @@ gulp.task('compile-sass', function () {
 		// @link https://www.npmjs.com/package/node-sass#options
 		.pipe( sass({
 			errLogToConsole: true,
-			style: sassStyle,
+			style: SASS_STYLE,
 			precision: 10,
 			indentType: 'tab',
 			indentWidth: 1,
@@ -343,7 +343,7 @@ gulp.task('compile-sass', function () {
 				.pipe(concat('main.css'))
 		.pipe(filter_frontend_style.restore)
 
-//		.pipe(isProduction ? gutil.noop() : sourcemaps.write({includeContent: false, sourceRoot: '../sass'})) // --dev
+//		.pipe(IS_PRODUCTION ? gutil.noop() : sourcemaps.write({includeContent: false, sourceRoot: '../sass'})) // --dev
 
 		// Postprocess
 //		.pipe(cmq({	log: false })) // NOTE: no sourcemap support
@@ -351,7 +351,7 @@ gulp.task('compile-sass', function () {
 		.pipe(autoprefixer(AUTOPREFIXER_RULES))
 
 		// Minify
-		.pipe( gulpif( isProduction, subtask_minifycss() ) )
+		.pipe( gulpif( IS_PRODUCTION, subtask_minifycss() ) )
 
 		.pipe(gulp.dest(target.css))
 });
@@ -391,7 +391,7 @@ gulp.task('compile-js', function () {
 			.pipe(concat('main.js')).on( "error", gutil.log)
 
 			// Minify
-			.pipe(isProduction ? uglify({mangle: DO_JSMANGLE}).on('error', gutil.log) : gutil.noop())
+			.pipe(IS_PRODUCTION ? uglify({mangle: DO_JSMANGLE}).on('error', gutil.log) : gutil.noop())
 
 			// Save output
 			.pipe(gulp.dest(target.js))
@@ -418,7 +418,7 @@ gulp.task('compile-vendor_live', function () {
 		.pipe(filter_js)
 
 			// Minify
-			.pipe(isProduction ? uglify({mangle: DO_JSMANGLE}).on('error', gutil.log) : gutil.noop())
+			.pipe(IS_PRODUCTION ? uglify({mangle: DO_JSMANGLE}).on('error', gutil.log) : gutil.noop())
 
 			// Save output
 			.pipe(gulp.dest(target.vendor_live_js))
@@ -435,7 +435,7 @@ gulp.task('compile-vendor_live', function () {
 			.pipe(autoprefixer(AUTOPREFIXER_RULES))
 
 			// Minify
-			.pipe( gulpif( isProduction, subtask_minifycss() ) )
+			.pipe( gulpif( IS_PRODUCTION, subtask_minifycss() ) )
 
 			// Save output
 			.pipe(gulp.dest(target.vendor_live_css))
@@ -516,11 +516,11 @@ gulp.task('clean', function(cb) {
  */
 
 /**
- * 7.1 ENVIRONMENT OPTIONS
+ * 7.1 DEFAULT OPTIONS
  */
 
-var isProduction = true;             // gulp
-var sassStyle = 'nested';
+var IS_PRODUCTION = true;             // gulp
+var SASS_STYLE = 'nested';
 
 
 /**
@@ -528,9 +528,9 @@ var sassStyle = 'nested';
  */
 
 if(gutil.env.dev === true) {         // --dev
-	isProduction = false;
-	DO_IMAGEMIN = false;
-	var sassStyle = 'compressed';
+	IS_PRODUCTION = false;
+	DO_IMAGEMIN   = false;
+	SASS_STYLE = 'compressed';
 }
 if(gutil.env.noimgmin === true) {   // --noimgmin
 	DO_IMAGEMIN = false;
@@ -545,6 +545,15 @@ if(gutil.env.norem2px === true) {   // --norem2px
  */
 
 gulp.task( 'default',
-	[ 'clean', 'compile-sass', 'compile-js', 'compile-vendor_live', 'fonts', 'images' ]
+	[ 'compile-sass', 'compile-js', 'compile-vendor_live', 'fonts', 'images' ]
+);
+
+// Default task prepared for future Gulp 4.0
+gulp.task( 'default-4',
+	gulp.series( 'clean',
+		gulp.parallel( 'compile-sass', 'compile-js', 'compile-vendor_live', 'fonts', 'images' ),
+		function() {
+		}
+	)
 );
 
