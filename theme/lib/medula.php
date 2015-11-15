@@ -30,6 +30,8 @@
  *          5.4 p tags around img
  *          5.5 Read More Link
  *          5.6 &nbsp; unichode characters
+ *          5.7 Remove Pingbacks to Self
+ *          5.8 Remove microformats classes
  *
  *      6 Utility Functions
  *
@@ -237,6 +239,9 @@ function medula_cleanup_all() {
 
 	// removing pingbacks to self (5.7)
 	add_action( 'pre_ping', 'medula_no_self_pingbacks' );
+
+	// removing hentry class (5.8)
+	add_filter( 'post_class','medula_remove_hentry' );
 }
 
 /**
@@ -357,6 +362,19 @@ function medula_no_self_pingbacks( &$links ) {
 			unset( $links[$l] );
 		}
 	}
+}
+
+/**
+ * 5.8 REMOVE HENTRY CLASS
+ *
+ * Since medula uses schema microdata, and not microformats,
+ * the markup is cleaner without the automatic hentry class.
+ *
+ * @link http://codex.wordpress.org/Function_Reference/post_class
+ * @link https://core.trac.wordpress.org/ticket/28482#ticket
+ */
+function medula_remove_hentry( $classes ) {
+    return array_diff( $classes, array( 'hentry' ) );
 }
 
 
