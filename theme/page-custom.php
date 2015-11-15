@@ -10,9 +10,7 @@
  *
  * @link http://codex.wordpress.org/Page_Templates
 */
-?>
 
-<?php
 if ( medula_template_override('') ) { return; }
 
 get_header();

@@ -9,9 +9,7 @@
  *
  * @link http://codex.wordpress.org/Post_Type_Templates#Displaying_Custom_Taxonomies
  */
-?>
 
-<?php
 if ( medula_template_override('') ) { return; }
 
 get_header();

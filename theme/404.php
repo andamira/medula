@@ -1,11 +1,19 @@
-<?php get_header(); ?>
+<?php
+/**
+ * 404 Template
+ *
+ * @link  https://codex.wordpress.org/Creating_an_Error_404_Page
+ */
+
+get_header();
+?>
 
 <main role="main">
 
 	<article id="post-not-found">
 
 		<header class="entry-header">
-			<h1><?php _e( '404 - Post Not Found', 'medula' ); ?></h1>
+				<h1><?php _e( 'Not Found', 'medula' ); ?></h1>
 		</header>
 
 		<section class="entry-content">
@@ -17,7 +25,6 @@
 		</section>
 
 		<footer class="entry-footer">
-				<p class="alert-error"><?php _e( 'This is the 404.php template.', 'medula' ); ?></p>
 		</footer>
 
 	</article>

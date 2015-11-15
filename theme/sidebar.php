@@ -1,5 +1,11 @@
-<aside id="sidebar1" class="sidebar" role="complementary">
-<?php
+<?
+/**
+ * Sidebar Template
+ *
+ * @link https://developer.wordpress.org/reference/functions/dynamic_sidebar/
+ */
+
+echo '<aside id="sidebar1" class="sidebar" role="complementary">';
 
 	if ( is_active_sidebar( 'sidebar1' ) ) {
 
@@ -7,9 +13,8 @@
 
 	} else {
 
-		echo '<div class="no-widgets alert-info"><p>' . __( 'Empty widget area', 'medula' ) . '</p></div>';
+		// echo '<div class="no-widgets alert-info"><p>' . __( 'Empty widget area', 'medula' ) . '</p></div>';
 
 	}
 
-?>
-</aside>
+echo '</aside>'

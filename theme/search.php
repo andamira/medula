@@ -1,4 +1,11 @@
 <?php
+/**
+ * Search Results Template
+ *
+ * @link http://wordpress.stackexchange.com/q/4192/39050
+ * @link https://codex.wordpress.org/Creating_a_Search_Page
+ */
+
 if ( medula_template_override('') ) { return; }
 
 get_header();
@@ -43,7 +50,6 @@ get_header();
 				<p><?php _e( 'Try your search again.', 'medula' ); ?></p>
 			</section>
 			<footer class="article-footer">
-				<p class="alert-error"><?php _e( 'This is the error message in the search.php template.', 'medula' ); ?></p>
 			</footer>
 		</article>
 

@@ -7,7 +7,7 @@
  *
  *         1.1 Resources URI
  *
- *     2 Theme Functionlity
+ *     2 Theme Functionality
  *
  *         2.1  Core Medula library
  *         2.2  Admin Area
@@ -46,8 +46,8 @@
  */
 
 /**
- * 1.1 Returns the resources URI, with optional parameter: css, js, img, fonts.
- *     NOTE: The default path must match THEME_RESOURCES global in /gulpfile.js 
+ * 1.1 Returns the resources URI, with an optional subpath parameter.
+ * The default path must match THEME_RESOURCES global in /gulpfile.js
  */
 function medula_get_theme_resources_uri( $subpath = '' ){
 	return get_template_directory_uri() . '/res/' . $subpath;
@@ -121,9 +121,8 @@ add_action( 'after_setup_theme', 'medula_launch' );
  * ************************************************************
  *
  * This file controls the inclusion of third party libraries,
- *  fixes & cleanups for external libraries
- * and plugins. And specific includes for some big plugins 
- * like like WPML, Toolset & WooCommerce
+ * including fixes & cleanups for external libraries and also
+ * for some big plugins like like WPML, Toolset & WooCommerce.
  */
 include_once( 'lib/vendor.php' );
 
