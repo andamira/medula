@@ -1,6 +1,7 @@
 <?php
 /**
- * Comments template
+ * Comments Library Template
+ *
  *
  *     1 Comments Count Display Function
  *
@@ -18,6 +19,7 @@
  * @link http://codex.wordpress.org/Function_Reference/comments_number
  * @link http://codex.wordpress.org/Function_Reference/_n
  */
+
 function medula_comments_count( $link = false ) {
 
 	$com_num = get_comments_number();
@@ -33,7 +35,7 @@ function medula_comments_count( $link = false ) {
 			$cc .= comments_number(
 				__( 'No comments', 'medula' ),
 				__( 'One comment', 'medula' ),
-				sprintf( __( '% comments', 'medula' ), $com_num() )
+				sprintf( __( '% comments', 'medula' ), $com_num )
 			);
 
 		if ( $link && $com_num ) {
@@ -51,8 +53,8 @@ function medula_comments_count( $link = false ) {
  * ************************************************************
  *
  * @link http://www.whatwg.org/specs/web-apps/current-work/multipage/sections.html#the-article-element
- *
  */
+
 function medula_comments_layout( $comment, $args, $depth ) {
 	$GLOBALS['comment'] = $comment; ?>
 

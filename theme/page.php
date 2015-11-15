@@ -1,4 +1,10 @@
 <?php
+/**
+ * Page Template
+ *
+ * @link https://developer.wordpress.org/themes/basics/template-hierarchy/#page
+ */
+
 if ( medula_template_override('') ) { return; }
 
 get_header();
@@ -26,11 +32,11 @@ get_header();
 
 		</article>
 
-	<?php endwhile; else: ?>
+	<?php endwhile; else:
 
-		<?php medula_no_post_found( basename( __FILE__ ) ); ?>
+		medula_post_not_found( basename( __FILE__ ) );
 
-	<?php endif; ?>
+	endif; ?>
 
 </main>
 

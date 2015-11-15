@@ -1,12 +1,13 @@
 <?php
 /**
- * Admin Bar template
+ * Admin Bar Library Template
  *
- *     1 Theme Support
  *
- *     2 Callback
+ *     1 Theme Support                                      (#)
  *
- *     3 Selective Disabling
+ *     2 Callback Function
+ *
+ *     3 Selective Disabling                                (#)
  *
  */
 
@@ -15,22 +16,24 @@
  * 1 THEME SUPPORT
  * ************************************************************
  *
+ * Enable to override the default behaviour of the admin toolbar
  */
-add_theme_support( 'admin-bar', array( 'callback' => 'medula_adminbar_cb' ) );
+
+# add_theme_support( 'admin-bar', array( 'callback' => 'medula_adminbar_cb' ) );
 
 
 /**
  * 2 CALLBACK FUNCTION
  * ************************************************************
  *
- * Disable inline styling, we're gonna use sass for that
+ * The Default Admin Bar Callback
  *
- * @see /src/sass/modules/_admin_bar.scss
- * @see /src/sass/breakpoints/base/_menus.scss
- * @see {WP_FOLDER}/wp-includes/admin-bar.php Original WordPress Code
+ * @link https://github.com/WordPress/WordPress/blob/master/wp-includes/admin-bar.php
  */
+
 function medula_adminbar_cb() {
-/* ?>
+
+?>
 <style type="text/css" media="screen">
 	html { margin-top: 32px !important; }
 	* html body { margin-top: 32px !important; }
@@ -39,7 +42,8 @@ function medula_adminbar_cb() {
 		* html body { margin-top: 46px !important; }
 	}
 </style>
-<?php /**/
+<?php
+
 }
 
 
@@ -50,11 +54,15 @@ function medula_adminbar_cb() {
 
 // show admin bar only for admins
 if (!current_user_can('manage_options')) {
-	#add_filter('show_admin_bar', '__return_false');
-}
-// show admin bar only for admins and editors
-if (!current_user_can('edit_posts')) {
-	#add_filter('show_admin_bar', '__return_false');
+
+	# add_filter('show_admin_bar', '__return_false');
+
 }
 
+// show admin bar only for admins and editors
+if (!current_user_can('edit_posts')) {
+
+	# add_filter('show_admin_bar', '__return_false');
+
+}
 

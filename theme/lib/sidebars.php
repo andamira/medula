@@ -1,30 +1,29 @@
 <?php 
 /**
- * Sidebars template
+ * Register Sidebars Template
  *
  * To add more sidebars or widgetized areas, just copy
  * and edit the register_sidebar function, modifying
- * the ID, name and description to new values. e.g.:
+ * the 'id', 'name' and 'description to new values.
  *
- *     'id' => 'sidebar2',
- *     'name' => __( 'Sidebar 2', 'medula' ),
- *     'description' => __( 'The secondary sidebar.', 'medula' ),
- *
- * To call the sidebar in your template, you can just copy
- * the sidebar.php file in the root and rename it adding
- * your new sidebar's id to the file name. e.g.:
+ * To use the new sidebar, you can just copy the
+ * sidebar.php file in the root and add your new
+ * sidebar's id to the file name, like this:
  *
  *     sidebar-sidebar2.php
  *
- * And call it in the template like this:
+ * And call it from the template, like this:
  *
  *     get_sidebar('sidebar2');
  *
+ * @link https://developer.wordpress.org/reference/functions/register_sidebar/
+ * @link https://developer.wordpress.org/themes/functionality/sidebars/
  */
 
 function medula_register_sidebars() {
 
 	// Sidebar 1
+
 	register_sidebar(array(
 		'id' => 'sidebar1',
 		'name' => __( 'Sidebar 1', 'medula' ),
@@ -38,6 +37,6 @@ function medula_register_sidebars() {
 	// ...
 
 
-}
 
+}
 

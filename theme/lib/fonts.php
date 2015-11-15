@@ -1,10 +1,9 @@
 <?php
 /*
- * Fonts template
+ * Fonts Library Template
  *
  * Here you can load fonts from external servers, using @font-face
  *
- * Index:
  *
  *     1 Google fonts                                       (#)
  *
@@ -30,6 +29,7 @@ function medula_fonts() {
 	/**
 	 * 1 GOOGLE FONTS
 	 */
+
 	# wp_enqueue_script('googleFonts', medula_get_protocol() . 'fonts.googleapis.com/css?family=Open+Sans:400,400italic,700');
 
 

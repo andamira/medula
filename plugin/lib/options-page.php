@@ -1,8 +1,7 @@
 <?php
 /**
- * Options template
+ * Settings Page Template
  *
- * Theme options page
  *
  *     1 Add the menu
  *
@@ -22,9 +21,12 @@
  *         3.3 Display Settings
  *         3.4 Validate Settings
  *
- * @link https://codex.wordpress.org/Creating_Options_Pages
- * @link http://www.paulund.co.uk/theme-options-page
+ *
+ * @link https://codex.wordpress.org/Settings_API
+ * @link https://developer.wordpress.org/plugins/settings/custom-settings-page/
+ * @link https://developer.wordpress.org/reference/functions/add_options_page/
  */
+
 
 /**
  * 1 ADD THE MENU
@@ -63,6 +65,7 @@ function register_my_custom_menu_page() {
 
 	add_theme_page( 'Theme Options', 'Theme Options', 'manage_options', 'medula_theme_options.php', 'medula_theme_page');
 }
+
 
 /**
  * 2 ADD THE SETTINGS
@@ -131,6 +134,7 @@ function medula_register_settings() {
 
 }
 
+
 /**
  * 3 CALLBACK FUNCTIONS
  * ************************************************************
@@ -142,18 +146,19 @@ function medula_register_settings() {
  * Callback function to the add_theme_page
  * Will display the theme options page
  */
+
 function medula_theme_page() {
 
 ?>
 	<div class="section panel">
-	<h1><img src="<?php echo medula_get_theme_resources_uri('img') . '/favicon-big.png'; ?>" height=24 width=24 /> <?php printf(wp_kses(__('Theme Options', 'medula'), array())); ?></h1>
+	<h1><img src="<?php echo medula_get_plugin_resources_uri('img/logo.png'); ?>" height=24 width=24 /> <?php printf(wp_kses(__('Theme Options', 'medula-p'), array())); ?></h1>
 		<form method="post" enctype="multipart/form-data" action="options.php">
 			<?php
 			settings_fields('medula_theme_options');
 			do_settings_sections('medula_theme_options.php');
 			?>
 			<p class="submit">
-				<input type="submit" class="button-primary" value="<?php _e('Save Changes', 'medula'); ?>" />
+				<input type="submit" class="button-primary" value="<?php _e('Save Changes', 'medula-p'); ?>" />
 			</p>
 		</form>
 	</div>
@@ -165,6 +170,7 @@ function medula_theme_page() {
  *
  * Function to add extra text to display on each section
  */
+
 function medula_display_section( $section ) {
 
 }
@@ -177,6 +183,7 @@ function medula_display_section( $section ) {
  * In future you can add multiple types to be display from this function,
  * Such as checkboxes, select boxes, file upload boxes etc.
  */
+
 function medula_display_settings( $args ) {
 
 	extract( $args );
@@ -203,6 +210,7 @@ function medula_display_settings( $args ) {
  * Callback function to the register_settings function will pass through an input variable
  * You can then validate the values and the return variable will be the values stored in the database.
  */
+
 function medula_validate_settings($input) {
 
 	/*

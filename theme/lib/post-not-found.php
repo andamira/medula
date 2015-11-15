@@ -1,10 +1,10 @@
 <?php
 /**
- * Not Found template
+ * Post Not Found Library Template
  *
  */
 
-function medula_no_post_found( $template ) {
+function medula_post_not_found( $template ) {
 ?>
 	<article id="post-not-found">
 		<header class="entry-header">
@@ -19,3 +19,4 @@ function medula_no_post_found( $template ) {
 	</article>
 <?php
 }
+

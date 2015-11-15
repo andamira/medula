@@ -1,6 +1,6 @@
 <?php
 /*
- * Titles template
+ * Titles Library Template
  *
  *     1 Entry Title
  *

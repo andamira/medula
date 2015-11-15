@@ -1,13 +1,14 @@
 <?php
 /**
- * Custom Post Type Taxonomy Template
+ * Taxonomy Template
  *
- * The name of this template should reflect the slug of your custom post type.
+ * NOTE: The name of this template should reflect the slug of your custom taxonomy.
  *
- * Be aware of 'CTCAT' and 'CTTAG' in the footre entry-meta (two example custom
- * taxonomies for categories and tags, created in /theme/Plugin/taxonomies.php
+ * Be aware of 'CTCAT' and 'CTTAG' in the footer entry-meta (two example custom
+ * taxonomies for categories and tags, created in /plugin/lib/taxonomies.php
  *
- * @link http://codex.wordpress.org/Post_Type_Templates#Displaying_Custom_Taxonomies
+ * @link https://developer.wordpress.org/themes/template-files-section/taxonomy-templates/
+ * @link https://developer.wordpress.org/themes/basics/categories-tags-custom-taxonomies/#custom-taxonomies
  */
 
 if ( medula_template_override('') ) { return; }
@@ -40,15 +41,15 @@ get_header();
 
 		</article>
 
-	<?php endwhile; ?>
+	<?php endwhile;
 
-		<?php medula_page_navi(); ?>
+		medula_page_navi();
 
-	<?php else : ?>
+	else :
 
-		<?php medula_no_post_found( basename( __FILE__ ) ); ?>
+		medula_post_not_found( basename( __FILE__ ) );
 
-	<?php endif; ?>
+	endif; ?>
 
 </main>
 

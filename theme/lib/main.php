@@ -7,6 +7,7 @@
  * to put them in the functions.php file, or in
  * any of the suitable files included from there.
  *
+ *
  *     1 Enqueueing Scripts & Styles
  *
  *     2 Theme Support
@@ -405,6 +406,7 @@ if (stripos(get_option('siteurl'), 'https://') === 0) {
 
 	// NOTE: Uncomment the next add_action() line if your WordPress
 	// instalation can't detect that SSL is being used:
+
 	# add_action( 'wp_footer', 'medula_force_ssl_url_scheme_script' );
 }
 

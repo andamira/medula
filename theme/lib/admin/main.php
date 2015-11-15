@@ -1,27 +1,30 @@
 <?php
 /**
- * This file handles the admin area and functions.
- * You can use this file to make changes to the
- * dashboard. It's turned off by default, but you
- * can call it via the functions file.
+ * Admin Area Library Template
  *
- *     1 Remove default dashboard wigets
+ * This file handles the main Admin Area functionality
  *
- *     2 Custom dashboard widgets                           (#)
+ *
+ *     1 Remove Default Dashboard Wigets                    (#)
+ *
+ *     2 Custom Dashboard Widgets                           (#)
  *
  *         2.1 Load
  *         2.2 Define
  *
- *     3 Customizing the Login Page
+ *     3 Customize the Login Page
  *
- *     4 Customize Admin
+ *     4 Customize Admin Area
  *
  *         4.1 Custom Admin Stylesheets
  *         4.2 Custom TinyMCE Editor Stylesheet
  *         4.3 TODO: Custom TinyMCE buttons
  *         4.4 Changing text in footer of admin
  *
- *     5 Options Page
+ *     5 Theme Customizer                                   (#)
+ *
+ *     6 The Admin Bar                                      (#)
+ *
  *
  * @link http://digwp.com/2010/10/customize-wordpress-dashboard/
  */
@@ -82,6 +85,7 @@ function medula_custom_dashboard_widgets() {
 /**
  * 2.2 Define here all the Custom Widgets
  */
+
 function medula_example_dashboard_widget() {
 	echo '<h1>' . esc_html('Medula Example Widget', 'medula') . '</h1>';
 	echo '<p>' .
@@ -113,14 +117,14 @@ add_filter( 'login_headertitle', 'medula_login_title' );
 
 
 /**
- * 4 CUSTOMIZE ADMIN
+ * 4 CUSTOMIZE ADMIN AREA
  * ************************************************************
- *
  */
 
 /**
  * 4.1 Custom Admin Stylesheets
  */
+
 add_action( 'admin_enqueue_scripts', 'medula_load_admin_styles' );
 
 function medula_load_admin_styles() {
@@ -130,6 +134,7 @@ function medula_load_admin_styles() {
 /**
  * 4.2 Custom TinyMCE Editor Stylesheet
  */
+
 add_editor_style( medula_get_theme_resources_uri('css/admin/editor.css') );
 
 /**
@@ -138,9 +143,11 @@ add_editor_style( medula_get_theme_resources_uri('css/admin/editor.css') );
  */
 
 
+
 /**
  * 4.4 Changing text in footer of admin
  */
+
 add_filter( 'admin_footer_text', 'medula_custom_admin_footer' );
 
 function medula_custom_admin_footer() {
@@ -162,10 +169,21 @@ function medula_custom_admin_footer() {
 
 
 /**
- * 5 OPTIONS PAGE
+ * 5 THEME CUSTOMIZER
+ * ************************************************************
+ *
+ * @link https://developer.wordpress.org/themes/advanced-topics/customizer-api/
+ */
+
+# require_once( 'theme-customizer.php' );
+
+
+/**
+ * 6 THE ADMIN BAR
  * ************************************************************
  *
  */
-include_once( 'admin-options.php' );
+
+# require_once( 'admin-bar.php' );
 
 

@@ -1,4 +1,11 @@
 <?php
+/**
+ * Single Template
+ *
+ * @link https://developer.wordpress.org/themes/basics/template-hierarchy/#single-post
+ * @link https://codex.wordpress.org/Theme_Development#Single_Post_.28single.php.29
+ */
+
 if ( medula_template_override('') ) { return; }
 
 get_header();
@@ -27,11 +34,11 @@ get_header();
 
 		</article>
 
-	<?php endwhile; else : ?>
+	<?php endwhile; else :
 
-		<?php medula_no_post_found( basename( __FILE__ ) ); ?>
+		medula_post_not_found( basename( __FILE__ ) );
 
-	<?php endif; ?>
+	endif; ?>
 
 </main>
 

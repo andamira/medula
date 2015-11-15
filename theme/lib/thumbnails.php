@@ -1,6 +1,7 @@
 <?php
 /**
- * Thumbnails template
+ * Thumbnails Library Template
+ *
  *
  *     1 Theme Support & default size
  *
@@ -17,15 +18,19 @@
  *
  * @link https://codex.wordpress.org/Post_Thumbnails
  */
+
 add_theme_support( 'post-thumbnails' );
-#set_post_thumbnail_size(125, 125, true);
+
+# set_post_thumbnail_size(125, 125, true);
 
 
 /**
  * 2 REMOVE DEFAULT IMAGE SIZES
  * ************************************************************
  */
+
 # add_filter('image_size_names_choose', 'medula_remove_image_size');
+
 function medula_remove_image_size( $sizes ) {
 	unset( $sizes['thumbnail'] );
 	unset( $sizes['medium'] );
@@ -48,6 +53,5 @@ function medula_remove_image_size( $sizes ) {
 
 # add_image_size( 'medula-600', 600, 150, true );
 # add_image_size( 'medula-300', 300, 100, true );
-
 
 

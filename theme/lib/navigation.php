@@ -1,6 +1,6 @@
 <?php
 /**
- * Navigation Menus template
+ * Navigation Menus Library Template
  *
  *     1 Theme Support
  *

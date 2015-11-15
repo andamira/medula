@@ -1,41 +1,40 @@
 <?php
 /**
- * Functions outputting ENTRY META fields
+ * Entry Meta Fields Library Template
  *
- *     1 DateTime
  *
- *     2 Author
+ *     1 Return the Entry Date-Time
  *
- *     3 Byline
+ *     2 Return the Entry Author
  *
- *     4 Terms: taxonomies, Categories, tags
+ *     3 Print the Entry Byline
  *
- *     5 Entry Edit Post
+ *     4 Print the Entry Terms: (Categories, Tags...)
  *
- * Feel free to modify them in any way you like. For example:
- * You could add a parameter to the author function to choose
- * wether the link points to the author's url or WP page,
- * or you could change the Edit This text for a pencil icon.
+ *     5 Print/Return the Edit Link (Posts, Comments...)
+ *
  */
 
 
 /**
- * 1 Returns the entry datetime
+ * 1 RETURN THE ENTRY DATETIME
  * ************************************************************
  */
+
 function medula_get_entry_meta_date() {
 	return( '<time class="entry-date updated" datetime="' . get_the_time( 'Y-m-dTH:i:sO' ) . '" itemprop="datePublished" pubdate>' . get_the_time( get_option( 'date_format' ) ) . '</time>' );
 }
 
 
 /**
- * 2 Returns the entry author
+ * 2 RETURN THE ENTRY AUTHOR
  * ************************************************************
  *
  * @link http://codex.wordpress.org/Function_Reference/get_the_author_meta
  */
+
 function medula_get_entry_meta_author() {
-	$author  = '<address class="entry-author vcard">';
+	$author  = '<address class="entry-author">';
 
 	// Author link ( set condition to false to disable link )
 	if ( true ) {
@@ -59,11 +58,12 @@ function medula_get_entry_meta_author() {
 
 
 /**
- * 3 Prints the byline
+ * 3 PRINT THE BYLINE
  * ************************************************************
  */
+
 function medula_entry_meta_byline() {
-	$byline  = '<span class="entry-byline byline">';
+	$byline  = '<span class="entry-byline">';
 	$byline .= sprintf(__( 'Posted %1$s by %2$s', 'medula' ), medula_get_entry_meta_date(), medula_get_entry_meta_author( 'index' ) );
 	$byline .= '</span>';
 
@@ -72,9 +72,10 @@ function medula_entry_meta_byline() {
 
 
 /**
- * 4 Prints the terms (taxonomies, categories, tags... )
+ * 4 PRINT THE ENTRY TERMS (CATEGORIES, TAGS...)
  * ************************************************************
  */
+
 function medula_entry_meta_terms( $custom, $class, $label) {
 
 	$tags  = '<span class="entry-' . $class . '">';
@@ -93,10 +94,12 @@ function medula_entry_meta_terms( $custom, $class, $label) {
 
 	echo $tags;
 }
+
 // convenience function for categories
 function medula_entry_meta_categories( $custom = 'category' ) {
 	medula_entry_meta_terms( $custom, 'categories', __( 'Filed under', 'medula' ) );
 }
+
 // convenience function for tags
 function medula_entry_meta_tags( $custom = 'post_tag' ) {
 	medula_entry_meta_terms( $custom, 'tags', __( 'Tags:', 'medula' ) );
@@ -104,12 +107,13 @@ function medula_entry_meta_tags( $custom = 'post_tag' ) {
 
 
 /**
- * 5 Returns the Edit Link (post, comment, etc.)
+ * 5 PRINT/RETURN THE ENTRY EDIT LINK (POSTS, COMMENTS...)
  * ************************************************************
  *
  * @link http://codex.wordpress.org/Function_Reference/current_user_can
  * @link http://docs.appthemes.com/tutorials/wordpress-check-user-role-function/
  */
+
 function medula_edit_link( $link, $echo = true ) {
 
 	// Check if user has permission to see the edit link
@@ -131,10 +135,12 @@ function medula_edit_link( $link, $echo = true ) {
 		return $edit;
 	}
 }
+
 // convenience function for posts
 function medula_edit_post_link( $echo = true ) {
 	return medula_edit_link( get_edit_post_link(), $echo );
 }
+
 // convenience function for comments
 function medula_edit_comment_link( $echo = true ) {
 	return medula_edit_link( get_edit_comment_link(), $echo );

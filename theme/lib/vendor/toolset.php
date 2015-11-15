@@ -27,6 +27,7 @@
  *
  * You can comment the next line to disable loading Layouts templates.
  */
+
 define( 'TOOLSET_LAYOUTS', true );
 
 /**

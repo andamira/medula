@@ -1,4 +1,12 @@
 <?php
+/**
+ * Index Template (the universal fallback)
+ *
+ * @link https://developer.wordpress.org/themes/basics/template-hierarchy/
+ * @link https://developer.wordpress.org/themes/basics/template-files/
+ * @link http://wphierarchy.com/
+ */
+
 if ( medula_template_override() ) { return; }
 
 get_header();
@@ -30,15 +38,15 @@ get_header();
 
 		</article>
 
-	<?php endwhile; ?>
+	<?php endwhile;
 
-			<?php medula_page_navi(); ?>
+			medula_page_navi();
 
-	<?php else : ?>
+	else :
 
-		<?php medula_no_post_found( basename( __FILE__ ) ); ?>
+		medula_post_not_found( basename( __FILE__ ) );
 
-	<?php endif; ?>
+	endif; ?>
 
 </main>
 

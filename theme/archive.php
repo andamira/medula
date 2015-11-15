@@ -1,4 +1,11 @@
 <?php
+/**
+ * The Archive Template
+ *
+ * @link https://codex.wordpress.org/Creating_an_Archive_Index
+ * @link https://developer.wordpress.org/themes/basics/template-hierarchy/#category
+ */
+
 if ( medula_template_override('') ) { return; }
 
 get_header();
@@ -57,15 +64,15 @@ get_header();
 
 		</article>
 
-	<?php endwhile; ?>
+	<?php endwhile;
 
-		<?php medula_page_navi(); ?>
+		medula_page_navi();
 
-	<?php else : ?>
+	else :
 
-		<?php medula_no_post_found( basename( __FILE__ ) ); ?>
+		medula_post_not_found( basename( __FILE__ ) );
 
-	<?php endif; ?>
+	endif; ?>
 
 </main>
 

@@ -1,10 +1,11 @@
 <?php
 /**
-* Theme Customize
+* Theme Customizer Library Template
 *
-* @link http://code.tutsplus.com/series/a-guide-to-the-wordpress-theme-customizer--wp-33722
-* @link http://natko.com/changing-default-wordpress-theme-customization-api-sections/
+* @link https://developer.wordpress.org/themes/advanced-topics/customizer-api/
 */
+
+add_action( 'customize_register', 'medula_theme_customizer' );
 
 function medula_theme_customizer( $wp_customize ) {
   // $wp_customize calls go here.
@@ -24,7 +25,4 @@ function medula_theme_customizer( $wp_customize ) {
   // $wp_customize->get_section('colors')->title = __( 'Theme Colors' );
   // $wp_customize->get_section('background_image')->title = __( 'Images' );
 }
-
-add_action( 'customize_register', 'medula_theme_customizer' );
-
 

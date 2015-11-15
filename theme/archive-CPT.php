@@ -1,11 +1,11 @@
 <?php
 /**
- * Custom Post Type Archive Template
+ * Archive Template (for a specific Custom Post Type)
  *
- * The name of this template should reflect the slug of your custom post type.
+ * NOTE: The name of this template should reflect the slug of your CPT.
  *
- * Be aware of 'CTCAT' and 'CTTAG' in the footre entry-meta (two example custom
- * taxonomies for categories and tags, created in /theme/Plugin/taxonomies.php
+ * Be aware of 'CTCAT' and 'CTTAG' in the footer entry-meta (two example custom
+ * taxonomies for categories and tags, created in /plugin/lib/taxonomies.php
  *
  * @link http://codex.wordpress.org/Post_Type_Templates
 */
@@ -41,15 +41,15 @@ get_header();
 
 		</article>
 
-	<?php endwhile; ?>
+	<?php endwhile;
 
-		<?php medula_page_navi(); ?>
+		medula_page_navi();
 
-	<?php else : ?>
+	else :
 
-		<?php medula_no_post_found( basename( __FILE__ ) ); ?>
+		medula_post_not_found( basename( __FILE__ ) );
 
-	<?php endif; ?>
+	endif; ?>
 
 </main>
 

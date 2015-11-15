@@ -13,7 +13,7 @@ get_header();
 	<article id="post-not-found">
 
 		<header class="entry-header">
-				<h1><?php _e( 'Not Found', 'medula' ); ?></h1>
+			<h1><?php _e( 'Not Found', 'medula' ); ?></h1>
 		</header>
 
 		<section class="entry-content">
