@@ -144,12 +144,15 @@ add_editor_style( medula_get_theme_resources_uri('css/admin/editor.css') );
 add_filter( 'admin_footer_text', 'medula_custom_admin_footer' );
 
 function medula_custom_admin_footer() {
-	$your_site_name="...";
-	$your_site_url="#";
+	$your_name="...";
+	$your_url="#";
+	// $your_logo=medula_get_theme_resources_uri("/img/my-logo.png")
 
 	printf(
 		'<span id="footer-thankyou">' . esc_html__( 'Developed by %1$s', 'medula' ) . '</span>.',
-		'<a href="' . $your_site_url . '">' . $your_site_name . '</a>'
+		'<a href="' . $your_url . '">' . $your_name
+			. (!empty($your_logo) ? '<img style="margin:0;vertical-align:text-bottom;" src="' . $your_logo . '" alt="" height="25" width="25">': '')
+		. '</a>'
 	);
 	printf(
 		' ' . esc_html__('Built using %s.', 'medula'),

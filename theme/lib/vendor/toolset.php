@@ -8,10 +8,7 @@
  *         1.1 Load Layout in Template
  *         1.2 Load Custom Cells Layouts
  *
- *     2 Cleanup & Fixes
- *
- *         2.1 Disable Toolset CSS & JS                     (#)
- *         2.2 Using Relevanssi Highlights                  (#)
+ *     2 Disable Toolset CSS & JS                           (#)
  *
  *
  * @link http://wp-types.com Toolset
@@ -80,12 +77,8 @@ if( class_exists( 'WPDD_Layouts' ) && !function_exists( 'include_ddl_layouts' ) 
 
 
 /**
- * 2 CLEANUP & FIXES
+ * 2 DISABLE TOOLSET FRONT-END SCRIPTS AND STYLESHEETS
  * ************************************************************
- */
-
-/**
- * 2.1 DISABLE TOOLSET FRONT-END SCRIPTS AND STYLESHEETS
  *
  * @link https://wp-types.com/forums/topic/remove-unneccessary-css-files/#post-210881
  */
@@ -113,21 +106,5 @@ function medula_prefix_remove_views_assets() {
 
 	// wpv-pagination.css -used in Views pagination
 	wp_deregister_style( 'views-pagination-style' );
-}
-
-/**
- * 2.2 USING RELEVANSSI HIGHLIGHTING ON TYPES
- * ************************************************************
- * @link http://wp-types.com/forums/topic/the_excerpt-and-relevanssi/
- */
-
-# add_shortcode('relevanssi-excerpt', 'medula_relevanssi_excerpt');
-
-function medula_relevanssi_excerpt() {
-    ob_start();
-    relevanssi_the_excerpt();
-    $summary .= ob_get_contents();
-    ob_end_clean();
-    return $summary;
 }
 
