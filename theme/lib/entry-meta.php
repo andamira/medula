@@ -2,6 +2,7 @@
 /**
  * Entry Meta Fields Library Template
  *
+ *     >------------------>
  *
  *     1 Return the Entry Date-Time
  *
@@ -13,6 +14,7 @@
  *
  *     5 Print/Return the Edit Link (Posts, Comments...)
  *
+ *     <------------------<
  */
 
 

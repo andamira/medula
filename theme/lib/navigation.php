@@ -2,11 +2,15 @@
 /**
  * Navigation Menus Library Template
  *
+ *     >------------------>
+ *
  *     1 Theme Support
  *
  *     2 Menus
  *
  *     3 Custom Nav Walker
+ *
+ *     <------------------<
  *
  * @link http://codex.wordpress.org/Navigation_Menus
  */
@@ -90,6 +94,7 @@ function medula_site_footer_nav() {
  * @link http://shinraholdings.com/62/custom-nav-menu-walker-function/#example-code
  * @link http://illuminatikarate.com/blog/how-to-output-custom-html-in-wordpress-menus-using-a-custom-nav-walker/
  */
+
 class medula_Walker_Nav_Menu extends Walker {
     /**
      * What the class handles.
@@ -232,5 +237,4 @@ class medula_Walker_Nav_Menu extends Walker {
         $output .= "</li>\n";
     }
 }
-
 

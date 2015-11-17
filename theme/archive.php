@@ -1,6 +1,6 @@
 <?php
 /**
- * The Archive Template
+ * Archive Template
  *
  * @link https://codex.wordpress.org/Creating_an_Archive_Index
  * @link https://developer.wordpress.org/themes/basics/template-hierarchy/#category

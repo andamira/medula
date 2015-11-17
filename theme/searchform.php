@@ -1,6 +1,7 @@
 <?php 
 /**
- * Template for disaplaying search forms
+ * Search Form Template
+ *
  */
 
 // <!-- Search Form Type 1: simple text box -->

@@ -1,12 +1,8 @@
 <?php
 /**
- * This is the Core Medula library file, where
- * most of the main functions and features reside.
+ * Main Library Template
  *
- * If you have any custom functions, it's best
- * to put them in the functions.php file, or in
- * any of the suitable files included from there.
- *
+ *     >----------------->
  *
  *     1 Enqueueing Scripts & Styles
  *
@@ -37,6 +33,8 @@
  *      6 Utility Functions
  *
  *          6.1 http(s) Protocol Fix
+ *
+ *      <------------------<
  */
 
 
@@ -77,21 +75,19 @@ function medula_scripts_and_styles() {
  *
  * @link http://codex.wordpress.org/Function_Reference/add_theme_support
  * @link http://generatewp.com/theme-support/ Theme Support Generator
+ * 
+ * NOTE: 
+ *     thumbnails support is defined in:     /theme/lib/thumbnails.php
+ *     menus support is defined in:          /theme/lib/navigation.php
+ *     post format support is not defined
  */
 
 function medula_theme_support() {
 
-	// thumbnails support defined in:
-	// /theme/lib/thumbnails.php
-	
-	// menus support is defined in:
-	// /theme/lib/navigation.php
-	
-	// post format support is not defined
-
 	/**
 	 * 2.1 CUSTOM BACKGROUND
 	 */
+
 	add_theme_support( 'custom-background',
 	array(
 		'default-image' => '',    // background image default
@@ -106,8 +102,8 @@ function medula_theme_support() {
 	 * 2.2 TITLE TAG SUPPORT
 	 *
 	 * @link http://codex.wordpress.org/Function_Reference/add_theme_support#Title_Tag
-	 * @since 4.1.0
 	 */
+
 	add_theme_support( 'title-tag' );
 
 	/**
@@ -115,6 +111,7 @@ function medula_theme_support() {
 	 *
 	 * Enables post and comment RSS feed links to head.
 	 */
+
 	add_theme_support( 'automatic-feed-links' );
 
 	/**
@@ -122,6 +119,7 @@ function medula_theme_support() {
 	 *
 	 * @link http://codex.wordpress.org/Semantic_Markup
 	 */
+
 	$args = array(
 		'search-form',
 		'comment-form',
@@ -129,6 +127,7 @@ function medula_theme_support() {
 		'gallery',
 		'caption'
 	);
+
 	add_theme_support( 'html5', $args );
 }
 
@@ -139,6 +138,7 @@ function medula_theme_support() {
  *
  * @link http://codex.wordpress.org/Content_Width
  */
+
 if ( ! isset( $content_width ) ) {
 	$content_width = 640;
 }
@@ -153,11 +153,13 @@ if ( ! isset( $content_width ) ) {
 function medula_related_posts() {
 	echo '<ul id="medula-related-posts">';
 	global $post;
+
 	$tags = wp_get_post_tags( $post->ID );
 	if($tags) {
 		foreach( $tags as $tag ) {
 			$tag_arr .= $tag->slug . ',';
 		}
+
 		$args = array(
 			'tag' => $tag_arr,
 			'numberposts' => 5, // you can change this to show more
@@ -167,11 +169,12 @@ function medula_related_posts() {
 		if($related_posts) {
 			foreach ( $related_posts as $post ) : setup_postdata( $post ); ?>
 			<li class="related_post"><a class="entry-unrelated" href="<?php the_permalink() ?>" title="<?php the_title_attribute(); ?>"><?php the_title(); ?></a></li>
-			<?php endforeach; }
-		else { ?>
-			<?php echo '<li class="no_related_post">' . __( 'No Related Posts Yet!', 'medula' ) . '</li>'; ?>
-			<?php }
+			<?php endforeach;
+		} else {
+			echo '<li class="no_related_post">' . __( 'No Related Posts Yet!', 'medula' ) . '</li>';
+		}
 	}
+
 	wp_reset_postdata();
 	echo '</ul>';
 }
@@ -248,6 +251,7 @@ function medula_cleanup_all() {
 /**
  * 5.1 HEAD CLEANUP
  */
+
 function medula_head_cleanup() {
 	// category feeds
 	remove_action( 'wp_head', 'feed_links_extra', 3 );
@@ -323,6 +327,7 @@ function medula_gallery_style($css) {
  *
  * @link http://css-tricks.com/snippets/wordpress/remove-paragraph-tags-from-around-images/
  */
+
 function medula_filter_ptags_on_images($content){
    return preg_replace('/<p>\s*(<a .*>)?\s*(<img .* \/>)\s*(<\/a>)?\s*<\/p>/iU', '\1\2\3', $content);
 }
@@ -332,6 +337,7 @@ function medula_filter_ptags_on_images($content){
  *
  * remove the annoying […] and change it to a Read More link
  */
+
 function medula_excerpt_more($more) {
 	global $post;
 	return '...  <a class="excerpt-read-more" href="' . get_permalink($post->ID) .
@@ -349,6 +355,7 @@ function medula_excerpt_more($more) {
  * @link https://core.trac.wordpress.org/ticket/6942
  * @link http://core.trac.wordpress.org/ticket/6562
  */
+
 function medula_filter_unicode_nbsp($content){
 	return preg_replace("/[\x{00a0}\x{200b}]+/u", " ", $content);
 }
@@ -356,6 +363,7 @@ function medula_filter_unicode_nbsp($content){
 /**
  * 5.7 REMOVE PINGBACKS TO SELF
  */
+
 function medula_no_self_pingbacks( &$links ) {
 	$home = get_option( 'home' );
 	foreach ( $links as $l => $link ) {
@@ -374,6 +382,7 @@ function medula_no_self_pingbacks( &$links ) {
  * @link http://codex.wordpress.org/Function_Reference/post_class
  * @link https://core.trac.wordpress.org/ticket/28482#ticket
  */
+
 function medula_remove_hentry( $classes ) {
     return array_diff( $classes, array( 'hentry' ) );
 }

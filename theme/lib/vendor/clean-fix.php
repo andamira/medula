@@ -2,6 +2,7 @@
 /**
  * External Libraries & Plugins Fixes
  *
+ *     >------------------>
  *
  *     1 Vendor Cleanup & Fixing
  *
@@ -11,8 +12,7 @@
  *
  *         2.1 Chrome Admin Menu fix                        ( )
  *
- *
- * NOTE: Uncomment the ones you want to use, and add your own.
+ *     <------------------<
  */
 
 

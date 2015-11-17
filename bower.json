@@ -2,7 +2,6 @@
   "name": "Medula",
   "devDependencies": {
     "normalize.css": "3.x",
-    "jeet": "6.x",
     "susy": "2.2.x",
     "include-media": "1.4.x",
     "sassy-maps": "0.4.x",

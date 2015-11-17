@@ -2,6 +2,7 @@
 /**
  * Head Tags Template
  *
+ *     >------------------>
  *
  *     1 Favicons (& Theme Color)
  *         1.1 Frontend                                           (#)
@@ -11,9 +12,7 @@
  *
  *     3 Main Meta Tags
  *
- *     4 Font Icons Collection
- *         4.1 Dashicons                                          (#)
- *         4.2 Font Awesome                                       (#)
+ *     <------------------<
  */
 
 
@@ -98,7 +97,7 @@ function medula_header_tags_pingback() {
 
 
 /**
- * 3 Main Meta Tags
+ * 3 MAIN META TAGS
  * ************************************************************
  */
 
@@ -112,28 +111,4 @@ function medula_header_tags_main() {
 <?php
 }
 
-
-/**
- * 4 FONTICONS COLLECTIONS
- * ************************************************************
- *
- * Uncomment the fonticons libraries you want to use in the frontend
- */
-
-add_action( 'wp_enqueue_scripts', 'icons_collections' );
-
-function icons_collections() {
-
-	/**
-	 * 4.1 DASHICONS
-	 * @link https://developer.wordpress.org/resource/dashicons/
-	 */
-	# wp_enqueue_style( 'dashicons', get_stylesheet_uri(), array('dashicons') );
-
-	/**
-	 * 4.2 FONT AWESOME
-	 * @link http://fortawesome.github.io/Font-Awesome/get-started/
-	 */
-	# wp_enqueue_style( 'fontawesome', '//maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css', null, '4.4.0' );
-}
 

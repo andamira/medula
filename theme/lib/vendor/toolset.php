@@ -2,6 +2,7 @@
 /**
  * Toolset Support Template
  *
+ *     >------------------>
  *
  *     1 Toolset Layouts Theme SUpport
  *
@@ -10,8 +11,9 @@
  *
  *     2 Disable Toolset CSS & JS                           (#)
  *
+ *     <------------------<
  *
- * @link http://wp-types.com Toolset
+ * @link http://wp-types.com
  */
 
 
@@ -69,7 +71,7 @@ if( class_exists( 'WPDD_Layouts' ) && !function_exists( 'include_ddl_layouts' ) 
 			if ( $currentFile == '.' || $currentFile == '..' || $currentFile[0] == '.' ) {
 				continue;
 			}
-			include $dir_str.$currentFile;
+			require_once( $dir_str.$currentFile );
 		}
 		closedir($dir);
 	}

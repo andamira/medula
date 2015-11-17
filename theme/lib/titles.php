@@ -2,8 +2,11 @@
 /*
  * Titles Library Template
  *
+ *     >------------------>
+ *
  *     1 Entry Title
  *
+ *     <------------------<
  */
 
 
@@ -24,6 +27,7 @@
  * @param bool   $link		Display a link if true
  * @param bool   $headline	Add headline microdata if true
  */
+
 function medula_entry_title( $htag, $with_link = false, $headline = false ) {
 
 	if ( !in_array( $htag, array( 'h1', 'h2', 'h3', 'h4', 'h5', 'h6' ) ) ) {
@@ -44,11 +48,11 @@ function medula_entry_title( $htag, $with_link = false, $headline = false ) {
 	 *
 	 * @see /theme/lib/entry-meta.php
 	 */
+
 	$title .= medula_edit_post_link( false );
 
 	$title .= "</$htag>";
 
 	echo $title;
 }
-
 

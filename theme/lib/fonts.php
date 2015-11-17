@@ -2,36 +2,96 @@
 /*
  * Fonts Library Template
  *
- * Here you can load fonts from external servers, using @font-face
+ *     >------------------>
  *
+ *     1 Load Typefaces from External Servers
  *
- *     1 Google fonts                                       (#)
+ *         1.1 Google Fonts                                 (#)
+ *         1.2 TypeKit                                      (#)
  *
+ *     2 Load Font Icons
  *
- * If you prefer to use self-hosted fonts you have to put them in: /src/fonts/
- * and then load them from: /src/sass/modules/_typography.scss
+ *         2.1 Dashicons                                    (#)
+ *         2.2 Font Awesome                                 (#)
  *
- * You can find free fonts in:
- * @link http://www.google.com/fonts/
- * @link http://www.fontsquirrel.com/
- * @link http://openfontlibrary.org/
+ *     <------------------<
  *
- * And commercial fonts in:
- * @link https://typekit.com/
- * @link http://www.fontspring.com/
- * @link http://www.myfonts.com/
+ * NOTE: If you prefer to self-host then you have to put the fonts in:
+ *     /src/fonts/
+ *
+ * and configure and load them from:
+ *     /src/sass/modules/_typography.scss
  */
 
-add_action('wp_enqueue_scripts', 'medula_fonts');
 
-function medula_fonts() {
+/**
+ * 2 LOAD TYPEFACES
+ * ************************************************************
+ */
+
+add_action('wp_enqueue_scripts', 'medula_load_typefaces_external');
+
+function medula_load_typefaces_external() {
 
 	/**
-	 * 1 GOOGLE FONTS
+	 * 1.1 GOOGLE FONTS
+	 *
+	 * @link http://www.google.com/fonts/
 	 */
 
 	# wp_enqueue_script('googleFonts', medula_get_protocol() . 'fonts.googleapis.com/css?family=Open+Sans:400,400italic,700');
 
+	/**
+	 * 1.2 TYPEKIT
+	 *
+	 * @link http://typekit.com/fonts
+	 */
 
+	 # add_action( 'wp_header', 'medula_load_typefaces_external_typekit_embed_code' );
+
+	function medula_load_typefaces_external_typekit_embed_code() {
+	?><script>
+
+	</script><?php
+	}
+
+}
+
+
+/**
+ * 2 LOAD FONTICONS
+ * ************************************************************
+ *
+ * Uncomment the fonticons libraries you want to use in the frontend.
+ *
+ * Use the remote version or the local version.
+ *
+ * For the local version you'll have to install it first and then
+ * configure it in file /gulpfile.js section 2.2: Vendor Live
+ */
+
+add_action( 'wp_enqueue_scripts', 'medula_load_fonticons_external' );
+
+function medula_load_fonticons_external() {
+
+    /**   
+     * 2.1 DASHICONS
+     *
+     * @link https://developer.wordpress.org/resource/dashicons/
+     */
+
+    # wp_enqueue_style( 'dashicons', get_stylesheet_uri(), array('dashicons') );
+
+    /**   
+     * 2.2 FONT AWESOME
+     *
+     * @link http://fortawesome.github.io/Font-Awesome/get-started/
+     */
+
+    // Remote
+    # wp_enqueue_style( 'fontawesome', '//maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css', null, '4.4.0' );
+
+    // Local
+    # wp_enqueue_style( 'fontawesome', medula_get_theme_resources_uri('js/vendor/font-awesome/font-awesome.min.css'), null, '4.4.0' );
 }
 

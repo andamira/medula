@@ -2,9 +2,13 @@
 /**
  * WPML Support Template
  *
+ *     >------------------>
+ *
  *     1 Disable WPML CSS & JS
  *
  *     2 Custom Language Switcher
+ *
+ *     <------------------<
  *
  * @link http://wpml.org
  */
@@ -67,5 +71,4 @@ function medula_wpml_switcher() {
 		echo '</ul>';
 	}
 }
-
 

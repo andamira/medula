@@ -1,6 +1,6 @@
 <?php
 /**
- * Header template
+ * Header Template
  *
  * @link https://developer.wordpress.org/reference/functions/get_header/
  */

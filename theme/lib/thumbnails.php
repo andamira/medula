@@ -2,6 +2,7 @@
 /**
  * Thumbnails Library Template
  *
+ *     >------------------>
  *
  *     1 Theme Support & default size
  *
@@ -9,6 +10,7 @@
  *
  *     3 Thumbnail Sizes
  *
+ *     <------------------<
  */
 
 

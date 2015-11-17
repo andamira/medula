@@ -1,12 +1,15 @@
 <?php
 /*
  * Template for plugin Under Construction
- * @link
  *
- * This plugin is useful for hiding the website using a custom page.
+ * A WordPress plugin useful for hiding the website behind a custom page.
  *
- * If you want that the underConstruction plugin finds this template
- * you must move it to the root of the theme, where functions.php is.
+ * @link https://wordpress.org/plugins/underconstruction/
+ *
+ * NOTE: For the plugin to find this template, you will have to move
+ * this to the root of the theme, where functions.php file is located.
+ *
+ *     >------------------>
  *
  *     1 Templates:
  *
@@ -14,6 +17,7 @@
  *         1.2 WordPress Template
  *         1.3 Example underConstruction
  *
+ *     <------------------<
  */
 
 
@@ -33,6 +37,7 @@ switch ($medula_underconstruction_template) {
 	/**
 	 * 1.1 Minimal HTML5 Template
 	 */
+
 	case "blank":
 
 ?>
@@ -50,6 +55,7 @@ switch ($medula_underconstruction_template) {
 	/**
 	 * 1.2 WordPress Template
 	 */
+
 	case "wordpress":
 
 if ( medula_template_override('') ) { return; }
@@ -80,6 +86,7 @@ get_footer('');
 	/**
 	 * 1.3 Example underConstruction Page
 	 */
+
 	case default:
 
 ?>

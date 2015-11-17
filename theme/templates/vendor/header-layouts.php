@@ -1,6 +1,6 @@
 <?php
 /**
- * Header template (for Toolset Layouts)
+ * Header Template (for Toolset Layouts)
  *
  * If you want to use Layouts, don't forget to activate
  * the theme support for Toolset in ../lib/vendor.php

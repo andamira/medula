@@ -3,18 +3,17 @@
  *
  * Usage:
  *
- *      type: `gulp --dev` while developing stuff
- *      type: `gulp` for production (minified) stuff
- *      type: `gulp clean` to delete out your target res/ folders
+ *     type: `gulp --dev` while developing stuff
+ *     type: `gulp` for production (minified) stuff
+ *     type: `gulp clean` to delete out your target res/ folders
  *
- *      Additional options:
+ *     Additional options:
  *
- *      --imgmin | --noimgmin     (Don't) minify images
- *      --rem2px | --norem2px     (Don't) prefix rem with pixels
- *      --cmq | --nocmq           (Don't) combine media queries
+ *     --imgmin | --noimgmin     (Don't) minify images
+ *     --rem2px | --norem2px     (Don't) prefix rem with pixels
  *
  *
- * Index:
+ *     >----------------->
  *
  *     1 Global Options
  *
@@ -48,10 +47,10 @@
  *
  *     7 Configure Environment
  *
- *         7.1 Default Options
  *         7.1 CLI Parameters
- *         7.3 Default Task
+ *         7.2 Default Task
  *
+ *     <------------------<
  *
  * Links:
  *
@@ -69,22 +68,27 @@
  * 1.1 Resources Paths
  */
 
-var ORIG_RESOURCES   = "src/";
-var THEME_RESOURCES  = "theme/res/";  // must match medula_get_theme_resources_uri() in theme/functions.php
-var PLUGIN_RESOURCES = "plugin/res/"; //
-var BOWER_DIR        = "vendor-dl/";  // must match directory in .bowerrc
+var PKGS       = "vendor-dl/";    // folder that contains the downloaded packages
+var ORIG_RES   = "src/";          // folder that contains the original unprocessed resources
+var THEME_RES  = "theme/res/";    // must match medula_get_theme_resources_uri() in theme/functions.php
+var PLUGIN_RES = "plugin/res/";   // must match medula_get_plugin_resources_uri() in plugin/plugin.php
 
 /**
  * 1.2 Gulp Defaults
+ *
+ * NOTE: In section 7.1 you can learn how CLI Parameters can modify this defaults. E.g. --dev
  */
 
-var DEBUG_LVL          = 0; // 0 = none | 1 = print files going through tasks pipes | 2 = also for subtasks
+var DEBUG_LVL          = 0;     // 0 = none | 1 = print files going through tasks pipes | 2 = also for subtasks
+
+var IS_PRODUCTION = true;       // default task
+var SASS_STYLE = 'nested';
 
 var AUTOPREFIXER_RULES = 'ie >= 9, > 5%, last 3 versions'; // https://github.com/ai/browserslist#queries
 
 var DO_REMPIXEL        = false; // rem to pixel fallback
-var DO_IMAGEMIN        = true;  // image minification
-var DO_JSMANGLE        = true;  // javascript uglification
+var DO_IMAGEMIN        = true;  // minify images?
+var DO_JSMANGLE        = true;  // minify javascript?
 
 
 /**
@@ -100,22 +104,22 @@ var source = {
 	 */
 
 	sass: [
-		ORIG_RESOURCES + 'sass/**/[^_]*.scss',
+		ORIG_RES + 'sass/**/[^_]*.scss',
 	],
 	sass_exclude: [ '', ],
 
 	js: [
-		ORIG_RESOURCES + 'js/main.js',
+		ORIG_RES + 'js/main.js',
 	],
 	js_exclude: [ '', ],
 
 	img: [
-		ORIG_RESOURCES + 'img/**/*.{png,gif,jpg,jpeg,svg,ico}'
+		ORIG_RES + 'img/**/*.{png,gif,jpg,jpeg,svg,ico}'
 	],
 	img_exclude: [ '', ],
 
 	fonts: [
-		ORIG_RESOURCES + 'fonts/**/*.{woff,woff2,svg,ttf,eof}'
+		ORIG_RES + 'fonts/**/*.{woff,woff2,svg,ttf,eof}'
 	],
 	fonts_exclude: [ '', ],
 
@@ -131,8 +135,8 @@ var source = {
 	 *
 	 */
 	vendor: [
-		BOWER_DIR + 'normalize.css/normalize.css',           // Normalize         necolas.github.io/normalize.css/
-		BOWER_DIR + 'modernizr/modernizr.custom.js',         // Modernizr         modernizr.com
+		PKGS + 'normalize.css/normalize.css',           // Normalize         necolas.github.io/normalize.css/
+		PKGS + 'modernizr/modernizr.custom.js',         // Modernizr         modernizr.com
 	],
 	vendor_exclude: [ '', ],
 	
@@ -146,11 +150,11 @@ var source = {
 	 *
 	 * Note: You'll have to load them from the theme like this:
 	 *
-	 *     wp_register_script( 'thatvendor-js', get_stylesheet_directory_uri() . '/res/js/vendor/thatvendor.js', array(), '', true );
+	 *     wp_register_script( 'thatvendor-js', . medula_get_theme_resources_uri('js/vendor/thatvendor.js'), array(), '', true );
 	 *
 	 * or load them from the plugin like this:
 	 *
-	 *     wp_register_script( 'thatvendor-js', plugins_url('/res/js/vendor/thatvendor.js'), array(), '', true );
+	 *     wp_register_script( 'thatvendor-js', medula_get_plugin_resources_uri('js/vendor/thatvendor.js'), array(), '', true );
 	 */
 	vendor_live: [
 	],
@@ -176,32 +180,32 @@ var source = {
 	 * --------------------------------------------------------------------------------
 
 	// Compatibility / Accesibility
-	BOWER_DIR + 'picturefill/dist/picturefill.js',           // PictureFill       -
+	PKGS + 'picturefill/dist/picturefill.js',                // PictureFill       -
 
 	// Navigation
-	BOWER_DIR + 'jQuery.mmenu/dist/core/js/jquery.mmenu.min.all.js',  // MMenu    mmenu.frebsite.nl
-	BOWER_DIR + 'jQuery.mmenu/dist/core/css/jquery.mmenu.all.css',
+	PKGS + 'jQuery.mmenu/dist/core/js/jquery.mmenu.min.all.js',  // MMenu    mmenu.frebsite.nl
+	PKGS + 'jQuery.mmenu/dist/core/css/jquery.mmenu.all.css',
 
 	// Maps
-	BOWER_DIR + 'leaflet/dist/leaflet.js',                   // Leaflet           leafletjs.com
+	PKGS + 'leaflet/dist/leaflet.js',                        // Leaflet           leafletjs.com
 
 	// Tables
-	BOWER_DIR + 'dynatable/jquery.dynatable.js',             // Dynatable         dynatable.com
-	BOWER_DIR + '/dynatable/jquery.dynatable.css',
+	PKGS + 'dynatable/jquery.dynatable.js',                  // Dynatable         dynatable.com
+	PKGS + '/dynatable/jquery.dynatable.css',
 
 	// Sliders / Slideshows
-	BOWER_DIR + 'jquery-cycle2/build/jquery.cycle2.js',      // Cycle2            jquery.malsup.com/cycle2
+	PKGS + 'jquery-cycle2/build/jquery.cycle2.js',           // Cycle2            jquery.malsup.com/cycle2
 	
 	// Animations
-	BOWER_DIR + 'snabbt.js/snabbt.js',                       // Snabbt            daniel-lundin.github.io/snabbt.js
+	PKGS + 'snabbt.js/snabbt.js',                            // Snabbt            daniel-lundin.github.io/snabbt.js
 	
 	// Autocomplete
-	BOWER_DIR + 'awesomeplete/awesomeplete.js',              // Awesomeplete      leaverou.github.io/awesomplete
-	BOWER_DIR + 'awesomeplete/awesomeplete.css',             // $ bower install LeaVerou/awesomplete#gh-pages --save-dev
+	PKGS + 'awesomeplete/awesomeplete.js',                   // Awesomeplete      leaverou.github.io/awesomplete
+	PKGS + 'awesomeplete/awesomeplete.css',                  // $ bower install LeaVerou/awesomplete#gh-pages --save-dev
 
 	// Syntax Highlighting
-	BOWER_DIR + 'prism/prism.js',                            // Prism             prismjs.com
-	BOWER_DIR + 'prism/themes/prism.css',                    // $ bower install -D prism.git#gh-pages
+	PKGS + 'prism/prism.js',                                 // Prism             prismjs.com
+	PKGS + 'prism/themes/prism.css',                         // $ bower install -D prism.git#gh-pages
 
 	--- */
 };
@@ -213,14 +217,14 @@ var source = {
  */
 
 var target = {
-	css:             THEME_RESOURCES + 'css',
-	js:              THEME_RESOURCES + 'js',
-	img:             THEME_RESOURCES + 'img',
-	fonts:           THEME_RESOURCES + 'fonts',
+	css:             THEME_RES + 'css',
+	js:              THEME_RES + 'js',
+	img:             THEME_RES + 'img',
+	fonts:           THEME_RES + 'fonts',
 
-	vendor_live_css: THEME_RESOURCES + 'css/vendor',
-	vendor_live_js:  THEME_RESOURCES + 'js/vendor',
-	vendor_img:      THEME_RESOURCES + 'img/vendor',
+	vendor_live_css: THEME_RES + 'css/vendor',
+	vendor_live_js:  THEME_RES + 'js/vendor',
+	vendor_img:      THEME_RES + 'img/vendor',
 };
 
 
@@ -281,7 +285,7 @@ var subtask_minifycss = lazypipe()
 		roundingPrecision: 7, // defaults to 2
 
 		// https://github.com/jakubpawlowicz/clean-css#how-to-set-a-compatibility-mode
-		compatibility: '*',
+		compatibility: '*', // '*', 'ie7', 'ie8'
 
 		// * for keeping all (default), 1 for keeping first one only, 0 for removing all
 		keepSpecialComments: 0
@@ -508,7 +512,7 @@ gulp.task('clean', function(cb) {
 	/**/
 
 	// Delete the whole resources folder:
-	del(THEME_RESOURCES, cb)
+	del(THEME_RES, cb)
 
 });
 
@@ -519,15 +523,7 @@ gulp.task('clean', function(cb) {
  */
 
 /**
- * 7.1 DEFAULT OPTIONS
- */
-
-var IS_PRODUCTION = true;             // gulp
-var SASS_STYLE = 'nested';
-
-
-/**
- * 7.2 CLI PARAMETERS
+ * 7.1 CLI PARAMETERS
  */
 
 if(gutil.env.dev === true) {         // --dev
@@ -538,13 +534,19 @@ if(gutil.env.dev === true) {         // --dev
 if(gutil.env.noimgmin === true) {   // --noimgmin
 	DO_IMAGEMIN = false;
 }
+if(gutil.env.imgmin === true) {     // --imgmin
+	DO_IMAGEMIN = true;
+}
 if(gutil.env.norem2px === true) {   // --norem2px
 	DO_REMPIXEL = false;
+}
+if(gutil.env.rem2px === true) {     // --rem2px
+	DO_REMPIXEL = true;
 }
 
 
 /**
- * 7.3 DEFAULT TASK (PRODUCTION)
+ * 7.2 DEFAULT TASK (PRODUCTION)
  */
 
 gulp.task( 'default',

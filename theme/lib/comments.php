@@ -2,11 +2,13 @@
 /**
  * Comments Library Template
  *
+ *     >------------------>
  *
  *     1 Comments Count Display Function
  *
  *     2 Custom Comment Layout
  *
+ *     <------------------<
  */
 
 

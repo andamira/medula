@@ -1,7 +1,8 @@
 <?php
 /**
- * This is the functions.php file.
+ * functions.php File
  *
+ *     >------------------>
  *
  *     1 Globals
  *
@@ -9,7 +10,7 @@
  *
  *     2 Theme Functionality
  *
- *         2.1  Core Medula library
+ *         2.1  Core medula library
  *
  *         2.2  Head Meta & Link Tags
  *         2.3  Fonts
@@ -36,6 +37,7 @@
  *
  *     5 Custom Functions, Actions & Filters
  *
+ *     <------------------<
  *
  * @link http://codex.wordpress.org/Function_Reference/ Don't reinvent the wheel
  */
@@ -157,8 +159,7 @@ include_once( 'lib/vendor.php' );
  *
  * Here you could put some quick & dirty custom functions, but
  * before doing that it would be better to take a look at the
- * indexed sections above, and try to find a better place.
- *
+ * indexed sections above, and see if there are better places.
  */
 
 

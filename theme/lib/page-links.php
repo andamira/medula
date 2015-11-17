@@ -24,4 +24,3 @@ function medula_page_links() {
 	));
 }
 
-

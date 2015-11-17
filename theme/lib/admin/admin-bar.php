@@ -2,6 +2,7 @@
 /**
  * Admin Bar Library Template
  *
+ *     >------------------>
  *
  *     1 Theme Support                                      (#)
  *
@@ -9,6 +10,7 @@
  *
  *     3 Selective Disabling                                (#)
  *
+ *     <------------------<
  */
 
 

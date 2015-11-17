@@ -2,6 +2,7 @@
 /**
  * External Libraries & Plugins Templates
  *
+ *     >------------------>
  *
  *     1 Override WordPress Templates
  *
@@ -14,6 +15,8 @@
  *     3 General Cleanup & Fixes                            ( )
  *
  *     4 Downloaded Libraries
+ *
+ *     <------------------<
  */
 
 

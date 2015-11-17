@@ -1,16 +1,13 @@
 <?php
 /**
- * Schema template
+ * Schema Template (TODO)
  *
  * Functions for outputting schema.org html tags
  *
- * TODO: Still not in use
- *
  */
 
+function medula_schema_tag() {
 
-function html_tag_schema()
-{
 	$schema = 'http://schema.org/';
 
 	// Is single post
@@ -43,5 +40,4 @@ function html_tag_schema()
 
 	echo 'itemscope="itemscope" itemtype="' . $schema . $type . '"';
 }
-
 

@@ -2,6 +2,8 @@
 /**
  * WooCommerce Support Template
  *
+ *     >------------------>
+ *
  *     1 Theme Support
  *
  *     2 Disable default stylesheet
@@ -12,11 +14,13 @@
  *         3.2 Remove tabs from product details page
  *         3.3 Remove WooCommerce Category Product Count
  *         3.4 Remove Title Attribute from WordPress List Categories 
- *         3.5 Remove
+ *         3.5 Change the "Add to Cart" Text
  *         3.6 Custom Add To Cart Message
  *         3.7 Hide all or standard shipping options when free shipping is available
  *
- * NOTE: Uncomment lines starting with # to enable their actions / filters
+ *    <------------------<
+ *
+ * @link https://wordpress.org/plugins/woocommerce/
  */
 
 
@@ -86,10 +90,10 @@ function medula_theme_wrapper_end() {
  * @link https://gist.github.com/kloon/8981075
  */
 
-# add_filter( 'woocommerce_variable_sale_price_html', 'wc_wc20_variation_price_format', 10, 2 );
-# add_filter( 'woocommerce_variable_price_html', 'wc_wc20_variation_price_format', 10, 2 );
+# add_filter( 'woocommerce_variable_sale_price_html', 'medula_wc_wc20_variation_price_format', 10, 2 );
+# add_filter( 'woocommerce_variable_price_html', 'medula_wc_wc20_variation_price_format', 10, 2 );
 
-function wc_wc20_variation_price_format( $price, $product ) {
+function medula_wc_wc20_variation_price_format( $price, $product ) {
 	// Main Price
 	$prices = array( $product->get_variation_price( 'min', true ), $product->get_variation_price( 'max', true ) );
 	$price = $prices[0] !== $prices[1] ? sprintf( __( 'From: %1$s', 'medula' ), wc_price( $prices[0] ) ) : wc_price( $prices[0] );
@@ -108,9 +112,9 @@ function wc_wc20_variation_price_format( $price, $product ) {
  * 3.2 Remove tabs from product details page
  */
 
-# add_filter( 'woocommerce_product_tabs', 'woo_remove_product_tabs', 98 );
+# add_filter( 'woocommerce_product_tabs', 'medula_woo_remove_product_tabs', 98 );
 
-function woo_remove_product_tabs( $tabs ) {
+function medula_woo_remove_product_tabs( $tabs ) {
 	unset( $tabs['description'] );
 	unset( $tabs['reviews'] );
 	unset( $tabs['additional_information'] );
@@ -122,9 +126,9 @@ function woo_remove_product_tabs( $tabs ) {
  * 3.3 Remove WooCommerce Category Product Count
  */
 
-# add_filter( 'woocommerce_subcategory_count_html', 'woo_remove_category_products_count' );
+# add_filter( 'woocommerce_subcategory_count_html', 'medula_woo_remove_category_products_count' );
 
-function woo_remove_category_products_count() {
+function medula_woo_remove_category_products_count() {
 	return;
 }
 
@@ -133,27 +137,24 @@ function woo_remove_category_products_count() {
  * @link http://stackoverflow.com/questions/2405437/removing-title-from-wp-list-categories
  */
 
-# add_filter( 'wp_list_categories', 'wp_list_categories_remove_title_attributes' );
+# add_filter( 'wp_list_categories', 'medula_wp_list_categories_remove_title_attributes' );
 
-function wp_list_categories_remove_title_attributes( $output ) {
+function medula_wp_list_categories_remove_title_attributes( $output ) {
 	$output = preg_replace( '` title="(.+)"`', '', $output );
 	return $output;
 }
 
 /**
- * 3.5 Remove (or modify the text from) the add to cart button.
+ * 3.5 CHANGE THE ADD TO CART TEXT
  *
- * @link https://wordpress.org/support/topic/how-to-change-add-to-cart-button-to-a-read-more-button
+ * @link https://docs.woothemes.com/document/change-add-to-cart-button-text/
  */
 
-# remove_action( 'woocommerce_after_shop_loop_item', 'woocommerce_template_loop_add_to_cart', 10 );
-# add_action( 'woocommerce_after_shop_loop_item', 'medula_woocommerce_template_loop_add_to_cart', 10 );
-
-function medula_woocommerce_template_loop_add_to_cart() {
-	global $product;
-	echo '<form action="' . esc_url( $product->get_permalink( $product->id ) ) . '" method="get">
-		<button type="submit" class="single_add_to_cart_button button alt">' . __('View More', 'medula') . '</button>
-	</form>';
+# add_filter( 'woocommerce_product_single_add_to_cart_text', 'medula_woo_custom_cart_button_text' );
+# add_filter( 'woocommerce_product_add_to_cart_text', 'medula_woo_custom_cart_button_text' ); // Archives
+ 
+function medula_woo_custom_cart_button_text() {
+	return __( 'View More', 'medula' );
 }
 
 /**
