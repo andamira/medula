@@ -10,20 +10,20 @@
  *
  *     2 Theme Functionality
  *
- *         2.1  Core medula library
+ *         2.1  » Core medula library
  *
- *         2.2  Head Meta & Link Tags
- *         2.3  Fonts
- *         2.4  Navigation Menus
- *         2.5  Sidebars
- *         2.6  Thumbnails
- *         2.7  Titles
- *         2.8  Entry Meta
- *         2.9  Comments
- *         2.10 Page Links
- *         2.11 No Post Found
+ *         2.2  » Head Meta & Link Tags
+ *         2.3  » Fonts
+ *         2.4  » Navigation Menus
+ *         2.5  » Sidebars
+ *         2.6  » Thumbnails
+ *         2.7  » Titles
+ *         2.8  » Entry Meta
+ *         2.9  » Comments
+ *         2.10 » Page Links
+ *         2.11 » No Post Found
  *
- *         2.12 Admin Area
+ *         2.12 » Admin Area
  *
  *     3 After Setup Theme Actions
  *
@@ -33,13 +33,13 @@
  *         3.4 Custom Theme Features
  *         3.5 Register Sidebars
  *
- *     4 External Libraries
+ *     4 » External Libraries
  *
  *     5 Custom Functions, Actions & Filters
  *
  *     <------------------<
  *
- * @link http://codex.wordpress.org/Function_Reference/ Don't reinvent the wheel
+ * @link https://developer.wordpress.org/reference/
  */
 
 

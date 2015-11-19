@@ -554,6 +554,7 @@ gulp.task( 'default',
 );
 
 // Default task prepared for future Gulp 4.0
+/*
 gulp.task( 'default-4',
 	gulp.series( 'clean',
 		gulp.parallel( 'compile-sass', 'compile-js', 'compile-vendor_live', 'fonts', 'images' ),
@@ -561,4 +562,5 @@ gulp.task( 'default-4',
 		}
 	)
 );
+*/
 
