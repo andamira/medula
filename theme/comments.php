@@ -48,7 +48,7 @@ if ( have_comments() ) : ?>
 	</section>
 
 	<?php if ( get_comment_pages_count() > 1 && get_option( 'page_comments' ) ) : ?>
-	<nav class="comments-nav" role="navigation">
+	<nav class="comments-nav">
 		<div class="comments-nav-prev"><?php previous_comments_link( __( '&larr; Previous Comments', 'medula' ) ); ?></div>
 		<div class="comments-nav-next"><?php next_comments_link( __( 'More Comments &rarr;', 'medula' ) ); ?></div>
 	</nav>

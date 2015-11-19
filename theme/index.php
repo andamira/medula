@@ -12,7 +12,7 @@ if ( medula_template_override() ) { return; }
 get_header();
 ?>
 
-<main role="main">
+<main>
 
 	<header class="page-header">
 		<h1 class="page-title"><?php $t=get_queried_object(); echo ($t) ? $t->post_title : ''; ?></h1>
@@ -20,7 +20,7 @@ get_header();
 
 	<?php if (have_posts()) : while (have_posts()) : the_post(); ?>
 
-		<article id="post-<?php the_ID(); ?>" <?php post_class(); ?> role="article">
+		<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 
 			<header class="entry-header">
 				<?php medula_entry_title( 'h2', true ); ?>

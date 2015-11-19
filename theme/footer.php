@@ -11,11 +11,11 @@
 ?>
 			</div> <?php // (#site-content-wrapper) ?>
 
-			<footer class="site-footer" role="contentinfo">
+			<footer class="site-footer">
 
 				<div id="site-footer-wrapper" class="site-wrapper">
 
-					<nav class="site-footer-nav" role="navigation"><?php medula_site_footer_nav(); ?></nav>
+					<nav class="site-footer-nav"><?php medula_site_footer_nav(); ?></nav>
 
 					<span class="site-footer-copyright">&copy; <?php echo date('Y'); ?> <?php bloginfo( 'name' ); ?>.</span>
 

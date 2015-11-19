@@ -13,7 +13,7 @@
 
 // <!-- Search Form Type 2: simple text box + icon -->
 /*
-<form id="searchform" method="get" action="/index.php">
+<form id="searchform" role="search" method="get" action="/index.php">
     <input type="text" name="s" id="s" />
     <button type="submit" title="<?php _e('Search', 'medula')?>">
         <i class="dashicons-search dashicons"></i>
@@ -23,7 +23,7 @@
 
 // <!-- Search Form Type 3 with button -->
 /*
-<form class="searchform" method="get" action="/index.php">
+<form class="searchform" role="search" method="get" action="/index.php">
     <input type="text" name="s" id="s" placeholder="<?php _e('Search', 'medula') . ' . . .'; ?>" />
     <button type="submit" title="<?php _e('Search', 'medula'); ?>">
         <i class="dashicons-search dashicons"></i>

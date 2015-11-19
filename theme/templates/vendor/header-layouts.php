@@ -22,8 +22,8 @@
 
 <body <?php body_class('toolset-layouts'); ?>>
 
-	<header class="site-header" role="banner">
-		<nav class="site-main-nav" role="navigation"><?php medula_site_main_nav(); ?></nav>
+	<header class="site-header">
+		<nav class="site-main-nav"><?php medula_site_main_nav(); ?></nav>
 	</header>
 
 	<div class="layouts-containers"> <?php // container of layouts containers ?>

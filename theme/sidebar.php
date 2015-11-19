@@ -6,7 +6,7 @@
  * @link https://developer.wordpress.org/themes/functionality/sidebars/
  */
 
-echo '<aside id="sidebar1" class="sidebar" role="complementary">';
+echo '<aside id="sidebar1" class="sidebar">';
 
 	if ( is_active_sidebar( 'sidebar1' ) ) {
 

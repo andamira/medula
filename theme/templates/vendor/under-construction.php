@@ -62,7 +62,7 @@ if ( medula_template_override('') ) { return; }
 
 get_header('');
 ?>
-<main role="main">
+<main>
 	<article>
 		<header>
 			<h1></h1>

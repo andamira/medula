@@ -42,7 +42,7 @@ add_action( 'woocommerce_after_main_content', 'medula_theme_wrapper_end', 10 );
 function medula_theme_wrapper_start() {
 ?>
 	<div id="site-content-wrapper"> <?php // in header.php ?>
-		<main role="main">
+		<main>
 <?php
 }
 

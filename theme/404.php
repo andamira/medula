@@ -8,7 +8,7 @@
 get_header();
 ?>
 
-<main role="main">
+<main>
 
 	<article id="post-not-found">
 
