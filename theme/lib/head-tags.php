@@ -76,7 +76,7 @@ function medula_header_tags_frontend_favicons_theme_color() {
 function medula_header_tags_favicon_backend() {
 	global $medula_favicon_v;
 
-	echo '<link rel="icon" href="' . medula_get_theme_resources_uri('img') . '/favicon_adm.png?v=' . $medula_favicon_v . '" />';
+	echo '<link rel="icon" href="' . medula_get_theme_resources_uri('img') . '/favicon-adm.png?v=' . $medula_favicon_v . '" />';
 }
 
 

@@ -65,7 +65,7 @@ $symbols: (
 
 // Aliases
 
-$color-tango: join( $color-tango, (
+$symbols: join( $symbols, (
 	nbsp: symbol(non-breaking-space),
 	nbhp: symbol(non-breaking-hyphen),
 	paragraph: symbol(pilcrow),

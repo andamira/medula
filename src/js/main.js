@@ -5,15 +5,18 @@
  *
  *     1 jQuery(document).ready()
  *
+ *         1.1 Smart Header                                 ( )
+ *         1.2 Detect Conditional CSS                       ( )
+ *         1.3 Scroll Offset                                (#)
+ *
  *     2 Big Functions
  *
  *         2.1 Smart Header (auto hide)
  *
  *     3 Utility Functions
  *
- *         3.1 REM Functions
- *         3.2 Get Viewport
- *         3.3 Throttle Resize-triggered Events
+ *         3.1 Get Viewport
+ *         3.2 Throttle Resize-triggered Events
  *             with example...
  *
  *     4 Fixes
@@ -35,7 +38,7 @@
 jQuery(document).ready(function($) {
 
 	/**
-	 * Smart Header
+	 * 1.1 Smart Header
 	 *
 	 * (Uncomment one of these lines and the function at 2.1 if you intend to use it)
 	 *
@@ -47,7 +50,7 @@ jQuery(document).ready(function($) {
 
 
 	/**
-	 * Detect Conditional CSS
+	 * 1.2 Detect Conditional CSS
 	 *
 	 * @see /assets/sass/layout/_grid.scss
 	 * @link http://adactio.com/journal/5429/
@@ -57,6 +60,27 @@ jQuery(document).ready(function($) {
 		// Load some more content.
 
 	}
+
+	/**
+	 * 1.3 Scroll Offset (For Internal Links)
+	 *
+	 * @link http://www.abeautifulsite.net/smoothly-scroll-to-an-element-without-a-jquery-plugin-2/
+	 */
+	/*
+	$('a[href^="#"]').on('click', function(event) {
+        var header_height = $('.site-header').height() + 20; 
+        var target = $(this.href);
+
+        console.log("TEST: "+ target);
+
+        if( target.length ) {
+            event.preventDefault();
+            $('html, body').animate({
+                scrollTop: target.offset().top - header_height
+            }, 500); 
+        }     
+    });
+	/**/
 
 });
 
@@ -165,31 +189,7 @@ function medula_smart_header(navbar, aboveNavbar) {
  */
 
 /**
- * 3.1 REM functions
- *
- * @link http://stackoverflow.com/a/16091018/940200
- */
-
-// Return the initial font-size of the html element 
-var rem = function rem() {
-	var html = document.getElementsByTagName('html')[0];
-	return function () {
-		return parseInt(window.getComputedStyle(html)['fontSize']);
-	}
-}();
-
-// Convert pixels to rems
-function px2rem(length) {
-	return (parseInt(length) / rem());
-}
-// Convert rems to pixels
-function rem2px(length) {
-	return (parseFloat(length) * rem());
-}
-
-
-/**
- * 3.2 Get Viewport Dimensions
+ * 3.1 Get Viewport Dimensions
  *
  * returns object with viewport dimensions to match css in width and height properties
  * @link http://andylangton.co.uk/blog/development/get-viewport-size-width-and-height-javascript
@@ -204,7 +204,7 @@ var viewport = updateViewportDimensions();
 
 
 /**
- * 3.3 Throttle Resize-triggered Events
+ * 3.2 Throttle Resize-triggered Events
  *
  * Wrap your actions in this function to throttle the frequency
  * of firing them off, for better performance, esp. on mobile.
