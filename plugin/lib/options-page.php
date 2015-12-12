@@ -151,14 +151,14 @@ function medula_theme_page() {
 
 ?>
 	<div class="section panel">
-	<h1><img src="<?php echo medula_get_plugin_resources_uri('img/logo.png'); ?>" height=24 width=24 /> <?php printf(wp_kses(__('Theme Options', 'medula-p'), array())); ?></h1>
+	<h1><img src="<?php echo medula_get_plugin_resources_uri('img/logo.png'); ?>" height=24 width=24 /> <?php printf(wp_kses(__('Theme Options', 'medulap'), array())); ?></h1>
 		<form method="post" enctype="multipart/form-data" action="options.php">
 			<?php
 			settings_fields('medula_theme_options');
 			do_settings_sections('medula_theme_options.php');
 			?>
 			<p class="submit">
-				<input type="submit" class="button-primary" value="<?php _e('Save Changes', 'medula-p'); ?>" />
+				<input type="submit" class="button-primary" value="<?php _e('Save Changes', 'medulap'); ?>" />
 			</p>
 		</form>
 	</div>

@@ -1,50 +1,103 @@
 <?php
 /**
- * Plugin Name: Medula P
+ * Plugin Name: Medula-P
  * Plugin URI: https://github.com/andamira/medula/
  * Description: A minimal starter plugin, and optional companion for Medula T starter theme
- * Version 0.4.10
+ * Version 0.5.0
  * Author: andamira
  * Author URI: http://andamira.net
- * Text Domain: medula-p
+ * Text Domain: medulap
  * Tags: medula, boilerplate, starter, simple, minimal, developer, code, procedural, programming, functional
  * License: MIT
  * License URI: http://opensource.org/licenses/MIT
  *
- * This minimal plugin framework is simple and procedural. Is intended mainly to hold the
- * extra functionality for your custom theme. If you need something more complex and / or
- * object oriented, please use any of the fantastic boilerplates that exist. For example:
+ *
+ *     1 Globals
+ *
+ *         1.1 Plugin Resources URI
+ *
+ *     2 Plugin Functionality
+ *
+ *         2.1 Helper Functions
+ *
+ *         2.2 Shortcodes                                   (#)
+ *         2.3 Custom Post Types (CPT)                      (#)
+ *         2.4 Custom Taxonomies                            (#)
+ *         2.5 Metaboxes                                    (#)
+ *         2.6 Options Page                                 (#)
+ *
+ *         2.7 Analytics                                    (#)
+ *
+ *         2.8 Compression & Cache                          (#)
+ *
+ *     3 After Setup Plugin
+ *
+ *         3.1 Language Support
+ *         3.2 Load Base Scripts & Styles
+ *
+ *     4 External Libraries                                 (#)
+ *
+ *     5 Custom Functions, Actions & Filters
+ *
+ *
+ * NOTE: This minimal plugin framework is simple and procedural. It is intended mainly for
+ * the extra functionality of your custom theme. If you need something more complex or
+ * object oriented, use any of the other great fantastic boilerplates. For example:
  *
  *   - https://github.com/tommcfarlin/WordPress-Plugin-Boilerplate
  *   - https://github.com/getherbert/herbert/
- *
- * NOTE: If you decide to use this template, you have to customize each one 
- * of the included files for your particular use case, and / or extend them.
- * Uncomment the includes you want to enable and take good look to the code.
- *
- * @link https://github.com/andamira/medula/wiki/Plugin
  */
 
+/**
+ * 1 GLOBALS
+ * ************************************************************
+ */
 
-// Google Analytics Tracking Code
-# include( 'lib/analytics.php' );
+/**
+ * 1.1 Returns the plugin resources URI, with an optional $subpath parameter
+ * NOTE: This must match the PLUGIN_RESOURCES global in /gulpfile.js
+ */
 
-// Load Helper Functions
-# include( 'lib/helpers.php' );
+function medula_get_plugin_resources_uri( $subpath = '' ){
+    return plugins_url( '/res/' . $subpath );
+}
 
-// Create Shortcodes
-# include( 'lib/shortcodes.php' );
 
-// Create Custom Post Types
-# include( 'lib/post-types.php' );
+/**
+ * 2 PLUGIN FUNCTIONALITY
+ * ************************************************************
+ *
+ */
 
-// Create Custom Taxonomies
-# include( 'lib/taxonomies.php' );
+require_once( 'lib/utility.php' );                  // Utility Functions (Helpers)
 
-// Create Metaboxes
-# include( 'lib/metaboxes.php' );
+# require_once( 'lib/shortcodes.php' );             // Create Shortcodes
+# require_once( 'lib/post-types.php' );             // Create Custom Post Types
+# require_once( 'lib/taxonomies.php' );             // Create Custom Taxonomies
+# require_once( 'lib/metaboxes.php' );              // Create Metaboxes
+# require_once( 'lib/options-page.php' );           // Settings API Options Page
 
-// Compression and Caching
-# include ( 'lib/compression-caching.php'  );
+# require_once( 'lib/analytics.php' );              // Google Analytics Tracking Code
+
+# require_once( 'lib/compression-caching.php' );    // Compression and Caching
+
+
+/**
+ * 4 EXTERNAL LIBRARIES & PLUGINS
+ * ************************************************************
+ */
+
+# include_once( 'lib/vendor.php' );
+
+
+/**
+ * 5 CUSTOM FUNCTIONS, ACTIONS & FILTERS
+ * ************************************************************
+ *
+ * Here you could put some quick & dirty custom functions, but
+ * before doing that it would be better to take a look at the
+ * indexed sections above, and try to find a better place.
+ *
+ */
 
 
