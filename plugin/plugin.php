@@ -20,9 +20,8 @@
  *
  *         2.1 Helper Functions
  *
+ *         2.3 Custom Post Types & Taxonomies
  *         2.2 Shortcodes                                   (#)
- *         2.3 Custom Post Types (CPT)                      (#)
- *         2.4 Custom Taxonomies                            (#)
  *         2.5 Metaboxes                                    (#)
  *         2.6 Options Page                                 (#)
  *
@@ -69,17 +68,16 @@ function medula_get_plugin_resources_uri( $subpath = '' ){
  *
  */
 
-require_once( 'lib/utility.php' );                  // Utility Functions (Helpers)
+require_once( 'lib/utility.php' );                // Utility Functions (Helpers)
 
-# require_once( 'lib/shortcodes.php' );             // Create Shortcodes
-# require_once( 'lib/post-types.php' );             // Create Custom Post Types
-# require_once( 'lib/taxonomies.php' );             // Create Custom Taxonomies
-# require_once( 'lib/metaboxes.php' );              // Create Metaboxes
-# require_once( 'lib/options-page.php' );           // Settings API Options Page
+require_once( 'lib/custom-post-tax.php' );        // Custom Post Types & Taxonomies
+# require_once( 'lib/shortcodes.php' );           // Create Shortcodes
+# require_once( 'lib/metaboxes.php' );            // Create Metaboxes
+# require_once( 'lib/options-page.php' );         // Settings API Options Page
 
-# require_once( 'lib/analytics.php' );              // Google Analytics Tracking Code
+# require_once( 'lib/analytics.php' );            // Google Analytics Tracking Code
 
-# require_once( 'lib/compression-caching.php' );    // Compression and Caching
+# require_once( 'lib/compression-caching.php' );  // Compression and Caching
 
 
 /**
