@@ -2,11 +2,15 @@
 /*
  * Helper functions file
  *
+ *     >------------------>
+ *
  *     1 hex2rgba : Convert HEXDEC color string to rgb(a) string
  *
  *     2 encode_email : To prevent Spam
  *
  *     3 get_image_id_by_link : When you need an image Id and you just have the link
+ *
+ *     <------------------<
  */
 
 

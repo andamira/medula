@@ -9,7 +9,7 @@ $ga_ua = "";
 
 
 if ($ga_ua) {
-	function medula_p_analytics() {
+	function medulap_analytics() {
 		global $ga_ua;
 ?>
 	<script>
@@ -22,7 +22,7 @@ if ($ga_ua) {
 	</script>
 <?php
 	}
-	add_action('wp_head','medula_p_analytics',1,20);
+	add_action('wp_head','medulap_analytics',1,20);
 }
 
 

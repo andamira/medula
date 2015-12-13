@@ -3,7 +3,7 @@
  * Plugin Name: Medula-P
  * Plugin URI: https://github.com/andamira/medula/
  * Description: A minimal starter plugin, and optional companion for Medula T starter theme
- * Version 0.5.0
+ * Version 0.5.2
  * Author: andamira
  * Author URI: http://andamira.net
  * Text Domain: medulap
@@ -20,14 +20,14 @@
  *
  *         2.1 Helper Functions
  *
- *         2.3 Custom Post Types & Taxonomies
- *         2.2 Shortcodes                                   (#)
- *         2.5 Metaboxes                                    (#)
- *         2.6 Options Page                                 (#)
+ *         2.2 Custom Post Types & Taxonomies
+ *         2.3 Shortcodes                                   (#)
+ *         2.4 Metaboxes                                    (#)
+ *         2.5 Options Page                                 (#)
  *
- *         2.7 Analytics                                    (#)
+ *         2.6 Analytics                                    (#)
  *
- *         2.8 Compression & Cache                          (#)
+ *         2.7 Compression & Cache                          (#)
  *
  *     3 After Setup Plugin
  *

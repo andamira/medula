@@ -2,6 +2,7 @@
 /**
  * Settings Page Template
  *
+ *     >------------------>
  *
  *     1 Add the menu
  *
@@ -21,6 +22,7 @@
  *         3.3 Display Settings
  *         3.4 Validate Settings
  *
+ *     <------------------<
  *
  * @link https://codex.wordpress.org/Settings_API
  * @link https://developer.wordpress.org/plugins/settings/custom-settings-page/
