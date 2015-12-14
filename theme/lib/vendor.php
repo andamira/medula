@@ -30,7 +30,7 @@ function medula_template_override($layout = '') {
 
  	// NOTE: Currently only Toolset Layouts is officially supported.
 	// In order to use it you must enable it below, in section 2.2,
-	// and change the grid in /src/sass/dependencies/_frontend.scss
+	// and change the grid in /src/sass/deps/_frontend.scss
 	//
 	if ( function_exists('medula_toolset_layout') ) {
 		return( medula_toolset_layout($layout) ); 
