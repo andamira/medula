@@ -43,6 +43,8 @@
 
 ## Documentation
 
+You will find more information in the [Medula Wiki. :blue_book:](https://github.com/andamira/medula/wiki)
+
 ### Main Tools
 
 - [NPM](https://www.npmjs.com/) & [Gulp](http://gulpjs.com/) for building the project
@@ -71,8 +73,7 @@ src/                  Unprocessed Resources
 vendor-dl             Packages downloaded with Bower (js libs, css...)
 node-modules          Packages downloaded with npm (Gulp dependencies)
 ```
-You can find more information in the [Medula Wiki. :blue_book:](https://github.com/andamira/medula/wiki)
 
 ## Contributing
 
-Feel free to join the [gitter chat room :spech_balloon:](https://gitter.im/andamira/medula) and to [submit bugs & proposals. :construction:](https://github.com/andamira/medula/issues)_
+Feel free to join the [gitter chat room :speech_balloon:](https://gitter.im/andamira/medula) and to [submit bugs & proposals. :construction:](https://github.com/andamira/medula/issues)

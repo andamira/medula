@@ -40,6 +40,10 @@ function medula_toolset_layout($layout = '') {
 
 	if ( defined( 'TOOLSET_LAYOUTS') && TOOLSET_LAYOUTS && function_exists( 'the_ddlayout' ) ) {
 
+		add_filter('ddl_no_templates_at_all', function( $bool ){
+		    return false;
+		});
+
 		get_header('layouts');
 
 		the_ddlayout($layout);
