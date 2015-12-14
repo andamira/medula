@@ -1,5 +1,5 @@
 {
-  "name": "Medula",
+  "name": "medula",
   "devDependencies": {
     "normalize.css": "3.x",
     "susy": "2.2.x",

@@ -24,7 +24,7 @@
  * @link http://www.jonathantneal.com/blog/understand-the-favicon/
  */
 
-// Increase the favicon version when the favicons are updated
+// Favicon version should be increased every time the favicons change, to avoid cache problems
 $medula_favicon_v="0";
 
 // This will be used on some systems to customize their UI
@@ -66,7 +66,7 @@ function medula_header_tags_frontend_favicons_theme_color() {
 }
 
 /**
- * 1.2 BACKEND (WORDPRESS ADMIN AREA)
+ * 1.2 BACKEND (ADMIN AREA)
  *
  * Create a 16x16 favicon and put it in /src/img/favicon-adm.png
  */

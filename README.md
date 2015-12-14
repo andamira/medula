@@ -38,18 +38,18 @@
 
 1. Use `gulp --dev` to compile your project during development and `gulp` for production.
 1. The `theme/` directory must be deployed inside WordPress `/wp-content/themes/` directory.
-  * The name you give the theme directory should be in [`src/sass/dependencies/_global.scss`](src/sass/dependencies/_global.scss)
+  * The name you give the theme directory should be in [`src/sass/deps/_global.scss`](src/sass/deps/_global.scss)
 1. The `plugin/` directory must be deployed inside `/wp-content/plugins/` in Wordpress.
 
 ## Documentation
 
-### Main Tools Used
+### Main Tools
 
 - [NPM](https://www.npmjs.com/) & [Gulp](http://gulpjs.com/) for building the project
 - [Bower](http://bower.io/) for managing the vendor libraries
 - [Sass](http://sass-lang.com/) for creating the stylesheets
   - [Susy](http://susy.oddbird.net/) for the responsive grid
-  - [include-media](https://github.com/eduardoboucas/include-media) for the breakpoints
+  - [include-media](http://include-media.com/) for the breakpoints
 
 ### Basic Folder Structure
 
@@ -75,4 +75,4 @@ You can find more information in the [Medula Wiki. :blue_book:](https://github.c
 
 ## Contributing
 
-_Feel free to join the [gitter chat room :speech_balloon:](https://gitter.im/andamira/medula) and to [submit bugs & proposals. :construction:](https://github.com/andamira/medula/issues)
+Feel free to join the [gitter chat room :spech_balloon:](https://gitter.im/andamira/medula) and to [submit bugs & proposals. :construction:](https://github.com/andamira/medula/issues)_
