@@ -12,9 +12,9 @@
 - :white_large_square: It is a minimal blank canvas.
 - :bike: Focus is on simplicity & handiness.
 - :book: Following standards & best practices.
-- :put_litter_in_its_place: Doesn't support older browsers by default.
+- :put_litter_in_its_place: Doesn't support older browsers (IE8) by default.
 - :memo: Each file has an index, relevant comments and links.
-- :rocket: Enable optional extended functionality in theme and plugin.
+- :rocket: Enable extended functionality in the theme and with optional plugin.
 
 > Mobile first, and progressively enhanced. Uses procedural programming (no OO). Very modular. Incorporates a minimal optional plugin framework. Painless to tinker with it. Easy to understand it _fully_.
 
@@ -23,18 +23,18 @@
 ### Installation
 
 1. Install [npm](https://www.npmjs.com/) & [bower](http://bower.io/) globally, if you don't already have them.
-1. Clone the repo and download its dependencies: `npm install && bower install`.
+1. Clone the repo and download its dependencies with: `npm install && bower install`.
 
 ### First Contact
 
-* Take a look into [`theme/functions.php`](theme/functions.php) :wrench: to see how the functionality is structured.
-* Take a look into [`src/sass/main.scss`](src/sass/main.scss) :art: to see how styles are structured.
-*  You can edit the file [`theme/style.css`](theme/style.css) :page_with_curl: to customize your theme name and data.
-*  Take a look into [`plugin/plugin.php`](plugin/plugin.php) :nut_and_bolt: to customize the extended plugin functionality.
-*  Enable the favicons in [`theme/lib/head-meta.php`](theme/lib/head-tags.php) :mount_fuji: and put your images in `/src/img/`.
-*  Configure the project dependencies in [`gulpfile.js`](gulpfile.js) and [`bower.json`](bower.json) :package:.
+* Take a look into [`theme/functions.php`](theme/functions.php) to see how the functionality is structured.
+* Take a look into [`src/sass/main.scss`](src/sass/main.scss) to see how styles are structured.
+* You can edit the file [`theme/style.css`](theme/style.css) to customize your theme name and data.
+* Take a look into [`plugin/plugin.php`](plugin/plugin.php) to customize the extended plugin functionality.
+* Enable the favicons in [`theme/lib/head-meta.php`](theme/lib/head-tags.php) and put your images in `/src/img/`.
+* Configure the project dependencies in [`gulpfile.js`](gulpfile.js) and [`bower.json`](bower.json).
 
-### Deploying it
+### Deploy it
 
 1. Use `gulp --dev` to compile your project during development and `gulp` for production.
 1. The `theme/` directory must be deployed inside WordPress `/wp-content/themes/` directory.
@@ -62,7 +62,6 @@ theme                 The Starter Theme
 
 plugin                The Starter Plugin
     lib                   functionality library
-    res                   processed resources
 
 src/                  Unprocessed Resources
     fonts

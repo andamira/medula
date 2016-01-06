@@ -52,7 +52,7 @@ function medula_template_override($layout = '') {
  * @link http://wpml.org/
  */
 
-# include_once( 'vendor/wpml.php' );
+# include_once( 'wpml.php' );
 
 /**
  * 2.2 TOOLSET
@@ -60,7 +60,7 @@ function medula_template_override($layout = '') {
  * @link http://wp-types.org/ Toolset
  */
 
-# include_once( 'vendor/toolset.php' );
+# include_once( 'toolset.php' );
 
 /**
  * 2.3 WOOCOMMERCE
@@ -68,7 +68,7 @@ function medula_template_override($layout = '') {
  * @link http://www.woothemes.com/woocommerce/
  */
 
-# include_once( 'vendor/woocommerce.php' );
+# include_once( 'woocommerce.php' );
 
 
 /**
@@ -79,7 +79,7 @@ function medula_template_override($layout = '') {
  * ************************************************************
  */
 
-include_once( 'vendor/clean-fix.php' );
+include_once( 'clean-fix.php' );
 
 
 /**
@@ -89,6 +89,6 @@ include_once( 'vendor/clean-fix.php' );
  * Here you could include third party php libraries
  */
 
-# include_once( 'vendor/example/example.php' );
+# include_once( 'example/example.php' );
 
 
