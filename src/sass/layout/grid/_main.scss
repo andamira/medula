@@ -1,0 +1,37 @@
+////
+/// Stylesheet: grids
+/// ************************************************************
+///
+/// Here you can choose the grid system
+///
+///     1 Susy (default)
+///     2 Lost
+///
+/// Uncomment only the @import line you want and comment the rest,
+/// following the specific installation instructions as provided.
+///
+////
+
+
+///
+/// 1 SUSY
+///
+/// @link http://susy.oddbird.net/
+///
+///
+@import "susy";
+
+
+///
+/// 2 LOST
+///
+/// @link https://github.com/corysimmons/lost
+///
+/// To install Lost grid, run this command from the root folder:
+///    bower install lost-grid --save-dev
+///
+/// And then uncomment USE_LOSTGRID line in /gulpfile.js globals.
+///
+// @import "lost";
+
+

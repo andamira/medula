@@ -1,9 +1,9 @@
 ////
-/// Stylesheet: Extra normalization
+/// Stylesheet: normalization adjustments
 /// ************************************************************
 ///
-/// Some useful overrides of normalized defaults,
-/// like changing box-sizing to border-box
+/// Some useful adjustments of normalized defaults, like
+/// for example changing box-sizing to border-box.
 ///
 /// @link http://css-tricks.com/box-sizing/
 /// @link https://github.com/necolas/normalize.css/issues/202
@@ -18,5 +18,4 @@ input[type="checkbox"],
 input[type="radio"] {
 	box-sizing: border-box;
 }
-
 

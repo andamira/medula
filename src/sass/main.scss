@@ -23,8 +23,8 @@
 ///     4 Layout
 ///
 ///         Normalize
-///         Susy Grid
-///         Print Stylesheet
+///         Grid
+///         Print
 ///
 ///     5 Base
 ///
@@ -107,18 +107,18 @@
 ///
 ///
 
-// Fixes normalize defaults
-@import "layouts/normalize_extra";
+// Adjust normalize defaults
+@import "layout/normalize_adjust";
 
 // Grid Configuration
-@import "layouts/grid";
+@import "layout/grid/main";
 
 // Accesibility Style
-@import "layouts/accessibility";
+@import "layout/accessibility";
 
 // Print Stylesheet
 @media print {
-	@import "layouts/print";
+	@import "layout/print";
 }
 
 
