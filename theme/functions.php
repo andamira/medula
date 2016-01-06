@@ -150,7 +150,7 @@ function medula_launch() {
  * for some big plugins like like WPML, Toolset & WooCommerce.
  */
 
-include_once( 'lib/vendor.php' );
+include_once( 'lib/vendor/main.php' );
 
 
 /**

@@ -85,7 +85,7 @@ require_once( 'lib/custom-post-tax.php' );        // Custom Post Types & Taxonom
  * ************************************************************
  */
 
-# include_once( 'lib/vendor.php' );
+# include_once( 'lib/vendor/main.php' );
 
 
 /**
