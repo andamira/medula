@@ -43,12 +43,16 @@
  * ************************************************************
  */
 
+// Styles version can be increased after styles are updated, to avoid cache problems
+$medula_styles_v="0";
+
 function medula_scripts_and_styles() {
+	global $medula_styles_v;
 
 	if (!is_admin()) {
 
 		// register main stylesheet
-		wp_register_style( 'main-stylesheet', get_stylesheet_directory_uri() . '/res/css/main.css', array(), '', 'all' );
+		wp_register_style( 'main-stylesheet', get_stylesheet_directory_uri() . '/res/css/main.css?v=' . $medula_styles_v, array(), '', 'all' );
 
 		// comment reply script for threaded comments
 		if ( is_singular() AND comments_open() AND (get_option('thread_comments') == 1)) {
