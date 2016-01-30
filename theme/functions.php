@@ -84,7 +84,7 @@ require_once( 'lib/thumbnails.php' );      // Thumbnails and Default Sizes
 require_once( 'lib/titles.php' );          // Entry Title Function
 require_once( 'lib/entry-meta.php' );      // Entry Meta Fields Functions
 require_once( 'lib/comments.php' );        // Comments Functions
-require_once( 'lib/page-links.php' );      // Page Links Function
+require_once( 'lib/links.php' );           // Page Links Function
 require_once( 'lib/post-not-found.php' );  // Post Not Found Function
 
 /**
