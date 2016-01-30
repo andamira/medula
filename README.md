@@ -45,34 +45,6 @@
 
 You will find more information in the [Medula Wiki. :blue_book:](https://github.com/andamira/medula/wiki)
 
-### Main Tools
-
-- [NPM](https://www.npmjs.com/) & [Gulp](http://gulpjs.com/) for building the project
-- [Bower](http://bower.io/) for managing the vendor libraries
-- [Sass](http://sass-lang.com/) for creating the stylesheets
-  - [Susy](http://susy.oddbird.net/) for the responsive grid
-  - [include-media](http://include-media.com/) for the breakpoints
-
-### Basic Folder Structure
-
-```
-theme                 The Starter Theme
-    lib                   functionality library
-    res                   processed resources
-
-plugin                The Starter Plugin
-    lib                   functionality library
-
-src/                  Unprocessed Resources
-    fonts
-    img
-    js
-    sass
-
-vendor-dl             Packages downloaded with Bower (js libs, css...)
-node-modules          Packages downloaded with npm (Gulp dependencies)
-```
-
 ## Contributing
 
 Feel free to join the [gitter chat room :speech_balloon:](https://gitter.im/andamira/medula) and to [submit bugs & proposals. :construction:](https://github.com/andamira/medula/issues)
