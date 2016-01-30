@@ -254,7 +254,7 @@ var sass = require('gulp-sass')
 // var sourcemaps = require('gulp-sourcemaps'); // TODO (can't refer to sass files now bc they are outside theme)
 var autoprefixer = require('gulp-autoprefixer');
 var pixrem = require('gulp-pixrem');
-var minifycss = require('gulp-minify-css');
+var cssnano = require('gulp-cssnano');
 var cmq = require('gulp-combine-mq');
 
 // JS componentss
@@ -274,21 +274,18 @@ var imagemin = require('gulp-imagemin');
 /**
  * 5.1 MINIFY CSS
  */
-var subtask_minifycss = lazypipe()
+var subtask_cssnano = lazypipe()
 
 	.pipe(function () {
-		return gulpif( DEBUG_LVL > 1, debug({title: ' » minifycss:'}) );
+		return gulpif( DEBUG_LVL > 1, debug({title: ' » cssnano:'}) );
 	})
 
-	.pipe( minifycss, {
-		keepBreaks: true,     // defaults to false
-		roundingPrecision: 7, // defaults to 2
-
-		// https://github.com/jakubpawlowicz/clean-css#how-to-set-a-compatibility-mode
-		compatibility: '*', // '*', 'ie7', 'ie8'
-
-		// * for keeping all (default), 1 for keeping first one only, 0 for removing all
-		keepSpecialComments: 0
+	// http://cssnano.co/options/
+	.pipe( cssnano, {
+		safe: true,
+		discardComments: {
+			removeAll: true,
+		},
 	});
 
 /**
@@ -355,7 +352,7 @@ gulp.task('compile-sass', function () {
 		.pipe(autoprefixer(AUTOPREFIXER_RULES))
 
 		// Minify
-		.pipe( gulpif( IS_PRODUCTION, subtask_minifycss() ) )
+		.pipe( gulpif( IS_PRODUCTION, subtask_cssnano() ) )
 
 		.pipe(gulp.dest(target.css))
 });
@@ -439,7 +436,7 @@ gulp.task('compile-vendor_live', function () {
 			.pipe(autoprefixer(AUTOPREFIXER_RULES))
 
 			// Minify
-			.pipe( gulpif( IS_PRODUCTION, subtask_minifycss() ) )
+			.pipe( gulpif( IS_PRODUCTION, subtask_cssnano() ) )
 
 			// Save output
 			.pipe(gulp.dest(target.vendor_live_css))
