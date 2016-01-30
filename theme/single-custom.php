@@ -2,10 +2,11 @@
 /**
  * Single Template (for a specific Custom Post Type)
  *
- * NOTE: The name of this template should reflect the slug of your CPT
+ * NOTE: The name of this template should reflect the slug of your CPT.
  *
- * Be aware of 'CTCAT' and 'CTTAG' in the footer entry-meta (two example custom
- * taxonomies for categories and tags, created in /plugin/lib/taxonomies.php
+ * NOTE: Be aware of 'CTCAT' and 'CTTAG' in the footer entry-meta (#).
+ * Those are example custom taxonomies, like the ones you can create
+ * following the instructions in /plugin/lib/custom-post-tax.php .
  *
  * @link http://codex.wordpress.org/Post_Type_Templates
  */
@@ -31,7 +32,7 @@ get_header();
 			</section>
 
 			<footer class="entry-footer">
-				<div class="entry-meta"><?php medula_entry_meta_tags('CTTAG'); medula_entry_meta_categories('CTCAT'); ?></div>
+				<div class="entry-meta"><?php // medula_entry_meta_tags('CTTAG'); medula_entry_meta_categories('CTCAT'); ?></div>
 			</footer>
 
 			<?php comments_template(); ?>

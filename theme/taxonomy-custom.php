@@ -4,8 +4,9 @@
  *
  * NOTE: The name of this template should reflect the slug of your custom taxonomy.
  *
- * Be aware of 'CTCAT' and 'CTTAG' in the footer entry-meta (two example custom
- * taxonomies for categories and tags, created in /plugin/lib/taxonomies.php
+ * NOTE: Be aware of 'CTCAT' and 'CTTAG' in the footer entry-meta (#).
+ * Those are example custom taxonomies, like the ones you can create
+ * following the instructions in /plugin/lib/custom-post-tax.php .
  *
  * @link https://developer.wordpress.org/themes/template-files-section/taxonomy-templates/
  * @link https://developer.wordpress.org/themes/basics/categories-tags-custom-taxonomies/#custom-taxonomies
@@ -36,7 +37,7 @@ get_header();
 			</section>
 
 			<footer class="article-footer">
-				<div class="entry-meta"><?php medula_entry_meta_tags( 'CTTAG' ); medula_entry_meta_categories( 'CTCAT' ); ?></div>
+				<div class="entry-meta"><?php // medula_entry_meta_tags( 'CTTAG' ); medula_entry_meta_categories( 'CTCAT' ); ?></div>
 			</footer>
 
 		</article>

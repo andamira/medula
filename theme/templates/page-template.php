@@ -1,8 +1,8 @@
 <?php
 /**
- * Template Name: Custom Template Example
+ * Template Name: Page Template Example
  *
- * You can create as many of these custom templates as you need. Simply
+ * You can create as many of these page templates as you need. Simply
  * name the file "page-whatever.php" and change the "Template Name" title
  * at the top, to the one you desire.
  *
