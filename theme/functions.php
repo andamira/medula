@@ -10,7 +10,7 @@
  *
  *     2 Theme Functionality
  *
- *         2.1  » Core medula library
+ *         2.1  » Core Functions & Libraries
  *
  *         2.2  » Head Meta & Link Tags
  *         2.3  » Fonts

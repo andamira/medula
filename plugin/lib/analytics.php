@@ -2,6 +2,17 @@
 /**
  * Analytics Tracking Code file
  *
+ *     >------------------>
+ *
+ *     1 Google Analytics
+ *
+ *     2 Piwik
+ *
+ *     <------------------<
+ */
+
+/**
+ * 1 GOOGLE ANALYTICS
  */
 
 // your Google Analytics Code ( UA-XXXXXX-X )
@@ -25,4 +36,9 @@ if ($ga_ua) {
 	add_action('wp_head','medulap_analytics',1,20);
 }
 
+/**
+ * 2 PIWIK
+ *
+ * @link https://piwik.org/docs/installation/#install-the-javascript-tracking-tag
+ */
 
