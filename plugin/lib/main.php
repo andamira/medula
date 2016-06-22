@@ -19,13 +19,11 @@
 
 require_once( 'utility.php' );                // General Utility Functions (Helpers)
 
-# require_once( 'analytics.php' );            // Analytics Tracking
-
 # require_once( 'shortcodes.php' );           // Shortcodes
 # require_once( 'options-page.php' );         // Settings API Options Page
-# require_once( 'taxo-posts.php' );           // Custom Taxonomies & Post Types
+# require_once( 'cpt.php' );                  // Custom Post Types & Taxonomies
 # require_once( 'boxes.php' );                // Metaboxes
 
-# require_once( 'compression.php' );          // Compression and Caching
-
+# require_once( 'analytics.php' );            // Analytics Tracking
+# require_once( 'filter.php' );               // Content filtering, compression, etc.
 

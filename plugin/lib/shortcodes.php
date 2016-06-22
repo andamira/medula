@@ -18,6 +18,8 @@
  *
  */
 
+add_shortcode( 'medula-shortcode', 'medulap_shortcode_example' );
+
 function medulap_shortcode_example( $atts
 	// Comment the next line for a self-enclosing shortcode
 	, $content = null
@@ -38,7 +40,4 @@ function medulap_shortcode_example( $atts
 	$out .= '</div>';
 	return $out;
 }
-add_shortcode( 'medula-shortcode', 'medulap_shortcode_example' );
-
-
 
