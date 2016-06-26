@@ -10,6 +10,8 @@
  *
  *     3 get_image_id_by_link : When you need an image Id and you just have the link
  *
+ *     4 phpconsole : Write debug info to the console
+ *
  *     <------------------<
  */
 
@@ -104,3 +106,17 @@ function medulap_get_attachment_id_from_url( $attachment_url = '' ) {
 	return $attachment_id;
 }
 
+
+/**
+ * 4 WRITE DEBUG INFO TO THE CONSOLE
+ *
+ * @link http://stackoverflow.com/questions/4323411/how-can-i-write-to-console-in-php
+ */
+
+function medula_phpconsole($x) {
+	?>
+	<script type="text/javascript">
+		console.log('<?php echo json_encode($x)?>');
+	</script>
+	<?php
+}
