@@ -8,7 +8,9 @@
  *
  *     2 Remove default image sizes
  *
- *     3 Thumbnail Sizes
+ *     3 Remove plugin image sizes
+ *
+ *     4 Custom Thumbnail Sizes
  *
  *     <------------------<
  */
@@ -42,8 +44,20 @@ function medula_remove_image_size( $sizes ) {
 }
 
 
+/**
+ * 3 REMOVE PLUGIN IMAGE SIZES
+ * ************************************************************
+ */
+
+# add_action('init', 'medula_remove_plugin_image_sizes');
+
+function medula_remove_plugin_image_sizes() {
+	remove_image_size('image-name');
+}
+
+
 /*
- * 3 CUSTOM THUMBNAIL SIZES
+ * 4 CUSTOM THUMBNAIL SIZES
  * ************************************************************
  *
  * @link https://codex.wordpress.org/Function_Reference/add_image_size
@@ -55,5 +69,4 @@ function medula_remove_image_size( $sizes ) {
 
 # add_image_size( 'medula-600', 600, 150, true );
 # add_image_size( 'medula-300', 300, 100, true );
-
 
