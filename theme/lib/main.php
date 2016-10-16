@@ -41,9 +41,13 @@
 /**
  * 1 ENQUEUEING SCRIPTS & STYLES
  * ************************************************************
+ *
+ * @link https://developer.wordpress.com/themes/enqueues/
+ * @link http://www.johnbhartley.com/2013/get_stylesheet_directory_uri-and-child-themes/
  */
 
-// Styles version can be increased after styles are updated, to avoid cache problems
+// This version number should be increased each the styles are updated
+// in the live server, in order to avoid cache problems in browsers.
 $medula_styles_v="0";
 
 function medula_scripts_and_styles() {
@@ -69,7 +73,7 @@ function medula_scripts_and_styles() {
 		wp_enqueue_script( 'medula-js' );
 	}
 	
-	// Note: Styles for the WordPress Backend are defined in admin.php
+	// NOTE: Styles for the WordPress Backend are defined in admin.php
 }
 
 
@@ -141,6 +145,7 @@ function medula_theme_support() {
  * This is the maximum width in pixels for your content area
  *
  * @link http://codex.wordpress.org/Content_Width
+ * @link https://developer.wordpress.com/themes/content-width/
  */
 
 if ( ! isset( $content_width ) ) {
