@@ -60,7 +60,7 @@ function medula_header_tags_frontend_favicons_theme_color() {
 		// @link https://msdn.microsoft.com/en-us/library/dn255024(v=vs.85).aspx#msapplication-TileColor
 		echo '<meta name="msapplication-TileColor" content="' . $medula_theme_color . '">';
 
-		// @link https://github.com/whatwg/meta-theme-color
+		// @link https://html.spec.whatwg.org/multipage/semantics.html#meta-theme-color
 		echo '<meta name="theme-color" content="' . $medula_theme_color . '">';
 	}
 }

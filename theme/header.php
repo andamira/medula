@@ -3,6 +3,7 @@
  * Header Template
  *
  * @link https://developer.wordpress.org/reference/functions/get_header/
+ * @link https://github.com/joshbuchea/HEAD A list of everything that goes in the <head> of your document
  */
 ?>
 <!DOCTYPE html>
