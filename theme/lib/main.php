@@ -52,15 +52,15 @@ function medula_scripts_and_styles() {
 	if (!is_admin()) {
 
 		// register main stylesheet
-		wp_register_style( 'main-stylesheet', get_stylesheet_directory_uri() . '/res/css/main.css?v=' . $medula_styles_v, array(), '', 'all' );
+		wp_register_style( 'main-stylesheet', get_template_directory_uri() . '/res/css/main.css?v=' . $medula_styles_v, array(), '', 'all' );
 
 		// comment reply script for threaded comments
 		if ( is_singular() AND comments_open() AND (get_option('thread_comments') == 1)) {
 			wp_enqueue_script( 'comment-reply' );
 		}
 
-		//adding scripts file in the footer
-		wp_register_script( 'medula-js', get_stylesheet_directory_uri() . '/res/js/main.js', array( 'jquery' ), '', true );
+		// add scripts file in the footer
+		wp_register_script( 'medula-js', get_template_directory_uri() . '/res/js/main.js', array( 'jquery' ), '', true );
 
 		// enqueue styles and scripts
 		wp_enqueue_style( 'main-stylesheet' );
