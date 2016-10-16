@@ -80,7 +80,7 @@ function medula_load_fonticons_external() {
      * @link https://developer.wordpress.org/resource/dashicons/
      */
 
-    # wp_enqueue_style( 'dashicons', get_stylesheet_uri(), array('dashicons') );
+    # wp_enqueue_style( 'dashicons' );
 
     /**   
      * 2.2 FONT AWESOME
@@ -89,9 +89,8 @@ function medula_load_fonticons_external() {
      */
 
     // Remote
-    # wp_enqueue_style( 'fontawesome', '//maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css', null, '4.4.0' );
+    # wp_enqueue_style( 'fontawesome', '//maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css', null, '4.6.3' );
 
     // Local
-    # wp_enqueue_style( 'fontawesome', medula_get_theme_resources_uri('js/vendor/font-awesome/font-awesome.min.css'), null, '4.4.0' );
+    # wp_enqueue_style( 'fontawesome', medula_get_theme_resources_uri('js/vendor/font-awesome/font-awesome.min.css'), null, '4.6.3' );
 }
-
