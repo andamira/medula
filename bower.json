@@ -1,7 +1,7 @@
 {
   "name": "medula",
   "devDependencies": {
-    "normalize.css": "5.x",
+    "sanitize-css": "4.x",
     "susy": "2.2.x",
     "include-media": "1.4.x",
     "sassy-maps": "0.4.x",

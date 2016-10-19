@@ -130,12 +130,20 @@ var source = {
 	 *
 	 * List of vendor files intented to be concatenated into the theme main.css
 	 * and main.js, and then postprocessed. The order matters for concatenation.
-	 *
 	 * Note: they are included _before_ the custom styles and scripts.
+	 *
+	 * Install the ones you want from the root folder:
+	 *     bower install PACKAGE_NAME --save-dev
 	 *
 	 */
 	vendor: [
-		PKGS + 'normalize.css/normalize.css',           // Normalize         necolas.github.io/normalize.css/
+
+	/* STYLESHEET                                        PACKAGE_NAME        WEBSITE
+	 * --------------------------------------------------------------------------------
+		PKGS + 'reset.css/reset.css',                   // reset.css         meyerweb.com/eric/tools/css/reset
+		PKGS + 'normalize.css/normalize.css',           // normalize.css     necolas.github.io/normalize.css
+	 */
+		PKGS + 'sanitize-css/sanitize.css',             // sanitize-css      jonathantneal.github.io/sanitize.css
 		PKGS + 'modernizr/modernizr.custom.js',         // Modernizr         modernizr.com
 	],
 	vendor_exclude: [ '', ],
@@ -167,8 +175,7 @@ var source = {
 	 *
 	 * This is a list of recommended vendor plugins and libraries.
 	 * Install the ones you want from the root folder, like this:
-	 *
-	 *     bower install PLUGIN_NAME --save-dev
+	 *     bower install PACKAGE_NAME --save-dev
 	 *
 	 * (or use the custom bower install command when specified).
 	 * After that, copy the line to the appropiate section above.
@@ -176,8 +183,8 @@ var source = {
  	 * @link https://github.com/sorrycc/awesome-javascript/ Collection of js libraries
 	 */
 
-	/* NEED                                                  PLUGIN_NAME        WEBSITE
-	 * --------------------------------------------------------------------------------
+	/* NEED                                                  PACKAGE_NAME        WEBSITE
+	 * ---------------------------------------------------------------------------------
 
 	// Compatibility / Accesibility
 	PKGS + 'picturefill/dist/picturefill.js',                // PictureFill       -
