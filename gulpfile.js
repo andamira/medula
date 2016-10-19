@@ -84,7 +84,7 @@ var DEBUG_LVL          = 0;     // 0 = none | 1 = print files going through task
 var IS_PRODUCTION = true;       // default task
 var SASS_STYLE = 'nested';
 
-var AUTOPREFIXER_RULES = 'last 3 versions, > 5%, not ie <=10'; // https://github.com/ai/browserslist#queries
+var AUTOPREFIXER_RULES = ['last 3 versions', '> 3%', 'not ie <=10']; // https://github.com/ai/browserslist#queries
 
 var DO_REMPIXEL        = false; // rem to pixel fallback
 var DO_IMAGEMIN        = true;  // minify images?
