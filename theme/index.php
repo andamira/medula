@@ -7,8 +7,6 @@
  * @link http://wphierarchy.com/
  */
 
-if ( medula_template_override() ) { return; }
-
 get_header();
 ?>
 

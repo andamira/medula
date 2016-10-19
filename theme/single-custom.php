@@ -11,8 +11,6 @@
  * @link http://codex.wordpress.org/Post_Type_Templates
  */
 
-if ( medula_template_override('') ) { return; }
-
 get_header();
 ?>
 

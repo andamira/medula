@@ -120,10 +120,6 @@ body {
 	@if $conf_100_page_height {
 		height: 100%;
 	}
-
-	&:not(.toolset-layouts) {
-		width: 100%; 
-	}
 }
 
 
@@ -181,13 +177,5 @@ main {
 	}
 	height: $conf_footer_height;
 	width: 100%;
-}
-
-
-// TOOLSET-LAYOUTS 
-.layouts-containers {
-	@if $conf_100_page_height {
-		margin-bottom: $conf_footer_height;
-	}
 }
 

@@ -5,8 +5,6 @@
  * @link https://developer.wordpress.org/themes/basics/template-hierarchy/#page
  */
 
-if ( medula_template_override('') ) { return; }
-
 get_header();
 ?>
 

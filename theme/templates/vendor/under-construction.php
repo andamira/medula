@@ -58,8 +58,6 @@ switch ($medula_underconstruction_template) {
 
 	case "wordpress":
 
-if ( medula_template_override('') ) { return; }
-
 get_header('');
 ?>
 <main>

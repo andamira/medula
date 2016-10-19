@@ -6,8 +6,6 @@
  * @link https://codex.wordpress.org/Theme_Development#Single_Post_.28single.php.29
  */
 
-if ( medula_template_override('') ) { return; }
-
 get_header();
 ?>
 

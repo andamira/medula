@@ -6,8 +6,6 @@
  * @link https://codex.wordpress.org/Creating_a_Search_Page
  */
 
-if ( medula_template_override('') ) { return; }
-
 get_header();
 ?>
 
