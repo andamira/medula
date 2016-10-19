@@ -1,14 +1,17 @@
 <?php
 /**
- * Template Name: Page Template Example
+ * Template Name: Example Template
  *
- * You can create as many of these page templates as you need. Simply
- * name the file "page-whatever.php" and change the "Template Name" title
- * at the top, to the one you desire.
  *
- * When you create your page, you can just select the template from the metabox.
+ * Instructions
  *
- * @link http://codex.wordpress.org/Page_Templates
+ * - Copy this file and move it to the root of the theme.
+ * - Rename the file to something like "page-thenameyoudesire.php".
+ * - Finally, change the "Example Template" name to the one you desire.
+ * - The template name will appear in the Page Attributes metabox on the page editor.
+ *
+ * @link https://make.wordpress.org/support/user-manual/content/pages/page-attributes/
+ * @link https://developer.wordpress.org/themes/template-files-section/page-template-files/page-templates/
 */
 
 if ( medula_template_override('') ) { return; }
