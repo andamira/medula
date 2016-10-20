@@ -6,6 +6,12 @@
  *
  *     1 Entry Title
  *
+ *     2 Site Title
+ *
+ *         2.1 pre_get_document_title
+ *         2.2 document_title_separator
+ *         2.3 document_title_parts
+ *
  *     <------------------<
  */
 
@@ -55,4 +61,51 @@ function medula_entry_title( $htag, $with_link = false, $headline = false ) {
 
 	echo $title;
 }
+
+
+/*
+ * 2 SITE TITLE
+ * ************************************************************
+ *
+ * Customize the site title (HTML Document title).
+ *
+ * NOTE: You could copy any of these filters into some theme templates,
+ * in order to customize the title separator in some pages, for example.
+ *
+ * @link https://make.wordpress.org/core/2015/10/20/document-title-in-4-4/
+ */
+
+/*
+ *  2.1 pre_get_document_title
+ *
+ *  Short-circuits wp_get_document_title() if it returns anything other than an empty value.
+ */
+
+# apply_filters( 'pre_get_document_title', 'New Title' );
+
+/*
+ * 2.2 document_title_separator
+ *
+ * Filters the separator between title parts.
+ */
+
+# apply_filters( 'document_title_separator', '|' );
+
+/*
+ * 2.3 document_title_parts
+ *
+ * Filters the parts that make up the document title, passed in an associative array.
+ *
+ * @link https://developer.wordpress.org/reference/hooks/document_title_parts/
+ */
+
+/*
+$medula_title_parts = array(
+	title => 'New Title',
+	# page => '',
+	# tagline => '',
+	# site => ''
+);
+apply_filters( 'document_title_parts', $medula_title_parts );
+/**/
 
