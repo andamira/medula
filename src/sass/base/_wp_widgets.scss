@@ -9,7 +9,6 @@
 
 .widget-title {
 	a {
-		display: block;
 	}
 }
 
@@ -20,73 +19,95 @@
 
 // links widget
 .widget_links {
-	ul {}
-		li {}
+	ul {
+		li {
 			a{}
+		}
+	}
 }
 
 // meta widget
 .widget_meta {
-	ul {}
-		li {}
+	ul {
+		li {
 			a{}
+		}
+	}
 }
 
 // pages widget
 .widget_pages {
-	ul {}
-		li {}
+	ul {
+		li {
 			a{}
+		}
+	}
 }
 
 // recent-posts widget
 
-.widget_recent_entries {}
-.widget_recent_entries ul {}
-.widget_recent_entries ul li {}
-.widget_recent_entries ul li a {}
+.widget_recent_entries {
+	ul {
+		li {
+			a {}
+		}
+	}
+}
 
 // archives widget
 
-.widget_archive {}
-.widget_archive ul {}
-.widget_archive ul li {} 
-.widget_archive ul li a {}
-.widget_archive select {}
-.widget_archive option {}
+.widget_archive {
+	ul {
+		li {
+			a {}
+		}
+	}
+	select {}
+	option {}
+}
 
 // tag-cloud widget
 
-.widget_links {}
-.widget_links li:after {}
-.widget_links li:before {}
-.widget_tag_cloud {}
-.widget_tag_cloud a {}
-.widget_tag_cloud a:after {}
-.widget_tag_cloud a:before {}
+.widget_links {
+	li {
+		&::before {}
+		&::after {}
+	}
+}
+.widget_tag_cloud {
+	a {
+		&::before {}
+		&::after {}
+	}
+}
 
 // calendar widget
 
 .widget_calendar {}
-#calendar_wrap {}
-#calendar_wrap th {}
-#calendar_wrap td {}
-#wp-calendar tr td {}
-#wp-calendar caption {}
-#wp-calendar a {}
-#wp-calendar #today {}
-#wp-calendar #prev {}
-#wp-calendar #next {}
-#wp-calendar #next a {}
-#wp-calendar #prev a {}
+#calendar_wrap {
+	th {}
+	td {}
+}
+#wp-calendar {
+	tr td {}
+	caption {}
+	a {}
+	#today {}
+	#prev {
+		a {}
+	}
+	#next {
+		a {}
+	}
+}
 
 // category widget
 .widget_categories {
 	ul {
 		ul.children {
 		}
-	}
 		li {}
+	}
 
 	a {}
 
@@ -105,21 +126,22 @@
 
 // recent-comments widget
 .recentcomments {
-	li {}
+	li {
 		a {}
+	}
 }
 #recentcomments {}
 .widget_recent_comments {}
 
 // search widget
-#searchform {}
+#searchform {
 	.widget_search {}
 	.screen-reader-text {}
+}
 
 // text widget
 .textwidget {
 	p {}
-}
 	.widget_text {}
-
+}
 
