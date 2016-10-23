@@ -24,8 +24,9 @@
  *
  *         2.1 Your Own Assets
  *         2.2 Vendor CSS & JS (concat)
- *         2.2 Vendor CSS & JS (live)
- *         2.4 Suggested Plugins
+ *         2.2 Vendor CSS & JS (separate)
+ *         2.4 Suggested Javascript Plugins
+ *         2.5 Suggested PHP Plugins
  *
  *     3 Define Targets
  *
@@ -40,7 +41,7 @@
  *
  *         6.1 Sass Compilation
  *         6.2 JS Compilation
- *         6.3 Live vendor CSS & JS
+ *         6.3 Separate vendor CSS & JS
  *         6.4 Process Images
  *         6.5 Process Fonts
  *         6.6 Clean
@@ -76,7 +77,7 @@ var PLUGIN_RES = "plugin/res/";   // must match medula_get_plugin_resources_uri(
 /**
  * 1.2 Gulp Defaults
  *
- * NOTE: In section 7.1 you can learn how CLI Parameters can modify this defaults. E.g. --dev
+ * NOTE: In section 7.1 you can see some CLI Parameters that modify this defaults. E.g. --dev
  */
 
 var DEBUG_LVL          = 0;     // 0 = none | 1 = print files going through tasks pipes | 2 = also for subtasks
@@ -150,37 +151,43 @@ var source = {
 	
 
 	/**
-	 * 2.3 VENDOR JS & CSS (LIVE)
-	 * --------------------------
+	 * 2.3 VENDOR JS & CSS (SEPARATE)
+	 * ------------------------------
 	 *
-	 * List of vendor files intented to be (minified and) copied to the theme and plugin
-	 * vendor folders, and later loaded from the php templates;
+	 * List of vendor files intented to be (minified and) copied to the theme
+	 * and plugin vendor folders, and later loaded from the php templates;
 	 *
-	 * Note: You'll have to load them from the theme like this:
+	 * You can find a list of suggested plugins in the next section 2.4.
+	 *
+	 * IMPORTANT: You'll have to load them from the file /theme/vendor/main.php like this:
 	 *
 	 *     wp_register_script( 'thatvendor-js', . medula_get_theme_resources_uri('js/vendor/thatvendor.js'), array(), '', true );
 	 *
-	 * or load them from the plugin like this:
+	 * or from the file /plugin/lib/vendor/main.php like this:
 	 *
 	 *     wp_register_script( 'thatvendor-js', medula_get_plugin_resources_uri('js/vendor/thatvendor.js'), array(), '', true );
 	 */
-	vendor_live: [
+	vendor_separate: [
 	],
-	vendor_live_exclude: [ '', ],
-	
+	vendor_separate_exclude: [ '', ],
+
 
 	/**
-	 * 2.4 LIST OF SUGGESTED PLUGINS FOR COMMON NEEDS
-	 * ----------------------------------------------
+	 * 2.4 LIST OF SUGGESTED JAVASCRIPT PLUGINS FOR COMMON NEEDS
+	 *----------------------------------------------------------
 	 *
-	 * This is a list of recommended vendor plugins and libraries.
+	 * Here is a list of recommended vendor plugins and libraries.
 	 * Install the ones you want from the root folder, like this:
+	 *
 	 *     bower install PACKAGE_NAME --save-dev
 	 *
 	 * (or use the custom bower install command when specified).
-	 * After that, copy the line to the appropiate section above.
 	 *
- 	 * @link https://github.com/sorrycc/awesome-javascript/ Collection of js libraries
+	 * Then, copy the lines to the previous section 2.3 and load
+	 * the libraries from /theme/vendor/main.php (section 3.1),
+	 * or to the previous section 2.2, for concatenation.
+	 *
+ 	 * @link https://github.com/sorrycc/awesome-javascript/ Collection of browser-side js libraries
 	 */
 
 	/* NEED                                                  PACKAGE_NAME        WEBSITE
@@ -215,6 +222,20 @@ var source = {
 	PKGS + 'prism/themes/prism.css',                         // $ bower install -D prism.git#gh-pages
 
 	--- */
+
+	
+	/**
+	 * 2.5 LIST OF SUGGESTED PHP PLUGINS FOR COMMON NEEDS
+	 *----------------------------------------------------
+	 *
+	 * @link https://github.com/ziadoz/awesome-php Curated list of PHP libraries
+	 */
+
+	/* NEED                                                  PACKAGE_NAME        WEBSITE
+	 * ---------------------------------------------------------------------------------
+
+
+	--- */
 };
 
 
@@ -229,8 +250,8 @@ var target = {
 	img:             THEME_RES + 'img',
 	fonts:           THEME_RES + 'fonts',
 
-	vendor_live_css: THEME_RES + 'css/vendor',
-	vendor_live_js:  THEME_RES + 'js/vendor',
+	vendor_separate_css: THEME_RES + 'css/vendor',
+	vendor_separate_js:  THEME_RES + 'js/vendor',
 	vendor_img:      THEME_RES + 'img/vendor',
 };
 
@@ -409,17 +430,17 @@ gulp.task('compile-js', function () {
 
 
 /**
- * 6.3 LIVE VENDOR JS & CSS COMPILATION
- * ------------------------------------
+ * 6.3 SEPARATE VENDOR JS & CSS COMPILATION
+ * ----------------------------------------
  */
 
-gulp.task('compile-vendor_live', function () {
+gulp.task('compile-vendor_separate', function () {
 
 	var filter_css = gulpFilter( '**/*.css', {restore: true} );
 	var filter_js = gulpFilter( '**/*.js', {restore: true} );
 
-	return gulp.src( source.vendor_live )
-		.pipe(exclude(source.vendor_live_exclude))
+	return gulp.src( source.vendor_separate )
+		.pipe(exclude(source.vendor_separate_exclude))
 
 
 		// process  JS files
@@ -429,14 +450,14 @@ gulp.task('compile-vendor_live', function () {
 			.pipe(IS_PRODUCTION ? uglify({mangle: DO_JSMANGLE}).on('error', gutil.log) : gutil.noop())
 
 			// Save output
-			.pipe(gulp.dest(target.vendor_live_js))
+			.pipe(gulp.dest(target.vendor_separate_js))
 		.pipe(filter_js.restore)
 
 
 		// process CSS files
 		.pipe(filter_css)
 
-			.pipe( gulpif( DEBUG_LVL > 0, debug({title: '> compile-vendor-live:'}) ) )
+			.pipe( gulpif( DEBUG_LVL > 0, debug({title: '> compile-vendor_separate:'}) ) )
 
 			// Postprocess
 			.pipe(DO_REMPIXEL ? pixrem() : gutil.noop() )
@@ -446,7 +467,7 @@ gulp.task('compile-vendor_live', function () {
 			.pipe( gulpif( IS_PRODUCTION, subtask_cssnano() ) )
 
 			// Save output
-			.pipe(gulp.dest(target.vendor_live_css))
+			.pipe(gulp.dest(target.vendor_separate_css))
 
 		.pipe(filter_css.restore)
 });
@@ -472,8 +493,8 @@ gulp.task('images', function(){
 
 	// Vendor images
     return gulp.src(source.vendor)
-		.pipe(addsrc.append(source.vendor_live))
-		.pipe(exclude(source.vendor_live_exclude))
+		.pipe(addsrc.append(source.vendor_separate))
+		.pipe(exclude(source.vendor_separate_exclude))
 		.pipe(filter_img)
 
 		.pipe( gulpif( DO_IMAGEMIN, subtask_process_images() ) )
@@ -554,14 +575,14 @@ if(gutil.env.rem2px === true) {     // --rem2px
  */
 
 gulp.task( 'default',
-	[ 'compile-sass', 'compile-js', 'compile-vendor_live', 'fonts', 'images' ]
+	[ 'compile-sass', 'compile-js', 'compile-vendor_separate', 'fonts', 'images' ]
 );
 
 // Default task prepared for future Gulp 4.0
 /*
 gulp.task( 'default-4',
 	gulp.series( 'clean',
-		gulp.parallel( 'compile-sass', 'compile-js', 'compile-vendor_live', 'fonts', 'images' ),
+		gulp.parallel( 'compile-sass', 'compile-js', 'compile-vendor_separate', 'fonts', 'images' ),
 		function() {
 		}
 	)

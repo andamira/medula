@@ -13,6 +13,9 @@
  *
  *     3 Downloaded Libraries
  *
+ *         3.1 Javascript
+ *         3.2 PHP
+ *
  *     <------------------<
  */
 
@@ -28,7 +31,7 @@
  * @link http://wpml.org/
  */
 
-# include_once( 'wpml.php' );
+# include_once( 'wp_plugins/wpml.php' );
 
 /**
  * 1.2 WOOCOMMERCE
@@ -36,7 +39,7 @@
  * @link http://www.woothemes.com/woocommerce/
  */
 
-# include_once( 'woocommerce.php' );
+# include_once( 'wp_plugins/woocommerce.php' );
 
 
 /**
@@ -54,7 +57,19 @@ include_once( 'clean-fix.php' );
  * 3 Downloaded Libraries
  * ************************************************************
  *
- * Here you could include third party php libraries
+ * Here you can include third party javascript or php libraries
+ *
+ * For more information see /gulpfile.js sections 2.3, 2.4 & 2.5
+ */
+
+/**
+ * 3.1 Javascript
+ */
+
+# wp_register_script( 'thatvendor-js', . medula_get_theme_resources_uri('js/vendor/thatvendor.js'), array(), '', true );
+
+/**
+ * 3.2 PHP
  */
 
 # include_once( 'example/example.php' );
