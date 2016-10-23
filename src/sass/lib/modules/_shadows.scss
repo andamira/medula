@@ -1,0 +1,36 @@
+///
+/// 4.3 Shadows
+///
+
+// simple shadow
+%shadow-simple {
+	box-shadow: 2px 3px 4px rgba(#666, 0.5);
+}
+
+// 3d shadows (http://codepen.io/haibnu/pen/FxGsI)
+%shadow-3d-1 {
+	box-shadow: 0 15px 16px -6px #777;
+}
+%shadow-3d-2 {
+	position:relative;
+
+	&:before, &:after {
+		z-index: -1;
+		position: absolute;
+		content: "";
+		bottom: 15px;
+		left: 10px;
+		width: 50%;
+		top: 80%;
+		max-width:300px;
+		background: #777;
+		box-shadow: 0 15px 10px #777;
+		transform: rotate(-3deg);
+	}
+	&:after {
+		transform: rotate(3deg);
+		right: 10px;
+		left: auto;
+	}
+}
+

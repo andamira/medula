@@ -6,7 +6,7 @@
 /// Their position in the list will determine their z-index value.
 /// You could have several lists if you have more than one context.
 ///
-/// To use it you just call the z() function (defined in /helpers/_functions.scss)
+/// To use it you just call the z() function (defined in /src/sass/lib/_functions.scss)
 /// to assign an index to the element, e.g.:
 ///
 ///     .input-field {

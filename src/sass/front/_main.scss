@@ -1,0 +1,68 @@
+////
+/// Main Base Styles
+/// ************************************************************
+///
+///     1 Layout
+///
+///     2 General Styles
+///
+///     3 WordPress Selectors
+///
+///     4 Custom Post Types
+///
+////
+
+
+///
+/// 1 LAYOUT
+///
+
+// Grid Configuration
+@import "layout/grid/main";
+
+// Print Stylesheet
+@media print {
+    @import "layout/print";
+}
+
+
+///
+/// 2 GENERAL STYLES
+///
+
+/// content, links, headings, entry...
+@import "content";
+
+// forms (inputs & labels)
+@import "forms";
+
+// icons (fonticons)
+@import "icons";
+
+// navigation menus, smart header
+@import "navigation";
+
+// sidebars
+@import "sidebars";
+
+
+///
+/// 3 WORDPRESS SELECTORS
+///
+
+// body
+@import "wp/body";
+
+// widgets
+@import "wp/widgets";
+
+// comments
+@import "wp/comments";
+
+
+/// 
+/// 4 CUSTOM POST TYPES
+/// 
+
+@import "cpt";
+

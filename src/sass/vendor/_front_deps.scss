@@ -1,55 +1,40 @@
 ////
-/// Dependencies
+/// Stylesheet: Vendor Dependencies for the Frontend
 /// ************************************************************
 ///
-/// Intended for being imported by main.scss
+///     >------------------>
 ///
-///     1 Global Variables & Dependencies
+///     1 Grids
 ///
-///     2 Load Frontend Only Dependencies
+///         1.1 Susy Grid               ( ) default
 ///
-///         2.1 Grids
+///     2 Other
 ///
-///             2.1.1 Susy Grid               ( ) default
+///         2.1 Font Awesome Variables  (#)
+///         2.2 Sass Animate            (#)
 ///
-///         2.2 Other
+///     3 Configure the dependencies
 ///
-///             2.2.1 Font Awesome Variables  (#)
-///             2.2.2 Sass Animate            (#)
-///
-///     3 Global Variables
-///
+///     <------------------<
 ////
 
 
-///
-/// 1 GLOBAL VARIABLES & DEPENDENCIES
-///
-
-@import "global";
-
-
-///
-/// 2 LOAD FRONTEND ONLY DEPENDENCIES
+/// 1 GRIDS
 ///
 
 ///
-/// 2.1 GRIDS
-///
-
-///
-/// 2.1.1 Susy Grid
+/// 1.1 Susy Grid
 ///
 /// @link https://github.com/ericam/susy/ Susy
 @import "../../../vendor-dl/susy/sass/susy";
 
 
 ///
-/// 2.2 OTHER
+/// 2 OTHER
 ///
 
 ///
-/// 2.2.1 Font Awesome Variables
+/// 2.1 Font Awesome Variables
 ///
 /// To install:
 ///   bower install --save-dev font-awesome
@@ -62,7 +47,7 @@
 // @import "../../vendor-dl/font-awesome/scss/variables";
 
 ///
-/// 2.2.2 Animate Sass
+/// 2.2 Animate Sass
 ///
 /// To install:
 ///   bower install --save-dev animate-sass
@@ -73,8 +58,7 @@
 
 
 ///
-/// 3 DEPENDENCIES CONFIGURATION
+/// 3 CONFIGURE THE DEPENDENCIES
 ///
-
 
 

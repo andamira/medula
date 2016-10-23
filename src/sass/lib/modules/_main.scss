@@ -1,0 +1,25 @@
+////
+/// Stylesheet: Modules
+/// ************************************************************
+///
+/// This directory contains partials and placeholders, and is reserved for reusable UI patterns.
+///
+/// As a general rule of thumb, anytime you anticipate needing the same CSS more than once,
+/// you should modularize it. The more your project matures, the more CSS you should be able
+/// to compartmentalize into modules. Preferably, each module contains a mixin at the top
+/// with corresponding declarations at the bottom for including that mixin.
+///
+/// Crafting your modules in this fashion helps you start thinking about CSS in a more
+/// modular way. They are also easier to expand upon and/or extend in the future.
+///
+////
+
+// alert boxes
+@import "alerts";
+
+// buttons
+@import "buttons";
+
+// shadows
+@import "shadows";
+

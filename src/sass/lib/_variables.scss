@@ -83,7 +83,7 @@ $alert-blue-text:    color-material(blue, 900);
 ///
 /// 1.2 YOUR THEME COLORS & BACKGROUNDS
 ///
-/// @see /src/sass/helpers/_palettes.scss
+/// @see /src/sass/lib/palettes/_main.scss
 ///
 /// @link http://0to255.com/
 /// @link http://subtlepatterns.com
@@ -152,42 +152,4 @@ $wp-caption-font: $sans-serif;
 	width: 100%; 
 	height: 100%; 
 }
-
-///
-/// 4.3 Shadows
-///
-
-// simple shadow
-%shadow-simple {
-	box-shadow: 2px 3px 4px rgba(#666, 0.5);
-}
-
-// 3d shadows (http://codepen.io/haibnu/pen/FxGsI)
-%shadow-3d-1 {
-	box-shadow: 0 15px 16px -6px #777;
-}
-%shadow-3d-2 {
-	position:relative;
-
-	&:before, &:after {
-		z-index: -1;
-		position: absolute;
-		content: "";
-		bottom: 15px;
-		left: 10px;
-		width: 50%;
-		top: 80%;
-		max-width:300px;
-		background: #777;
-		box-shadow: 0 15px 10px #777;
-		transform: rotate(-3deg);
-	}
-	&:after {
-		transform: rotate(3deg);
-		right: 10px;
-		left: auto;
-	}
-}
-
-
 

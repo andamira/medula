@@ -1,40 +1,66 @@
 ////
-/// Stylesheet: Login Stylesheet
+/// Stylesheet: Login Page
+/// ************************************************************
 ///
 /// This stylesheet is loaded (if admin.php is setup in your
 /// functions file) on the login page. This way you can style
 /// the login page. It won't affect any other page, admin or front-end.
 ///
-///     1 Helpers
+///     >------------------>
 ///
-///     2 Default Styling
+///     1 Globals & Dependencies
+///
+///     1 Libs
+///
+///     2 Login Page Styles
+///
+///     <------------------<
 ///
 /// @link http://codex.wordpress.org/Creating_Admin_Themes
 /// @link http://codex.wordpress.org/Customizing_the_Login_Form
 ////
 
 
-@import "deps/frontend";
-
 ///
-/// 1 HELPERS
+/// 1 GLOBALS & DEPENDENCIES
 ///
-
-// Color Palettes
-@import "helpers/palettes/main";
-
-// Sass variables
-@import "helpers/variables";
-
-// Sass functions
-@import "helpers/functions";
-
-// import mixins
-@import "helpers/mixins";
+/// Configure your theme includes & paths in these files
+///
+@import "globals";
+@import "vendor/front_deps";
 
 
 ///
-/// 2 STYLING
+/// 2 LIBS
+///
+/// Functions, Mixins and Variables must be imported first.
+///
+
+
+// Functions
+@import "lib/util/functions";
+
+// Mixins
+@import "lib/util/mixins";
+
+// Variables
+@import "lib/variables";
+
+// Symbols
+@import "lib/symbols";
+
+// Palettes
+@import "lib/palettes/main";
+
+// Typography
+@import "lib/typography";
+
+// Accesibility Style
+@import "lib/accessibility";
+
+
+///
+/// 3 STYLING
 ///
 
 body {

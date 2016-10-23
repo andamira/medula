@@ -1,20 +1,29 @@
 ////
-/// Stylesheet: Admin Stylesheet
+/// Stylesheet: Main Admin
+/// ************************************************************
 ///
 /// This stylesheet is loaded (if admin.php is setup in your
 /// functions file) on the admin pages. This way you can style
 /// elements of the the backend, like the dashboard, post pages,
 /// etc. It won't affect any pages on the front-end.
 ///
-///     1 Helpers
+///     >------------------>
 ///
-///     2 Default Styling
+///     1 Globals & Dependencies
 ///
-///     3 Vendors
-///         
-///         3.1 WordPress Admin Plugins
+///     2 Libs
 ///
-///     4 Your Custom Styling
+///         Functions
+///         Mixins
+///         Variables
+///         Symbols
+///         Palettes
+///
+///     3 Admin Styles
+///
+///     4 Vendor Admin Styles
+///
+///     <------------------<
 ///
 /// @link http://codex.wordpress.org/Creating_Admin_Themes
 /// @link https://github.com/bueltge/WordPress-Admin-Style
@@ -23,66 +32,50 @@
 ////
 
 
-@import "../deps/admin";
+///
+/// 1 GLOBALS & DEPENDENCIES
+///
+/// Configure your theme includes & paths in these files
+///
+@import "../globals";
+@import "../vendor/admin_deps";
 
 
 ///
-/// 1 ../HELPERS
+/// 2 LIBS
+///
+/// Functions, Mixins and Variables must be imported first.
 ///
 
+// Functions
+@import "../lib/util/functions";
+
+// Mixins
+@import "../lib/util/mixins";
+
+// Variables
+@import "../lib/variables";
+
+// Symbols
+@import "../lib/symbols";
+//
 // Color Palettes
-@import "../helpers/palettes/main";
-
-// Sass variables
-@import "../helpers/variables";
-
-// Sass functions
-@import "../helpers/functions";
-
-// import mixins
-@import "../helpers/mixins";
+@import "../lib/palettes/main";
 
 
 ///
-/// 2 DEFAULT STYLING
+/// 3 ADMIN STYLES
 ///
 
-#footer-thankyou {
-	display: inline-block;
-
-	a.andamira {
-		background: rgba(#FE850E, 0.19);
-		color: #222;
-		border: 1px solid rgba(#FE850E, .66);
-		border-width: 1px 1px 3px 1px;
-		padding: 0 3px 1px 5px;
-		font-size: 11pt;
-
-		&:hover, &:focus, &:active {
-			background: rgba(#FE850E, .56);
-			color: #FFF;
-			text-shadow: 0px 0px 8px black(.88);
-			text-decoration: none;
-		}
-	}
-}
+@import "styles/main";
 
 
 ///
-/// 3 VENDORS
+/// 4 VENDORS
+///
+/// Vendor specific styles, for WordPress plugins,
+/// js libraries, or other third party libraries.
 ///
 
-///
-/// 3.1 WORDPRESS ADMIN PLUGINS
-///
 @import "../vendor/admin/main";
-
-
-///
-/// 4 YOUR CUSTOM STYLING
-///
-
-
-
-
 

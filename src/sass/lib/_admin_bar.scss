@@ -7,7 +7,7 @@
 ///    2 Admin Bar Styling
 ///
 /// @see /src/lib/admin-bar.php
-/// @see /src/sass/base/_menus.scss
+/// @see /src/sass/front/_navigation.scss
 ////
 
 
@@ -30,19 +30,13 @@ body.admin-bar {
 	// @link https://core.trac.wordpress.org/ticket/26609
 	position: fixed;	
 
-	// fixes adminbar position when MMenu (Mobile) Menu is open
-    .mm-opening &, .mm-opened & {
-		top: -32px;
-		@media screen and ( max-width: 782px ) {
-			top: -46px;
-		}
-	}
-
-	.quicklinks {}
-		ul {}
+	.quicklinks {
+		ul {
 			li {}
+		}
 
 		a {}
+	}
 
 		.ab-label {}
 		.ab-emtpy-item {}
@@ -94,5 +88,4 @@ body.admin-bar {
 }
 
 #wp-admin-bar-search {}
-
 

@@ -23,6 +23,7 @@
 ///
 /// @link http://thesassway.com/intermediate/understanding-placeholder-selectors
 ///
+
 %btn {
 	display: inline-block;
 	position: relative;
@@ -59,7 +60,8 @@
 /// and it will create a button dependant on those variables.
 ///
 .blue-btn {
-	@extend %btn; // here we load the btn defaults
+	@extend %btn; // load the btn defaults
+
 	background-color: $blue;
 
 	&:hover,
@@ -71,5 +73,4 @@
 		background-color: darken($blue, 5%);
 	}
 }
-
 

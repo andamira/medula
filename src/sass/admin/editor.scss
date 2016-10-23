@@ -13,14 +13,14 @@
 ///
 ////
 
+///
+/// GLOBALS & DEPENDENCIES
+///
+/// Configure your theme includes & paths in these files
+///
+@import "../globals";
+@import "../vendor/admin_deps";
 
-@import '../deps/admin';
-
-// TODO:
-// - Use defined fonts, instead of hardcoded (load them in admin also)
-// - Give the option to use a functional simple fallback for style
-//   and also to import the content styles ( separate them from base/_main.scss
-//   into a new stylesheet named, for example, _wp-entry-content.scss)
 
 ///
 /// Table of Contents:

@@ -171,7 +171,7 @@
 ///
 ///
 
-// To use in conjuntion with /layout/_zindex.scss
+// To use in conjuntion with /src/sass//front/layout/_zindex.scss
 @function z($list, $element) {
    $z-index: index($list, $element);
    @if $z-index {

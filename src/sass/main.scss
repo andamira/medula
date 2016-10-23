@@ -1,34 +1,31 @@
 ////
-/// Stylesheet: Main Stylesheet
+/// Stylesheet: Main Frontend
 /// ************************************************************
 ///
-///     1 Dependencies & Global Variables
+/// This stylesheet is loaded in the frontend.
 ///
-///     2 Helpers
+///     >------------------>
+///
+///     1 Globals & Dependencies
+///
+///     2 Libs
 ///
 ///         Functions
-///         Palettes
-///         Variables
 ///         Mixins
+///         Variables
+///         Symbols
+///         Palettes
+///         Typography
+///         Accesibility
+///         Admin Bar
 ///
 ///     3 Modules
 ///
-///         Typography
-///         Alerts
-///         Buttons
-///         Forms
-///         Icons
-///         Admin Bar
+///     4 Frontend Styles
 ///
-///     4 Layout
+///     5 Vendor Frontend Styles
 ///
-///         Grid
-///         Print
-///
-///     5 Base
-///
-///     6 Vendor
-///
+///     <------------------<
 ///
 /// @link http://thesassway.com/advanced/modular-css-naming-conventions
 /// @link http://www.sitepoint.com/architecture-sass-project/
@@ -36,41 +33,49 @@
 
 
 ///
-/// 1 DEPENDENCIES & GLOBAL VARIABLES
+/// 1 GLOBALS & DEPENDENCIES
 ///
-/// Configure your theme includes & paths in this file
+/// Configure your theme includes & paths in these files
 ///
-@import "deps/frontend";
+@import "globals";
+@import "vendor/front_deps";
 
 
 ///
-/// 2 /HELPERS
+/// 2 LIBS
 ///
-/// These files are needed at the beginning so that we establish all
-/// our mixins, functions, and variables that we'll be using across
-/// the whole project.
+/// Functions, Mixins and Variables must be imported first.
 ///
 
-// Sass Functions
-@import "helpers/functions";
+// Functions
+@import "lib/util/functions";
 
-// Color Palettes
-@import "helpers/palettes/main";
+// Mixins
+@import "lib/util/mixins";
+
+// Variables
+@import "lib/variables";
 
 // Symbols
-@import "helpers/symbols";
+@import "lib/symbols";
 
-// Sass Variables
-@import "helpers/variables";
+// Palettes
+@import "lib/palettes/main";
 
-// Import Mixins
-@import "helpers/mixins";
+// Typography
+@import "lib/typography";
+
+// Accesibility Style
+@import "lib/accessibility";
+
+// Admin bar
+@import "lib/admin_bar";
 
 
 ///
 /// 3 /MODULES
 ///
-/// This directory contains only partials and is reserved for reusable UI patterns.
+/// This directory contains partials and placeholders, and is reserved for reusable UI patterns.
 ///
 /// As a general rule of thumb, anytime you anticipate needing the same CSS more than once,
 /// you should modularize it. The more your project matures, the more CSS you should be able
@@ -81,57 +86,22 @@
 /// modular way. They are also easier to expand upon and/or extend in the future.
 ///
 
-// typography
-@import "modules/typography";
-
-// alert boxes
-@import "modules/alerts";
-
-// buttons
-@import "modules/buttons";
-
-// forms (inputs & labels)
-@import "modules/forms";
-
-// icons (fonticons)
-@import "modules/icons";
-
-// admin bar
-@import "modules/admin_bar";
+@import "lib/modules/main";
 
 
 ///
-/// 4 /LAYOUT
-///
-///
+/// 4 FRONTEND STYLES
 ///
 
-// Grid Configuration
-@import "layout/grid/main";
-
-// Accesibility Style
-@import "layout/accessibility";
-
-// Print Stylesheet
-@media print {
-	@import "layout/print";
-}
+@import "front/main";
 
 
 ///
-/// 5 /BASE
-///
-
-@import "base/main";
-
-
-///
-/// 6 /VENDOR
+/// 5 VENDOR
 ///
 /// Vendor specific styles, for WordPress plugins,
 /// js libraries, or other third party libraries.
 ///
 
-@import "vendor/frontend/main";
-
+@import "vendor/front/main";
 
