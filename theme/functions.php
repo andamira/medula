@@ -108,33 +108,33 @@ add_action( 'after_setup_theme', 'medula_launch' );
 function medula_launch() {
 
 	/**
-	* 3.1 language support
-	*
-	* @link https://developer.wordpress.org/themes/functionality/internationalization/
-	*/
+	 * 3.1 language support
+	 *
+	 * @link https://developer.wordpress.org/themes/functionality/internationalization/
+	 */
 
 	load_theme_textdomain( 'medula', get_template_directory() . '/i18n' );
 
 	/**
-	* 3.2 cleanup
+	 * 3.2 cleanup
 	 */
 
 	medula_cleanup_all();
 
 	/**
-	* 3.3 enqueue base scripts and styles
+	 * 3.3 enqueue base scripts and styles
 	 */
 
 	add_action( 'wp_enqueue_scripts', 'medula_scripts_and_styles', 999 );
 
 	/**
-	* 3.4 custom theme features
+	 * 3.4 custom theme features
 	 */
 
 	medula_theme_support();
 
 	/**
-	* 3.5 register sidebars ( sidebars are defined in /theme/lib/sidebars.php )
+	 * 3.5 register sidebars ( sidebars are defined in /theme/lib/sidebars.php )
 	 */
 
 	add_action( 'widgets_init', 'medula_register_sidebars' );

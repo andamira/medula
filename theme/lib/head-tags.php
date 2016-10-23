@@ -20,6 +20,10 @@
  * 1 FAVICONS AND THEME COLOR
  * ************************************************************
  *
+ * It's generally recommended to use the WordPress Site Icon feature,
+ * but if you desire more control, you can use this system below.
+ *
+ * @link https://codex.wordpress.org/Creating_a_Favicon#WordPress_Version_4.3_or_later WordPress Site Icon
  * @link https://en.wikipedia.org/wiki/Favicon
  * @link http://www.jonathantneal.com/blog/understand-the-favicon/
  */
