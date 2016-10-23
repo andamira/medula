@@ -155,7 +155,7 @@ add_filter( 'admin_footer_text', 'medula_custom_admin_footer' );
 function medula_custom_admin_footer() {
 	$your_name="...";
 	$your_url="#";
-	// $your_logo=medula_get_theme_resources_uri("/img/my-logo.png")
+	// $your_logo=medula_get_theme_resources_uri('img/your-logo.png');
 
 	printf(
 		'<span id="footer-thankyou">' . esc_html__( 'Developed by %1$s', 'medula' ) . '</span>.',

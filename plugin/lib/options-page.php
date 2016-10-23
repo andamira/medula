@@ -58,7 +58,7 @@ function register_my_custom_menu_page() {
 		$position    # This allows you to choose when the menu item appears in the list.
 	); /**/
 
-	//add_menu_page( 'Options', 'Theme Options', 'manage_options', 'medula_theme_options.php', 'medula_theme_page', medula_get_theme_resources_uri('img') . '/favicon.png', 61 );
+	//add_menu_page( 'Options', 'Theme Options', 'manage_options', 'medula_theme_options.php', 'medula_theme_page', medula_get_theme_resources_uri('img/favicon.png'), 61 );
 
 
 	/**

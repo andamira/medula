@@ -56,7 +56,7 @@ function medula_scripts_and_styles() {
 	if (!is_admin()) {
 
 		// register main stylesheet
-		wp_register_style( 'main-stylesheet', get_template_directory_uri() . '/res/css/main.css?v=' . $medula_styles_v, array(), '', 'all' );
+		wp_register_style( 'main-stylesheet', medula_get_theme_resources_uri('css/main.css?v' . $medula_styles_v), array(), '', 'all' );
 
 		// comment reply script for threaded comments
 		if ( is_singular() AND comments_open() AND (get_option('thread_comments') == 1)) {
@@ -64,7 +64,7 @@ function medula_scripts_and_styles() {
 		}
 
 		// add scripts file in the footer
-		wp_register_script( 'medula-js', get_template_directory_uri() . '/res/js/main.js', array( 'jquery' ), '', true );
+		wp_register_script( 'medula-js', medula_get_theme_resources_uri('js/main.js'), array( 'jquery' ), '', true );
 
 		// enqueue styles and scripts
 		wp_enqueue_style( 'main-stylesheet' );
@@ -156,7 +156,6 @@ if ( ! isset( $content_width ) ) {
 /**
  * 3 RELATED POSTS FUNCTION
  * ************************************************************
- * call using medula_related_posts();
  */
 
 function medula_related_posts() {
@@ -311,14 +310,14 @@ function medula_remove_wp_ver_css_js( $src ) {
  * 5.3 INJECTED CSS CLEANUP FUNCTIONS
  */
 
-// remove injected CSS for recent comments widget
+// Remove injected CSS for recent comments widget
 function medula_remove_wp_widget_recent_comments_style() {
 	if ( has_filter( 'wp_head', 'wp_widget_recent_comments_style' ) ) {
 		remove_filter( 'wp_head', 'wp_widget_recent_comments_style' );
 	}
 }
 
-// remove injected CSS from recent comments widget
+// Remove injected CSS from recent comments widget
 function medula_remove_recent_comments_style() {
 	global $wp_widget_factory;
 	if (isset($wp_widget_factory->widgets['WP_Widget_Recent_Comments'])) {
@@ -326,13 +325,13 @@ function medula_remove_recent_comments_style() {
 	}
 }
 
-// remove injected CSS from gallery
+// Remove injected CSS from gallery
 function medula_gallery_style($css) {
   return preg_replace( "!<style type='text/css'>(.*?)</style>!s", '', $css );
 }
 
 /**
- * 5.4 P TAGS AROUND IMG CLEANUP
+ * 5.4 PARAGRAPH TAGS AROUND IMG CLEANUP
  *
  * @link http://css-tricks.com/snippets/wordpress/remove-paragraph-tags-from-around-images/
  */
@@ -344,7 +343,7 @@ function medula_filter_ptags_on_images($content){
 /**
  * 5.5 READ MORE LINK FORMAT
  *
- * remove the annoying […] and change it to a Read More link
+ * Remove the annoying […] and change it to a Read More link
  */
 
 function medula_excerpt_more($more) {

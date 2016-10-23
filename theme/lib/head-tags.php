@@ -47,14 +47,14 @@ function medula_header_tags_frontend_favicons_theme_color() {
 	global $medula_favicon_v, $medula_theme_color;
 
 	// 16x16 ico for Internet Explorer <11
-	echo '<link rel="shortcut icon" href="' . medula_get_theme_resources_uri('img') . '/favicon.ico?v=' . $medula_favicon_v . '">';
+	echo '<link rel="shortcut icon" href="' . medula_get_theme_resources_uri('img/favicon.ico?v=' . $medula_favicon_v) . '">';
 
 	// 16x16 png for the rest of the browsers
-	echo '<link rel="icon" href="' . medula_get_theme_resources_uri('img') . '/favicon.png?v=' . $medula_favicon_v . '">';
+	echo '<link rel="icon" href="' . medula_get_theme_resources_uri('img/favicon.png?v=' . $medula_favicon_v) . '">';
 
 	// 180x180 png both for Apple devices and for Microsoft Windows tiles
-	echo '<link rel="apple-touch-icon" href="' . medula_get_theme_resources_uri('img') . '/favicon-big.png?v=' . $medula_favicon_v . '">';
-	echo '<meta name="msapplication-TileImage" content="' . medula_get_theme_resources_uri('img') . '/favicon-big.png?v=' . $medula_favicon_v . '">';
+	echo '<link rel="apple-touch-icon" href="' . medula_get_theme_resources_uri('img/favicon-big.png?v=' . $medula_favicon_v) . '">';
+	echo '<meta name="msapplication-TileImage" content="' . medula_get_theme_resources_uri('img/favicon-big.png?v=' . $medula_favicon_v) . '">';
 
 	if ($medula_theme_color) {
 		// @link https://msdn.microsoft.com/en-us/library/dn255024(v=vs.85).aspx#msapplication-TileColor
@@ -76,7 +76,7 @@ function medula_header_tags_frontend_favicons_theme_color() {
 function medula_header_tags_favicon_backend() {
 	global $medula_favicon_v;
 
-	echo '<link rel="icon" href="' . medula_get_theme_resources_uri('img') . '/favicon-adm.png?v=' . $medula_favicon_v . '" />';
+	echo '<link rel="icon" href="' . medula_get_theme_resources_uri('img/favicon-adm.png?v=' . $medula_favicon_v) . '" />';
 }
 
 

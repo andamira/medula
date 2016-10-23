@@ -50,7 +50,7 @@
 
 /**
  * 1.1 Returns the plugin resources URI, with an optional $subpath parameter
- * NOTE: This must match the PLUGIN_RESOURCES global in /gulpfile.js
+ * NOTE: This should match the PLUGIN_RESOURCES global in /gulpfile.js
  */
 
 function medula_get_plugin_resources_uri( $subpath = '' ){
