@@ -1,9 +1,9 @@
 ////
-/// Stylesheet: Vendor Stylesheet
+/// Stylesheet: Vendor Stylesheets displayed on Frontend
 /// ************************************************************
 ///
-/// Vendor specific stylesheets, either for WordPress, javascript
-/// or other third party extensions that you need to style.
+/// Vendor specific stylesheets, either for WordPress plugins,
+/// javascript libraries or other third party libraries.
 //
 /// Uncomment the ones you want, and edit their stylesheet according
 /// to your needs. Or create a new one and import it like the others.
@@ -56,7 +56,7 @@
 /// @link https://wordpress.org/plugins/jquery-collapse-o-matic/ Collapse-O-Matic
 ///
 
-// @import "frontend/wp_collapse-o-matic";
+// @import "wp_collapse-o-matic";
 
 
 ///
@@ -65,7 +65,7 @@
 /// @link https://wordpress.org/plugins/jquery-archive-list-widget/ jQuery Archive List Widget
 ///
 
-// @import "frontend/wp_archive-list-widget";
+// @import "wp_archive-list-widget";
 
 
 ///
@@ -74,7 +74,7 @@
 /// @link https://wordpress.org/plugins/contact-form-7/ Contact Form 7 
 ///
 
-// @import "frontend/forms/wp_contact-form-7";
+// @import "forms/wp_contact-form-7";
 
 
 ///
@@ -82,7 +82,7 @@
 /// @link https://wordpress.org/plugins/cookie-notice/ Cookie notice
 ///
 
-// @import "admin/wp_cookie-notice";
+// @import "wp_cookie-notice";
 
 
 ///
@@ -91,7 +91,7 @@
 /// @link https://wordpress.org/plugins/sem-external-links/ External Links
 ///
 
-// @import "frontend/wp_external-links";
+// @import "wp_external-links";
 
 
 ///
@@ -100,7 +100,7 @@
 /// @link http://leafletjs.com/ Leaflet.js
 ///
 
-// @import "frontend/js_leaflet";
+// @import "js_leaflet";
 
 
 ///
@@ -114,7 +114,7 @@
 /// @link https://wordpress.org/plugins/popup-maker/ Popup Maker
 ///
 
-// @import "frontend/wp_popup-maker";
+// @import "wp_popup-maker";
 
 
 ///
@@ -124,8 +124,8 @@
 /// @link https://wordpress.org/plugins/search-everything/ Search Everything
 ///
 
-// @import "frontend/search/wp_relevanssi";
-// @import "frontend/search/wp_search_everything";
+// @import "search/wp_relevanssi";
+// @import "search/wp_search_everything";
 
 
 ///
@@ -134,5 +134,5 @@
 /// @link http://jquery.malsup.com/cycle2/ jQuery Cycle2
 ///
 
-// @import "frontend/search/js_cycle2";
+// @import "search/js_cycle2";
 

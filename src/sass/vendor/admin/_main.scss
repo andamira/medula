@@ -1,0 +1,45 @@
+////
+/// Stylesheet: Vendor Stylesheets displayed on Admin Backend
+/// ************************************************************
+///
+/// Vendor specific stylesheets, either for WordPress plugins,
+/// javascript libraries, or other third party libraries.
+//
+/// Uncomment the ones you want, and edit their stylesheet according
+/// to your needs. Or create a new one and import it like the others.
+///
+/// This list is periodically curated to leave only a small selection
+/// of the most current, solid and used plugins in each category.
+///
+/// For installing the js libraries, you could install them with bower
+/// and include them in /gulpfile.js (see sections 2.2, 2.3 & 2.4),
+///
+///     >------------------>
+///
+///     Columns
+///         Admin Columns                            wp
+///
+///     Custom Post Types & Fields
+///         Advanced Custom Fields                   wp
+///
+///     <------------------<
+////
+
+
+///
+/// COLUMNS
+///
+/// @link https://wordpress.org/plugins/codepress-admin-columns/
+///
+
+// @import "wp_admin-columns";
+
+
+///
+/// CUSTOM POST TYPES & FIELDS
+///
+/// @link https://wordpress.org/plugins/advanced-custom-fields/ Advanced Custom Fields
+///
+
+// @import "wp_acf";
+
