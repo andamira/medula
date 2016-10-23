@@ -1,0 +1,34 @@
+///
+/// 1.1 ADVANCED CUSTOM FIELDS (ACF)
+///
+/// @link http://advancedcustomfields.com
+///
+
+///
+/// Style the Custom Fields titles and descriptions
+///
+
+/*
+.acf-label {
+    background: #EFE3BF;
+
+    label {
+        font-size: 11pt;// !important;
+        display: inline-block;// !important;
+        color: #294571;
+        background: #B9CFDA;
+        padding: 3px;
+    }
+}
+/**/
+
+///
+/// Style the text area
+///
+
+/*
+.acf-input textarea {
+    color: #333;
+    max-width: 800px;
+}
+/**/

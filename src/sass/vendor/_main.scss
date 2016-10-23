@@ -1,34 +1,138 @@
 ////
-/// Stylesheet: vendor 
+/// Stylesheet: Vendor Stylesheet
 /// ************************************************************
 ///
-/// vendor specific css, like for 3rd party WordPress or jQuery plugins.
-/// Here you can find some examples for a small selection of common plugins.
+/// Vendor specific stylesheets, either for WordPress, javascript
+/// or other third party extensions that you need to style.
+//
+/// Uncomment the ones you want, and edit their stylesheet according
+/// to your needs. Or create a new one and import it like the others.
 ///
-///     1 WordPress Plugins
+/// This list is periodically curated to leave only a small selection
+/// of the most current, solid and used plugins in each category.
 ///
-///     2 Javascript Libraries & jQuery Plugins
+/// For installing the js libraries, you could install them with bower
+/// and include them in /gulpfile.js (see sections 2.2, 2.3 & 2.4),
 ///
-///     3 Special Libraries Downloaded with Bower
+///     >------------------>
 ///
+///     Accordions
+///         Collapse-O-Matic                         wp
+///
+///     Archive List
+///         jQuery Archive List Widget               wp
+///
+///     Cookies
+///         Cookie Notice                            wp
+///
+///     Forms
+///         Contact Form 7                           wp
+///
+///     Links
+///         External Links                           wp
+///
+///     Maps
+///         Leaflet                                  js
+///
+///     Menus
+///
+///     Popups
+///         Popup Maker                              wp
+///
+///     Search
+///         Relevanssi                               wp
+///         Search Everything                        wp
+///
+///     Sliders
+///         Cycle2                                   js
+///
+///     <------------------<
 ////
 
 
 ///
-/// 1 WORDPRESS PLUGINS
+/// ACCORDIONS
 ///
-@import "wp";
+/// @link https://wordpress.org/plugins/jquery-collapse-o-matic/ Collapse-O-Matic
+///
 
-
-///
-/// 2 JAVASCRIPT LIBRARIES & JQUERY PLUGINS
-///
-@import "js";
+// @import "frontend/wp_collapse-o-matic";
 
 
 ///
-/// 3 SPECIAL LIBRARIES DOWNLOADED WITH BOWER
+/// ARCHIVES
+///
+/// @link https://wordpress.org/plugins/jquery-archive-list-widget/ jQuery Archive List Widget
+///
+
+// @import "frontend/wp_archive-list-widget";
+
+
+///
+/// FORMS
+///
+/// @link https://wordpress.org/plugins/contact-form-7/ Contact Form 7 
+///
+
+// @import "frontend/forms/wp_contact-form-7";
+
+
+///
+/// COOKIES
+/// @link https://wordpress.org/plugins/cookie-notice/ Cookie notice
+///
+
+// @import "admin/wp_cookie-notice";
+
+
+///
+/// LINKS
+///
+/// @link https://wordpress.org/plugins/sem-external-links/ External Links
+///
+
+// @import "frontend/wp_external-links";
+
+
+///
+/// MAPS
+///
+/// @link http://leafletjs.com/ Leaflet.js
+///
+
+// @import "frontend/js_leaflet";
+
+
+///
+/// MENUS
 ///
 
 
+///
+/// POPUPS
+///
+/// @link https://wordpress.org/plugins/popup-maker/ Popup Maker
+///
+
+// @import "frontend/wp_popup-maker";
+
+
+///
+/// SEARCH
+///
+/// @link https://wordpress.org/plugins/relevanssi/ Relevanssi
+/// @link https://wordpress.org/plugins/search-everything/ Search Everything
+///
+
+// @import "frontend/search/wp_relevanssi";
+// @import "frontend/search/wp_search_everything";
+
+
+///
+/// SLIDERS
+///
+/// @link http://jquery.malsup.com/cycle2/ jQuery Cycle2
+///
+
+// @import "frontend/search/js_cycle2";
 
