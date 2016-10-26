@@ -1,0 +1,9 @@
+
+vendor-dl/* linguist-vendored
+
+src/sass/vendor/* linguist-vendored=false
+
+theme/lib/vendor/* linguist-vendored=false
+theme/templates/vendor/* linguist-vendored=false
+
+plugin/lib/vendor/* linguist-vendored=false
