@@ -5,7 +5,6 @@
     "susy": "2.2.x",
     "include-media": "1.4.x",
     "sassy-maps": "0.4.x",
-    "modernizr": "https://modernizr.com/download/?-cookies-cssanimations-csscalc-flexbox-notification-svg-touchevents-setclasses",
-    "bootstrap-sass-official": "3.3.x"
+    "modernizr": "https://modernizr.com/download/?-cookies-cssanimations-csscalc-flexbox-notification-svg-touchevents-setclasses"
   }
 }
