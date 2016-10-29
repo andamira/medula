@@ -53,7 +53,7 @@
 ///
 /// 1 ASSETS FUNCTIONS
 ///
-/// Paths are defined in /src/sass/_global.scss
+/// Paths are defined in /assets/theme/sass/_globals.scss
 ///
 @function image-url($url) {
 	@return url("#{$image-url-path}#{$url}");
@@ -171,7 +171,7 @@
 ///
 ///
 
-// To use in conjuntion with /src/sass//front/layout/_zindex.scss
+// To use in conjuntion with /assets/theme/sass/front/layout/_zindex.scss
 @function z($list, $element) {
    $z-index: index($list, $element);
    @if $z-index {

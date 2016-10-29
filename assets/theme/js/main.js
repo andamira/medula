@@ -43,7 +43,7 @@ jQuery(document).ready(function($) {
 	 * (Uncomment one of these lines and the function at 2.1 if you intend to use it)
 	 *
 	 * Define the height of chosen element in:
-	 * @see /assets/sass/base/_menus.scss
+	 * @see /assets/theme/sass/base/_menus.scss
 	 */
 	medula_smart_header('body > .site-header' );
 	//medula_smart_header('.site-main-nav', '.site-header-logo');
@@ -52,7 +52,7 @@ jQuery(document).ready(function($) {
 	/**
 	 * 1.2 Detect Conditional CSS
 	 *
-	 * @see /assets/sass/layout/_grid.scss
+	 * @see /assets/theme/sass/layout/_grid.scss
 	 * @link http://adactio.com/journal/5429/
 	 */
 	var size = window.getComputedStyle(document.body,':after').getPropertyValue('content');
@@ -97,7 +97,7 @@ jQuery(document).ready(function($) {
  * @param string $navbar        selector for the element
  * @param string $above Navbar  optional selector for the above element
  *
- * @see /src/sass/breakpoints/base/_menus.scss
+ * @see /assets/theme/sass/front/_navigation.scss
  * @link http://jsfiddle.net/mariusc23/s6mLJ/31/ Inspired by this
  */
 

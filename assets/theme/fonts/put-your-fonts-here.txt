@@ -1,2 +1,2 @@
 Put your downloaded fonts in this folder and define them in:
-/src/sass/modules/_typography.scss
+/assets/theme/sass/lib/_typography.scss

@@ -100,7 +100,7 @@ function medula_example_dashboard_widget() {
  * 3 CUSTOM LOGIN PAGE
  * ************************************************************
  *
- * NOTE: You can edit the style in /src/sass/login.scss
+ * NOTE: You can edit the style in /assets/theme/sass/login.scss
  */
 function medula_login_css() {
 	wp_enqueue_style( 'medula_login_css', medula_get_theme_resources_uri('css/login.css'), false );

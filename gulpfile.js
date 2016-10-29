@@ -17,16 +17,25 @@
  *
  *     1 Global Options
  *
- *         1.1 Resources Paths
+ *         1.1 Assets & Resources Paths
  *         1.2 Gulp Defaults
  *
  *     2 Define Sources
  *
- *         2.1 Your Own Assets
- *         2.2 Vendor CSS & JS (concat)
- *         2.2 Vendor CSS & JS (separate)
- *         2.4 Suggested Javascript Plugins
- *         2.5 Suggested PHP Plugins
+ *         2.1 Theme Sources
+ *
+ *             2.1.1 Your Assets
+ *             2.1.2 Vendor CSS & JS (concat)
+ *             2.1.3 Vendor CSS & JS (separate)
+ *
+ *         2.2 Plugin Sources
+ *
+ *             2.2.1 Your Assets
+ *             2.2.2 Vendor CSS & JS (concat)
+ *             2.2.3 Vendor CSS & JS (separate)
+ *
+ *         2.3 Suggested Javascript Plugins
+ *         2.4 Suggested PHP Plugins
  *
  *     3 Define Targets
  *
@@ -66,13 +75,14 @@
  */
 
 /**
- * 1.1 Resources Paths
+ * 1.1 Assets & Resources Paths
  */
 
-var PKGS       = "vendor-dl/";    // folder that contains the downloaded packages
-var ORIG_RES   = "src/";          // folder that contains the original unprocessed resources
-var THEME_RES  = "theme/res/";    // must match medula_get_theme_resources_uri() in theme/functions.php
-var PLUGIN_RES = "plugin/res/";   // must match medula_get_plugin_resources_uri() in plugin/plugin.php
+var PKGS       = "vendor-dl/";          // folder that contains the downloaded packages
+var THEME_ASSETS   = "assets/theme/";   // folder that contains the original unprocessed assets for the theme
+var PLUGIN_ASSETS  = "assets/plugin/";  // folder that contains the original unprocessed assets for the plugin
+var THEME_RES  = "theme/res/";          // must match medula_get_theme_resources_uri() in theme/functions.php
+var PLUGIN_RES = "plugin/res/";         // must match medula_get_plugin_resources_uri() in plugin/plugin.php
 
 /**
  * 1.2 Gulp Defaults
@@ -97,37 +107,41 @@ var DO_JSMANGLE        = true;  // minify javascript?
  * ------------------------------------------------------------
  */
 
-var source = {
+
+/**
+ * 2.1 THEME SOURCES
+ */
+var themeSource = {
 
 	/**
-	 * 2.1 YOUR OWN ASSETS
-	 * -------------------
+	 * 2.1.1 YOUR ASSETS
+	 * -----------------
 	 */
 
 	sass: [
-		ORIG_RES + 'sass/**/[^_]*.scss',
+		THEME_ASSETS + 'sass/**/[^_]*.scss',
 	],
 	sass_exclude: [ '', ],
 
 	js: [
-		ORIG_RES + 'js/main.js',
+		THEME_ASSETS + 'js/main.js',
 	],
 	js_exclude: [ '', ],
 
 	img: [
-		ORIG_RES + 'img/**/*.{png,gif,jpg,jpeg,svg,ico}'
+		THEME_ASSETS + 'img/**/*.{png,gif,jpg,jpeg,svg,ico}'
 	],
 	img_exclude: [ '', ],
 
 	fonts: [
-		ORIG_RES + 'fonts/**/*.{woff,woff2,svg,ttf,eof}'
+		THEME_ASSETS + 'fonts/**/*.{woff,woff2,svg,ttf,eof}'
 	],
 	fonts_exclude: [ '', ],
 
 
 	/**
-	 * 2.2 VENDOR JS & CSS (CONCAT)
-	 * ----------------------------
+	 * 2.1.2 VENDOR JS & CSS (CONCAT)
+	 * ------------------------------
 	 *
 	 * List of vendor files intented to be concatenated into the theme main.css
 	 * and main.js, and then postprocessed. The order matters for concatenation.
@@ -151,8 +165,8 @@ var source = {
 	
 
 	/**
-	 * 2.3 VENDOR JS & CSS (SEPARATE)
-	 * ------------------------------
+	 * 2.1.3 VENDOR JS & CSS (SEPARATE)
+	 * --------------------------------
 	 *
 	 * List of vendor files intented to be (minified and) copied to the theme
 	 * and plugin vendor folders, and later loaded from the php templates;
@@ -168,12 +182,15 @@ var source = {
 	 *     wp_register_script( 'thatvendor-js', medula_get_plugin_resources_uri('js/vendor/thatvendor.js'), array(), '', true );
 	 */
 	vendor_separate: [
+		THEME_ASSETS + 'js/vendor/**/*.js',
 	],
 	vendor_separate_exclude: [ '', ],
 
+};
+
 
 	/**
-	 * 2.4 LIST OF SUGGESTED JAVASCRIPT PLUGINS FOR COMMON NEEDS
+	 * 2.3 LIST OF SUGGESTED JAVASCRIPT PLUGINS FOR COMMON NEEDS
 	 *----------------------------------------------------------
 	 *
 	 * Here is a list of recommended vendor plugins and libraries.
@@ -183,9 +200,18 @@ var source = {
 	 *
 	 * (or use the custom bower install command when specified).
 	 *
-	 * Then, copy the lines to the previous section 2.3 and load
+	 * For the Theme:
+	 *
+	 * You can copy the lines to the previous section 2.1.3 and load
 	 * the libraries from /theme/vendor/main.php (section 3.1),
-	 * or to the previous section 2.2, for concatenation.
+	 * or to the previous section 2.1.2, for concatenation.
+	 *
+	 * For the Plugin: TODO
+	 *
+	 * You can copy the lines to the previous section 2.2.3 and load
+	 * the libraries from /plugin/lib/vendor/main.php,
+	 * or to the previous section 2.2.2, for concatenation.
+	 *
 	 *
  	 * @link https://github.com/sorrycc/awesome-javascript/ Collection of browser-side js libraries
 	 */
@@ -225,7 +251,7 @@ var source = {
 
 	
 	/**
-	 * 2.5 LIST OF SUGGESTED PHP PLUGINS FOR COMMON NEEDS
+	 * 2.4 LIST OF SUGGESTED PHP PLUGINS FOR COMMON NEEDS
 	 *----------------------------------------------------
 	 *
 	 * @link https://github.com/ziadoz/awesome-php Curated list of PHP libraries
@@ -234,9 +260,9 @@ var source = {
 	/* NEED                                                  PACKAGE_NAME        WEBSITE
 	 * ---------------------------------------------------------------------------------
 
-
 	--- */
-};
+
+
 
 
 /**
@@ -346,8 +372,8 @@ gulp.task('compile-sass', function () {
 	var filter_frontend_style = gulpFilter( ['main.css', 'src/sass/'], {restore: true} );
 	var filter_css = gulpFilter( '**/*.css' );
 
-	return gulp.src(source.sass, { base: '' } )
-		.pipe(exclude(source.sass_exclude))
+	return gulp.src(themeSource.sass, { base: '' } )
+		.pipe(exclude(themeSource.sass_exclude))
 
 //		.pipe(IS_PRODUCTION ? gutil.noop() : sourcemaps.init() ) // --dev
 
@@ -366,7 +392,7 @@ gulp.task('compile-sass', function () {
 
 		// Prepend vendor CSS to frontend style file
 		.pipe(filter_frontend_style)
-			.pipe(addsrc.prepend(source.vendor)) // add it before your code so it can be overruled
+			.pipe(addsrc.prepend(themeSource.vendor)) // add it before your code so it can be overruled
 			.pipe(filter_css)
 			//.pipe(addsrc.prepend('theme/style.css')) // prepend theme info comment
 				.pipe(concat('main.css'))
@@ -399,14 +425,14 @@ gulp.task('compile-js', function () {
 	//var filter_yourjs = gulpFilter( [ '**/*.js', '!vendor-dl/**' ], {restore: true} ); // BUG I can't make this filters work (because of addsrc?)
 
 	// Select the vendor files
-	return gulp.src( source.vendor, { base: '' } )
-		.pipe(exclude(source.js_exclude))
+	return gulp.src( themeSource.vendor, { base: '' } )
+		.pipe(exclude(themeSource.js_exclude))
 
 		// Select only the javascript files
 		.pipe(filter_js)
 
 			// Insert your JS code after the others
-			.pipe(addsrc.append(source.js))
+			.pipe(addsrc.append(themeSource.js))
 
 			// Detect errors in your code only
 			// TODO do this part in a different way (merge? separate streams?)
@@ -439,8 +465,8 @@ gulp.task('compile-vendor_separate', function () {
 	var filter_css = gulpFilter( '**/*.css', {restore: true} );
 	var filter_js = gulpFilter( '**/*.js', {restore: true} );
 
-	return gulp.src( source.vendor_separate )
-		.pipe(exclude(source.vendor_separate_exclude))
+	return gulp.src( themeSource.vendor_separate )
+		.pipe(exclude(themeSource.vendor_separate_exclude))
 
 
 		// process  JS files
@@ -483,8 +509,8 @@ gulp.task('images', function(){
 	var filter_img = gulpFilter( '*.{png,gif,jpg,jpeg,svg,ico}' );
 
 	// Images
-    return gulp.src(source.img)
-		.pipe(exclude(source.images_exclude))
+    return gulp.src(themeSource.img)
+		.pipe(exclude(themeSource.images_exclude))
 
 		.pipe( gulpif( DO_IMAGEMIN, subtask_process_images() ) )
 
@@ -492,9 +518,9 @@ gulp.task('images', function(){
 
 
 	// Vendor images
-    return gulp.src(source.vendor)
-		.pipe(addsrc.append(source.vendor_separate))
-		.pipe(exclude(source.vendor_separate_exclude))
+    return gulp.src(themeSource.vendor)
+		.pipe(addsrc.append(themeSource.vendor_separate))
+		.pipe(exclude(themeSource.vendor_separate_exclude))
 		.pipe(filter_img)
 
 		.pipe( gulpif( DO_IMAGEMIN, subtask_process_images() ) )
@@ -509,8 +535,8 @@ gulp.task('images', function(){
  */
 
 gulp.task('fonts', function(){
-	return gulp.src(source.fonts)
-		.pipe(exclude(source.fonts_exclude))
+	return gulp.src(themeSource.fonts)
+		.pipe(exclude(themeSource.fonts_exclude))
 
 		.pipe( gulpif( DEBUG_LVL > 0, debug({title: '> fonts:'}) ) )
 

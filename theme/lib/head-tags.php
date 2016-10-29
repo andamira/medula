@@ -38,11 +38,11 @@ $medula_theme_color=""; // e.g. #ffffff
  * 1.1 FRONTEND
  *
  * Create a 16x16 favicon and put it in:
- *     - /src/img/favicon.png and /src/img/favicon.ico
- *     - /src/img/favicon.png and /src/img/favicon.png
+ *     - /assets/img/favicon.png and /assets/img/favicon.ico
+ *     - /assets/img/favicon.png and /assets/img/favicon.png
  *
  * Create a 180x180 favicon and put it in:
- *     - /src/img/favicon-big.png
+ *     - /assets/img/favicon-big.png
  */
 
 # add_action('wp_head', 'medula_header_tags_frontend_favicons_theme_color', 2);
@@ -72,7 +72,7 @@ function medula_header_tags_frontend_favicons_theme_color() {
 /**
  * 1.2 BACKEND (ADMIN AREA)
  *
- * Create a 16x16 favicon and put it in /src/img/favicon-adm.png
+ * Create a 16x16 favicon and put it in /assets/img/favicon-adm.png
  */
 
 # add_action('admin_head', 'medula_header_tags_favicon_backend');

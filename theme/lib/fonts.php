@@ -17,10 +17,10 @@
  *     <------------------<
  *
  * NOTE: If you prefer to self-host then you have to put the fonts in:
- *     /src/fonts/
+ *     /assets/theme/fonts/
  *
  * and configure and load them from:
- *     /src/sass/modules/_typography.scss
+ *     /assets/theme/sass/lib/_typography.scss
  */
 
 
