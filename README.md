@@ -31,7 +31,6 @@
 * Take a look into [`src/sass/main.scss`](src/sass/main.scss) to see how styles are structured.
 * You can edit the file [`theme/style.css`](theme/style.css) to customize your theme name and data.
 * Take a look into [`plugin/plugin.php`](plugin/plugin.php) to customize the extended plugin functionality.
-* Enable the favicons in [`theme/lib/head-meta.php`](theme/lib/head-tags.php) and put your images in `/src/img/`.
 * Configure the project dependencies in [`gulpfile.js`](gulpfile.js) and [`bower.json`](bower.json).
 
 ### Deploy it

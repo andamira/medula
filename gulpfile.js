@@ -142,7 +142,7 @@ var source = {
 	/* STYLESHEET                                        PACKAGE_NAME        WEBSITE
 	 * --------------------------------------------------------------------------------
 		PKGS + 'reset.css/reset.css',                   // reset.css         meyerweb.com/eric/tools/css/reset
-		PKGS + 'normalize.css/normalize.css',           // normalize.css     necolas.github.io/normalize.css
+		PKGS + 'normalize-css/normalize.css',           // normalize.css     necolas.github.io/normalize.css
 	 */
 		PKGS + 'sanitize-css/sanitize.css',             // sanitize-css      jonathantneal.github.io/sanitize.css
 		PKGS + 'modernizr/modernizr.custom.js',         // Modernizr         modernizr.com

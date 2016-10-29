@@ -20,7 +20,7 @@
     "gulp-debug": "2.x",
     "gulp-filter": "3.0.1",
     "gulp-flatten": "0.x",
-    "gulp-if": "^2.0.0",
+    "gulp-if": "2.x",
     "gulp-ignore": "2.x",
     "gulp-imagemin": "3.x",
     "gulp-jscs": "4.x",
