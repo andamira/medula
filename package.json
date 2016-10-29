@@ -18,7 +18,7 @@
     "gulp-concat": "2.x",
     "gulp-cssnano": "2.x",
     "gulp-debug": "2.x",
-    "gulp-filter": "4.x",
+    "gulp-filter": "3.0.1",
     "gulp-flatten": "0.x",
     "gulp-if": "^2.0.0",
     "gulp-ignore": "2.x",
