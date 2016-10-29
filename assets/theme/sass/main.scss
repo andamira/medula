@@ -44,7 +44,7 @@
 ///
 /// 2 LIBS
 ///
-/// Functions, Mixins and Variables must be imported first.
+/// Note: the order of imports is important
 ///
 
 // Functions
@@ -53,14 +53,14 @@
 // Mixins
 @import "lib/util/mixins";
 
+// Palettes
+@import "lib/palettes/main";
+
 // Variables
 @import "lib/variables";
 
 // Symbols
 @import "lib/symbols";
-
-// Palettes
-@import "lib/palettes/main";
 
 // Typography
 @import "lib/typography";
