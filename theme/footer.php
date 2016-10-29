@@ -23,7 +23,7 @@
 
 			</footer>
 
-			<?php // js scripts that load in the footer are defined in lib/medula.php 
+			<?php // js scripts that load in the footer are defined in /theme/lib/medula.php 
 				wp_footer();
 			?>
 

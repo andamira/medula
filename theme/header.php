@@ -12,8 +12,8 @@
 <head>
 <?php
 
-	// Head meta and link tags are configured in lib/head-tags.php
-	// Head cleanup process is configured in lib/medula.php [5]
+	// Head meta and link tags are configured in /theme/lib/head-tags.php
+	// Head cleanup process is configured in /theme/lib/medula.php [5]
 
 	wp_head();
 

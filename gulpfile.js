@@ -90,16 +90,17 @@ var PLUGIN_RES     = "plugin/res/";        // must match medula_get_plugin_resou
  * NOTE: In section 7.1 you can see some CLI Parameters that modify this defaults. E.g. --dev
  */
 
-var DEBUG_LVL          = 0;     // 0 = none | 1 = print files going through tasks pipes | 2 = also for subtasks
+var DEBUG_LVL      = 0;        // 0 = none | 1 = print files going through tasks pipes | 2 = also for subtasks
 
-var IS_PRODUCTION = true;       // default task
-var SASS_STYLE = 'nested';
+var IS_PRODUCTION  = true;     // default task
+var SASS_STYLE     = 'nested';
 
-var AUTOPREFIXER_RULES = ['last 3 versions', '> 3%', 'not ie <=10']; // https://github.com/ai/browserslist#queries
+// Autoprefixer Rules: https://github.com/ai/browserslist#queries
+var AUTOPREF_RULES = ['last 3 versions', '> 3%', 'not ie <=10'];
 
-var DO_REMPIXEL        = false; // rem to pixel fallback
-var DO_IMAGEMIN        = true;  // minify images?
-var DO_JSMANGLE        = true;  // minify javascript?
+var DO_REMPIXEL    = false;    // do rem to pixel fallback
+var DO_IMAGEMIN    = true;     // do minify images
+var DO_JSMANGLE    = true;     // do minify javascript
 
 
 /**
@@ -403,7 +404,7 @@ gulp.task('compile-sass', function () {
 		// Postprocess
 //		.pipe(cmq({	log: false })) // NOTE: no sourcemap support
 		.pipe(DO_REMPIXEL ? pixrem() : gutil.noop() )
-		.pipe(autoprefixer(AUTOPREFIXER_RULES))
+		.pipe(autoprefixer(AUTOPREF_RULES))
 
 		// Minify
 		.pipe( gulpif( IS_PRODUCTION, subtask_cssnano() ) )
@@ -487,7 +488,7 @@ gulp.task('compile-vendor_separate', function () {
 
 			// Postprocess
 			.pipe(DO_REMPIXEL ? pixrem() : gutil.noop() )
-			.pipe(autoprefixer(AUTOPREFIXER_RULES))
+			.pipe(autoprefixer(AUTOPREF_RULES))
 
 			// Minify
 			.pipe( gulpif( IS_PRODUCTION, subtask_cssnano() ) )
@@ -580,7 +581,7 @@ gulp.task('clean', function(cb) {
 if(gutil.env.dev === true) {         // --dev
 	IS_PRODUCTION = false;
 	DO_IMAGEMIN   = false;
-	SASS_STYLE = 'compressed';
+	SASS_STYLE = 'expanded';
 }
 if(gutil.env.noimgmin === true) {   // --noimgmin
 	DO_IMAGEMIN = false;
