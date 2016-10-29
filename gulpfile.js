@@ -78,11 +78,11 @@
  * 1.1 Assets & Resources Paths
  */
 
-var PKGS       = "vendor-dl/";          // folder that contains the downloaded packages
-var THEME_ASSETS   = "assets/theme/";   // folder that contains the original unprocessed assets for the theme
-var PLUGIN_ASSETS  = "assets/plugin/";  // folder that contains the original unprocessed assets for the plugin
-var THEME_RES  = "theme/res/";          // must match medula_get_theme_resources_uri() in theme/functions.php
-var PLUGIN_RES = "plugin/res/";         // must match medula_get_plugin_resources_uri() in plugin/plugin.php
+var VENDOR_DL      = "bower_components/";  // folder that contains the vendor dependencies
+var THEME_ASSETS   = "assets/theme/";      // folder that contains the unprocessed assets for the theme
+var PLUGIN_ASSETS  = "assets/plugin/";     // folder that contains the unprocessed assets for the plugin
+var THEME_RES      = "theme/res/";         // must match medula_get_theme_resources_uri() in theme/functions.php
+var PLUGIN_RES     = "plugin/res/";        // must match medula_get_plugin_resources_uri() in plugin/plugin.php
 
 /**
  * 1.2 Gulp Defaults
@@ -155,11 +155,11 @@ var themeSource = {
 
 	/* STYLESHEET                                        PACKAGE_NAME        WEBSITE
 	 * --------------------------------------------------------------------------------
-		PKGS + 'reset.css/reset.css',                   // reset.css         meyerweb.com/eric/tools/css/reset
-		PKGS + 'normalize-css/normalize.css',           // normalize.css     necolas.github.io/normalize.css
+		VENDOR_DL + 'reset.css/reset.css',                   // reset.css         meyerweb.com/eric/tools/css/reset
+		VENDOR_DL + 'normalize-css/normalize.css',           // normalize.css     necolas.github.io/normalize.css
 	 */
-		PKGS + 'sanitize-css/sanitize.css',             // sanitize-css      jonathantneal.github.io/sanitize.css
-		PKGS + 'modernizr/modernizr.custom.js',         // Modernizr         modernizr.com
+		VENDOR_DL + 'sanitize-css/sanitize.css',             // sanitize-css      jonathantneal.github.io/sanitize.css
+		VENDOR_DL + 'modernizr/modernizr.custom.js',         // Modernizr         modernizr.com
 	],
 	vendor_exclude: [ '', ],
 	
@@ -220,32 +220,32 @@ var themeSource = {
 	 * ---------------------------------------------------------------------------------
 
 	// Compatibility / Accesibility
-	PKGS + 'picturefill/dist/picturefill.js',                // PictureFill       -
+	VENDOR_DL + 'picturefill/dist/picturefill.js',                // PictureFill       -
 
 	// Navigation
-	PKGS + 'jQuery.mmenu/dist/core/js/jquery.mmenu.min.all.js',  // MMenu    mmenu.frebsite.nl
-	PKGS + 'jQuery.mmenu/dist/core/css/jquery.mmenu.all.css',
+	VENDOR_DL + 'jQuery.mmenu/dist/core/js/jquery.mmenu.min.all.js',  // MMenu    mmenu.frebsite.nl
+	VENDOR_DL + 'jQuery.mmenu/dist/core/css/jquery.mmenu.all.css',
 
 	// Maps
-	PKGS + 'leaflet/dist/leaflet.js',                        // Leaflet           leafletjs.com
+	VENDOR_DL + 'leaflet/dist/leaflet.js',                        // Leaflet           leafletjs.com
 
 	// Tables
-	PKGS + 'dynatable/jquery.dynatable.js',                  // Dynatable         dynatable.com
-	PKGS + '/dynatable/jquery.dynatable.css',
+	VENDOR_DL + 'dynatable/jquery.dynatable.js',                  // Dynatable         dynatable.com
+	VENDOR_DL + '/dynatable/jquery.dynatable.css',
 
 	// Sliders / Slideshows
-	PKGS + 'jquery-cycle2/build/jquery.cycle2.js',           // Cycle2            jquery.malsup.com/cycle2
+	VENDOR_DL + 'jquery-cycle2/build/jquery.cycle2.js',           // Cycle2            jquery.malsup.com/cycle2
 	
 	// Animations
-	PKGS + 'snabbt.js/snabbt.js',                            // Snabbt            daniel-lundin.github.io/snabbt.js
+	VENDOR_DL + 'snabbt.js/snabbt.js',                            // Snabbt            daniel-lundin.github.io/snabbt.js
 	
 	// Autocomplete
-	PKGS + 'awesomeplete/awesomeplete.js',                   // Awesomeplete      leaverou.github.io/awesomplete
-	PKGS + 'awesomeplete/awesomeplete.css',                  // $ bower install LeaVerou/awesomplete#gh-pages --save-dev
+	VENDOR_DL + 'awesomeplete/awesomeplete.js',                   // Awesomeplete      leaverou.github.io/awesomplete
+	VENDOR_DL + 'awesomeplete/awesomeplete.css',                  // $ bower install LeaVerou/awesomplete#gh-pages --save-dev
 
 	// Syntax Highlighting
-	PKGS + 'prism/prism.js',                                 // Prism             prismjs.com
-	PKGS + 'prism/themes/prism.css',                         // $ bower install -D prism.git#gh-pages
+	VENDOR_DL + 'prism/prism.js',                                 // Prism             prismjs.com
+	VENDOR_DL + 'prism/themes/prism.css',                         // $ bower install -D prism.git#gh-pages
 
 	--- */
 
@@ -421,8 +421,8 @@ gulp.task('compile-js', function () {
 
 	var filter_js = gulpFilter( '**/*.js', {restore: true} );
 
-	var filter_yourjs = gulpFilter( [ 'main.js', '!vendor-dl/**' ], {restore: true} );
-	//var filter_yourjs = gulpFilter( [ '**/*.js', '!vendor-dl/**' ], {restore: true} ); // BUG I can't make this filters work (because of addsrc?)
+	var filter_yourjs = gulpFilter( [ 'main.js', '!bower_components/**' ], {restore: true} );
+	//var filter_yourjs = gulpFilter( [ '**/*.js', '!bower_components/**' ], {restore: true} ); // BUG I can't make this filters work (because of addsrc?)
 
 	// Select the vendor files
 	return gulp.src( themeSource.vendor, { base: '' } )

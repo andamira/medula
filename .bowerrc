@@ -1,8 +1,0 @@
-{
-	"directory": "vendor-dl/",
-	"scripts": {
-		"preinstall": "",
-		"postinstall": "",
-		"preuninstall": ""
-	}
-}

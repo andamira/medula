@@ -1,8 +1,9 @@
 #################### general
-vendor-dl
+bower_components
 node_modules
 .sass-cache
 
 #################### output
 theme/res
+plugin/res
 
