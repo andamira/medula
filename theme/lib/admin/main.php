@@ -177,7 +177,7 @@ function medula_custom_admin_footer() {
  * @link https://developer.wordpress.org/themes/advanced-topics/customizer-api/
  */
 
-# require_once( 'theme-customizer.php' );
+# require_once get_theme_file_path( 'theme-customizer.php' );
 
 
 /**
@@ -186,5 +186,5 @@ function medula_custom_admin_footer() {
  *
  */
 
-# require_once( 'admin-bar.php' );
+# require_once get_theme_file_path( 'admin-bar.php' );
 

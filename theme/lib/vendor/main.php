@@ -31,7 +31,7 @@
  * @link http://wpml.org/
  */
 
-# include_once( 'wp_plugins/wpml.php' );
+# include_once get_theme_file_path( 'wp_plugins/wpml.php' );
 
 /**
  * 1.2 WOOCOMMERCE
@@ -39,7 +39,7 @@
  * @link http://www.woothemes.com/woocommerce/
  */
 
-# include_once( 'wp_plugins/woocommerce.php' );
+# include_once get_theme_file_path( 'wp_plugins/woocommerce.php' );
 
 
 /**
@@ -50,7 +50,7 @@
  * ************************************************************
  */
 
-include_once( 'clean-fix.php' );
+include_once get_theme_file_path( 'clean-fix.php' );
 
 
 /**
@@ -72,5 +72,5 @@ include_once( 'clean-fix.php' );
  * 3.2 PHP
  */
 
-# include_once( 'example/example.php' );
+# include_once get_theme_file_path( 'example/example.php' );
 

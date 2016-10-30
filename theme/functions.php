@@ -1,6 +1,6 @@
 <?php
 /**
- * functions.php File
+ * main.php File
  *
  *     >------------------>
  *
@@ -43,6 +43,10 @@
  */
 
 
+// Exit if accessed directly
+if ( !defined( 'ABSPATH' ) ) exit;
+
+
 /**
  * 1 GLOBALS
  * ************************************************************
@@ -50,7 +54,7 @@
 
 /**
  * 1.1 Returns the theme resources URI, with an optional $subpath parameter
- * NOTE: This must match the THEME_RESOURCES global in /gulpfile.js
+ * NOTE: This must match the THEME_RES global in /gulpfile.js
  */
 
 function medula_get_theme_resources_uri( $subpath = '' ){
@@ -70,22 +74,22 @@ function medula_get_theme_resources_uri( $subpath = '' ){
  * Enqueue styles & scripts, theme support, cleanup...
  */
 
-require_once( 'lib/main.php' );
+require_once get_theme_file_path( 'lib/main.php' );
 
 /**
  * 2.2 General Functionality
  */
 
-require_once( 'lib/head-tags.php' );       // Meta Tags, Favicons, etc.
-require_once( 'lib/fonts.php' );           // Load External Fonts
-require_once( 'lib/navigation.php' );      // Register Menus
-require_once( 'lib/sidebars.php' );        // Register Sidebars
-require_once( 'lib/thumbnails.php' );      // Thumbnails and Default Sizes
-require_once( 'lib/titles.php' );          // Entry Title Function
-require_once( 'lib/entry-meta.php' );      // Entry Meta Fields Functions
-require_once( 'lib/comments.php' );        // Comments Functions
-require_once( 'lib/links.php' );           // Page Links Function
-require_once( 'lib/post-not-found.php' );  // Post Not Found Function
+require_once get_theme_file_path( 'lib/head-tags.php' );       // Meta Tags, Favicons, etc.
+require_once get_theme_file_path( 'lib/fonts.php' );           // Load External Fonts
+require_once get_theme_file_path( 'lib/navigation.php' );      // Register Menus
+require_once get_theme_file_path( 'lib/sidebars.php' );        // Register Sidebars
+require_once get_theme_file_path( 'lib/thumbnails.php' );      // Thumbnails and Default Sizes
+require_once get_theme_file_path( 'lib/titles.php' );          // Entry Title Function
+require_once get_theme_file_path( 'lib/entry-meta.php' );      // Entry Meta Fields Functions
+require_once get_theme_file_path( 'lib/comments.php' );        // Comments Functions
+require_once get_theme_file_path( 'lib/links.php' );           // Page Links Function
+require_once get_theme_file_path( 'lib/post-not-found.php' );  // Post Not Found Function
 
 /**
  * 2.3 Admin Area
@@ -93,7 +97,7 @@ require_once( 'lib/post-not-found.php' );  // Post Not Found Function
  * Default Widgets, Admin Bar, Theme Customizer, etc.
  */
 
-require_once( 'lib/admin/main.php' );
+require_once get_theme_file_path( 'lib/admin/main.php' );
 
 
 /**
@@ -150,7 +154,7 @@ function medula_launch() {
  * for some big plugins like like WPML, Toolset & WooCommerce.
  */
 
-include_once( 'lib/vendor/main.php' );
+include_once get_theme_file_path( 'lib/vendor/main.php' );
 
 
 /**
